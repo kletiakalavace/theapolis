@@ -1,0 +1,99 @@
+{% extends '::base.html.twig' %}
+ {% form_theme edit_form 'form_div_layout.html.twig' %}
+    {% form_theme edit_form _self %}
+    {%- block choice_widget_options -%}
+        {% for group_label, choice in options %}
+            {%- if choice is iterable -%}
+                <optgroup
+                        label="{{ choice_translation_domain is same as(false) ? group_label : group_label|trans({}, choice_translation_domain) }}">
+                    {% set options = choice %}
+                    {{- block('choice_widget_options') -}}
+                </optgroup>
+            {%- else -%}
+                {% set attr = choice.attr %}
+                <option value="{{ choice.value }}" {{ block('attributes') }}{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>{{ choice_translation_domain is same as(false) ? choice.label : choice.label|trans({}, choice_translation_domain) }}</option>
+            {%- endif -%}
+        {% endfor %}
+    {%- endblock choice_widget_options -%}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+    "@TheaterjobsProfileBundle/Resources/public/css/prodEmpl.css" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+    <h1>Production Participation edit</h1>
+    {{ form_start(edit_form) }}
+    <div class="first">
+        <div class='prod'>
+            {{ form_row(edit_form.production.organizationRelated) }}
+        </div>
+        <div class="second" id='second' style="visibility:visible">
+            {{ form_row(edit_form.production.name) }}
+            <div class='prod part2'>
+                {{ form_row(edit_form.production.year) }}
+                {{ form_row(edit_form.production.creators) }}
+                {{ form_row(edit_form.production.directors) }}
+            </div>
+            {{ form_row(edit_form.start) }}
+            {{ form_row(edit_form.end) }}
+            {{ form_row(edit_form.ongoing) }}
+            {{ form_row(edit_form.occupation) }}
+            <div id="rolediv" class="hidden">
+                {{ form_row(edit_form.occupationDescription) }}
+            </div>
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+
+    <ul class="record_actions">
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/ui/widgets/autocomplete.js"
+    "@TheaterjobsProfileBundle/Resources/public/js/profile/production.js" %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    <script>
+        var route = '{{ app.request.attributes.get('_route') }}';
+        $(document).ready(function () {
+            /*
+             handle occupation description inputs
+             */
+            var isPerformanceCategory = $('#theaterjobs_profilebundle_productionparticipations_occupation').select2('data').element[0].attributes['data-performance'].value;
+            if (isPerformanceCategory === 'true') {
+                $("#rolediv").removeClass('hidden');
+
+                $("#rolediv input[name*='roleName']").each(function () {
+                    $(this).removeClass('hidden');
+                    $(this).prev().closest('label').show();
+                });
+                $("#rolediv input:checkbox").each(function () {
+                    $(this).hide();
+                    $(this).parent().hide();
+                });
+            }
+            else if (isPerformanceCategory === 'false') {
+                $("#rolediv").removeClass('hidden');
+
+                $("#rolediv input[name*='roleName']").each(function () {
+                    $(this).addClass('hidden');
+                    $(this).prev().closest('label').hide();
+                });
+                $("#rolediv input:checkbox").each(function () {
+                    $(this).show();
+                    $(this).parent().show();
+                });
+            }
+
+        });
+    </script>
+    {% endjavascripts %}
+{% endblock %}

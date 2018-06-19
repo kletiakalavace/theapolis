@@ -1,0 +1,18 @@
+{{ form_start(form,
+{'action': path('tj_user_account_settings_create_master_data', {'slug' : entity.slug}),
+    'method': 'post',
+    'style': 'horizontal',
+    'attr': {
+    'id' : 'tj_user_account_settings_create_master_data',
+    'role' : 'form',
+}
+}
+) }}
+{{ form_row(form.firstName) }}
+{{ form_row(form.lastName) }}
+{{ form_row(form.subtitle) }}
+{{ form_row(form.doNotTrackViews) }}
+
+<h1>{{ form_errors(form) }}</h1>
+<p class="alert alert-info">{{ 'tj.profile.surf.annonymous.description' | trans }}</p>
+{{ form_end(form) }}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:05Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b092216ea3d29df3dbffe31db77c651f4741066c" resname="tj.user.activity.commented.on.news">
+        <source>tj.user.activity.commented.on.news</source>
+        <target>tj.user.activity.commented.on.news</target>
+        <jms:reference-file line="883">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29004132f97a7651d6c16e708b50c250e0c39186" resname="tj.user.activity.news.created">
+        <source>tj.user.activity.news.created</source>
+        <target>tj.user.activity.news.created</target>
+        <jms:reference-file line="184">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22733b824c90daff5b3965a36492f17650609da9" resname="tj.user.activity.news.updated">
+        <source>tj.user.activity.news.updated</source>
+        <target>tj.user.activity.news.updated</target>
+        <jms:reference-file line="502">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

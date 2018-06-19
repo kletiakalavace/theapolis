@@ -1,0 +1,141 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="block">
+            <!-- Page header -->
+            <div class="page-header">
+                <h1>{{ 'admin.title.nameChangeRequests'| trans }}</h1>
+            </div>
+            <table id="data-table" class="display nowrap hidden" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="text-danger" data-name="createdAt">
+                        {{ 'admin.nameChange.label.date'| trans }}
+                    </th>
+                    <th class="text-danger" data-name="email">
+                        {{ 'admin.nameChange.label.email'| trans }}
+                    </th>
+                    <th class="text-danger" data-name="oldName">
+                        {{ 'admin.nameChange.label.old'| trans }}
+                    </th>
+                    <th class="text-danger" data-name="newName">
+                        {{ 'admin.nameChange.label.new'| trans }}
+                    </th>
+                    <th class="text-danger no-sort">
+                        {{ 'admin.nameChange.label.actions'| trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="row admin-pagination">
+                <div class="col-md-8 col-sm-12">
+                    <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_ajax_paginate">
+                        <div class="pagination-panel">
+                            <span{{ 'admin.nameChange.label.page'| trans }}></span>
+                            <a href="javascript:" data-page="0" disabled
+                               class="circle-red datatable-paginate-btn datatable-paginate-previous"
+                               id="data-table-previous">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <input value="1" id="data-table-page-number" type="text"
+                                   class="pagination-panel-input form-control input-sm input-inline input-mini"
+                                   maxlength="5">
+                            <a href="javascript:;" data-page="2"
+                               class="circle-red datatable-paginate-btn datatable-paginate-next"
+                               id="data-table-next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                            <span>{{ 'admin.nameChange.label.of'| trans }}</span>
+                            <span class="pagination-panel-total"></span>
+                        </div>
+                    </div>
+                    <div class="dataTables_length" id="datatable_ajax_length">
+                        <label>
+                            <span id="data-table-pages-total"></span>
+                            <span class="seperator">|</span>
+                            <span id="data-table-total" class="seperator"></span>
+                            <span>{{ 'admin.nameChange.label.view'| trans }}</span>
+                            <select id="data-table-page-length"
+                                    class="select-page-length form-control input-xs input-sm input-inline"
+                                    aria-controls="datatable_ajax">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                            </select> <span>{{ 'admin.nameChange.label.records'| trans }}</span>
+                        </label>
+                    </div>
+                    <div class="dataTables_info" id="datatable_ajax_info" role="status" aria-live="polite"></div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    {{ form_start(form,{'attr':{'id' : 'formNameChangeRequest'}}) }}
+                    <div class="table-group-actions pull-right">
+                        {{ form_widget(form.choices,{'attr':{'onchange':'dataTableReload()'}}) }}
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsAdminBundle/Resources/js/dataTable/load.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        dataTableURL = Routing.generate('tj_admin_load_pending_name_change_requests', {'_locale': locale});
+        adminSearchForm = $('#formNameChangeRequest');
+
+        $(() => {
+            dataTableInitialize();
+        });
+
+        requestApprove = (id) => {
+            $.ajax({
+                type: 'GET',
+                url: Routing.generate('tj_admin_confirm_name_change_requests', {'_locale': locale, 'id': id}),
+                contentType: false,
+                success: function (data) {
+                    if (data.error) {
+                        popupCase(data.message);
+                    }
+                    else {
+                        dataTableReload();
+                    }
+                },
+                error: function () {
+                    popupCase('There was an error with your request.Please refresh and try again.');
+                }
+            });
+        };
+
+        requestDenied = (id) => {
+            $.ajax({
+                type: 'GET',
+                url: Routing.generate('tj_admin_reject_name_change_requests', {'_locale': locale, 'id': id}),
+                contentType: false,
+                success: function (data) {
+                    if (data.error) {
+                        popupCase(data.message);
+                    }
+                    else {
+                        dataTableReload();
+                    }
+                },
+                error: function () {
+                    popupCase('There was an error with your request.Please refresh and try again.');
+                }
+            });
+        };
+
+    </script>
+{% endblock %}

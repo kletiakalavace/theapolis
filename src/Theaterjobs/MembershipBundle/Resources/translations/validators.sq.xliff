@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:15:49Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="9dabceca9c8750d4113d7a1d26e60fe106c25a8b" resname="form.error.billing_address.company.empty">
+        <source>form.error.billing_address.company.empty</source>
+        <target state="new">form.error.billing_address.company.empty</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

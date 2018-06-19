@@ -1,0 +1,245 @@
+{% extends '::base.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block title %} Profile Views {% endblock %}
+{% block breadcrumb %}
+    <li>
+        <a href="{{ path('tj_profile_profile_index') }}">{{ 'tj.breadcrumbs.profiles' | trans }}</a>
+    </li>
+    <li class="active">
+        {{ 'tj.profile.breadcrumbs.views' | trans }}
+    </li>
+{% endblock %}
+{% block content %}
+        {#<h1>{{ 'tj.profile.views.this.week' | trans }}</h1>#}
+        <div class="row">
+            <div class="{% if is_granted('ROLE_MEMBER') %}col-md-9{% else %}col-md-12{% endif %}">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        {{ 'tj.profile.last.ten.days.views.title'|trans }}
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            {% set anonymousViews = 0 %}
+                            {% set totalWeekly = 0 %}
+                            {% for view in lastTenDaysViews %}
+                                {% set totalWeekly = totalWeekly+ view.statCount %}
+                                {% if view.profile is null  or view.profile.doNotTrackViews %}
+                                    {% set anonymousViews= anonymousViews+view.statCount %}
+                                {% else %}
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            {% if view.image %}
+                                                <img alt='{{ view.image.title }}'
+                                                     src="{{ vich_uploader_asset(view.image, 'uploadFile') | imagine_filter('profile_photo') }}"
+                                                     width="70" class="img-thumbnail">
+                                            {% else %}
+                                                <img src="{{ asset('bundles/theaterjobsprofile/images/profile_placeholder.gif') }}"
+                                                     width="70" class="img-thumbnail">
+                                            {% endif %}
+                                        </div>
+                                        {% if view.profile is not null and not view.profile.doNotTrackViews %}
+                                            <div class="col-md-6">
+                                                <p>
+                                                    {% if view.profile.isPublished %}
+                                                        <a href="{{ path('tj_profile_profile_show',{'slug': view.profile.slug}) }}">
+                                                    {% endif %}
+                                                        {{ view.profile | defaultName }}
+                                                    {% if view.profile.isPublished %}
+                                                        </a>
+                                                    {% endif %}
+                                                </p>
+                                                <p>{{ view.profile.subtitle }}</p>
+                                            </div>
+                                        {% endif %}
+                                        <div class="col-md-3 text-center">
+                                            {{ view.date|date('d.m.Y') }}
+                                            <p>
+                                                {% if view.statCount >1 %}
+                                                    {{ 'tj.profile.visited.multiple.times'|trans }}
+                                                {% else %}
+                                                    {{ 'tj.profile.visited.first.time'|trans }}
+                                                {% endif %}
+                                            </p>
+                                            <p><i class="fa fa-star"></i></p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {% if anonymousViews>0 %}
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="{{ asset('bundles/theaterjobsprofile/images/profile_placeholder.gif') }}"
+                                             width="70" class="img-thumbnail">
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ 'tj.profile.anonymous.views'|trans }}
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <p>
+                                            {{ 'tj.profile.visited.multiple.times'|trans }} {{ anonymousViews }}
+                                        </p>
+                                        <p><i class="fa fa-star"></i></p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                {% if not is_granted('ROLE_MEMBER') %}
+                    <p class="alert alert-warning">
+                        {{ "flash.profile.views.become.member.to.view" | trans({},'flashes') }}
+                        <a href="{{ path('tj_membership_index') }}">{{ 'tj.profile.views.become.member' | trans }}</a>
+                    </p>
+
+                {% endif %}
+            </div>
+            {% if is_granted('ROLE_MEMBER') %}
+            <div class="col-md-3">
+                <div class="panel panel-danger">
+                    <div class="panel-body">
+                        <p>{{ 'tj.profile.ten.days.total.views'|trans }} {{ totalWeekly }}</p>
+                        <p>{{ 'tj.profile.all.time.views'|trans }} {{ totalViews.total }}</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-danger">
+                    <div class="panel-body">
+                        <p>{{ 'tj.profile.first.views'|trans }} {{ totalViews.first }}</p>
+                        <p>{{ 'tj.profile.recurring.views'|trans }} {{ totalViews.recurring }}</p>
+                        <p>{{ 'tj.profile.anonymous.views'|trans }} {{ totalViews.anonymous }}</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-danger">
+                    <div class="panel-body">
+                        {% for key,catView in viewsByCategory %}
+                            {% if catView > 0 %}
+                                {% set percentage =(totalViews.total/catView)*100 %}
+                            {% else %}
+                                {% set percentage = 100 %}
+                            {% endif %}
+                            <p class="text-primary">{{ key }}</p>
+                            <p>{{ 'tj.profile.your.views'|trans }} {{ totalViews.total }}</p>
+                            <p>{{ 'tj.profile.other.profile.views'|trans }} {{ catView }}</p>
+                            <div class="progress" style="margin-bottom:2px">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ percentage }}"
+                                     aria-valuemin="0" aria-valuemax="100" style="width:{{ percentage }}%">
+
+                                </div>
+                            </div>
+                            <label class="">{{ percentage|round(1, 'floor') }}%</label>
+                            <hr>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+
+        </div>
+
+
+
+
+        {# <div class="row">
+             {{'tj.weekly.views'|trans}}
+             {% for weekStat in weekStats %}
+                 <div class="col-md-1 text-center"  style="width: 10%;" data-toggle="tooltip" title="Viewed your profile {{ weekStat.statCount }} times">
+                     {% if weekStat.image %}
+                         <img alt='{{weekStat.image.title}}' src="{{ weekStat.image.getLogoWebPath() | imagine_filter('profile_photo') }}" width="70" class="img-thumbnail">
+                     {% else %}
+                         <img src="{{ absolute_url('bundles/theaterjobsprofile/images/profile_placeholder.gif') }}" width="70" class="img-thumbnail">
+                     {% endif %}
+                     <a href="{{ path('tj_profile_profile_show',{'slug': weekStat.profile.slug}) }}">
+                         {{ weekStat.profile.firstName ~ ' ' ~ weekStat.profile.lastName }}
+                     </a>
+                 </div>
+             {% endfor %}
+         </div>
+         <h1>{{ 'tj.profile.views.this.month' | trans }}</h1>
+         <div class="row">
+             {% for monthStat in monthStats %}
+                 <div class="col-md-1 text-center"  style="width: 10%;" data-toggle="tooltip" title="Viewed your profile {{ monthStat.statCount }} times">
+                     {% if monthStat.image %}
+                         <img alt='{{monthStat.image.title}}' src="{{ monthStat.image.getLogoWebPath() | imagine_filter('profile_photo') }}" width="70" class="img-thumbnail">
+                     {% else %}
+                         <img src="{{ absolute_url('bundles/theaterjobsprofile/images/profile_placeholder.gif') }}" width="70" class="img-thumbnail">
+                     {% endif %}
+                     <a href="{{ path('tj_profile_profile_show',{'slug': monthStat.profile.slug}) }}">
+                         {{ monthStat.profile.firstName ~ ' ' ~ monthStat.profile.lastName }}
+                     </a>
+                 </div>
+             {% endfor %}
+         </div>
+         <div class="row col-md-12">
+             <div class="col-md-6">
+                 <h1>{{ 'tj.profile.views.in.your.profile.categories' | trans }}</h1>
+                 <table id="datatable" class="table table-bordered table-striped table-hover table-condensed">
+                     <tr>
+                         <td>User</td>
+                         <td>{{ 'tj.profile.total.views' | trans }}</td>
+                     </tr>
+                     {% for otherProfile in otherProfiles %}
+                         <tr>
+                             <td>
+                                 {% if otherProfile.image %}
+                                     <img alt='{{otherProfile.image.title}}' src="{{ otherProfile.image.getLogoWebPath() | imagine_filter('profile_photo') }}" width="70" class="img-thumbnail">
+                                 {% else %}
+                                     <img src="{{ absolute_url('bundles/theaterjobsprofile/images/profile_placeholder.gif') }}" width="70" class="img-thumbnail">
+                                 {% endif %}
+                                 <a href="{{ path('tj_profile_profile_show',{'slug': otherProfile.profile.slug}) }}">
+                                     {% if otherProfile.profile.user == app.user %}
+                                         Me
+                                     {% else %}
+                                         {{ otherProfile.profile.firstName ~ ' ' ~ otherProfile.profile.lastName }}
+                                     {% endif %}
+                                 </a>
+                             </td>
+                             <td>{{ otherProfile.stats }}</td>
+                         </tr>
+                     {% endfor %}
+                 </table>
+             </div>
+             <div class="col-md-6">
+                 <div id="graphContainer"></div>
+             </div>
+         </div>#}
+{% endblock content %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMainBundle/Resources/public/components/highcharts/highcharts.js"
+    "@TheaterjobsMainBundle/Resources/public/components/highcharts/modules/data.js"
+    "@TheaterjobsMainBundle/Resources/public/components/highcharts/modules/exporting.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        $(function () {
+            $('#graphContainer').highcharts({
+                data: {
+                    table: 'datatable'
+                },
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Overall statistics'
+                },
+                yAxis: {
+                    allowDecimals: false,
+                    tickInterval: 10,
+                    title: {
+                        text: 'Units'
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}
+

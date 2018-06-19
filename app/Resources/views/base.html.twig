@@ -1,0 +1,321 @@
+{% import '::macro.html.twig' as m %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="imagetoolbar" content="false"/>
+    <meta name="robots" content="noarchive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="no-referrer"/>
+    {% block metadata %}
+        {{ sonata_seo_title() }}
+
+        {{ sonata_seo_metadatas() }}
+    {% endblock metadata %}
+
+    {% block css %}
+        <link rel="stylesheet" href="https://use.typekit.net/ozx2dlu.css">
+        {% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+            "@TheaterjobsMainBundle/Resources/public/components/bootstrap/less/bootstrap.less"
+            "@TheaterjobsMainBundle/Resources/public/components/fontawesome/less/font-awesome.less"
+            "@TheaterjobsMainBundle/Resources/public/components/toastr/toastr.less"
+            "@TheaterjobsMainBundle/Resources/public/components/lightgallery/dist/css/lightgallery.min.css"
+            "@TheaterjobsMainBundle/Resources/public/components/cropper/dist/cropper.min.css"
+            "@TheaterjobsMainBundle/Resources/public/components/mediaelement/build/mediaelementplayer.min.css"
+            "@TheaterjobsMainBundle/Resources/public/less/animate.css"
+            "@TheaterjobsMainBundle/Resources/public/less/typeahead.less"
+            "@TheaterjobsMainBundle/Resources/public/less/secondary.less"
+            "@TheaterjobsMainBundle/Resources/public/less/primary.less"
+            "@TheaterjobsMainBundle/Resources/public/less/style-version2.less"
+            "@TheaterjobsMainBundle/Resources/public/less/resp-primary.less"
+            "@TheaterjobsMainBundle/Resources/public/less/responsive.less"
+            "@TheaterjobsMainBundle/Resources/public/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"
+            "@TheaterjobsMainBundle/Resources/public/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+            "@TheaterjobsMainBundle/Resources/public/less/cssgram.min.css"
+            "@TheaterjobsMainBundle/Resources/public/components/plyr/dist/plyr.css"
+            "@TheaterjobsMainBundle/Resources/public/components/datatables/media/css/jquery.dataTables.css"
+            "@TheaterjobsMainBundle/Resources/public/less/datatables-responsive.css"
+            "@TheaterjobsMainBundle/Resources/public/less/responsive-bootstrap.css" %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico', absolute=true) }}"/>
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+</head>
+{% set classes = '' %}
+{% set pageWrap = '' %}
+{% if app.request.get('_route') == 'tj_main_default_home' %}
+    {% set classes = classes ~ 'fixed-header-large ' %}
+{% endif %}
+{% if is_granted('ROLE_ADMIN') %}
+    {% set classes = classes ~ 'added-adminmenu ' %}
+{% endif %}
+{% if is_granted('ROLE_USER') %}
+    {% set classes = classes ~ 'logged-in ' %}
+{% endif %}
+{% if app.request.get('_route') != 'tj_membership_booking_new' %}
+    {% set classes = classes ~ 'fixed-header ' %}
+    {% set pageWrap = 'page-wrap' %}
+{% endif %}
+
+<body class=" {{ classes }}" role="document">
+<div class="{{ pageWrap }}">
+    {% if is_granted('ROLE_PREVIOUS_ADMIN') %}
+        <div class="alert alert-danger" role="alert">
+            {{ 'tj.impersonate.mode'|trans }}
+            <a href="{{ path('tj_main_dashboard_index', {'_switch_user': '_exit'}) }}">{{ 'tj.impersonate.mode.exit'|trans }}</a>
+        </div>
+    {% endif %}
+    {% block navbar %}
+        {# Search bar #}
+        {{ m.searchBar() }}
+
+        {# Navigation menu #}
+        {{ m.navigationMenu() }}
+    {% endblock %}
+
+    {% block modal %}
+        {#{% if profilePicture.0 is defined %}#}
+        {#{% set profilePhoto =  vich_uploader_asset(profilePicture.0, "uploadFile") | imagine_filter("profile_media") %}#}
+        {#{% else %}#}
+        {#{% set profilePhoto = asset('bundles/theaterjobsprofile/images/profile_placeholder.gif') %}#}
+        {#{% endif %}#}
+        <!-- User menu -->
+        <div id="myUser" class="modal modal-user modal-primary fade" data-case="0" tabindex="-1" role="dialog"
+             style="z-index: 1060;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-close') }}"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container">
+                            <center>
+                                <img src="{{ asset('bundles/theaterjobsmain/images/rolling.svg') }}">
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+              <!-- Modal -->
+        <div class="modal modal-fullscreen modal-primary fade" data-case="0" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-close') }}"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <div class="container">
+                        <div class="modal-body">
+                            <center>
+                                <img src="{{ asset('bundles/theaterjobsmain/images/rolling.svg') }}">
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    {% endblock %}
+
+    {% block content %}<!-- CONTENT -->{% endblock content %}
+</div>
+{% block footer %}
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-12">
+
+                    <a href="{{ path("tj_main_default_home") }}" class="nav-brand">
+                        <img src="{{ asset('bundles/theaterjobsmain/img/theapolis-logo.svg') }}" alt="Theater bist Du">
+                    </a>
+                </div>
+                <div class="col-md-6 col-xs-12">
+
+                    <ul class="footer-nav">
+                        <li>
+                            <a href="{{ path("tj_main_default_impresum") }}">{{ 'menuFooter.link.impressum'| trans }}</a>
+                        </li>
+                        <li><a href="{{ path("tj_main_default_terms_new_tab") }}">{{ 'menuFooter.link.AGB'| trans }}</a>
+                        </li>
+                        <li><a href="{{ path("tj_main_default_prices") }}">{{ 'menuFooter.link.preise'| trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path("tj_main_default_privacy") }}">{{ 'menuFooter.link.datenschutzerklärung'| trans }}</a>
+                        </li>
+                        {#<li><a href="{{ path("tj_main_default_app") }}">{{ 'menuFooter.link.app'| trans }}</a></li>#}
+                        <li><a href="{{ path("tj_main_default_about_us") }}">{{ 'menuFooter.link.ÜberUns'| trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path("tj_main_default_contact_site") }}">{{ 'menuFooter.link.contactSite'| trans }}</a>
+                        </li>
+                        <li>
+                            <a href="https://theapolis-support.de/">{{ 'menuFooter.link.supportSite'| trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path("tj_main_default_kiba_site") }}">{{ 'menuFooter.link.kibaSite'| trans }}</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <ul class="list-inline text-center">
+                        <li><a target="_blank" href="https://www.facebook.com/theapolis">
+                                <svg class="icon-svg icon-svg-inverse" width="40" height="40">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-facebook') }}"></use>
+                                </svg>
+                            </a></li>
+                        <li><a target="_blank" href="https://www.youtube.com/channel/UCUd5ncNqAlm5JC4STv-afBA">
+                                <svg class="icon-svg icon-svg-inverse" width="40" height="40">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-youtube') }}"></use>
+                                </svg>
+                            </a></li>
+
+                        {#<li><a href="#">#}
+                        {#<svg class="icon-svg icon-svg-inverse" width="40" height="40">#}
+                        {#<use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-instagram') }}"></use>#}
+                        {#</svg>#}
+                        {#</a></li>#}
+                    </ul>
+                    {# <ul class="footer-lang">
+                         <li>
+                             <svg class="icon-svg icon-svg-primary" width="30" height="30">
+                                 <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-lang') }}"></use>
+                             </svg>
+                         </li>
+                         <li><a href="#">DE</a></li>
+                         <li><a href="#">FR</a></li>
+                         <li><a href="#">ES</a></li>
+                         <li><a href="#">IT</a></li>
+                     </ul>#}
+
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}
+
+{% block js %}
+    <script>
+        var GOOGLEMAPSAPIKEY = '{{ googleMapsApiKey }}';
+        var CKEDITOR_BASEPATH = '{{ asset('bundles/theaterjobsmain/js/ckeditor/') }}';
+        window.token = '{{ app.session.get('realtime_token') }}';
+        window.node_url = '{{ node_url }}';
+        var locale = '{{ app.request.locale in ['sq', 'de', 'en'] ? app.request.locale : 'de' }}';
+        var loadingSvg = '{{ asset('bundles/theaterjobsmain/images/rolling.svg') }}';
+        var smallCloseSvg = '{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}';
+        var autosuggestion_pagination = parseInt('{{ autosuggestion_pagination }}');
+        var warningSvg = '{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}';
+        var route = '{{ app.request.attributes.get('_route') }}';
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key={{ googleMapsApiKey }}"></script>
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery/dist/jquery.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/jquery-ui.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/ui/widgets/autocomplete.js"
+        "@TheaterjobsMainBundle/Resources/public/components/handlebars/handlebars.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/bootstrap/dist/js/bootstrap.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/select2/select2.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/typeahead.js/dist/bloodhound.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/bootstrap3-typeahead/bootstrap3-typeahead.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/slick-carousel/slick/slick.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/masonry/dist/masonry.pkgd.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/toastr/toastr.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/blueimp-canvas-to-blob/js/canvas-to-blob.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/lightgallery/lib/jquery.mousewheel.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/lightgallery/dist/js/lightgallery.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/lightgallery/dist/js/lg-thumbnail.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/lightgallery/dist/js/lg-fullscreen.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/mediaelement/build/mediaelement-and-player.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/cropper/dist/cropper.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/plyr/dist/plyr.js"
+        "@TheaterjobsMainBundle/Resources/public/components/wavesurfer.js/dist/wavesurfer.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/svgxuse/svgxuse.min.js"
+        "@TheaterjobsMainBundle/Resources/public/js/ckeditor/ckeditor.js"
+        "@TheaterjobsMainBundle/Resources/public/components/moment/min/moment-with-locales.js"
+        "@TheaterjobsMainBundle/Resources/public/components/nouislider/distribute/nouislider.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/datatables/media/js/jquery.dataTables.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/datatables/media/js/dataTables.bootstrap.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/datatables-responsive/js/dataTables.responsive.js"
+        "@TheaterjobsMainBundle/Resources/public/components/bootbox/bootbox.js"
+        "@TheaterjobsMainBundle/Resources/public/components/socket.io-client/dist/socket.io.slim.js"
+        'bundles/fosjsrouting/js/router.js'
+        'js/fos_js_routes.js'
+        "@TheaterjobsMainBundle/Resources/public/js/master.js"
+        "@TheaterjobsMainBundle/Resources/public/js/generalSearch.js"
+        "@TheaterjobsMainBundle/Resources/public/js/scripts.js"
+        "@TheaterjobsMainBundle/Resources/public/js/primary.js"
+        "@TheaterjobsMainBundle/Resources/public/js/audio.js"
+        "@TheaterjobsMainBundle/Resources/public/js/configs/translation/trans.js"
+        "@TheaterjobsMainBundle/Resources/public/js/configs/jquery.custom-validation.js"
+        "@TheaterjobsMainBundle/Resources/public/js/configs/translation/jquery_validation_trans.js"
+        "@TheaterjobsMainBundle/Resources/public/js/configs/translation/jquery_select2_trans.js" %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        function gratificationExplanation() {
+            var url = Routing.generate('tj_gratifiction_explanation_page', {'_locale': locale});
+            window.open(url, '_blank');
+        }
+
+        $(document).on('click', '.registerFirst', function (e) {
+            e.preventDefault();
+            bootbox.dialog({
+                message: "<div class='member-modal'>" +
+                "<h2>{{ 'bootbox.desc.toUseThisFeaturePlease.register'|trans }}</h2>" +
+                "<p>{{ 'bootbox.desc.First.register'|trans }}</p>" +
+                "<a href='{{ path('fos_user_registration_register_choise',{'choice':'free'}) }}' class='btn btn-primary'>{{ 'bootbox.link.register'|trans }}</a>" +
+                "</div>",
+            })
+        });
+
+        $(document).on('click', '.unusable', function (e) {
+            e.preventDefault();
+            bootbox.dialog({
+                message: "<div class='member-modal'>" +
+                "<h2>{{ 'bootbox.desc.toUseThisFeaturePlease'|trans }}</h2>" +
+                "<p>{{ 'bootbox.desc.First'|trans }}</p>" +
+                "<a href='{{ path('tj_membership_booking_new') }}' class='btn btn-primary'>{{ 'bootbox.link.becomeMember'|trans }}</a>" +
+                "</div>"
+            })
+        });
+
+
+        $.extend(true, $.fn.dataTable.defaults, {
+            "oLanguage": {
+                "sUrl": (locale === "de") ? "https://cdn.datatables.net/plug-ins/1.10.15/i18n/German.json" : ''
+            }
+        });
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#username').focus();
+        })
+    </script>
+{% endblock %}
+</body>
+</html>

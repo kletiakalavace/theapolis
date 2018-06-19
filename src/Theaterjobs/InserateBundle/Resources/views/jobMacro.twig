@@ -1,0 +1,295 @@
+{% macro jobStatistics(allStats, tenDaysStats) %}
+    {% if allStats > 0 or tenDaysStats > 0 %}
+        <div class="stats statistik-news">
+            <div class="col-md-12"><h3>{{ 'job.show.statistics'|trans }}</h3></div>
+            <div class="col-md-12">
+                {{ 'job.show.label.allViews'|trans }}
+                <span class="no-stat pull-right">{{ allStats }}</span>
+            </div>
+            <div class="col-md-12">
+                {{ 'job.show.label.lastTenDays'|trans }}
+                <span class="no-stat pull-right">{{ tenDaysStats }}</span>
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro jobGeneralDetails(job) %}
+    <h2>{{ 'job.show.subtitle.desription'|trans }}</h2>
+    <p>
+        {{ job.description|raw }}
+    </p>
+{% endmacro %}
+
+{% macro jobsFilterBar(filters, form, listAction, myjobs,subcategories) %}
+    {% set restFiter=0 %}
+    <div class="row-with-margin col-md-12">
+        <div class="col-md-12 no-padding">
+            {% if is_empty(form.getIterator, filters) == false %}
+                <div class="content-filters">
+                    <h3>{{ 'work.search.title.yourFilters' | trans }}</h3>
+                    <ul class="content-tags-search">
+                        {% if filters.location %}
+                            {% set restFiter = 1 %}
+                        {% endif %}
+
+                        {% if filters.searchPhrase %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.keyword' | trans }}
+                                    {{ filters.searchPhrase }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterSearchPhrase()"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% if is_granted('ROLE_USER') %}
+                            {% if filters.organization %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>
+                                        {{ 'filter.search.label.organization' | trans }}
+                                        {{ filters.organization | name }}
+                                    </div>
+                                    <a href="javascript:;" onclick="removeOrganization()"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if filters.category %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.category' | trans }}
+                                    {{ filters.category.title }}
+                                </div>
+                                <a href="javascript:;" onclick="removeCategory('{{ listAction }}')"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% for subCategories in filters.subcategories %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {% if loop.index == 1 %}
+                                        {{ 'filter.search.label.subCategory' | trans }}
+                                    {% endif %}
+
+                                    {{ subcategories[subCategories] }}
+                                </div>
+                                <a href="javascript:;"
+                                   onclick="removeSubCategory({{ subCategories }})"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endfor %}
+
+                        {% if is_granted('ROLE_ADMIN') or myjobs %}
+                            {% for status in filters.status %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>{{ ('job.status.'~job_status[status])  | trans }}</div>
+                                    <a href="javascript:;" onclick="removeFilterStatus()"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+
+                        {% for gratification in filters.gratification %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {% if loop.index == 1 %}
+                                        {{ 'filter.search.label.gratification' | trans }}
+                                    {% endif %}
+
+                                    {{ gratification.name | capitalize }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterGratification({{ gratification.id }})"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endfor %}
+
+                        {% if is_granted('ROLE_USER') %}
+                            {% if filters.favorite %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>{{ 'work.search.label.favorite' | trans }}</div>
+                                    <a href="javascript:;" onclick="removeFavourite()"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if filters.applied %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>{{ 'work.search.label.applications' | trans }}</div>
+                                <a href="javascript:;" onclick="removeApplications()"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% if restFiter == 1 %}
+                            <li class="reset">
+                                <a href="javascript:;"
+                                   onclick="jobResetFilters('{{ listAction }}')"
+                                   tabindex="-1">
+                                    <div>{{ 'work.search.link.resetFilters' | trans }}</div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+
+                    {% if restFiter == 1 %}
+                        <div class="reset pull-right">
+                            <a href="javascript:;" tabindex="-1">
+                                <div
+                                    {% if is_granted('ROLE_MEMBER') %}
+                                        id="save-search" data-entity="{{ 'job' }}"
+                                        data-routename="{{ app.request.get('_route') }}"
+                                        {% set category = app.request.get('category') %}
+                                        data-category="{{ category ? category.slug : null }}"
+                                    {% elseif is_granted('ROLE_USER') %}
+                                        class="unusable"
+                                    {% else %}
+                                        class="registerFirst"
+                                    {% endif %}
+                                >
+                                    {{ 'work.search.link.saveSearch' | trans }}
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro gratificationCoins(gratification) %}
+    {% set value =  gratification.id %}
+    {% if value > 0 and value < 6 %}
+        {% for i in 1..value %}
+            {% if(loop.last) %}
+                <span class="levels-layer">{{ i }}</span>
+            {% else %}
+                <span class="levels-layer"></span>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <div class="free-grat">
+            <div class="{{ 'gratification-'~gratification.id }}"></div>
+        </div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro jobRelatedJobs(slug,related_jobs, canEdit) %}
+    {% set defaultPath = 'tj_inserate_job_route_list' %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        {% set viewJobs = [1,5,2,3,4] %}
+        {% set viewLink = 1 %}
+    {% elseif canEdit %}
+        {% set viewJobs = [1,5,2,3] %}
+        {% set viewLink = 1 %}
+        {% set defaultPath = 'tj_inserate_job_route_list_team' %}
+    {% elseif is_granted('ROLE_MEMBER') %}
+        {% set viewJobs = [1] %}
+        {% set viewLink = 1 %}
+    {% elseif is_granted('ROLE_USER') %}
+        {% set viewJobs = [1] %}
+        {% set viewLink = 2 %}
+    {% endif %}
+    {% set countCol = 0 %}
+    {% for related_job in related_jobs.status.buckets if related_job.key in viewJobs %}
+        {% set countCol = countCol + 1 %}
+    {% endfor %}
+
+    {% for jobIndex in viewJobs %}
+        {% for related_job in related_jobs.status.buckets %}
+            {% if related_job.key == jobIndex %}
+                <div class="col-md-{{ (12 / countCol) | round }} block-statistik-status">
+                    <span class={% if viewJobs|length > 1 %} 'number' {% else %} "highlight-large" {% endif %}>
+                    {% if viewLink > 0 %} <a
+                            href="{{ path( defaultPath ,{ organization:slug, status: [related_job.key] }) }}"> {% endif %}
+                        {{ related_job.doc_count }}
+                        {% if viewLink > 0 %} </a> {% endif %}
+                    </span>
+                    {% if viewJobs|length > 1 %}
+                        <span class="name-status">{{ ('job.status.'~job_status[related_job.key]) |trans }}</span>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro jobLogs(entity,activity) %}
+    <div class="contet-logList">
+        <div class="row">
+            <div class="col-md-10 activity-job-lines">
+                {% if activity|length > 0 %}
+                <div class="row">
+                    {% for activit in activity %}
+                        <div class="log-line">
+                            {% set userName = (activit.user ? activit.user.profile : entity.user.profile)  | defaultName %}
+                            {% set hrefSlug = activit.user ? activit.user.profile.slug : entity.user.profile.slug %}
+                            {% if activit is not empty %}
+                                {{ activit.createdAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y HH:mm') }}
+                                <a href="{{ path('tj_profile_profile_show', { 'slug': hrefSlug }) }}">
+                                    {{ userName }}
+                                    {% if activit.user.hasRole('ROLE_ADMIN') %}
+                                        ({{ 'placeholder.admin' |trans({},'messages') }})
+                                    {% endif %}
+                                </a>
+                                /{% if activit.activityText is not empty %}
+                                {% set logText = activit.activityText|split('<a') %}
+                                {{ logText[0] }}
+                            {% endif %}
+                                <p>
+                                    {% if activit.changedFields|length > 0 %}
+                                        <a style="color:cornflowerblue"
+                                           id="editJob" data-hash="logDetails" data-target="#myModal"
+                                           data-toggle="modal"
+                                           data-color="#87162D"
+                                           href="{{ path('tj_log_show_single', { 'id': activit.id }) }}">Details
+                                        </a>
+                                    {% endif %}
+                                </p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if activity|length > 1 %}
+                <div class="col-md-2">
+                    <span class="expand-log">{{ 'button.seeMore'| trans }}</span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}

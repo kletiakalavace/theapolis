@@ -1,0 +1,83 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'registration.register.title' | trans }}{% endblock title %}
+
+{% block content %}
+    <div class="container registration-block">
+        <div class="block">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'registration.title.register' | trans }}</h1>
+                        {#<p class="p-alt">{{ 'registration.description.explanation' | trans }} <br> {{ 'messages.required.fieldsAreMarked'|trans }} *</p>#}
+                        <div class="separator separator-red"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                    {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+                    {#<div>{{ 'registration.already.registered' | trans({}, 'forms') }} <a data-toggle="modal" data-hash="login" data-target="#myModal" href="{{ path('tj_main_default_login_modal') }}">{{ 'registration.login.here' | trans({}, 'forms') }}</a></div>#}
+                    <span class="form-error"><i
+                                class="fa fa-exclamation-triangle"></i>{{ 'registration.register.fill.all.red.fields' | trans }}</span>
+                </div>
+            </div>
+            <div class="row svg-red">
+                {{ m.error }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    <script>
+        var termsUrl = '{{ path("tj_main_default_terms_new_tab") }}';
+        var privacyUrl = '{{ path("tj_main_default_privacy") }}';
+    </script>
+    {% javascripts filter='?uglifyjs2'
+        '@TheaterjobsMainBundle/Resources/public/components/jquery.complexify.js/jquery.complexify.banlist.js'
+        '@TheaterjobsMainBundle/Resources/public/components/jquery.complexify.js/jquery.complexify.js'
+        '@TheaterjobsMainBundle/Resources/public/js/register.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        var register_form = $('#fos_user_registration_register');
+        register_form.validate({
+            ignore: [],
+            rules: {
+                'fos_user_registration_form[plainPassword][first]': {
+                    required: true,
+                    minlength: 8
+                },
+                'fos_user_registration_form[plainPassword][second]': {
+                    required: true,
+                    equalTo: '#fos_user_registration_form_plainPassword_first'
+                }
+            },
+            messages: {
+                'fos_user_registration_form[plainPassword][first]': {
+                    required: trans('tooltip.newPasswordRequired', locale),
+                    minlength: jQuery.validator.format(trans('tooltip.password.validate.Length', locale))
+                },
+                'fos_user_registration_form[plainPassword][second]': {
+                    required: trans('tooltip.passwordconfirmationRequired', locale),
+                    equalTo: trans('tooltip.passwordconfirmationdontMatch', locale)
+                }
+            },
+            errorPlacement: function (error, element) {
+                toolTipError(error.text(), element);
+                $('.text-danger').removeClass('hidden');
+                return false;
+
+            }
+        });
+
+        validFormInputs();
+        var customErrorsEmail = JSON.parse({{ emailCustomErrors|json_encode|raw }});
+        if (customErrorsEmail && customErrorsEmail.length > 0) {
+            toolTipError(customErrorsEmail[0].message, $('#fos_user_registration_form_email'));
+        }
+    </script>
+{% endblock %}

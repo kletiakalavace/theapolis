@@ -1,0 +1,212 @@
+{% extends "TheaterjobsMembershipBundle:Pdf:pdfLayout.html.twig" %}
+{% trans_default_domain 'pdf' %}
+{% block header %} {% include 'TheaterjobsMembershipBundle:Pdf:header.html.twig' %} {% endblock header %}
+{% block content %}
+    {% set booking = billing.booking %}
+    {% set profile = booking.profile %}
+    {% set user = profile.user %}
+    {% set billingAddress = billing.billingAddress %}
+    {% set paymentmethod = booking.paymentMethod %}
+    {% set locale = app.request ? app.request.locale : "DE" %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 style='line-height:22px;color:#CD2036 !important;font-size:40px;font-weight:500;font-family:"kepler-std-display", Georgia, "Times New Roman", Times, serif;'>
+                    Hallo {{ (profile.firstname ~ ' ' ~ profile.lastname) | title }}!</h3>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:25px;'>
+                    Vielen Dank für Ihre Bestellung, wir erlauben uns Ihnen folgenden Betrag in Rechnung zu
+                    stellen.</p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                {{ billingAddress.firstname ~ ' ' ~ billingAddress.lastname }}</p>
+                {% if billingAddress.company is not empty%}
+                    <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                        {{ billingAddress.company }}
+                    </p>
+                {% endif %}
+                {% if billingAddress.vatId is not empty%}
+                    <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                        USt-IdNr./UID: {{ billingAddress.vatId }}
+                    </p>
+                {% endif %}
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    {{ billingAddress.street }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    {{ billingAddress.zip }} {{ billingAddress.city }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    {{ billingAddress.country | country(locale) }}</p>
+            </div>
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-7"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            Rechnungs-Datum:</p>
+                    </div>
+                    <div class="col-xs-5">
+                        <p class="text-right"
+                           style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            <b>{{ billing.timePeriodStart|date('d.m.Y')  }}</b></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-7"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            Rechnungs-Nr.:</p>
+                    </div>
+                    <div class="col-xs-5">
+                        <p class="text-right"
+                           style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            <b>{{ billing.number }}</b></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-7"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            Zahlungsmethode:</p></div>
+                    <div class="col-xs-5">
+                        <p class="text-right"
+                           style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            <b>{{ paymentmethod.title }}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Mitgliedschaft THEAPOLIS </p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Account-ID: {{ user.id }} </p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Benutzer: {{ user.email }} </p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"></div>
+            <div class="col-xs-6">
+
+                {# NETTO Price of membership fee#}
+                <div class="row">
+                    <div class="col-xs-7">
+                        <p class="text-right" style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            Rechnungsbetrag netto:</p>
+                    </div>
+                    <div class="col-xs-5">
+                        <p class="text-right" style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            € {{ preCalculate.net }}</p>
+                    </div>
+                </div>
+                {# VAT of membership fee (TVSH) #}
+                <div class="row">
+                    <div class="col-xs-7"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            {{ preCalculate.percentage }} % Umsatzsteuer: </p>
+                    </div>
+                    <div class="col-xs-5"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+
+                            € {{ preCalculate.vat | number_format(2) }}</p>
+                    </div>
+                </div>
+                {% if paymentmethod.Paypal %}
+
+                    {# PAYPAL Fee #}
+                    <div class="row">
+                        <div class="col-xs-7">
+                            <p class="text-right" style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                                {{ 'membership.new.paypal.fee'| trans({}, 'messages') }} </p>
+                        </div>
+                        <div class="col-xs-5">
+                            <p class="text-right" style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                                € {{ preCalculate.paypalNet }}</p>
+                        </div>
+                    </div>
+                    {# PAYPAL FEE VAT (TVSH)#}
+                    <div class="row">
+                        <div class="col-xs-7"><p class="text-right"
+                                                 style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                                {{ preCalculate.percentage }} % Umsatzsteuer: </p>
+                        </div>
+                        <div class="col-xs-5"><p class="text-right"
+                                                 style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+
+                                € {{ preCalculate.paypalVat | number_format(2) }}</p>
+                        </div>
+                    </div>
+
+                {% endif %}
+                <div class="row">
+                    <div class="col-xs-7"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            <b>Rechnungsbetrag gesamt:</b></p>
+                    </div>
+                    <div class="col-xs-5"><p class="text-right"
+                                             style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                            <b>€ {{ preCalculate.gross }}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Eu Country and not DE #}
+        {% set validCountry = billingAddress.country and billingAddress.country in euCountries %}
+        {# Company Name and valid VAT-ID #}
+        {% set validVat = billingAddress.company is not empty and billingAddress.vatId is not empty %}
+        {% if validCountry and validVat %}
+            <div class="row">
+                <div class="col-xs-8 pull-right">
+                    <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+                </div>
+                </br>
+                <div class="col-xs-8 pull-right">
+                    <p class="text-right"
+                       style='display:inline-block;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 13px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                        Umsatzsteuerfrei nach §4 Nr. 1b UStG - innergemeinschaftliche Lieferung</p>
+                </div>
+            </div>
+        {% endif %}
+        <br>
+        <div class="row">
+            <div class="col-xs-12">
+                <b style="margin-bottom:10px;display:block;font-size: 13px">Dauer der Mitgliedschaft</b>
+                <p style='line-height:22px;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 12px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Diese Rechnung bezieht sich auf die Zahlungsperiode von {{ user.membershipExpiresAt|date_modify("-1 year")|date('d.m.Y') }} bis {{ user.membershipExpiresAt|date('d.m.Y')  }}.
+                    {% if paymentmethod.Debit %} Nach Ablauf
+                    der Zahlungsperiode buchen wir für eine erneute Zahlungsperiode ab, falls die Mitgliedschaft
+                    ungekündigt ist.{% endif %}
+                </p>
+            </div>
+        </div>
+        <br>
+        {% if paymentmethod.Debit %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <b style="margin-bottom:10px;display:block;font-size: 13px">Kündigung</b>
+                    <p style='line-height:22px;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 12px;color:#1F1F1F;min-height: 18px;margin-bottom:10px;display: block;margin-top:0px;'>
+                        Sie können Ihre Mitgliedschaft jederzeit über Ihren Zugang (unter "mein Konto") mit einer
+                        sechswöchigen Kündigungsfrist zum Laufzeitende kündigen.</p>
+                </div>
+            </div>
+            <br>
+            <br>
+        {% endif %}
+    </div>
+{% endblock content %}
+{% block footer %} {% include 'TheaterjobsMembershipBundle:Pdf:footer.html.twig' %} {% endblock footer %}

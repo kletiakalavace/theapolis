@@ -1,0 +1,77 @@
+<div class="modal-body" id="parentForm">
+    <div class="container">
+        <h2>{{ 'organization.edit.mainTitle.editLocation'| trans }}</h2>
+        <div>
+            <h4 class="text-white">
+                {# {{ 'tj.profile.full.address' | trans }} :#}
+                <span id="fullAddress"></span>
+            </h4>
+        </div>
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form._token) }}
+        <div id="map_container" style="width: 900px;margin: auto;">
+            <div class="input-group input-find">
+                <input id="pac-input" class="pac-control form-control" type="text"
+                       placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                <span id="currentLocation"
+                      class="input-group-addon btn btn-success">
+                        <i class="fa fa-map-marker"></i>
+                    </span>
+            </div>
+            <div id="map" style="height:320px"></div>
+            <div class="hidden">
+                {{ form_widget(edit_form.geolocation) }}
+            </div>
+            <div class="hidden">
+                {{ form_widget(edit_form.country) }}
+            </div>
+            <div class="hidden">
+                {{ form_widget(edit_form.city) }}
+            </div>
+        </div>
+        <div class="form-group group-submit-location" style="text-align: center; margin-top: 25px;">
+            <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+            {{ form_widget(edit_form.submit, { 'attr': { 'class': 'btn btn-inverse-primary' } }) }}
+        </div>
+
+        {{ form_end(edit_form) }}
+    </div>
+</div>
+
+{% block js %}
+    {% javascripts
+    "@TheaterjobsMainBundle/Resources/public/js/map/location.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+<script>
+    initialize();
+    var loginForm = $('#parentForm form');
+    addLoadingSvg(loginForm);
+    const loading = loginForm.find('.submit-rolling-svg');
+
+    loginForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        loading.show();
+        validFormInputs();
+
+        $.ajax({
+            type: loginForm.attr('method'),
+            url: loginForm.attr('action'),
+            data: loginForm.serialize(),
+            success: function (data, status, object) {
+                loading.hide();
+                $('.livesIn-block').html(data.content);
+                $('.logs-block').html(data.logs);
+            },
+            error: function () {
+                loading.hide();
+                serverError();
+            }
+        }).done(function () {
+            $('#myModal').modal('hide');
+        });
+    });
+</script>

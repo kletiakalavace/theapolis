@@ -1,0 +1,71 @@
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+# Assets and user uploads
+web/bundles
+web/css
+web/js
+web/assetic
+# Assets managed by Bower
+/web/assets/vendor/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Composer PHAR
+/composer.phar
+
+# Backup entities generated with doctrine:generate:entities command
+*/Entity/*~
+
+# Managed by Composer
+/app/bootstrap.php.cache
+
+/bin/*
+!bin/console
+!bin/symfony_requirements
+/vendor/
+.idea
+.blackfire.yml
+sessions/
+composer.phar
+php-cs-fixer.phar
+.buildpath
+.project
+.settings/
+.travis.yml
+.rsync_cache
+LICENSE
+*~
+.DS_Store
+*.bak
+.rsync_cache/
+app/SymfonyRequirements.php
+app/config/parameters.yml
+
+src/Theaterjobs/MainBundle/Resources/public/components/
+
+/nbproject/private/
+/nbproject/project.xml
+/nbproject/project.properties
+PayPal.log
+/web/uploads
+/web/media
+.vscode/.gitignore
+src/Theaterjobs/MainBundle/Resources/config/bower/.bowerrc
+var/*
+!var/.gitkeep
+resetScript.sh
+startupScript.sh
+.mage/
+web/sitemaps/sitemap_news.xml
+web/sitemaps/sitemap_organization.xml
+web/sitemaps/sitemap_people.xml
+node_modules/*
+web/deploy/*

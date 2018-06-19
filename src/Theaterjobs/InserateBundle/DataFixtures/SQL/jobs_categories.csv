@@ -1,0 +1,40 @@
+job_id,maincat,subcat
+Job without organization,Schauspiel,Autoren
+Job without organization,Musiktheater,Komposition
+Job with organization.User belongs to Die Badische. username :userOrg,Holzblasinstrumente,Horn
+Job with organization.User belongs to Die Badische. username :userOrg,Chor,Bass
+Second job with organization.User belongs to Die Badische. username :userOrg,Musiktheater,Komposition
+Second job with organization.User belongs to Die Badische. username :userOrg,Musiktheater,Korrepetition
+First job for die badische by userOrga2,Chor,Sopran
+First job for die badische by userOrga2,Chor,Bass
+Second job for die badische by userOrga2,Chor,Sopran
+Second job for die badische by userOrga2,Chor,Bass
+First job for organization Theater Plauen by userOrgaOther,Schauspiel,Autoren
+First job for organization Theater Plauen by userOrgaOther,Musiktheater,Komposition
+Second job for organization Theater Plauen by userOrgaOther,Chor,Bass
+Second job for organization Theater Plauen by userOrgaOther,Holzblasinstrumente,Horn
+TÄNZER/IN MIT AKROBATISCHEN/ARTISTISCHEN SKILLS BZW. AKROBAT/IN MIT TANZ,Schauspiel,Schauspielregie
+TÄNZER/IN MIT AKROBATISCHEN/ARTISTISCHEN SKILLS BZW. AKROBAT/IN MIT TANZ,Musiktheater,Musiktheaterregie
+CHORBASS,Streichinstrumente,Cello
+"DARSTELLER DINNERMUSICAL (M., SPIELALTER CA.30-50J., FRANKFURT)",Blechblasinstrumente,Trompete
+"DARSTELLER DINNERMUSICAL (M., SPIELALTER CA.30-50J., FRANKFURT)",Blechblasinstrumente,Posaune
+VIOLINE (STIMMFÜHRER/IN),Holzblasinstrumente,Oboe
+VIOLINE (STIMMFÜHRER/IN),Schauspiel,Schauspielregie
+MUSICALDARSTELLER,Technik,Beleuchtungstechnik
+MUSICALDARSTELLER,Organization,Soufflage
+"MUSICALDARSTELLER (M) FÜR / ""MY FAIR LADY"" UND WEITERE PRODUKTIONEN",Schauspiel,sonstige Schauspiel
+"MUSICALDARSTELLER (M) FÜR / ""MY FAIR LADY"" UND WEITERE PRODUKTIONEN",Chor,Chorleitung
+DIPL. BETRIEBSWIRT (FH / BA) BZW. BACHELOR ODER MASTER (M/W),Musiktheater,Komposition
+DIPL. BETRIEBSWIRT (FH / BA) BZW. BACHELOR ODER MASTER (M/W),Musiktheater,Korrepetition
+BELEUCHTUNGSMEISTER/IN,Chor,Tenor
+DJ & VERANSTALTUNGSTECHNIKER/IN,Streichinstrumente,Kontrabass
+TENOR,Chor,Tenor
+PROJEKTLEITUNG FÜR DIE SCHWEIZ,Blechblasinstrumente,sonstige Blechblasinstrumente
+PROJEKTLEITUNG FÜR DIE SCHWEIZ,Ausstattung,Bühnenbild
+WERKSTATTLEITUNG FÜR DIE DAMENSCHNEIDEREI,Ausstattung,Requisite
+WERKSTATTLEITUNG FÜR DIE DAMENSCHNEIDEREI,Technik,Inspizienz
+EARLY STAGES-LEHRER/IN IN DARMSTADT,Technik,Werkstättenleitung
+LEHRBEAUFTRAGTER,Organization,Theaterpädagogik
+LEHRBEAUFTRAGTER,Organization,Produktionsleitung / Company Management
+LEHRAUFTRAG (M/W) FÜR GESANGSPÄDAGOGISCHE METHODIK (GESANG/MUSIKTHEATER),Administration,Personalwesen
+LEHRAUFTRAG (M/W) FÜR GESANGSPÄDAGOGISCHE METHODIK (GESANG/MUSIKTHEATER),Administration,Hausverwaltung

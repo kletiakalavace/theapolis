@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+{% form_theme form '@VichUploader/Form/fields.html.twig' %}
+
+{% block content -%}
+    <h1>SocialMedia creation</h1>
+    <div class="row">
+        <div class="col-md-6">
+            {{ form(form) }}
+            <a class="btn btn-warning" href="{{ path('admin_socialmedia') }}">
+                Back to the list
+            </a>
+        </div>
+    </div>
+{% endblock %}
+

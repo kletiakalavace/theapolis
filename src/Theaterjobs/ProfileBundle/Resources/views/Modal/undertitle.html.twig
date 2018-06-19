@@ -1,0 +1,61 @@
+<div class="modal-body movebottom" id="undertitle">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'people.edit.mainTitle.editNameAndUndertitle'| trans }}</h2>
+                <p class="p-alt">{{ 'people.edit.description.changeNameOnAccountSettings'| trans }}</p>
+
+                {{ form_start(form) }}
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(form.subtitle2) }}
+                    </div>
+                </div>
+                <br/>
+                <div style="text-align: center">
+                    <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                    <div style="display: inline-block;">{{ form_row(form.submit, { 'attr': { 'class': 'btn btn-inverse-primary' } }) }}</div>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const underTitleForm = $('#undertitle form');
+    addLoadingSvg(underTitleForm);
+    const loading = underTitleForm.find('.submit-rolling-svg');
+    underTitleForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        loading.show();
+        validFormInputs();
+        $.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function (data) {
+                loading.hide();
+                if (data.success) {
+                    $('.profile-header-content').html(data.data);
+                    $('#myModal').modal('hide');
+                } else {
+                    const errors = data.errors;
+                    for (let i = 0; i < errors.length; i++) {
+                        let el = $(errors[i].field);
+                        el.parent().addClass('has-error');
+                        toolTipError(errors[i].message, el);
+                        errors.splice(i, 1);
+                    }
+                    if (errors.length) {
+                        bootbox.alert({message: errors.pop().message});
+                    }
+                }
+            },
+            error: function () {
+                loading.hide();
+                serverError();
+            }
+        });
+    });
+</script>

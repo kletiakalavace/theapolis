@@ -1,0 +1,21 @@
+parameters:
+  theaterjobs_main.mailer.class: Theaterjobs\MainBundle\Mailer\Mailer
+services:
+  theaterjobs_main.mailer:
+    class: %theaterjobs_main.mailer.class%
+    arguments:
+      - '@service_container'
+  app.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\JsonDecodeExtention
+    public: false
+    tags:
+      - { name: twig.extension }
+  app.twig_extensions:
+    class: Theaterjobs\MainBundle\Twig\TheaterjobsExtention
+    tags:
+      - { name: twig.extension }
+  custom_imagine.twig_extensions:
+      class: Theaterjobs\MainBundle\Twig\CustomImagineExtension
+      arguments: ["@liip_imagine.cache.manager"]
+      tags:
+        - { name: twig.extension }

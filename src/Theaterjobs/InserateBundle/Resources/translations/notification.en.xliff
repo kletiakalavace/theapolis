@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:38:39Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="78344020841f83ea221672c3d4ab5e5300a01c10" resname="dashboard.notification.job.publicationEnd %title%">
+        <source>dashboard.notification.job.publicationEnd %title%</source>
+        <target>dashboard.notification.job.publicationEnd %title%</target>
+        <jms:reference-file line="116">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/JobPublicationEndingNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="abf2974f346a4c1f9a6c580423c98c8625b1b66f" resname="dashboard.notification.job.publicationEnd.description %title%">
+        <source>dashboard.notification.job.publicationEnd.description %title%</source>
+        <target>dashboard.notification.job.publicationEnd.description %title%</target>
+        <jms:reference-file line="122">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/JobPublicationEndingNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4e1f0ff21f7a032034b0503300eca3765540eb1e" resname="dashboard.notification.job.published %jobTitle%">
+        <source>dashboard.notification.job.published %jobTitle%</source>
+        <target>dashboard.notification.job.published %jobTitle%</target>
+        <jms:reference-file line="1470">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="859">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad2f0edbc6c3dc48e28f0e85c22a9832eb9a9d95" resname="dashboard.notification.job.published.description %jobTitle%">
+        <source>dashboard.notification.job.published.description %jobTitle%</source>
+        <target>dashboard.notification.job.published.description %jobTitle%</target>
+        <jms:reference-file line="865">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef6cf60ebad85c3d5552d7209934ec7107660c1f" resname="organization.jobRemoved">
+        <source>organization.jobRemoved</source>
+        <target>organization.jobRemoved</target>
+        <jms:reference-file line="929">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0d93bae568c0590c7fb4d195659039e7b3f238d2" resname="organization.jobUnpublished">
+        <source>organization.jobUnpublished</source>
+        <target>organization.jobUnpublished</target>
+        <jms:reference-file line="1121">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="904f638ff8b3adfdb4166d84b776c97485e984a5" resname="tj.activity.job.first.check %jobTitle%">
+        <source>tj.activity.job.first.check %jobTitle%</source>
+        <target>tj.activity.job.first.check %jobTitle%</target>
+        <jms:reference-file line="1519">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c66b8d429176a2b5f495b7dd3354704906c9261" resname="tj.activity.job.second.check %jobTitle%">
+        <source>tj.activity.job.second.check %jobTitle%</source>
+        <target>tj.activity.job.second.check %jobTitle%</target>
+        <jms:reference-file line="1531">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66da319540ca8a326fc2c500cf9f7a9a547e5e83" resname="tj.notification.aplication.new.unanswered %jobTitle%">
+        <source>tj.notification.aplication.new.unanswered %jobTitle%</source>
+        <target>tj.notification.aplication.new.unanswered %jobTitle%</target>
+        <jms:reference-file line="2436">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e416c9210c6d90a6ae8b635ee50a8aaed095fe03" resname="tj.notification.aplication.on.job %jobTitle%">
+        <source>tj.notification.aplication.on.job %jobTitle%</source>
+        <target>tj.notification.aplication.on.job %jobTitle%</target>
+        <jms:reference-file line="1984">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="533decd941d662a1edc4995aba1a83b6c24863a2" resname="tj.notification.aplication.on.job.closed %jobTitle%">
+        <source>tj.notification.aplication.on.job.closed %jobTitle%</source>
+        <target>tj.notification.aplication.on.job.closed %jobTitle%</target>
+        <jms:reference-file line="2588">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69292598d2edeed4076b792bcaa0b007872381f6" resname="tj.notification.aplication.on.job.seen.owner %jobTitle%">
+        <source>tj.notification.aplication.on.job.seen.owner %jobTitle%</source>
+        <target>tj.notification.aplication.on.job.seen.owner %jobTitle%</target>
+        <jms:reference-file line="2422">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bb59c8576e09828989b555673682597870fce29" resname="tj.notification.draft.ten.days.old %title%">
+        <source>tj.notification.draft.ten.days.old %title%</source>
+        <target>tj.notification.draft.ten.days.old %title%</target>
+        <jms:reference-file line="78">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/DraftNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d2ebe747887bc48a1e31869f8b69c38503806362" resname="tj.notification.education.members.only.saved.draft">
+        <source>tj.notification.education.members.only.saved.draft</source>
+        <target>tj.notification.education.members.only.saved.draft</target>
+        <jms:reference-file line="96">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0200bf5d60c19239b91e7062d7ad0e36dce0f9e" resname="tj.notification.education.not.update.for.hundredseventy.days %s%">
+        <source>tj.notification.education.not.update.for.hundredseventy.days %s%</source>
+        <target>tj.notification.education.not.update.for.hundredseventy.days %s%</target>
+        <jms:reference-file line="166">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="169912b35f8ced8a2dc097cd268b3765bd4da7d6" resname="tj.notification.education.not.update.for.thirty.days %s%">
+        <source>tj.notification.education.not.update.for.thirty.days %s%</source>
+        <target>tj.notification.education.not.update.for.thirty.days %s%</target>
+        <jms:reference-file line="86">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="48616895007a0fd15c7a25e041b412446ea7c3c7" resname="tj.notification.job.deleted.sixty.days %title%">
+        <source>tj.notification.job.deleted.sixty.days %title%</source>
+        <target>tj.notification.job.deleted.sixty.days %title%</target>
+        <jms:reference-file line="56">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/JobApplicationDeletionNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="686b29d61b85c6c8e0ae18bff3ff088f752c7fc4" resname="tj.notification.network.not.update.for.thirty.days %s%">
+        <source>tj.notification.network.not.update.for.thirty.days %s%</source>
+        <target>tj.notification.network.not.update.for.thirty.days %s%</target>
+        <jms:reference-file line="70">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0aa64f021687cb329a0dccc5ec7034e86931f852" resname="tj.notification.network.not.updated.hundredseventy.days %s%">
+        <source>tj.notification.network.not.updated.hundredseventy.days %s%</source>
+        <target>tj.notification.network.not.updated.hundredseventy.days %s%</target>
+        <jms:reference-file line="150">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a43a6a9a490bcf0545227bd5b902f16adc390660" resname="tj.notification.piece.not.update.for.hundredseventy.days %s%">
+        <source>tj.notification.piece.not.update.for.hundredseventy.days %s%</source>
+        <target>tj.notification.piece.not.update.for.hundredseventy.days %s%</target>
+        <jms:reference-file line="182">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e83eb4b64bab0dcbafde69045d9307ffd2d950af" resname="tj.notification.piece.not.update.for.thirty.days %s%">
+        <source>tj.notification.piece.not.update.for.thirty.days %s%</source>
+        <target>tj.notification.piece.not.update.for.thirty.days %s%</target>
+        <jms:reference-file line="102">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7855ac35116ae9c31ec425f1215e17ca5a2e07ab" resname="tj.notification.profile.not.update.hundredseventy.days">
+        <source>tj.notification.profile.not.update.hundredseventy.days</source>
+        <target>tj.notification.profile.not.update.hundredseventy.days</target>
+        <jms:reference-file line="80">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/ProfileArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bc0133be0e6726f330f39de8382e4f1e4b37ca9" resname="tj.notification.profile.not.update.thirty.days">
+        <source>tj.notification.profile.not.update.thirty.days</source>
+        <target>tj.notification.profile.not.update.thirty.days</target>
+        <jms:reference-file line="50">/var/www/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/ProfileArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

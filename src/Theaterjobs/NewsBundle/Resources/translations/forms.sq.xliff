@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:44:56Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="36cd411ead9b057b4fc6e6b0b3a4e8a142b1b8e2" resname="form.choice.category.empty_value">
+        <source>form.choice.category.empty_value</source>
+        <target state="new">form.choice.category.empty_value</target>
+        <jms:reference-file line="98">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bb4172dd300534d1beb6ea3aed4f3ae55108fbe7" resname="form.label.category">
+        <source>form.label.category</source>
+        <target state="new">form.label.category</target>
+        <jms:reference-file line="100">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f9e4da7e4884a0bf0b2c03da16da558f54e845c" resname="form.label.news.description">
+        <source>form.label.news.description</source>
+        <target state="new">form.label.news.description</target>
+        <jms:reference-file line="59">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="202552787a2b70d3ccb6b9726ca2052322618f79" resname="form.label.news.imageDescription">
+        <source>form.label.news.imageDescription</source>
+        <target state="new">form.label.news.imageDescription</target>
+        <jms:reference-file line="116">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="297717c4caba7a00297e0f1ad99e6288755608c6" resname="form.label.news.pretitle">
+        <source>form.label.news.pretitle</source>
+        <target state="new">form.label.news.pretitle</target>
+        <jms:reference-file line="45">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5748d72996d31b1f6e602c2b9af06cf46250efb4" resname="form.label.news.short_description">
+        <source>form.label.news.short_description</source>
+        <target state="new">form.label.news.short_description</target>
+        <jms:reference-file line="52">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4c2be556cfd5b2fce9c61db848fd07dd08169e87" resname="form.label.news.tag">
+        <source>form.label.news.tag</source>
+        <target state="new">form.label.news.tag</target>
+        <jms:reference-file line="106">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5822e43a698284084fceeff272735763ca31490c" resname="form.label.news.tags">
+        <source>form.label.news.tags</source>
+        <target state="new">form.label.news.tags</target>
+        <jms:reference-file line="109">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5630f25ee215d7d5892d7352c7b1321b0735eb02" resname="form.label.news.title">
+        <source>form.label.news.title</source>
+        <target state="new">form.label.news.title</target>
+        <jms:reference-file line="38">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0da808019ebed0a4bbaf4d7f73c6a80926a11842" resname="form.label.news.users">
+        <source>form.label.news.users</source>
+        <target state="new">form.label.news.users</target>
+        <jms:reference-file line="78">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="862d98119fe16ad37fc3f224e8119f72b49dd26c" resname="form.placeholder.news.description">
+        <source>form.placeholder.news.description</source>
+        <target state="new">form.placeholder.news.description</target>
+        <jms:reference-file line="61">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="05da23cec82cf30f70373fe087ec1d281fb734dd" resname="form.placeholder.news.image_description">
+        <source>form.placeholder.news.image_description</source>
+        <target state="new">form.placeholder.news.image_description</target>
+        <jms:reference-file line="118">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b1176efeff1bef13b79f8376035bf16ca0612bfe" resname="form.placeholder.news.pretitle">
+        <source>form.placeholder.news.pretitle</source>
+        <target state="new">form.placeholder.news.pretitle</target>
+        <jms:reference-file line="47">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5711a6c2ba633622390a553454d3dfb90abe166c" resname="form.placeholder.news.short_description">
+        <source>form.placeholder.news.short_description</source>
+        <target state="new">form.placeholder.news.short_description</target>
+        <jms:reference-file line="54">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cbf9eb732bafebd101fa8164ea557d4c959220f1" resname="form.placeholder.news.tags">
+        <source>form.placeholder.news.tags</source>
+        <target state="new">form.placeholder.news.tags</target>
+        <jms:reference-file line="112">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9adc56674f8628635d9b5dbf39ff3eba5054c705" resname="form.placeholder.news.title">
+        <source>form.placeholder.news.title</source>
+        <target state="new">form.placeholder.news.title</target>
+        <jms:reference-file line="40">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="367c94e18aac8d872c0abf74490d5f8e7a170d8f" resname="form.placeholder.news.users">
+        <source>form.placeholder.news.users</source>
+        <target state="new">form.placeholder.news.users</target>
+        <jms:reference-file line="79">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37bd61e1c5100cd71f6cc6763d8389bc96c9190d" resname="news.edit.label.category">
+        <source>news.edit.label.category</source>
+        <target state="new">Category</target>
+        <jms:reference-file line="112">/home/manoolia/html/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="267b8c629d35641d89e31cfbae5b141e90e5a2fd" resname="news.edit.label.description">
+        <source>news.edit.label.description</source>
+        <target state="new">Description</target>
+        <jms:reference-file line="74">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8715bcc26489d4ae61ea7c4a363050c17984aa26" resname="news.edit.label.image">
+        <source>news.edit.label.image</source>
+        <target state="new">news.edit.label.image</target>
+        <jms:reference-file line="99">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6ea6e8b9482476811da051aa0d331cb68916d603" resname="news.edit.label.imageDescription">
+        <source>news.edit.label.imageDescription</source>
+        <target state="new">Image description</target>
+        <jms:reference-file line="135">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a5e7d282ea03ce0c2c0df5f228dc293810e5676" resname="news.edit.label.organization">
+        <source>news.edit.label.organization</source>
+        <target state="new">Organization</target>
+        <jms:reference-file line="83">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ca49f1951ca6dbc22f495fb2d8f9b29542b036ea" resname="news.edit.label.pretitle">
+        <source>news.edit.label.pretitle</source>
+        <target state="new">Pretitle</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5e17bbc5fefc179a434fcc80af4b4d18518314f4" resname="news.edit.label.shortDescription">
+        <source>news.edit.label.shortDescription</source>
+        <target state="new">Short description</target>
+        <jms:reference-file line="63">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="85b5156a462362d277acf7c4ac405de884276cb2" resname="news.edit.label.tags">
+        <source>news.edit.label.tags</source>
+        <target state="new">Tags</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+        <jms:reference-file line="127">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="54a2ff7ce5c2e25f618dcb2b67332d0215b1f29d" resname="news.edit.label.title">
+        <source>news.edit.label.title</source>
+        <target state="new">Title</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="907a7ca5cebb573ee333956d9ff5d62a3867876a" resname="news.edit.label.users">
+        <source>news.edit.label.users</source>
+        <target state="new">Users</target>
+        <jms:reference-file line="91">/../src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="374b03385f2e3f7fd68b129c11ffd0506b70f9d5" resname="news.edit.placeholder.noChoice">
+        <source>news.edit.placeholder.noChoice</source>
+        <target state="new">news.edit.placeholder.noChoice</target>
+        <jms:reference-file line="110">/home/manoolia/html/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2263dc695aac4705ddb6faed72c1dedf6d6ef1a2" resname="news.search.label.categories">
+        <source>news.search.label.categories</source>
+        <target state="new">Categories</target>
+        <jms:reference-file line="42">/home/manoolia/html/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="14cd5d763ebed6fcd329e6184be57994fbe0e315" resname="news.search.label.keyword">
+        <source>news.search.label.keyword</source>
+        <target state="new">Keyword</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c584a52195f7aea69d346e907ef33449c2638deb" resname="news.search.label.year">
+        <source>news.search.label.year</source>
+        <target state="new">Year</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8f04d01855ee898d86bdb331a2e265365b60093d" resname="news.search.placeholder.Unpublished">
+        <source>news.search.placeholder.Unpublished</source>
+        <target state="new">Unpublished</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf63f7b55201f0fb5d6498626170f0f26e15d37f" resname="news.search.placeholder.allCategories">
+        <source>news.search.placeholder.allCategories</source>
+        <target state="new">All Categories</target>
+        <jms:reference-file line="41">/home/manoolia/html/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a6d3ba59ecea88954b91492ff988fa5399ca7f7d" resname="news.search.placeholder.allYears">
+        <source>news.search.placeholder.allYears</source>
+        <target state="new">All Years</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="17dd023691752cf4616439c5eef4d813df93bf41" resname="news.search.placeholder.published">
+        <source>news.search.placeholder.published</source>
+        <target state="new">Published</target>
+        <jms:reference-file line="65">/../src/Theaterjobs/NewsBundle/Form/NewsSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a9d440f77f2b5f844c55c9f7d52fa03b43dbe714" resname="people.edit.placeholder.pleaseEnter3Characters">
+        <source>people.edit.placeholder.pleaseEnter3Characters</source>
+        <target state="new">Please enter 3 characters</target>
+        <jms:reference-file line="134">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="88">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="97">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6b7573f83ce0e942a249835b66960c42af77d8a6" resname="tj.organization.news">
+        <source>tj.organization.news</source>
+        <target state="new">tj.organization.news</target>
+        <jms:reference-file line="70">NewsBundle/Form/NewsType.php</jms:reference-file>
+        <jms:reference-file line="71">NewsBundle/Form/NewsType.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

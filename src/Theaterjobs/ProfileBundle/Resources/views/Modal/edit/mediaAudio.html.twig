@@ -1,0 +1,68 @@
+ {% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="mediaEditAudio">
+    <div class="container">
+        <div class="row">
+            {{ form_start(edit_form,{'attr':{'id' : 'edit_audio_form'}}) }}
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.audio'| trans }}</h2>
+                {{ form_row(edit_form._token) }}
+                {{ form_row(edit_form.title) }}
+                {{ form_widget(edit_form.uploadFileImage,{'attr':{'class' : 'hidden'} }) }}
+                {{ form_widget(edit_form.uploadFile,{'attr':{'class' : 'hidden'} }) }}
+                <div id="group-2" class="display-slider-item active">
+                    <div class="audio-player" id="editAudio">
+                        <img class="audio-player-background"
+                             src="{{ profile_media_photo(entity, 'uploadFileImage') }}"
+                             title="{{ entity.copyrightText }}" alt="Sample display">
+                        <div class="audio-player-container">
+                            <div class="audio-player-wrap">
+                                <div class="audio-player-title">{{ entity.title }}</div>
+                                <div class="audio-player-ui">
+                                    <button type="button" class="audio-player-button" data-target-audio="audio-edit">
+                                        <svg class="icon-svg icon-play" width="30" height="30"
+                                             viewbox="0 0 30 30">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-play') }}"></use>
+                                        </svg>
+                                        <svg class="icon-svg icon-pause" width="30" height="30"
+                                             viewbox="0 0 30 30">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-pause') }}"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="audio-player-waveform" id="audio-edit"
+                                         data-audio="{{ path('tj_audio_file',{'id': entity.id }) }}">
+                                    </div>
+                                    <div class="audio-player-remain">-2:15</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_row(edit_form.copyrightText) }}
+                </div>
+            </div>
+            <div>
+                <div class="group-forms-add" style="width: 442px;margin: 0 auto;">
+                    <div class="audio-add-buttons">
+                        {{ form_widget(edit_form.submit,{'attr':{'class' : 'btn-inverse-primary float-right update-upload mediaImage'}}) }}
+                        {{ form_end(edit_form) }}
+                        {{ form_start(delete_form) }}
+                        {{ form_widget(delete_form.submit,{'attr':{'class' : 'btn-inverse pull-left update-upload mediaImage'}}) }}
+                        {{ form_end(delete_form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="p-alt text-danger-custom hidden text-center">
+            <svg class="icon-svg icon-inline icon-svg-danger" width="30" height="30">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}"></use>
+            </svg>
+            <span class="login-error-content" id="span-text-danger"> </span>
+        </p>
+    </div>
+</div>
+{% block js %}
+    {% javascripts filter='?uglifyjs2'
+        "@TheaterjobsProfileBundle/Resources/public/js/mediaAudio/edit.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="editIban">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'membership.debitAccount.editBankingData'| trans }}</h2>
+                {% include 'TheaterjobsMembershipBundle:DebitAccount:_formOrder.html.twig' %}
+                {{ m.error }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+    <script>
+        var form = $('#editIban form');
+    </script>
+    {% javascripts filter='?uglifyjs2'
+        "@TheaterjobsMembershipBundle/Resources/public/js/debitAccount/main.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

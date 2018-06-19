@@ -1,0 +1,151 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 21, 2014, 4:59:07 PM
+    Author     : Malvin
+*/
+
+
+.example {
+    margin: 50px auto 0;
+    width: 400px;
+}
+.player {
+    background: transparent url('@TheaterjobsMainBundle/images/mediaicons/spr.png') no-repeat scroll center top;
+    height: 162px;
+    position: relative;
+    width: 300px;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: verdana;
+    left: 167px;
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    top: 23px;
+    left:150px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.pl {
+    background: transparent url('@TheaterjobsMainBundle/images/mediaicons/spr.png') no-repeat scroll -274px -175px;
+    cursor: pointer;
+    height: 34px;
+    left: 20px;
+    position: absolute;
+    top: 40px;
+    width: 32px;
+    color: white;
+}
+.pl:hover {
+    top: 41px;
+}
+
+.controls {
+    cursor: pointer;
+    height: 23px;
+    left: 150px;
+    position: absolute;
+    top: 65px;
+    width: 138px;
+}
+.controls .play, .controls .pause, .controls .rew, .controls .fwd {
+    background: transparent url('@TheaterjobsMainBundle/images/mediaicons/spr.png') no-repeat scroll 0 0;
+    float: left;
+    height: 100%;
+    width: 33%;
+}
+.controls .play {
+    background-position: -8px -171px;
+}
+.controls .pause {
+    background-position: -8px -198px;
+    display: none;
+}
+.controls .rew {
+    background-position: -54px -171px;
+}
+.controls .fwd {
+    background-position: -100px -171px;
+}
+.controls .play:hover {
+    background-position: -8px -170px;
+}
+.controls .pause:hover {
+    background-position: -8px -197px;
+}
+.controls .rew:hover {
+    background-position: -54px -170px;
+}
+.controls .fwd:hover {
+    background-position: -100px -170px;
+}
+.hidden {
+    display: none;
+}
+.controls .visible {
+    display: block;
+}
+.volume {
+    height: 11px;
+    left: 172px;
+    position: absolute;
+    top: 96px;
+    width: 112px;
+}
+.tracker {
+    height: 15px;
+    left: 7px;
+    position: absolute;
+    top: 126px;
+    width: 285px;
+}
+.ui-slider-range {
+    background: transparent url('@TheaterjobsMainBundle/images/mediaicons/spr.png') no-repeat scroll 5px -222px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ui-slider-handle {
+    cursor: pointer;
+    height: 10px;
+    margin-left: -5px;
+    position: absolute;
+    top: 2px;
+    width: 10px;
+    z-index: 2;
+}
+.volume .ui-slider-handle {
+    background: url('@TheaterjobsMainBundle/images/mediaicons/spr.png') no-repeat scroll -201px -188px rgba(0, 0, 0, 0);
+    height: 13px;
+    width: 13px;
+}
+.playlist {
+    background-color: #333333;
+    border-radius: 5px 5px 5px 5px;
+    list-style-type: none;
+    margin: -10px auto 0px;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    position: relative;
+    width: 300px;
+    z-index: 1;
+    
+}
+.playlist li {
+    color: #EEEEEE;
+    cursor: pointer;
+    margin: 0 0 5px 15px;
+}
+.playlist li.active {
+    font-weight: bold;
+}

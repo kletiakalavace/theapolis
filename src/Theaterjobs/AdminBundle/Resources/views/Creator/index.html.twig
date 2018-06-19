@@ -1,0 +1,166 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="block">
+            <!-- Page header -->
+            <div class="page-header">
+                <h1>
+                    <span> {{ "admin.title.creatorList"|trans }}</span>
+                </h1>
+            </div>
+            <a data-target="#myModal" data-hash="new" data-toggle="modal" data-color="#244372"
+               href="{{ path('tj_admin_creator_new') }}">
+                {{ 'button.addNew'| trans }}
+            </a>
+            {{ form_start(form,{'attr':{'id' : 'formCreator'}}) }}
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="input-group">
+                        {{ form_widget(form.name,{'attr':{'onkeyup':'dataTableSearchResults(this)'}}) }}
+                        <span class="input-group-btn">
+                            <button class="btn btn-secondary" onclick="dataTableReload()" id="searchCreator"
+                                    type="button">
+                                {{ "admin.creatorList.Search"|trans }}!
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.published,{'attr':{'onchange' : 'dataTableReload()'}}) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+            <table id="data-table" class="display nowrap hidden" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="text-danger" data-name="name">
+                        {{ "admin.creatorList.Name"|trans }}
+                    </th>
+                    <th class="text-danger" data-name="updatedAt">
+                        {{ "admin.creatorList.Updated"|trans }}
+                    </th>
+                    <th class="text-danger no-sort text-center">
+                        {{ "admin.creatorList.Actions"|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <div class="row admin-pagination">
+                <div class="col-md-8 col-sm-12">
+                    <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_ajax_paginate">
+                        <div class="pagination-panel">
+                            <span{{ 'admin.nameChange.label.page'| trans }}></span>
+                            <a href="javascript:" data-page="0" disabled
+                               class="circle-red datatable-paginate-btn datatable-paginate-previous"
+                               id="data-table-previous">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <input value="1" id="data-table-page-number" type="text"
+                                   class="pagination-panel-input form-control input-sm input-inline input-mini"
+                                   maxlength="5">
+                            <a href="javascript:;" data-page="2"
+                               class="circle-red datatable-paginate-btn datatable-paginate-next"
+                               id="data-table-next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                            <span>{{ 'admin.nameChange.label.of'| trans }}</span>
+                            <span class="pagination-panel-total"></span>
+                        </div>
+                    </div>
+                    <div class="dataTables_length" id="datatable_ajax_length">
+                        <label>
+                            <span id="data-table-pages-total"></span>
+                            <span class="seperator">|</span>
+                            <span id="data-table-total" class="seperator"></span>
+                            <span>{{ 'admin.nameChange.label.view'| trans }}</span>
+                            <select id="data-table-page-length"
+                                    class="select-page-length form-control input-xs input-sm input-inline"
+                                    aria-controls="datatable_ajax">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                            </select> <span>{{ 'admin.nameChange.label.records'| trans }}</span>
+                        </label>
+                    </div>
+                    <div class="dataTables_info" id="datatable_ajax_info" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        "@TheaterjobsAdminBundle/Resources/js/dataTable/load.js" %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+
+        dataTableURL = Routing.generate('admin_load_creators_index', {'_locale': locale});
+        adminSearchForm = $('#formCreator');
+
+        $(() => {
+            dataTableInitialize();
+        });
+
+        check = (el) => {
+            let checkUrl = $(el).attr('data-url');
+            $.ajax({
+                type: 'GET',
+                url: checkUrl,
+                success: (data) => {
+                    if (data.success) {
+                        dataTableReload();
+                    }
+                },
+                error: () => {
+                    serverError();
+                }
+            })
+        };
+
+        deleteAction = (id) => {
+            bootbox.confirm({
+                message: 'Are you sure do you really want to delete this?',
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: (result) => {
+                    if (result) {
+                        $.ajax({
+                            type: 'DELETE',
+                            url: Routing.generate('tj_admin_creator_delete', {id: id, '_locale': locale}),
+                            success: (data) => {
+                                if (data.success) {
+                                    dataTableReload();
+                                } else if (data.partial) {
+                                    bootbox.dialog({message: data.partial});
+                                }
+                            },
+                            error: () => {
+                                serverError();
+                            }
+                        })
+                    }
+                }
+            });
+        }
+
+    </script>
+{% endblock %}

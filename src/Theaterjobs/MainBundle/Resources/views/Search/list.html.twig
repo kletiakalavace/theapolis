@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container" id="saveSearch">
+        {{ include('TheaterjobsMainBundle:Partial:list.html.twig', { 'searches': searches }) }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    <script>
+        var page = {{ app.request.get('page') | default(1) }};
+    </script>
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/geohash.js'
+        '@TheaterjobsMainBundle/Resources/public/js/Resources/saveSearch.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

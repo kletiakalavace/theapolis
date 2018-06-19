@@ -1,0 +1,33 @@
+{% set lastMsg = last_thread_msg(thread) %}
+    {% set receipt = thread_receipt(thread, app.user) %}
+    {#Nr of unread messages of a thread#}
+    {% set nrUnread = nr_unread_msgs(thread, app.user) %}
+<li id="thread{{ thread.id }}">
+    <div class="col-md-12">
+        <div href="{{ path("tj_message_show_single",{"id" : thread.id}) }}" class="singleThread">
+            <div class="cover-img-messenger">
+
+                {% set profilePhoto =  profile_photo(receipt.profile,'uploadFile','small_thumbnail') %}
+                {% set filter = '' %}
+
+                {% if receipt.profile.mediaImage|first.filter is defined %}
+                    {% set filter = receipt.profile.mediaImage|first.filter %}
+                {% endif %}
+
+                <figure class="{{ filter }}">
+                    <img src="{{ profilePhoto }}">
+                </figure>
+            </div>
+
+            {#Check if user has read the message#}
+            {% set isReaded = fos_message_is_read(lastMsg) %}
+            <div class="list-name-messenger {{ isReaded ? '' : 'unreaded' }}">
+                <span class="name-profile ">
+                    {{ receipt.profile | defaultName }}
+                </span>
+                <p class="p-alt">{{ thread.subject|truncate(45) }}</p>
+            </div>
+            <div class="nrUnread">{{ nrUnread == 0 ? '' : nrUnread }}</div>
+        </div>
+    </div>
+</li>

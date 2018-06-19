@@ -1,0 +1,77 @@
+<div class="modal-body" id="parentForm">
+    <div class="container">
+        <h2>{{ 'people.edit.mainTitle.editLocation'| trans }}</h2>
+        <div>
+            <h4 class="text-white">
+                {# {{ 'tj.profile.full.address' | trans }} :#}
+                <span id="fullAddress"></span>
+            </h4>
+        </div>
+        {{ form_start(editFormContact, {attr: {novalidate: 'novalidate'}}) }}
+        {{ form_widget(editFormContact._token) }}
+        <div id="map_container" style="width: 900px;margin: auto;">
+            <div class="input-group input-find">
+                <input id="pac-input" class="pac-control form-control" type="text"
+                       placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                <span id="currentLocation"
+                      class="input-group-addon btn btn-success">
+                       {# <object type="image/svg+xml" data="{{ asset('bundles/theaterjobsmain/img/icon-location.svg') }}"></object>#}
+                       {# <svg class="icon-svg" width="20" height="20">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-location.svg') }}"></use>
+                        </svg>#}
+                    <img class="icon-svg" src="{{ asset('bundles/theaterjobsmain/img/icon-location.svg') }}">
+                    </span>
+            </div>
+            <div id="map" style="height:320px"></div>
+            <div class="hidden">
+                {{ form_widget(editFormContact.geolocation) }}
+            </div>
+            <div class="hidden">
+                {{ form_widget(editFormContact.country) }}
+            </div>
+            <div class="hidden">
+                {{ form_widget(editFormContact.city) }}
+            </div>
+        </div>
+        <div class="form-group group-submit-location" style="text-align: center; margin-top: 20px">
+            <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+            {{ form_widget(editFormContact.submit, { 'attr': { 'class': 'btn btn-inverse-primary' } }) }}
+        </div>
+
+        {{ form_end(editFormContact) }}
+    </div>
+</div>
+{% block js %}
+    {% javascripts
+    '@TheaterjobsMainBundle/Resources/public/js/map/location.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock  %}
+<script>
+    initialize();
+    var mapForm = $('#parentForm form');
+    addLoadingSvg(mapForm);
+    const loading = mapForm.find('.submit-rolling-svg');
+
+    mapForm.submit(function (e) {
+        e.preventDefault();
+        validFormInputs();
+        if (loading.is(':visible')) {return;}
+        loading.show();
+        $.ajax({
+            type: mapForm.attr('method'),
+            url: mapForm.attr('action'),
+            data: mapForm.serialize(),
+            success: function (data) {
+                $('.livesIn-block').html(data);
+                loading.hide();
+                $('#myModal').modal('hide');
+            },
+            error: function () {
+                serverError();
+                loading.hide();
+            }
+        });
+    });
+</script>

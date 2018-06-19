@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:44:34Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="aa53a1fa76c980d8b1b133a61a3758612062edd3" resname="tj.notification.admin.reply.on.complain %title%">
+        <source>tj.notification.admin.reply.on.complain %title%</source>
+        <target state="new">tj.notification.admin.reply.on.complain %title%</target>
+        <jms:reference-file line="524">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="95f7c9132e7523421e1b5d8663a6503f5dcb1a07" resname="tj.notification.application.for.job.closed %title%">
+        <source>tj.notification.application.for.job.closed %title%</source>
+        <target state="new">tj.notification.application.for.job.closed %title%</target>
+        <jms:reference-file line="576">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a10a79cfd6ec6ff2ab6aaca09d025aed7b92a426" resname="tj.notification.job.application.rejected %title%">
+        <source>tj.notification.job.application.rejected %title%</source>
+        <target state="new">tj.notification.job.application.rejected %title%</target>
+        <jms:reference-file line="444">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5234aea509896c3ff1693469e3e3668efebf2760" resname="tj.notification.job.application.replied %title%">
+        <source>tj.notification.job.application.replied %title%</source>
+        <target state="new">tj.notification.job.application.replied %title%</target>
+        <jms:reference-file line="616">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="751e23f022867f8fcdf646865104fbe18d46094b" resname="tj.notification.message.from.user %title%">
+        <source>tj.notification.message.from.user %title%</source>
+        <target state="new">tj.notification.message.from.user %title%</target>
+        <jms:reference-file line="209">MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="270">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="666863b747498b6d70348e163ea92f44dd822749" resname="tj.notification.new.complain.user %title%">
+        <source>tj.notification.new.complain.user %title%</source>
+        <target state="new">tj.notification.new.complain.user %title%</target>
+        <jms:reference-file line="544">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd86c3fdd766694ae46290780fa6a674b6c2ac70" resname="tj.notification.new.reply.application.job %title%">
+        <source>tj.notification.new.reply.application.job %title%</source>
+        <target state="new">tj.notification.new.reply.application.job %title%</target>
+        <jms:reference-file line="369">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8423f56aec1755f7d684281ea3e09a2cd0e2f62f" resname="tj.notification.profile.rejection.msg.replied">
+        <source>tj.notification.profile.rejection.msg.replied</source>
+        <target state="new">tj.notification.profile.rejection.msg.replied</target>
+        <jms:reference-file line="660">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22e89be351b6b3c76917e4e56b387941199dd033" resname="tj.notification.profile.rejection.msg.replied.from.user %title%">
+        <source>tj.notification.profile.rejection.msg.replied.from.user %title%</source>
+        <target state="new">tj.notification.profile.rejection.msg.replied.from.user %title%</target>
+        <jms:reference-file line="670">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:35Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0c4fac1d48844826fbee8245a38a5ef01dee7472" resname="changeMail.email.subject">
+        <source>changeMail.email.subject</source>
+        <target state="new">Email change request</target>
+        <jms:reference-file line="99">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+        <jms:reference-file line="5">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9db8c257f1d60c663e6a3c31c7b0446928625268" resname="changeMail.email.text.message">
+        <source>changeMail.email.text.message</source>
+        <target state="new">Thank you - your email-address was successfully changed.Please login again with your new email-adress.</target>
+        <jms:reference-file line="10">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b3c8954904092f73fd06b0746dcd24d7fbf0300" resname="checkout.email.message.footer">
+        <source>checkout.email.message.footer</source>
+        <target state="new">checkout.email.message.footer</target>
+        <jms:reference-file line="47">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da7c1efd1f069d8c043956a71bb94f0157c89549" resname="checkout.email.message.header">
+        <source>checkout.email.message.header</source>
+        <target state="new">checkout.email.message.header</target>
+        <jms:reference-file line="8">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="95f783a36be42cc94800ab49238109a23c84fd5f" resname="checkout.email.message.immediate">
+        <source>checkout.email.message.immediate</source>
+        <target state="new">checkout.email.message.immediate</target>
+        <jms:reference-file line="42">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd04e2bc5e4094d2314d2b12d551d74e636f45c9" resname="checkout.email.message.prepay">
+        <source>checkout.email.message.prepay</source>
+        <target state="new">checkout.email.message.prepay</target>
+        <jms:reference-file line="11">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f426dd422180522d8d8ad499fe6c0d400f25cef8" resname="checkout.email.subject">
+        <source>checkout.email.subject</source>
+        <target state="new">checkout.email.subject</target>
+        <jms:reference-file line="4">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7ce878c111f8a496902d4119d1c85746692620ff" resname="checkout.email.text.message.direct">
+        <source>checkout.email.text.message.direct</source>
+        <target state="new">checkout.email.text.message.direct</target>
+        <jms:reference-file line="38">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1fb6351e081632b67de933d1274b382a5d5a00e9" resname="checkout.email.text.message.greetings">
+        <source>checkout.email.text.message.greetings</source>
+        <target state="new">checkout.email.text.message.greetings</target>
+        <jms:reference-file line="45">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="277c55ec337e667c8169157bea50a92a85a52fc2" resname="checkout.email.text.message.paypal">
+        <source>checkout.email.text.message.paypal</source>
+        <target state="new">checkout.email.text.message.paypal</target>
+        <jms:reference-file line="40">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="917525fd277701e1973243a7cdcd301d8bf29411" resname="checkout.email.text.message.prepay">
+        <source>checkout.email.text.message.prepay</source>
+        <target state="new">checkout.email.text.message.prepay</target>
+        <jms:reference-file line="24">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70d5e249098fc33fe12be8b269956b51d35549c3" resname="click.to.see.billing">
+        <source>click.to.see.billing</source>
+        <target state="new">click.to.see.billing</target>
+        <jms:reference-file line="44">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Mailer/sendBillingEmail.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcd1bd0b6d931a3925bfe66006f47683712a2248" resname="registration.email.footer">
+        <source>registration.email.footer</source>
+        <target state="new">registration.email.footer</target>
+        <jms:reference-file line="16">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c335c67aed9f8625621e047772f68b74073284c" resname="registration.email.header">
+        <source>registration.email.header</source>
+        <target state="new">registration.email.header</target>
+        <jms:reference-file line="12">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="10df4e23ec43b671aafea0a3a9ebc8dcc92b1bd0" resname="registration.email.subject">
+        <source>registration.email.subject</source>
+        <target state="new">registration.email.subject</target>
+        <jms:reference-file line="5">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5f007d79f1c6f1e870a2eee51a9a6012b4b39b4e" resname="registration.email.text">
+        <source>registration.email.text</source>
+        <target state="new">registration.email.text</target>
+        <jms:reference-file line="14">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="44c3249704b384a5fa48751439a30cab42ba20e8" resname="tj.direct_debit.bill.downloaded.mail.text">
+        <source>tj.direct_debit.bill.downloaded.mail.text</source>
+        <target state="new">tj.direct_debit.bill.downloaded.mail.text</target>
+        <jms:reference-file line="290">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a02d86633d1ea3ac96aa111a0eb16b96318449e2" resname="tj.email.education.user.header %displayName%">
+        <source>tj.email.education.user.header %displayName%</source>
+        <target state="new">tj.email.education.user.header %displayName%</target>
+        <jms:reference-file line="6">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Education/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c92621a3eb1192530909d36d67ac22433048fbf4" resname="tj.email.jobmail.user.header">
+        <source>tj.email.jobmail.user.header</source>
+        <target state="new">tj.email.jobmail.user.header</target>
+        <jms:reference-file line="1">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Jobmail/email.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0afbfea5329c8b626bc65e6159f2c60c00295260" resname="tj.email.network.user.header %displayName%">
+        <source>tj.email.network.user.header %displayName%</source>
+        <target state="new">tj.email.network.user.header %displayName%</target>
+        <jms:reference-file line="6">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Network/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a81d04fe8877bb0d4e4d7537772badc819ad36dd" resname="tj.email.password.changed.subject">
+        <source>tj.email.password.changed.subject</source>
+        <target state="new">tj.email.password.changed.subject</target>
+        <jms:reference-file line="90">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="306fab3498fcdfcfae99c2181f71597039a6ffc7" resname="tj.email.piece.user.header %displayName%">
+        <source>tj.email.piece.user.header %displayName%</source>
+        <target state="new">tj.email.piece.user.header %displayName%</target>
+        <jms:reference-file line="6">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Piece/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8f6bb1fb2837b83e58db8a741ea24b616ba28435" resname="tj.email.text.account.deleted.success.body">
+        <source>tj.email.text.account.deleted.success.body</source>
+        <target state="new">tj.email.text.account.deleted.success.body</target>
+        <jms:reference-file line="840">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0da95db0d0c64170ac8b368dfc2d87882a6dd210" resname="tj.email.text.account.deleted.success.title">
+        <source>tj.email.text.account.deleted.success.title</source>
+        <target state="new">tj.email.text.account.deleted.success.title</target>
+        <jms:reference-file line="834">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="613a1d8b0edc0917059902b3b30356948d51a96a" resname="tj.email.text.education.archived.ten_days">
+        <source>tj.email.text.education.archived.ten_days</source>
+        <target state="new">tj.email.text.education.archived.ten_days</target>
+        <jms:reference-file line="10">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Education/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="766a45642de4e1dc43afb729825fc48d19246e44" resname="tj.email.text.education.entry.not.updated %title%">
+        <source>tj.email.text.education.entry.not.updated %title%</source>
+        <target state="new">tj.email.text.education.entry.not.updated %title%</target>
+        <jms:reference-file line="9">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Education/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b17cb92783503ab8cd21694f7222b049cb52b94" resname="tj.email.text.network.archived.ten_days">
+        <source>tj.email.text.network.archived.ten_days</source>
+        <target state="new">tj.email.text.network.archived.ten_days</target>
+        <jms:reference-file line="10">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Network/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4b76fbc44114e5037838419d7ac3ba92ff301099" resname="tj.email.text.network.entry.not.updated %title%">
+        <source>tj.email.text.network.entry.not.updated %title%</source>
+        <target state="new">tj.email.text.network.entry.not.updated %title%</target>
+        <jms:reference-file line="9">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Network/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a806da2c518d8caf3c823f92070db3657a4d6d7b" resname="tj.email.text.password.changed.text">
+        <source>tj.email.text.password.changed.text</source>
+        <target state="new">tj.email.text.password.changed.text</target>
+        <jms:reference-file line="93">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0f38e125916441e6d424f3924b3c50a58eef852e" resname="tj.email.text.piece.entry.not.updated %title%">
+        <source>tj.email.text.piece.entry.not.updated %title%</source>
+        <target state="new">tj.email.text.piece.entry.not.updated %title%</target>
+        <jms:reference-file line="9">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Piece/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09d3c0538e025fce75f4e1524cb68db5618d551a" resname="tj.emial.text.jobmail.today.jobs">
+        <source>tj.emial.text.jobmail.today.jobs</source>
+        <target state="new">tj.emial.text.jobmail.today.jobs</target>
+        <jms:reference-file line="3">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Jobmail/email.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8286db2f2a2d9f898894cee93dcedea54fc0673e" resname="tj.emial.text.piece.archived.ten_days">
+        <source>tj.emial.text.piece.archived.ten_days</source>
+        <target state="new">tj.emial.text.piece.archived.ten_days</target>
+        <jms:reference-file line="10">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Resources/views/Piece/email_archive.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

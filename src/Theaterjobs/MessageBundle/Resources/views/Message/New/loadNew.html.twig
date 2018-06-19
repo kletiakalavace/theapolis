@@ -1,0 +1,66 @@
+<div id="newThread">
+    <div class="col-md-12">
+        {#header messenger#}
+        <div class="row row-heaader">
+            <div class="col-md-10 header-messenger">
+                <div class="person-active">
+                    <div class="img-header-messenger">
+                        <a href="{{ path('tj_profile_profile_show', {slug : profile.slug}) }}">
+                            {% set profilePhoto =  profile_photo(profile,'uploadFile','logos') %}
+                            {% set filter = '' %}
+
+                            {% if profile.mediaImage|first.filter is defined %}
+                                {% set filter = profile.mediaImage|first.filter %}
+                            {% endif %}
+
+                            <figure class="{{ filter }}">
+                                <img src="{{ profilePhoto }}">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="name-messenger">
+                    <div class="name-profile">
+                        <h3>{{ profile | defaultName }}</h3>
+                        <p class="undertitle-messenger">Our undertitle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {#chat of messenger#}
+        <form id="newForm" action="{{ path('tj_message_thread_create', {slug: profile.slug}) }}" method="POST">
+            <div class="row">
+                <input type="hidden" name="user" value="{{ profile.user.id }}"/>
+                <div class="col-md-12 subject-messenger">
+                    <input type="text" name="subject" maxlength="40" class="form-control"
+                           placeholder="{{ 'message.placeholder.subject'|trans }}" id="subjectInput" required/>
+                    <div class="separator"></div>
+                </div>
+                <div class="col-md-12 content-msg"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 no-padding reply-message">
+                    <div class="form-group">
+                        <textarea name="body" class="form-control"
+                                  placeholder="{{ 'message.placeholder.typeMessage' |trans }}" required></textarea>
+                    </div>
+                    <button type="submit" id="newButton" class="btn btn-default">
+                        <span>{{ 'button.message.send'|trans }}</span>
+                        <svg class="icon-svg icon-inline" width="30" height="30">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-play') }}"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $('#newForm').validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+        }
+    });
+</script>

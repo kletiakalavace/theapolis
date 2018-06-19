@@ -1,0 +1,66 @@
+ {% extends '::base.html.twig' %}
+{% form_theme form 'form_div_layout.html.twig' %}
+    {% form_theme form _self %}
+    {%- block choice_widget_options -%}
+        {% for group_label, choice in options %}
+            {%- if choice is iterable -%}
+                <optgroup
+                        label="{{ choice_translation_domain is same as(false) ? group_label : group_label|trans({}, choice_translation_domain) }}">
+                    {% set options = choice %}
+                    {{- block('choice_widget_options') -}}
+                </optgroup>
+            {%- else -%}
+                {% set attr = choice.attr %}
+                <option value="{{ choice.value }}" {{ block('attributes') }}{% if choice is selectedchoice(value) %} selected="selected"{% endif %}>{{ choice_translation_domain is same as(false) ? choice.label : choice.label|trans({}, choice_translation_domain) }}</option>
+            {%- endif -%}
+        {% endfor %}
+    {%- endblock choice_widget_options -%}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+    "@TheaterjobsProfileBundle/Resources/public/css/prodEmpl.css" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+    <h1>Productions creation</h1>
+    {{ form_start(form) }}
+    <div class="first">
+        <div class='prod'>
+            {{ form_row(form.production.organizationRelated) }}
+        </div>
+        <div class="second" id='second' style="visibility:hidden">
+            {{ form_row(form.production.name) }}
+            <div class='prod part2'>
+                {{ form_row(form.production.year) }}
+                {{ form_row(form.production.creators) }}
+                {{ form_row(form.production.directors) }}
+            </div>
+            {{ form_row(form.start) }}
+            {{ form_row(form.end) }}
+            {{ form_row(form.ongoing) }}
+            {{ form_row(form.occupation) }}
+            <div id="rolediv" class="hidden">
+                {{ form_row(form.occupationDescription) }}
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/ui/widgets/autocomplete.js"
+    "@TheaterjobsProfileBundle/Resources/public/js/profile/production.js" %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    <script>
+        var route = '{{ app.request.attributes.get('_route') }}';
+    </script>
+    {% endjavascripts %}
+{% endblock %}

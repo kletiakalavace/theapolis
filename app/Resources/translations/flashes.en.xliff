@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:46Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="a5a0e4ce0cbddda54da1c7d38b68a29e83482b00" resname="flash.profile.error.is.in.favourites">
+        <source>flash.profile.error.is.in.favourites</source>
+        <target state="new">flash.profile.error.is.in.favourites</target>
+        <jms:reference-file line="860">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d0bf92cd8e4968bd611a6ab3f2d182b63dec231" resname="flash.profile.error.is.not.in.your.favourites">
+        <source>flash.profile.error.is.not.in.your.favourites</source>
+        <target state="new">flash.profile.error.is.not.in.your.favourites</target>
+        <jms:reference-file line="895">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce50d46e068f81d227cc41cf1a92cb2dcd305797" resname="flash.profile.media.audio.limit.reached">
+        <source>flash.profile.media.audio.limit.reached</source>
+        <target state="new">flash.profile.media.audio.limit.reached</target>
+        <jms:reference-file line="3515">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23d3ffba3121dabb566a3e6840706c8869fde626" resname="flash.profile.media.image.limit.reached">
+        <source>flash.profile.media.image.limit.reached</source>
+        <target state="new">flash.profile.media.image.limit.reached</target>
+        <jms:reference-file line="3270">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="208508c21063de121f04c37a16b7767364198a06" resname="flash.profile.media.pdf.limit.reached">
+        <source>flash.profile.media.pdf.limit.reached</source>
+        <target state="new">flash.profile.media.pdf.limit.reached</target>
+        <jms:reference-file line="3412">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00ab8e1904800ac709426d0677f55ac550d4e138" resname="flash.profile.not.reachable">
+        <source>flash.profile.not.reachable</source>
+        <target state="new">flash.profile.not.reachable</target>
+        <jms:reference-file line="462">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="837341cee4f15b9625932e36a0ff7f18eec8ba9d" resname="flash.profile.professions.category.limit.six.reached">
+        <source>flash.profile.professions.category.limit.six.reached</source>
+        <target state="new">flash.profile.professions.category.limit.six.reached</target>
+        <jms:reference-file line="3737">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf8208fbad1b88174925366ee726c150d8468da4" resname="flash.profile.success.added.to.favourites">
+        <source>flash.profile.success.added.to.favourites</source>
+        <target state="new">flash.profile.success.added.to.favourites</target>
+        <jms:reference-file line="853">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fe5add6822a5b34faa0ded0c8bbd6918ecde08f9" resname="flash.profile.success.removed.from.favourites">
+        <source>flash.profile.success.removed.from.favourites</source>
+        <target state="new">flash.profile.success.removed.from.favourites</target>
+        <jms:reference-file line="888">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9d299e1e402d0874d1bf14ce9c826035ab3270b8" resname="flash.profile.views.become.member.to.view">
+        <source>flash.profile.views.become.member.to.view</source>
+        <target state="new">flash.profile.views.become.member.to.view</target>
+        <jms:reference-file line="96">src/Theaterjobs/ProfileBundle/Resources/views/Profile/showProfileViews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3edb95bd3b648c96d76d74bbfca96f537671c985" resname="flash.success.master_data">
+        <source>flash.success.master_data</source>
+        <target state="new">flash.success.master_data</target>
+        <jms:reference-file line="4517">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2956af1ba78040c6ff0ce4a27800a8ed1735a6af" resname="flash.success.profile.update.admin.queue">
+        <source>flash.success.profile.update.admin.queue</source>
+        <target state="new">flash.success.profile.update.admin.queue</target>
+        <jms:reference-file line="17">src/Theaterjobs/ProfileBundle/Resources/views/Profile/successProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="593692d4898d8f2dd7e86d8971beb985e0d96a07" resname="people.statistic.flash.pretitle.becomeMemberToView">
+        <source>people.statistic.flash.pretitle.becomeMemberToView</source>
+        <target state="new">people.statistic.flash.pretitle.becomeMemberToView</target>
+        <jms:reference-file line="102">src/Theaterjobs/ProfileBundle/Resources/views/Modal/statistics.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

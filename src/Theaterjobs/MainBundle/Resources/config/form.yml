@@ -1,0 +1,13 @@
+parameters:
+  theaterjobs_main.form.type.place_of_action.class: Theaterjobs\MainBundle\Form\Type\PlaceOfActionType
+  theaterjobs_main.form.type.address.class: Theaterjobs\MainBundle\Form\Type\AddressType
+
+services:
+  theaterjobs_main.form.type.place_of_action:
+    class: '%theaterjobs_main.form.type.place_of_action.class%'
+    tags:
+      - { name: 'form.type', alias: 'theaterjobs_main_address_place_of_action' }
+  theaterjobs_main.form.type.address:
+    class: '%theaterjobs_main.form.type.address.class%'
+    tags:
+      - { name: 'form.type', alias: 'theaterjobs_main_address' }

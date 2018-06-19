@@ -1,0 +1,470 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: doctrine_extensions.yml }
+    - { resource: doctrine_entity_manager.yml }
+    - { resource: elastica_theaterjobs_index.yml }
+    - { resource: elastica_events_index.yml }
+    - { resource: image_uploader.yml }
+    - { resource: services.yml }
+monolog:
+    channels: ["registration"]
+    handlers:
+        main:
+            channels: ["!registration"]
+        registration:
+            type:     stream
+            path:     "%kernel.logs_dir%/registration.log"
+            channels: [registration]
+
+services:
+    twig.extension.debug:
+        class: Twig_Extension_Debug
+        tags:
+            - { name: twig.extension }
+    twig.text_extension:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - name: twig.extension
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+         - { name: twig.extension }
+    salavert.twig.time_ago:
+        class: Salavert\Twig\Extension\TimeAgoExtension
+        arguments: [@translator]
+        tags:
+        - { name: twig.extension }
+    fos_user.doctrine_registry:
+        alias: doctrine
+    gedmo.listener.sluggable:
+        class: Theaterjobs\MainBundle\Listener\SluggableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ @annotation_reader ] ]
+
+framework:
+    #esi:             ~
+    translator:      { fallback: "%locale%" }
+    secret:          "%secret%"
+    serializer:
+        enabled: true
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: "%kernel.debug%"
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['twig'] #assets_version: SomeVersionScheme
+    default_locale:  "%locale%"
+    #trust_proxy_headers: false # Deprecated in 2.0; will be removed in 2.3 (used trusted_proxies instead)
+    trusted_proxies: ~
+    session:         ~
+    fragments: { path: /_fragment }
+    http_method_override: true
+    session:
+        handler_id: session.handler.native_file
+        save_path: "%kernel.root_dir%/../sessions"
+        name: "%session.name%"
+
+# Twig Configuration
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+    globals:
+      job_hunt_priority: "%job_hunt_priority%"
+      job_hunt_interval: "%job_hunt_interval%"
+      job_status: "%job_status%"
+      organization_status: "%organization_status%"
+      organization_orchestra: "%organization_orchestra%"
+      domain: "%domain%"
+      autosuggestion_pagination: "%autosuggestion_pagination%"
+      modal:
+        colors: '%combinations%'
+      fos_csrf_provider: "@form.csrf_provider"
+      company:
+        name: "%company_name%"
+        street: "%company_street%"
+        zip: "%company_zip%"
+        city: "%company_city%"
+        country: "%company_country%"
+        phone: "%company_phone%"
+        fax: "%company_fax%"
+        email: "%company_email%"
+        email_save: "%company_email_save%"
+        url: "%company_url%"
+        taxnumber: "%company_taxnumber%"
+        vatnumber: "%company_vatnumber%"
+        financeoffice: "%company_financeoffice%"
+        ceo: "%company_ceo%"
+        accountholder: "%company_accountholder%"
+        accountnumber: "%company_accountnumber%"
+        bankcode: "%company_bankcode%"
+        bankname: "%company_bankname%"
+        iban: "%company_iban%"
+        bic: "%company_bic%"
+      sepa:
+        creditor_id: "%sepa_creditor_id%"
+        bic_min_length: "%sepa_bic_min_length%"
+      node_url : "%node_url%"
+      img_limit: "%img_limit%"
+      audio_limit: "%audio_limit%"
+      pdf_limit: "%pdf_limit%"
+      googleMapsApiKey: "%google_maps_api_key%"
+      nodeServer: "%node_server%"
+      orgaEntity: 'Theaterjobs\InserateBundle\Entity\Organization'
+      jobEntity: 'Theaterjobs\InserateBundle\Entity\Job'
+    form:
+      resources:
+        -  "::form_theme.html.twig"
+
+# Assetic Configuration
+assetic:
+    node: "%node%"
+    debug:          "%kernel.debug%"
+    use_controller: true
+    bundles:        [ FOSUserBundle, TheaterjobsMainBundle, TheaterjobsAdminBundle,TheaterjobsProfileBundle, TheaterjobsCategoryBundle, TheaterjobsMessageBundle, TheaterjobsMembershipBundle, TheaterjobsNewsBundle, TheaterjobsInserateBundle,TheaterjobsUserBundle,TheaterjobsStatsBundle]
+    assets:
+         bc_bootstrap_js: "%kernel.root_dir%/../vendor/braincrafted/bootstrap-bundle/Braincrafted/Bundle/BootstrapBundle/Resources/js/bc-bootstrap-collection.js"
+         fos_router_js: "%kernel.root_dir%/../vendor/friendsofsymfony/jsrouting-bundle/Resources/js/router.js"
+    filters:
+       cssrewrite: ~
+       uglifyjs2:
+           # the path to the uglifyjs executable
+           bin: "%uglifyjs2%"
+       uglifycss:
+           bin: "%uglifycss%"
+       less:
+           node: "%node%"
+           node_paths: ["%node_modules%"]
+           apply_to: "\\.less$"
+
+cspoo_swiftmailer_mailgun:
+    key: "%mailer_key%"
+    domain: "%mailer_domain%"
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport:  "%mailer_transport%"
+    encryption: "%mailer_encryption%"
+    auth_mode: "%mailer_auth_mode%"
+    host:       "%mailer_host%"
+    port: "%mailer_port%"
+    username:   "%mailer_user%"
+    password:   "%mailer_password%"
+#    spool:      { type: memory }
+    logging:    '%kernel.debug%'
+
+theaterjobs_inserate:
+    categories:
+        root_slugs:
+            job: "categories-of-jobs"
+            pen: "new-categories-of-markets"
+
+theaterjobs_profile:
+    categories:
+        root_slugs:
+            profile: "categories-of-profiles"
+            voice: "categories-of-voices"
+            drive_licence: "driving-license"
+
+theaterjobs_news:
+    categories:
+        root_slugs:
+            news: "categories-of-news"
+
+theaterjobs_membership:
+    profile_class: Theaterjobs\ProfileBundle\Entity\Profile
+    expires_in: P14D # Period see http://php.net/manual/de/dateinterval.construct.php
+    email_from: "%mailer_from%"
+    sepaapi_username: "%sepaapi_username%"
+    sepaapi_code: "%sepaapi_code%"
+    sepa_iban: "%company_iban%"
+    sepa_bic: "%company_bic%"
+    sepa_name: "%company_name%"
+    sepa_creditor_id: "%sepa_creditor_id%"
+
+fos_user:
+    service:
+      mailer: app.mailer.twig_swift
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Theaterjobs\UserBundle\Entity\User
+    from_email:
+      address: "%from_email_address%"
+      sender_name:    "%domain% - Registrierung"
+    registration:
+      form:
+        type: theaterjobs_user_registration
+      confirmation:
+        enabled:    true
+        from_email:
+          address: "%registration_from_email_address%"
+          sender_name:    "%domain% - Registrierung"
+        template:   TheaterjobsUserBundle:Registration:email.txt.twig
+    resetting:
+      token_ttl: "%email_expiration%"
+      form:
+        type: theaterjobs_user_resetting
+      email:
+        from_email: # Use this node only if you don't want the global email address for the resetting email
+          address: "%resetting_from_email_address%"
+          sender_name: "%domain% - Passwort reset"
+        template: TheaterjobsUserBundle:Resetting:email.txt.twig
+    use_flash_notifications: false
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     "%wkhtmltopdf%"
+        options:
+            page-size: A4
+            print-media-type: true
+    image:
+        enabled:    true
+        binary:     "%wkhtmltoimage%"
+        options:    []
+
+fos_message:
+    db_driver: orm
+    thread_class: Theaterjobs\MessageBundle\Entity\Thread
+    message_class: Theaterjobs\MessageBundle\Entity\Message
+
+snc_redis:
+    clients:
+        default:
+            type: predis
+            alias: default
+            dsn: redis://localhost
+
+liip_imagine:
+  driver: imagick
+  filter_sets:
+    logos:
+      quality: 100
+      filters:
+        thumbnail: { size: [75, 75], mode: outbound }
+    preview:
+      quality: 100
+      filters:
+        relative_resize: { widen: 1024 }
+    view:
+      filters:
+        relative_resize: { widen: 400 }
+    profile_photo:
+      quality: 100
+      filters:
+        thumbnail: { size: [300,300], mode: outbound }
+    profile_modal:
+      quality: 100
+      filters:
+        thumbnail: { size: [160,160], mode: outbound }
+    list_photo:
+      quality: 100
+      filters:
+        thumbnail: { size: [98,98], mode: outbound }
+    news_list:
+      quality: 100
+      filters:
+        thumbnail: { size: [100,100], mode: outbound }
+    news_show:
+      quality: 100
+      filters:
+        thumbnail: { size: [350,350], mode: outbound }
+    profile_carousel:
+      filters:
+        thumbnail: { size: [286,286], mode: outbound }
+    profile_media:
+      filters:
+        thumbnail: { size: [150,150], mode: outbound  }
+    inserate_media:
+      filters:
+        thumbnail: { size: [200,200], mode: outbound  }
+    news_thumbnail:
+      filters:
+        thumbnail: {size: [250,250], mode: inset}
+    message_thumbnail:
+      filters:
+        thumbnail: {size: [30,30], mode: inset}
+    small_thumbnail:
+      quality: 100
+      filters:
+        thumbnail: {size: [32,32], mode: outbound}
+    none:
+
+sp_bower:
+    install_on_warmup: true
+    bin: "%bower%"
+    bundles:
+        TheaterjobsMainBundle:
+            asset_dir: "%kernel.root_dir%/../src/Theaterjobs/MainBundle/Resources/public/components"
+    assetic:
+        nest_dependencies: false
+
+#Braincrafted Bootstrap Configuration
+braincrafted_bootstrap:
+    auto_configure:
+        assetic: false
+        knp_menu: false
+
+fkr_css_url_rewrite:
+    rewrite_only_if_file_exists: true
+    clear_urls: true
+
+a2lix_translation_form:
+    locales: [en, de, sq]
+    required_locales: [en]
+    manager_registry: doctrine
+    templating: "A2lixTranslationFormBundle::default.html.twig"
+
+jms_di_extra:
+    locations:
+        all_bundles: false
+        bundles: [TheaterjobsCategoryBundle, TheaterjobsMainBundle]
+        directories: ["%kernel.root_dir%/../src"]
+jms_translation:
+    configs:
+        app:
+            dirs: [ "%kernel.root_dir%/Resources/views"]
+            output_dir: "%kernel.root_dir%/../app/Resources/translations"
+            ignored_domains: [routes]
+            excluded_names: ["*TestCase.php", "*Test.php"]
+            excluded_dirs: [cache, data, logs]
+        TheaterjobsMainBundle:
+            dirs: ["%kernel.root_dir%/Resources/views", "%kernel.root_dir%/../src/Theaterjobs/MainBundle"]
+            output_dir: "%kernel.root_dir%/../src/Theaterjobs/MainBundle/Resources/translations"
+            ignored_domains: [routes]
+            excluded_names: ["*TestCase.php", "*Test.php"]
+            excluded_dirs: [cache, data, logs]
+        TheaterjobsProfileBundle:
+            dirs: ["%kernel.root_dir%/../src/Theaterjobs/ProfileBundle"]
+            output_dir: "%kernel.root_dir%/../src/Theaterjobs/ProfileBundle/Resources/translations"
+            ignored_domains: [routes]
+            excluded_names: ["*TestCase.php", "*Test.php"]
+            excluded_dirs: [cache, data, logs]
+
+knp_paginator:
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP
+    template:
+        pagination: TheaterjobsMainBundle:Paginator:sliding.html.twig
+
+
+jms_security_extra:
+    expressions: true
+
+lexik_jwt_authentication:
+    private_key_path: %jwt_private_key_path%
+    public_key_path:  %jwt_public_key_path%
+    pass_phrase:      %jwt_key_pass_phrase%
+    token_ttl:        %jwt_token_ttl%
+
+gesdinet_jwt_refresh_token:
+    ttl:  %jwt_reftresh_token_ttl%
+    ttl_update: true
+
+lsw_memcache:
+    session:
+        pool: default
+    pools:
+        default:
+            servers:
+              - { host: localhost, tcp_port: 11211 }
+
+
+ambta_doctrine_encrypt:
+    secret_key:           POqlXx8mLmGOO8hOdGjHZahFOzlvDzo2 # Your own random 256 bit key (32 characters)
+    encryptor:            rijndael256 # rijndael256 or rijndael128
+
+sonata_seo:
+    page:
+        title: Theapolis
+        metas:
+            name:
+                description: Theapolis
+                keywords: actor, singer, theater, theapolis
+
+enqueue:
+    transport:
+      default: "fs"
+      fs:
+        path: /tmp/messages/
+    client:
+        traceable_producer:   false
+        prefix:               enqueue
+        app_name:             app
+        router_topic:         default
+        router_queue:         default
+        router_processor:     enqueue.client.router_processor
+        default_processor_queue: default
+        redelivered_delay_time: 0
+    consumption:
+      # the time in milliseconds queue consumer waits if no message received
+      idle_timeout:         0
+      # the time in milliseconds queue consumer waits for a message (100 ms by default)
+      receive_timeout:      100
+    job:                  false
+    async_events:
+      enabled:              false
+    extensions:
+      doctrine_ping_connection_extension: false
+      doctrine_clear_identity_map_extension: false
+      signal_extension:     true
+      reply_extension:      true
+
+enqueue_elastica:
+  doctrine:
+      queue_listeners:
+          -
+            index_name: 'theaterjobs'
+            type_name: 'profile'
+            model_class: 'Theaterjobs\ProfileBundle\Entity\Profile'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'organization'
+            model_class: 'Theaterjobs\InserateBundle\Entity\Organization'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'news'
+            model_class: 'Theaterjobs\NewsBundle\Entity\News'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'job'
+            model_class: 'Theaterjobs\InserateBundle\Entity\Job'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'searches'
+            model_class: 'Theaterjobs\MainBundle\Entity\SaveSearch'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'thread'
+            model_class: 'Theaterjobs\MessageBundle\Entity\Thread'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'application_track'
+            model_class: 'Theaterjobs\InserateBundle\Entity\ApplicationTrack'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'production'
+            model_class: 'Theaterjobs\ProfileBundle\Entity\Production'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'view'
+            model_class: 'Theaterjobs\StatsBundle\Entity\View'
+          -
+            index_name: 'theaterjobs'
+            type_name: 'billing'
+            model_class: 'Theaterjobs\MembershipBundle\Entity\Billing'
+          -
+            index_name: 'theaterjobs_activity'
+            type_name: 'user'
+            model_class: 'Theaterjobs\UserBundle\Entity\UserActivity'
+
+jms_i18n_routing:
+    default_locale: de
+    locales: [en, de, sq]
+    strategy: custom

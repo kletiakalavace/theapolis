@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-05-30T22:07:25Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c849320cb57c215a813af581449e45def263fa74" resname="tj_main_default_about_us">
+        <source>/{_locale}/about-us</source>
+        <target state="new">/{_locale}/ueber-uns</target>
+      </trans-unit>
+      <trans-unit id="8b03d434851ccebb1a8120b59a68d0fa9d0949ca" resname="tj_main_default_contact_site">
+        <source>/{_locale}/contact-site</source>
+        <target state="new">/{_locale}/kontakt</target>
+      </trans-unit>
+      <trans-unit id="3ca84ccedff8fda69e66b6462f5b125e6c8af346" resname="tj_main_default_contact_us">
+        <source>/{_locale}/contact-us</source>
+        <target state="new">/{_locale}/contact-us</target>
+      </trans-unit>
+      <trans-unit id="44654391a702cea64beccc4b49df5ae58e2db954" resname="tj_main_default_impresum">
+        <source>/{_locale}/impresum</source>
+        <target state="new">/{_locale}/impressum</target>
+      </trans-unit>
+      <trans-unit id="afd994bb17dd6f34dea0495bbd7a045b08e923bd" resname="tj_main_default_prices">
+        <source>/{_locale}/prices</source>
+        <target state="new">/{_locale}/preise</target>
+      </trans-unit>
+      <trans-unit id="afd34b58346bb30909a3a8168f3aea590ee220e6" resname="tj_main_default_privacy">
+        <source>/{_locale}/privacy</source>
+        <target state="new">/{_locale}/datenschutz</target>
+      </trans-unit>
+      <trans-unit id="15c7a8efc7bf2e74a6c6e8f07ead019e74811b2f" resname="tj_main_default_terms_new_tab">
+        <source>/{_locale}/terms-and-trades</source>
+        <target state="new">/{_locale}/agb</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

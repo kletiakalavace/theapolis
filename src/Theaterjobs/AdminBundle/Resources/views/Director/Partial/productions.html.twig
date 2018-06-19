@@ -1,0 +1,21 @@
+<h5>
+
+    {{ "delete.director.headingContent" | trans({}, 'flashes') }}
+</h5><br/>
+<p>
+
+    {{ "delete.director.paragrafContent" | trans({}, 'flashes') }}
+</p>
+<ul>
+    {% for production in productions %}
+        <li>
+            <a href="{{ path('tj_admin_production_show',{ id : production.id }) }}">
+                {{ production.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+<div class="modal-footer">
+    <button data-bb-handler="ok" type="button" class="btn btn-primary">OK</button>
+</div>

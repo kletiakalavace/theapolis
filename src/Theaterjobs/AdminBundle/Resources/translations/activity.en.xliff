@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:41:13Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="2cf806fcd5296df8031a05edf53e7d27985538fe" resname="job.activity.label.adminConfirmedJobPublication">
+        <source>job.activity.label.adminConfirmedJobPublication</source>
+        <target>job.activity.label.adminConfirmedJobPublication</target>
+        <jms:reference-file line="482">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1cfa9115fe00263390ad050ec86e087daac6b036" resname="job.activity.label.adminRejectedJobPublication">
+        <source>job.activity.label.adminRejectedJobPublication</source>
+        <target>job.activity.label.adminRejectedJobPublication</target>
+        <jms:reference-file line="505">/../src/Theaterjobs/AdminBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="74c40678d97f1fe4645d829fdeed0e2d34c587fd" resname="organization.activity.label.addedMember %user%">
+        <source>organization.activity.label.addedMember %user%</source>
+        <target>organization.activity.label.addedMember %user%</target>
+        <jms:reference-file line="378">/../src/Theaterjobs/AdminBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7849d52711fb929c759007538eca6123960fed8" resname="tj.admin.activity.changed.paidUntil">
+        <source>tj.admin.activity.changed.paidUntil</source>
+        <target state="new">tj.admin.activity.changed.paidUntil</target>
+        <jms:reference-file line="193">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2822e03c703f01a46c2bc167f2a79e3d25787342" resname="tj.admin.activity.changed.paidUntil %date%">
+        <source>tj.admin.activity.changed.paidUntil %date%</source>
+        <target state="new">tj.admin.activity.changed.paidUntil %date%</target>
+        <jms:reference-file line="181">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="19d1b0d32e31e3c4ad98eaf42e178f1ed019257b" resname="tj.admin.billing.sepaxml.downloaded %fileName%">
+        <source>tj.admin.billing.sepaxml.downloaded %fileName%</source>
+        <target state="new">tj.admin.billing.sepaxml.downloaded %fileName%</target>
+        <jms:reference-file line="273">/../src/Theaterjobs/AdminBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6b2c8a961f760c899502ed6d89c0f1fe85268fa1" resname="tj.user.activity.category.activated">
+        <source>tj.user.activity.category.activated</source>
+        <target>tj.user.activity.category.activated</target>
+        <jms:reference-file line="186">/../src/Theaterjobs/AdminBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2fae887437bc2352b23fbd3f6f238894fe28fc76" resname="tj.user.activity.category.created">
+        <source>tj.user.activity.category.created</source>
+        <target>tj.user.activity.category.created</target>
+        <jms:reference-file line="113">/../src/Theaterjobs/AdminBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92ba3625ec494490cc465246157d53860848f865" resname="tj.user.activity.category.deactivated">
+        <source>tj.user.activity.category.deactivated</source>
+        <target>tj.user.activity.category.deactivated</target>
+        <jms:reference-file line="162">/../src/Theaterjobs/AdminBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9096fbd03566d19f87b85a3da4628a0ee3e5527d" resname="tj.user.activity.category.updated">
+        <source>tj.user.activity.category.updated</source>
+        <target>tj.user.activity.category.updated</target>
+        <jms:reference-file line="251">/../src/Theaterjobs/AdminBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="887f71e3b3969a3aa7f01a837e1aa9c39b5b90cc" resname="tj.user.activity.comment.on.news.archived">
+        <source>tj.user.activity.comment.on.news.archived</source>
+        <target>tj.user.activity.comment.on.news.archived</target>
+        <jms:reference-file line="215">/../src/Theaterjobs/AdminBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d88e0d7761870fe485aaf0ecc40a675a88261d9f" resname="tj.user.activity.comment.on.news.confirmed">
+        <source>tj.user.activity.comment.on.news.confirmed</source>
+        <target>tj.user.activity.comment.on.news.confirmed</target>
+        <jms:reference-file line="182">/../src/Theaterjobs/AdminBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e998e1adbe390eab67a09d2a184703bd2e847237" resname="tj.user.activity.news.confirmed">
+        <source>tj.user.activity.news.confirmed</source>
+        <target>tj.user.activity.news.confirmed</target>
+        <jms:reference-file line="55">/../src/Theaterjobs/AdminBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71bb1f4f19e525fbfb3f09589fa4d79207837ca1" resname="tj.user.activity.published.profile.of">
+        <source>tj.user.activity.published.profile.of</source>
+        <target>tj.user.activity.published.profile.of</target>
+        <jms:reference-file line="105">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9349ee2be8a30767447914056add1d13dbf6d44d" resname="tj.user.activity.sepa.downloaded %type%">
+        <source>tj.user.activity.sepa.downloaded %type%</source>
+        <target>tj.user.activity.sepa.downloaded %type%</target>
+        <jms:reference-file line="295">/home/manoolia/PhpstormProjects/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="11587633fd7f3e8c4983731e0dbc05a8ed2e021f" resname="user.activity.admin.blocked.email">
+        <source>user.activity.admin.blocked.email</source>
+        <target state="new">user.activity.admin.blocked.email</target>
+        <jms:reference-file line="56">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcf8d66fec50b5c84e463cf94dfbc9b96d7bf1b2" resname="user.activity.admin.blocked.paymentMethod %$payment-&gt;getShort()%">
+        <source><![CDATA[user.activity.admin.blocked.paymentMethod %$payment->getShort()%]]></source>
+        <target state="new"><![CDATA[user.activity.admin.blocked.paymentMethod %$payment->getShort()%]]></target>
+        <jms:reference-file line="60">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1ab8f6ff228d39143b9860e0f282fc1cf8b175e9" resname="user.activity.admin.unblocked.email">
+        <source>user.activity.admin.unblocked.email</source>
+        <target state="new">user.activity.admin.unblocked.email</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6f941f51409dee63b1838a284e96110520d658ef" resname="user.activity.admin.unblocked.paymentMethod %$payment-&gt;getShort()%">
+        <source><![CDATA[user.activity.admin.unblocked.paymentMethod %$payment->getShort()%]]></source>
+        <target state="new"><![CDATA[user.activity.admin.unblocked.paymentMethod %$payment->getShort()%]]></target>
+        <jms:reference-file line="104">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a6ee64d3a7141711e9ca839ef231ad34df7f450a" resname="user.activity.organization.teamMembership.approved">
+        <source>user.activity.organization.teamMembership.approved</source>
+        <target state="new">user.activity.organization.teamMembership.approved</target>
+        <jms:reference-file line="250">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

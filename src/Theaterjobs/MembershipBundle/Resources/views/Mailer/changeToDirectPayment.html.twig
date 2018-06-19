@@ -1,0 +1,84 @@
+{% trans_default_domain 'emails' %}
+
+{% block body_html %}
+    {{ 'changeToDirect.email.message.hello'|trans }} {{ profile.firstName}} {{profile.lastName }},
+    {#Hello %firstname% %lastname%,#}
+    <br><br>
+    {{ 'changeToDirect.email.message.content1'|trans }}
+    {#vielen Dank für die Erteilung des SEPA-Lastschriftmandats für Theapolis.#}
+    {#Damit erlaubst Du uns bis auf Widerruf die Abbuchung Deiner Mitgliedsbeiträge von Deinem Bankkonto.#}
+    <br><br>
+    {{ "changeToDirect.deine"|trans }} <a href="{{ url('tj_user_account_settings', {'slug' : profile.slug}) }}#invoice-archive">{{ "changeToDirect.invoce" }}</a> {{ "changeToDirect.und.das" | trans }} <a href="{{ url('tj_user_account_settings', {'slug' : profile.slug}) }}#invoice-archive">{{ "changeToDirect.sepa-mandat" }}</a> {{ "changeToDirect.content2" }}
+    {#Deine [Link:Rechnung] und das [Link:Sepa-Mandat] findest Du in Deinem Benutzerkonto.#}
+    <br><br>
+    {{ 'checkout.email.text.message.greetings'|trans }}
+    <br><br><br>
+    {{ 'user.mailer.footer.line1' |trans }}<br>
+    {{ 'user.mailer.footer.line2' |trans }}<br>
+    {{ 'user.mailer.footer.line3' |trans }}<br>
+    {{ 'user.mailer.footer.line4' |trans }}<br>
+    {{ 'user.mailer.footer.line5' |trans }}<br>
+    {{ 'user.mailer.footer.line6' |trans }}<br>
+    {{ 'user.mailer.footer.line7' |trans }}<br>
+    {{ 'user.mailer.footer.line8' |trans }}<br>
+    {{ 'user.mailer.footer.line9' |trans }}<br>
+    {{ 'user.mailer.footer.line10' |trans }}<br>
+    {{ 'user.mailer.footer.line11' |trans }}<br>
+    {{ 'user.mailer.footer.line12' |trans }}
+
+    {#{% if payment.short == 'prepay'%}#}
+    {#{% if billingAddress.country == 'CH' %}#}
+    {#{{#}
+    {#'checkout.email.message.prepay'| trans({#}
+    {#'%accountholder%': company.accountholder,#}
+    {#'%company%': company.name,#}
+    {#'%iban%': company.ch_iban,#}
+    {#'%bic%': company.ch_bic,#}
+    {#'%bankname%': company.ch_bankname,#}
+    {#'%accountnumber%': company.ch_accountnumber,#}
+    {#'%bankcode%': company.ch_bankcode,#}
+    {#'%billing_total%': billing.total,#}
+    {#'%billing_no%': billing.number#}
+    {#})#}
+    {#}}#}
+    {#{% else %}#}
+    {#{{#}
+    {#'checkout.email.text.message.prepay'| trans({#}
+    {#'%accountholder%': company.accountholder,#}
+    {#'%company%': company.name,#}
+    {#'%iban%': company.iban,#}
+    {#'%bic%': company.bic,#}
+    {#'%bankname%': company.bankname,#}
+    {#'%accountnumber%': company.accountnumber,#}
+    {#'%bankcode%': company.bankcode,#}
+    {#'%billing_total%': billing.total | localizedcurrency('EUR'),#}
+    {#'%billing_no%': billing.number#}
+    {#})#}
+    {#}}#}
+    {#{% endif %}#}
+    {#{% elseif payment.short == 'direct'%}#}
+    {#{{ 'checkout.email.text.message.direct'|trans }}#}
+    {#{% elseif payment.short == 'paypal'%}#}
+    {#{{ 'checkout.email.text.message.paypal'|trans }}#}
+    {#{% elseif payment.short == 'immediate'%}#}
+    {#{{ 'checkout.email.message.immediate'|trans }}#}
+    {#{% endif %}#}
+
+    {#Kind regards and we wish you success on our site.#}
+    {#Sören Fenner and the Theapolis-team#}
+
+    {#{{#}
+    {#'checkout.email.message.footer'| trans({#}
+    {#'%company%': company.name,#}
+    {#'%ceo%': company.ceo,#}
+    {#'%street%': company.street,#}
+    {#'%zip%': company.zip,#}
+    {#'%city%': company.city,#}
+    {#'%phone%': company.phone,#}
+    {#'%fax%': company.fax,#}
+    {#'%url%': company.url,#}
+    {#'%email%': company.email,#}
+    {#})#}
+    {#}}#}
+
+{% endblock %}

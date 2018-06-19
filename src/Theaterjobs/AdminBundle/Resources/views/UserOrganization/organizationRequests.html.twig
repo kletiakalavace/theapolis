@@ -1,0 +1,88 @@
+{% extends 'TheaterjobsAdminBundle::AdminBase.html.twig' %}
+
+{% block contents %}
+    {% block javascripts %}
+    {{ parent() }}
+    <script>
+        $("button").click(function(){
+    var request_id = $(this).attr("id");
+    var comment=$('textarea.'+request_id).val();
+    console.log(comment);
+    var action= $(this).data("char");
+    var route = Routing.generate('tj_admin_deny_grant');
+    console.log(request_id  + '  ' +action);
+    $.ajax({
+        type: "GET",
+       url: route ,
+        data: {
+           request_id: request_id,
+            action: action,
+            comment:comment
+        },
+        success: function(){
+            if (action == 'deny')
+            $('#'+request_id).css("background-color","#FF0000");
+        else
+            $('#'+request_id).css("background-color","#00FF00");
+        $('#'+request_id).fadeOut(1000, function(){
+            $('#'+request_id).remove();
+        });
+
+
+        },
+        error: function(){
+            alert("error");
+        }
+    });
+    return false;
+});
+
+</script>
+{% endblock %}
+
+    <h1>UserOrganization list</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Organization name</th>
+                <th>Username</th>
+                <th>Requested at</th>
+                <th>First Name</th>
+                <th>Last name</th>
+                <th>User Id</th>
+                 <th>Comment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr id="{{entity.id}}">
+                <td>{{entity.organization.name}}
+                {% if entity.newOrganization  %}
+                    <div class="alert alert-danger alert-dismissable">
+
+  <strong>Warning!</strong> User created this organization.<br>You need to confirm it!
+</div>
+                    {% endif %}
+
+
+                </td>
+                <td>{{entity.user.username}}</td>
+                <td>{% if entity.requestedAt %}{{ entity.requestedAt|date('Y-m-d ') }}{% endif %}</td>
+                <td>
+                    {{entity.user.people | defaultName}}
+                </td>
+                <td>{{entity.user.id}}</td>
+                 <td>
+                    <textarea class="{{entity.id}}" rows="4" cols="50"> </textarea>
+                </td>
+                <td><button id="{{entity.id}}" data-char="grant" class="btn btn-success">Grant</button>
+                    <button id="{{entity.id}}" data-char="deny" class="btn btn-danger" data-alert='{{ 'Do you really want to deny organization ' | trans }} "{{ entity.organization.name }}"?'>Deny </button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> 
+
+    {% endblock %}

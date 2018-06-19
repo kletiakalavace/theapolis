@@ -1,0 +1,100 @@
+<div class="modal-body movebottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.production'| trans }}</h2>
+                {# <a id="addProduction" href="javascript:;" data-href="{{ path('tj_profile_participation_new') }}"
+                    class="add-new-link"><span>+</span>{{ 'link.new'| trans }}
+                 </a>#}
+                <div class="timeline timeline-inverse">
+                    {% if entity.productionParticipations is not null %}
+                        {% for year, participations in participations %}
+                            <div class="timeline-group">
+                                <div class="timeline-time" id="start">
+                                    {% if  year == 10000 %}
+                                        {{ 'people.show.detailBlocklabel.now' | trans }}
+                                    {% else %}
+                                        {{ year }}
+                                    {% endif %}
+                                </div>
+                                {% for participation in participations if participation is not null %}
+                                    {% if owner %}
+                                        <p class="p-alt pull-right">
+                                            <a href="javascript:;" class="production_edit"
+                                               style="bottom: 17px;position: relative;"
+                                               data-href="{{ path('tj_profile_participation_edit', { 'id': participation.id }) }}">
+                                                <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                                                     height="20">
+                                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                                </svg> {{ 'link.edit'| trans }}
+                                            </a>
+                                        </p>
+                                    {% endif %}
+                                    <div class="timeline-item">
+                                        {% if participation.production.organizationRelated is not null %}
+                                            {{ participation.production.organizationRelated.name }}
+                                        {% endif %}
+                                        <br><b id="name{{ participation.id }}">{{ participation.production.name }} ({{ participation.production.year }})</b>
+                                        <p class="p-alt" id="organization{{ participation.id }}">
+                                                {% for creator in participation.production.creators %}
+                                                    {{ creator.name -}} {% if not loop.last %}, {% endif %}
+                                                {% endfor %}
+                                            <br>
+
+                                            {% if participation.production.directors | length >0 %}
+                                                {{ 'people.show.detailBlock.label.directedBy' | trans }}:
+                                                {% for director in participation.production.directors %}
+                                                    {{ director.name -}} {% if not loop.last %}, {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+                                            <br>
+                                            {% if participation.occupationDescription is not null %}
+                                                {%- if participation.occupationDescription.roleName is not null -%}
+                                                    {{ 'people.show.detailBlocklabel.occupationRole' | trans -}}: {{ participation.occupationDescription.roleName }}
+                                                {%- else -%}
+
+                                                    {{- participation.occupation.title~' ' -}}
+
+                                                    {%- if participation.occupationDescription.assistant == 1 -%}
+                                                        ({{ 'people.show.detailBlocklabel.occupationAssistant' | trans }})
+                                                    {%- elseif participation.occupationDescription.management == 1 -%}
+                                                        ({{ 'people.show.detailBlocklabel.occupationManagement' | trans }})
+                                                    {%- endif -%}
+
+                                                {%- endif -%}
+
+                                                {%- if participation.occupationDescription.description is not null -%}
+                                                    {%- if  participation.occupationDescription.roleName is not null or participation.occupation.title is not null -%}
+                                                    {% endif %}
+                                                    - {{ participation.occupationDescription.description }}
+                                                {% endif %}
+                                                <br>
+                                            {% endif %}
+                                            {% if participation.usedName is not null and not(participation.usedName == (entity | defaultName)) or participation.usedNameCheck %}
+                                                {{ 'people.show.detailBlocklabel.usedName' | trans -}}: {{ participation.usedName }}
+                                                <br>
+                                            {% endif %}
+                                            {% if participation.ongoing == 1 %}
+                                                {{ 'people.show.detailBlocklabel.since' | trans }} {{ participation.start|date('m/Y') }}
+                                            {% else %}
+                                                {{ participation.start|date('m/Y') }} {{ 'people.show.detailBlocklabel.tillDate' | trans }} {{ participation.end|date('m/Y') }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.production_edit').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+    $('#addProduction').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+</script>

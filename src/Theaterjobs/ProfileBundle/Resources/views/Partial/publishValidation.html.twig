@@ -1,0 +1,15 @@
+<h5>
+    {{ "publish.profile.required.headingContent" | trans({}, 'flashes') }}
+</h5><br/>
+<p>
+    {{ "publish.profile.required.paragrafContent" | trans({}, 'flashes') }}
+</p>
+<ul>
+    {% for err in errors %}
+        <li>
+            {{ err }}
+        </li>
+    {% endfor %}
+</ul>
+
+<div class="modal-footer"><button data-bb-handler="ok" type="button" class="btn btn-primary">OK</button></div>

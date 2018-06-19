@@ -1,0 +1,17 @@
+
+<div>
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div>
+        {{ form_row(form.accountHolder) }}
+        {{ form_row(form.iban) }}
+    </div>
+    <label>
+        <span id="bank_name_updated">{{ bankName is defined ? ('membership.new.bankName' | trans) ~ ': ' ~ bankName : '' }}</span>
+    </label>
+    <div>
+        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary center'} }) }}
+    </div>
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+</div>

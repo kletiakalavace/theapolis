@@ -1,0 +1,159 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="educationEdit">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>
+                    {{ isLanguage ? 'admin.edit.mainTitle.Languages'| trans : 'admin.edit.mainTitle.Skills'|trans }}
+                </h2>
+                {% if not isLanguage %}
+                    <h3>
+                        {{ entity.title?:'' }}  {{ entity.parent?'is merged with '~ entity.parent.title:'' }}
+                    </h3>
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                        <div class="form-group">
+                            {% if merge %}
+                                {{ form_row(form.title,{'value' : '' }) }}
+                            {% else %}
+                                {{ form_row(form.title) }}
+                            {% endif %}
+                        </div>
+                        <div class="form-inline">
+                            {{ form_widget(form.submit,{'attr':{'class':'btn btn-inverse-primary btn btn-inverse btn-primary btn-update-modal'} }) }}
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+                {% if not isLanguage and  entity.root %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Siblings by root</h3>
+                            <ul>
+                                {% for sibling in siblingByRoot %}
+                                    <li>
+                                        {{ sibling.title }} {{ loop.index == 1 ? ' (root node)' : '' }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const queryParams = {isNew:{{ isNew }}, isLanguage:{{ isLanguage }}};
+    $('#theaterjobs_profilebundle_skill_title').select2({
+        minimumInputLength: 3,
+        formatInputTooShort: function () {
+            $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+        },
+        maximumSelectionSize: 1,
+        tags: true,
+        cache: true,
+        quietMillis: 250,
+        tokenSeparators: [';'],
+
+        createSearchChoice: function (term, page) {
+            $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+            if (page.some(function (item) {
+                return item.text.toLowerCase() === term.toLowerCase();
+            })) {
+                return;
+            }
+            {% if not merge %}
+            return {
+                id: $.trim(term),
+                text: $.trim(term) + '  (new skill)'
+            };
+            {% endif %}
+        },
+
+        ajax: {
+            url: Routing.generate('skills_autosuggestion', queryParams),
+            dataType: 'json',
+            data: function (term, page) {
+                return {
+                    q: term,
+                    language: {{ isLanguage }},
+                    page: page // page number
+                };
+            },
+            results: function (data, page) {
+                var more = false;
+                data.forEach(function (element) {
+                    more = (page * autosuggestion_pagination) < element.total_count;
+                });
+                return {
+                    results: data,
+                    more: more
+                };
+            }
+        },
+        // Take default tags from the input value
+        initSelection: function (element, callback) {
+            var data = [];
+
+            function splitVal(string, separator) {
+                var val, i, l;
+                if (string === null || string.length < 1)
+                    return [];
+                val = string.split(separator);
+                for (i = 0, l = val.length; i < l; i = i + 1)
+                    val[i] = $.trim(val[i]);
+                return val;
+            }
+
+            $(splitVal(element.val(), ";")).each(function () {
+                data.push({
+                    id: this,
+                    text: this
+                });
+            });
+            callback(data);
+        },
+        formatSelectionTooBig: function () {
+            return "Max skill limit is only one";
+        }
+    });
+
+
+    const formSkills = $("form[name=theaterjobs_profilebundle_skill]");
+
+    formSkills.validate({
+        errorPlacement: (error, element) => {
+            toolTipError(error.text(), element);
+        },
+        ignore: []
+    });
+    validFormInputs();
+
+    formSkills.submit((e) => {
+        e.preventDefault();
+        if ($(e.currentTarget).valid()) {
+            $.ajax({
+                type: $(e.currentTarget).attr('method'),
+                url: $(e.currentTarget).attr('action'),
+                data: $(e.currentTarget).serialize(),
+                success: (data) => {
+                    if (data.success) {
+                        $('input:text', adminSearchForm).val('');
+                        $('#skillChoices', adminSearchForm).val(1);
+                        dataTableReload();
+                    }
+                },
+                error: () => {
+                    serverError();
+                }
+            }).done(() => {
+                $('#myModal').modal('hide');
+            });
+        }
+    });
+
+</script>

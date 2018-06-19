@@ -1,0 +1,126 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'admin.edit.mainTitle.socialMedia'| trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                        <div class="form-group">
+                            {{ form_row(form.name) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(form.svgName) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(form.position) }}
+                        </div>
+                        <div class="form-inline">
+                            {{ form_widget(form.submit,{'attr':{'class':'btn btn-inverse-primary btn-inverse btn-primary btn-update-modal btn-edit-social-media'} }) }}
+                            {{ form_end(form) }}
+                        </div>
+                        {% if delete %}
+                            {{ form_start(delete,{'attr': {'id': 'theaterjobs_adminbundle_socialmedia_delete'}}) }}
+                            {{ form_widget(delete.submit,{'attr':{'class':'btn-delete-modal btn-inverse'} }) }}
+                            {{ form_end(delete) }}
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    const formSocialMedia = $("form[name=theaterjobs_adminbundle_socialmedia]");
+    const formSocialMediaDelete = $("#theaterjobs_adminbundle_socialmedia_delete");
+
+    formSocialMedia.validate({
+        errorPlacement: (error, element) => {
+            toolTipError(error.text(), element);
+        },
+        ignore: []
+    });
+    validFormInputs();
+
+    formSocialMedia.submit((event) => {
+        event.preventDefault();
+        if ($(event.currentTarget).valid()) {
+            $.ajax({
+                type: $(event.currentTarget).attr('method'),
+                url: $(event.currentTarget).attr('action'),
+                data: $(event.currentTarget).serialize(),
+                success: (data) => {
+                    if (data.success) {
+                        $('input:text', adminSearchForm).val('');
+                        dataTableReload();
+                    } else {
+                        let errors = '';
+                        data.errors.forEach((element) => {
+                            errors += element.message + '<br>';
+                        });
+                        bootbox.alert({
+                            title: false,
+                            message: errors
+                        });
+                    }
+                },
+                error: () => {
+                    serverError();
+                }
+            }).done(() => {
+                $('#myModal').modal('hide');
+            });
+        }
+    });
+
+    formSocialMediaDelete.submit((event) => {
+        event.preventDefault();
+        bootbox.confirm({
+            message: "Are you sure do you really want to delete this?",
+            buttons: {
+                confirm: {
+                    label: 'Yes',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn-danger'
+                }
+            },
+            callback: (result) => {
+                if (result) {
+                    $.ajax({
+                        type: formSocialMediaDelete.attr('method'),
+                        url: formSocialMediaDelete.attr('action'),
+                        data: formSocialMediaDelete.serialize(),
+                        success: (data) => {
+                            if (data.success) {
+                                $('input:text', adminSearchForm).val('');
+                                dataTableReload();
+                            } else {
+                                let errors = '';
+                                data.errors.forEach((element) => {
+                                    errors += element.message + '<br>';
+                                });
+                                bootbox.alert({
+                                    title: false,
+                                    message: errors
+                                });
+                            }
+                        },
+                        error: () => {
+                            serverError();
+                        }
+                    }).done(() => {
+                        $('#myModal').modal('hide');
+                    });
+                }
+            }
+        });
+    });
+
+</script>

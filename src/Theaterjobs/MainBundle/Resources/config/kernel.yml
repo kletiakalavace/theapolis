@@ -1,0 +1,10 @@
+parameters:
+  theaterjobs_main.kernel.listener.exception.class: Theaterjobs\MainBundle\EventListener\KernelExceptionListener
+services:
+  theaterjobs_main.kernel.listener.exception:
+    class:  %theaterjobs_main.kernel.listener.exception.class%
+    arguments:
+      - '@service_container'
+      - '@templating'
+    tags:
+      - { name: 'kernel.event_listener', event: 'kernel.exception', method: 'onKernelException' }

@@ -1,0 +1,89 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('profileIndex')) }}
+    <div class="page-wrap" id="people">
+        {{ form_start(form) }}
+        <div class="container">
+            <div class="block">
+                <!-- Page header -->
+                <div class="page-header">
+                    <h1><span id="searchCategory">{{ "people.title.people" | trans }}</span></h1>
+                </div>
+                <div class="panel-filter">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-3 col-xs-12">
+                            <div class="form-group no-margin">
+                                {{ form_label(form.searchPhrase) }}
+                                {{ form_widget(form.searchPhrase) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group form-group-with-aside no-margin">
+                                <label class="control-label required slabel"
+                                       for="area">{{ "people.search.label.place" | trans }}</label>
+                                <div id="map_container" style="width: 900px;margin: auto;">
+                                    <div class="input-group input-find input-location-people">
+                                        <input id="pac-input" class="pac-control form-control form-control-location"
+                                               type="text" onchange="locationChange();"
+                                               placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                                        {{ form_widget(form.location,{'attr':{'class' : 'hidden'}}) }}
+                                    </div>
+                                    <div id="map" class="hidden"></div>
+                                </div>
+                                <div class="form-group-aside">
+                                    {{ form_label(form.area) }}
+                                    {{ form_widget(form.area,{ 'attr': {'onchange': 'areaChange(this);'}}) }}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        {{ form_widget(form.published,{'attr':{'class':'hidden'}}) }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-3 col-xs-12">
+                            <a href="#" id="btn-search-location">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="peoplePartial">
+                    <h3>{{ "people.subtitle.orSearchByCategory" | trans }}</h3>
+                    <div class="row row-multi-row row-flex">
+                        {% for category in aggs.categories.buckets %}
+                            <div class="col-md-4 col-xs-6 col-xxs-12">
+                                <a class="category"
+                                   href="{{ path('tj_profile_profile_list', { 'category': category.key }) }}">
+                                    <img src="{{ custom_imagine_filter("bundles/theaterjobscategory/images/categories/"~category.img) }}"
+                                         alt="{{ category.title }}">
+                                    <h2 class="h2-alt">{{ category.title }}</h2>
+                                    <p class="category-count">{{ category.doc_count }}</p>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% do form.subcategories.setRendered %}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/geohash.js'
+        '@TheaterjobsMainBundle/Resources/public/js/map/placeSuggest.js'
+        "@TheaterjobsProfileBundle/Resources/public/js/profile/people.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        {% if app.request.get("location") %}
+        var latlng = decodeGeoHash("{{ app.request.get("location") }}");
+        filterLocation(latlng.latitude[0], latlng.longitude[0], peopleForm.selector, "{{ app.request.get("area") }}");
+        {% endif %}
+    </script>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'membership.billing_address.title'| trans  }}{% endblock title %}
+
+
+{% block content %}
+<div class="container-fluid">
+	<h1>{{ 'membership.billing_address.title'| trans  }}</h1>
+	<h2>{{ 'membership.billing_address.insert_billing_address'| trans  }}</h2>
+	<div class="row">
+	    <div class="col-md-6">
+	        {{ form_start(form, { 'style': 'horizontal' }) }}
+	        {{ form_errors(form) }}
+	        {{ form_widget(form) }}
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-md-6">
+	        <div class="pull-right">
+			<a href="{{ path('tj_membership_index') }}" class="btn btn-default" role="button">
+			    {{ 'button.back'| trans }}
+			</a>
+	        <button type="submit" class="btn btn-default">{{ 'button.next' | trans  }}</button>
+	        </div>
+	        </form>
+	    </div>
+	</div>
+
+</div>
+
+{% endblock content %}

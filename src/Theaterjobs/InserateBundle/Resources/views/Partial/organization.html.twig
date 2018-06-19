@@ -1,0 +1,187 @@
+{% import '@TheaterjobsInserate/organizationMacro.twig' as om %}
+{{ om.organizationsFilterBar(form.vars.data, form) }}
+<div>
+    <div class="col-xs-8 col-xxs-12">
+        <p class="p-alt">
+            <small>{{ knp_results(organizations, path('tj_main_organization_home')) }}</small>
+        </p>
+    </div>
+    <div class="col-xs-4 col-xxs-12 text-right pull-right {{ organizations.getTotalItemCount() > 0 ? '' : 'hidden' }}">
+        <div class="form-inline">
+            <div class="form-group">
+            </div>
+        </div>
+    </div>
+    {#{% endif %}#}
+</div>
+<div>
+    {#  FILTER#}
+    <aside class="col-md-4 col-xs-12 pull-right">
+
+        <div class="filter-group panel {{ aggs.aggregations.organizationKind.buckets?'':'hidden' }}" style="margin-top:15px;" >
+            <h3 class="toggle collapsed" data-toggle="collapse" data-target="#organisation-kind"
+                aria-expanded="false"> {{ 'organization.filter.kind' | trans }}
+                <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset("bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle") }}"></use>
+                    </svg>
+                </span>
+            </h3>
+            <div class="collapse filter-group-content"
+                 id="organisation-kind" aria-expanded="false"
+                 style="height: 0px;">
+                <div class="collapse-body">
+                    <h3 class="h3-desktop"> {{ 'organization.filter.kind' | trans }}</h3>
+                    <ul class="list-unstyled">
+                        {% for var in form.organizationKind %}
+                            {% set organizationKindCount = aggs.aggregations.organizationKind.buckets | aggregation_count( var.vars.value) %}
+                            <li {{ organizationKindCount>0?'':'hidden' }}>
+                                <div class="checkbox">
+                                    <label class="subcategory-sidebar">
+                                        {{ form_widget(var, { 'attr': {'onclick':"filterListSearchForm()"}}) }}
+                                        <span class="faux-checkbox"></span>
+                                        {{ var.vars.label }}
+                                    </label>
+                                    <span class="checkbox-number"> {{ organizationKindCount }}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="filter-group panel  {{ aggs.aggregations.organizationSection.buckets?'':'hidden' }}" style="margin-top:15px;">
+            <h3 class="toggle collapsed" data-toggle="collapse" data-target="#organisation-section"
+                aria-expanded="false"> {{ 'organization.filter.section' | trans }}
+                <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset("bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle") }}"></use>
+                    </svg>
+                </span>
+            </h3>
+            <div class="collapse filter-group-content"
+                 id="organisation-section" aria-expanded="false"
+                 style="height: 0px;">
+                <div class="collapse-body">
+                    <h3 class="h3-desktop"> {{ 'organization.filter.section' | trans }}</h3>
+                    <ul class="list-unstyled">
+                        {% for var in form.organizationSection %}
+                            {% set organizationSectionCount = aggs.aggregations.organizationSection.buckets | aggregation_count( var.vars.value) %}
+                            <li {{ organizationSectionCount>0?'':'hidden' }}>
+                                <div class="checkbox">
+                                    <label class="subcategory-sidebar">
+                                        {{ form_widget(var, { 'attr': {'onclick':"filterListSearchForm()"}}) }}
+                                        <span class="faux-checkbox"></span>
+                                        {{ var.vars.label }}
+                                    </label>
+                                    <span class="checkbox-number"> {{ organizationSectionCount }}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="panel panel-admin  {{ aggs.aggregations.status_count.buckets|length != 0 ? '':'hidden' }}" style="margin-top:15px;">
+                <h3 class="toggle collapsed" data-toggle="collapse" data-target="#role-age" aria-expanded="false">
+                    {{ 'organization.filter.title.status' | trans }}
+                    <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset("bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle") }}"></use>
+                            </svg>
+                        </span>
+                </h3>
+                <div class="collapse" id="role-age" aria-expanded="false" style="height: 0px;">
+                    <div class="collapse-body">
+                        <div id="status" class="checkbox-status">
+                            {% for var in form.status %}
+                                {% set statusCounts = aggs.aggregations.status_count.buckets | aggregation_count( var.vars.value) %}
+                                <div class="checkbox {{ statusCounts > 0 ? '':'hidden' }}">
+                                    <label>
+                                        {{ form_widget(var, { 'attr': {'onchange': 'filterListSearchForm()'}}) }}
+                                        <span class="faux-checkbox"></span>
+                                        {{ var.vars.label | trans }}
+
+                                    </label>
+                                    <span class="checkbox-number"> {{ statusCounts }}</span>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </aside>
+    <!-- END Filters -->
+    <div class="col-md-8 col-xs-12">
+        <div class="row row-flex row-multi-row">
+            {% for organization in organizations %}
+                {% set profilePhoto = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                <div class="col-xs-6 col-xxs-12 olist">
+                    {% if organization.path is defined and organization.path %}
+                        {% set profilePhoto =  vich_uploader_asset(organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Organization') | imagine_filter("list_photo") %}
+                    {% endif %}
+                    <div class="profile organization-list {{ organization.description is not defined ? 'title-middle':'' }}">
+
+                        <div class="photo-overflow-visible">
+                            <div class="profile-photo-md">
+                                <img src="{{ profilePhoto }}">
+                            </div>
+                            <div class="favorite-organization">
+                                {% if app.user %}
+                                    {{ organization | favorite(app.user.profile.organisationFavourite) }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="profile-orga-cont">
+                            <div class="profile-content">
+                                {% if  organization.status == 4 %}
+                                    <div style="display:block;">
+                                        <p class="desc-dateFavourtiePeople">
+                                            <svg class="icon-svg icon-play" data-toggle="tooltip"
+                                                 data-placement="bottom"
+                                                 title="{{ 'organization.show.tooltip.closedOrga'|trans }}">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-private') }}"></use>
+                                            </svg>
+                                        </p>
+                                    </div>
+                                {% endif %}
+                                <h4>
+                                    {% set url= 'javascript:;' %}
+                                    {% set url= path('tj_organization_show', { 'slug': organization.slug }) %}
+                                    {% if organization.isVisibleInList or is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ url }}">
+                                    {% endif %}
+                                        {{ organization | highlight('name.autocomplete') }}
+                                    {% if organization.isVisibleInList %}
+                                        </a>
+                                    {% endif %}
+                                </h4>
+                                {% if organization.description is defined %}
+                                    {% set description=organization.description|striptags %}
+                                    <p class="p-alt">
+                                        {{ description|length > 80 ? (description|slice(0, 80) ~ ' ...')|raw : description|raw }}
+                                    </p>
+                                {% endif %}
+
+                                {% if not organization.isVisibleInList and organization|un_favorite(app.user,'organization') %}
+                                    <a class="removeFavoriteList" onclick="removeFavorite('{{ organization.slug }}')">{{ 'favorite.list.organization.remove.from.favorites' | trans }}</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="navigation">
+            {{ knp_pagination_render(organizations) }}
+        </div>
+    </div>
+</div>

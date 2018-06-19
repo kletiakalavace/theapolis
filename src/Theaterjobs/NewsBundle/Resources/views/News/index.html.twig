@@ -1,0 +1,123 @@
+{% extends '::base.html.twig' %}
+{% import 'macro.html.twig' as m %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('newsIndex')) }}
+    <div class="container" id="news-block">
+        {{ form_start(form) }}
+        <div class="block">
+            <!-- Page header -->
+            <div class="news-layout">
+                <div class="page-header">
+                    <h1>{{ 'news.mainTitle.news'|trans }}</h1>
+                </div>
+                <div class="panel-filter">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="form-group no-margin-lg">
+                                {{ form_label(form.searchPhrase) }}
+                                {{ form_widget(form.searchPhrase) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="form-group no-margin-lg">
+                                {{ form_row(form.tags,{'attr' : {'multiple': 'true' } }) }}
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="form-group no-margin">
+                                {{ form_label(form.years) }}
+                                {{ form_widget(form.years) }}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 hidden-sm-up">
+                            <a href="#" id="btn-search-location">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="news-list">
+                <div class="row">
+                    {{ include('TheaterjobsNewsBundle:Partial:news.html.twig') }}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsNewsBundle/Resources/public/js/news.js"
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        //select 2 for tags
+        $('#tags').select2({
+            minimumInputLength: 0,
+            maximumSelectionLength: 5,
+            tags: true,
+            tokenSeparators: [','],
+            cache: true,
+            quietMillis: 250,
+            ajax: {
+                url: Routing.generate('tj_news_get_tags_search', {'_locale': locale}),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        q: term,
+                        page: page // page number
+                    };
+                },
+                results: function (data, page) {
+                    var more = false;
+                    data.forEach(function (element) {
+                        more = (page * autosuggestion_pagination) < element.total_count;
+                    });
+                    return {
+                        results: data,
+                        more: more
+                    };
+                }
+            },
+            // Take default tags from the input value
+            initSelection: function (element, callback) {
+                var data = [];
+
+                function splitVal(string, separator) {
+                    var val, i, l;
+                    if (string === null || string.length < 1)
+                        return [];
+                    val = string.split(separator);
+                    for (i = 0, l = val.length; i < l; i = i + 1)
+                        val[i] = $.trim(val[i]);
+                    return val;
+                }
+
+                $(splitVal(element.val(), ",")).each(function () {
+                    data.push({
+                        id: this,
+                        text: this
+                    });
+                });
+                callback(data);
+            },
+            // Some nice improvements:
+            // override message for max tags
+            formatSelectionTooBig: function (limit) {
+                return "Max tags is only " + limit;
+            }
+        });
+        {% if app.request.query.count == 0 %}
+            window.history.pushState({}, document.title, '?' + newsForm.serialize());
+        {% endif %}
+    </script>
+
+{% endblock %}

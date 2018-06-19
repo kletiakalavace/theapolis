@@ -1,0 +1,171 @@
+services:
+  twig.extension.intl:
+    class: Twig_Extensions_Extension_Intl
+    tags:
+    - { name: twig.extension }
+
+  twig.extension.time_diff:
+    class: Twig_Extensions_Extension_Date
+    tags:
+      - { name: twig.extension }
+
+  app.directory_namer.user_id:
+    class: Theaterjobs\UserBundle\Services\UploadDirectoryNamer
+
+  project.cacheimage_listener:
+    class: Theaterjobs\UserBundle\Services\CacheImageListener
+    arguments: ["@liip_imagine.cache.manager","@vich_uploader.templating.helper.uploader_helper"]
+    tags:
+      - { name: doctrine.event_listener, event: preUpdate }
+      - { name: doctrine.event_listener, event: onFlush }
+      - { name: doctrine.event_listener, event: preRemove }
+      - { name: doctrine.event_listener, event: postPersist }
+      - { name: doctrine.event_listener, event: postUpdate }
+
+  organization.subscriber:
+    class:  Theaterjobs\InserateBundle\Listener\OrganizationCreateSubscriber
+    arguments: ["@security.token_storage"]
+    tags:
+      - { name: doctrine.event_listener, event: prePersist }
+
+  app.mailer.twig_swift:
+    class: Theaterjobs\UserBundle\Mailer\Mailer
+    calls:
+      - [setRequest, ["@request_stack"]]
+    arguments:
+      - '@mailer'
+      - '@router'
+      - '@templating'
+      -
+        confirmation.template: '%fos_user.registration.confirmation.template%'
+        resetting.template: '%fos_user.resetting.email.template%'
+        from_email:
+          confirmation: '%fos_user.registration.confirmation.from_email%'
+          resetting: '%fos_user.resetting.email.from_email%'
+      - '@translator'
+      - '@doctrine.orm.entity_manager'
+      - '%from_email_address%'
+      - '@base_mailer'
+
+  highlight.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\HighlightExtension
+    public: false
+    tags:
+        - { name: twig.extension }
+
+  aggregation_count.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\AggregationCountExtension
+    public: false
+    tags:
+        - { name: twig.extension }
+  favorite.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\FavoriteExtension
+    arguments: ["@service_container", "@router"]
+    public: false
+    tags:
+        - { name: twig.extension }
+
+  un_favorite.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\UnFavoriteButtonExtension
+    public: false
+    tags:
+          - { name: twig.extension }
+
+  country.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\CountryExtension
+    public: false
+    tags:
+        - { name: twig.extension }
+
+  default_name.twig_extension:
+    class: Theaterjobs\ProfileBundle\Twig\DefaultNameExtension
+    public: false
+    tags:
+        - { name: twig.extension }
+
+  is_empty.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\IsEmptyExtension
+    public: false
+    tags:
+        - { name: twig.extension }
+
+  pagination.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\PaginationResultsExtension
+    arguments: ["@translator"]
+    public: false
+    tags:
+        - { name: twig.extension }
+
+  unserialize.twig_extension:
+    class: Theaterjobs\InserateBundle\Twig\Extension\UnSerialize
+    public: false
+    tags:
+        - { name: twig.extension }
+  active_nav.twig_extension:
+    class: Theaterjobs\MainBundle\Twig\ActiveNavigationExtension
+    public: false
+    arguments: ["@security.token_storage"]
+    calls:
+          - [setRequest, ["@request_stack"]]
+    tags:
+        - { name: twig.extension }
+
+  profile_search.listener.theaterjobs:
+    class: Theaterjobs\ProfileBundle\Listener\ProfileIndexListener
+    arguments:
+        - @fos_elastica.object_persister.theaterjobs.profile
+        - @fos_elastica.indexable
+        - { index: theaterjobs, type: profile, identifier: id }
+        - @fos_elastica.logger
+    tags:
+        - { name: doctrine.event_subscriber , lazy: true }
+        - { name: kernel.event_listener, event: console.command }
+
+  production_search.listener.theaterjobs:
+    class: Theaterjobs\ProfileBundle\Listener\ProductionIndexListener
+    arguments:
+        - @fos_elastica.object_persister.theaterjobs.production
+        - @fos_elastica.indexable
+        - { index: theaterjobs, type: production, identifier: id }
+        - @fos_elastica.logger
+    tags:
+        - { name: doctrine.event_subscriber , lazy: true }
+        - { name: kernel.event_listener, event: console.command }
+
+  news_search.listener.theaterjobs:
+    class: Theaterjobs\NewsBundle\Listener\NewsIndexListener
+    arguments:
+        - @fos_elastica.object_persister.theaterjobs.news
+        - @fos_elastica.indexable
+        - { index: theaterjobs, type: news, identifier: id }
+        - @fos_elastica.logger
+    tags:
+        - { name: doctrine.event_subscriber , lazy: true}
+        - { name: kernel.event_listener, event: console.command }
+
+  organization_search.listener.theaterjobs:
+    class: Theaterjobs\InserateBundle\Listener\OrganizationIndexListener
+    arguments:
+        - @fos_elastica.object_persister.theaterjobs.organization
+        - @fos_elastica.indexable
+        - { index: theaterjobs, type: organization, identifier: id }
+        - @fos_elastica.logger
+    tags:
+        - { name: doctrine.event_subscriber , lazy: true }
+        - { name: kernel.event_listener, event: console.command }
+
+  job_search.listener.theaterjobs:
+    class: Theaterjobs\InserateBundle\Listener\JobsIndexListener
+    arguments:
+        - @fos_elastica.object_persister.theaterjobs.job
+        - @fos_elastica.indexable
+        - { index: theaterjobs, type: job, identifier: id }
+        - @fos_elastica.logger
+    tags:
+        - { name: doctrine.event_subscriber , lazy: true }
+        - { name: kernel.event_listener, event: console.command }
+
+  admin_job.controller:
+    class: Theaterjobs\AdminBundle\Controller\JobController
+    calls:
+        - [setContainer, ["@service_container"]]

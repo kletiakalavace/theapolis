@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="block jobstofetch">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <h1><span>{{ 'admin.title.jobSiteReminder'|trans }}</span></h1>
+            </div>
+
+            <table id="data-table" class="display nowrap hidden" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="text-danger" data-name="title">
+                        {{ 'admin.jobSiteReminder.label.title'| trans }}
+                    </th>
+                    <th class="text-danger" data-name="title">
+                        {{ 'admin.jobSiteReminder.label.publicationDate'| trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        "@TheaterjobsAdminBundle/Resources/js/dataTable/loadJobSiteReminder.js" %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        dataTableURL = Routing.generate('tj_admin_load_job_site_reminders', {'_locale': locale});
+
+        $(() => {
+            dataTableInitialize()
+        });
+    </script>
+{% endblock %}

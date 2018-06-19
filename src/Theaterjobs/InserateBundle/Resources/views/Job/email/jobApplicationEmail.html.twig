@@ -1,0 +1,15 @@
+{% trans_default_domain 'emails' %}
+{{ "jobapplicationemail.noreply.sent.contact" | trans }}
+<br><br>
+{{ content | raw }}
+<br>
+{% if profile.isPublished %}
+    <div>
+        <br>
+        {{ "jobapplicationemail.for.more.info" | trans }} : {{ absolute_url(path('tj_profile_profile_show', { 'slug': slug })) }}
+    </div>
+{% endif %}
+<br>
+{{ "jobapplicationemail.service.provided.by.theapolis" | trans }}
+<br><br>
+{% include "TheaterjobsMainBundle:Mailer:footer.txt.twig" %}

@@ -1,0 +1,72 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'login.modal.mainTitle.logIn'| trans }}</h2>
+                <div id="loginModal">
+                    {% include "@TheaterjobsUser/Security/login_content.html.twig" %}
+                    {{ m.error }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const loading = $('#loginModal .submit-rolling-svg');
+    var loginForm = $('#loginModal form');
+    loginForm.validate({
+        lang: locale,
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+        },
+        ignore: [],
+        rules: {}
+    });
+    validFormInputs();
+
+    loginForm.submit(function (e) {
+        e.preventDefault();
+        validFormInputs();
+        if (loading.is(':visible')) {
+            return;
+        }
+        if (loginForm.valid()) {
+            loading.show();
+            $.ajax({
+                type: loginForm.attr('method'),
+                url: loginForm.attr('action'),
+                data: loginForm.serialize(),
+                success: function (data) {
+                    if (data.success === false) {
+                        loading.hide();
+                        if (data.reset === true) {
+                            $("#myModal").find(".modal-content").load("{{ path('tj_main_default_reset_modal') }}");
+                            return;
+                        }
+                        if (data.disabled) {
+                            var errContent = $('#loginModal .login-error-content');
+                            errContent.text(
+                                trans('login.modal.error.confirm_token.first', locale)
+                            );
+                            errContent.parent().removeClass('hidden');
+                            return;
+                        }
+
+                        toolTipError(trans('login.modal.tooltip.badCredencial', locale), $("#loginModal #username"));
+                        $("#myModal").find("#loginModal .form-group").addClass('has-error');
+                        $("#loginModal #password").tooltip({'trigger':'click', 'title': (trans('login.modal.tooltip.badCredencial', locale))});
+                    } else if (data.targetUrl !== undefined) {
+                        window.location.href = data.targetUrl;
+                    }
+                },
+                error: function () {
+                    loading.hide();
+                    serverError();
+                }
+            });
+        }
+    });
+
+</script>

@@ -1,0 +1,24 @@
+imports:
+    - { resource: config.yml }
+
+parameters:
+    old_database_host: mysql5.theaterjobs.de
+    old_database_name: db159502_27
+    old_database_user: db159502_27
+    old_database_password: jk0409
+
+framework:
+  templating:
+    assets_base_urls:
+      ssl:   ["https://%domain%"]
+
+monolog:
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug

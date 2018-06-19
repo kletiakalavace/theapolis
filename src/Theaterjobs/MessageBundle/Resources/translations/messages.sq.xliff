@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:44:42Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="5b1707b651e4d033a68ee656fd40b43cc1225301" resname="button.message.reply">
+        <source>button.message.reply</source>
+        <target state="new">Reply</target>
+        <jms:reference-file line="57">/../src/Theaterjobs/MessageBundle/Resources/views/Message/singleThread.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a16aa99eac83e59d2cfc0a6f89179119a9d3112" resname="button.message.send">
+        <source>button.message.send</source>
+        <target state="new">Send</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/loadNew.html.twig</jms:reference-file>
+        <jms:reference-file line="127">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d286e45b5415c98cff02929f1a2fb7256f6d2020" resname="empty.messenger.description">
+        <source>empty.messenger.description</source>
+        <target state="new">You don't have message</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/MessageBundle/Resources/views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3267c6e15c9298711e0ef85f35726c291d1e4e86" resname="empty.messenger.title">
+        <source>empty.messenger.title</source>
+        <target state="new">Messenger</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/MessageBundle/Resources/views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c7bdbd77aa25a3c9aeec1301a577384130c323f" resname="message.placeholder.subject">
+        <source>message.placeholder.subject</source>
+        <target state="new">Subject</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/loadNew.html.twig</jms:reference-file>
+        <jms:reference-file line="112">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a145b980a67ddbf73c573b92ccd0407c9ab74664" resname="message.placeholder.subject.title">
+        <source>message.placeholder.subject.title</source>
+        <target state="new">Subject</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/loadNew.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5faab163692473d02f2a6f1d73c8c206dad1f1c4" resname="message.placeholder.subjectHere">
+        <source>message.placeholder.subjectHere</source>
+        <target state="new">Subject here</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/loadNew.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="745573257801d1cb9d00c93618914958bf756c09" resname="message.placeholder.typeMessage">
+        <source>message.placeholder.typeMessage</source>
+        <target state="new">Type a message...</target>
+        <jms:reference-file line="45">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/loadNew.html.twig</jms:reference-file>
+        <jms:reference-file line="122">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/new.html.twig</jms:reference-file>
+        <jms:reference-file line="52">/../src/Theaterjobs/MessageBundle/Resources/views/Message/singleThread.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a9fda8fb15b523bb7cf940d7bb3d56521cbc2039" resname="messages.deletedBy %user%">
+        <source>messages.deletedBy %user%</source>
+        <target state="new">Deleted by %user%</target>
+        <jms:reference-file line="408">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/MessageBundle/Resources/views/Message/Pagination/messages.html.twig</jms:reference-file>
+        <jms:reference-file line="50">/../src/Theaterjobs/MessageBundle/Resources/views/Message/singleMessage.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2a5e3035a703c4105fbdff9ab33db865be4469c" resname="messages.error.invalid.format">
+        <source>messages.error.invalid.format</source>
+        <target state="new">Message too long</target>
+        <jms:reference-file line="179">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="72">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a017281f5a80f0ff551bc1f54fc59907d8acdfc7" resname="messages.error.parcticipant.notFound">
+        <source>messages.error.parcticipant.notFound</source>
+        <target state="new">messages.error.parcticipant.notFound</target>
+        <jms:reference-file line="168">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c53cbf904b161415b38bcc53d1e5a6462e5f464a" resname="messages.list.showmore">
+        <source>messages.list.showmore</source>
+        <target state="new">Show more</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/MessageBundle/Resources/views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b8ce1f4fbcc2bb9df2dbf6ce58498926fceecef9" resname="messages.notFound.Thread">
+        <source>messages.notFound.Thread</source>
+        <target state="new">messages.notFound.Thread</target>
+        <jms:reference-file line="217">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="259">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="286">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="397">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="442">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="64">/../src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b99ffc7c12f5fcd2297cbf2ddfaf056d32df3aa" resname="messages.placeholder.searchmessenger">
+        <source>messages.placeholder.searchmessenger</source>
+        <target state="new">Search messenger</target>
+        <jms:reference-file line="53">/../src/Theaterjobs/MessageBundle/Resources/views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="460a5323f52671512874b64bfd3ddd2cdae17e45" resname="tj.message.applicant.profile">
+        <source>tj.message.applicant.profile</source>
+        <target state="new">tj.message.applicant.profile</target>
+        <jms:reference-file line="39">views/JobApplications/application.html.twig</jms:reference-file>
+        <jms:reference-file line="83">views/Message/myApplications.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6ae7db15e3974827790ac4cdfa432208e7d4dcd6" resname="tj.message.application.for.job">
+        <source>tj.message.application.for.job</source>
+        <target state="new">tj.message.application.for.job</target>
+        <jms:reference-file line="22">views/JobApplications/application.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/Message/archivedApplications.html.twig</jms:reference-file>
+        <jms:reference-file line="13">views/Message/myApplications.html.twig</jms:reference-file>
+        <jms:reference-file line="60">views/Message/myApplications.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c6c8157fcf43e115fe143b183985cf1bf15e219" resname="tj.message.archived.applications">
+        <source>tj.message.archived.applications</source>
+        <target state="new">tj.message.archived.applications</target>
+        <jms:reference-file line="36">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="529dcfdd4822aa1db3c21d364255e338719c72bc" resname="tj.message.block.user">
+        <source>tj.message.block.user</source>
+        <target state="new">tj.message.block.user</target>
+        <jms:reference-file line="30">views/Message/inbox.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/Message/profileComunication.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/Message/profileComunicationInbox.html.twig</jms:reference-file>
+        <jms:reference-file line="30">views/Message/send.html.twig</jms:reference-file>
+        <jms:reference-file line="2">views/Message/singleMessage.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c545634bb0e2e9f31d1a7d49eb75687439e73683" resname="tj.message.breadcrumbs.compose">
+        <source>tj.message.breadcrumbs.compose</source>
+        <target state="new">tj.message.breadcrumbs.compose</target>
+        <jms:reference-file line="13">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e69ce38107a7a68125937728c3a59798d8a87e6e" resname="tj.message.breadcrumbs.index">
+        <source>tj.message.breadcrumbs.index</source>
+        <target state="new">tj.message.breadcrumbs.index</target>
+        <jms:reference-file line="23">views/Message/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29174b2ed6e668562daa35fefd38584d89f2749c" resname="tj.message.button.reply">
+        <source>tj.message.button.reply</source>
+        <target state="new">tj.message.button.reply</target>
+        <jms:reference-file line="76">views/Message/inbox.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="105e509ef5cbbaad7a1470f0fc368ce48495bed4" resname="tj.message.complain.in %complainTitle%">
+        <source>tj.message.complain.in %complainTitle%</source>
+        <target state="new">tj.message.complain.in %complainTitle%</target>
+        <jms:reference-file line="33">views/Message/myComplains.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Message/myComplains.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="53002d3142fa4e275c1bb2e9024ee389ef1775e6" resname="tj.message.complain.reply">
+        <source>tj.message.complain.reply</source>
+        <target state="new">tj.message.complain.reply</target>
+        <jms:reference-file line="84">views/Message/myComplains.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a971d83c9f13add46aa18c6f6afa9bdc40be7d4c" resname="tj.message.complain.text">
+        <source>tj.message.complain.text</source>
+        <target state="new">tj.message.complain.text</target>
+        <jms:reference-file line="81">views/Message/myComplains.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="edb2c9bbb4a06d2b084effba51382daf05c09268" resname="tj.message.complainer.profile">
+        <source>tj.message.complainer.profile</source>
+        <target state="new">tj.message.complainer.profile</target>
+        <jms:reference-file line="50">views/Message/myComplains.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8b6022786f7d95abe4201c4a40d6d1d33ad9af51" resname="tj.message.delete">
+        <source>tj.message.delete</source>
+        <target state="new">tj.message.delete</target>
+        <jms:reference-file line="31">views/Message/inbox.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/Message/send.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Message/singleMessage.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3217358e40e10fcf3a82a6d1aa2d975af0b60810" resname="tj.message.form.button.insert">
+        <source>tj.message.form.button.insert</source>
+        <target state="new">tj.message.form.button.insert</target>
+        <jms:reference-file line="29">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="65e8d53651ff8973575b827e07a1cb494667b5d5" resname="tj.message.form.label.body">
+        <source>tj.message.form.label.body</source>
+        <target state="new">tj.message.form.label.body</target>
+        <jms:reference-file line="27">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e174c23f894cc8a3efb022e35909c9cc0d8ae444" resname="tj.message.form.label.subject">
+        <source>tj.message.form.label.subject</source>
+        <target state="new">tj.message.form.label.subject</target>
+        <jms:reference-file line="25">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4ef64b357628bcb20e8cd258db54b0b6245226b2" resname="tj.message.form.label.user">
+        <source>tj.message.form.label.user</source>
+        <target state="new">tj.message.form.label.user</target>
+        <jms:reference-file line="23">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="721e36da454553b70eebb2d43565c522cb22ee54" resname="tj.message.form.title">
+        <source>tj.message.form.title</source>
+        <target state="new">tj.message.form.title</target>
+        <jms:reference-file line="21">views/Message/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7da618c85a6b08d999d98593a36f8b9da6c94f9e" resname="tj.message.inbox">
+        <source>tj.message.inbox</source>
+        <target state="new">tj.message.inbox</target>
+        <jms:reference-file line="30">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="088395c30e92a2838ea15bf30986309f764acd78" resname="tj.message.job.application.closed.by">
+        <source>tj.message.job.application.closed.by</source>
+        <target state="new">tj.message.job.application.closed.by</target>
+        <jms:reference-file line="591">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef1afb8575be79763c8625463e550a1494c87bec" resname="tj.message.job.application.delete">
+        <source>tj.message.job.application.delete</source>
+        <target state="new">tj.message.job.application.delete</target>
+        <jms:reference-file line="18">views/JobApplications/application.html.twig</jms:reference-file>
+        <jms:reference-file line="55">views/Message/myApplications.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b864c2f9fc07f5e4c3ee22e6a34f3d23bda8e0e" resname="tj.message.job.application.not.accepted">
+        <source>tj.message.job.application.not.accepted</source>
+        <target state="new">tj.message.job.application.not.accepted</target>
+        <jms:reference-file line="424">MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7660e87bf470f59a9c896dd8645342932e653840" resname="tj.message.job.application.print">
+        <source>tj.message.job.application.print</source>
+        <target state="new">tj.message.job.application.print</target>
+        <jms:reference-file line="13">views/JobApplications/application.html.twig</jms:reference-file>
+        <jms:reference-file line="51">views/Message/myApplications.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="388efce11d6e7d2be265aa955619831ee1866f41" resname="tj.message.job.application.reject">
+        <source>tj.message.job.application.reject</source>
+        <target state="new">tj.message.job.application.reject</target>
+        <jms:reference-file line="15">views/JobApplications/application.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e32766971dfacbd81825fbee1525c52c528c8673" resname="tj.message.job.application.reply">
+        <source>tj.message.job.application.reply</source>
+        <target state="new">tj.message.job.application.reply</target>
+        <jms:reference-file line="86">views/JobApplications/application.html.twig</jms:reference-file>
+        <jms:reference-file line="132">views/Message/myApplications.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d322a785a6bba25814820f018b84c0275ddbf1f7" resname="tj.message.job.application.text">
+        <source>tj.message.job.application.text</source>
+        <target state="new">tj.message.job.application.text</target>
+        <jms:reference-file line="83">views/JobApplications/application.html.twig</jms:reference-file>
+        <jms:reference-file line="129">views/Message/myApplications.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1dee4a543e1c270582896598c3e3c45c42cfae8c" resname="tj.message.my.applications">
+        <source>tj.message.my.applications</source>
+        <target state="new">tj.message.my.applications</target>
+        <jms:reference-file line="32">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="db6d42ebd93f40e63f74633088aa7563ed6bc899" resname="tj.message.my.complains">
+        <source>tj.message.my.complains</source>
+        <target state="new">tj.message.my.complains</target>
+        <jms:reference-file line="35">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4a121372d3a6894316d8f101785d1afd2290522b" resname="tj.message.print">
+        <source>tj.message.print</source>
+        <target state="new">tj.message.print</target>
+        <jms:reference-file line="29">views/Message/inbox.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/Message/send.html.twig</jms:reference-file>
+        <jms:reference-file line="1">views/Message/singleMessage.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ced3ad2d8557ace61657d9882460783f4e9a0079" resname="tj.message.profile.close.comunication">
+        <source>tj.message.profile.close.comunication</source>
+        <target state="new">tj.message.profile.close.comunication</target>
+        <jms:reference-file line="32">views/Message/profileComunication.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dac173b6a15cb19af2169d30469fec3344aa5aff" resname="tj.message.profile.comunication.inbox">
+        <source>tj.message.profile.comunication.inbox</source>
+        <target state="new">tj.message.profile.comunication.inbox</target>
+        <jms:reference-file line="40">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f42666b82b207e27e08cc352f53277901b343714" resname="tj.message.profile.comunication.send">
+        <source>tj.message.profile.comunication.send</source>
+        <target state="new">tj.message.profile.comunication.send</target>
+        <jms:reference-file line="38">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6a24109780108836c82991af5398605d958a51cb" resname="tj.message.profile.delete">
+        <source>tj.message.profile.delete</source>
+        <target state="new">tj.message.profile.delete</target>
+        <jms:reference-file line="34">views/Message/profileComunication.html.twig</jms:reference-file>
+        <jms:reference-file line="31">views/Message/profileComunicationInbox.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6eea1e14ee88a25eee5db7de0ab8b8f04056c0b0" resname="tj.message.profile.print">
+        <source>tj.message.profile.print</source>
+        <target state="new">tj.message.profile.print</target>
+        <jms:reference-file line="29">views/Message/profileComunication.html.twig</jms:reference-file>
+        <jms:reference-file line="29">views/Message/profileComunicationInbox.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ab86fe6ac4e6e220b2cc4b883a7ae3e12abf0c4d" resname="tj.message.profile.reply">
+        <source>tj.message.profile.reply</source>
+        <target state="new">tj.message.profile.reply</target>
+        <jms:reference-file line="94">views/Message/profileComunication.html.twig</jms:reference-file>
+        <jms:reference-file line="87">views/Message/profileComunicationInbox.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a510f0f2f5db805f3b6956dd7ccf996ca622f60" resname="tj.message.profile.reply.text">
+        <source>tj.message.profile.reply.text</source>
+        <target state="new">tj.message.profile.reply.text</target>
+        <jms:reference-file line="91">views/Message/profileComunication.html.twig</jms:reference-file>
+        <jms:reference-file line="84">views/Message/profileComunicationInbox.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da063705073ed9db3d081a1afbfbb54802a187fb" resname="tj.message.reply">
+        <source>tj.message.reply</source>
+        <target state="new">tj.message.reply</target>
+        <jms:reference-file line="76">views/Message/send.html.twig</jms:reference-file>
+        <jms:reference-file line="49">views/Message/singleMessage.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f9dc37a5d31898e12e5721c7c91b503cdd7a3a95" resname="tj.message.reply.text">
+        <source>tj.message.reply.text</source>
+        <target state="new">tj.message.reply.text</target>
+        <jms:reference-file line="73">views/Message/inbox.html.twig</jms:reference-file>
+        <jms:reference-file line="73">views/Message/send.html.twig</jms:reference-file>
+        <jms:reference-file line="46">views/Message/singleMessage.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a56e621fcc153344cda38244af3c9de8e66a68e" resname="tj.message.send">
+        <source>tj.message.send</source>
+        <target state="new">tj.message.send</target>
+        <jms:reference-file line="31">views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4983eed2339daca7b2855d0bb0f1ef84793c5ea0" resname="tj.message.title">
+        <source>tj.message.title</source>
+        <target state="new">tj.message.title</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/MessageBundle/Resources/views/Message/New/new.html.twig</jms:reference-file>
+        <jms:reference-file line="9">/../src/Theaterjobs/MessageBundle/Resources/views/Message/index.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

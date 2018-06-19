@@ -1,0 +1,55 @@
+<div class="modal-body ">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 all-performance">
+                <h2>{{ 'organization.show.detailBlock.mainTitle.performanceVisitors'| trans }}</h2>
+                {% if entity.organizationVisitors is not null and entity.organizationVisitors | length > 0
+                or entity.organizationPerformance is not null and entity.organizationPerformance | length > 0 %}
+                    {% if canEdit %}
+                    <p class="p-alt">
+                        <a data-href="{{ path('tj_main_organization_performances_modal_edit', { modal:'modal', slug:entity.slug }) }}"
+                           class="edit-stages">
+                            <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                            </svg> {{ 'link.edit'| trans }}</a>
+                    </p>
+                    {% endif %}
+                    <div class="panel-content">
+                        <div class="timeline timeline-inverse timeline-inverse-gray" id="modal-visitors">
+                            {% for year, numbers in listPerformances %}
+                                {#{% if loop.index <= 3 %}#}
+                                {#{% if numbers.performance is not empty and numbers.visitors is not empty %}#}
+                                <div class="timeline-group">
+                                    <div class="timeline-time" id="start">
+                                        {{ year }}
+                                    </div>
+                                    <div class="timeline-item">
+                                        <p class="p-alt">
+                                            <b>
+                                                {% if numbers.visitors is not empty %}
+                                                    {{ numbers.visitors| localizednumber('decimal') }} {{ 'organization.show.detailBlock.label.visitors'| trans }}
+                                                    {#{{ numbers.visitors }} {{ 'organization.show.detailBlock.label.visitors'| trans }}#}
+                                                {% endif %}
+                                                {% if numbers.performance is not empty %}
+                                                    {% if numbers.visitors is not empty %},  {% endif %}
+                                                    {{ numbers.performance | localizednumber('decimal') }} {{ 'organization.show.detailBlock.label.performances'| trans }}
+                                                {% endif %}
+                                            </b>
+                                        </p>
+                                    </div>
+                                </div>
+                                {#{% endif %}#}
+                                {#{% endif %}#}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.edit-stages').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+</script>

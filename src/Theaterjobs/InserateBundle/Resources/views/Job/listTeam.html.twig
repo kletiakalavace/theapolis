@@ -1,0 +1,52 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="page-wrap" id="jobs">
+        {{ form_start(form) }}
+        <div class="container">
+            <div class="block">
+                <div class="page-header">
+                    <h1><span id="searchCategory">{{ category ? category.title : "work.category.work" | trans }}</span>
+                    </h1>
+                </div>
+                <div class="panel-filter">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group no-margin {{ is_granted('ROLE_MEMBER') ? '' : is_granted('ROLE_USER') ? 'unusable' : 'registerFirst' }}">
+                                {{ form_label(form.searchPhrase) }}
+                                {% if is_granted('ROLE_MEMBER') %}
+                                    {{ form_widget(form.searchPhrase) }}
+                                {% else %}
+                                    {{ form_widget(form.searchPhrase, {'attr':{'style':'pointer-events: none;' } }) }}
+                                {% endif %}
+                                {{ form_widget(form.organization) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="jobPartial">
+                    <div class="row">
+                        {{ include('TheaterjobsInserateBundle:Partial:jobsTeam.html.twig', { 'jobs': jobs }) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/geohash.js'
+        '@TheaterjobsMainBundle/Resources/public/js/map/placeSuggest.js'
+        '@TheaterjobsInserateBundle/Resources/public/js/job/job.index.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        {% if app.request.get("location") %}
+        var latlng = decodeGeoHash("{{ app.request.get("location") }}");
+        filterLocation(latlng.latitude[0], latlng.longitude[0], peopleForm.selector, "{{ app.request.get("area") }}");
+        {% endif %}
+    </script>
+{% endblock %}

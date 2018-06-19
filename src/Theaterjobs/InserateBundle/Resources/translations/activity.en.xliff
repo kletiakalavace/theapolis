@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:38:39Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="b6f9c75cfbc8085598df7ec6d00eb3188def3b4f" resname="organization.activity.label.UpdatedorganizationName">
+        <source>organization.activity.label.UpdatedorganizationName</source>
+        <target>organization.activity.label.UpdatedorganizationName</target>
+        <jms:reference-file line="591">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e04524f2f96d17e8b193508726b5fad170ce0108" resname="organization.activity.label.admin.changedOrganizationIntoInvisible">
+        <source>organization.activity.label.admin.changedOrganizationIntoInvisible</source>
+        <target>organization.activity.label.admin.changedOrganizationIntoInvisible</target>
+        <jms:reference-file line="1631">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="265664561aa628192553e0ef9cc7628841ac89d1" resname="organization.activity.label.admin.changedOrganizationIntoVisible">
+        <source>organization.activity.label.admin.changedOrganizationIntoVisible</source>
+        <target>organization.activity.label.admin.changedOrganizationIntoVisible</target>
+        <jms:reference-file line="1649">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="043ed4912978ce22fb920eb4743645043d17aee3" resname="organization.activity.label.admin.changedOrganizationNonVio %str%">
+        <source>organization.activity.label.admin.changedOrganizationNonVio %str%</source>
+        <target>organization.activity.label.admin.changedOrganizationNonVio %str%</target>
+        <jms:reference-file line="2514">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d0a715e920a22bddc5b5ca498911b319bf0e8bad" resname="organization.activity.label.admin.changedOrganizationStatusInto %str% on">
+        <source>organization.activity.label.admin.changedOrganizationStatusInto %str% on</source>
+        <target>organization.activity.label.admin.changedOrganizationStatusInto %str% on</target>
+        <jms:reference-file line="1728">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="557a60de8f89579cb3e4dde742b96a31cc161135" resname="organization.activity.label.admin.changedOrganizationVio %str%">
+        <source>organization.activity.label.admin.changedOrganizationVio %str%</source>
+        <target>organization.activity.label.admin.changedOrganizationVio %str%</target>
+        <jms:reference-file line="2512">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba343ea938dfb9757bfea5f5ba1d4128ee86f889" resname="organization.activity.label.updated.organizationLocation">
+        <source>organization.activity.label.updated.organizationLocation</source>
+        <target>organization.activity.label.updated.organizationLocation</target>
+        <jms:reference-file line="1044">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc7683104cfd3f2ed81bdaa0a0b61bff0078b00b" resname="organization.activity.label.updatedBudgetGrants">
+        <source>organization.activity.label.updatedBudgetGrants</source>
+        <target>organization.activity.label.updatedBudgetGrants</target>
+        <jms:reference-file line="1325">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3163aa5d480f02978065c829882b74f30628c746" resname="organization.activity.label.updatedContact">
+        <source>organization.activity.label.updatedContact</source>
+        <target>organization.activity.label.updatedContact</target>
+        <jms:reference-file line="1406">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df03885f471ee1d45f7b4ea398b2d7a0f2fdbafe" resname="organization.activity.label.updatedData">
+        <source>organization.activity.label.updatedData</source>
+        <target>organization.activity.label.updatedData</target>
+        <jms:reference-file line="790">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="037c3232b3e05bf7dc004d3321aa1162030f6f9b" resname="organization.activity.label.updatedOrganizationApplicationInfo">
+        <source>organization.activity.label.updatedOrganizationApplicationInfo</source>
+        <target>organization.activity.label.updatedOrganizationApplicationInfo</target>
+        <jms:reference-file line="990">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="88ad4c0a91066f6e64164248aecf4865fb7d6b61" resname="organization.activity.label.updatedOrganizationDescription">
+        <source>organization.activity.label.updatedOrganizationDescription</source>
+        <target>organization.activity.label.updatedOrganizationDescription</target>
+        <jms:reference-file line="937">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67c4c945f7bfcaf89475065150af97f6661d254b" resname="organization.activity.label.updatedOrganizationLogo">
+        <source>organization.activity.label.updatedOrganizationLogo</source>
+        <target>organization.activity.label.updatedOrganizationLogo</target>
+        <jms:reference-file line="879">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ffe20ea3abf8274c11076ac814fdf9257490f905" resname="organization.activity.label.updatedOrganizationStages">
+        <source>organization.activity.label.updatedOrganizationStages</source>
+        <target>organization.activity.label.updatedOrganizationStages</target>
+        <jms:reference-file line="1145">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d65bccaa74273d3c2772c0d241b256c5335c4b77" resname="organization.activity.label.updatedPerformanceVisitors">
+        <source>organization.activity.label.updatedPerformanceVisitors</source>
+        <target>organization.activity.label.updatedPerformanceVisitors</target>
+        <jms:reference-file line="1257">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f41d45ce339dd0b929fddd632a0fd99586dfc55" resname="tj.user.activity.archived.education">
+        <source>tj.user.activity.archived.education</source>
+        <target>tj.user.activity.archived.education</target>
+        <jms:reference-file line="392">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c495b9f85fed7cff0db4bdad8d95ee6c682a6e44" resname="tj.user.activity.archived.organization">
+        <source>tj.user.activity.archived.organization</source>
+        <target>tj.user.activity.archived.organization</target>
+        <jms:reference-file line="843">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dbad37dce95fb57d3197e8a766e40aa581f4d1fe" resname="tj.user.activity.changed.commented.on %str%">
+        <source>tj.user.activity.changed.commented.on %str%</source>
+        <target>tj.user.activity.changed.commented.on %str%</target>
+        <jms:reference-file line="365">/../src/Theaterjobs/InserateBundle/Controller/AdminCommentsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ad5d8af9f23f0f9996a69ba5030a13194208885" resname="tj.user.activity.commented.on %str%">
+        <source>tj.user.activity.commented.on %str%</source>
+        <target>tj.user.activity.commented.on %str%</target>
+        <jms:reference-file line="121">/../src/Theaterjobs/InserateBundle/Controller/AdminCommentsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5114e455a0b308c2153f11cbc1c35b58a35d90ca" resname="tj.user.activity.deleted.comment.on %str%">
+        <source>tj.user.activity.deleted.comment.on %str%</source>
+        <target>tj.user.activity.deleted.comment.on %str%</target>
+        <jms:reference-file line="413">/../src/Theaterjobs/InserateBundle/Controller/AdminCommentsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b208fc2becd95aff8b3a22aea31acb08601c1c42" resname="tj.user.activity.deleted.education">
+        <source>tj.user.activity.deleted.education</source>
+        <target>tj.user.activity.deleted.education</target>
+        <jms:reference-file line="362">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cea5e1393ee4e86fde15d3bb970b9e23a5718ad6" resname="tj.user.activity.education.created">
+        <source>tj.user.activity.education.created</source>
+        <target>tj.user.activity.education.created</target>
+        <jms:reference-file line="107">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="734aac0bc4f673b7392b2031ee861100661d97d4" resname="tj.user.activity.education.updated">
+        <source>tj.user.activity.education.updated</source>
+        <target>tj.user.activity.education.updated</target>
+        <jms:reference-file line="319">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7172a0fc392149fb90299d14470b2e84f87e459" resname="tj.user.activity.employment.unresolved">
+        <source>tj.user.activity.employment.unresolved</source>
+        <target>tj.user.activity.employment.unresolved</target>
+        <jms:reference-file line="2230">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="428638116e54ea3eee585de91bcb76e8a00388d4" resname="tj.user.activity.employment.was.success">
+        <source>tj.user.activity.employment.was.success</source>
+        <target>tj.user.activity.employment.was.success</target>
+        <jms:reference-file line="2143">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8457daf5dd6eae54d3d49d7117fe18750319ee30" resname="tj.user.activity.job.EmailConfirmedAndRequestedPublication">
+        <source>tj.user.activity.job.EmailConfirmedAndRequestedPublication</source>
+        <target state="new">tj.user.activity.job.EmailConfirmedAndRequestedPublication</target>
+        <jms:reference-file line="1632">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc0d792d463bf779f5000ca1a4fc3b510625dad3" resname="tj.user.activity.job.archived">
+        <source>tj.user.activity.job.archived</source>
+        <target>tj.user.activity.job.archived</target>
+        <jms:reference-file line="973">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d4770c6b1cca35a76d6ba218db3478168468d6db" resname="tj.user.activity.job.deleted">
+        <source>tj.user.activity.job.deleted</source>
+        <target>tj.user.activity.job.deleted</target>
+        <jms:reference-file line="887">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0982cf83c922cdc54ebddb2124a1c923f80b336d" resname="tj.user.activity.job.mail.send.activated">
+        <source>tj.user.activity.job.mail.send.activated</source>
+        <target>tj.user.activity.job.mail.send.activated</target>
+        <jms:reference-file line="2469">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9bbbe52b8b15e4797b9424f3e8b176c944552be2" resname="tj.user.activity.job.mail.send.deactivated">
+        <source>tj.user.activity.job.mail.send.deactivated</source>
+        <target>tj.user.activity.job.mail.send.deactivated</target>
+        <jms:reference-file line="2465">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1c4b8ae9c6f015237b944a77c05d234967b029dc" resname="tj.user.activity.job.updated">
+        <source>tj.user.activity.job.updated</source>
+        <target>tj.user.activity.job.updated</target>
+        <jms:reference-file line="799">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce4ee23e36e356af4f89135cf7a10f2bfd64d733" resname="tj.user.activity.network.archived">
+        <source>tj.user.activity.network.archived</source>
+        <target>tj.user.activity.network.archived</target>
+        <jms:reference-file line="394">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a48f51c945cf53627dcc0cddf6b13df75be0aac8" resname="tj.user.activity.network.deleted">
+        <source>tj.user.activity.network.deleted</source>
+        <target>tj.user.activity.network.deleted</target>
+        <jms:reference-file line="355">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b8024b7a1ca5ea05acec9e967dd10c06ec2f7cc0" resname="tj.user.activity.network.updated">
+        <source>tj.user.activity.network.updated</source>
+        <target>tj.user.activity.network.updated</target>
+        <jms:reference-file line="315">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c56159c8bb9190fefb3ec5377735a65c004ff1f6" resname="tj.user.activity.newtwork.created">
+        <source>tj.user.activity.newtwork.created</source>
+        <target>tj.user.activity.newtwork.created</target>
+        <jms:reference-file line="93">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce4fd7033da603d1735fecdcf681fa1f7b71bba6" resname="tj.user.activity.organization.closed">
+        <source>tj.user.activity.organization.closed</source>
+        <target>tj.user.activity.organization.closed</target>
+        <jms:reference-file line="969">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="45b0624a6e5bf63e0016554467174b3b662d09c0" resname="tj.user.activity.piece.created">
+        <source>tj.user.activity.piece.created</source>
+        <target>tj.user.activity.piece.created</target>
+        <jms:reference-file line="175">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9e084a2c8b3e0816d8109414f753735df9c7b574" resname="tj.user.activity.piece.deleted">
+        <source>tj.user.activity.piece.deleted</source>
+        <target>tj.user.activity.piece.deleted</target>
+        <jms:reference-file line="694">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cb7a28f133064d170bd000861f44ddfe4cc33b28" resname="tj.user.activity.piece.published">
+        <source>tj.user.activity.piece.published</source>
+        <target>tj.user.activity.piece.published</target>
+        <jms:reference-file line="287">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b874dfd7b994d47a1d37c55b6a77e45721e708b" resname="tj.user.activity.piece.unpublished">
+        <source>tj.user.activity.piece.unpublished</source>
+        <target>tj.user.activity.piece.unpublished</target>
+        <jms:reference-file line="362">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="365">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e5dee677e6d4c498ffb7386b29815e4f45481dc" resname="tj.user.activity.piece.updated">
+        <source>tj.user.activity.piece.updated</source>
+        <target>tj.user.activity.piece.updated</target>
+        <jms:reference-file line="647">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="75c61141bbfa9946e887483b172dd2838a60520a" resname="tj.user.activity.status.not.reachable.organization">
+        <source>tj.user.activity.status.not.reachable.organization</source>
+        <target>tj.user.activity.status.not.reachable.organization</target>
+        <jms:reference-file line="995">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2d3c9540a5ee62e297e9dbe14a3fda9e835a6ae1" resname="tj.user.activity.took.ownership.job">
+        <source>tj.user.activity.took.ownership.job</source>
+        <target>tj.user.activity.took.ownership.job</target>
+        <jms:reference-file line="2400">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d1757699ae335be4750dce9c0dff12157015e1f6" resname="tj.user.employment.not.successful">
+        <source>tj.user.employment.not.successful</source>
+        <target>tj.user.employment.not.successful</target>
+        <jms:reference-file line="2173">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="354d89d6755ce20cdbdee376c5f323da96157a84" resname="user.activity.job.ApprovedAndCheckedByAdmin">
+        <source>user.activity.job.ApprovedAndCheckedByAdmin</source>
+        <target state="new">user.activity.job.ApprovedAndCheckedByAdmin</target>
+        <jms:reference-file line="647">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="652">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="654">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7507b52caa43ea714a04a350b166428145bbcd63" resname="user.activity.job.checkedByAdmin">
+        <source>user.activity.job.checkedByAdmin</source>
+        <target>user.activity.job.checkedByAdmin</target>
+        <jms:reference-file line="660">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="661">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e85e7bab121cdd16801e3576f7462408a4737102" resname="user.activity.job.created">
+        <source>user.activity.job.created</source>
+        <target>user.activity.job.created</target>
+        <jms:reference-file line="418">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fcd97bbdc5c848ee058cc43cd582ef6af4190f4f" resname="user.activity.job.notification.requestedEmailPublication">
+        <source>user.activity.job.notification.requestedEmailPublication</source>
+        <target state="new">user.activity.job.notification.requestedEmailPublication</target>
+        <jms:reference-file line="1226">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="21a24c00b66fcc8c9e1a51820088df79fdce58a8" resname="user.activity.job.notification.requestedPublication">
+        <source>user.activity.job.notification.requestedPublication</source>
+        <target state="new">user.activity.job.notification.requestedPublication</target>
+        <jms:reference-file line="1238">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="1249">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7cd99bf8d1aaeedf1c5fa1ebb835ee49a0c160ad" resname="user.activity.job.publicationRequestAwaitingEmailConfirmation">
+        <source>user.activity.job.publicationRequestAwaitingEmailConfirmation</source>
+        <target state="new">user.activity.job.publicationRequestAwaitingEmailConfirmation</target>
+        <jms:reference-file line="1224">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2d8a5d3fab83644d568c80f44a3763ff8b51decd" resname="user.activity.job.published">
+        <source>user.activity.job.published</source>
+        <target>user.activity.job.published</target>
+        <jms:reference-file line="1166">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="1208">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2525cff1d04150c68cdb3f7d9941c9075f753bdc" resname="user.activity.job.requestedPublication">
+        <source>user.activity.job.requestedPublication</source>
+        <target state="new">user.activity.job.requestedPublication</target>
+        <jms:reference-file line="1236">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="1247">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

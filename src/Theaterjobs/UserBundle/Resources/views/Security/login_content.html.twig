@@ -1,0 +1,61 @@
+<form action="{{ path("fos_user_security_check") }}" method="post" role="form" class="form-horizontal"
+      xmlns="http://www.w3.org/1999/html">
+    <div class="form-group">
+        <label for="username">{{ 'login.modal.label.username' | trans({},'forms') }}</label>
+        <input type="text" class="form-control" id="username" autofocus name="_username"  data-toggle="tooltip" required="required" autocomplete="off"/>
+    </div>
+
+    <div class="form-group">
+        <label for="password">{{ 'login.modal.label.password' | trans({},'forms') }}</label>
+        <input type="password" class="form-control" id="password" name="_password" required="required"/>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-6 label-login">
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="remember_me" checked name="_remember_me"/>
+                        <span class="faux-checkbox"></span>{{ 'login.modal.label.rememberMe' | trans({},'forms') }}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-6 label-login">
+            <div class="form-group">
+                {% if app.request.attributes.get('_route') == "fos_user_security_login" %}
+                    <a class="text-warning tj-modal-toggle resetModal"
+                       data-href="{{ path('tj_main_default_reset_modal') }}"
+                       href="javascript:;">
+                        {{ 'login.modal.label.forgotPassword' |trans({},'forms') }}
+                    </a>
+                {% else %}
+                    <a class="text-white tj-modal-toggle resetModal"
+                       data-href="{{ path('tj_main_default_reset_modal') }}"
+                       href="javascript:;">
+                        {{ 'login.modal.label.forgotPassword' |trans({},'forms') }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p class="text-center">
+            <button type="submit" id="_submit"
+                class="btn {{ app.request.attributes.get('_route') == "fos_user_security_login" ? '': 'btn-inverse-primary' }} btn-primary">
+                <span>{{ 'button.submit'| trans({},'forms') }}</span>
+                <span class="submit-rolling-svg" style="display: none;"></span>
+            </button>
+        </p>
+    </div>
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+</form>
+
+<script>
+    $('.resetModal').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+
+</script>

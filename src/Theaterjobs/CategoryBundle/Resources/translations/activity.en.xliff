@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-09-05T16:09:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="2fae887437bc2352b23fbd3f6f238894fe28fc76" resname="tj.user.activity.category.created">
+        <source>tj.user.activity.category.created</source>
+        <target>tj.user.activity.category.created</target>
+        <jms:reference-file line="82">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9096fbd03566d19f87b85a3da4628a0ee3e5527d" resname="tj.user.activity.category.updated">
+        <source>tj.user.activity.category.updated</source>
+        <target>tj.user.activity.category.updated</target>
+        <jms:reference-file line="204">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

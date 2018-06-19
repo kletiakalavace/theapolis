@@ -1,0 +1,50 @@
+<div class="modal-body movebottom experience-modal gray-modal custom-modal-logs">
+    <div class="container contet-logList">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'organization.show.mainTitle.logs'| trans }}</h2>
+                <div class="timeline timeline-inverse timeline-inverse-gray logList" id="modal-logList">
+                    {% if activities is not null %}
+
+                        {% for activity in activities %}
+
+                            {% set userName = (activity.createdBy ? activity.createdBy.profile : activity.user.profile) | defaultName %}
+
+                            <div class="timeline-group">
+
+                                <div class="timeline-item">
+                                    <p class="p-alt">
+                                        <b>{{ userName }}</b>
+                                        {% if activity.createdBy is not null and activity.createdBy.hasRole('ROLE_ADMIN') %}
+                                            ({{ 'placeholder.admin' |trans({},'messages') }})
+                                        {% endif %}
+                                    <div class="timeline-time" id="start">
+                                        {{ activity.createdAt|date('d.m.Y H:i') }}
+                                    </div>
+                                    {% if activity.activityText is not empty %}
+                                        <div class="logged">
+                                            {{ activity.activityText|raw }}
+                                        </div>
+                                    {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    {% if entity.createdAt is not empty %}
+                        <div class="timeline-group">
+                            <div class="timeline-item">
+                                <p class="p-alt last-createDate">
+                                    <b>{{ 'organization.show.detailBlock.createdDate'| trans }}</b>
+                                </p>
+                                <div class="timeline-time" id="start">
+                                    <span>{{ entity.createdAt|date('d.m.Y H:i') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

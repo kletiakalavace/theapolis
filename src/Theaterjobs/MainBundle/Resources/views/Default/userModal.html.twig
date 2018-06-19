@@ -1,0 +1,167 @@
+{% import '::macro.html.twig' as m %}
+
+<div class="modal-body">
+    <div class="container">
+        {% set profilePhoto =  profile_photo(profile,'uploadFile','profile_modal') %}
+        {% set filter = '' %}
+        {% if profile.mediaImage|first.filter is defined %}
+            {% set filter = profile.mediaImage|first.filter %}
+        {% endif %}
+
+        <div class="user-menu">
+            <div class="user-menu-profile">
+                <div class="profile-photo-lg">
+                    <figure class="{{ filter }}">
+                        <img src="{{ profilePhoto }}" width="130" height="130" alt="Sample profile photo">
+                    </figure>
+                </div>
+                <div class="user-menu-content">
+                    <h1>
+                        {{ 'user.show.label.hi' | trans }}
+                        {% if app.user is not null %}
+                            {{ app.user.profile | defaultName }}
+                        {% endif %}
+                    </h1>
+                    <ul class="list-unstyled list-inline list-sphiaced ul-alt">
+                        <li class="hide-md">
+                            <a href="{{ path('tj_user_notifications') }}">
+                                <strong>
+                                    {{ 'user.show.items.notifications' | trans }}
+                                </strong>
+                            </a>
+                            <span class="badge">
+                                {{ nrUnseenNot }}
+                            </span>
+                        </li>
+                        <li class="hide-md">
+                            <a href="{{ path('tj_message_index') }}">
+                                <strong>
+                                    {{ 'user.show.items.messages' | trans }}
+                                </strong>
+                            </a>
+                            <span class="badge">
+                                {{ fos_message_nb_unread() }}
+                            </span>
+                        </li>
+                        <li class="hide-md">
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                <strong>
+                                    {{ 'user.show.items.logout' | trans }}
+                                </strong>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <nav class="user-menu-nav">
+                <ul class="list-unstyled list-spaced ul-alt">
+                    <li>
+                        <a href="{{ path('tj_main_dashboard_index') }}">
+                            <strong>
+                                {{ 'user.show.items.dashboard' | trans }}
+                            </strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>
+                                {{ 'user.show.items.applications' | trans }}
+                            </strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <strong>
+                                {{ 'user.show.items.entries' | trans }}
+                            </strong>
+                        </a>
+                    </li>
+
+                    {% if app.user is not null %}
+                        {{ m.displayOrganization(app.user.userOrganizations) }}
+                        {% if( nrSaveSearches > 0 ) %}
+                            <li>
+                                <a href="{{ path("tj_saved_searches_list") }}">
+                                    <strong>
+                                        {{ 'user.show.items.searches' | trans ~ ' (' ~ nrSaveSearches ~ ')' }}
+                                    </strong>
+                                </a>
+                            </li>
+                        {% endif %}
+                        <li>
+                            <a href="{{ path('tj_profile_profile_show', {'slug': app.user.profile.slug}) }}">
+                                <strong>
+                                    {{ 'user.show.items.profile' | trans }}
+                                </strong>
+                            </a>
+                        </li>
+                        {% if( nrAppliedJobs > 0 ) %}
+                            <li>
+                                <a href="{{ path('tj_inserate_job_route_list', {'applied' : 1}) }}">
+                                    <strong>
+                                        {{ 'user.show.items.applications' | trans ~ ' (' ~ nrAppliedJobs ~ ')' }}
+                                    </strong>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {{ m.showFavourites(app.user.profile.userFavourite, app.user.profile.organisationFavourite, app.user.profile.jobFavourite, app.user.profile.newsFavourite) }}
+                    {% endif %}
+
+                    {% if( userJobs > 0 ) %}
+                        <li>
+                            <a href="{{ path('tj_inserate_job_route_myjobs', {'status' : ['1', '2', '3', '5']}) }}">
+                                <strong>
+                                    {{ 'user.show.items.myJobs' | trans ~ ' (' ~ userJobs ~ ')' }}
+                                </strong>
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    <li>
+                        <a href="{{ path('tj_user_account_settings') }}">
+                            <strong>
+                                {{ 'user.show.items.account' | trans }}
+                            </strong>
+                        </a>
+                    </li>
+
+                    <li class="hide-lg">
+                        <a href="{{ path('tj_user_notifications') }}">
+                            <strong>
+                                {{ 'user.show.items.notifications' | trans }}
+                            </strong>
+                        </a>
+                        <span class="badge">
+                            {{ nrUnseenNot }}
+                        </span>
+                    </li>
+                    <li class="hide-lg">
+                        <a href="{{ path('tj_message_index') }}">
+                            <strong>
+                                {{ 'user.show.items.messages' | trans }}
+                            </strong>
+                        </a>
+                        <span class="badge">
+                            {{ fos_message_nb_unread() }}
+                        </span>
+                    </li>
+                    <li class="hide-lg">
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            <strong>
+                                {{ 'user.show.items.logouts' | trans }}
+                            </strong>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.show-submenu-favorite').click(function (e) {
+        $(this).parent().find('ul').slideToggle('fast');
+    });
+</script>

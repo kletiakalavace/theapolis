@@ -1,0 +1,90 @@
+{% extends "::base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}    
+{% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-4">
+            {{form_start(form)}}
+            {{ form_row(form.dateFrom) }}
+            {{ form_row(form.dateTo) }}
+            {{ form_row(form.entity) }}
+            <div id="members" class="hidden">
+                {{ form_row(form.members) }}
+            </div>
+            <div id="registeredType" class="hidden">
+                {{ form_row(form.registeredType) }}
+            </div>
+            <div id="paymentsType" class="hidden">
+                {{ form_row(form.paymentsType) }}
+            </div>
+            <div id="paymentsTime" class="hidden">
+                {{ form_row(form.paymentsTime) }}
+            </div>
+            <div id="membershipsType" class="hidden">
+                {{ form_row(form.membershipsType) }}
+            </div>
+            <div id="membersType" class="hidden">
+                {{ form_row(form.membersType) }}
+            </div>
+            <div id="status" class="hidden">
+                {{ form_row(form.status) }}
+            </div>
+            <div id="users" class="hidden">
+                {{ form_row(form.users) }}
+            </div>
+            {{form_end(form)}}
+        </div>
+        <div class="col-md-8">
+            <div class="col-md-12">
+                <div class="col-md-7 pull-right">
+                    <button data-type="day" type="button" class="btn time btn-info">{{ 'tj.stats.button.today' | trans }}</button>
+                    <button data-type="week" type="button" class="btn time btn-info">{{ 'tj.stats.button.seven.days' | trans }}</button>
+                    <button data-type="month" type="button" class="btn time btn-info">{{ 'tj.stats.button.thirty.todays' | trans }}</button>
+                </div>
+                <table id="datatable" class="table table-striped">
+                    <tr>
+                        <th></th>
+                        <th>{{'tj.stats.entity.counts'|trans}}</th>
+                    </tr>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>{{entity.dt|date('d.m.Y h:i:s')}}
+                            </td>
+                            <td>
+                                {{entity.num}}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-12" id="graphContainer"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="border-right: 1px dashed #9B9A9A;">
+            <h3>{{ 'tj.stats.jobs.in.last.thirty.days' | trans }}</h3>
+            <h4>{{ jobs.num }}</h4>
+        </div>
+        <div class="col-md-3" style="border-right: 1px dashed #9B9A9A;">
+            <h3>{{ 'tj.stats.networks.in.last.thirty.days' | trans }}</h3>
+            <h4>{{ network.num }}</h4>
+        </div>
+        <div class="col-md-3">
+            <h3>{{ 'tj.stats.educations.in.last.thirty.days' | trans }}</h3>
+            <h4>{{ education.num }}</h4>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsMainBundle/Resources/public/components/highcharts/highcharts.js"
+        "@TheaterjobsMainBundle/Resources/public/components/highcharts/modules/data.js"
+        "@TheaterjobsMainBundle/Resources/public/components/highcharts/modules/exporting.js"
+        "@TheaterjobsStatsBundle/Resources/public/js/stats.js"
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

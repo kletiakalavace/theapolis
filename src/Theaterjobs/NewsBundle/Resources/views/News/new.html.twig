@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% import 'macro.html.twig' as m %}
+{% form_theme form.children.uploadFile '@VichUploader/Form/fields.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+
+    "@TheaterjobsNewsBundle/Resources/public/css/news.less"
+    "@eonasdan_bootstrap_datetimepicker_css" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    <style>
+        .modal-content {
+            top: 45px;
+        }
+    </style>
+    {% endstylesheets %}
+{% endblock %}
+{% block breadcrumb %}
+    <li>
+        <a href="{{path('tj_news')}}">{{ 'tj.breadcrumbs.news' | trans}}</a>
+    </li> 
+    <li class="active">
+        {{ 'tj.breadcrumbs.new' | trans }}
+    </li>
+{% endblock %}
+{% block content %}
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <div class="panel-title text-center"><h1>{{'news.create.heading'|trans}}</h1></div>
+        </div>
+        <div class="panel-body">
+            {#{{ form(form, {'attr': {'novalidate': 'novalidate'}}) }}#}
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-4">
+                    {{ form_row(form.pretitle) }}
+                    {{ form_row(form.title) }}
+                    {{ form_row(form.category) }}
+                </div>
+                <div class="col-md-4">    
+                    {{form_row(form.shortDescription, { 'attr' : { 'class' : 'short-description' } }) }}
+                </div>
+                <div class="col-md-4">
+                    {{ form_row(form.path) }}
+                    {{ form_row(form.uploadFile) }}
+                    {{ m.imageOptions }}
+                    {{ m.crop }}
+                    {{ form_row(form.imageDescription, {'attr': {'class': 'hidden'} }) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    {{form_row(form.organizations,{'attr' : {'multiple': 'true' } })}}
+                    {{form_row(form.users,{'attr' : {'multiple': 'true' } }) }}
+                    {{form_row(form.tags_helper,{'attr' : {'multiple': 'true' } }) }}
+                </div>
+                <div class="col-md-8">
+                    <input id="pac-input" class="controls" type="text" placeholder="{{'form.placeholder.location'|trans}}">
+                    <span id="currentLocation" class="btn btn-success pull-right" >{{ 'tj.network.locate.me' | trans }}</span>
+                    <div id="map" style="height:300px" width="100%"></div>
+                    {{form_row(form.geolocation)}}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    {{form_row(form.description,{'attr':{'class' : 'hidden usefultextarea'} })}}
+                    <div id="editor" class="wysiwyg-editor"></div>
+                </div>
+            </div>
+            <a href="{{ path('tj_news') }}" class="btn btn-info">{{'tj.cancel.button'}}</a>
+            {{ form_widget(form._token) }}
+            {{form_end(form)}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {% javascripts filter="?uglifyjs2"
+    "@select2_js"
+    "@TheaterjobsNewsBundle/Resources/public/js/news.js"
+    "@TheaterjobsMainBundle/Resources/public/js/editorConfig.js"
+    "@TheaterjobsMainBundle/Resources/public/js/ace/elements.fileinput.js"
+    "@TheaterjobsMainBundle/Resources/public/js/ace/bootstrap-wysiwyg.js"
+    "@TheaterjobsMainBundle/Resources/public/js/ace/ace-elements.js"
+    "@eonasdan_bootstrap_datetimepicker_js"
+    '@TheaterjobsMainBundle/Resources/public/js/map/location.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-02-14T12:43:17Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="3c973af1fe4e35c55e5cb1feaff133aa306f0e68" resname="form.category.attr.title">
+        <source>form.category.attr.title</source>
+        <target>Title</target>
+        <jms:reference-file line="56">/home/manoolia/html/theaterjobs21/src/Theaterjobs/CategoryBundle/Form/Type/CategoryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b41db6d4bb839285f27cefcaca7f2114c433b410" resname="form.category.button.delete">
+        <source>form.category.button.delete</source>
+        <target>Delete</target>
+        <jms:reference-file line="168">/../src/Theaterjobs/CategoryBundle/Controller/CategoryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf5a258f748dad692d3bc8a4a6d7df76d0d5dcbb" resname="form.category.choice.empty_value">
+        <source>form.category.choice.empty_value</source>
+        <target>Empty value</target>
+        <jms:reference-file line="54">/../src/Theaterjobs/CategoryBundle/Form/Type/CategoryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4d68ade9fdf9fd1d16164f2725482b4fabb28c43" resname="form.category.label">
+        <source>form.category.label</source>
+        <target>Category</target>
+        <jms:reference-file line="49">Form/Type/CategoryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c88a18a61e8e0d35c1fe81117426b57f2a7316df" resname="work.new.label.category">
+        <source>work.new.label.category</source>
+        <target state="new">Category</target>
+        <jms:reference-file line="53">/../src/Theaterjobs/CategoryBundle/Form/Type/CategoryType.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

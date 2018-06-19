@@ -1,0 +1,520 @@
+{% extends '::base.html.twig' %}
+{% import '::macro.html.twig' as m %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('newsShow')) }}
+    <!-- Article header -->
+    {% if entity.path %}
+        <header class="article-header">
+            <div class="container">
+                <div class="container show-news-template">
+                    <div class="group-btn-noCover">
+                        {% if not anon %}
+                            {% set isFav = entity in app.user.profile.newsFavourite %}
+                            {% set isUser = is_granted('ROLE_MEMBER') ? '' : 'unusable' %}
+                            <a class="icon favourite-news-btn {{ isUser }} {{ isFav?'active':'' }}"
+                               data-entity="news" data-action="{{ isFav?'remove':'add' }}"
+                               data-toggle="tooltip" data-placement="bottom"
+                               id="action_favorite" href="javascript:;"
+                               title="{{ (isFav ? 'people.show.tooltip.removeFromFavourites':'people.show.tooltip.addToFavourites') | trans }}">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                                </svg>
+                            </a>
+                        {% else %}
+                            <a class="icon favourite-news-btn registerFirst"
+                               data-entity="news" href="javascript:;"
+                               title="{{ 'people.show.tooltip.addToFavourites' | trans }}">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    </div>
+                    <p class="article-header-detail">{{ entity.pretitle |raw }}</p>
+                    <h1 class="h1-alt">{{ entity.title |raw }}
+                        <svg class="icon-svg icon-svg-success favorite-icon-name {% if not anon and isFav %} hidden {% endif %}"
+                             width="50" height="50">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star') }}"></use>
+                        </svg>
+                    </h1>
+                    <p class="article-header-detail">{{ entity.publishAt|date('d.m.Y') }}</p>
+                </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="row">
+                        <div class="admin-section" style="float:right">
+                            <div class="col-md-2">
+                                <label id="publishLabel"
+                                       class="{{ entity.published?'':'hidden' }}">
+                                    {{ 'people.show.label.publish'|trans }}
+                                </label>
+                                <label id="unpublishLabel" class="{{ not entity.published?'':'hidden' }}">
+                                    {{ 'people.show.label.unpublish'|trans }}
+                                </label>
+                                <div class="switch switch-alt">
+                                    <label class="switch-option">
+                                        <input type="radio" name="public"
+                                               value="1" {{ entity.published?'checked':'' }}
+                                               data-url="{{ path('tj_admin_confirm_news',{slug:entity.slug, status:'true'}) }}">
+                                        <div class="switch-toggle" id="publish">
+                                            <svg class="icon-svg" width="20" height="20">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-visible') }}"></use>
+                                            </svg>
+                                        </div>
+                                    </label>
+
+                                    <label class="switch-option">
+                                        <input type="radio" name="public"
+                                               value="0" {{ not entity.published ?'checked':'' }}
+                                               data-url="{{ path('tj_admin_confirm_news',{slug:entity.slug, status:'false'}) }}">
+                                        <div class="switch-toggle" id="unpublish">
+                                            <svg class="icon-svg" width="20" height="20">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-invisible') }}"></use>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+            <img class="article-header-cover"
+                 src="{{ vich_uploader_asset(entity, 'uploadFile') | imagine_filter('preview') }}"
+                 alt="{{ entity.imageDescription }}" title="{{ entity.imageDescription }}">
+        </header>
+    {% else %}
+        <header class="article-header article-header-no-cover">
+            <div class="container">
+                <div class="container show-news-template">
+                    {% if entity.published or is_granted('ROLE_ADMIN') %}
+                        {% if not anon %}
+                            {% set isFav = entity in app.user.profile.newsFavourite %}
+                            {% set isUser = is_granted('ROLE_MEMBER') ? '' : 'unusable' %}
+                            <a class="icon favourite-news-btn {{ isUser }} {{ isFav?'active':'' }}"
+                               data-entity="news" data-action="{{ isFav?'remove':'add' }}"
+                               data-toggle="tooltip" data-placement="bottom"
+                               id="action_favorite" href="javascript:;"
+                               title="{{ (isFav?'people.show.tooltip.removeFromFavourites':'people.show.tooltip.addToFavourites') | trans }}">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                                </svg>
+                            </a>
+                        {% else %}
+                            <a class="icon favourite-news-btn registerFirst"
+                               data-entity="news" href="javascript:;"
+                               title="{{ 'people.show.tooltip.addToFavourites' | trans }}">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                    <p class="article-header-detail">{{ entity.pretitle |raw }}</p>
+                    <h1 class="h1-alt">{{ entity.title |raw }}
+                        <svg class="icon-svg icon-svg-success favorite-icon-name {% if not anon and isFav %} hidden {% endif %}"
+                             width="50" height="50">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star') }}"></use>
+                        </svg>
+                    </h1>
+                    <p class="article-header-detail">{{ entity.publishAt|date('d.m.Y') }}</p>
+                </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="row">
+                        <div class="admin-section" style="float:right">
+
+                            <div class="col-md-2">
+                                <label id="publishLabel"
+                                       class="{{ entity.published?'':'hidden' }}">
+                                    {{ 'people.show.label.publish'|trans }}
+                                </label>
+                                <label id="unpublishLabel" class="{{ not entity.published?'':'hidden' }}">
+                                    {{ 'people.show.label.unpublish'|trans }}
+                                </label>
+                                <div class="switch switch-alt">
+                                    <label class="switch-option">
+                                        <input type="radio" name="public"
+                                               value="1" {{ entity.published?'checked':'' }}
+                                               data-url="{{ path('tj_admin_confirm_news',{slug:entity.slug, status:'true'}) }}">
+                                        <div class="switch-toggle" id="publish">
+                                            <svg class="icon-svg" width="20" height="20">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-visible') }}"></use>
+                                            </svg>
+                                        </div>
+                                    </label>
+
+                                    <label class="switch-option">
+                                        <input type="radio" name="public"
+                                               value="0" {{ not entity.published ?'checked':'' }}
+                                               data-url="{{ path('tj_admin_confirm_news',{slug:entity.slug, status:'false'}) }}">
+                                        <div class="switch-toggle" id="unpublish">
+                                            <svg class="icon-svg" width="20" height="20">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-invisible') }}"></use>
+                                            </svg>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </header>
+    {% endif %}
+
+    <div class="container">
+
+        <div class="block">
+            <div class="row">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="col-md-8  col-xs-12">
+                        <ul class="list-unstyled list-article-header col-md-6 no-padding">
+                            <!-- Edit button-->
+                            <li>
+                                <a href="{{ path('tj_news_edit', { 'slug': entity.slug }) }}" id="editNews"
+                                   class="add-new-link red-link" data-hash="edit"
+                                   data-target="#myModal"
+                                   data-toggle="modal" data-color="#87162D">
+                                    <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                    </svg> {{ 'link.edit'| trans }}
+                                </a>
+                            </li>
+                            <!-- Delete button-->
+                            <li>
+                                <a href="{{ path('tj_admin_news_delete',{ 'slug': entity.slug }) }}"
+                                   class="remove_link" id="delete-news">
+                                    <svg class="icon-svg icon-svg-inverse icon-inline" width="14"
+                                         height="14">
+                                        <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                    </svg>
+                                    {{ "link.remove" | trans }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <div class="content-news-article">
+                        <p><b>{{ entity.shortDescription |raw }}</b></p>
+                        <p>{{ entity.description |raw }}</p>
+                    </div>
+
+                    {% if creator is not null %}
+                        <footer class="article-footer">
+
+                            {% set profilePhoto =  profile_photo(creator,'uploadFile','profile_modal') %}
+                            {% set filter = '' %}
+                            {% if creator.mediaImage|first.filter is defined %}
+                                {% set filter = creator.mediaImage|first.filter %}
+                            {% endif %}
+
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12 col-xxs-12">
+
+                                    <div class="profile">
+                                        <div class="profile-photo-md">
+                                            <figure class="{{filter}}">
+                                                <img src="{{ profilePhoto }}">
+                                            </figure>
+                                        </div>
+                                        <div class="profile-content">
+                                            <h4>
+                                                {% if creator.isPublished %}
+                                                    <a href="{{ path('tj_profile_profile_show',{'slug':creator.slug}) }}">{{ creator| defaultName }}</a>
+                                                {% else %}
+                                                    {{ creator| defaultName }}
+                                                {% endif %}
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    {% endif %}
+
+                    <h3>{{ 'news.title.comments'|trans }}</h3>
+                    <div class="">
+                        <div class="block-form" id="news-comment">
+                            {% if not anon and commentForm %}
+                            {{ form_start(commentForm) }}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {% if is_granted('ROLE_MEMBER') %}
+                                    {{ form_row(commentForm.comment) }}
+                                    <div style="text-align: right;">
+                                        {{ form_widget(commentForm.submit, {'attr': {'class': 'btn btn-default'} }) }}
+                                        {% else %}
+                                        {{ form_widget(commentForm.comment, {'attr': {'class': 'unusable'}}) }}
+                                        <div style="text-align: right;">
+                                            {{ form_widget(commentForm.submit, {'attr': {'class': 'btn btn-default unusable'} }) }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ form_widget(commentForm._token) }}
+                                {{ form_end(commentForm) }}
+                                {% else %}
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea class="form-control registerFirst"></textarea></div>
+                                                <div style="text-align: right;">
+                                                    <button class="btn btn-default btn btn-primary registerFirst">
+                                                        {{ 'button.news.comment' | trans}}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                {% endif %}
+                            </div>
+                            <div class="block-comments">
+                                {{ m.showComments(comments, path('tj_news_comments_all',{'slug':entity.slug})) }}
+                            </div>
+                        </div>
+                        <p class="p-alt"><a href="{{ path('tj_news') }}">{{ 'news.link.goTo.newsList'|trans }}</a></p>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="content-statistic">
+                            {% if entity.organizations|length>0 %}
+                                <h4 class="mg-t">{{ 'news.show.relatedOrganisation'|trans }}</h4>
+                                {% for organization in entity.organizations %}
+                                    {% if organization.path is not empty and organization.status == 2 %}
+                                        <div class="news-orga-logos">
+                                            <a href="{{ path('tj_organization_show',{'slug':organization.slug}) }}">
+                                                <img class="orga-logo"
+                                                     src="{{ vich_uploader_asset(organization, 'uploadFile') | imagine_filter('news_show') }}"
+                                                     alt="">
+                                            </a>
+                                        </div>
+                                    {% else %}
+                                        {{ organization.name }}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+
+                            {% if  entity.users|length > 0 %}
+                                <div class="news-related-users">
+                                    <h4 class="title-sidebar-news">{{ 'news.show.relatedUsers'|trans }}</h4>
+                                    {% for user in entity.users %}
+                                        <div class="row-relatedUser">
+                                            <div class="profile-photo-organ">
+                                                {% set profilePhoto =  profile_photo(user,'uploadFile','logos') %}
+                                                {% set filter = '' %}
+                                                {% set fullName =  user | defaultName %}
+
+                                                {% if user.mediaImage|first.filter is defined %}
+                                                    {% set filter = user.mediaImage|first.filter %}
+                                                {% endif %}
+
+                                                <figure class="{{ filter }}">
+                                                    <img src="{{ profilePhoto }}" alt="{{ fullName }}">
+                                                </figure>
+                                            </div>
+                                            <h5>
+                                                {% if user.isPublished %}
+                                                    <a href="{{ path('tj_profile_profile_show',{'slug':user.slug}) }}">
+                                                        {{ fullName }}
+                                                    </a>
+                                                {% else %}
+                                                    {{ fullName }}
+                                                {% endif %}
+                                            </h5>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            {% if  entity.tags|length > 0 %}
+                                <div class="news-tags">
+                                    <h4>{{ 'news.show.keywords'|trans }}</h4>
+                                    {% for tag in entity.tags %}
+                                        <a href="{{ path('tj_news',{'tags': tag.title}) }}"> {{ tag.title }}</a>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            {% if is_granted('ROLE_ADMIN') and allStats > 0 %}
+                                <div class="stats statistik-news">
+                                    <div class="col-md-12">
+                                        <h3>{{ 'news.show.statistics'|trans }}</h3>
+                                    </div>
+                                    <div class="col-md-12">
+                                        {{ 'news.show.label.allStatistics'|trans }}:
+                                        <span class="no-stat pull-right">
+                                            {{ allStats }}
+                                        </span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        {{ 'news.show.label.lastMonth'|trans }}:
+                                        <span class="no-stat pull-right">
+                                            {{ monthlyStats }}
+                                        </span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        {{ 'news.show.label.lastWeek'|trans }}:
+                                        <span class="no-stat pull-right">
+                                            {{ weeklyStats }}
+                                        </span>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end -->
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    <script>
+        var ckNewsConfig = ' {{ asset('bundles/theaterjobsmain/js/ckeditor/custom/news.js') }}';
+    </script>
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsNewsBundle/Resources/public/js/news.js"
+        "@TheaterjobsMainBundle/Resources/public/js/resizeImage.js" %}
+
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        var publicswitch = $('input:radio[name=public]:checked').val();
+
+        function publish(el) {
+            var url = el.data('url');
+            $.get(url, function (data) {
+                if (data.unpublish) {
+                    $('#unpublish').css('background-color', '#CD2036');
+                    $('#unpublish svg').css('fill', '#fff');
+                    $('#publish').css('background-color', '#fff');
+                    $('#publish svg').css('fill', '#CD2036');
+                    publicswitch = el.val();
+                    $('#statistics').addClass('hidden');
+                    $('#unpublishLabel').removeClass('hidden');
+                    $('#publishLabel').addClass('hidden');
+                    popupCase(data.text);
+                } else if (data.publish) {
+                    $('#publish').css('background-color', '#CD2036');
+                    $('#publish svg').css('fill', '#fff');
+                    $('#unpublish').css('background-color', '#fff');
+                    $('#unpublish svg').css('fill', '#CD2036');
+                    publicswitch = el.val();
+                    $('#statistics').removeClass('hidden');
+                    $('#publishLabel').removeClass('hidden');
+                    $('#unpublishLabel').addClass('hidden');
+                    popupCase(data.text);
+                } else if (data.error) {
+                    popupCase(data.text);
+                }
+            });
+
+        }
+
+        $('input:radio[name=public]').click(function (e) {
+            e.preventDefault();
+            var el = $(this);
+            if (parseInt($(this).val()) !== parseInt(publicswitch)) {
+                if (parseInt($(this).val()) === 0) {
+                    bootbox.confirm({
+                        message: "Do you really want to unpublish the news?",
+                        buttons: {
+                            confirm: {
+                                label: 'Yes',
+                                className: 'btn-success'
+                            },
+                            cancel: {
+                                label: 'No',
+                                className: 'btn-danger'
+                            }
+                        },
+                        callback: function (result) {
+                            if (result) {
+                                publish(el);
+                            }
+                        }
+                    });
+                } else {
+                    publish(el);
+                }
+            }
+        });
+
+        $('#delete-news').click(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
+            bootbox.confirm({
+                message: "Do you really want to delete the news?",
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    if (result)
+                        window.location = $('#delete-news').attr('href');
+                }
+            });
+        });
+
+        // update comments after submit
+        var formNewsComments = $('#news-comment form:eq(0)');
+        formNewsComments.submit(function (e) {
+            e.preventDefault();
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (data) {
+
+                        if (data.success) {
+                            $(".block-comments").html(data.data);
+                            $('#tj_news_form_replies_comment').val('');
+                        } else {
+                            bootbox.alert({message: data.message})
+                        }
+                    }
+                });
+            }
+        });
+
+        $('#action_favorite').on('click', function () {
+            $(this).tooltip('destroy');
+            var action = $(this).attr('data-action');
+            var slug = "{{ entity.slug }}";
+            var url = (action === 'remove') ? 'tj_news_favourite_remove' : 'tj_news_favourite_root';
+            url = Routing.generate(url, {slug: slug});
+            $.get(url, function (data) {
+                if (data.status === 'SUCCESS') {
+                    if (action === 'remove') {
+                        $('#action_favorite').removeClass('active').attr('data-action', 'add');
+                        $('.favorite-icon-name').addClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                    } else {
+                        $('#action_favorite').addClass('active').attr('data-action', 'remove');
+                        $('.favorite-icon-name').removeClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                        bootboxAfterFavoriteSuccesful();
+                    }
+                }
+            })
+        });
+    </script>
+{% endblock %}

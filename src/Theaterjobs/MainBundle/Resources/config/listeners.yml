@@ -1,0 +1,19 @@
+parameters:
+   theaterjobs_main.access_denied.class: Theaterjobs\MainBundle\EventListener\AccessDeniedListener
+   theaterjobs_main.locale_listener.class: Theaterjobs\MainBundle\Listener\LocaleListener
+
+services:
+  theaterjobs_main.access_denied:
+    class: '%theaterjobs_main.access_denied.class%'
+    arguments:
+      - '@router'
+      - '@session'
+      - '@translator'
+    tags:
+     - { name: 'kernel.event_listener', event: 'kernel.exception', method: onAccessDeniedException}
+  theaterjobs_main.locale_listener:
+    class: '%theaterjobs_main.locale_listener.class%'
+    arguments:
+      - '%kernel.default_locale%'
+    tags:
+       - { name: 'kernel.event_subscriber' }

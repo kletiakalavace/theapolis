@@ -1,0 +1,61 @@
+{{ form_start(form,
+{'action': path('fos_user_registration_register_choise',{'choice': choice}),
+    'method': 'post',
+    'attr': {
+    'id' : 'fos_user_registration_register',
+    'role' : 'form',
+}
+}
+) }}
+
+{{ form_row(form.profile.firstName) }}
+
+{{ form_row(form.profile.lastName) }}
+
+
+<div class="form-group">
+    {{ form_label(form.email) }}
+    {{ form_widget(form.email) }}
+    {% if form.email.vars.errors|length > 0 and emailCustomErrors|length <= 2 %}
+        <ul class="help-block">
+            <li> {{ form.email.vars.errors | last.message }}
+                {% if( form.email.vars.errors|last.cause == 'registeredButNotConfirmed' ) %}
+                    <a href="{{ path('resend_confirmation',{'email':form.vars.value.email}) }}"> Resend email ? </a>
+                {% endif %}
+            </li>
+        </ul>
+    {% endif %}
+</div>
+
+
+<div class="row">
+        <div class="col-xs-4 col-xxs-12">
+            {{ form_row(form.plainPassword.first) }}
+        </div>
+        <div class="col-xs-4 col-xxs-12">
+            {{ form_row(form.plainPassword.second) }}
+        </div>
+        <div class="col-xs-4 col-xxs-12">
+            <div class="form-group">
+                <label for="strength-bar"
+                       class="strength-bar-label">{{ 'registration.label.strength' | trans }}</label>
+                <input type="text" class="form-control" id="strength-bar" disabled/>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="checkbox">
+            <label id="terms-conditions">
+                {{ form_widget(form.terms_and_trades) }}
+                <span class="faux-checkbox"></span>
+                {{ form_label(form.terms_and_trades) }}
+            </label>
+        </div>
+    </div>
+
+<p class="text-center">
+    {{ form_row(form.submit) }}
+</p>
+{{ form_end(form) }}

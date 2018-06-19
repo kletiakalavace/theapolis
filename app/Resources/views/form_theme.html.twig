@@ -1,0 +1,24 @@
+{# app/Resources/views/form_theme.html.twig #}
+{% form_theme form _self %}
+{#{% block form_row %}#}
+    {#<marquee>It looks like it's working</marquee>#}
+    {#<div>#}
+        {#{{ form_label(form) }}#}
+        {#{{ form_errors(form) }}#}
+        {#{{ form_widget(form) }}#}
+    {#</div>#}
+{#{% endblock form_row %}#}
+
+{% block tj_inserate_form_gratification_widget %}
+    <div {{ block('widget_container_attributes') }}>
+        {% for child in form %}
+            <div class="checkbox">
+                <label>
+                    {{ form_label(child) }}
+                    {{ form_widget(child) }}
+                    <span class="faux-checkbox"> </span>
+                </label>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

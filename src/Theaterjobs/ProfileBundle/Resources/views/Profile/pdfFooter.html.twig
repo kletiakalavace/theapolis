@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        function substitutePdfVariables() {
+
+            function getParameterByName(name) {
+                var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+            }
+
+            function substitute(name) {
+                var value = getParameterByName(name);
+                var elements = document.getElementsByClassName(name);
+
+                for (var i = 0; elements && i < elements.length; i++) {
+                    elements[i].textContent = value;
+                }
+            }
+
+            ['frompage', 'topage', 'page', 'webpage', 'section', 'subsection', 'subsubsection']
+                    .forEach(function(param) {
+                        substitute(param);
+                    });
+        }
+    </script>
+</head>
+<body onload="substitutePdfVariables()">
+    <footer style="border-top: 4px solid #F0F0F0; padding: 15px 0 15px 0;margin-top:35px;display:block;float: left;width:100%;">
+        <p style="text-aling:center;color: #1f1f1f !important;font-size: 11px;float:right;width:15%">Page <span class="page"></span> of <span class="topage"></span></p>
+      {#  <p>Page <span class="page"></span> of <span class="topage"></span></p>#}
+        <p class="text-center" style="text-align: center;width: 60%;display: block;float: right;">
+            <img src="{{ asset('bundles/theaterjobsmain/img/logopdf.png') }}" alt="Theapolis logo"
+                 width="100" style="display: inline-block;float:left;margin-top:-15px;">
+            <span style="color: #CD2036 !important;font-size: 12px;margin-left:20px;display: inline-block;float: left;">http://theapolis.de/</span>
+        </p>
+    </footer>
+</body>
+</html>

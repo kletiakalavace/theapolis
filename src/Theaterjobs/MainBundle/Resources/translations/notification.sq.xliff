@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:43:50Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="394f3a0834b449eda45023c1c659caf9d206aee7" resname="tj.notification.become.member">
+        <source>tj.notification.become.member</source>
+        <target state="new">tj.notification.become.member</target>
+        <jms:reference-file line="128">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MainBundle/Controller/DashboardController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="535c0820f798119c6179bd92825b18ab8267b880" resname="tj.notification.become.member.to.access.job.market">
+        <source>tj.notification.become.member.to.access.job.market</source>
+        <target state="new">tj.notification.become.member.to.access.job.market</target>
+        <jms:reference-file line="129">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MainBundle/Controller/DashboardController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b007458ddf3d2f227f7b33b184b8f0199b07216" resname="tj.notification.complain.from.user %s%">
+        <source>tj.notification.complain.from.user %s%</source>
+        <target state="new">tj.notification.complain.from.user %s%</target>
+        <jms:reference-file line="64">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MainBundle/Controller/ComplainController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="874494ebce694feee09b8186373eb2ff0cc24bbf" resname="tj.notification.membership.about.to.expire">
+        <source>tj.notification.membership.about.to.expire</source>
+        <target state="new">tj.notification.membership.about.to.expire</target>
+        <jms:reference-file line="144">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MainBundle/Controller/DashboardController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

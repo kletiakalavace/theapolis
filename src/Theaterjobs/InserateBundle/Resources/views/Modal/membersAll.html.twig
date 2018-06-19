@@ -1,0 +1,136 @@
+<div class="modal-body movebottom modal-statistic">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12  col-xs-12">
+                <div class="col-md-12 content-list-views no-padding">
+                    <h2>{{ 'organization.mainTitle.teamMembers'| trans }}</h2>
+                </div>
+                {% set userOrganizations = entity.userOrganizations %}
+                {% if userOrganizations|length >0 %}
+                    <div class="statistic-information">
+                        <div class="title-header-stat">
+                            <h3>{{ 'organization.members.pretitle.activeUsers'|trans }}</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 content-list-views">
+                        {% for userOrganization in userOrganizations %}
+                            {% set user = userOrganization.user %}
+                            <div class="row row-list-people-statistic">
+                                <div class="col-md-2 photo-list-statistic photo-list-members">
+                                    {% set profilePhoto =  profile_photo(user.profile,'uploadFile','logos') %}
+                                    {% set filter = '' %}
+                                    {% set fullName = user.profile | defaultName %}
+
+                                    {% if user.profile.mediaImage|first.filter is defined %}
+                                        {% set filter = user.profile.mediaImage|first.filter %}
+                                    {% endif %}
+
+                                    <figure class="{{ filter }}">
+                                        <img src="{{ profilePhoto }}" alt="{{ fullName }}">
+                                    </figure>
+                                </div>
+                                <div class="col-md-3 title-members">
+                                    {% if user.profile.isPublished %}
+                                    <a href="{{ path('tj_profile_profile_show',{'slug': user.profile.slug}) }}">
+                                        {% endif %}
+                                        {{ fullName }}
+                                        {% if user.profile.isPublished %}
+                                    </a>
+                                    {% endif %}
+                                    <span class="undertitle-stat-list times-views">
+                                        {{ 'organization.members.pretitle.lastLogin'|trans }}
+                                        {{ user.lastLogin|date('d.m.Y') }}
+                                </span>
+                                </div>
+
+                                <div class="col-md-6 no-padding">
+
+                                    {% if user.userActivity| length >0 %}
+                                        {% for activity in user.userActivity %}
+                                            <div class="row">
+                                                <div class="col-md-4"> {{ activity.createdAt|date('d.m.Y') }}</div>
+                                                <div class="col-md-8 text-left"> {{ activity.activityText|raw }} </div>
+                                            </div>
+
+                                        {% endfor %}
+                                    {% else %}
+                                        <div class="row">
+                                            <div class="col-md-4"></div>
+                                            <div class="col-md-8 text-left">
+                                                {{ 'organization.members.pretitle.noActivity'|trans }}
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-2 text-left pull-right">
+                                    {% if canEdit and entity.archivedAt is null and entity.destroyedAt is null and entity.notReachableAt is null %}
+                                        <a href="{{ path('tj_user_organization_delete',{'orgaSlug':entity.slug,'userId':user.id}) }}"
+                                           data-id="{{ user.id }}" class="pull-right remove-members">
+                                            <svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                            </svg>{{ "link.remove" | trans }}
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $('.remove-members').on('click', function (e) {
+        // prevent the link from creating a "#" on the URL
+        e.preventDefault();
+        var userToDelete = $(this).attr('data-id');
+//        var userJobsToDelete = $(this).attr('data-jobs');
+        var slug = "{{ entity.slug }}";
+        var url = Routing.generate('tj_user_organization_delete', {
+            orgaSlug: slug,
+            userId: userToDelete
+        });
+        bootbox.confirm({
+            message: trans('bootbox.removeMember', locale),
+            buttons: {
+                confirm: {
+                    label: trans('bootbox.button.yes', locale),
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: trans('bootbox.button.no', locale),
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    console.log('delete');
+                    $.ajax({
+                        url: url,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data) {
+                                $.get(url, function (data) {
+                                    if (data.success) {
+                                        bootbox.alert({
+                                            message: data.message,
+                                            callback: function () {
+                                                /* your callback code */
+                                                $('#myModal').modal('hide');
+                                                $('.team-block').html(data.content);
+                                                $('.logs-block').html(data.logs);
+                                            }
+                                        })
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    });
+</script>

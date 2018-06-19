@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+{% block content %}
+    <div class="alert alert-danger" role="alert">{{'tj.delete.user.warning.message'}}
+        {{currentUser.profile | defaultName}}
+        {{'on.orga.'}}{{organization.name}}
+    </div>
+    {% if jobs|length>0 %}
+        <h2>{{'tj.user.has.following.published.jobs'|trans}}</h2>
+        {% for job in jobs %}
+            <a href="#">{{job.title}}</a><br>
+        {% endfor %}
+        <form method="GET" action="{{path('tj_user_organization_delete',{"orgaSlug":organization.slug,"userId":currentUser.id})}}">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">{{'tj.move.jobs.to.user : '}}</label>
+                <select name="user" class="form-control">
+
+                    {% for user in activeUsers %}
+                        {% if user.user !=currentUser%}
+                            <option value="{{user.user.id}}" {% if app.user==user.user%}selected{%endif%}>
+                                {{user.user.profile | defaultName}}
+                            </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div> 
+            <input type="submit" class="btn btn-default" value="submit">
+        </form>
+    {% else %}
+        <form method="GET" action="{{path('tj_user_organization_delete',{"orgaSlug":organization.slug,"userId":currentUser.id})}}">
+            <div class="hidden">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">{{'tj.move.jobs.to.user : '}}</label>
+                    <select class="form-control">
+                        <option value="0">{{ 'tj.user.revokeuserright.nodata' | trans }}</option>
+                    </select>
+                </div> 
+            </div>
+            <input type="submit" class="btn btn-default" value="{{ 'tj.user.revokeuserright.button.submit' | trans }}">
+        </form>
+    {% endif %}
+{% endblock %}

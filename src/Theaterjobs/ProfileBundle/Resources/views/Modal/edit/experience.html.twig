@@ -1,0 +1,552 @@
+{% import '::macro.html.twig' as m %}
+{% form_theme edit_form.occupation 'form_div_layout.html.twig' %}
+{% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+"@TheaterjobsProfileBundle/Resources/public/css/prodEmpl.css" %}
+<link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+<div class="modal-body movebottom" id="experienceEdit">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.editExperience'| trans }}</h2>
+                <div class="">
+                    {{ form_start(edit_form) }}
+                    <div class="col-md-12">
+                        <div class="first">
+                            <div class='prod'>
+                                <div class="form-group">
+                                    {{ form_row(edit_form.organization) }}
+                                </div>
+                            </div>
+                            <div class="second" id='second'>
+                                <div class="form-group username-newProd">
+                                    <div class="checkbox">
+                                        <label>
+                                            {{ form_widget(edit_form.usedNameCheck) }}
+                                            <span class="faux-checkbox"></span>
+                                            {{ 'people.edit.username.checkbox'|trans }}
+                                        </label>
+                                    </div>
+                                    <div class="used-name  {% if edit_form.usedNameCheck.vars.checked == false %} hidden {% endif %}">
+                                        {{ form_row(edit_form.usedName) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    {{ form_row(edit_form.description) }}
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            {{ form_widget(edit_form.assistant) }}
+                                            <span class="faux-checkbox"></span>
+                                            {{ 'people.edit.placeholder.occupationAssistant'| trans }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            {{ form_widget(edit_form.management) }}
+                                            <span class="faux-checkbox"></span>
+                                            {{ 'people.edit.placeholder.occupationManagement'| trans }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    {{ form_row(edit_form.occupation, {'attr': {'class': 'form-control'} }) }}
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        {{ form_row(edit_form.start) }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        {{ form_row(edit_form.end) }}
+                                    </div>
+                                    <div class="form-group col-md-4 pull-right checkbox-isfinished">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(edit_form.ongoing) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.participation.ongoingExperience'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_widget(edit_form.submit,{'attr':{'class':'hidden'} }) }}
+                    {{ form_end(edit_form) }}
+                    <div class="form-inline" style="text-align: center">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        <button type="button" class="btn btn-inverse-primary btn btn-inverse btn-primary btn-update-modal"
+                                onclick="javascript:$('#experienceEdit form:eq(0)').submit()" >{{ 'button.update'| trans }}
+                            <span class="submit-rolling-svg" style="display: none"></span>
+                        </button>
+                        <div class="delete-btn">
+                            {{ form_start(delete_form) }}
+                            <p class="text-center">
+                                {{ form_widget(delete_form.submit,{'attr':{'class':'btn-delete-modal btn-inverse'} }) }}
+                            </p>
+                            {{ form_end(delete_form) }}
+                        </div>
+                    </div>
+                </div>
+                {{ m.error }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /*
+     make organization autosuggestion select2
+     */
+
+    $('.tag-orga-input').select2({
+        minimumInputLength: 3,
+        formatInputTooShort: function () {
+            $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+        },
+        maximumSelectionSize: 1,
+        tags: true,
+        cache: true,
+        quietMillis: 250,
+        tokenSeparators: [';'],
+        createSearchChoice: function (term, page) {
+            $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+            if (page.some(function (item) {
+                    return item.text.toLowerCase() === term.toLowerCase();
+                })) {
+                return;
+            }
+
+            return {
+                id: $.trim(term),
+                text: $.trim(term) + '  ({{ "profile.edit.experience.newOrganization"|trans }})'
+            };
+
+        },
+        ajax: {
+            url: Routing.generate('tj_experience_organization'),
+            dataType: 'json',
+            data: function (term, page) {
+                return {
+                    q: term,
+                    page: page // page number
+                };
+            },
+            results: function (data, page) {
+                var more = false;
+                data.forEach(function (element) {
+                    more = (page * autosuggestion_pagination) < element.total_count;
+                    if (element.desc !== '') {
+                        element.text = element.text + "  (" + element.desc + ")";
+                    }
+                });
+                return {
+                    results: data,
+                    more: more
+                };
+            }
+        },
+        // Take default tags from the input value
+        initSelection: function (element, callback) {
+            var data = [];
+
+            function splitVal(string, separator) {
+                var val, i, l;
+                if (string === null || string.length < 1)
+                    return [];
+                val = string.split(separator);
+                for (i = 0, l = val.length; i < l; i = i + 1)
+                    val[i] = $.trim(val[i]);
+                return val;
+            }
+
+            $(splitVal(element.val(), ";")).each(function () {
+                data.push({
+                    id: this,
+                    text: this
+                });
+            });
+            callback(data);
+        },
+        formatSelectionTooBig: function (limit) {
+            return trans('experience.maxOrganization.limit.onlyOne', locale);
+        }
+    }).on("select2-selecting", function (e) {
+        $('#second').css('visibility', 'visible');
+    }).on("select2-removed", function (e) {
+        $('#second').css('visibility', 'hidden');
+    });
+    $('#theaterjobs_profilebundle_experience_organization,#theaterjobs_profilebundle_experience_description').bind("keyup change", function (e) {
+
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+            $(this).tooltip('destroy');
+        }
+    });
+
+
+    /*
+     make occupation change the description fields
+     */
+    $("#theaterjobs_profilebundle_experience_occupation").select2();
+    $("#theaterjobs_profilebundle_experience_occupation").on("change", function (e) {
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+            $(this).tooltip('destroy');
+        }
+    });
+
+    //change data before datepicker format
+    formatTime();
+
+    $("#theaterjobs_profilebundle_experience_end, #theaterjobs_profilebundle_experience_start").datetimepicker({
+        viewMode: 'months',
+        format: 'MM.YYYY',
+        showClear: true,
+        showTodayButton: true,
+        toolbarPlacement: 'top',
+        useCurrent: false,
+        locale: locale,
+        widgetPositioning: {
+            horizontal: 'left',
+            vertical: 'bottom'
+        }
+    });
+
+    $('#theaterjobs_profilebundle_experience_start, #theaterjobs_profilebundle_experience_end').attr("autocomplete", "off");
+
+    $(".startDate").on("dp.change", function (e) {
+        $('.endDate').data("DateTimePicker").minDate(e.date);
+        if(e.date > $('.endDate').data("DateTimePicker").date()){
+            /*$('.endDate').data("DateTimePicker").date(e.date);*/
+        }
+    });
+
+
+    $(".endDate").on("dp.change", function (e) {
+        $('.startDate').data("DateTimePicker").maxDate(e.date);
+        if(e.date < $('.startDate').data("DateTimePicker").date()){
+           /* $('.startDate').data("DateTimePicker").date(e.date);*/
+        }
+    });
+
+    $("#theaterjobs_profilebundle_experience_end, #theaterjobs_profilebundle_experience_start").on("dp.show", function (e) {
+        $(this).data("DateTimePicker").viewMode('months');
+        $(this).data("DateTimePicker").format('MM.YYYY');
+    });
+
+    $("#theaterjobs_profilebundle_experience_end, #theaterjobs_profilebundle_experience_start").on("dp.change", function (e) {
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+            $(this).tooltip('destroy');
+        }
+    });
+    /*
+     checks and first validation
+     */
+    var ongoing = $("#theaterjobs_profilebundle_experience_ongoing");
+    var endDate = $("#theaterjobs_profilebundle_experience_end");
+    if (ongoing.prop('checked') == true) {
+        endDate.val('');
+        endDate.data("DateTimePicker").disable();
+    }
+    if (ongoing.prop('checked') == false) {
+        endDate.data("DateTimePicker").enable();
+    }
+    ongoing.change(function () {
+        if ($(this).prop('checked') == true) {
+            endDate.val('');
+            endDate.data("DateTimePicker").disable();
+        }
+        if ($(this).prop('checked') == false) {
+            endDate.data("DateTimePicker").enable();
+        }
+    });
+
+    var assistant = $("#theaterjobs_profilebundle_experience_assistant");
+    var manager = $("#theaterjobs_profilebundle_experience_management");
+
+    if (assistant.prop('checked') == true) {
+        manager.attr('disabled', true);
+    }
+    if (manager.prop('checked') == true) {
+        assistant.attr('disabled', true);
+    }
+    assistant.change(function () {
+        if ($(this).prop('checked') == true) {
+            manager.attr('disabled', true);
+        }
+        if ($(this).prop('checked') == false) {
+            manager.attr('disabled', false);
+        }
+    });
+    manager.change(function () {
+        if ($(this).prop('checked') == true) {
+            assistant.attr('disabled', true);
+        }
+        if ($(this).prop('checked') == false) {
+            assistant.attr('disabled', false);
+        }
+    });
+
+    /*
+     form validation
+     */
+    $('form[name="theaterjobs_profilebundle_experience"]').validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+            $('#myModal').animate(
+                { scrollTop: $('.login-error-content').offset().top +2000 },
+                100);
+        },
+        ignore: [],
+        rules: {
+            'theaterjobs_profilebundle_experience_organization': {
+                required: true
+            },
+            'theaterjobs_profilebundle_experience_occupation': {
+                required: true
+            }
+        }
+    });
+
+
+    $('form[name="theaterjobs_profilebundle_experience"] input, form[name="theaterjobs_profilebundle_experience"] select').on('keyup change', function() {
+
+        if ($(this).valid()) {
+            $(this).tooltip('destroy');
+            $(this).parent().tooltip('destroy');
+            $(this).closest('.has-error').removeClass('has-error');
+
+        }
+    });
+
+    var startDate = $('#theaterjobs_profilebundle_experience_start');
+    endDate.data("DateTimePicker").minDate(startDate.data("DateTimePicker").date().toDate());
+    if (endDate.data("DateTimePicker").date()) {
+        startDate.data("DateTimePicker").maxDate(endDate.data("DateTimePicker").date().toDate());
+    }
+
+    //Global edit Form name
+    const FORM_NAME = 'theaterjobs_profilebundle_experience';
+    const OccupationId = 'theaterjobs_profilebundle_experience_occupation';
+
+    var formExperienceEdit = $('#experienceEdit form:eq(0)');
+    const loading1 = $('.btn-update-modal .submit-rolling-svg');
+
+    formExperienceEdit.submit(function (e) {
+        e.preventDefault();
+        if (loading1.is(':visible')) {return;}
+
+        if ($(this).valid()) {
+            loading1.show();
+            $("#s2id_theaterjobs_profilebundle_experience_organization").select2("data", {
+                id: $('#s2id_theaterjobs_profilebundle_experience_organization').select2('data')[0].id,
+                text: $('#s2id_theaterjobs_profilebundle_experience_organization').select2('data')[0].text
+            });
+
+            {#Clone form and modify fields#}
+            var newForm = $(this).clone();
+
+            var endDate = newForm.find('input[name="'+ FORM_NAME +'[end]"]').val();
+            var startDate = newForm.find('input[name="'+ FORM_NAME +'[start]"]').val();
+
+            newForm.find('input[name="'+ FORM_NAME + '[start]"]').val('01.' + startDate);
+            newForm.find('input[name="' + FORM_NAME +'[end]"]').val('01.' + endDate);
+            var newOccupation = newForm.find('#' + OccupationId);
+            var oldOccupation = $(this).find('#' + OccupationId);
+            newOccupation.val(oldOccupation.val());
+
+            $.ajax({
+                type: $(newForm).attr('method'),
+                url: $(newForm).attr('action'),
+                data: $(newForm).serialize(),
+                success: function (data) {
+                    if (data.errors) {
+                        for (var key in data.errors) {
+                            var el = $('#experience form').find('input[name="' + key + '"]');
+                            el.parent().addClass('has-error');
+                            toolTipError(data.errors[key], el);
+                        }
+                    } else {
+                        $(".experience-block").html(data.experiences);
+                        $("#profileBoxes").html(data.boxes);
+                    }
+                    loading1.hide();
+                },
+                error: function () {
+                    loading1.hide();
+                    serverError();
+                }
+            }).done(function () {
+                $('#myModal').modal('hide');
+                // Set up masonry grids
+                var grids = $("[data-masonry]");
+                grids.each(function () {
+                    $(this).masonry({
+                        itemSelector: "[data-masonry-item]"
+                    });
+
+                    $(this).masonry("on", "layoutComplete", function () {
+                        $("[data-masonry-item] .panel").each(function () {
+                            $(this).bleedPanel();
+                        });
+                    });
+
+                    $(this).masonry();
+                });
+            });
+        }
+    });
+    var formExperienceDelete = $('#experienceEdit form:eq(1)');
+    addLoadingSvg(formExperienceDelete);
+    const loading2 = formExperienceDelete.find('.submit-rolling-svg');
+
+    formExperienceDelete.submit(function (e) {
+        e.preventDefault();
+        if (loading2.is(':visible')) {return;}
+        if (publicswitch == 1) {
+            if(nrpublishedSections() <= 1) {
+                alertPublish();
+                return;
+            }
+        }
+
+        bootbox.confirm({
+            message: trans('bootbox.wantToDelete',locale),
+            buttons: {
+                confirm: {
+                    label: trans('bootbox.button.yes',locale),
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: trans('bootbox.button.no',locale),
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    loading2.show();
+                    $.ajax({
+                        type: formExperienceDelete.attr('method'),
+                        url: formExperienceDelete.attr('action'),
+                        data: formExperienceDelete.serialize(),
+                        dataType : 'json',
+                        success: function (data) {
+
+                            if(data.success){
+                                $(".experience-block").html(data.data.experiences);
+                                $("#profileBoxes").html(data.data.boxes);
+
+                                $('#myModal').modal('hide');
+                                // Set up masonry grids
+                                var grids = $("[data-masonry]");
+                                grids.each(function () {
+                                    $(this).masonry({
+                                        itemSelector: "[data-masonry-item]"
+                                    });
+                                    $(this).masonry("on", "layoutComplete", function () {
+                                        $("[data-masonry-item] .panel").each(function () {
+                                            $(this).bleedPanel();
+                                        });
+                                    });
+                                    $(this).masonry();
+                                });
+
+                            } else {
+                                if (data.messages) {
+                                    var allErrMsg = "";
+                                    for(var msg in data.messages){
+                                        allErrMsg += data.messages[msg] + '<br>'
+                                    }
+                                    bootbox.alert({
+                                        title   : false,
+                                        message : allErrMsg
+                                    });
+                                }
+                            }
+                            loading2.show();
+                        },
+                        error: function (xhr, status, error) {
+                            loading2.hide();
+                            serverError();
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+
+
+
+
+
+
+    //formats the time of start/end Time from dd.mm.yyyy => mm.yyyy
+    function formatTime(){
+        //get time
+        var startTime = $('.startDate')[0];
+        var endTime = $('.endDate')[0];
+
+        //get real input values
+        var startTimeVal = document.getElementsByClassName('startDate')[0];
+        var endTimeVal = document.getElementsByClassName('endDate')[0];
+
+        //set them
+        startTime.value = startTimeVal.value.match(/\d{2}.\d{4}/)[0];
+        var reg = endTimeVal.value ? endTimeVal.value.match(/\d{2}.\d{4}/) : '';
+        endTime.value = reg ? reg.length > 0 ? reg[0] : '' : '';
+    }
+
+    function nrpublishedSections() {
+
+        var countExperience = $('.experience-block').find('.timeline-item').data('count');
+        var countProduction = $('.production-block').find('.timeline-item').data('count');
+        var countEducation =  $('.education-block').find('#eduList').children().length / 2;
+
+        if (typeof countExperience == "undefined")
+            countExperience = 0;
+
+        if (typeof countProduction == "undefined")
+            countProduction = 0;
+
+        if (typeof countEducation == "undefined")
+            countEducation = 0;
+
+        return countEducation + countProduction + countExperience;
+    }
+
+    $(document).ready(function () {
+        var usedName = $('.used-name input').val();
+
+        $('.username-newProd .checkbox input').change(function () {
+            if ($(this).is(":checked")) {
+                $('.used-name').removeClass('hidden');
+            } else {
+                $('.used-name').addClass('hidden');
+                $('.used-name input').val(usedName);
+            }
+        });
+        $("#theaterjobs_profilebundle_experience_start,#theaterjobs_profilebundle_experience_end").click(function() {
+            $("#myModal").animate({ scrollTop: $(document).height() }, "fast");
+
+        });
+    });
+    $.validator.addMethod(
+        "regex",
+        function(value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        trans("usedName.invalid.format", locale)
+    );
+
+</script>

@@ -1,0 +1,787 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="general">
+    <!-- Skills -->
+    <div class="container no-padding-mobile">
+        {{ form_start(edit_form) }}
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2>{{ 'people.edit.mainTitle.newProfile' | trans }}</h2>
+
+                <h3>{{ 'people.edit.title.personalData' | trans }}</h3>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+
+                        <div class="form-group">
+                            {{ form_row(edit_form.personalData.birthDate) }}
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+
+                        <div class="form-group">
+                            {{ form_row(edit_form.personalData.birthPlace) }}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+
+                        <div class="form-group">
+                            {{ form_row(edit_form.personalData.nationality) }}
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+
+                        <div class="form-group">
+                            {{ form_row(edit_form.availableLocations) }}
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="performer-data-button">
+                    <span>{{ 'people.addperformerData' | trans }}<i class="fa fa-long-arrow-right"
+                                                                    aria-hidden="true"></i></span>
+                </div>
+                <div class="perfomer-data-modal">
+                    <h3>{{ 'people.edit.title.performerData' | trans }}</h3>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.ageRoleFrom) }}
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.ageRoleTo) }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.height) }}
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.shoeSize) }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.clothesSize) }}
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.eyeColor) }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.hairColor) }}
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+
+                            <div class="form-group">
+                                {{ form_row(edit_form.personalData.voiceCategories) }}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="performer-data-button-close">
+                    <span><i class="fa fa-long-arrow-left"
+                             aria-hidden="true"></i> {{ 'people.removeperformerData' | trans }}</span>
+                </div>
+
+                <h3>{{ 'people.edit.title.drivingLicence' | trans }}</h3>
+                <div class="form-group">
+                    {{ form_widget(edit_form.skillSection.driveLicense) }}
+                </div>
+
+                <h3>{{ 'people.edit.title.languages' | trans }}</h3>
+                <div class="form-group">
+                    <div class="row" id="languages">
+                        <ul class="list-unstyled" id="skills-fields-list"
+                            data-type="lang" {% if limit %} data-limit="1" {% endif %}
+                            data-prototype="{{ form_widget(edit_form.skillSection.languageSkill.vars.prototype)|e }}">
+                            {% set i=0 %}
+                            {% for lang in edit_form.skillSection.languageSkill %}
+                                <li class="col-md-12 col-xs-12 big-skill-list">
+                                    <div class="row">
+                                        <div class="col-md-5 col-xs-5 skill-label">
+                                            <label>{{ 'people.edit.label.name' | trans }}</label></div>
+                                        <div class="col-md-5 col-xs-5 no-padding skill-label">
+                                            <label>{{ 'people.edit.label.quality' | trans }}</label></div>
+                                    </div>
+
+                                    {{ form_errors(lang) }}
+                                    {{ form_widget(lang) }}
+                                    {{ form_widget(lang.children.rating) }}
+                                    <p class="form-subtext p-alt text-small text-right">
+                                        <a href="#" class="remove_tag_linkremove_tag_link">
+                                            <svg class="icon-svg icon-svg-inverse icon-inline" width="14"
+                                                 height="14">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                            </svg>
+                                            {{ "link.remove" | trans }}
+                                        </a>
+                                    </p>
+                                </li>
+                                {% set i=i+1 %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <p class="p-alt text-right"><a href="#" data-type="skills" data-render="lang" class="add_tag_link">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-new') }}"></use>
+                        </svg>{{ "people.edit.link.addNewLanguage" | trans }}</a>
+                </p>
+                <h3>{{ 'people.edit.title.skills' | trans }}</h3>
+
+                <div class="form-group">
+                    {{ form_row(edit_form.skillSection.profileSkill) }}
+                </div>
+                <h3>{{ 'people.show.detailBlock.mainTitle.attachments'| trans }}</h3>
+                <div class="form-group">
+                    <div class="row" id="pdfs">
+                        <ul class="list-unstyled" id="pdf-fields-list"
+                            data-type="media"
+                            data-prototype="{{ form_widget(edit_form.mediaPdf.vars.prototype)|e }}">
+                            {% for media in edit_form.mediaPdf %}
+                                <li class="col-md-12 col-xs-12 big-skill-list big-pdf-list">
+                                    {{ form_errors(media) }}
+                                    {{ form_widget(media.uploadFile,{ 'attr': {'class': 'hidden'} }) }}
+                                    {{ form_widget(media) }}
+                                    <span class="name-pdf">{{ media.vars.value.path }}</span>
+                                    <p class="form-subtext p-alt text-small text-right"><a href="#">
+                                            <svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                            </svg>{{ "link.remove" | trans }}</a>
+                                    </p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="p-alt text-right"><a href="#" data-type="pdfs" data-render="media" class="add_tag_link_pdf">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-new') }}"></use>
+                        </svg>
+                        {{ 'people.edit.link.addNewFile'|trans }}</a>
+                </p>
+
+                <div style="text-align: center;">
+                    <button type="button" class="close-footer" data-dismiss="modal"
+                            aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                    {{ form_widget(edit_form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                </div>
+            </div>
+            {{ form_row(edit_form._token) }}
+            {{ form_end(edit_form, {'render_rest': false}) }}
+            {{ m.error }}
+        </div>
+
+    </div>
+</div>
+{# TODO Refactor js on general html #}
+{% javascripts
+"@TheaterjobsMainBundle/Resources/public/components/raty/lib/jquery.raty.js"
+"@TheaterjobsMainBundle/Resources/public/components/raty/demo/javascripts/labs.js"
+"@TheaterjobsProfileBundle/Resources/public/js/profile/profile_js_messages_translation.js" %}
+
+<script>
+    $.getScript("{{ asset_url }}");
+</script>
+{% endjavascripts %}
+<script>
+    var skillInput = $('#theaterjobs_profile_data_skillSection_profileSkill');
+
+    skillsAutosuggestion(skillInput, 10, 'skill', 'other');
+
+    var langInput = $('.skillTitle');
+
+    var selectedLangs = [];
+
+    langAutosuggestion(langInput, 1, 'language', 'rate');
+
+    function skillsAutosuggestion(container, maxLimit, textLabel, routeType) {
+        container.select2({
+            minimumInputLength: 3,
+            formatInputTooShort: function () {
+                $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+            },
+            maximumSelectionSize: maxLimit,
+            tags: true,
+            cache: true,
+            quietMillis: 250,
+            tokenSeparators: [','],
+            createSearchChoice: function (term, page) {
+                $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+                if (page.some(function (item) {
+                        return item.text.toLowerCase() === term.toLowerCase();
+                    })) {
+                    return;
+                }
+                if (!selectedLangs.includes(term)) {
+                    return {
+                        id: $.trim(term),
+                        text: $.trim(term) + '  ({{ 'people.profile.newSkill'|trans }})'
+                    };
+                }
+
+            },
+            ajax: {
+                url: Routing.generate('skills_autosuggestion'),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        q: term,
+                        page: page // page number
+                    };
+                },
+                results: function (data, page) {
+                    var more = false;
+                    data.forEach(function (element) {
+                        more = (page * autosuggestion_pagination) < element.total_count;
+                    });
+                    if (textLabel === 'language') {
+                        for (var i = data.length; i--;) {
+                            var resultText = data[i].text.toString();
+                            if (selectedLangs.includes(resultText)) {
+                                data.splice(i, 1);
+                            }
+                        }
+                    }
+                    return {
+                        results: data,
+                        more: more
+                    };
+                }
+            },
+            // Take default tags from the input value
+            initSelection: function (element, callback) {
+                var data = [];
+
+                function splitVal(string, separator) {
+                    var val, i, l;
+                    if (string === null || string.length < 1)
+                        return [];
+                    val = string.split(separator);
+                    for (i = 0, l = val.length; i < l; i = i + 1)
+                        val[i] = $.trim(val[i]);
+                    return val;
+                }
+
+                $(splitVal(element.val(), ",")).each(function () {
+                    data.push({
+                        id: this,
+                        text: this
+                    });
+                });
+                callback(data);
+            },
+            formatSelectionTooBig: function (limit) {
+
+                if (textLabel !== 'language') {
+                    return "{{ 'people.profile.skills.limit.reached'|trans }}";
+                }
+                else {
+                    $('#select2-drop').css('padding', 0).css('border', 0);
+                    return "";
+                }
+            }
+        });
+    }
+
+
+    function langAutosuggestion(container, maxLimit, textLabel, routeType) {
+        container.select2({
+            minimumInputLength: 3,
+            formatInputTooShort: function () {
+                $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+            },
+            createSearchChoice: function (term, page) {
+                $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+            },
+            tags: true,
+            cache: true,
+            quietMillis: 250,
+            tokenSeparators: [','],
+            maximumSelectionSize: 1,
+            closeOnSelect: true,
+            ajax: {
+                url: Routing.generate('languages_autosuggestion'),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        q: term,
+                        page: page // page number
+                    };
+                },
+                results: function (data, page) {
+                    var more = false;
+                    data.forEach(function (element) {
+                        more = (page * autosuggestion_pagination) < element.total_count;
+                    });
+                    if (textLabel === 'language') {
+                        for (var i = data.length; i--;) {
+                            var resultText = data[i].text.toString();
+                            if (selectedLangs.includes(resultText)) {
+                                data.splice(i, 1);
+                            }
+                        }
+                    }
+                    return {
+                        results: data,
+                        more: more
+                    };
+                }
+            },
+            // Take default tags from the input value
+            initSelection: function (element, callback) {
+                var data = [];
+
+                function splitVal(string, separator) {
+                    var val, i, l;
+                    if (string === null || string.length < 1)
+                        return [];
+                    val = string.split(separator);
+                    for (i = 0, l = val.length; i < l; i = i + 1)
+                        val[i] = $.trim(val[i]);
+                    return val;
+                }
+
+                $(splitVal(element.val(), ",")).each(function () {
+                    data.push({
+                        id: this,
+                        text: this
+                    });
+                });
+                callback(data);
+            },
+            formatSelectionTooBig: function (limit) {
+
+                if (textLabel !== 'language') {
+                    return "Limit of " + textLabel + " reached";
+                }
+                else {
+                    $('#select2-drop').css('padding', 0).css('border', 0);
+                    return "";
+                }
+            }
+        });
+    }
+
+
+    $('#theaterjobs_profile_data_personalData_nationality').select2({
+        minimumResultsForSearch: -1
+    });
+
+    $('#theaterjobs_profile_data_skillSection_driveLicense').select2({});
+
+    $('#theaterjobs_profile_data_personalData_eyeColor').select2({});
+    $('#theaterjobs_profile_data_personalData_hairColor').select2({});
+    $('#theaterjobs_profile_data_personalData_voiceCategories').select2({});
+    $('#theaterjobs_profile_data_personalData_birthDate').datetimepicker({
+        format: 'DD.MM.YYYY',
+        showClear: true,
+        showTodayButton: true,
+        toolbarPlacement: 'top',
+        useCurrent: false,
+        locale: locale
+    });
+
+    $('#theaterjobs_profile_data_personalData_birthDate').attr("autocomplete", "off");
+
+    // static variables
+    var removeButton = ' <p class="form-subtext p-alt text-small text-right"><a href="#" class="remove_tag_link"><svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14"><use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use> </svg>{{ "link.remove" | trans }}</a></p>';
+    var languageCount = '{{ edit_form.skillSection.languageSkill|length }}';
+    var pdfCount = '{{ edit_form.mediaPdf|length }}';
+    var label_nameQuality = '<div class="row"><div class="col-md-5 col-xs-5 skill-label"><label>{{ "people.edit.label.name" | trans }}</label></div><div class="col-md-5 col-xs-5 no-padding skill-label"><label>{{ "people.edit.label.quality" | trans }}</label></div></div>';
+
+
+    $('.add_tag_link').click(function (e) {
+
+        if (validateLangSkillInput()) {
+
+            e.preventDefault();
+            var languageList = jQuery('#skills-fields-list');
+            // grab the prototype template
+
+            var newWidget = languageList.attr('data-prototype');
+
+            // replace the "__name__"
+            newWidget = newWidget.replace(/__name__/g, languageCount);
+
+            languageCount++;
+
+            // create a new list element and add it to the list
+            var newLi = $('<li class="skills-list col-md-12 col-xs-12"></li>').html(newWidget);
+
+            // add the labels name/quality
+            addlabelnameQuality(newLi);
+            newLi.appendTo(languageList);
+            $(newLi).find($('select.skill-select-input')).attr('disabled',true);
+
+            // add the remove link
+            addTagFormDeleteLink(newLi);
+
+            // set the rating function to the input rate field
+            // $(newLi).find('.skill-input').setSkillInput();
+
+            var langInput = $(newLi).find('.skillTitle');
+            langAutosuggestion(langInput, 1, 'language', 'rate');
+        }
+    });
+
+    function addlabelnameQuality(labelFormLi) {
+        labelFormLi.prepend(label_nameQuality);
+    }
+
+    function addTagFormDeleteLink(tagFormLi) {
+        tagFormLi.append(removeButton);
+        var button = $('.form-subtext');
+        addBehaviourToDeleteLangLink(button);
+    }
+
+    addBehaviourToDeleteLangLink($('.form-subtext'));
+
+    function  addBehaviourToDeleteLangLink(button) {
+        button.on('click', function (e) {
+            e.preventDefault();
+            var unSplitedId = $(this).prev().attr('id');
+            if (unSplitedId === undefined){
+                unSplitedId = $(this).prev().prev().attr('id');
+            }
+            var specId = unSplitedId.split('_');
+
+            var needleId = specId[specId.length - 1];
+            var lang = $('#theaterjobs_profile_data_skillSection_languageSkill_' + needleId + '_skill').val();
+            $(this).parent().remove();
+            if (lang && selectedLangs.includes(lang)) {
+                var i = selectedLangs.indexOf(lang);
+                selectedLangs.splice(i, 1);
+            }
+        });
+    }
+
+
+    const generalForm = $('#general form');
+    addLoadingSvg(generalForm);
+    const loading = generalForm.find('.submit-rolling-svg');
+
+    generalForm.submit(function (e) {
+        e.preventDefault();
+
+        if (loading.is(':visible')) {return;}
+
+        var valid = false;
+        var pdfInput = filledPdf();
+        var validLnagInput = validateLangSkillInput();
+        if ($(this).valid() && validLnagInput && pdfInput) {
+            loading.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    loading.hide();
+                    if (data.errors) {
+                        for (var key in data.errors) {
+                            var el = generalForm.find('input[name="' + key + '"]');
+                            if (el.length == 0) {
+                                el = generalForm.find('input[name="' + key + '[file]"]');
+                                el.tooltip({
+                                    'trigger': 'focus',
+                                    'title': data.errors[key],
+                                    'placement': 'top'
+                                });
+                                el.focusin()
+                            } else {
+                                toolTipError(data.errors[key], el);
+                            }
+                        }
+                    } else {
+                        $('.profile-block').html(data);
+                        $('.logs-block').html(data.logs);
+                        valid = true;
+                    }
+                },
+                error: function (e) {
+                    loading.hide();
+                    serverError();
+                }
+            }).done(function () {
+                if (valid) {
+                    $('#myModal').modal('hide');
+                    var grids = $("[data-masonry]");
+                    grids.each(function () {
+                        $(this).masonry({
+                            itemSelector: "[data-masonry-item]"
+                        });
+
+                        $(this).masonry("on", "layoutComplete", function () {
+                            $("[data-masonry-item] .panel").each(function () {
+                                $(this).bleedPanel();
+                            });
+                        });
+
+                        $(this).masonry();
+                    });
+                }
+            });
+        }
+    });
+
+
+    $('.add_tag_link_pdf').click(function (e) {
+        if (!filledPdf()) {
+            return;
+            //Add error to pdf inputs
+        }
+        if ($("#pdf-fields-list li").length <= 10) {
+            var pdfList = jQuery('#pdf-fields-list');
+            // grab the prototype template
+            var newWidget = pdfList.attr('data-prototype');
+            // replace the "__name__"
+            newWidget = newWidget.replace(/__name__/g, pdfCount);
+            pdfCount++;
+            // create a new list element and add it to the list
+            var newLi = $('<li class="col-md-12 col-xs-12 big-pdf-list"></li>').html(newWidget);
+            newLi.appendTo(pdfList);
+            // add div for the rating effect
+            // add the remove link
+            addTagFormDeleteLinkPdf(newLi);
+
+            generalForm.find('input[type="file"]').change(function () {
+                $(this).each(function () {
+                    var file = $(this);
+                    if (file.val() == "") {
+                        file.closest('has-error').removeClass('has-error');
+                        file.tooltip('destroy');
+                    }
+                    file.rules('add', {
+                        'filesize' : 5, //5M
+                    });
+                    file.tooltip('destroy');
+                })
+            });
+        }
+        if ($("#pdf-fields-list li").length === 10)
+            $(this).hide();
+    });
+
+    function uploadFile(el) {
+        $(el).parent().find('input:file').trigger('click');
+    }
+
+    function addTagFormDeleteLinkPdf(tagFormLi) {
+        tagFormLi.append(removeButton);
+        var button = $('.form-subtext');
+        button.on('click', function (e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+            // remove the li for the tag form
+            if ($("#pdf-fields-list li").length <= 10)
+                $('.add_tag_link_pdf').show();
+            $(this).parent().remove();
+        });
+    }
+
+
+    var inputFile = $('.uploadPdf input:file');
+    inputFile.removeAttr('required');
+    inputFile.css('color', 'transparent');
+    inputFile.attr('title', ' ');
+
+    $('*[max="99"]').on('input', function () {
+        if ($(this).val().length > 2) {
+            $(this).val($(this).val().slice(0, 2));
+        }
+        if (parseInt($(this).val()) < 1) {
+            $(this).val("");
+            $(this).valid();
+            $(this).focus();
+        }
+    });
+
+    $("form[name=theaterjobs_profile_data]").validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+        }
+    });
+
+    $('*[max="999"]').on('input', function () {
+        if ($(this).val().length > 3) {
+            $(this).val($(this).val().slice(0, 3));
+        }
+        if (parseInt($(this).val()) < 1) {
+            $(this).val("");
+            $(this).valid();
+            $(this).focus();
+        }
+    });
+
+    $('#theaterjobs_profile_data_personalData_ageRoleFrom').on('input', function () {
+        if ($(this).val().length != 0)
+            $('#theaterjobs_profile_data_personalData_ageRoleTo').attr('min', $(this).val()).val($(this).val());
+        else
+            $('#theaterjobs_profile_data_personalData_ageRoleTo').attr('min', $(this).attr('min')).val($(this).val());
+    });
+
+    $('#theaterjobs_profile_data_personalData_ageRoleTo').on('input', function () {
+        $(this).delay(1000).queue(function () {
+            if (parseInt($(this).val()) < parseInt($('#theaterjobs_profile_data_personalData_ageRoleFrom').val())) {
+                $(this).val('');
+                $(this).valid();
+                $(this).focus();
+            }
+            $(this).dequeue();
+        });
+    });
+
+    $(document).on('select2-selecting', '.skillTitle', function (e) {
+
+        var selectedLang = e.val;
+        if (!selectedLangs.includes(selectedLang)) {
+            selectedLangs.push(selectedLang);
+        }
+        $(this).closest('.has-error').removeClass('has-error');
+        $(this).parent('div.form-group').parent().find($('select.skill-select-input')).attr('disabled',false);
+        if (typeof $(this).attr('aria-describedby') !== "undefined") {
+            $(this).tooltip('destroy');
+            $(this).removeAttr('aria-describedby');
+        }
+
+    });
+
+    $(document).ready(function () {
+        $(document).on('select2-removed', '.skillTitle', function (e) {
+            var selectedLang = e.val;
+            if (selectedLangs.includes(selectedLang)) {
+                var i = selectedLangs.indexOf(selectedLang);
+                selectedLangs.splice(i, 1);
+            }
+            validateLangSkillInput();
+        });
+
+        $('.select2-search-choice-close').on('click', function (e) {
+            var selectedLang = $(this).prev().text();
+            if (selectedLangs.includes(selectedLang)) {
+                var i = selectedLangs.indexOf(selectedLang);
+                selectedLangs.splice(i, 1);
+            }
+            validateLangSkillInput();
+        });
+    });
+
+    function validateLangSkillInput() {
+        var validLang = true;
+        var validSkill = true;
+        $('#skills-fields-list >li').each(function () {
+
+            var langInput = $(this).find($('input.skillTitle'));
+            var visualInput = $(this).find($('select.skill-select-input'));
+
+            if (!langInput.val()) {
+                toolTipError('This field is required.', langInput);
+                validLang = false;
+            }
+            else {
+                langInput.closest('.has-error').removeClass('has-error');
+                validLang = true;
+            }
+
+            if (!visualInput.val()) {
+                toolTipError('Select skill in this language.', visualInput);
+                validSkill = false;
+            }
+            else {
+                visualInput.closest('.has-error').removeClass('has-error');
+                validSkill = true;
+            }
+        });
+
+        return (validLang && validSkill) ? true : false ;
+    }
+
+    $("#theaterjobs_profile_data_personalData_height, #theaterjobs_profile_data_personalData_shoeSize, #theaterjobs_profile_data_personalData_clothesSize").keyup(function () {
+        var val = parseInt($(this).val());
+        var max = parseInt($(this).attr('max'));
+        if (val > max)
+            $(this).val(max)
+    });
+
+    jQuery(function ($) {
+        $(document).ready(function () {
+            $('.performer-data-button-close').hide();
+            $('.performer-data-button').click(function () {
+                $('.perfomer-data-modal').slideDown('fast');
+                $(this).hide();
+                $('.performer-data-button-close').show();
+            });
+            $('.performer-data-button-close').click(function () {
+                $('.perfomer-data-modal').slideUp('fast');
+                $(this).hide();
+                $('.performer-data-button').show();
+            });
+        });
+    });
+
+    function filledPdf(cb) {
+        if (!$('#pdf-fields-list input').length) {
+            return true;
+        }
+        var filled = true
+        $('#pdf-fields-list input').each(function (val, e) {
+            console.log($(this));
+            if( !$(this).val() ) {
+                $(this).parent().addClass('has-error');
+                err = false;
+                if ($(this).hasClass('uploadPdf')){
+                    $(this).tooltip({
+                        'trigger': 'focus',
+                        'title': trans('tooltip.error.thisFieldIsRequired',locale),
+                        'placement': 'top'
+                    });
+                    $(this).focusin();
+                }
+            }
+
+            else{
+                $(this).parent().removeClass('has-error');
+                err = true;
+            }
+        });
+        return err;
+    }
+</script>

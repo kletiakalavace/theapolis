@@ -1,0 +1,76 @@
+{% import '@TheaterjobsNews/newsMacro.twig' as nm %}
+
+{{ nm.newsFilterBar(form.vars.data, form) }}
+
+{% if is_granted('ROLE_ADMIN') %}
+    <div class="col-xs-6 col-xxs-12 text-right pull-right">
+        <div class="form-inline">
+            <div class="form-group">
+                {{ form_row(form.published, { 'attr': {'class': 'form-control-small', 'onchange': 'filterListSearchForm()'} }) }}
+            </div>
+        </div>
+    </div>
+
+{% endif %}
+<div class="news-list">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-xs-offset-0">
+        <p class="p-alt">
+            <small>{{ knp_results(news, path('tj_news')) }}</small>
+        </p>
+        <div class="timeline timeline-large">
+            {% for new in news %}
+                <div class="timeline-group">
+                    <div class="timeline-time">
+                        <p class="news-post-detail">
+                            <time>
+                                {% if new.publishAt is defined %}
+                                    {{ new.publishAt | date("d.m.Y") }}
+                                {% endif %}
+                            </time>
+                        </p>
+                    </div>
+                    {% set profilePhoto = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                    {% if new.path is defined and new.path %}
+                        {% set profilePhoto =  vich_uploader_asset(new, "uploadFile" , 'Theaterjobs\\NewsBundle\\Entity\\News') | imagine_filter("news_list") %}
+                    {% endif %}
+                    <div class="timeline-item">
+                        <article class="news-post">
+                            <div class="photo-overflow-visible">
+                                {% if app.user %}
+                                    {{ new | favorite(app.user.profile.newsFavourite) }}
+                                {% endif %}
+                                <div class="profile-photo-md news-post-author">
+                                    <img src="{{ profilePhoto }}"
+                                         alt="{{ new.imageDescription is defined ? new.imageDescription : '' }}">
+                                </div>
+                            </div>
+
+                            <div class="news-post-content">
+                                <p class="news-post-detail">{{ new | highlight('pretitle.autocomplete') }}</p>
+                                <h2 class="h2-alt">
+                                    {% if new.published or is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ path('tj_news_show', { 'slug': new.slug }) }}">
+                                            {{ new | highlight('title.autocomplete') }}
+                                        </a>
+                                    {% endif %}
+                                </h2>
+                                <p class="p-alt">
+                                    {{ new | highlight('shortDescription.autocomplete') }}
+                                </p>
+                                {% if not new.published and new|un_favorite(app.user,'news') %}
+                                    <a class="removeFavoriteList" onclick="removeFavorite('{{ new.slug }}')">{{ 'favorite.list.news.remove.from.favorites' | trans }}</a>
+                                {% endif %}
+                            </div>
+
+                        </article>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="navigation">
+            {{ knp_pagination_render(news) }}
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:57Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c0fe1f95b5661b141b8deeb8ea60558e58a45d51" resname="ResetPassword.modal.label.requestEmail">
+        <source>ResetPassword.modal.label.requestEmail</source>
+        <target state="new">Email address</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/request_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="512c10923fde26f27212d3a258cc59940a693612" resname="ResetPassword.modal.label.resettingPassword">
+        <source>ResetPassword.modal.label.resettingPassword</source>
+        <target state="new">Password</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/UserBundle/Form/Type/ResettingFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0d81c0a62092aa21f25222a7c2c9f50fbb70ac9e" resname="ResetPassword.modal.label.resettingPasswordConfirmation">
+        <source>ResetPassword.modal.label.resettingPasswordConfirmation</source>
+        <target state="new">Password confirmation</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/UserBundle/Form/Type/ResettingFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4852e27c659479a4d799b46fba988eae3ab2fb8d" resname="account.edit.deleteAccount.password">
+        <source>account.edit.deleteAccount.password</source>
+        <target state="new">Password</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/UserBundle/Form/Type/PasswordCheckForDeletionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef6f041cfab19c22abd3503d161b92629a4ebf48" resname="account.edit.label.artistName">
+        <source>account.edit.label.artistName</source>
+        <target state="new">Artist name</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="10dbc63c9fad20a697c24c976503d333c7cd68ce" resname="account.edit.label.newFirstName">
+        <source>account.edit.label.newFirstName</source>
+        <target state="new">New first name</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="597474a458ecb3cadf565cc7e9fac3bdea8cda4d" resname="account.edit.label.newLastName">
+        <source>account.edit.label.newLastName</source>
+        <target state="new">New last name</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="341dc9fdca9e34cb999174fd98c1968bbff60b67" resname="account.edit.label.profileName">
+        <source>account.edit.label.profileName</source>
+        <target state="new">Profile name</target>
+        <jms:reference-file line="57">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6df5811f44f4458c42f7940dc4873cb7114d9150" resname="account.edit.label.surfAnonymously">
+        <source>account.edit.label.surfAnonymously</source>
+        <target state="new">account.edit.label.surfAnonymously</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="77c64bcb0a2e0ab4858bcd0e253925fe5f5679c8" resname="account.edit.password">
+        <source>account.edit.password</source>
+        <target state="new">Old password</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/UserBundle/Form/Type/PasswordResetType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9bbc415a40ad9857468b8eef1b935c0eebbaf9b5" resname="account.edit.passwordNew">
+        <source>account.edit.passwordNew</source>
+        <target state="new">New password</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/UserBundle/Form/Type/PasswordResetType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="86d32bf18d5063bf7a715986c23791b46d03a24e" resname="account.edit.passwordNewRepeat">
+        <source>account.edit.passwordNewRepeat</source>
+        <target state="new">Repeat new password</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/UserBundle/Form/Type/PasswordResetType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a945ea810094ea9807087b1e883df56261e399d" resname="account.label.emailNew">
+        <source>account.label.emailNew</source>
+        <target state="new">New email</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/UserBundle/Form/EmailChangeRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9a8ea59357b2a21209c9461034488164e5bfa20c" resname="account.label.emailNewRepeat">
+        <source>account.label.emailNewRepeat</source>
+        <target state="new">Repeat new email</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/UserBundle/Form/EmailChangeRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d3d78437399f9a73b3b3c501fdbf439ef8394286" resname="account.label.oldMail">
+        <source>account.label.oldMail</source>
+        <target state="new">Old mail</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/UserBundle/Form/EmailChangeRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69deb5b15a094fd823407eecd63898ae06616191" resname="button.accountDelete">
+        <source>button.accountDelete</source>
+        <target state="new">Account delete</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/UserBundle/Resources/views/AccountSettings/Modal/delete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df90443eda5fa6e0ec474957d9b99bd6cc42ae85" resname="button.create">
+        <source>button.create</source>
+        <target state="new">button.create</target>
+        <jms:reference-file line="190">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40aadabd3061838a93866be7d8d3324127d6833b" resname="button.deleteAccount">
+        <source>button.deleteAccount</source>
+        <target state="new">button.deleteAccount</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/UserBundle/Form/Type/PasswordCheckForDeletionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="44e3c38f1fc1649582acfa8013e34bef1d436fa4" resname="button.emailReset">
+        <source>button.emailReset</source>
+        <target state="new">Reset email</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a55a191f5cc5d1845a3a15278e842e2c4e22e2d7" resname="button.logIn">
+        <source>button.logIn</source>
+        <target state="new">Login</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/request_content.html.twig</jms:reference-file>
+        <jms:reference-file line="20">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/reset_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f288556e0faf2bd3ac15e1b5276a1a46b9df7944" resname="button.passwordReset">
+        <source>button.passwordReset</source>
+        <target state="new">Reset password</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/UserBundle/Resources/views/AccountSettings/Modal/changePassword.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef02bf59c64a81a7dc420d434e0bddea13215cdc" resname="button.submit">
+        <source>button.submit</source>
+        <target state="new">Submit</target>
+        <jms:reference-file line="47">/../src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3e3ff40a65182477fa48a985004894cf2825ceb2" resname="button.update">
+        <source>button.update</source>
+        <target state="new">button.update</target>
+        <jms:reference-file line="119">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32fa19d3c760f6a0016716ececa01183f3b71011" resname="button.update.role">
+        <source>button.update.role</source>
+        <target state="new">button.update.role</target>
+        <jms:reference-file line="729">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5fbd61de9a62476869d8405303e97a5e0036ffac" resname="form.button.create">
+        <source>form.button.create</source>
+        <target>save</target>
+        <jms:reference-file line="137">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+        <jms:reference-file line="109">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a86a81b73a63336fe93ce6da971a42103db1136" resname="form.button.generalInfo.save">
+        <source>form.button.generalInfo.save</source>
+        <target state="new">form.button.generalInfo.save</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/UserBundle/Resources/views/AccountSettings/Modal/billingAddress.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/UserBundle/Resources/views/AccountSettings/Modal/profileGeneralInfo.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="573dc0cd8d6004d23cd7e299898ba571801e179b" resname="form.button.password.reset">
+        <source>form.button.password.reset</source>
+        <target>save</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/UserBundle/Resources/views/PasswordReset/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bdd8c1da2d36ed9f886be8869bd5bd0aaab06b3b" resname="form.button.security.submit">
+        <source>form.button.security.submit</source>
+        <target>Log In</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+        <jms:reference-file line="38">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f4edce4bbc1ef4bd631f9f8ed66de3774dbc6797" resname="form.button.update.role">
+        <source>form.button.update.role</source>
+        <target>save</target>
+        <jms:reference-file line="416">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="96ff22cc877122cdddc11ad21c967661708edc34" resname="form.choice.admin">
+        <source>form.choice.admin</source>
+        <target>administrator</target>
+        <jms:reference-file line="724">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cce74f3c0a7397513c911debdc84d3684d973b43" resname="form.choice.choose">
+        <source>form.choice.choose</source>
+        <target>choose</target>
+        <jms:reference-file line="839">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c1a57af9435d19cd30a3a8c6a2700561da2c2834" resname="form.choice.choose.role">
+        <source>form.choice.choose.role</source>
+        <target>choose user role</target>
+        <jms:reference-file line="720">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d844a83f175d878973a548796176d4b567a837f9" resname="form.choice.html">
+        <source>form.choice.html</source>
+        <target>html-newsletter</target>
+        <jms:reference-file line="581">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2822ea2aeb6c85cfd2d508569601064a8bf35c2" resname="form.choice.member">
+        <source>form.choice.member</source>
+        <target>member</target>
+        <jms:reference-file line="723">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fad1b3d26c1d4d9a4b16c71f46df57efce9671c2" resname="form.choice.mobile">
+        <source>form.choice.mobile</source>
+        <target>mobile-newsletter</target>
+        <jms:reference-file line="582">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="201e55f66ee56f37c7ef7483d18220412bd917c6" resname="form.choice.no.institution">
+        <source>form.choice.no.institution</source>
+        <target>different organisation</target>
+        <jms:reference-file line="842">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e7c139c01fa165e6be1669faa0a753b4ee003543" resname="form.choice.no.my.name">
+        <source>form.choice.no.my.name</source>
+        <target>in my name</target>
+        <jms:reference-file line="843">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5dd404b1d2d7ce69b4b0694b5b9037781beea549" resname="form.choice.organization.empty_value">
+        <source>form.choice.organization.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="853">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="870">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4fb743af1eb062ab0ab9d97b83bdc56a5d4ad924" resname="form.choice.text">
+        <source>form.choice.text</source>
+        <target>plain text newsletter</target>
+        <jms:reference-file line="583">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b7b028c57e923457813a1dd04ca86206964e344" resname="form.choice.user">
+        <source>form.choice.user</source>
+        <target>registered user</target>
+        <jms:reference-file line="722">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cff03a32c791c58e9f09266a7b1caecd9a5cd0d5" resname="form.choice.yes">
+        <source>form.choice.yes</source>
+        <target>yes</target>
+        <jms:reference-file line="841">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dfbac0fcb360d43cc051fc7ea6b75c8050253dc8" resname="form.label.choice.choose">
+        <source>form.label.choice.choose</source>
+        <target>choose</target>
+        <jms:reference-file line="837">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="784db0050e70d485add3173f3ab44f050d4b2e2d" resname="form.label.chooseButton">
+        <source>form.label.chooseButton</source>
+        <target>choose</target>
+        <jms:reference-file line="878">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c895090618dd4c1617fcc278bb3e2cbe7e891f8" resname="form.label.email.new">
+        <source>form.label.email.new</source>
+        <target>new e-mail address</target>
+        <jms:reference-file line="25">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/EmailChangeRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16373642ed6d79a0c23624a2c97dce626b18b1f6" resname="form.label.email.new.repeat">
+        <source>form.label.email.new.repeat</source>
+        <target>repeat new e-mail address</target>
+        <jms:reference-file line="26">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/EmailChangeRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="902b49b3a47b36337087ef0cd6d4107e6d9994f1" resname="form.label.inserate.organization">
+        <source>form.label.inserate.organization</source>
+        <target>form.label.inserate.organization</target>
+        <jms:reference-file line="60">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/UserOrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd03715499f49d4968fb09a214c65972c5767341" resname="form.label.organization">
+        <source>form.label.organization</source>
+        <target>Organisation</target>
+        <jms:reference-file line="865">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="954c450f42610192fd658422105bcc060675aa6f" resname="form.label.organization.suggest">
+        <source>form.label.organization.suggest</source>
+        <target state="new">form.label.organization.suggest</target>
+        <jms:reference-file line="848">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0ff65e2ad6d7f2499e8211d54c94d1086c64cf6d" resname="form.label.password.new">
+        <source>form.label.password.new</source>
+        <target>new password</target>
+        <jms:reference-file line="35">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/PasswordResetType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae4117a2ccdf2d7a91f7f94504f5749c78627bd3" resname="form.label.password.new.repeat">
+        <source>form.label.password.new.repeat</source>
+        <target>repeat new password</target>
+        <jms:reference-file line="36">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/PasswordResetType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ea7557458f325264b95776651cdadb043346ba1" resname="form.label.profile.membership.expire.date">
+        <source>form.label.profile.membership.expire.date</source>
+        <target>membership expires at</target>
+        <jms:reference-file line="226">/../src/Theaterjobs/UserBundle/Resources/views/AccountSettings/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9cde0f80f758eb68a8e87011006ebd0d5f025c08" resname="form.label.registration.terms_and_trades">
+        <source>form.label.registration.terms_and_trades</source>
+        <target>I accept the data privacy statement and the terms and conditions.</target>
+        <jms:reference-file line="59">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8516cc36d451ba69365d4565ff54900c4e192c7" resname="form.label.resetting.password">
+        <source>form.label.resetting.password</source>
+        <target>New password</target>
+        <jms:reference-file line="44">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/ResettingFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="93d53c75934b84db7f1c8d77e4257d2eb1debedb" resname="form.label.resetting.password_confirmation">
+        <source>form.label.resetting.password_confirmation</source>
+        <target>form.label.resetting.password_confirmation</target>
+        <jms:reference-file line="48">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/ResettingFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a4e9d0e7815b28ae11d682cf0239f4bf6228ba81" resname="form.label.security.forgot_password">
+        <source>form.label.security.forgot_password</source>
+        <target>Forgot password?</target>
+        <jms:reference-file line="22">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+        <jms:reference-file line="25">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ab3ae285679060181320705967abe37a5cc715d2" resname="form.label.security.password">
+        <source>form.label.security.password</source>
+        <target>Password</target>
+        <jms:reference-file line="8">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df8085cfc1398956b301f985ba133e3d221f40a9" resname="form.label.security.remember_me">
+        <source>form.label.security.remember_me</source>
+        <target>Remember me</target>
+        <jms:reference-file line="17">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a1a211a9b167b3b438e5071007982265fe92c182" resname="form.label.security.username">
+        <source>form.label.security.username</source>
+        <target>E-mail</target>
+        <jms:reference-file line="3">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57987db5df8795c95a2dfde70e21b284790f34af" resname="form.placeholder.admin_comment.description">
+        <source>form.placeholder.admin_comment.description</source>
+        <target state="new">form.placeholder.admin_comment.description</target>
+        <jms:reference-file line="27">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/AdminUserCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="52ffc0a3f6e34569eacf096b50ac10295fb386b3" resname="form.placeholder.registration.email">
+        <source>form.placeholder.registration.email</source>
+        <target>Enter your e-mail address</target>
+        <jms:reference-file line="44">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="498e65100ec41b9f13fc9a5ffcbc8bae5d169b0b" resname="form.placeholder.registration.password">
+        <source>form.placeholder.registration.password</source>
+        <target>Choose a password</target>
+        <jms:reference-file line="54">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce0ecee9c1c4795ea99574164b71a5c0da4ea86c" resname="form.placeholder.registration.password_confirmation">
+        <source>form.placeholder.registration.password_confirmation</source>
+        <target>Repeat your password</target>
+        <jms:reference-file line="60">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b84dd28fa7121fa5383c0887c5bba5cd0e65e8e" resname="form.placeholder.security.password">
+        <source>form.placeholder.security.password</source>
+        <target>Password</target>
+        <jms:reference-file line="9">views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="552aae668360e8b80e59f1e92af9f4c1bf9be24c" resname="form.placeholder.security.username">
+        <source>form.placeholder.security.username</source>
+        <target>e-mail</target>
+        <jms:reference-file line="4">views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="36a2557f4e37a161b3fb143c91db22d40166c86a" resname="form.profile.firstname">
+        <source>form.profile.firstname</source>
+        <target state="new">form.profile.firstname</target>
+        <jms:reference-file line="32">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/ProfileRegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aa23b43ea0a328433f466473dd6c90951bfcad1a" resname="form.profile.label.artistName">
+        <source>form.profile.label.artistName</source>
+        <target>artist name</target>
+        <jms:reference-file line="44">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d815b9f2b54e96a42f97337495b376e88dd83a4a" resname="form.profile.label.forum.alias">
+        <source>form.profile.label.forum.alias</source>
+        <target>forum-alias</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/UserBundle/Form/Type/ProfileForumAliasFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d278f740990bfb853645c55cb76ecb935de2fb45" resname="form.profile.label.newfirstname">
+        <source>form.profile.label.newfirstname</source>
+        <target>first name</target>
+        <jms:reference-file line="34">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf93157aed776ad3c6ddba99319e8c32f17209ae" resname="form.profile.label.newlastname">
+        <source>form.profile.label.newlastname</source>
+        <target>Last name</target>
+        <jms:reference-file line="39">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b648a5f754a34a5e06bd2b88af9eb1864179d13" resname="form.profile.label.profileName">
+        <source>form.profile.label.profileName</source>
+        <target>Profile name</target>
+        <jms:reference-file line="57">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2131fb8fc8d1c56548db70d4e043582fbee5fe00" resname="form.profile.label.social.media">
+        <source>form.profile.label.social.media</source>
+        <target state="new">form.profile.label.social.media</target>
+        <jms:reference-file line="67">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eea2e51f9466ee41341ca9752e241cd24461ad7a" resname="form.profile.label.surf.anonymously">
+        <source>form.profile.label.surf.anonymously</source>
+        <target>surf anonymously</target>
+        <jms:reference-file line="62">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66b513e5dfa54302fa8f487a3b9ac989c234370b" resname="form.profile.label.undertitle">
+        <source>form.profile.label.undertitle</source>
+        <target state="new">form.profile.label.undertitle</target>
+        <jms:reference-file line="52">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="711abb5c7f61c542c22257988a4722c07b788265" resname="form.profile.placeholder.artistName">
+        <source>form.profile.placeholder.artistName</source>
+        <target>artist name</target>
+        <jms:reference-file line="46">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="18473fc43d82c3596532fbe5ab17e0d3ce7b2e58" resname="form.profile.placeholder.firstname">
+        <source>form.profile.placeholder.firstname</source>
+        <target>first name</target>
+        <jms:reference-file line="34">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/ProfileRegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37b9fb3f83d352b5507cf8be5b1961e581328454" resname="form.profile.placeholder.forum.alias">
+        <source>form.profile.placeholder.forum.alias</source>
+        <target>forum-alias</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/UserBundle/Form/Type/ProfileForumAliasFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9180f7c3c2b9fada7698d0a8c190d25f4dab1f96" resname="form.profile.placeholder.lastname">
+        <source>form.profile.placeholder.lastname</source>
+        <target>last name</target>
+        <jms:reference-file line="36">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/ProfileRegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99aaa4abafbe73bd2de1971010763ea8dfb7d55b" resname="form.profile.placeholder.newfirstname">
+        <source>form.profile.placeholder.newfirstname</source>
+        <target>First name</target>
+        <jms:reference-file line="36">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5dad8f4d2970bba351612323316620140a09cb87" resname="form.profile.placeholder.newlastname">
+        <source>form.profile.placeholder.newlastname</source>
+        <target>Last name</target>
+        <jms:reference-file line="41">/home/marlind/PhpstormProjects/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef2c6ae17915f442abd9307f92cdab356408adc5" resname="form.profile.placeholder.undertitle">
+        <source>form.profile.placeholder.undertitle</source>
+        <target state="new">form.profile.placeholder.undertitle</target>
+        <jms:reference-file line="51">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5bbc396f8f1d795fea8e67aabceb43251d5976e4" resname="form.registration.email">
+        <source>form.registration.email</source>
+        <target state="new">form.registration.email</target>
+        <jms:reference-file line="42">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6299acc8f8a05566fcf49e4ffc9507eb46f42f34" resname="form.registration.password">
+        <source>form.registration.password</source>
+        <target state="new">form.registration.password</target>
+        <jms:reference-file line="49">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="54c6bb16aabed4853e0215e17f6fbe1d1ceec660" resname="form.registration.password_confirmation">
+        <source>form.registration.password_confirmation</source>
+        <target state="new">form.registration.password_confirmation</target>
+        <jms:reference-file line="52">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b808088d0aa70a7570eb67515dba257ba9390b96" resname="form.resetting.request.email">
+        <source>form.resetting.request.email</source>
+        <target>E-mail</target>
+        <jms:reference-file line="8">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Resetting/request_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8d629a65416ceb36842808f27294dec486390731" resname="form.resetting.request.invalid_email">
+        <source>form.resetting.request.invalid_email</source>
+        <target>This e-mail address is not valid. Please try again or choose a different e-mail address.</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/request_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2720cb1c6564f58f346616feda244bfa6204dd64" resname="form.resetting.request.submit">
+        <source>form.resetting.request.submit</source>
+        <target>Submit</target>
+        <jms:reference-file line="6">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Resetting/reset_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3949d5df818d2919a508fac563318f773c5134e9" resname="form.security.label.password">
+        <source>form.security.label.password</source>
+        <target>Password</target>
+        <jms:reference-file line="8">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2a6fae678eb2ef1a7af282b0a2414d4290020547" resname="form.submit.registration.free">
+        <source>form.submit.registration.free</source>
+        <target>Register now</target>
+        <jms:reference-file line="73">/home/manoolia/html/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47ac00e91d244234b6b5988efb21ffa515c441e2" resname="login.modal.label.forgotPassword">
+        <source>login.modal.label.forgotPassword</source>
+        <target state="new">Forgot Password</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="56e1dbbc5a1a5b5568f75d572567ee9e3687e0bd" resname="login.modal.label.password">
+        <source>login.modal.label.password</source>
+        <target state="new">Password</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e8ba0090bffaa06b1fa66a9261d774c34667a768" resname="login.modal.label.rememberMe">
+        <source>login.modal.label.rememberMe</source>
+        <target state="new">Remember me</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cde3caed96d393c6d6c65916c083bbf88dacd1b7" resname="login.modal.label.username">
+        <source>login.modal.label.username</source>
+        <target state="new">Username</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/UserBundle/Resources/views/Security/login_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d31ca762aada1bae8fbdd11c6daa295433e902f6" resname="organization.edit.label.addMember">
+        <source>organization.edit.label.addMember</source>
+        <target state="new">Add member</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/UserBundle/Form/Type/UserOrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f20430233e08e316926dbf3c67bdb9e10f6fe4e" resname="people.show.placeholder.underTitle">
+        <source>people.show.placeholder.underTitle</source>
+        <target state="new">people.show.placeholder.underTitle</target>
+        <jms:reference-file line="54">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Form/Type/MasterDataFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d56c02b9e5d851697b2c929930363d158207ab5d" resname="register.button.registrationFree">
+        <source>register.button.registrationFree</source>
+        <target state="new">Register</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ecb25b801e6b3c6087796b1705ffac452e85dd0" resname="registration.already.registered">
+        <source>registration.already.registered</source>
+        <target state="new">If you have already registerd, please</target>
+        <jms:reference-file line="21">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/register.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="479bef58191142f9e247efdb505fb74f80d37a7a" resname="registration.label.email">
+        <source>registration.label.email</source>
+        <target state="new">Email</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0d43336efb32cdeb41c0888a701ca0fd94155a3" resname="registration.label.firstname">
+        <source>registration.label.firstname</source>
+        <target state="new">First name</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/UserBundle/Form/Type/ProfileRegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3cf026f437b97a9fa2725d83f6cd848e00ad6730" resname="registration.label.lastname">
+        <source>registration.label.lastname</source>
+        <target state="new">Last name</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/UserBundle/Form/Type/ProfileRegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d525a2c11a7d90e47199b693fba644c8c0b591c" resname="registration.label.password">
+        <source>registration.label.password</source>
+        <target state="new">Password</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="07998038cb4e76c2b665f51a7d270d73685f0b8e" resname="registration.label.passwordConfirmation">
+        <source>registration.label.passwordConfirmation</source>
+        <target state="new">Password confirmation</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63d6ec10c3ca22ea406453ca17fb7b81afcb484f" resname="registration.label.termsAndTrades">
+        <source>registration.label.termsAndTrades</source>
+        <target state="new">terms and trades</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/UserBundle/Form/Type/RegistrationFormType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a1efbc1ad90ac5f646e0079dcbaa1b337301e648" resname="registration.login.here">
+        <source>registration.login.here</source>
+        <target state="new">login here</target>
+        <jms:reference-file line="21">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/register.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccc12b616c39f969ddbf01daaf4b04758dcfd869" resname="user.notFound">
+        <source>user.notFound</source>
+        <target state="new">User not found</target>
+        <jms:reference-file line="145">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="989d1ab1d7e995cd16886fcf13b9ef49c38f3a48" resname="user.organization.alreadymember">
+        <source>user.organization.alreadymember</source>
+        <target state="new">User is already member</target>
+        <jms:reference-file line="92">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87a2a8901127f007e710691ee9352560f90b771f" resname="user.userOrganization.members.limit.reached">
+        <source>user.userOrganization.members.limit.reached</source>
+        <target state="new">user.userOrganization.members.limit.reached</target>
+        <jms:reference-file line="60">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4266ea378b1b38a34e63b42c2126beb6b92665ae" resname="user.userOrganization.notActiveOrganization.noNew.members">
+        <source>user.userOrganization.notActiveOrganization.noNew.members</source>
+        <target state="new">user.userOrganization.notActiveOrganization.noNew.members</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3705f6ea0190f959e9cc7fb5b0a381d5fb932450" resname="user.userOrganization.notAllowed">
+        <source>user.userOrganization.notAllowed</source>
+        <target state="new">user.userOrganization.notAllowed</target>
+        <jms:reference-file line="157">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="46">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="245c2cf93f70ec067c3269a1c67a11bf53f8539f" resname="user.userOrganization.pending.noNew.members">
+        <source>user.userOrganization.pending.noNew.members</source>
+        <target state="new">Not allowd new team members for pending organization</target>
+        <jms:reference-file line="183">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

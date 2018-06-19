@@ -1,0 +1,245 @@
+{% extends "::base.html.twig" %}
+{% import '@TheaterjobsInserate/jobMacro.twig' as jm %}
+
+{% block title %}{{ category | capitalize }}{% endblock title %}
+{% block nav %}
+{% endblock %}
+    {% block content %}
+        <div class="container">
+            <div class="block">
+
+                <div class="page-header">
+                    <h1>{{ options.categoryName }}</h1>
+                    <div class="separator"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <p>
+                            {{ "seo.landingpage.subtitle.specification1" | trans }}
+                        </p>
+                        <p>
+                            {{ "seo.landingpage.description.specification2" | trans }}
+                        </p>
+                        <p>
+                            {{ "seo.landingpage.description.specification3" | trans }}
+                            {{ "seo.landingpage.description.specification4" | trans }}
+                            <a href="{{ path('tj_inserate_job_route_home') }}">
+                                {{ "seo.landingpage.link.theapolis" | trans }}
+                            </a>
+                            {{ "seo.landingpage.description.specification5" | trans }}
+                            <a href="{{ path('tj_profile_profile_index') }}">
+                                {{ "seo.landingpage.link.people" | trans }}
+                            </a>
+                            {{ "seo.landingpage.description.specification6" | trans }}
+                            <a href="{{ path('tj_main_organization_home') }}">
+                                {{ "seo.landingpage.link.organization" | trans }}</a>
+                            {{ "seo.landingpage.description.specification7" | trans }}
+                            <a href="{{ path('tj_news') }}">
+                                {{ "seo.landingpage.link.news" | trans }}
+                            </a>
+                        </p>
+                        <p>
+                            {{ "seo.landingpage.description.specification8" | trans }}
+                            {{ options.jobTypeMale }}
+                            {{ "seo.landingpage.description.specification9" | trans }}
+                            {{ options.jobTypeFemale }}
+                            {{ "seo.landingpage.description.specification10" | trans }}
+                            {{ "seo.landingpage.description.specification11" | trans }}
+                            {{ publishedJobs.getTotalItemCount() }}
+                            {{ options.jobType }}
+                            {{ "seo.landingpage.description.specification12" | trans }}
+                        </p>
+                    </div>
+                    {#published jobs#}
+                    <div class="col-md-12 col-xs-12" style="margin: 25px 0;">
+                        {% for job in publishedJobs %}
+                            <div class="listing {{ is_granted('ROLE_MEMBER') ? 'default-a' : is_granted('ROLE_USER') ? 'default-a unusable' : 'registerFirst' }}
+                            {% if job.status != 1 and not is_granted('ROLE_ADMIN') %}not-click-jobList {% endif %}">
+                                <a {% if job.status == 1 or is_granted('ROLE_ADMIN') %} href="{{ path('tj_inserate_job_route_show', { 'slug': job.slug }) }}" {% endif %}>
+                                    {% set orgLogo = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                                    {% set checkJobLogo=0 %}
+                                    {% if job.path is defined and job.path %}
+                                        {% set orgLogo =  vich_uploader_asset(job, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Job') | imagine_filter("list_photo") %}
+                                        {% set checkJobLogo=1 %}
+                                    {% elseif job.organization and checkJobLogo==0 %}
+                                        {% if job.organization.path is defined and job.organization.path %}
+                                            {% set orgLogo =  vich_uploader_asset(job.organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Organization') | imagine_filter("list_photo") %}
+                                        {% endif %}
+                                    {% elseif job.user.profile is defined and job.user.profile %}
+                                        {% set orgLogo =  profile_photo(job.user.profile, 'uploadFile', 'list_photo') %}
+                                    {% endif %}
+                                    <div class="row">
+
+                                        {% if is_granted('ROLE_MEMBER') %}
+                                            <div class="col-sm-6 col-xs-12">
+                                                {% if job.organization %}
+                                                    <h2 class="h2-alt">{{ job.organization.name }}</h2>
+                                                {% elseif job.user.profile is defined and job.user.profile %}
+                                                    <h2 class="h2-alt">{{ job.user.profile | defaultName }}</h2>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+
+                                        <div class="{% if is_granted('ROLE_MEMBER') %} col-sm-6 col-xs-12 {% else %} col-sm-12 col-xs-12{% endif %}">
+                                            <h5>{{ job.title }} {% if is_granted('ROLE_USER') %} {{ job | favorite(app.user.profile.jobFavourite) }} {% endif %}</h5>
+                                            <p class="p-alt">
+                                                {% if job.asap %}
+                                                    <small>{{ "work.show.startASAP" | trans }}</small>
+                                                {% endif %}
+                                                {% if job.status != 1 and  job.statusChangedAt is defined %}
+                                            <p class="p-alt desc-dateFavourtiePeople"> {{ "job.label.unpublished" | trans }} {{ job.statusChangedAt | ago }} </p>
+                                            {% endif %}
+                                            {% if not job.asap %}
+                                                <small>{{ m.dateFormat(job) }}</small> {% endif %}
+                                            {% if job.engagementEnd is not defined or job.engagementStart is not defined %}
+                                                {% if job.engagementStart is defined and job.engagementStart is not null and not job.asap %}
+                                                    <small>{{ 'job.list.date.from' | trans }}
+                                                        {{ job.engagementStart|date('d. M. Y') }}</small>
+                                                {% endif %}
+                                                {% if job.engagementEnd is defined and job.engagementEnd  is not null %}
+                                                    <small>{% if job.asap %} - {% else %} {{ 'job.list..date.till' | trans }} {% endif %}
+                                                        {{ job.engagementEnd|date('d. M. Y') }}</small>
+                                                {% endif %}
+                                            {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row listing-footer">
+                                        <div class="col-sm-6 hide-sm logo-organization-joblist">
+                                            {% if is_granted('ROLE_MEMBER') %}
+                                                <img src="{{ orgLogo }}">
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-sm-2 col-xs-12">
+
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12 text-right">
+                                            {% if job.status == 1 %}
+                                                <p class="listing-date">{{ job.publishedAt | ago }}</p>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="gratification-block-link">
+                                    <a href="{{ path('tj_gratifiction_explanation_page') }}" target="_blank"
+                                       id="anchor_gratifications"
+                                       class="levels-details">
+                                        <div class="levels">
+                                            {% if is_granted('ROLE_MEMBER') or is_granted('ROLE_ADMIN') %}
+                                                {% if job.gratification %}
+                                                    {{ jm.gratificationCoins(job.gratification) }}
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <input type="hidden" id="page" name="page"
+                               value="{{ app.request.query.get("page")|default(1) }}">
+                        <input type="hidden" id="favourite" name="favourite"
+                               value="{{ app.request.query.get("favourite")|default(0) }}">
+                        <input type="hidden" id="applications" name="applications"
+                               value="{{ app.request.query.get("applications")|default(0) }}">
+                        {{ knp_pagination_render(publishedJobs) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <p class="p-alt">
+                            {{ "seo.landingpage.description.specification13" | trans }}
+                            {{ archivedJobs.getTotalHits() }}
+                            {{ options.jobType }}
+                            {{ "seo.landingpage.description.specification14" | trans }}</p>
+                    </div>
+                    <div class="col-md-12 col-xs-12" style="margin: 25px 0;">
+                        {% for job in archivedJobs %}
+                            <div class="listing {{ is_granted('ROLE_MEMBER') ? 'default-a' : is_granted('ROLE_USER') ? 'default-a unusable' : 'registerFirst' }}
+                            {% if job.status != 1 and not is_granted('ROLE_ADMIN') %}not-click-jobList {% endif %}">
+                                <a {% if job.status == 1 or is_granted('ROLE_ADMIN') %} href="{{ path('tj_inserate_job_route_show', { 'slug': job.slug }) }}" {% endif %}>
+                                    {% set orgLogo = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                                    {% set checkJobLogo=0 %}
+                                    {% if job.path is defined and job.path %}
+                                        {% set orgLogo =  vich_uploader_asset(job, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Job') | imagine_filter("list_photo") %}
+                                        {% set checkJobLogo=1 %}
+                                    {% elseif job.organization and checkJobLogo==0 %}
+                                        {% if job.organization.path is defined and job.organization.path %}
+                                            {% set orgLogo =  vich_uploader_asset(job.organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Organization') | imagine_filter("list_photo") %}
+                                        {% endif %}
+                                    {% elseif job.user.profile is defined and job.user.profile %}
+                                        {% set orgLogo =  profile_photo(job.user.profile, 'uploadFile', 'list_photo') %}
+                                    {% endif %}
+                                    <div class="row">
+
+                                        {% if is_granted('ROLE_MEMBER') %}
+                                            <div class="col-sm-6 col-xs-12">
+                                                {% if job.organization %}
+                                                    <h2 class="h2-alt">{{ job.organization.name }}</h2>
+                                                {% elseif job.user.profile is defined and job.user.profile %}
+                                                    <h2 class="h2-alt">{{ job.user.profile | defaultName }}</h2>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+
+                                        <div class="{% if is_granted('ROLE_MEMBER') %} col-sm-6 col-xs-12 {% else %} col-sm-12 col-xs-12{% endif %}">
+                                            <h5>{{ job.title }} {% if is_granted('ROLE_USER') %} {{ job | favorite(app.user.profile.jobFavourite) }} {% endif %}</h5>
+                                            <p class="p-alt">
+                                                {% if job.asap %}
+                                                    <small>{{ "work.show.startASAP" | trans }}</small>
+                                                {% endif %}
+                                                {% if job.status != 1 and  job.statusChangedAt is defined %}
+                                            <p class="p-alt desc-dateFavourtiePeople"> {{ "job.label.unpublished" | trans }} {{ job.statusChangedAt | ago }} </p>
+                                            {% endif %}
+                                            {% if not job.asap %}
+                                                <small>{{ m.dateFormat(job) }}</small> {% endif %}
+                                            {% if job.engagementEnd is not defined or job.engagementStart is not defined %}
+                                                {% if job.engagementStart is defined and job.engagementStart is not null and not job.asap %}
+                                                    <small>{{ 'job.list.date.from' | trans }}
+                                                        {{ job.engagementStart|date('d. M. Y') }}</small>
+                                                {% endif %}
+                                                {% if job.engagementEnd is defined and job.engagementEnd  is not null %}
+                                                    <small>{% if job.asap %} - {% else %} {{ 'job.list..date.till' | trans }} {% endif %}
+                                                        {{ job.engagementEnd|date('d. M. Y') }}</small>
+                                                {% endif %}
+                                            {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row listing-footer">
+                                        <div class="col-sm-6 hide-sm logo-organization-joblist">
+                                            {% if is_granted('ROLE_MEMBER') %}
+                                                <img src="{{ orgLogo }}">
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-sm-2 col-xs-12">
+
+                                        </div>
+                                        <div class="col-sm-4 col-xs-12 text-right">
+                                            {% if job.status == 1 %}
+                                                <p class="listing-date">{{ job.publishedAt | ago }}</p>
+                                            {% endif %}
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="gratification-block-link">
+                                    <a href="{{ path('tj_gratifiction_explanation_page') }}" target="_blank"
+                                       id="anchor_gratifications"
+                                       class="levels-details">
+                                        <div class="levels">
+                                            {% if is_granted('ROLE_MEMBER') or is_granted('ROLE_ADMIN') %}
+                                                {% if job.gratification %}
+                                                    {{ jm.gratificationCoins(job.gratification) }}
+                                                {% endif %}
+                                            {% endif %}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

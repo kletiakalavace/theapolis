@@ -1,0 +1,112 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block breadcrumb %}
+    <li>{{ 'tj.breadcrumb.registration.confirmed' | trans }}</li>
+    {% endblock %}
+    {% block title %}{{ 'registration.confirmed.title'| trans({'%domain%': domain}) }}{% endblock title %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter='?uglifyjs2'
+        '@TheaterjobsUserBundle/Resources/public/js/registration/confirmed.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        $("#form_choose").change(function () {
+            if ($(this).val() === "1") {
+                $("#organization").removeClass("hidden");
+            } else {
+                $("#organization").addClass("hidden");
+            }
+
+            if ($(this).val() !== "0") {
+                $('#orgaChoose').hide();
+                $('.hasOrga').hide();
+                $('#form_chooseOrga').attr('required', false);
+            } else {
+                $('#orgaChoose').show();
+                $('.hasOrga').show();
+                $('#form_chooseOrga').attr('required', true);
+            }
+        });
+        $('#form_organization').select2({
+            placeholder: "Keine Organisation gewählt"
+        });
+
+        if ($(".noOrga").length > 0) {
+            $("#form_choose option:eq(1)").remove();
+            $("#form_choose option:eq(1)").text("Yes");
+        }
+        if ($('#orgaChoose').length > 0) {
+            $('#form_chooseOrga').select2();
+        }
+        if ($(".hasOrga").length <= 0) {
+            $("#form_choose option:eq(1)").remove();
+            $("#form_choose option:eq(1)").text("Yes");
+        } else {
+            $("#form_choose").val(0);
+
+        }
+    </script>
+{% endblock %}
+
+{% block fos_user_content %}
+    <header>
+        <hgroup>
+            <h2>{{ 'registration.confirmed.title'| trans({'%domain%': domain}) }}</h2>
+            <p>{{ 'registration.welcome'| trans }}</p>
+        </hgroup>
+    </header>
+
+    <div class="panel-group" id="accordion">
+        {#<div class="panel panel-default">#}
+            {#<div class="panel-heading">#}
+                {#<h4 class="panel-title">#}
+                    {#<a href="{{ path('tj_membership_index') }}">{{ 'registration.confirmed.become.premium.member'| trans }}</a>#}
+                {#</h4>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="panel panel-default">#}
+            {#<div class="panel-heading">#}
+                {#<h4 class="panel-title">#}
+                    {#<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">#}
+                        {#{{ 'registration.confirmed.publish.job'| trans }}#}
+                    {#</a>#}
+                {#</h4>#}
+            {#</div>#}
+            {#<div id="collapseTwo" class="panel-collapse collapse">#}
+                <div class="panel-body">
+                    {{ form_start(form)}}
+                    {% if organization %}                        
+                        <h3>{{ 'tj.message.job.organization.suggest.join' | trans }}</h3>
+                    {% else %}
+                        <h3>{{ 'tj.message.job.organization.option.choose' | trans }}</h3>
+                    {% endif %}
+                    {{ form_row(form.choose)}}
+                    {% if organization | length > 0 %}
+                        {% for orga in organization %}
+                            <div id="orgaChoose" class="hasOrga">
+                                {{ form_row(form.chooseOrga) }}
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        {{ form_row(form.chooseOrga,{'attr':{'class':'hidden'} }) }}
+                    {% endif %}
+                    <div id="organization" class="hidden">
+                        {{ form_row(form.organization)}}
+                    </div>
+                    {{ form_row(form.chooseButton)}}
+                    {{ form_end(form)}}
+                </div>
+            </div>
+        {#</div>#}
+        {#<div class="panel panel-default">#}
+            {#<div class="panel-heading">#}
+                {#<h4 class="panel-title">#}
+                    {#<a href="{{ path('tj_profile_profile_wizard') }}">{{ 'registration.confirmed.publish.profile'| trans }}</a>#}
+                {#</h4>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+{% endblock fos_user_content %}

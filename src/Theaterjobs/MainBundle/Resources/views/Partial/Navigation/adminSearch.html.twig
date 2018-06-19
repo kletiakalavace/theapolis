@@ -1,0 +1,44 @@
+<div class="people col-md-9 no-padding">
+    {{ form_start(peopleAdmin,{'attr':{'id' : 'navAdminSearchForm' , 'class' : 'col-md-12 no-padding'}}) }}
+    <div class="col-md-4 no-padding-left all-dropdown-topmenu">
+        <div class="dropdown content-menu-admin">
+            {{ form_widget(peopleAdmin.choices,{'attr':{'class' : 'dropdown-admin-menu peopleChoices'}}) }}
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="col-md-8 no-padding">
+        <div class="search-form search-admin-menu">
+            {{ form_widget(peopleAdmin.input,{'attr':{'class' : 'search-field input',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(peopleAdmin.user,{'attr':{'class' : 'hidden search-field user',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(peopleAdmin.profileRegistration,{'attr':{'class' : 'hidden search-field profileRegistration',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(peopleAdmin.userLastLogin,{'attr':{'class' : 'hidden search-field userLastLogin',"onchange":"return runScript(event)"}}) }}
+            {{ form_widget(peopleAdmin.userEmail,{'attr':{'class' : 'hidden search-field',"onkeypress":"return runScript(event)"}}) }}
+            <i class="fa fa-search" id="searchIconPeople" aria-hidden="true"></i>
+        </div>
+    </div>
+    {{ form_end(peopleAdmin) }}
+</div>
+<div class="billing hidden col-md-9 no-padding">
+    {{ form_start(billingAdmin,{'attr':{'id' : 'navBillingSearchForm ', 'class' : 'col-md-12 no-padding'}}) }}
+    <div class="col-md-4 no-padding-left all-dropdown-topmenu">
+        <div class="dropdown content-menu-admin">
+            {{ form_widget(billingAdmin.choices,{'attr':{'class' : 'dropdown-admin-menu billingChoices'}}) }}
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="col-md-8 no-padding">
+        <div class="search-form search-admin-menu ">
+            {{ form_widget(billingAdmin.input,{'attr':{'class' : 'hidden search-field input',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(billingAdmin.user,{'attr':{'class' : 'hidden search-field input',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(billingAdmin.billingNr,{'attr':{'class' : 'search-field',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(billingAdmin.billingCreationFrom,{'attr':{'class' : 'hidden search-field billingCreationFrom',"onkeypress":"return runScript(event)"}}) }}
+            <div class="input-group-addon hidden" id="to">to</div>
+            {{ form_widget(billingAdmin.billingCreationTo,{'attr':{'class' : 'hidden search-field billingCreationTo',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(billingAdmin.billingIban,{'attr':{'class' : 'hidden search-field',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(billingAdmin.billingPayment,{'attr':{'class' : 'hidden search-field',"onkeypress":"return runScript(event)"}}) }}
+            {{ form_widget(billingAdmin.billingCountry,{'attr':{'class' : 'hidden search-field',"onkeypress":"return runScript(event)"}}) }}
+            <i class="fa fa-search" id="searchIconBilling" aria-hidden="true"></i>
+        </div>
+    </div>
+    {{ form_end(billingAdmin) }}
+</div>

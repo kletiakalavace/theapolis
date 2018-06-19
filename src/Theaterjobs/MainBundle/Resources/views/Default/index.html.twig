@@ -1,0 +1,295 @@
+{% extends "::base.html.twig" %}
+{% import  "::macro.html.twig" as m %}
+{% block css %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+        "@TheaterjobsMainBundle/Resources/public/components/slick-carousel/slick/slick.css" %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block title %}
+    {{ 'default.index.titel'| trans }}
+{% endblock title %}
+
+{% block content %}
+    {% if app.user is not null and is_granted('ROLE_USER') %}
+        {{ app.user.people | defaultName }}!
+{% else %}
+    {{ m.flashbags(app.session.flashbag.get('homePage')) }}
+<div class="page-wrap">
+    <!-- Hero -->
+    <div class="hero">
+        <img class="hero-background" src="{{ asset('bundles/theaterjobsmain/img/hero-background.jpg') }}"
+             alt="SUAVE by Alice Ripoll - Foto by Pedro Farina">
+
+        <div class="hero-content">
+            <h1>
+                {{ 'homepage.hero.mainTitle.theaterBistDu'| trans }}
+            </h1>
+            <p class="p-alt">
+                {{ 'homepage.hero.description'| trans }}
+            </p>
+            <p>
+                <a href="#membership" class="btn btn-primary">
+                    {{ 'homepage.hero.link.joinForFree'| trans }}
+                </a>
+            </p>
+        </div>
+
+        <img class="hero-angle" src="{{ asset('bundles/theaterjobsmain/img/hero-angle.svg') }}" alt="Hero angle image">
+    </div>
+
+    <!-- Professionals -->
+    <div class="container">
+        <div class="block">
+            <div class="row text-md-center">
+
+                <div class="col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-0">
+                    <h2>
+                        {{ 'homepage.professional.mainTitle.professionals'| trans }}
+                    </h2>
+                    <div class="separator"></div>
+                    <p>
+                        {{ 'homepage.professional.description'| trans }}
+                    </p>
+                    <p class="p-alt">
+                        <a href="{{ path('tj_profile_profile_list') }}">
+                            {{ 'homepage.professional.link.joinColleagues'| trans }}→
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-xs-12 col-md-8">
+
+                    <div class="profile-grid">
+                        {% for randomProfile  in randomProfiles %}
+
+                            {% set profilePhoto =  profile_photo(randomProfile) %}
+                            {% set filter = '' %}
+                            {% if randomProfile.mediaImage|first.filter is defined %}
+                                {% set filter = randomProfile.mediaImage|first.filter %}
+                            {% endif %}
+
+                            <div class="profile-grid-col">
+                                <a class="profile-photo-md"
+                                   href="{{ path('tj_profile_profile_show', {'slug': randomProfile.slug}) }}">
+                                    <figure class="{{ filter }}">
+                                        <img src="{{ profilePhoto }}" alt="Profile photo">
+                                    </figure>
+                                </a>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="block block-large block-inverse">
+        <div class="container">
+
+            <div class="block-header row">
+                <div class="col-sm-8 col-sm-offset-2 col-xs-offset-0">
+                    <h2><span class="marked marked-primary">800+</span> {{ 'homepage.jobs.mainTitle.newJobs'| trans }}
+                    </h2>
+                    <p>{{ 'homepage.jobs.description'| trans }}</p>
+                </div>
+            </div>
+
+            <div class="row" data-masonry>
+                {% for job in jobs %}
+                {% set i = loop.index %}
+                {% if i <= 8 %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-masonry-item>
+                    {% if i == 1 %}
+                    <div class="listing listing-primary">
+                        {% elseif i == 2 %}
+                        <div class="listing listing-primary-dark">
+                            {% elseif i == 3 %}
+                            <div class="listing listing-purple">
+                                {% elseif i == 4 %}
+                                <div class="listing listing-blue">
+                                    {% elseif i == 5 %}
+                                    <div class="listing listing-purple">
+                                        {% elseif i == 6 %}
+                                        <div class="listing listing-blue">
+                                            {% elseif i == 7 %}
+                                            <div class="listing listing-primary">
+                                                {% elseif i == 8 %}
+                                                <div class="listing listing-primary-dark">
+                                                    {% endif %}
+                                                    <h5>{{ job.title }}</h5>
+                                                    {% if job.asap %}
+                                                        <p class="listing-detail">{{ 'job.list.date.asap'| trans }}</p>
+                                                    {% elseif job.engagementEnd or job.engagementStart %}
+                                                        <p class="listing-detail">{{ m.dateFormat(job) }}</p>
+                                                    {% endif %}
+                                                    <p class="listing-date-large">{{ m.deFormat(job.publishedAt) }}</p>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>
+
+                                        <p class="text-center"><a class="btn btn-inverse"
+                                                                  href="{{ path('tj_inserate_job_route_list') }}">{{ 'homepage.jobs.link.seeFullList'| trans }} </a>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <!-- Membership options -->
+                                <div class="block block-large block-green">
+                                    <div class="container" id="membership">
+
+                                        <div class="block-header row">
+                                            <div class="col-sm-8 col-sm-offset-2 col-xs-offset-0">
+                                                <h2>{{ 'homepage.membership.mainTitle.membershipOptions'| trans }}</h2>
+                                                <p>{{ 'homepage.membership.description'| trans }}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row d-flex no-flex-md">
+                                            <div class="col-md-4 col-xs-12">
+
+                                                <div class="card">
+                                                    <div class="card-content">
+                                                        <p class="h3 text-danger hide-md">{{ 'homepage.membership.preTitle.free'| trans }}</p>
+                                                        <h2 class="h2-alt">{{ 'homepage.membership.mainTitle.professional.free'| trans }}</h2>
+                                                        <ul class="list-unstyled list-small">
+                                                            <li>{{ 'homepage.membership.label.awesomeProfile.free'| trans }} </li>
+                                                            <li>{{ 'homepage.membership.label.people.free'| trans }}</li>
+                                                            <li>{{ 'homepage.membership.label.organisations.free'| trans }}</li>
+                                                            <li>{{ 'homepage.membership.label.productions.free'| trans }}</li>
+                                                            <li>{{ 'homepage.membership.label.education.free'| trans }}</li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="card-footer">
+                                                        <p class="h3 text-danger">{{ 'homepage.membership.preTitle.free'| trans }}</p>
+                                                        <p><a class="btn btn-primary"
+                                                              href="{{ path('fos_user_registration_register_choise',{'choice':'free'}) }}">{{ 'homepage.membership.link.joinNow'| trans }}</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-4 col-xs-12">
+
+                                                <div class="card">
+                                                    <div class="card-content">
+                                                        <p class="h3 text-danger hide-md">{{ 'homepage.membership.pretitle.45€perYear '| trans }}</p>
+                                                        <h2 class="h2-alt">{{ 'homepage.membership.mainTitle.professional '| trans }}</h2>
+                                                            <ul class="list-unstyled list-small">
+                                                                <li>{{ 'homepage.membership.label.awesomeProfile'| trans }} </li>
+                                                                <li>{{ 'homepage.membership.label.people'| trans }}</li>
+                                                                <li>{{ 'homepage.membership.label.organisations'| trans }}</li>
+                                                                <li>{{ 'homepage.membership.label.productions'| trans }}</li>
+                                                                <li>{{ 'homepage.membership.label.education'| trans }}</li>
+                                                                <li class="text-danger">
+                                                                    <strong>+{{ 'homepage.membership.label.jobs'| trans }}</strong>
+                                                                </li>
+                                                            </ul>
+                                                    </div>
+
+                                                    <div class="card-footer">
+                                                        <p class="h3 text-danger">{{ 'homepage.membership.pretitle.45€perYear '| trans }}</p>
+                                                        <p><a class="btn btn-primary"
+                                                              href="{{ path('fos_user_registration_register_choise',{'choice':'member'}) }}">{{ 'homepage.membership.link.joinNow'| trans }}</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-4 col-xs-12">
+
+                                                <div class="card">
+                                                    <div class="card-content">
+                                                        <p class="h3 text-info hide-md">{{ 'homepage.membership.preTitle.free'| trans }}</p>
+                                                        <h2 class="h2-alt">{{ 'homepage.membership.mainTitle.addJobs '| trans }}</h2>
+                                                        <p class="p-alt text-small">{{ 'homepage.membership.paragraph '| trans }}</p>
+                                                        <p class="p-alt text-small">{{ 'homepage.membership.label.noPublicProfile '| trans }}</p>
+                                                    </div>
+
+                                                    <div class="card-footer">
+                                                        <p class="h3 text-info">{{ 'homepage.membership.preTitle.free'| trans }}</p>
+                                                        <p><a class="btn btn-info"
+                                                              href="{{ path('fos_user_registration_register_choise',{'choice':'job'}) }}">{{ 'homepage.membership.link.joinNow'| trans }}</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Split block -->
+                                <div class="block block-split block-large">
+
+                                    <div class="block-split-lg-wrap">
+                                        <div class="block-split-left">
+                                            <div class="block-split-md-wrap text-md-center">
+
+                                                <h2>{{ 'homepage.team.mainTitile.ourTeam '| trans }}</h2>
+                                                <div class="separator"></div>
+                                                <p>{{ 'homepage.team.description '| trans }}</p>
+
+                                                <figure><img
+                                                            src="{{ asset('bundles/theaterjobsmain/img/theapolis-team-photo_klein.jpg') }}"
+                                                            alt="Theapolis team"></figure>
+                                                <p class="p-alt"><a
+                                                            href="{{ path("tj_main_default_about_us") }}">{{ 'homepage.team.link.learnMoreAboutUs '| trans }}
+                                                        →</a></p>
+
+                                            </div>
+                                        </div>
+                                        <div class="block-split-right">
+                                            <div class="block-split-md-wrap">
+
+                                                <h2 class="text-md-center">{{ 'homepage.latestNews.mainTitile.latestNews '| trans }}</h2>
+
+                                                {% for n in news %}
+                                                    <article class="news-post">
+                                                        <div class="profile-photo-md news-post-author">
+                                                            {% set profilePhoto = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                                                            {% if n.path is defined and n.path %}
+                                                                {% set profilePhoto =  vich_uploader_asset(n, "uploadFile" , 'Theaterjobs\\NewsBundle\\Entity\\News') | imagine_filter("news_list") %}
+                                                            {% endif %}
+                                                            <img src="{{ profilePhoto }}" alt="News Author">
+                                                        </div>
+
+                                                        <div class="news-post-content">
+                                                            <p class="news-post-detail">{{ n.pretitle }}</p>
+                                                            <h2 class="h2-alt"><a
+                                                                        href="{{ path("tj_news_show", {slug:n.slug}) }}">{{ n.title }}</a>
+                                                            </h2>
+                                                        </div>
+                                                    </article>
+                                                {% endfor %}
+
+                                                <p class="p-alt"><a
+                                                            href="{{ path("tj_news") }}">{{ 'homepage.latestNews.link.seeAllNews '| trans }}
+                                                        →</a></p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            {% endif %}
+
+                            {% endblock content %}
+                            {% block js %}
+                                {{ parent() }}
+                                {% javascripts "@TheaterjobsMainBundle/Resources/public/components/masonry/dist/masonry.pkgd.min.js"
+                                    "@TheaterjobsMainBundle/Resources/public/js/default/index.js" %}
+                                    <script src="{{ asset_url }}"></script>
+                                {% endjavascripts %}
+                            {% endblock %}
+
+
+

@@ -1,0 +1,68 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="mediaVideo">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.add.mainTitle.video'| trans }}</h2>
+                {{ form_start(edit_form) }}
+                {{ form_row(edit_form._token) }}
+                <div class="form-group">
+                    {{ form_row(edit_form.url) }}
+                </div>
+                <video data-plyr='{ title: "video" }'></video>
+                <div class="videosUploadingSvg" style="text-align: center">
+                    <div class="videos-add-buttons">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        <div style="display: inline-block">{{ form_row(edit_form.submit, { 'attr': { 'class': 'btn btn-inverse-primary center ' } }) }}</div>
+                    </div>
+                </div>
+                {{ form_end(edit_form) }}
+            </div>
+            {#{{ m.error }}#}
+        </div>
+    </div>
+</div>
+
+<script>
+    var player = plyr.setup();
+    var form = $('#mediaVideo form');
+    addLoadingSvg(form);
+    const loading = form.find('.submit-rolling-svg');
+
+    $('input[type="url"]').on('input', function () {
+        var url = $(this).val();
+        if (url) {
+            videoPlayer(player[0], url);
+        }
+    });
+
+
+    form.validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+        }
+    });
+    form.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        if ($(this).valid()) {
+            loading.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function (data) {
+                    var previousChildrenNr = $('.display-slider-item').length;
+                    $('.slider-block').html(data);
+                    sliderInterval(previousChildrenNr);
+                    loading.hide();
+                    $('#myModal').modal('hide');
+                },
+                error: function () {
+                    loading.hide();
+                    serverError();
+                }
+            });
+        }
+    });
+</script>

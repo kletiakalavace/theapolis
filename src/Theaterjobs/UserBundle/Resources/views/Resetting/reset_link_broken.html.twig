@@ -1,0 +1,31 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% import '::macro.html.twig' as m %}
+{% block content %}
+    <div class="container">
+    <div class="block">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                    <h1>{{ 'reset.email.confirmation.errorTitle' | trans }}! </h1>
+                    <p class="p-alt">{{ 'reset.email.confirmation.errorDescription' | trans }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p>
+                <svg class="icon-svg icon-svg-danger circle-danger" width="80" height="80">
+                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}"></use>
+                </svg>
+            </p>
+            <p class="p-alt">
+                <a class="nav-link primary" data-toggle="modal" data-hash="reset-password"
+                   data-target="#myModal"
+                   href="{{ path('tj_main_default_reset_modal') }}">{{ 'reset.email.confirmation.request' | trans }}</a>
+                {{ 'reset.email.confirmation.subtitle1' | trans }}
+                {#Delete me after translation#}
+                {#<a>Request</a> a new password#}
+            </p>
+        </div>
+    </div>
+    </div>
+{% endblock %}

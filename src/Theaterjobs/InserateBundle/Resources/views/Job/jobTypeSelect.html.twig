@@ -1,0 +1,22 @@
+<div class="modal-body  experience-modal">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'work.new.title'| trans }}</h2>
+            <div class="row">
+                <div class="col-md-12 button-new-job">
+                    <a href="{{ path('tj_main_organization_home') }}" class="btn-inverse btn btn-primary">{{ 'work.new.link.nameOrganization'| trans }}</a>
+                    <a data-href="{{ path('tj_inserate_job_route_new_individual_job') }}" id="asIndividual" class="btn-inverse btn btn-primary">{{ 'work.new.link.ownName'| trans }}</a>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#asIndividual').click(function (e) {
+        e.preventDefault();
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+</script>

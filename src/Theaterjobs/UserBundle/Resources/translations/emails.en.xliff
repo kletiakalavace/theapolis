@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-04T13:01:38Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="6b7eaa59567b3b8f6b7662d6e7dc289c5d361e13" resname="becomeMember.email.Content">
+        <source>becomeMember.email.Content</source>
+        <target state="new">becomeMember.email.Content</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="911bddc46f43919403148b860d8a7963fbd4c2c7" resname="becomeMember.email.Greetings">
+        <source>becomeMember.email.Greetings</source>
+        <target state="new">becomeMember.email.Greetings</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ee58994f4f1774fe1b1562a92f87199f07fdf8db" resname="becomeMember.email.Hello">
+        <source>becomeMember.email.Hello</source>
+        <target state="new">becomeMember.email.Hello</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00bebbcf133bd3c45159707db8c1350087fc8d79" resname="becomeMember.email.Welcome">
+        <source>becomeMember.email.Welcome</source>
+        <target state="new">becomeMember.email.Welcome</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f05b542eacb89f9247c171adb29357d2d0e690c" resname="changeMail.email.greetings">
+        <source>changeMail.email.greetings</source>
+        <target state="new">changeMail.email.greetings</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b1bf6833abe8fdd24ba4972b38c9fe45923a0982" resname="changeMail.email.salutation">
+        <source>changeMail.email.salutation</source>
+        <target state="new">changeMail.email.salutation</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c4fac1d48844826fbee8245a38a5ef01dee7472" resname="changeMail.email.subject">
+        <source>changeMail.email.subject</source>
+        <target>changeMail.email.subject</target>
+        <jms:reference-file line="158">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9db8c257f1d60c663e6a3c31c7b0446928625268" resname="changeMail.email.text.message">
+        <source>changeMail.email.text.message</source>
+        <target>changeMail.email.text.message</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="431611aa6597131e6b26b4ab9fde80ed9c3691d7" resname="email.Greetings">
+        <source>email.Greetings</source>
+        <target state="new">email.Greetings</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="990092a30d86ec7c5e2c9f77afb3887bf465ea2b" resname="email.registration.becomeMember">
+        <source>email.registration.becomeMember</source>
+        <target>email.registration.becomeMember</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="601ecccb9393d27b17f811dfcad95e92107b078c" resname="email.registration.greetings">
+        <source>email.registration.greetings</source>
+        <target>email.registration.greetings</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="33">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc0ed5056750ebe28abcc6d12e92e11498151be9" resname="email.registration.insertJob">
+        <source>email.registration.insertJob</source>
+        <target>email.registration.insertJob</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fd0c4e553b15c9f54c563068138b4050b3343574" resname="email.registration.insertProfile">
+        <source>email.registration.insertProfile</source>
+        <target>email.registration.insertProfile</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b9ea64fc5d72d5fd67af745e4a84bb9969378c2" resname="email.registration.salutation">
+        <source>email.registration.salutation</source>
+        <target>email.registration.salutation</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="20">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="59e3177191e17a52205365c8b09eae3e40cb0fec" resname="email.reset.password.content">
+        <source>email.reset.password.content</source>
+        <target state="new">email.reset.password.content</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a786bb0a5dd0e3ef87388e2f3e046b73b6e13a9d" resname="email.reset.password.greetings">
+        <source>email.reset.password.greetings</source>
+        <target state="new">email.reset.password.greetings</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="698260b108aeed2773c3d16094d8c2bb295ac501" resname="email.reset.password.salutation">
+        <source>email.reset.password.salutation</source>
+        <target state="new">email.reset.password.salutation</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="58f5123c4479d94418f82fa918a47d2317e073f2" resname="email.reset.password.subject">
+        <source>email.reset.password.subject</source>
+        <target state="new">email.reset.password.subject</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d274c42e3f88c71ee5c6903b7537b4c5918fa951" resname="email.salutation">
+        <source>email.salutation</source>
+        <target state="new">email.salutation</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="262736da1779c270dd43dd8331c68e8babb13df1" resname="loginfailed.email.message.body1">
+        <source>loginfailed.email.message.body1</source>
+        <target state="new">loginfailed.email.message.body1</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/UserBundle/Resources/views/Security/multipleFailedLoginAttemptsEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16a27a67a8de76f5efe81e8979ce2e78f6f7d9f7" resname="loginfailed.email.message.body2">
+        <source>loginfailed.email.message.body2</source>
+        <target state="new">loginfailed.email.message.body2</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/UserBundle/Resources/views/Security/multipleFailedLoginAttemptsEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0b98b6c4c6737037760f5acea526a9220e1f789" resname="loginfailed.email.message.hello ">
+        <source>loginfailed.email.message.hello </source>
+        <target state="new">loginfailed.email.message.hello </target>
+        <jms:reference-file line="2">/../src/Theaterjobs/UserBundle/Resources/views/Security/multipleFailedLoginAttemptsEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f8c23f4591dad472d741efd47aa8591186d70da9" resname="loginfailed.email.subject">
+        <source>loginfailed.email.subject</source>
+        <target state="new">loginfailed.email.subject</target>
+        <jms:reference-file line="238">/../src/Theaterjobs/UserBundle/Component/Authentication/Handler/AuthenticationHandler.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="685acc52ff733e73988519987235edf0fa1d4411" resname="loginfailed.email.text.message.greetings">
+        <source>loginfailed.email.text.message.greetings</source>
+        <target state="new">loginfailed.email.text.message.greetings</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/UserBundle/Resources/views/Security/multipleFailedLoginAttemptsEmail.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="10df4e23ec43b671aafea0a3a9ebc8dcc92b1bd0" resname="registration.email.subject">
+        <source>registration.email.subject</source>
+        <target>complete your registration on theapolis.de</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf28cbf45c4923c16592a592cf7fc82519b3d22b" resname="teammember.email.content1">
+        <source>teammember.email.content1</source>
+        <target state="new">teammember.email.content1</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84f0ecaaf231347b1821f56ce6b736a63e2b1bff" resname="teammember.email.subject">
+        <source>teammember.email.subject</source>
+        <target state="new">teammember.email.subject</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a81d04fe8877bb0d4e4d7537772badc819ad36dd" resname="tj.email.password.changed.subject">
+        <source>tj.email.password.changed.subject</source>
+        <target>tj.email.password.changed.subject</target>
+        <jms:reference-file line="95">/../src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8f6bb1fb2837b83e58db8a741ea24b616ba28435" resname="tj.email.text.account.deleted.success.body">
+        <source>tj.email.text.account.deleted.success.body</source>
+        <target>tj.email.text.account.deleted.success.body</target>
+        <jms:reference-file line="811">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0da95db0d0c64170ac8b368dfc2d87882a6dd210" resname="tj.email.text.account.deleted.success.title">
+        <source>tj.email.text.account.deleted.success.title</source>
+        <target>tj.email.text.account.deleted.success.title</target>
+        <jms:reference-file line="808">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2506a7ba0f1862aab976622bf723dcdba72607f9" resname="tj.email.text.password.changed.content1">
+        <source>tj.email.text.password.changed.content1</source>
+        <target state="new">tj.email.text.password.changed.content1</target>
+        <jms:reference-file line="90">/../src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcb155dcf0e0e9ae82e935d1e73b3260f99d56ef" resname="tj.email.text.password.changed.content2">
+        <source>tj.email.text.password.changed.content2</source>
+        <target state="new">tj.email.text.password.changed.content2</target>
+        <jms:reference-file line="91">/../src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a806da2c518d8caf3c823f92070db3657a4d6d7b" resname="tj.email.text.password.changed.text">
+        <source>tj.email.text.password.changed.text</source>
+        <target>tj.email.text.password.changed.text</target>
+        <jms:reference-file line="93">/../src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e1ba2619a3f7e600709e26a200a210e2001df172" resname="user.mailer.footer">
+        <source>user.mailer.footer</source>
+        <target state="new">user.mailer.footer</target>
+        <jms:reference-file line="17">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="45">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Registration/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="19">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50ef8fe2d32eb74562ef38dde6f8c02fd9a13dd6" resname="user.mailer.footer.line1">
+        <source>user.mailer.footer.line1</source>
+        <target state="new">user.mailer.footer.line1</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="19">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="20">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4a655ed3fb1f9f29a39e325cedabc30b12e7f9a4" resname="user.mailer.footer.line10">
+        <source>user.mailer.footer.line10</source>
+        <target state="new">user.mailer.footer.line10</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="29">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c137e32589fe2174c1afe2ffa854e0c17d2950d3" resname="user.mailer.footer.line11">
+        <source>user.mailer.footer.line11</source>
+        <target state="new">user.mailer.footer.line11</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="29">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de8b0a2eb39572ffa45e0d456ce58dcd933df54b" resname="user.mailer.footer.line12">
+        <source>user.mailer.footer.line12</source>
+        <target state="new">user.mailer.footer.line12</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="31">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6ca785a705c94046785d8f066cd4c784bc0add6c" resname="user.mailer.footer.line2">
+        <source>user.mailer.footer.line2</source>
+        <target state="new">user.mailer.footer.line2</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="20">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="21">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea0272dbceea817851e3e9cd1555020ff1803cd8" resname="user.mailer.footer.line3">
+        <source>user.mailer.footer.line3</source>
+        <target state="new">user.mailer.footer.line3</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="21">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ffbdd9c8b317cb359bf698620a419f8aec3e1847" resname="user.mailer.footer.line4">
+        <source>user.mailer.footer.line4</source>
+        <target state="new">user.mailer.footer.line4</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4dbe20450185be0c358dd7fcf65e3acc74b57e6e" resname="user.mailer.footer.line5">
+        <source>user.mailer.footer.line5</source>
+        <target state="new">user.mailer.footer.line5</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="24">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5f0adffc99f7fe152c8fcda27ad603cff5dce9cc" resname="user.mailer.footer.line6">
+        <source>user.mailer.footer.line6</source>
+        <target state="new">user.mailer.footer.line6</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="24">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ac260c7eb4d3ef423c3d0a963ab4855cce9c7520" resname="user.mailer.footer.line7">
+        <source>user.mailer.footer.line7</source>
+        <target state="new">user.mailer.footer.line7</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="25">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="26">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc0ee8f6d497d9a5157ef8637620757140e0b276" resname="user.mailer.footer.line8">
+        <source>user.mailer.footer.line8</source>
+        <target state="new">user.mailer.footer.line8</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="26">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="27">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29b977531fdedc48e5b0ffcbcc4642b2532a44e5" resname="user.mailer.footer.line9">
+        <source>user.mailer.footer.line9</source>
+        <target state="new">user.mailer.footer.line9</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/UserBundle/Resources/views/EmailChangeRequest/checkMail.html.twig</jms:reference-file>
+        <jms:reference-file line="27">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/email.txt.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/Theaterjobs/UserBundle/Resources/views/UserOrganization/email/newMember.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

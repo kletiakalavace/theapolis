@@ -1,0 +1,79 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <div class="page-wrap" id="jobs">
+        {{ form_start(form) }}
+        <div class="container">
+            <div class="block">
+                <div class="page-header">
+                    <h1>
+                        <span id="searchCategory">{{ category ? category.title : "work.worklist.myJobs" | trans }}</span>
+                    </h1>
+                </div>
+                {#<h3>{{ "work.search.title.searchIn" | trans }} <span id="searchHead">{{ "work.worklist.myJobs" | trans }}</span></h3>#}
+                <div class="panel-filter">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-3 col-xs-12">
+                            <div class="form-group no-margin {{ is_granted('ROLE_MEMBER') ? '' : is_granted('ROLE_USER') ? 'unusable' : 'registerFirst' }}">
+                                {{ form_label(form.searchPhrase) }}
+                                {% if is_granted('ROLE_MEMBER') %}
+                                    {{ form_widget(form.searchPhrase) }}
+                                {% else %}
+                                    {{ form_widget(form.searchPhrase, {'attr':{'style':'pointer-events: none;' } }) }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group form-group-with-aside no-margin">
+                                <label class="control-label required"
+                                       for="area">{{ "people.search.label.place" | trans }}</label>
+                                <div id="map_container" style="width: 900px;margin: auto;">
+                                    <div class="input-group input-find input-location-people {{ is_granted('ROLE_MEMBER') ? '' : is_granted('ROLE_USER') ? 'unusable' : 'registerFirst' }}">
+                                        <input id="pac-input" onchange="locationChange();"
+                                               class="pac-control form-control form-control-location"
+                                               type="text"
+                                               style="{{ is_granted('ROLE_MEMBER') ? '' : 'pointer-events: none;' }}"
+                                               placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                                        {{ form_widget(form.location,{'attr':{'class' : 'hidden'}}) }}
+                                    </div>
+                                    <div id="map" class="hidden"></div>
+                                </div>
+                                <div class="form-group-aside">
+                                    {{ form_label(form.area) }}
+                                    {{ form_widget(form.area,{ 'attr': {'onchange': 'areaChange(this);'}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-3 col-xs-12">
+                            <a href="#" id="btn-search-location">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="jobPartial">
+                    {{ include('TheaterjobsInserateBundle:Partial:jobsMy.html.twig', { 'jobs': jobs }) }}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/geohash.js'
+        '@TheaterjobsMainBundle/Resources/public/js/map/placeSuggest.js'
+        '@TheaterjobsInserateBundle/Resources/public/js/job/job.index.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        {% if app.request.get("location") %}
+            var latlng = decodeGeoHash("{{ app.request.get("location") }}");
+            filterLocation(latlng.latitude[0], latlng.longitude[0], peopleForm.selector, "{{ app.request.get("area") }}");
+        {% endif %}
+    </script>
+{% endblock %}

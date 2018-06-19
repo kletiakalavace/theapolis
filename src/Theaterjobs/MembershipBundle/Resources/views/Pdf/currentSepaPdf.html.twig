@@ -1,0 +1,145 @@
+{% extends "TheaterjobsMembershipBundle:Pdf:pdfLayout.html.twig" %}
+{% block header %}
+    {% include 'TheaterjobsMembershipBundle:Pdf:header.html.twig' %}
+{% endblock header %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 style='line-height:30px;color:#CD2036 !important;font-size:40px;font-weight:500;font-family:"kepler-std-display", Georgia, "Times New Roman", Times, serif;'>
+                    SEPA-Lastschriftmandat</h3>
+                <h4 style='line-height:30px;color:#CD2036 !important;font-size:25px;font-weight:500;font-family:"kepler-std-display", Georgia, "Times New Roman", Times, serif;'>
+                    (Wiederkehrender Lastschrifteinzug)</h4>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='line-height:24px;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Erteilung eines SEPA-Lastschriftmandats
+                    bis auf Widerruf gegenüber:
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    <b>THEAPOLIS</b>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='line-height:24px;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Ort, Datum:
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    <b>{{ company.city }}, {{ sepamandate.createdAt|date('d.m.Y') }}</b>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Gläubiger-Identifikationsnummer /
+                    Creditor-ID:
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    <b>{{ sepa.creditor_id }}</b>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Mandatsreferenz:
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    <b>{{ sepamandate.mandateReference }}</b>
+                </p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p style='line-height:22px;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Der Betrag wird unter der Mandatsreferenz {{ sepamandate.mandateReference }} und mit unserer
+                    Gläubiger-ID
+                    {{ sepa.creditor_id }} frühestens in zwei Tagen von Ihrem Konto IBAN
+                    {{ debitAccount.iban }} abgebucht.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Kontoinhaber:
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    <b>{{ debitAccount.accountHolder }} </b>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    IBAN:
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    <b>{{ debitAccount.iban }}</b>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 3px solid #e7e7e7;display: block;width: 100%;">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-xs-12">
+                <b style="margin-bottom:10px;display:block;">Hinweis zur Rückgabemöglichkeit</b>
+                <p style='line-height:22px;font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>
+                    Ich kann innerhalb von acht Wochen, beginnend mit dem Belastungsdatum, die Erstattung
+                    des belasteten Betrages verlangen. Es gelten dabei die mit meinem Kreditinstitut
+                    vereinbarten Bedingungen.</p>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+{% endblock content %}
+{% block footer %}
+    {% include 'TheaterjobsMembershipBundle:Pdf:footer.html.twig' %}
+{% endblock footer %}

@@ -1,0 +1,1130 @@
+{% macro organizationLogo(entity, formLogo, canEdit) %}
+
+    {% if entity.path %}
+        <div class="profile-photo-xl bordered photo-upload" id="organizationLogo">
+            {% if canEdit %}
+                {{ form_start(formLogo) }}
+                <label class="profile-photo-form">
+                    <div for="profile-photo" class="profile-photo-label">
+                        <p><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></p>
+                        <p class="p-alt hide-md">{{ 'organization.change.logo'|trans }}</p>
+                    </div>
+                    {{ form_widget(formLogo.path) }}
+                </label>
+                {{ form_row(formLogo._token) }}
+                {{ form_widget(formLogo.uploadFile) }}
+                {{ form_end(formLogo, {'render_rest': false}) }}
+            {% endif %}
+            <img src="{{ vich_uploader_asset(entity, 'uploadFile') | imagine_filter('profile_photo') }}">
+        </div>
+    {% else %}
+        <div class="profile-photo-xl bordered" id="organizationLogo">
+            {% if canEdit %}
+                {{ form_start(formLogo) }}
+                <label class="profile-photo-form">
+                    <label for="profile-photo" class="profile-photo-label">
+                        <p><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></p>
+                        <p class="p-alt hide-md">{{ 'organization.add.logo'|trans }}</p>
+                    </label>
+                    {{ form_row(formLogo._token) }}
+                    {{ form_widget(formLogo.uploadFile) }}
+                    {{ form_widget(formLogo.path) }}
+                </label>
+                {{ form_end(formLogo, {'render_rest': false}) }}
+            {% endif %}
+            <img src="{{ asset('bundles/theaterjobsmain/images/profile-placeholder.svg') }}"
+                 alt="Empty logo">
+        </div>
+    {% endif %}
+
+{% endmacro %}
+
+{% macro organizationDescription(entity, canEdit) %}
+
+    {% if entity.description is not null %}
+        {% if canEdit %}
+            <p class="p-alt">
+                <a data-toggle="modal" data-hash="description"
+                   href="{{ path('tj_organization_modal_description',{modal:'modal',slug:entity.slug}) }}"
+                   data-target="#myModal">
+                    <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                    </svg> {{ 'link.edit'| trans }}
+                </a>
+            </p>
+        {% endif %}
+        <div class="bio-full hidden">
+            {% if entity.description %}
+                {{ entity.description|raw }}
+            {% endif %}
+        </div>
+        <div class="bio-content">
+            {% if entity.description %}
+                {{ entity.description|raw }}
+            {% endif %}
+        </div>
+        <p class="p-alt">
+            <a id="bio-more-toggle" data-truncate="true" data-open="false" href="#">
+                {{ 'organization.show.block.desc.link.readFullDesc' | trans }}→
+            </a>
+        </p>
+    {% else %}
+        {% if canEdit %}
+            <a class="add-content" data-toggle="modal" data-hash="description"
+               href="{{ path('tj_organization_modal_description',{modal:'modal',slug:entity.slug}) }}"
+               data-target="#myModal">+ {{ 'organization.add.block.addDesc' | trans }}</a>
+        {% endif %}
+    {% endif %}
+
+{% endmacro %}
+
+{% macro organizationApplicationInfo(entity, canEdit) %}
+    {% if entity.organisationApplicationInfoText is not null %}
+        {% if canEdit %}
+            <p class="p-alt">
+                <a data-toggle="modal" data-hash="actuality"
+                   href="{{ path('tj_organization_modal_application_info',{ modal:'modal', slug:entity.slug}) }}"
+                   data-target="#myModal">
+                    <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                    </svg> {{ 'link.edit'| trans }}
+                </a>
+            </p>
+        {% endif %}
+
+        <div class="app-full hidden">
+            {% if entity.organisationApplicationInfoText %}
+                {{ entity.organisationApplicationInfoText | raw }}
+            {% endif %}
+        </div>
+        <div class="app-content">
+            {% if entity.organisationApplicationInfoText %}
+                {{ entity.organisationApplicationInfoText | raw }}
+            {% endif %}
+        </div>
+        <p class="p-alt">
+            <a id="app-more-toggle" data-truncate="true" data-open="false" href="#">
+                {{ 'organization.show.block.desc.link.readFullDesc' | trans }}→
+            </a>
+        </p>
+
+        <p class="p-alt">
+            <strong id="actualityDate">
+                {% if entity.organisationApplicationInfoText is not null %}
+                    — {{ entity.organisationApplicationInfoDate | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM YYYY') }}
+                {% endif %}
+            </strong>
+        </p>
+    {% else %}
+        {% if canEdit %}
+            <a class="add-content" data-toggle="modal" data-hash="actuality"
+               href="{{ path('tj_organization_modal_application_info',{ modal:'modal', slug:entity.slug}) }}"
+               data-target="#myModal">+ {{ 'organization.add.block.label.addApplicationInfo' | trans }}</a>
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationLocation(entity, canEdit) %}
+    {% if entity.geolocation is not null %}
+        <div class="highlight-title">{{ 'organization.show.highlight.label.location'| trans }}
+            <i class="" style="cursor:pointer;margin-left:3px;" aria-hidden="true"
+               data-toggle="modal" data-hash="location"
+               href="{{ path('tj_organization_modal_location',{modal:'modal',slug:entity.slug}) }}"
+               data-target="#myModal">
+                {% if canEdit %}
+                    <a class="icon display-slider-edit">
+                        <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg>
+                    </a>
+                {% endif %}
+            </i>
+        </div>
+        <div class="highlight-medium" id="profileLiveIn">
+            {% if not(canEdit) %}
+                <a class="link-show-location" data-toggle="modal" data-hash="location"
+                   href="{{ path('tj_organization_show_location',{slug:entity.slug}) }}"
+                   data-target="#myModal"> {{ entity.city }}<br>{{ entity.country }}
+                </a>
+            {% else %}
+                {{ entity.city }}<br>{{ entity.country }}
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="highlight-title">{{ 'organization.show.highlight.label.location'| trans }}</div>
+        {% if canEdit %}
+            <a class="add-content" data-toggle="modal" data-hash="location"
+               href="{{ path('tj_organization_modal_location',{modal:'modal',slug:entity.slug}) }}"
+               data-target="#myModal">+ {{ 'organization.add.highlight.location' | trans }}</a>
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationData(entity, canEdit) %}
+    <div class="panel-content">
+        {% if entity.organizationOwner is not null or entity.organizationKind | length > 0
+            or entity.organizationSection | length > 0 or entity.orchestraClass is not null
+            or entity.staff is not null or entity.organizationStaff|length >0
+            or entity.organizationSchedule is not null or entity.form %}
+            {% set orchestra = false %}
+
+
+            {% if canEdit %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_edit', { 'slug': entity.slug }) }}"
+                       data-target="#myModal" data-hash="data"
+                       data-toggle="modal" data-color="{{ modal.colors['8items'][0] }}">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg> {{ 'link.edit'| trans }}</a>
+                </p>
+            {% endif %}
+            <dl id="profileSection">
+                {% if entity.organizationKind is not null %}
+                    {% if entity.organizationKind | length > 0 %}
+                        <dt>{{ 'organization.show.detailBlock.label.organizationKind'| trans }}</dt>
+                        {% if entity.organizationKind %}
+                            <dd>
+                                {% for dl in entity.organizationKind %}
+                                    {% if dl is not null %}
+                                        {{ dl.name -}} {% if not loop.last %}, {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            </dd>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+                {% if entity.organizationSection is not null %}
+                    {% if entity.organizationSection | length > 0 %}
+                        <dt>{{ 'organization.show.detailBlock.label.organizationSection'| trans }}</dt>
+                        <dd>
+                            {% for dl in entity.organizationSection %}
+                                {% if dl is not null %}
+                                    {{ dl.name -}} {% if not loop.last %}, {% endif %}
+                                    {% if dl.id ==6 %}
+                                        {% set orchestra = true %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </dd>
+                    {% endif %}
+                {% endif %}
+
+                {% if entity.orchestraClass is not null and orchestra == true %}
+                    <dt>{{ 'organization.show.detailBlock.label.orchestraClass'| trans }}</dt>
+                    {% if entity.orchestraClass %}
+                        <dd>
+                            {{ ('organization.edit.orchestra.'~organization_orchestra[entity.orchestraClass]) | trans }}
+
+                        </dd>
+                    {% endif %}
+                {% endif %}
+                {% if entity.staff is not null %}
+                    <dt>{{ 'organization.show.detailBlock.label.staff'| trans }}</dt>
+                    {% if entity.staff %}
+                        <dd>
+                            {{ entity.staff }}
+                        </dd>
+                    {% endif %}
+                {% endif %}
+                {% if entity.organizationStaff is not null and entity.organizationStaff|length !=0 %}
+                    <dt>{{ 'organization.show.detailBlock.label.staffGroups'| trans }}</dt>
+                    {% if entity.organizationStaff %}
+                        <dd>
+                            {% for dl in entity.organizationStaff %}
+                                {% if dl is not null %}
+                                    {{ dl.title -}}: {{ dl.groupNumber }} {% if not loop.last %}<br> {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </dd>
+                    {% endif %}
+                {% endif %}
+                {% if entity.organizationSchedule is not null %}
+                    <dt>{{ 'organization.show.detailBlock.label.organizationSchedule'| trans }}</dt>
+                    {% if entity.organizationSchedule %}
+                        <dd>
+                            {{ entity.organizationSchedule.name }}
+                        </dd>
+                    {% endif %}
+                {% endif %}
+                {% if entity.form is not null %}
+                    <dt>{{ 'organization.show.detailBlock.label.organizationForm'| trans }}</dt>
+                    {% if entity.form is not null %}
+                        <dd>
+                            {{ entity.form.name }}
+                        </dd>
+                    {% endif %}
+                {% endif %}
+                {% if entity.organizationOwner is not null and entity.organizationOwner is not empty %}
+                    <dt>{{ 'organization.show.detailBlock.label.owner'| trans }}</dt>
+                    {% if entity.organizationOwner is not null %}
+                        <dd>
+                            {{ entity.organizationOwner }}
+                        </dd>
+                    {% endif %}
+                {% endif %}
+            </dl>
+
+        {% else %}
+            {% if canEdit %}
+                <a class="add-content light" data-hash="data" data-color="{{ modal.colors['8items'][0] }}"
+                   href="{{ path('tj_main_organization_edit', { 'slug': entity.slug }) }}"
+                   data-toggle="modal"
+                   data-target="#myModal">+ {{ 'organization.add.detailBlock.label.addOrganizationData' | trans }}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+
+{% endmacro %}
+
+{% macro organizationStages(entity, canEdit) %}
+    <div class="panel-content">
+        {% if entity.organizationStage is not null and entity.organizationStage | length > 0 %}
+            {% if canEdit %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_stages_modal_edit', { modal:'modal', slug:entity.slug }) }}"
+                       data-target="#myModal" data-hash="stages"
+                       data-toggle="modal" data-color="{{ modal.colors['8items'][1] }}">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg> {{ 'link.edit'| trans }}</a>
+                </p>
+            {% endif %}
+
+            {% for stage in entity.organizationStage %}
+                {% if loop.index <= 2 %}
+                    <h5>{{ stage.stageTitle }}</h5>
+                    <p class="p-alt">
+                        {% if stage.stageSeats is not empty %}
+                            {{ 'organization.show.detailBlock.label.seats'| trans ~' '~  stage.stageSeats | localizednumber('decimal') }}
+                        {% endif %}
+                        {% if stage.stageWidth is not empty or stage.stageDepth is not empty %}
+                            {% if stage.stageWidth is not empty %}
+                                <br>{{ 'organization.show.detailBlock.label.stageWidth'| trans ~' '~  stage.stageWidth | localizednumber('decimal') ~' m' }}
+                            {%- endif -%}
+                            {%- if stage.stageDepth is not empty -%}
+                                {%- if stage.stageDepth is not empty -%},  {% endif %}
+                                {{ 'organization.show.detailBlock.label.stageDepth'| trans ~' '~  stage.stageDepth | localizednumber('decimal') ~' m' }}
+                            {% endif %}
+                        {% endif %}
+                        {% if stage.portalWidth is not null or stage.portalDepth is not empty %}
+                            {% if stage.portalWidth is not empty %}
+                                <br>{{ 'organization.show.detailBlock.label.portalWidth'| trans ~' '~  stage.portalWidth | localizednumber('decimal') ~' m' }}
+                            {%- endif -%}
+                            {%- if stage.portalDepth is not empty -%}
+                                {%- if stage.portalWidth is not empty -%},  {% endif %}
+                                {{ 'organization.show.detailBlock.label.portalHeight'| trans ~' '~  stage.portalDepth | localizednumber('decimal') ~' m' }}
+                            {% endif %}
+                        {% endif %}
+                        {% if stage.hubStages is not null %}
+                            <br>{{ 'organization.show.detailBlock.label.hubstages'| trans ~' '~  stage.hubStages | localizednumber('decimal') }}
+                        {% endif %}
+                        {% if stage.moreInfo is not empty %}
+                            <br>{{ 'organization.show.detailBlock.label.moreInfo'| trans ~': '~  stage.moreInfo }}
+                        {% endif %}
+                        {% if stage.tags| length>0 %}
+                            <br>
+                            {% for tag in stage.tags %}
+                                {% if tag is not null %}
+                                <a class="tags-stageBox-organization"
+                                   href="{{ path('tj_main_organization_home',{tags:tag.title}) }}"> {{ tag.title -}} </a>{% if not loop.last %}, {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </p>
+                {% endif %}
+            {% endfor %}
+            {% if entity.organizationStage|length > 2 %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_stages_all', { slug:entity.slug}) }}" data-target="#myModal"
+                       data-toggle="modal" data-hash="stages"
+                       data-color="{{ modal.colors['8items'][1] }}">{{ 'organization.show.detailBlock.button.showMore'| trans }}
+                    </a>
+                </p>
+            {% endif %}
+        {% else %}
+            {% if canEdit %}
+                <a class="add-content light" data-hash="stages" data-color="{{ modal.colors['8items'][1] }}"
+                   href="{{ path('tj_main_organization_stages_modal_edit', { modal:'modal', slug:entity.slug}) }}"
+                   data-toggle="modal"
+                   data-target="#myModal">+ {{ 'organization.add.detailBlock.label.addOrganizationStages' | trans }}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro organizationPerformances(entity, listPerformances, canEdit) %}
+    <div class="panel-content">
+        {% if entity.organizationVisitors is not null and entity.organizationVisitors | length > 0
+            or entity.organizationPerformance is not null and entity.organizationPerformance | length > 0 %}
+            {% if canEdit %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_performances_modal_edit', { modal:'modal', slug:entity.slug }) }}"
+                       data-target="#myModal" data-hash="performance"
+                       data-toggle="modal" data-color="{{ modal.colors['8items'][3] }}">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg> {{ 'link.edit'| trans }}</a>
+                </p>
+            {% endif %}
+            <div class="timeline timeline-inverse timeline-inverse-gray" id="show-visitors">
+                {% for year, numbers in listPerformances %}
+                    {% if loop.index <= 4 %}
+                        {#{% if numbers.performance is not empty and numbers.visitors is not empty %}#}
+                        <div class="timeline-group">
+                            <div class="timeline-time" id="start">
+                                {{ year }}
+                            </div>
+                            <div class="timeline-item">
+                                <p class="p-alt">
+                                    <b>
+                                        {% if numbers.visitors is not empty %}
+                                            {{ numbers.visitors| localizednumber('decimal') }} {{ 'organization.show.detailBlock.label.visitors'| trans }}
+                                            {#{{ numbers.visitors }} {{ 'organization.show.detailBlock.label.visitors'| trans }}#}
+                                        {% endif %}
+                                        {% if numbers.performance is not empty %}
+                                            {% if numbers.visitors is not empty %},  {% endif %}
+                                            {{ numbers.performance | localizednumber('decimal') }} {{ 'organization.show.detailBlock.label.performances'| trans }}
+                                        {% endif %}
+                                    </b>
+                                </p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {#{% endif %}#}
+                {% endfor %}
+            </div>
+            {% if listPerformances | length > 4 %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_visitors_all', { slug:entity.slug}) }}"
+                       data-target="#myModal"
+                       data-toggle="modal" data-hash="visitors"
+                       data-color="{{ modal.colors['8items'][3] }}">{{ 'organization.show.detailBlock.button.showMore'| trans }}
+                    </a>
+                </p>
+            {% endif %}
+        {% else %}
+            {% if canEdit %}
+                <a class="add-content light" data-hash="performance" data-color="{{ modal.colors['8items'][3] }}"
+                   href="{{ path('tj_main_organization_performances_modal_edit', { modal:'modal', slug:entity.slug}) }}"
+                   data-toggle="modal"
+                   data-target="#myModal">+ {{ 'organization.add.detailBlock.label.addPerformancesVisitors' | trans }}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro organizationGrants(entity, grantsList, canEdit) %}
+    <div class="panel-content">
+        {% if grantsList is not null and grantsList | length > 0 %}
+            {% if canEdit %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_grants_modal_edit', { modal:'modal', slug:entity.slug }) }}"
+                       data-target="#myModal" data-hash="grants"
+                       data-toggle="modal" data-color="{{ modal.colors['8items'][2] }}">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg> {{ 'link.edit'| trans }}</a>
+                </p>
+            {% endif %}
+            <div class="timeline timeline-inverse timeline-inverse-gray" id="show-grants">
+                {% for grants in grantsList %}
+                    {% if loop.index <= 4 %}
+                        {% if grants is not empty %}
+                            <div class="timeline-group">
+                                <div class="timeline-time" id="start">
+                                    {{ grants.season }}
+                                </div>
+                                <div class="timeline-item">
+                                    <p class="p-alt">
+                                        <b>
+                                            {% set currencySign = grants.budget | localizedcurrency('EUR')|last %}
+                                            {% if grants.budget is not empty %}
+                                                {{ 'organization.show.detailBlock.label.budgets'| trans }}:
+                                                {{ grants.budget | localizednumber('decimal')~' '~currencySign }}
+                                            {% endif %}
+                                            {% if grants.grants is not empty %}
+                                                {% if grants.budget is not empty %} <br> {% endif %}
+                                                {{ 'organization.show.detailBlock.label.grants'| trans }}:
+                                                {{ grants.grants | localizednumber('decimal')~' '~currencySign }}
+                                            {% endif %}
+                                        </b>
+                                        {% if grants.moreInfo is not empty %}
+                                            <br> {{ grants.moreInfo }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% if grantsList | length > 4 %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_organization_budgets_all', { slug:entity.slug}) }}"
+                       data-target="#myModal"
+                       data-toggle="modal" data-hash="budgets"
+                       data-color="{{ modal.colors['8items'][2] }}">{{ 'organization.show.detailBlock.button.showMore'| trans }}
+                    </a>
+                </p>
+            {% endif %}
+        {% else %}
+            {% if canEdit %}
+                <a class="add-content light" data-hash="grants" data-color="{{ modal.colors['8items'][2] }}"
+                   href="{{ path('tj_main_organization_grants_modal_edit', { modal:'modal', slug:entity.slug}) }}"
+                   data-toggle="modal"
+                   data-target="#myModal">+ {{ 'organization.add.detailBlock.label.addBudgetsGrants' | trans }}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro organizationNews(news) %}
+    {% if news  is not empty %}
+        <div class="col-md-6 col-xs-12" data-masonry-item>
+            <div class="panel panel-large panel-primary panel-bleed-right">
+                <h2 class="panel-head">{{ 'organization.show.block.mainTitle.vacancyNews' | trans }}
+                    <span class="toggle-arrow">
+                        <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                        </svg>
+                    </span>
+                </h2>
+                <div class="vacancynews-data panel-content">
+                    {% for new in news %}
+                        {% if new.path is defined %}
+                            {% set profilePhoto =  vich_uploader_asset(new, "uploadFile" , 'Theaterjobs\\NewsBundle\\Entity\\News') | imagine_filter("news_list") %}
+                            {% set filter = '' %}
+                        {% else %}
+                            {% set profilePhoto = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                            {% set filter = '' %}
+                        {% endif %}
+                        <article class="news-post orga-news-list">
+                            <div class="profile-photo-md news-post-author">
+                                <img src="{{ profilePhoto }}"
+                                     alt="{{ new.imageDescription is defined ? new.imageDescription : '' }}">
+                            </div>
+                            <div class="news-post-content">
+                                <span class="news-post-detail">{{ new | highlight('pretitle') }}</span>
+                                {% if new.publishAt is defined %}
+                                    <span class="news-organization-date">{{ new.publishAt | date("d.m.Y") }}</span>
+                                {% endif %}
+                                <h2 class="h2-alt">
+                                    <a href="{{ path('tj_news_show', { 'slug': new.slug }) }}">{{ new.title }}</a>
+                                </h2>
+                                <p class="p-alt">{{ new.shortDescription |length > 80 ? new.shortDescription|slice(0, 80) ~ ' ...' :  new.shortDescription }}</p>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationPendingJobPublications(teamMemberPendingJobPublicationRequests) %}
+    <div class="panel-content">
+        <div class="col-md-12 content-list-views">
+            {% for request in teamMemberPendingJobPublicationRequests %}
+                <div class="row row-list-people-statistic row-list-teamMembers">
+                    <div class="col-md-2 photo-list-statistic">
+                        {# get the profile photo #}
+                        {% set profilePhoto =  profile_photo(request.user.profile, 'uploadFile', 'logos') %}
+                        {% set filter = '' %}
+                        {# get the filter profile photo #}
+                        {% if request.user.profile|first.filter is defined %}
+                            {% set filter = request.user.profile|first.filter %}
+                        {% endif %}
+
+                        <figure class="{{ filter }}">
+                            <img src="{{ profilePhoto }}">
+                        </figure>
+                    </div>
+                    <div class="col-md-10">
+                        {% if  request.user.profile.isPublished %}
+                        <a href="{{ path('tj_profile_profile_show',{'slug': request.user.profile.slug}) }}">
+                            {% endif %}
+                            {{ request.user.profile | defaultName }}
+                            {% if request.user.profile.isPublished %}
+                        </a>
+                        {% endif %}
+                        <span class="dt-views">
+                            requested to publish a
+                            <a href="{{ path("tj_inserate_job_route_show", {'slug': request.slug }) }}">
+                                job
+                            </a>.
+                        </span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro organizationContact(entity, canEdit) %}
+    <div class="panel-content">
+        {% if entity.contactSection is not null and (entity.contactSection.contact is not null or entity.contactSection.email is not null) %}
+            {% if canEdit %}
+                <p class="p-alt">
+                    <a data-color="{{ modal.colors['8items'][6] }}"
+                       href="{{ path('tj_organization_modal_contact',{ modal:'modal', slug:entity.slug}) }}"
+                       data-toggle="modal" data-hash="contact"
+                       data-target="#myModal">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                             height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg> {{ 'link.edit'| trans }}</a>
+                </p>
+            {% endif %}
+
+            <ul class="list-unstyled">
+                {% if entity.contactSection is not null %}
+                    {% if entity.contactSection.contact is not null %}
+                        <li id="contactSection">{{ entity.contactSection.contact|raw }}</li>
+                    {% endif %}
+                    {% if entity.contactSection.email is not null %}
+                        <li id="contactSection">{{ 'people.show.detailBlock.label.organizationEmail'| trans }}
+                            : <a href="mailto:{{ entity.contactSection.email }}">{{ entity.contactSection.email }}</a>
+                        </li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+
+            {#{% if not owner and is_granted('ROLE_USER') %}#}
+
+            {#**#}
+            {#** NOTE: The button is commented for the moment as the administrators suggestion#}
+            {#**#}
+            {#<p>#}
+            {#<a class="btn btn-inverse" data-toggle="modal" data-hash="message" data-target="#messageModal"#}
+            {#data-color="{{ modal.colors['8items'][6] }}">{{ 'people.show.detailBlock.button.sendMessage'| trans }}#}
+            {#</a>#}
+            {#</p>#}
+
+            {#{% elseif owner %}#}
+            {#<p><a class="btn btn-inverse" data-toggle="tooltip" data-placement="bottom"#}
+            {#title="{{ 'people.show.tooltip.owner'|trans }}">{{ 'people.show.detailBlock.button.sendMessage'| trans }}</a>#}
+            {#</p>#}
+            {#{% elseif not is_granted('ROLE_USER') %}#}
+            {#<p><a class="btn btn-inverse" data-toggle="tooltip" data-placement="bottom"#}
+            {#title="{{ 'people.show.tooltip.notloggedin'|trans }}"#}
+            {#data-color="#631953">{{ 'people.show.detailBlock.button.sendMessage'| trans }}</a>#}
+            {#</p>#}
+            {#{% endif %}#}
+
+            <ul class="list-inline" id="social">
+                {% if entity.contactSection.social | length > 0 %}
+                    {% for social in entity.contactSection.social %}
+                        <li>
+                            <a href="{{ social.link }}">
+                                <svg class="icon-svg icon-svg-inverse" width="40" height="40">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-'~social.socialMedia.svgName) }}"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+        {% else %}
+            {% if canEdit %}
+                <a class="add-content light" data-hash="contact" data-color="{{ modal.colors['8items'][6] }}"
+                   href="{{ path('tj_organization_modal_contact',{ modal:'modal', slug:entity.slug}) }}"
+                   data-toggle="modal"
+                   data-target="#myModal">+ {{ 'organization.add.detailBlock.label.addContact' | trans }}</a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro organizationName(entity, nameForm, canEdit) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="underTitle">
+            <h1><span>{{ entity.name }}</span>
+
+            </h1>
+            <p class="p-alt">
+                {#{% if owner %}#}
+                <i href="#" style="font-style: normal;">
+                    <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                    </svg>
+                    <a>{{ 'link.edit'| trans }}</a>
+                </i>
+                {#{% endif %}#}
+            </p>
+        </div>
+        {{ form_start(nameForm, { 'attr': { 'id' : 'tj_inserate_form_organization_name'}
+        }) }}
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="input-group editUnderTitle hidden">
+                        {{ form_widget(nameForm.name, {'attr': {'class': 'input-sm' } }) }}
+                        <span class="input-group-btn">
+                                      {{ form_widget(nameForm.submit, {'attr': {'class': 'btn-exs'} }) }}
+                            <button type="button" id="underTitleClose" class="btn btn-exs">X</button>
+                                  </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {{ form_end(nameForm) }}
+    {% else %}
+        <h1><span>{{ entity.name }}</span>
+            <svg class="icon-svg icon-svg-success favorite-icon-name {% if app.user and  entity not in app.user.profile.organisationFavourite %}hidden{% endif %}"
+                 width="50" height="50">
+                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star') }}"></use>
+            </svg>
+        </h1>
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationVisibility(entity) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="form-group">
+            <label id="publishLabel"
+                   class="{{ entity.isVisibleInList? '':'hidden' }}">
+                {{ 'organization.show.label.visible'|trans }}
+            </label>
+            <label id="unpublishLabel" class="{{ not entity.isVisibleInList ?'':'hidden' }}">
+                {{ 'organization.show.label.invisible'|trans }}
+            </label>
+            <div class="switch switch-alt">
+                <label class="switch-option">
+                    <input type="radio" name="public"
+                           value="1" {{ entity.isVisibleInList?'checked':'' }}
+                           data-url="{{ path('tj_organization_visible',{slug:entity.slug,publish:1}) }}">
+                    <div class="switch-toggle" id="publish">
+                        <svg class="icon-svg" width="20" height="20">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-visible') }}"></use>
+                        </svg>
+                    </div>
+                </label>
+
+                <label class="switch-option">
+                    <input type="radio" name="public"
+                           value="0" {{ not entity.isVisibleInList ?'checked':'' }}
+                           data-url="{{ path('tj_organization_visible',{slug:entity.slug,publish:0}) }}">
+                    <div class="switch-toggle" id="unpublish">
+                        <svg class="icon-svg" width="20" height="20">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                 xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-invisible') }}"></use>
+                        </svg>
+                    </div>
+                </label>
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationStatus(statusForm) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {{ form_start(statusForm) }}
+        {{ form_label(statusForm.status) }}
+        <div class="switch switch-alt switch-organization-show">
+            {% for choice in statusForm.status %}
+                <label class="switch-option">
+                    {{ form_widget(choice) }}
+                    <div class="switch-toggle switch-{{ loop.index }}" data-toogle="tooltip"
+                         title="{{ choice.vars.label }}" data-placement="bottom"></div>
+                </label>
+            {% endfor %}
+        </div>
+        {{ form_widget(statusForm.submit, {'attr':{'class':'hidden'}}) }}
+        {{ form_end(statusForm) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationVio(entity) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <labeL>
+            {% if entity.vio %}
+                {{ "organization.show.label.vio"|trans }}
+            {% else %}
+                {{ "organization.show.label.nonVio"|trans }}
+            {% endif %}
+        </labeL>
+        <div class="switch switch-alt" id="vio-switch">
+            <label class="switch-option">
+                <input type="radio" name="vio" required="required"
+                       value="1" {{ entity.vio ? 'checked' : '' }}>
+                <div class="switch-toggle switch-2" data-toogle="tooltip"
+                     title="VIO" data-placement="bottom"></div>
+            </label>
+            <label class="switch-option">
+                <input type="radio" name="vio" required="required"
+                       value="0" {{ entity.vio ? 'data-vio='~ entity.vio.id : 'checked' }}>
+                <div class="switch-toggle switch-1" data-toogle="tooltip"
+                     title="Non-VIO" data-placement="bottom"></div>
+            </label>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro organizationLogs(entity,activity) %}
+    <div class="panel-content contet-logList">
+        {% if activity.getTotalItemCount() > 0 %}
+            <div class="timeline timeline-inverse timeline-inverse-gray logList" id="logList">
+                {% for activit in activity %}
+                    {% set userName = activit.user.profile | defaultName %}
+                    {% if loop.index <= 3 %}
+                        {% if activit is not empty %}
+                            <div class="timeline-group">
+                                <div class="timeline-time" id="start">
+                                    {{ activit.createdAt|date('d.m.Y H:i') }}
+                                </div>
+                                <div class="timeline-item">
+                                    <p class="p-alt">
+                                        <b>{{ userName }}</b>
+                                        {% if activit.user.hasRole('ROLE_ADMIN') %}
+                                            ({{ 'placeholder.admin' |trans({},'messages') }})
+                                        {% endif %}
+                                        {% if activit.activityText is not empty %}
+                                            <br> {{ activit.activityText|raw }}
+                                        {% endif %}
+                                        {% if activit.changedFields %}
+                                            <a id="editJob" data-hash="logDetails" data-target="#myModal"
+                                               data-toggle="modal"
+                                               data-color="#CD2036" class="seeLogs_details"
+                                               href="{{ path('tj_log_show_single', { 'id': activit.id }) }}">{{ "organization.link.seeDetails"|trans }}
+                                                →
+                                            </a>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if activity.getTotalItemCount() > 3 %}
+                    <div class="timeline-group">
+                        <div class="timeline-time no-point" id="start">
+                            <span class="dotted"></span>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="p-alt">
+                                <b></b>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if entity.createdAt is not empty %}
+                    <div class="timeline-group">
+                        <div class="timeline-time" id="start">
+                            <span>{{ entity.createdAt|date('d.m.Y H:i') }}</span>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="p-alt last-createDate">
+                                <b>
+                                    {#{{ 'organization.show.detailBlock.createdDate'| trans }}#}
+                                    {% if entity.user is not null %}
+                                        {{ 'organization.show.createdBy'| trans }}
+                                    {% endif %}
+                                </b>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="timeline first-timeline timeline-inverse timeline-inverse-gray logList" id="logList">
+                <div class="timeline-group">
+                    <div class="timeline-time" id="start">
+                        <span>{{ entity.createdAt|date('d.m.Y H:i') }}</span>
+                    </div>
+                    <div class="timeline-item">
+                        <p class="p-alt last-createDate">
+                            <b>
+                                {#{{ 'organization.show.detailBlock.createdDate'| trans }}#}
+                                {% if entity.user is not null %}
+                                    {{ 'organization.show.detailBlock.createdBy'| trans }}  {{ entity.user.profile.fullName }}
+                                {% endif %}
+                            </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if activity.getTotalItemCount() > 3 %}
+            <p class="p-alt timeline-more">
+                <a href="{{ path('tj_organization_all_logs', { 'slug': entity.slug }) }}" data-target="#myModal"
+                   data-toggle="modal" data-hash="logs"
+                   data-color="{{ modal.colors['7items'][6] }}">{{ 'button.showMore'| trans }}</a>
+            </p>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro organizationTeamMembers(entity, canEdit) %}
+    {% set userOrganizations = entity.userOrganizations %}
+    <div class="panel-content">
+        {% if userOrganizations | length > 0 %}
+            {% if entity.status != 4 %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_main_user_organization_new', {'slug': entity.slug}) }}" id="addTeamMember"
+                       class="add-new-link"
+                       data-target="#myModal" data-hash="teammembers"
+                       data-toggle="modal" data-color="{{ modal.colors['8items'][5] }}">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-new') }}"></use>
+                        </svg> {{ 'link.new'| trans }}</a>
+                </p>
+            {% endif %}
+            <div class="col-md-12 content-list-views">
+                {% for userOrganization in userOrganizations if not userOrganization.revokedAt %}
+                    {% set user = userOrganization.user %}
+                    <div class="row row-list-people-statistic row-list-teamMembers">
+                        <div class="col-md-2 photo-list-statistic">
+                            {% set profilePhoto =  profile_photo(user.profile,'uploadFile','logos') %}
+                            {% set filter = '' %}
+
+                            {% if user.profile.mediaImage|first.filter is defined %}
+                                {% set filter = user.profile.mediaImage|first.filter %}
+                            {% endif %}
+
+                            <figure class="{{ filter }}">
+                                <img src="{{ profilePhoto }}" alt="{{ user.profile | defaultName }}">
+                            </figure>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="teamMember-name">
+                                {% if user.profile.isPublished %}
+                                    <a href="{{ path('tj_profile_profile_show', {slug : user.profile.slug}) }}">
+                                        {{ user.profile | defaultName }}
+                                    </a>
+                                {% else %}
+                                    <p>{{ user.profile | defaultName }}</p>
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a href="{{ path('tj_user_account_settings', {slug : user.profile.slug}) }}"
+                                       class="team-account-setting"
+                                       title="{{ 'organization.show.tooltip.membersAccountsettings'|trans }}">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-left pull-right">
+                                <span class="dt-views">
+                                    {% if canEdit and entity.archivedAt is null and entity.destroyedAt is null and entity.notReachableAt is null %}
+                                        <a href="{{ path('tj_user_organization_delete',{'orgaSlug':entity.slug, 'userId':user.id}) }}"
+                                           data-id="{{ user.id }}"
+                                           class="pull-right remove-members">
+                                            <svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                            </svg>{{ "link.remove" | trans }}</a>
+                                    {% endif %}
+                                </span>
+                            <p class="times-views"></p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            {% if canEdit %}
+                <a class="add-content light" data-hash="teammembers" data-color="{{ modal.colors['8items'][5] }}"
+                   href="{{ path('tj_main_user_organization_new', { slug : entity.slug }) }}" data-toggle="modal"
+                   data-target="#myModal">
+                    + {{ 'organization.add.detailBlock.label.addTeamMembers' | trans }}
+                </a>
+            {% endif %}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro organizationsFilterBar(filters, form) %}
+    {% set restFiter=0 %}
+    <div class="row-with-margin col-md-12">
+        <div class="col-md-12 no-padding">
+            {% if is_empty(form.getIterator, filters) == false %}
+                <div class="content-filters">
+                    <h3>{{ 'work.search.title.yourFilters' | trans }}</h3>
+                    <ul class="content-tags-search">
+                        {% if filters.location %}
+                            {% set restFiter = 1 %}
+                        {% endif %}
+                        {% if filters.searchPhrase %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.keyword' | trans }}
+                                    {{ filters.searchPhrase }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterSearchPhrase()"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if filters.tags %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.stageTags' | trans }}
+                                    {{ filters.tags }}
+                                </div>
+                                <a href="javascript:;" onclick="removeTag()"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% for kind in filters.organizationKind %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {% if loop.index == 1 %}
+                                        {{ 'filter.search.label.organizationKind' | trans }}
+                                    {% endif %}
+
+                                    {{ kind.name |capitalize }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterKind({{ kind.id }})"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endfor %}
+
+                        {% for section in filters.organizationSection %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {% if loop.index == 1 %}
+                                        {{ 'filter.search.label.organizationSection' | trans }}
+                                    {% endif %}
+
+                                    {{ section.name |capitalize }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterSection({{ section.id }})"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endfor %}
+
+                        {% for status in filters.status %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                {% set restFiter = 1 %}
+                                {% set yourFilters = 'work.search.title.yourFilters' | trans %}
+                                <li class="tags-search">
+                                    <div>
+                                        {{ ('organization.status.'~organization_status[status])  | trans }}
+                                    </div>
+                                    <a href="javascript:;" onclick="removeFilterStatus({{ status }})"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if filters.favorite %}
+                            {% if is_granted('ROLE_USER') %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>{{ 'work.search.label.favorite' | trans }}</div>
+                                    <a href="javascript:;" onclick="removeFavourite()"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if filters.organization %}
+                            {% if is_granted('ROLE_USER') %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>{{ 'organization.search.label.myOrganizations' | trans }}</div>
+                                    <a href="javascript:;" onclick="removeFilterMyOrganization()"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if restFiter == 1 %}
+                            <li class="reset">
+                                <a href="javascript:;" onclick="organizationResetFilters()" tabindex="-1">
+                                    <div>{{ 'work.search.link.resetFilters' | trans }}</div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    {% if restFiter == 1 %}
+                        <div class="reset pull-right">
+                            <a href="javascript:;" tabindex="-1">
+                                <div id="save-search"
+                                     data-entity="organization"
+                                     data-routename="{{ app.request.get('_route') }}"
+                                     class="{{ is_granted('ROLE_USER') ? '' : 'registerFirst' }}">
+                                    {{ 'work.search.link.saveSearch' | trans }}
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro organizationRelatedJobs(slug,related_jobs, canEdit) %}
+
+    {% set defaultPath = 'tj_inserate_job_route_list' %}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        {% set viewJobs = [1,5,2,3,4] %}
+        {% set viewLink = 1 %}
+        {% set defaultPath = 'tj_inserate_job_route_list_team' %}
+    {% elseif canEdit %}
+        {% set viewJobs = [1,5,2,3] %}
+        {% set viewLink = 1 %}
+        {% set defaultPath = 'tj_inserate_job_route_list_team' %}
+    {% elseif is_granted('ROLE_MEMBER') %}
+        {% set viewJobs = [1] %}
+        {% set viewLink = 1 %}
+    {% elseif is_granted('ROLE_USER') %}
+        {% set viewJobs = [1] %}
+        {% set viewLink = 2 %}
+    {% else %}
+        {% set viewJobs = [1] %}
+        {% set viewLink = 3 %}
+    {% endif %}
+    {% set countCol = 0 %}
+
+    {% for related_job in related_jobs.status.buckets if related_job.key in viewJobs %}
+        {% set countCol = countCol + 1 %}
+    {% endfor %}
+
+    {% for jobIndex in viewJobs %}
+        {% for related_job in related_jobs.status.buckets %}
+            {% if related_job.key == jobIndex %}
+                <div class="col-md-{{ (12 / countCol) | round }} block-statistik-status">
+                    <span class={% if viewJobs|length > 1 %} 'number' {% else %} "highlight-large" {% endif %}>
+                    <a href="{% if viewLink == 1 %}{{ path( defaultPath ,{ organization:slug, status: [related_job.key] }) }}{% else %}#{% endif %}" {% if viewLink == 3 %} class="registerFirst"{% endif %} {% if viewLink == 2 %} class="unusable"{% endif %}>
+                        {{ related_job.doc_count }}
+                    </a>
+                    </span>
+                    {% if viewJobs|length > 1 %}
+                        <span class="name-status">
+                            {{ ('job.status.'~job_status[related_job.key]) |trans }}
+                        </span>
+                    {% endif %}
+                </div>
+                {% if viewJobs|length > 1 %}
+                    <span>{{ 'organization.show.relatedJobs.subtitle' | trans }}</span>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+
+{% endmacro %}
+

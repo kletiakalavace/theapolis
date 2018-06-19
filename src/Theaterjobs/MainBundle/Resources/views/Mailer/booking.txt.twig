@@ -1,0 +1,14 @@
+{% block subject %}
+{% autoescape false %}
+{{ 'emails.booking.subject'| trans({'%domain%': domain, '%bookingno%': booking.id}) }}
+{% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+{{ 'emails.booking.message'| trans(
+    {'%firstname%': booking.people.firstname,
+     '%lastname%': booking.people.lastname}) }}
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}
+{% include "TheaterjobsUserBundle:Mailer:footer.txt.twig" %}

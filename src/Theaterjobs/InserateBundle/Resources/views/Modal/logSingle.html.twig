@@ -1,0 +1,28 @@
+<div class="modal-body movebottom experience-modal ">
+    <div class="container contet-logList">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'organization.show.mainTitle.logs'| trans }}</h2>
+                <div id="modal-logList">
+                    {#{{ dump(activity|first.changedFields|unserialize) }}#}
+                    <div class="activity-history">
+                        <div class="col-md-12 no-padding activity-label">
+                            <div class="col-md-2">{{ 'organization.logs.field'| trans }}</div>
+                            <div class="col-md-5">{{ 'organization.logs.oldValue'| trans }}</div>
+                            <div class="col-md-5">{{ 'organization.logs.newValue'| trans }}</div>
+                        </div>
+                        {% for changedField in  activity|first.changedFields|unserialize %}
+                            {% set newVal = changedField.new|striptags%}
+                            {% set oldVal = changedField.old|striptags %}
+                            <div class="col-md-12 no-padding activity-row">
+                                <div class="col-md-2">{{ changedField.field }}</div>
+                                <div class="col-md-5">{% if(oldVal is null or oldVal != '') %}{{ oldVal|raw  }}{% else %}Was Empty{% endif %}</div>
+                                <div class="col-md-5">{% if(newVal is null or newVal != '') %}{{ newVal|raw  }}{% else %}Deleted{% endif %}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

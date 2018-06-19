@@ -1,0 +1,355 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="organizationStage">
+    <div class="container no-padding-mobile">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2> {{ 'organization.edit.mainTitle.editOrganizationPerformancesVisitors'| trans }}</h2>
+                {{ form_start(edit_form) }}
+                <div class="row">
+                    <div>
+                        {{ form_row(edit_form._token) }}
+
+                        <h3 class="col-md-12">{{ 'organization.edit.subtitle.visitors' | trans }}</h3>
+                        {{ form_label(edit_form.organizationVisitors) }}
+                        <ul class="visitors"
+                            data-prototype='{{ form_widget(edit_form.organizationVisitors.vars.prototype) }}'>
+                            {% for visitors in edit_form.organizationVisitors %}
+                                <li>
+                                    {{ form_row(visitors.season) }}
+                                    {{ form_row(visitors.visitorsNumber) }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <h3 class="col-md-12">{{ 'organization.edit.subtitle.performances' | trans }}</h3>
+                        {{ form_label(edit_form.organizationPerformance) }}
+                        <ul class="performance"
+                            data-prototype='{{ form_widget(edit_form.organizationPerformance.vars.prototype) }}'>
+                            {% for performance in edit_form.organizationPerformance %}
+                                <li>
+                                    {{ form_row(performance.season) }}
+                                    {{ form_row(performance.performanceNumber) }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <br/>
+                <div style="text-align: center">
+                    <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                    <div style="display: inline-block">{{ form_row(edit_form.submit, { 'attr': { 'class': 'btn btn-inverse-primary center' } }) }}</div>
+                </div>
+                {{ form_end(edit_form, {'render_rest': false}) }}
+                {{ m.error }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var visitorsYears = [];
+    var performanceYears = [];
+
+    var perfCount = '{{ edit_form.organizationPerformance|length }}';
+    var visCount = '{{ edit_form.organizationVisitors|length }}';
+    //VISITORS
+    var $addVisitiorsLink = $('<a href="#" class="pull-left add_visitors_link"><svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20"> <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-new') }}"></use></svg> {{ "organization.edit.addNewVisitors"| trans }}</a>');
+    var $newLinkLiVisitors = $('<li class="col-md-12 visitor-link"></li>').append($addVisitiorsLink);
+
+    function addTagForm($collectionHolder, $newLinkLi, selectChoise) {
+        if (selectChoise === 1) {
+            $('.visitors select').each(function () {
+                visitorsYears.push($(this).val());
+            });
+        } else {
+            $('.performance select').each(function () {
+                performanceYears.push($(this).val());
+            });
+        }
+
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.data('prototype');
+        // get the new index
+        var index = $collectionHolder.data('index');
+        // Replace '__name__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        var newForm = prototype.replace(/__name__/g, index);
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+        // Display the form in the page in an li, before the "Add a tag" link li
+
+        var $newFormLi = $('<li></li>').append(newForm);
+        addTagFormDeleteLink($newFormLi);
+        $newLinkLi.before($newFormLi);
+        var countVisitors = 0;
+        var countPerformance = 0;
+        if (selectChoise === 1) {
+
+            $('#tj_inserate_form_organization_performances_organizationVisitors_' + index + '_season option').each(function () {
+                if (inArray.call(visitorsYears, $(this).val())) {
+                    $(this).attr("disabled", "disabled");
+                    countVisitors++;
+                }
+
+            });
+
+            $('#tj_inserate_form_organization_performances_organizationVisitors_' + index + '_season option:eq("' + countVisitors + '")').prop({selected: true});
+        } else {
+            $('#tj_inserate_form_organization_performances_organizationPerformance_' + index + '_season option').each(function () {
+                if (inArray.call(performanceYears, $(this).val())) {
+                    $(this).attr("disabled", "disabled");
+                    countPerformance++;
+                }
+            });
+
+            $('#tj_inserate_form_organization_performances_organizationPerformance_' + index + '_season option:eq("' + countPerformance + '")').prop({selected: true});
+        }
+    }
+
+    function addTagFormDeleteLink($tagFormLi) {
+        var $removeFormA = $('<a href="#" class="remove-perform pull-right"><svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14"><use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use> </svg>{{ "link.remove" | trans }}</a>');
+        $tagFormLi.append($removeFormA);
+        $removeFormA.on('click', function (e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+            bootbox.confirm({
+                message: trans('bootbox.wantToDelete',locale),
+                buttons: {
+                    confirm: {
+                        label: trans('bootbox.button.yes',locale),
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: trans('bootbox.button.no',locale),
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        // remove the li for the tag form
+                        $tagFormLi.remove();
+                    }
+                }
+            });
+        });
+    }
+
+    function validateVisitorsTitle() {
+        var returnVal = true;
+        $('ul.visitors >li:not(.visitor-link)').each(function () {
+            var visitorsTitle = $(this).find($('.visitorsNumber'));
+            if (!visitorsTitle.val())  {
+                toolTipError('This field is required.', visitorsTitle);
+                returnVal = false;
+
+                $('.text-danger').removeClass('hidden');
+
+            }
+            else {
+                visitorsTitle.closest('.has-error').removeClass('has-error');
+                $('.text-danger').addClass('hidden');
+                if (typeof visitorsTitle.attr('aria-describedby') !== "undefined") {
+                    visitorsTitle.tooltip('destroy');
+                    visitorsTitle.removeAttr('aria-describedby');
+                }
+                returnVal = true;
+            }
+
+        });
+        console.log(returnVal);
+        return returnVal;
+    }
+
+    // Get the ul that holds the collection of tags
+    $collectionHolderVisitors = $('ul.visitors');
+    $collectionHolderVisitors.find('li').each(function () {
+        addTagFormDeleteLink($(this));
+    });
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolderVisitors.append($newLinkLiVisitors);
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolderVisitors.data('index', $collectionHolderVisitors.find(':input').length);
+    $addVisitiorsLink.on('click', function (e) {
+        if (validateVisitorsTitle()) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+
+            // add a new tag form (see next code block)
+            addTagForm($collectionHolderVisitors, $newLinkLiVisitors, 1);
+        }
+    });
+
+
+    //PERFORMANCE
+
+    var $addPerformanceLink = $('<a href="#" class="pull-left add_performance_link"><svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20"> <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-new') }}"></use></svg> {{ "organization.edit.addNewPerformance"| trans }}</a>');
+    var $newLinkLiPerformance = $('<li class="col-md-12 performance-link"></li>').append($addPerformanceLink);
+
+    function validatePerformanceNumber() {
+        var returnVal = true;
+        $('.performance >li:not(.performance-link)').each(function () {
+            var performanceTitle = $(this).find($('input.performanceNumber'));
+            if (!performanceTitle.val())  {
+                toolTipError('This field is required.', performanceTitle);
+                returnVal = false;
+
+                $('.text-danger').removeClass('hidden');
+
+
+            }
+            else {
+                performanceTitle.closest('.has-error').removeClass('has-error');
+                $('.text-danger').addClass('hidden');
+                if (typeof performanceTitle.attr('aria-describedby') !== "undefined") {
+                    performanceTitle.tooltip('destroy');
+                    performanceTitle.removeAttr('aria-describedby');
+                }
+                returnVal = true;
+            }
+
+        });
+        //console.log(returnVal);
+        return returnVal;
+    }
+    function validSubmit() {
+        var returnVal1 = true;
+        var returnVal2 = true;
+
+        var visLink = $('ul.visitors >li:not(.visitor-link)');
+        visLink.each(function () {
+            var visitorsTitle = $(this).find($('.visitorsNumber'));
+            if (!visitorsTitle.val())  {
+                returnVal1 = false;
+            } else {
+                returnVal1 = true;
+            }
+        });
+
+        var perfLink = $('.performance >li:not(.performance-link)');
+        perfLink.each(function () {
+            var performanceTitle = $(this).find($('input.performanceNumber'));
+            if (!performanceTitle.val())  {
+                returnVal2 = false;
+            } else {
+                returnVal2 = true;
+            }
+
+        });
+
+        if ((visLink.length && returnVal1) || (perfLink.length && returnVal2)) {
+            return true;
+        } else {
+            validateVisitorsTitle();
+            validatePerformanceNumber();
+            return false;
+        }
+    }
+
+    // Get the ul that holds the collection of tags
+    $collectionHolderPerformance = $('ul.performance');
+    $collectionHolderPerformance.find('li').each(function () {
+        addTagFormDeleteLink($(this));
+    });
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolderPerformance.append($newLinkLiPerformance);
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolderPerformance.data('index', $collectionHolderPerformance.find(':input').length);
+    $addPerformanceLink.on('click', function (e) {
+        if(validatePerformanceNumber()) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+            // add a new tag form (see next code block)
+            addTagForm($collectionHolderPerformance, $newLinkLiPerformance, 0);
+        }
+    });
+
+    //FORM SUBMIT
+    const orgaPerformanceForm = $('#organizationStage form');
+    addLoadingSvg(orgaPerformanceForm);
+    const loading = orgaPerformanceForm.find('.submit-rolling-svg');
+
+    orgaPerformanceForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        validFormInputs();
+        var valid = false;
+        if ($(this).valid() && validSubmit()) {
+            loading.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    loading.hide();
+                    if (data.errors) {
+                        for (var key in data.errors) {
+                            var el = $('#organizationStage form').find('input[name="' + key + '"]');
+                            el.parent().addClass('has-error');
+                            toolTipError(data.errors[key], el);
+                        }
+                    } else {
+                        $('.performance-block').html(data.content);
+                        $('.logs-block').html(data.logs);
+                        valid = true;
+                    }
+                },
+                error: function () {
+                    loading.hide();
+                    serverError();
+                }
+            }).done(function () {
+                if (valid) {
+                    $('#myModal').modal('hide');
+
+                    var grids = $("[data-masonry]");
+                    grids.each(function () {
+                        $(this).masonry({
+                            itemSelector: "[data-masonry-item]"
+                        });
+
+                        $(this).masonry("on", "layoutComplete", function () {
+                            $("[data-masonry-item] .panel").each(function () {
+                                $(this).bleedPanel();
+                            });
+                        });
+
+                        $(this).masonry();
+                    });
+                }
+            });
+        }
+    });
+
+    $(function () {
+        if (parseInt(perfCount) === 0) {
+            $('.add_performance_link').trigger('click');
+        }
+        if (parseInt(visCount) === 0) {
+            $('.add_visitors_link').trigger('click');
+        }
+    });
+
+    $("form[name=tj_inserate_form_organization_performances]").validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+        },
+        ignore: [],
+        rules: {}
+    });
+
+    $.validator.addClassRules(
+        "visitorsNumber", {
+            numbersOnly: true
+        }
+    );
+    $.validator.addClassRules(
+        "performanceNumber", {
+            numbersOnly: true
+        }
+    );
+    validFormInputs();
+
+</script>

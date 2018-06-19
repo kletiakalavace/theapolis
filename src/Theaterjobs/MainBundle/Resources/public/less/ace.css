@@ -1,0 +1,363 @@
+@import 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Raleway:100,200,300,400,500,600,700';
+@import "colors.less";
+@import "general.less";
+@import "buttons.less";
+@import "navigation.less";
+@import "card.less";
+@import "sidr.less";
+
+html {
+    font-family: 'Aktiv Grotesk', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Aktiv Grotesk', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.errorModal {
+    margin-top: 20px !important;
+    clear: both;
+}
+
+/*header*/
+.header-homepage {
+    background: linear-gradient(rgba(31, 31, 31, 0.6), rgba(31, 31, 31, 0.6)), url("../bundles/theaterjobsmain/images/bg-header.jpg");
+    height: 700px;
+    background-position: -264px;
+    position: relative;
+}
+
+.header-homepage h1 {
+    font-family: @fontdisplay;
+    font-size: 72px;
+    color: @white;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 100px;
+    margin-top: 0
+}
+
+.header-homepage h3 {
+    font-family: @fontdefault;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.67;
+    text-align: center;
+    padding: 2em 0;
+    color: @white;
+    max-width: 460.7px;
+    margin: 0 auto;
+}
+
+.header-homepage button {
+    margin: 1em auto;
+    display: block;
+}
+
+/* Wall of fame section */
+.wall-of-fame {
+    background: @white;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.wall-of-fame h1 {
+    font-family: @fontdefault;
+    font-size: 38px;
+    line-height: 1.05;
+    color: @darkgray;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.wall-of-fame p {
+    font-family: @fontsecondary;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.38;
+    margin-bottom: 30px;
+    color: @black;
+}
+
+.circle-image-holder {
+    padding: 0 0 0 83px;
+}
+
+.wall-of-fame a.text-danger {
+    font-family: @fontdefault;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.33
+}
+
+.wall-of-fame .col-sm-3 > .img-holder, .wall-of-fame .col-md-3 > .img-holder, .wall-of-fame .col-lg-3 > .img-holder {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 2px auto;
+}
+
+.wall-of-fame .profile-4-columns {
+    width: 800px;
+}
+
+.wall-of-fame .profile-3-columns {
+    width: 600px;
+    margin: auto;
+}
+
+.wall-of-fame .profile-3-columns .img-holder {
+    margin: -18px 100px 2px 54px;
+}
+
+.wall-of-fame .profile-4-columns .img-holder {
+    margin: -18px 100px 2px 7px;
+}
+
+/*.img-holder{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 2px auto;
+}*/
+.img-holder img {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.content-block-team {
+    width: 82%;
+}
+
+.padding-block {
+    padding: 100px 70px;
+}
+
+.content-block-team .media-body {
+    padding: 0 15px;
+}
+
+.content-block-team .media-body h4.media-heading {
+    font-size: 18px;
+    font-family: @fontdefault;
+    font-weight: normal;
+    line-height: 1.56;
+}
+
+.content-block-team .media-body h1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 299px;
+    padding-right: 10px;
+    font-size: 40px;
+    font-family: @fontsecondary;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.content-block-team .media {
+    margin-top: 45px;
+}
+
+.instagram-item {
+    padding: 20px;
+}
+
+.instagram-item > .instagram-block {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.instagram-item > .instagram-block > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.instagram-item > .instagram-block > .instagram-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.instagram-text {
+    display: table;
+    width: 100%;
+    height: 100%;
+    background: @purple;
+    opacity: 0.8;
+}
+
+.instagram-item > .instagram-block:hover .instagram-info {
+    display: block;
+}
+
+.instagram-item > .instagram-block > .instagram-info > .instagram-text > p {
+    display: table-cell;
+    font-size: 21px;
+    color: @white;
+    font-family: @fontsecondary;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.footer {
+    padding: 50px 0;
+}
+
+.footer .footer-nav {
+    text-align: center;
+}
+
+.footer .footer-nav .nav-pills {
+    padding-left: 11%;
+    margin: 10px 0;
+}
+
+.footer .footer-nav .nav-pills li a {
+    font-family: @fontdefault;
+    font-size: 14px;
+    color: @white;
+    font-weight: normal;
+    text-align: center;
+}
+
+.footer .footer-nav .nav-pills li a:focus {
+    background: none;
+    border: 0;
+    outline: none;
+}
+
+.footer .footer-nav .nav-pills li a.text-warning {
+    color: @red;
+    padding: 10px 3px;
+}
+
+.footer .footer-nav .nav-pills li a:hover {
+    background: none;
+}
+
+.footer .social {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social a {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 20px;
+    border-radius: 100%;
+    background: @darkgray;
+}
+
+.social a.bg-white {
+    background: @white;
+    padding: 3px 2px;
+}
+
+.social a.bg-white span.icon-instagram {
+    padding: 3px 2px;
+    width: 30px;
+    height: 41px;
+}
+
+#container {
+    /*height: 360px;*/
+    position: relative;
+}
+
+#container > DIV {
+    position: absolute;
+}
+
+#tagline {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 8px 40px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 24px;
+    background-color: rgba(25, 125, 75, .6);
+}
+
+#one {
+    width: 100px;
+    left: 0;
+    bottom: 60px;
+    border-bottom: 20px solid rgba(25, 125, 75, .6);
+    border-right: 20px solid transparent;
+}
+
+#two {
+    left: 120px;
+    bottom: 60px;
+    right: 0;
+    border-bottom: 20px solid rgba(25, 125, 75, .6);
+    border-left: 20px solid transparent;
+}
+
+.search-section {
+    display: none;
+    background: @red;
+    padding: 5px 0 0px 0;
+    height: 88px;
+    transition: height 0.8s;
+}
+
+.search-section .form-group {
+    width: 80%;
+}
+
+.search-section .form-group input.form-input {
+    width: 99%;
+    padding: 13px 0;
+    background: transparent;
+    border: 0;
+    outline: none;
+    font-size: 40px;
+    font-family: @fontsecondary;
+    color: @white;
+}
+
+.search-section .form-group input.form-input:focus {
+    border: 0;
+}
+
+.group-search-btn {
+    float: right;
+    width: 20%;
+    margin-top: 17px;
+}
+
+.group-search-btn .close-icon {
+    display: inline-block;
+    float: right;
+}
+
+@import "responsive.less";
+/*Test*/

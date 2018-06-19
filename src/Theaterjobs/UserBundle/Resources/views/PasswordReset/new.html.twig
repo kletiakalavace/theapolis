@@ -1,0 +1,16 @@
+
+{#{{ form_start(form,#}
+    {#{'action': path('tj_user_password_change_create'),#}
+     {#'method': 'post',#}
+     {#'style': 'horizontal',#}
+     {#'attr': {#}
+        {#'id' : 'tj_user_password_change_create',#}
+        {#'role' : 'form',#}
+     {#}#}
+    {#}#}
+{#) }}#}
+    {#{{ form_row(form.children.password) }}#}
+    {#{{ form_row(form.children.plainPassword.children.first) }}#}
+    {#{{ form_row(form.children.plainPassword.children.second) }}#}
+    {#{{ form_row(form.children.submit, {'label':'form.button.password.reset' | trans({},'forms'),'attr': {'disabled': '' } }) }}#}
+{#{{ form_end(form) }}#}

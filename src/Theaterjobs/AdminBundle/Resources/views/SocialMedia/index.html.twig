@@ -1,0 +1,155 @@
+{% extends '::base.html.twig' %}
+{% form_theme fileForm '@VichUploader/Form/fields.html.twig' %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="block">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <h1><span>Social Media list</span></h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    {% if not fileForm.vars.value.id %}
+                        <h3 class="text-center">Please add the svg file , before adding a new social media</h3>
+                    {% endif %}
+
+                    {{ form_start(fileForm) }}
+                    <div class="form-inline form-file">
+                        {{ form_widget(fileForm.uploadFile) }}
+                        {{ form_widget(fileForm.submit,{'attr':{'class':'btn btn-default btn-update-modal'} }) }}
+                    </div>
+                    {{ form_end(fileForm) }}
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <a href="{{ path('admin_social_media_create') }}"
+                       data-target="#myModal" data-hash="new"
+                       data-toggle="modal"
+                       data-color="#244372">{{ 'button.addNew'| trans }}</a>
+                </div>
+            </div>
+            {{ form_start(form,{'attr':{'id' : 'formSocialMedia'}}) }}
+            {{ form_end(form) }}
+            <table id="data-table" class="display nowrap hidden" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="text-danger" data-name="name">
+                        Name
+                    </th>
+                    <th class="text-danger" data-name="svg_name">
+                        Svg Name
+                    </th>
+                    <th class="text-danger" data-name="position">
+                        Position
+                    </th>
+                    <th class="text-danger" data-name="name">
+                        Updated
+                    </th>
+                    <th class="text-danger no-sort" data-name="updatedAt">
+                        Action
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <div class="row admin-pagination">
+                <div class="col-md-8 col-sm-12">
+                    <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_ajax_paginate">
+                        <div class="pagination-panel">
+                            <span{{ 'admin.nameChange.label.page'| trans }}></span>
+                            <a href="javascript:" data-page="0" disabled
+                               class="circle-red datatable-paginate-btn datatable-paginate-previous"
+                               id="data-table-previous">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <input value="1" id="data-table-page-number" type="text"
+                                   class="pagination-panel-input form-control input-sm input-inline input-mini"
+                                   maxlength="5">
+                            <a href="javascript:;" data-page="2"
+                               class="circle-red datatable-paginate-btn datatable-paginate-next"
+                               id="data-table-next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                            <span>{{ 'admin.nameChange.label.of'| trans }}</span>
+                            <span class="pagination-panel-total"></span>
+                        </div>
+                    </div>
+                    <div class="dataTables_length" id="datatable_ajax_length">
+                        <label>
+                            <span id="data-table-pages-total"></span>
+                            <span class="seperator">|</span>
+                            <span id="data-table-total" class="seperator"></span>
+                            <span>{{ 'admin.nameChange.label.view'| trans }}</span>
+                            <select id="data-table-page-length"
+                                    class="select-page-length form-control input-xs input-sm input-inline"
+                                    aria-controls="datatable_ajax">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                            </select>
+                            <span>{{ 'admin.nameChange.label.records'| trans }}</span>
+                        </label>
+                    </div>
+                    <div class="dataTables_info" id="datatable_ajax_info" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        "@TheaterjobsAdminBundle/Resources/js/dataTable/load.js" %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        dataTableURL = Routing.generate('admin_load_social_media_index', {'_locale': locale});
+        adminSearchForm = $('#formSocialMedia');
+        const formSocialMedia = $("form[name=theaterjobs_adminbundle_socialmedia]");
+
+        $(() => {
+            dataTableInitialize();
+        });
+
+        formSocialMedia.submit((event) => {
+            event.preventDefault();
+            if ($(event.currentTarget).valid()) {
+                $.ajax({
+                    type: $(event.currentTarget).attr('method'),
+                    url: $(event.currentTarget).attr('action'),
+                    data: new FormData(event.currentTarget),
+                    processData: false,
+                    contentType: false,
+                    success: (data) => {
+                        if (!data.success) {
+                            let errors = '';
+
+                            data.errors.forEach((element) => {
+                                errors += element.message + '<br>';
+                            });
+                            popupCase(errors);
+
+                        }
+                    },
+                    error: () => {
+                        serverError();
+                    }
+                }).done(() => {
+                    formSocialMedia.get(0).reset();
+                });
+            }
+        });
+    </script>
+{% endblock %}

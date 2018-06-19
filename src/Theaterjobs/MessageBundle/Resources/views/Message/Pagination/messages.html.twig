@@ -1,0 +1,57 @@
+{% for message in messages.items | reverse %}
+    {% set sender = (message.sender.id == app.user.id) %}
+
+    <div class="singleMessage" id="{{ message.id }}">
+        <div class="col-md-10 {{ sender == true ? 'pull-right sender' : 'pull-left receiver' }}">
+            <div class="sendername row">
+                <div class="group-profile">
+                    <div class="cover-img-messenger absolute-icon">
+                        {% set profilePhoto =  profile_photo(message.sender.profile,'uploadFile','logos') %}
+                        {% set filter = '' %}
+
+                        {% if message.sender.profile.mediaImage|first.filter is defined %}
+                            {% set filter = message.sender.profile.mediaImage|first.filter %}
+                        {% endif %}
+                        <figure class="{{ filter }}">
+                            <img src="{{ profilePhoto }}">
+                        </figure>
+                    </div>
+                    <span class="name-profile {{ sender == true ? 'send-msg' : 'inbox-msg' }}">
+                        {{ message.sender.profile | defaultName }}
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <span class="time-messenger">{{ message.createdAt|date('d.m.Y H:i') }}</span>
+            </div>
+            <div class="row body {{ sender == true ? 'send-messenger' : 'inbox-message' }}">
+                {% if message.getDeletedBy %}
+                    {% set name = message.getDeletedBy | defaultName %}
+                    {{ 'messages.deletedBy %user%' | trans({'%user%' : name}, 'messages') }}
+                {% else %}
+                    <div class="word-msg">{{ ((message.body | escape) | nl2br) | raw }}</div>
+                    {% if sender %}
+                        <a class="delSingleMsg" href="{{ path("tj_messages_delete_message",{"id" : message.id}) }}">
+                            <svg class="icon-svg icon-inline" width="14" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                    <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                        <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                    </svg>
+                                </use>
+                            </svg>
+                        </a>
+                    {% endif %}
+                    <div class="time-seen pull-right">
+                        {#<span class="time-messenger">{{ message.createdAt|date('d.m.Y H:i') }}</span>#}
+                        {% if sender and is_message_seen(message, app.user) %}
+                            <i class="fa fa-check seen " aria-hidden="true"></i>
+                            <i class="fa fa-check second seen " aria-hidden="true"></i>
+                        {% endif %}
+                    </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endfor %}

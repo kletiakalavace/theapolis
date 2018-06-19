@@ -1,0 +1,250 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="block">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'about.title'| trans }}</h1>
+                        <p class="p-alt">{{ 'about.descrition'| trans }}</p>
+                        <div class="separator"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <h2>{{ 'about.title.our.team'| trans }}</h2>
+                    <p>{{ 'about.description.our.team'| trans }}</p>
+                    <p>  {{ 'about.description.our1.team'| trans }}</p>
+
+                    <div class="row row-flex row-multi-row">
+
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/Mikiko_Fenner.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameMikiko'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameMikiko.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'mikiko-fenner' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameMikiko'| trans }}
+                                    →</a>
+                            </p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/soerenFenner.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameSören'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameSören.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'soeren-fenner' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameSören'| trans }}
+                                    →</a></p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/kajaJakstat.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameKaja'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameKaja.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'kaja-jakstat' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameKaja'| trans }}
+                                    →</a></p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/Jana_Kaszas.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameJana'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameJana.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'jana-kaszas' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameJana'| trans }}
+                                    →</a>
+                            </p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/renatePanke.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameRenate'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameRenate.description'| trans }}</p>
+                            <p class="p-alt text-small">
+                                <a href="{{ path('tj_profile_profile_show', { 'slug': 'renate-ingrid-panke' }) }}" class="about-us-user-link">{{ 'about.team.link.nameRenate'| trans }}
+                                    →</a>
+                            </p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/kayRamczyk.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameKay'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameKay.description'| trans }}</p>
+                            <p class="p-alt text-small">
+                                <a href="{{ path('tj_profile_profile_show', { 'slug': 'kay-ramczyk' }) }}" class="about-us-user-link">{{ 'about.team.link.nameKay'| trans }}
+                                    →</a>
+                            </p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img class="tatjana_img" src="{{ asset('bundles/theaterjobsmain/images/Tatjana_Sochowski.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameTatjana'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameTatjana.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'tatjana-sochowski' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameTatjana'| trans }}
+                                    →</a></p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/karenSunder.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameKaren'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameKaren.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'karen-suender' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameKaren'| trans }}
+                                    →</a></p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/Janine_Thoenelt.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameJanine'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameJanine.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'janine-thoenelt' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameJanine'| trans }}
+                                    →</a>
+                            </p>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/maikeTodter.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameMaike'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameMaike.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'maike-toedter' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameMaike'| trans }}
+                                    →</a>
+                        </div>
+                        <div class="col-xs-6 col-xxs-12 text-center">
+                            <div class="profile-photo-md profile-photo-inline">
+                                <img src="{{ asset('bundles/theaterjobsmain/images/Alexander_von_Nell.jpg') }}"/>
+                            </div>
+                            <h5>{{ 'about.team.nameAlexander'| trans }}</h5>
+                            <p class="p-alt text-small">{{ 'about.team.nameAlexander.description'| trans }}</p>
+                            <p class="p-alt text-small"><a href="{{ path('tj_profile_profile_show', { 'slug': 'alexander-von-nell' }) }}"
+                                                           class="about-us-user-link">{{ 'about.team.link.nameAlexander'| trans }}
+                                    →</a></p>
+                        </div>
+
+
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h2>{{ 'about.our.philozophy.title'| trans }}</h2>
+                    <p>{{ 'about.our.philozophy.description'| trans }}:</p>
+
+                    <div class="panel panel-primary-dark panel-pushed-left">
+                        <h2 class="h2-alt">{{ 'about.philozophy.card1.title'| trans }}</h2>
+                        <div class="collapse" id="col-01">
+                            <div class="collapse-body">
+                                <div class="separator"></div>
+                                <p class="p-alt">{{ 'about.philozophy.card1.description'| trans }}</p>
+                            </div>
+                        </div>
+                        <div class="toggle toggle-small" data-toggle="collapse" data-target="#col-01">
+                            <span class="toggle-off">{{ 'about.link.showMore'| trans }}</span><span
+                                    class="toggle-on">{{ 'about.link.showLess'| trans }}</span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-violet panel-pushed-right">
+                        <h2 class="h2-alt">{{ 'about.philozophy.card2.title'| trans }}</h2>
+                        <div class="collapse" id="col-02">
+                            <div class="collapse-body">
+                                <div class="separator"></div>
+                                <p class="p-alt">{{ 'about.philozophy.card2.description'| trans }}</p>
+                            </div>
+                        </div>
+
+                        <div class="toggle toggle-small" data-toggle="collapse" data-target="#col-02">
+                            <span class="toggle-off">{{ 'about.link.showMore'| trans }}</span><span
+                                    class="toggle-on">{{ 'about.link.showLess'| trans }}</span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-secondary panel-pushed-left">
+                        <h2 class="h2-alt">{{ 'about.philozophy.card3.title'| trans }}</h2>
+                        <div class="collapse" id="col-03">
+                            <div class="collapse-body">
+                                <div class="separator"></div>
+                                <p class="p-alt">{{ 'about.philozophy.card3.description'| trans }}</p>
+                            </div>
+                        </div>
+
+                        <div class="toggle toggle-small" data-toggle="collapse" data-target="#col-03">
+                            <span class="toggle-off">{{ 'about.link.showMore'| trans }}</span><span
+                                    class="toggle-on">{{ 'about.link.showLess'| trans }}</span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-primary panel-pushed-right">
+                        <h2 class="h2-alt">{{ 'about.philozophy.card4.title'| trans }}</h2>
+                        <div class="collapse" id="col-04">
+                            <div class="collapse-body">
+                                <div class="separator"></div>
+                                <p class="p-alt">{{ 'about.philozophy.card4.description'| trans }}</p>
+                            </div>
+                        </div>
+
+                        <div class="toggle toggle-small" data-toggle="collapse" data-target="#col-04">
+                            <span class="toggle-off">{{ 'about.link.showMore'| trans }}</span><span
+                                    class="toggle-on">{{ 'about.link.showLess'| trans }}</span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-violet panel-pushed-left">
+                        <h2 class="h2-alt">{{ 'about.philozophy.card5.title'| trans }}</h2>
+                        <div class="collapse" id="col-05">
+                            <div class="collapse-body">
+                                <div class="separator"></div>
+                                <p class="p-alt">{{ 'about.philozophy.card5.description'| trans }}</p>
+                            </div>
+                        </div>
+
+                        <div class="toggle toggle-small" data-toggle="collapse" data-target="#col-05">
+                            <span class="toggle-off">{{ 'about.link.showMore'| trans }}</span><span
+                                    class="toggle-on">{{ 'about.link.showLess'| trans }}</span>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-secondary panel-pushed-right">
+                        <h2 class="h2-alt">{{ 'about.philozophy.card6.title'| trans }}</h2>
+                        <div class="collapse" id="col-06">
+                            <div class="collapse-body">
+                                <div class="separator"></div>
+                                <p class="p-alt">{{ 'about.philozophy.card6.description'| trans }}</p>
+                            </div>
+                        </div>
+
+                        <div class="toggle toggle-small" data-toggle="collapse" data-target="#col-06">
+                            <span class="toggle-off">{{ 'about.link.showMore'| trans }}</span><span
+                                    class="toggle-on">{{ 'about.link.showLess'| trans }}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

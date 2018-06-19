@@ -1,0 +1,59 @@
+<div class="modal-body ">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 all-budgets">
+                <h2>{{ 'organization.show.detailBlock.mainTitle.budgetGrants'| trans }}</h2>
+                {% if grantsList is not null and grantsList | length > 0 %}
+                    {% if canEdit %}
+                    <p class="p-alt">
+                        <a data-href="{{ path('tj_main_organization_grants_modal_edit', { modal:'modal', slug:entity.slug }) }}"
+                           class="edit-stages">
+                            <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                            </svg> {{ 'link.edit'| trans }}</a>
+                    </p>
+                    {% endif %}
+                    <div class="panel-content">
+                        <div class="timeline timeline-inverse timeline-inverse-gray" id="modal-grants">
+                            {% for grants in grantsList %}
+                                {#{% if loop.index <= 4 %}#}
+                                {% if grants is not empty %}
+                                    <div class="timeline-group">
+                                        <div class="timeline-time" id="start">
+                                            {{ grants.season }}
+                                        </div>
+                                        <div class="timeline-item">
+                                            <p class="p-alt">
+                                                <b>
+                                                    {% set currencySign = grants.budget | localizedcurrency('EUR')|last %}
+                                                    {% if grants.budget is not empty %}
+                                                        {{ 'organization.show.detailBlock.label.budgets'| trans }}:
+                                                        {{ grants.budget | localizednumber('decimal')~' '~currencySign }}
+                                                    {% endif %}
+                                                    {% if grants.grants is not empty %}
+                                                        {% if grants.budget is not empty %} <br> {% endif %}
+                                                        {{ 'organization.show.detailBlock.label.grants'| trans }}:
+                                                        {{ grants.grants | localizednumber('decimal')~' '~currencySign }}
+                                                    {% endif %}
+                                                </b>
+                                                {% if grants.moreInfo is not empty %}
+                                                    <br> {{ grants.moreInfo }}
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {#{% endif %}#}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.edit-stages').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+</script>

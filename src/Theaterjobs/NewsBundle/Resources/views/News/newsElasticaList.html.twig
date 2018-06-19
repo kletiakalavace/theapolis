@@ -1,0 +1,259 @@
+<script>
+    count = {{ entities.count }};
+    hits ={{ entities.hits }} ;
+    categories = {{ entities.agg|json_encode|raw }} ;
+    agg = {{ agg.other|json_encode|raw }};
+    autosugestTitles = {{ autosuggest|json_encode|raw }};
+</script>
+{% if entities.results and entities.results.news %}
+    <script>
+        entitiesData = {{ entities.results.news|json_encode|raw }}
+    </script>
+{% set i=0 %}
+    {% set date = "now"|date_modify("+1 day")|date("Y-m-d") %}
+    {% set firstLetter = "z" %}
+
+        {#{% if sort=="date" and date|date('Y-m-d') != entity.publishAt|date('Y-m-d') %}#}
+<div class="row list-row list-row-piece">
+    <div class="col-lg-10 col-lg-offset-1 col-xs-12 col-xs-offset-0">
+
+        <div class="timeline timeline-large">
+            {% for entity in pagination %}
+                <div class="timeline-group">
+                    <div class="timeline-time">
+                        <p class="news-post-detail">
+                            <time>{{ entity.publishAt|date('d.M.Y') }}</time>
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <article class="news-post">
+                            <div class="profile-photo-md news-post-author">
+                                {% if entity.uploadFile %}
+                                    {% set picture =  vich_uploader_asset(entity.uploadFile, "uploadFile") | imagine_filter("profile_media") %}
+                                {% else %}
+                                    {% set picture = asset('bundles/theaterjobsmain/images/profile-placeholder.svg')  %}
+                                {% endif %}
+                                <img src="{{ picture }}" alt="{{ entity.imageDescription }}">
+                            </div>
+                            <div class="news-post-content">
+                                <p class="news-post-detail">
+                                    {{ entity.pretitle }}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <a href="{{ path('tj_news_edit', { 'slug': entity.slug }) }}" id="editNews" class="add-new-link red-link"
+                                           data-target="#myModal"
+                                           data-toggle="modal" data-color="#87162D">
+                                            <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                            </svg> {{ 'link.edit'| trans }}
+                                        </a>
+                                    {% endif %}
+                                </p>
+                                <h2 class="h2-alt"><a
+                                            href="{{ path('tj_news_show', { 'slug': entity.slug }) }}{% if(title) %}?keyword={{ title }}{% endif %}">
+                                        {{ entity.title }}</a></h2>
+                                <p class="p-alt">{{ entity.shortDescription }}</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                {#<div class="timeline-group">#}
+                {#<div class="timeline-time">#}
+                {#<p class="news-post-detail">#}
+                {#<time>22.05.2016</time>#}
+                {#</p>#}
+                {#</div>#}
+
+                {#<div class="timeline-item">#}
+                {#<article class="news-post">#}
+                {#<div class="profile-photo-md news-post-author">#}
+                {#<img src="assets/images/news-post-author.jpg" alt="News Author">#}
+                {#</div>#}
+
+                {#<div class="news-post-content">#}
+                {#<p class="news-post-detail">Nationaltheater Mannheim</p>#}
+                {#<h2 class="h2-alt"><a href="#">Kosminski verlängert bis 2022</a></h2>#}
+                {#<p class="p-alt">Wie der Bundesverband Freie Theater meldet, wird künftig auch#}
+                {#von der Stadt Hannover das Einhalten einer Honoraruntergrenze für#}
+                {#selbstständige Tanz- und Theaterschaffende in der Projektförderu…</p>#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="timeline-group">#}
+                {#<div class="timeline-time">#}
+                {#<p class="news-post-detail">#}
+                {#<time>16.05.2016</time>#}
+                {#</p>#}
+                {#</div>#}
+
+                {#<div class="timeline-item">#}
+                {#<article class="news-post">#}
+                {#<div class="profile-photo-md news-post-author">#}
+                {#<img src="assets/images/news-post-author.jpg" alt="News Author">#}
+                {#</div>#}
+
+                {#<div class="news-post-content">#}
+                {#<p class="news-post-detail">Wien / Basel</p>#}
+                {#<h2 class="h2-alt"><a href="#">Trauer um Silvia Fenz</a></h2>#}
+                {#<p class="p-alt">Claudia Lowin wird leitende Dramaturgin Schauspiel. Christoph#}
+                {#Diem wird Hausregisseur. Schlingmann sagte: „Claudia Lowin und Christoph#}
+                {#Diem ergänzen sich wunderbar. Beide stehen für ein starkes, innovatives#}
+                {#un…</p>#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="timeline-group">#}
+                {#<div class="timeline-time">#}
+                {#<p class="news-post-detail">#}
+                {#<time>24.05.2016</time>#}
+                {#</p>#}
+                {#</div>#}
+
+                {#<div class="timeline-item">#}
+                {#<article class="news-post">#}
+                {#<div class="profile-photo-md news-post-author">#}
+                {#<img src="assets/images/news-post-author.jpg" alt="News Author">#}
+                {#</div>#}
+
+                {#<div class="news-post-content">#}
+                {#<p class="news-post-detail">Rheinische Kantorei</p>#}
+                {#<h2 class="h2-alt"><a href="#">Neuer Schwung für traditionsreiche Ensembles</a>#}
+                {#</h2>#}
+                {#<p class="p-alt">Zur Spielzeit 2017/2018 wird Barbara Kantel die Leitung des#}
+                {#Jungen Schauspiel Hannover von Florian Fiedler übernehmen, der als Intendant#}
+                {#ans Theater Oberhausen wechselt.</p>#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="timeline-group">#}
+                {#<div class="timeline-time">#}
+                {#<p class="news-post-detail">#}
+                {#<time>22.05.2016</time>#}
+                {#</p>#}
+                {#</div>#}
+
+                {#<div class="timeline-item">#}
+                {#<article class="news-post">#}
+                {#<div class="profile-photo-md news-post-author">#}
+                {#<img src="assets/images/news-post-author.jpg" alt="News Author">#}
+                {#</div>#}
+
+                {#<div class="news-post-content">#}
+                {#<p class="news-post-detail">Nationaltheater Mannheim</p>#}
+                {#<h2 class="h2-alt"><a href="#">Kosminski verlängert bis 2022</a></h2>#}
+                {#<p class="p-alt">Wie der Bundesverband Freie Theater meldet, wird künftig auch#}
+                {#von der Stadt Hannover das Einhalten einer Honoraruntergrenze für#}
+                {#selbstständige Tanz- und Theaterschaffende in der Projektförderu…</p>#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#<div class="timeline-group">#}
+                {#<div class="timeline-time">#}
+                {#<p class="news-post-detail">#}
+                {#<time>16.05.2016</time>#}
+                {#</p>#}
+                {#</div>#}
+
+                {#<div class="timeline-item">#}
+                {#<article class="news-post">#}
+                {#<div class="profile-photo-md news-post-author">#}
+                {#<img src="assets/images/news-post-author.jpg" alt="News Author">#}
+                {#</div>#}
+
+                {#<div class="news-post-content">#}
+                {#<p class="news-post-detail">Wien / Basel</p>#}
+                {#<h2 class="h2-alt"><a href="#">Trauer um Silvia Fenz</a></h2>#}
+                {#<p class="p-alt">Claudia Lowin wird leitende Dramaturgin Schauspiel. Christoph#}
+                {#Diem wird Hausregisseur. Schlingmann sagte: „Claudia Lowin und Christoph#}
+                {#Diem ergänzen sich wunderbar. Beide stehen für ein starkes, innovatives#}
+                {#un…</p>#}
+                {#</div>#}
+                {#</article>#}
+                {#</div>#}
+                {#</div>#}
+
+                {#</div>#}
+            {% endfor %}
+        </div>
+        <p class="timeline-more-button"><a class="btn btn-default">{{ 'button.loadMore' | trans }}</a></p>
+    </div>
+    {#{% endif %}#}
+
+    {% endif %}
+{#<div class="row row-date">
+<div class="col-md-12">
+    {{ entity.publishAt|date('d.m.Y') }}
+    {% set date =entity.publishAt|date('Y-m-d') %}
+    <script>lastDate = {{ entity.publishAt|date('U') }};</script>
+</div>
+</div>
+{% endif %}
+{% if sort=="title" and firstLetter|upper != entity.title|first|upper %}
+<div class="row row-date">
+<div class="col-md-12 text-left">
+    {{ entity.title|first|upper }}
+    {% set firstLetter =entity.title|first|upper %}
+</div>
+</div>
+{% endif %}
+<div class="row list-row list-row-piece row-hover">
+<div class="col-md-2">
+<a href="#">
+    #}{#        {% set image = entity.fullPath|split('/') %}
+            {% set thumbnail = 'thumbnail_' ~ image[image | length - 1] %}
+
+            {% set pathArray = [] %}
+            {% if image | length > 1 %}
+                {% set pathArray = image | slice(0, image | length - 1)|merge([thumbnail]) %}
+            {% endif %}
+
+            {% set path = "" %}
+            {% if pathArray | length > 0 %}
+                {% for element in pathArray %}
+                    {% if element != "" %}
+                        {% set path = path ~ '/' ~ element %}
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                {% set path = path('tj_logo_news',{id:entity.id}) %}
+            {% endif %}#}{#
+    <a href="{{ path('tj_news_show', { 'slug': entity.slug }) }}{% if(title) %}?keyword={{ title }}{% endif %}">
+        {% if entity.path  %}
+            #}{#If the entity variable is hydrated as an array (instead of an object), you will need to manually specify the class name#}{#
+            <img src="{{ vich_uploader_asset(entity, 'uploadFile', 'Theaterjobs\\NewsBundle\\Entity\\News') }}"
+                 class="img-responsive" width="200px" height="200px">
+        {% else %}
+            <img src="{{ asset('bundles/theaterjobsmain/images/no-image.png') }}" class="img-responsive"
+                 width="200px" height="200px">
+        {% endif %}
+    </a>
+
+</a>
+</div>
+<div class="col-md-8">
+<span class="name-news left">{% if entity.highlight is not empty and entity.highlight.pretitle is defined %}{{ entity.highlight.pretitle.0|raw }}{% else %}{{ entity.pretitle }}{% endif %}</span>
+<a href="{{ path('tj_news_show', { 'slug': entity.slug }) }}{% if(title) %}?keyword={{ title }}{% endif %}">
+    <h3>{% if entity.highlight is not empty and entity.highlight.title is defined %}{{ entity.highlight.title.0|raw }}{% else %}{{ entity.title }}{% endif %}</h3>
+</a>
+
+<p>{% if entity.highlight is not empty and entity.highlight.shortDescription is defined %}{{ entity.highlight.shortDescription.0|raw }}{% else %}{{ entity.shortDescription }}{% endif %}</p>
+#}{#  <a class="btn btn-primary" href="{{ path('tj_news_show', { 'slug': entity.slug }) }}{%if(title)%}?keyword={{title}}{%endif%}">{{'tj.news.read'|trans}} <span class="glyphicon glyphicon-chevron-right"></span></a>#}{#
+</div>
+<div class="col-md-2">
+<span> {{ entity.publishedComments }} {{ 'tj.info.comments'|trans }}</span>
+</div>
+</div>
+
+{% endfor %}
+<div class="navigation text-center">
+{{ knp_pagination_render(pagination) }}
+</div>#}

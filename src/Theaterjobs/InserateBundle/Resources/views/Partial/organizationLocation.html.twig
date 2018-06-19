@@ -1,0 +1,17 @@
+{% import '@TheaterjobsInserate/organizationMacro.twig' as om %}
+
+{{ om.organizationLocation(entity, canEdit) }}
+{% block js %}
+    {% javascripts
+    "@TheaterjobsMainBundle/Resources/public/js/map/location.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+<script>
+    var LatLng = null;
+    {% if entity.geolocation %}
+        LatLng = "{{ entity.geolocation }}";
+        oldLatLng = LatLng.split(",");
+    {% endif %}
+</script>

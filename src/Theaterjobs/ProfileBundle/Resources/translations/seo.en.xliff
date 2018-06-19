@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:19Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="11da6e9681d0c099f47e9928742e9a75204b4b96" resname="seo.profile.description">
+        <source>seo.profile.description</source>
+        <target state="new">seo.profile.description</target>
+        <jms:reference-file line="422">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b914d42b8837212f83665c5efc30bba31c654983" resname="seo.profile.keywords">
+        <source>seo.profile.keywords</source>
+        <target state="new">seo.profile.keywords</target>
+        <jms:reference-file line="430">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,73 @@
+<div class="modal-body movebottom experience-modal">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.experience'| trans }}</h2>
+                {#  <a id="addExperience" href="javascript:;" data-href="{{ path('tj_profile_experience_new') }}"
+                     class="add-new-link"><span>+</span>{{ 'link.new'| trans }}
+                  </a>#}
+                <div class="timeline timeline-inverse timeline-inverse-gray">
+                    {% if experiences is not null %}
+                        {% for year, experiencesArr in experiences %}
+                            <div class="timeline-group">
+                                <div class="timeline-time " id="start">
+                                    {% if  year == 10000 %}
+                                        {{ 'people.show.detailBlocklabel.now' | trans }}
+                                    {% else %}
+                                        {{ year }}
+                                    {% endif %}
+                                </div>
+                                {% for experience in experiencesArr if experiencesArr is not null %}
+                                    {% if owner %}
+                                        <p class="p-alt pull-right">
+                                            <a href="javascript:;" class="experience_edit"
+                                               style="bottom: 17px;position: relative;"
+                                               data-href="{{ path('tj_profile_experience_edit', { 'id': experience.id }) }}">
+                                                <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                                                     height="20">
+                                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                                </svg> {{ 'link.edit'| trans }}
+                                            </a>
+                                        </p>
+                                    {% endif %}
+                                    <div class="timeline-item">
+                                        <p class="p-alt test">
+                                            {% if experience.description is not null %}
+                                                <b> {{ experience.description }}
+                                                    {% if experience.assistant == 1 %}
+                                                        ({{ 'people.show.detailBlocklabel.occupationAssistant' | trans }})
+                                                    {% elseif experience.management == 1 %}
+                                                        ({{ 'people.show.detailBlocklabel.occupationManagement' | trans }})
+                                                    {% endif %}
+                                                </b>
+                                            {% endif %}
+                                            <br>
+                                            {% if experience.organization is not null %}
+                                                {{ experience.organization.name }} <br>
+                                            {% endif %}
+                                            {% if experience.ongoing == 1 %}
+                                                {{ 'people.show.detailBlocklabel.since' | trans }}  {{ experience.start|date('m/Y') }}
+                                            {% else %}
+                                                {{ experience.start|date('m/Y') }} {{ 'people.show.detailBlocklabel.tillDate' | trans }} {{ experience.end|date('m/Y') }}
+                                            {% endif %}
+                                        </p>
+
+                                    </div>
+
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.experience_edit').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+    $('#addExperience').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+</script>

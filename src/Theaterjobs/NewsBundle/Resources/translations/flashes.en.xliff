@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:05Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="ddb5ea158464cbe0653a90205cab8add30a70d5b" resname="flash.success.news.created">
+        <source>flash.success.news.created</source>
+        <target>flash.success.news.created</target>
+        <jms:reference-file line="187">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d82b7653c31931c5fa4ea90fe0a897a9a667ae72" resname="flash.success.news.updated">
+        <source>flash.success.news.updated</source>
+        <target>flash.success.news.updated</target>
+        <jms:reference-file line="505">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fcc0f8ed954f021587acb510b2022118f95d744" resname="flash.warning.become.member">
+        <source>flash.warning.become.member</source>
+        <target>flash.warning.become.member</target>
+        <jms:reference-file line="314">/var/www/theaterjobs21/src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

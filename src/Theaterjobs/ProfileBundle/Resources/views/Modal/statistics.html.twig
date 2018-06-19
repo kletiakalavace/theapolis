@@ -1,0 +1,143 @@
+
+<div class="modal-body movebottom modal-statistic">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12  col-xs-12">
+                <div class="col-md-12 content-list-views no-padding">
+                    <h2>{{ 'people.mainTitle.statistics'| trans }}</h2>
+                </div>
+                <div class="row">
+                    <div class="statistic-information">
+                        <h3>{{ 'people.statistic.title.last10Days' | trans }}</h3>
+                        <h1>
+                            {{ totalLast10Days }}
+                        </h1>
+                        <span>{{ 'people.statistic.pretitle.profileVisits' | trans }}</span>
+                    </div>
+                    <span class="total-views">{{ 'people.statistic.pretitle.totalProfileVisits' | trans }} :
+                        {{ totalViews }}
+                    </span>
+                </div>
+                {% if is_granted('ROLE_MEMBER') and trackViews %}
+                    <div class="col-md-12 content-list-views">
+                        <div class="title-header-stat">
+                            <h3>{{ 'people.statistic.pretitle.last10DaysViewsTitle'|trans }}</h3>
+                        </div>
+
+                        {% for view in lastTenDaysViews %}
+                            <div class="row row-list-people-statistic">
+
+                                <div class="col-md-2 photo-list-statistic">
+                                    {% if view.image %}
+                                    <img alt='{{ view.image.title }}'
+                                    src="{{ vich_uploader_asset(view.image, 'uploadFile') | imagine_filter('profile_photo') }}">
+                                    {% else %}
+                                    <img src="{{ asset('bundles/theaterjobsprofile/images/profile_placeholder.gif') }}">
+                                    {% endif %}
+                                </div>
+
+                                {% if view.profile is not null%}
+                                    <div class="col-md-4">
+                                        {% if view.profile.isPublished %}
+                                        <a href="{{ path('tj_profile_profile_show',{'slug': view.profile.slug}) }}">
+                                            {% endif %}
+                                            {{ view.profile | defaultName }}
+                                            {% if view.profile.isPublished %}
+                                        </a>
+                                        {% endif %}
+                                        <span class="undertitle-stat-list">{{ view.profile.subtitle2 }}
+                                            {% if view.profile in profile.userFavourite|keys %}
+                                            <i class="fa fa-star"></i></span>
+                                        {% endif %}
+                                    </div>
+                                {% else %}
+                                    <div class="col-md-4">
+                                        {{ 'people.statistic.Anonymus'|trans }}
+                                        <span class="undertitle-stat-list">{{ 'people.statistic.anonymusText'|trans }}</span>
+                                    </div>
+                                {% endif %}
+
+
+
+                                <div class="col-md-3 text-left pull-right">
+                                    <span class="dt-views">{{ 'people.statistic.pretitle.Date'|trans }}</span>
+                                    <span class="dt-views">{{ view.date|date('d.m.Y') }}</span>
+                                    <p class="times-views">
+                                        {% if view.statCount >1 %}
+                                        {{ view.statCount }} {{ 'people.statistic.pretitle.profileVisits'|trans }}
+                                        {% else %}
+                                        {{ 'people.statistic.pretitle.visitedFirstTime'|trans }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% if not trackViews %}
+                <div class="row">
+                    <div class="content-list-views">
+                        <div class="alert alert-info">
+                            <p class="p-alt">{{ 'people.statistic.notification.description1'|trans }} <a href="{{ path('tj_user_account_settings') }}" style="color:#333;"><strong>{{ 'people.statistic.link.accountSettings'|trans }}</strong></a></p>
+                            <p class="p-alt">{{ 'people.statistic.notification.description2'|trans }}</p>
+                            <p class="p-alt">{{ 'people.statistic.notification.description3'|trans }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                {% if not is_granted('ROLE_MEMBER') %}
+                <div class="row">
+                    <p class="alert alert-warning" style="text-align: center;">
+                        {{ "people.statistic.flash.pretitle.becomeMemberToView" | trans({},'flashes') }}<br>
+                        <a href="{{ path('tj_membership_index') }}">{{ 'people.statistic.link.viewsBecomeMember' | trans }}</a>
+                    </p>
+                </div>
+                {% endif %}
+
+            </div>
+            {#{% if is_granted('ROLE_MEMBER') %}#}
+            {#<div class="row">#}
+
+            {#<div class="" style="border-style:dotted;border-color:white;border-width:1px;">#}
+            {#<div class="panel-body">#}
+            {#<p>{{ 'tj.profile.ten.days.total.views'|trans }} {{ totalWeekly }}</p>#}
+            {#<p>{{ 'tj.profile.all.time.views'|trans }} {{ totalViews.total }}</p>#}
+            {#</div>#}
+            {#</div>#}
+
+            {#<div class="">#}
+            {#<div class="" style="border-style:dotted;border-color:white;border-width:1px;">#}
+            {#<p>{{ 'tj.profile.first.views'|trans }} {{ totalViews.first }}</p>#}
+            {#<p>{{ 'tj.profile.recurring.views'|trans }} {{ totalViews.recurring }}</p>#}
+            {#<p>{{ 'tj.profile.anonymous.views'|trans }} {{ totalViews.anonymous }}</p>#}
+            {#</div>#}
+            {#</div>#}
+            {#<div class="">#}
+            {#<div class="">#}
+            {#{% for key,catView in viewsByCategory %}#}
+            {#{% if catView > 0 %}#}
+            {#{% set percentage =(totalViews.total/catView)*100 %}#}
+            {#{% else %}#}
+            {#{% set percentage = 100 %}#}
+            {#{% endif %}#}
+            {#<p class="text-primary" style="color:white">{{ key }}</p>#}
+            {#<p>{{ 'tj.profile.your.views'|trans }} {{ totalViews.total }}</p>#}
+            {#<p>{{ 'tj.profile.other.profile.views'|trans }} {{ catView }}</p>#}
+            {#<div class="progress" style="margin-bottom:2px">#}
+            {#<div class="progress-bar" role="progressbar" aria-valuenow="{{ percentage }}"#}
+            {#aria-valuemin="0" aria-valuemax="100"#}
+            {#style="width:{{ percentage }}%; background-color:#337ab7">#}
+            {#</div>#}
+            {#</div>#}
+            {#<label class="">{{ percentage|round(1, 'floor') }}%</label>#}
+            {#<hr>#}
+            {#{% endfor %}#}
+            {#</div>#}
+            {#</div>#}
+            {#</div>#}
+            {#{% endif %}#}
+        </div>
+    </div>
+</div>

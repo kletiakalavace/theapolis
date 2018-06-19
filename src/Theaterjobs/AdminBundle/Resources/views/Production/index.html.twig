@@ -1,0 +1,146 @@
+{% extends '::base.html.twig' %}
+{% import '::macro.html.twig' as m %}
+
+    {% block content %}
+        <div class="container">
+            {{ m.flashbags(app.session.flashbag.get('productionIndex')) }}
+
+            <div class="block">
+                <!-- Page header -->
+                <div class="page-header">
+                    <h1><span> {{ 'admin.productionList.title' | trans }} </span></h1>
+                </div>
+                {{ m.flashbags(app.session.flashbag.all) }}
+                <a href="{{ path('tj_admin_production_new') }}"
+                   data-target="#myModal" data-hash="adminProduction"
+                   data-toggle="modal" data-color="{{ modal.colors['5items'][1] }}">
+                    {{ 'button.addNew'| trans }}
+                </a>
+                {{ form_start(form,{'attr':{'id' : 'adminSearchProduction'}}) }}
+                <div class="row">
+                    <div class="col-md-3">
+                        {{ form_row(form.choices) }}
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            {{ form_widget(form.input,{'attr':{'onkeyup':'dataTableSearchResults(this)'}}) }}
+                            {{ form_widget(form.name,{'attr':{'class' : 'hidden','onkeyup':'dataTableSearchResults(this)'}}) }}
+                            {{ form_widget(form.director,{'attr':{'class' : 'hidden','onkeyup':'dataTableSearchResults(this)'}}) }}
+                            {{ form_widget(form.creator,{'attr':{'class' : 'hidden','onkeyup':'dataTableSearchResults(this)'}}) }}
+                            {{ form_widget(form.year,{'attr':{'class' : 'hidden','onkeyup':'dataTableSearchResults(this)'}}) }}
+                            {{ form_widget(form.organization,{'attr':{'class' : 'hidden','onkeyup':'dataTableSearchResults(this)'}}) }}
+                            <span class="input-group-btn">
+                              <button class="btn btn-secondary btn-danger" onclick="dataTableReload();" type="button"
+                                      id="adminSearchProduction">
+                                  {{ "admin.invoicelist.button.Search"|trans }}
+                              </button>
+                        </span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_row(form.status) }}
+                    </div>
+                </div>
+                {{ form_end(form) }}
+                <table id="data-table" class="display nowrap hidden" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th data-name="name" class="text-danger">
+                            {{ "admin.productionlist.Name"|trans }}
+                        </th>
+                        <th data-name="creators" class="text-danger">
+                            {{ "admin.productionlist.Creators"|trans }}
+                        </th>
+                        <th data-name="directors" class="text-danger">
+                            {{ "admin.productionlist.Directors"|trans }}
+                        </th>
+                        <th data-name="organization" class="text-danger">
+                            {{ "admin.productionlist.Organization"|trans }}
+                        </th>
+                        <th data-name="year" class="text-danger">
+                            {{ "admin.productionlist.Premiered"|trans }}
+                        </th>
+                        <th class="text-danger no-sort text-center">
+                            {{ "admin.productionlist.Actions"|trans }}
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="row admin-pagination">
+                    <div class="col-md-8 col-sm-12">
+                        <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_ajax_paginate">
+                            <div class="pagination-panel">
+                                <span{{ 'admin.nameChange.label.page'| trans }}></span>
+                                <a href="javascript:" data-page="0" disabled
+                                   class="circle-red datatable-paginate-btn datatable-paginate-previous"
+                                   id="data-table-previous">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                                <input value="1" id="data-table-page-number" type="text"
+                                       class="pagination-panel-input form-control input-sm input-inline input-mini"
+                                       maxlength="5">
+                                <a href="javascript:;" data-page="2"
+                                   class="circle-red datatable-paginate-btn datatable-paginate-next"
+                                   id="data-table-next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                                <span>{{ 'admin.nameChange.label.of'| trans }}</span>
+                                <span class="pagination-panel-total"></span>
+                            </div>
+                        </div>
+                        <div class="dataTables_length" id="datatable_ajax_length">
+                            <label>
+                                <span id="data-table-pages-total"></span>
+                                <span class="seperator">|</span>
+                                <span id="data-table-total" class="seperator"></span>
+                                <span>{{ 'admin.nameChange.label.view'| trans }}</span>
+                                <select id="data-table-page-length"
+                                        class="select-page-length form-control input-xs input-sm input-inline"
+                                        aria-controls="datatable_ajax">
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                    <option value="150">150</option>
+                                </select> <span>{{ 'admin.nameChange.label.records'| trans }}</span>
+                            </label>
+                        </div>
+                        <div class="dataTables_info" id="datatable_ajax_info" role="status" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        "@TheaterjobsAdminBundle/Resources/js/dataTable/load.js" %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        dataTableURL = Routing.generate('admin_load_productions_index', {'_locale': locale});
+        adminSearchForm = $('#adminSearchProduction');
+
+        const select = adminSearchForm.find('#choices');
+
+        let currentInput = adminSearchForm.find('#' + select.val());
+
+        select.change((event) => {
+            const currentVal = currentInput.val();
+            currentInput.addClass('hidden');
+            currentInput.val('');
+            currentInput = adminSearchForm.find('#' + $(event.currentTarget).val());
+            currentInput.removeClass('hidden');
+            currentInput.val(currentVal);
+            dataTableReload();
+        });
+
+        $(() => {
+            dataTableInitialize();
+        });
+    </script>
+{% endblock %}

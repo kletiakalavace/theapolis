@@ -1,0 +1,961 @@
+{% import '::macro.html.twig' as m %}
+{% import '@TheaterjobsInserate/jobMacro.twig' as jm %}
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('jobShow')) }}
+    <div class="page-wrap">
+        {% set isFav = job in app.user.profile.jobFavourite %}
+        <!-- Article header -->
+        <header class="article-header {{ job.pathCover is defined and job.pathCover ? ' ': 'article-header-no-cover' }}">
+            <div class="container">
+                <div class="group-btn-noCover">
+                    {% if job.watchList %}
+                        <a class="icon icon-green icon-job-watchlist pull-right" id="action_watchlist"
+                           href="javascript:;"
+                           data-action=""
+                           data-toggle="tooltip" data-placement="bottom">
+                            <img src="{{ asset('bundles/theaterjobsmain/img/eye-icon.svg') }}">
+                        </a>
+                    {% endif %}
+                    <a class="icon pull-right icon-pdf-job " data-toggle="tooltip" data-placement="bottom"
+                       title="{{ 'job.show.tooltip.getPdf'|trans }}"
+                       href="{{ path('tj_inserate_job_route_pdf', { 'slug': job.slug }) }}">
+                        <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-pdf') }}">gfg
+                            </use>
+                        </svg>
+                    </a>
+                    {% if job.status == 1 or is_granted('ROLE_ADMIN') %}
+                        <a class="icon favourite-news-btn pull-right {% if isFav %}active{% endif %}
+                            {% if not is_granted('ROLE_MEMBER') %} unusable {% endif %}" {% if is_granted('ROLE_MEMBER') %} id="action_favorite" {% endif %}
+                           href="javascript:;" data-entity="job"
+                           data-action="{% if isFav %}remove{% else %}add{% endif %}" data-entity="job"
+                           data-toggle="tooltip" data-placement="bottom" {% if isFav %}
+                            title="{{ 'people.show.tooltip.removeFromFavourites' | trans }}" {% else %} title="{{ 'people.show.tooltip.addToFavourites' | trans }}" {% endif %}>
+
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                            </svg>
+                        </a>
+                    {% endif %}
+                </div>
+
+                {% if job.organization %}
+                    {# 2 => PUBLISHED organization status #}
+                    <p class="article-header-detail">  {{ job.organization.name }}</p>
+
+                {% elseif job.user.profile %}
+                    {% if job.user.profile.isPublished %}
+                        <a href="{{ path('tj_profile_profile_show', {slug : job.user.profile.slug}) }}">
+                            <p class="article-header-detail">  {{ job.user.profile | defaultName }}</p>
+                        </a>
+                    {% else %}
+                        <p class="article-header-detail">  {{ job.user.profile | defaultName }}</p>
+                    {% endif %}
+                {% endif %}
+
+                <div class="col-md-10">
+                    <div class="row">
+                        <h1 class="h1-alt header-job-show">{{ job.title }}
+                            <svg class="icon-svg icon-svg-success favorite-icon-name {% if not isFav %} hidden {% endif %}"
+                                 width="50" height="50">
+                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star') }}"></use>
+                            </svg>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="article-header-detail col-md-12">
+                    <div class="row">
+                        <div class="col-md-6 no-padding-left">
+                            {% if  job.asap %}
+                                {{ "work.show.startASAP" | trans }}
+                            {% endif %}
+                            {{ m.dateFormatJob(job) }}
+                            <br>
+                            {% if  job.applicationEnd %}
+                                {% if  job.engagementStart %}
+
+                                {% endif %}
+                                {{ "work.show.appyTill" | trans }} {{ job.applicationEnd|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6 no-padding-right">
+
+                        <span>
+                            {% if  job.publishedAt %}
+                            {% elseif job.requestedPublicationAt %}
+                                {{ "work.show.requestedPublicationAt" | trans }}
+                                <span>
+                                    {{ job.requestedPublicationAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                                </span>
+                            {% endif %}
+                            <div class="gratification-position pull-right">
+                                {% if job.gratification %}
+                                    {% if job.gratification.id < 6 %}
+                                        <div data-toggle="tooltip" data-placement="bottom"
+                                             title=" {{ job.gratification.name }}">
+                                            {% for i in 1..job.gratification.id %}
+                                                {% if(loop.last) %}
+                                                    <span class="levels-layer">{{ i }}</span>
+                                                {% else %}
+                                                    <span class="levels-layer"></span>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        <div class="free-grat">
+                                            <div class="{{ 'gratification-'~job.gratification.id }}"></div>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+
+                        </span> <br>
+                            {% if  job.updateCounter > 0 %}
+                                <span class="pull-right text-right">
+                                     {{ job.updateCounter }} {{ 'work.show.times' | trans }} {{ "work.show.updated" | trans }}
+                                    <br>
+                                    {{ 'work.show.lastly' | trans }}
+                                    {{ job.updatedAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                                </span>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            {% if job.pathCover is defined and job.pathCover %}
+                <img class="article-header-cover"
+                     src="{{ vich_uploader_asset(job, 'uploadFileCover') | imagine_filter('preview') }}"
+                     alt="" title="{{ job.copyrightText }}">
+            {% endif %}
+        </header>
+        {#<div class="progress-job-status">#}
+
+        {% set not_published = (job.status == 2 or job.status == 1 or job.archivedAt is not null or job.destroyedAt is not null or job.status == 5) %}
+        {% set pending = (job.status == 5 or job.status == 1 or job.archivedAt is not null or job.destroyedAt is not null) %}
+        {% set published = (job.status == 1 or job.archivedAt is not null or job.destroyedAt is not null) %}
+        {% set archive = (job.archivedAt is not null or job.destroyedAt is not null) %}
+        {% set deleted = (job.destroyedAt is not null) %}
+
+        <div class="container job-show-ct">
+
+            {{ m.flashbags(app.session.flashbag.get('jobIndex')) }}
+            <div class="block-progress-job first-progress">
+                {% set notVisibleEdit = job.status == 1 or job.status == 2 or job.status == 5 %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    {% if job.status == 1 %}
+                        <div class="row blue-progress block-color-status">
+                            <div class="col-md-5">
+                                <div class="col-md-12">
+                                    <span class="title-status label-green">{{ 'jobshow.status.Published'|trans }}</span>
+                                    <span class="date-status">{{ 'jobshow.publishedUntil'|trans }} {{ job.publicationEnd|localizeddate('none', 'none',null, null,'d. MMM Y', app.request.locale) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="group-btn-status">
+                                    <a id="editJob"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug , 'iscopy': false }) }}"
+                                       class="btn btn-inverse"
+                                       data-hash="edit" data-target="#myModal" data-toggle="modal" data-color="#87162D">
+                                        {{ 'link.edit'| trans }}</a>
+                                    <a href="{{ path('tj_inserate_job_route_archive',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <img class="icon-inline"
+                                             src="{{ asset('bundles/theaterjobsmain/img/archive-icon.svg') }}"/>
+                                        {{ 'link.archive'| trans }}</a>
+
+
+                                    <a data-slug="{{ job.slug }}" class="btn btn-inverse"
+                                       data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': true }) }}">
+                                        {{ 'link.copy'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elseif job.status == 2 %}
+                        <div class="row blue-progress block-color-status">
+                            <div class="col-md-5">
+                                <div class="col-md-12">
+                                    <span class="title-status">{{ 'jobshow.status.Draft'|trans }}</span>
+                                    <span class="date-status">
+                                        {{ 'jobshow.createdOn'|trans }}
+                                        {{ job.createdAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="group-btn-status">
+                                    <a href="{{ path('tj_inserate_job_route_publish',{ 'slug': job.slug }) }}"
+                                       class="btn btn-primary">{{ 'button.Publish'|trans }}</a>
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit',{ 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="edit-status">
+                                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                        </svg> {{ 'link.edit'| trans }}</a>
+                                    <a id="delete-job"
+                                       href="{{ path('tj_inserate_job_route_delete',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <svg class="icon-svg icon-inline" width="18" height="20">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                                <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                                    <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        {{ 'link.delete'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elseif job.status == 3 %}
+                        <div class="row grey-progress block-color-status">
+                            <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <span class="title-status ">{{ 'jobshow.status.Archived'|trans }}</span>
+                                    <span class="date-status">{{ 'jobshow.status.archivedSince'|trans }} {{ job.archivedAt|localizeddate('none', 'none',null, null,'d. MMM Y', app.request.locale) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="group-btn-status">
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="hidden">
+                                    </a>
+                                    <a data-slug="{{ job.slug }}" class="btn btn-inverse"
+                                       data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': true }) }}">
+                                        {{ 'link.copy'| trans }}</a>
+                                    <a id="delete-job"
+                                       href="{{ path('tj_inserate_job_route_delete',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <svg class="icon-svg icon-inline" width="18" height="20">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                                <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                                    <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        {{ 'link.delete'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elseif job.status == 4 %}
+                        <div class="row grey-progress block-color-status">
+                            <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <span class="title-status">{{ 'jobshow.status.Deleted'|trans }}</span>
+                                    <span class="date-status">{{ 'jobshow.status.deletedSince'|trans }} {{ job.destroyedAt|localizeddate('none', 'none',null, null,'d. MMM Y', app.request.locale) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    {% elseif job.status == 5 %}
+                        <div class="row blue-progress block-color-status">
+                            <div class="col-md-5">
+                                <div class="col-md-12">
+                                    <span class="title-status">{{ 'jobshow.status.Pending'|trans }}</span>
+                                    <span class="date-status">
+                                        {{ 'jobshow.createdOn'|trans }}
+                                        {{ job.createdAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="group-btn-status">
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="btn btn-inverse">
+                                        {{ 'link.edit'| trans }}</a>
+                                    <a id="delete-job"
+                                       href="{{ path('tj_inserate_job_route_delete',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <svg class="icon-svg icon-inline" width="18" height="20">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                                <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                                    <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        {{ 'link.delete'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% elseif canEdit %}
+                    {% if job.status == 1 %}
+                        <div class="row blue-progress block-color-status">
+                            <div class="col-md-5">
+                                <div class="col-md-12">
+                                    <span class="title-status label-green">{{ 'jobshow.status.Published'|trans }}</span>
+                                    <span class="date-status">{{ 'jobshow.publishedUntil'|trans }} {{ job.publicationEnd|localizeddate('none', 'none',null, null,'d. MMM Y', app.request.locale) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="group-btn-status">
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="btn btn-inverse">
+                                        {{ 'link.edit'| trans }}</a>
+                                    <a href="{{ path('tj_inserate_job_route_archive',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <img class="icon-inline"
+                                             src="{{ asset('bundles/theaterjobsmain/img/archive-icon.svg') }}"/>
+                                        {{ 'link.archive'| trans }}</a>
+                                    <a data-slug="{{ job.slug }}" class="btn btn-inverse"
+                                       data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': true }) }}">
+                                        {{ 'link.copy'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elseif job.status == 2 %}
+                        <div class="row blue-progress block-color-status">
+                            <div class="col-md-5">
+                                <div class="col-md-12">
+                                    <span class="title-status">{{ 'jobshow.status.Draft'|trans }}</span>
+                                    <span class="date-status">
+                                        {{ 'jobshow.createdOn'|trans }}
+                                        {{ job.createdAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="group-btn-status">
+                                    <a href="{{ path('tj_inserate_job_route_publish',{ 'slug': job.slug }) }}"
+                                       class="btn btn-primary">{{ 'button.Publish'|trans }}</a>
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit',{ 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="edit-status">
+                                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                        </svg> {{ 'link.edit'| trans }}</a>
+                                    <a id="delete-job"
+                                       href="{{ path('tj_inserate_job_route_delete',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <svg class="icon-svg icon-inline" width="18" height="20">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                                <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                                    <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        {{ 'link.delete'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elseif job.status == 3 %}
+                        <div class="row grey-progress block-color-status">
+                            <div class="col-md-6">
+                                <div class="col-md-12">
+                                    <span class="title-status ">{{ 'jobshow.status.Archived'|trans }}</span>
+                                    <span class="date-status">{{ 'jobshow.status.archivedSince'|trans }} {{ job.archivedAt|localizeddate('none', 'none',null, null,'d. MMM Y', app.request.locale) }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="group-btn-status">
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="hidden">
+                                    </a>
+                                    <a data-slug="{{ job.slug }}" class="btn btn-inverse"
+                                       data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': true }) }}">
+                                        </svg>{{ 'link.copy'| trans }}</a>
+                                    <a id="delete-job"
+                                       href="{{ path('tj_inserate_job_route_delete',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <svg class="icon-svg icon-inline" width="18" height="20">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                 xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                                <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                                    <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        {{ 'link.delete'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% elseif job.status == 5 %}
+                        <div class="row blue-progress block-color-status">
+                            <div class="col-md-5">
+                                <div class="col-md-12">
+                                    <span class="title-status">{{ 'jobshow.status.Pending'|trans }}</span>
+                                    <span class="date-status">
+                                        {{ 'jobshow.createdOn'|trans }}
+                                        {{ job.createdAt|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="group-btn-status">
+                                    <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                       data-color="#87162D"
+                                       href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': false }) }}"
+                                       class="btn btn-inverse">
+                                        {#<svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                        </svg>#}{{ 'link.edit'| trans }}</a>
+                                    <a id="delete-job"
+                                       href="{{ path('tj_inserate_job_route_delete',{ 'slug': job.slug }) }}"
+                                       class="archive-status">
+                                        <svg class="icon-svg icon-inline" width="18" height="20">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icon-sprite.svg#icon-delete">
+                                                <svg id="icon-delete" width="100%" height="100%" viewBox="0 0 18 20">
+                                                    <path d="M4.19342,9.002258 L6.249695,9.002258 L7.121796,16.007965 L5.125793,16.007965 L4.19342,9.002258 Z M8,9 L10,9 L10,16 L8,16 L8,9 Z M11.721069,8.998291 L13.754822,8.998291 L12.844727,15.994019 L10.799988,15.994019 L11.721069,8.998291 Z M3.751033,18 L14.248967,18 L15.715634,7 L2.284366,7 L3.751033,18 Z M7,2 L7,0 L11,0 L11,2 L17,2 L17,4 L1,4 L1,2 L7,2 Z M0,5 L18,5 L16,20 L2,20 L0,5 Z"></path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        {{ 'link.delete'| trans }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% if is_team_member %}
+                    <div class="col-md-8  col-xs-12">
+                        <ul class="list-unstyled list-article-header col-md-12 no-padding list-job-show">
+                            <!-- Edit button-->
+                            {% if job.status == 5 and job.pendingAction == 2 %}
+                                <li>
+                                    <a href="{{ path('tj_team_member_confirm_pending_job_publications', { 'id': job.id }) }}">
+                                        <svg class="icon-svg icon-svg-red icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                        </svg> {{ 'job.link.publication.confirm'| trans }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('tj_team_member_reject_pending_job_publications', { 'id': job.id }) }}">
+                                        <svg class="icon-svg icon-svg-red icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                        </svg> {{ 'job.link.publication.reject'| trans }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="block">
+                <div class="row">
+                    <div class="col-md-8 col-xs-12 offset-md">
+
+                        <div class="panel panel-work">
+                            <div class="row">
+                                <div class="col-sm-7 col-xs-12">
+                                    <p>
+                                        {{ job.contact | raw }}
+                                    </p>
+
+                                </div>
+                                <div class="col-md-5 col-xs-12 apply-job">
+                                    {% if canEdit and receivingEmail %}
+                                        {% if job.status == 1 %}
+                                            <a class="btn btn-primary gray-btn-disabled"
+                                               title="{{ 'apply.button.title1'|trans }} '{{ receivingEmail }}' {{ 'apply.button.title2'|trans }}"
+                                               id="applyInfoOwner">
+                                                {{ 'apply.button'|trans }}
+                                            </a>
+                                        {% else %}
+                                            <a class="btn btn-primary"
+                                               title="{{ 'job.draft.apply.button.title'|trans }}">
+                                                {{ 'apply.button'|trans }}
+                                            </a>
+                                        {% endif %}
+                                    {% elseif canApply %}
+                                        <p id="applyButton">
+                                            <a {% if(visitorProfileUpdated) %}
+                                                data-hash="apply" data-target="#myModal"
+                                                data-toggle="modal" data-color="#87162D" href="{{ path('new_application_request', { 'slug': job.slug }) }}"
+                                            {% else %}
+                                                id="applyButtonPublishFirst" data-action="updateProfile"
+                                            {% endif %} class="btn btn-primary">
+                                                {{ 'apply.button'|trans }}
+                                            </a>
+                                        </p>
+                                    {% elseif applicationInfo %}
+                                        <p class="p-alt apply-datainfo">
+                                            <small>
+                                                {{ 'jobshow.succes.application.appliedOn'|trans }} <span
+                                                        class="color-grey"> {{ applicationInfo.createdAt  | localizeddate('none', 'none', app.request.locale, null, 'd. MMM YYYY HH:mm') }}
+
+                                                {{ 'jobshow.succes.application.with'|trans }} <span
+                                                        class="color-red"> {{ applicationInfo.email }} </span>
+                                            </small>
+                                        </p>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+                        </div>
+
+                        {{ jm.jobGeneralDetails(job) }}
+                    </div>
+                    <aside class="col-md-4 col-xs-12 right-side-work">
+
+                        {% set jobHasImage = job.path is not null  ? true : false %}
+                        {% set jobHasOrga  = job.organization ? true : false %}
+                        {% set jobOrgaPublished  = jobHasOrga and job.organization.status == 2 ? true : false %}
+                        {% set jobOrgaHasImage = jobHasOrga and job.organization.path is not null ? true : false %}
+                        {% set jobHasProfile  = job.user.profile ? true : false %}
+                        {% set jobProfilePublished  = jobHasProfile and job.user.profile.isPublished ? true : false %}
+                        {% set underImageLink = '' %}
+
+                        {% if jobHasOrga and (job.organization.status != 2 or not job.organization.isVisibleInList) %}
+                            {% set underImageLink = '<h5>'~job.organization.name~'</h5>' %}
+                        {% elseif jobOrgaPublished %}
+                            {% set underImageLink = '<a href ="'~path('tj_organization_show', { 'slug': job.organization.slug })~'"><h5>'~job.organization.name~'</h5></a>' %}
+                        {% elseif jobProfilePublished %}
+                            {% set underImageLink = '<a href ="'~path('tj_profile_profile_show',{'slug': job.user.profile.slug})~'"><h5>'~job.user.profile.fullName~'</h5></a>' %}
+                        {% elseif jobHasProfile %}
+                            {% set underImageLink = '<h5>'~job.user.profile.fullName ~'</h5>' %}
+                        {% endif %}
+
+
+                        {% if jobHasImage %}
+                            {% set jobLogo =  vich_uploader_asset(job, 'uploadFile') | imagine_filter('profile_photo') %}
+
+                            <a class="work-logo" href="
+                                {% if  jobHasOrga and jobOrgaPublished and job.organization.isVisibleInList %} {{ path('tj_organization_show', { 'slug': job.organization.slug }) }}
+                                {% elseif  jobHasOrga and jobProfilePublished  and job.organization.isVisibleInList %} {{ path('tj_profile_profile_show', { 'slug': job.user.profile.slug }) }}
+                                {% else %} #
+                                {% endif %}">
+                                <img src="{{ jobLogo }}" alt="{{ 'work.logo'|trans }}">
+                            </a>
+
+                        {% elseif job.organization %}
+                            {% if jobOrgaHasImage %}
+                                {% set jobLogo = jobOrgaHasImage ? vich_uploader_asset(job.organization, 'uploadFile') | imagine_filter('profile_photo') : '#' %}
+
+                                {% if  jobHasOrga and jobOrgaPublished and job.organization.isVisibleInList %}
+                                    <a class="work-logo hide-md" href="{{ path('tj_organization_show', { 'slug': job.organization.slug }) }}">
+                                {% endif %}
+                                    <img src="{{ jobLogo }}" alt="{{ 'work.logo'|trans }}">
+                                {% if  jobHasOrga and jobOrgaPublished and job.organization.isVisibleInList %}
+                                    </a>
+                                {% endif %}
+                            {% endif %}
+
+                        {% elseif jobHasProfile %}
+                            {% set jobLogo =  profile_photo(job.user.profile,'uploadFile','profile_photo') %}
+
+                            {% if   jobHasOrga and jobProfilePublished and job.organization.isVisibleInList %}
+                                <a class="work-logo hide-md"
+                                   href="{{ path('tj_profile_profile_show',{'slug': job.user.profile.slug}) }}">
+                                    <img src="{{ jobLogo }}" alt="Profile Picture">
+                                </a>
+                            {% else %}
+                                <span class="work-logo hide-md">
+                                <img class="" src="{{ jobLogo }}" alt="Profile Picture" width="300">
+                                </span>
+                            {% endif %}
+                        {% endif %}
+
+                        {{ underImageLink|raw }}
+
+                        {% if job.organization and job.status==1 %}
+                            {% if (not(is_granted('ROLE_ADMIN')) and related_jobs_count > 1) or is_granted('ROLE_ADMIN') %}
+                                <div class="col-sm-12 col-xs-12 no-padding">
+                                    <div class="highlight news-job-show">
+                                        <div class="highlight-wrap work-published-highlight">
+                                            <span class="name-status"> {{ 'work.show.jobsBox'|trans }}</span>
+                                            <div class="col-md-12 no-padding status-job-rightSide">
+                                                <span class="highlight-large number">
+                                                    {{ jm.jobRelatedJobs(job.organization.slug,related_jobs, canEdit) }}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% if related_news > 0 %}
+                                <div class="col-sm-12 col-xs-12 no-padding">
+                                    <div class="highlight news-job-show">
+                                        <div class="highlight-wrap work-published-highlight">
+                                            <div class="col-md-12">
+                                                <span class="highlight-large number">
+                                                    <a href="{{ path('tj_news',{'organization': job.organization.slug }) }}">{{ related_news }}</a>
+                                                </span>
+                                            </div>
+                                            <span class="name-status">{{ 'work.show.newsBox'|trans }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                        {% if ( (is_granted('ROLE_ADMIN') and allStats and tenDaysStats and job.status == 2) or ((is_granted('ROLE_ADMIN') or canEdit) and allStats and tenDaysStats  and job.status != 2)) %}
+                            {{ jm.jobStatistics(allStats,tenDaysStats) }}
+                        {% endif %}
+                        {% if job.categories|length > 0 %}
+                            <div class="col-sm-12 col-xs-12 marginTop no-padding">
+                                <span class="title-categ-jobs">{{ "job.show.title.jobCategories" | trans }}</span>
+                                <p class="p-alt">
+                                    {% for category in  job.categories %}
+                                        <a href="{{ path('tj_inserate_job_route_list', { category: category.parent.slug,subcategories: [category.id]}) }}">{{ category.title }}
+                                            →</a>
+                                        <br>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        {% endif %}
+                    </aside>
+                </div>
+            </div>
+            <div class="block">
+                {% if is_granted('ROLE_ADMIN') or canEdit and job.status != 2 %}
+                    {% if activity|length > 0 %}
+                        <div class="logs-block panel-grey job-block-logs">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-12 no-padding-left">
+                                    <span class="panel-head"><b>{{ 'job.show.title.activityLogs'|trans }}</b></span>
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    {{ jm.jobLogs(job,activity) }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                <div class="block block-progress-job">
+                    <div class="blue-progress block-color-status">
+                        <div class="col-md-6">
+                            {% if job.publishedAt and not(job.status in [2,5]) %}
+                                <div class="col-md-8 no-padding-right">
+                                    <span class="title-status">{{ 'jobshow.publishedOn'|trans }} {{ job.publishedAt | localizeddate('none', 'none',null, null,'d. MMM Y', app.request.locale) }}</span>
+                                </div>
+                            {% endif %}
+                            <div class="{% if job.publishedAt and not(job.status in [2,5]) %}col-md-4{% else %}col-md-12{% endif %} no-padding group-btn-status">
+                                <a id="editJob" data-hash="edit" data-target="#myModal" data-toggle="modal"
+                                   data-color="#87162D"
+                                   href="{{ path('tj_inserate_job_route_edit', { 'slug': job.slug, 'iscopy': false }) }}"
+                                   class="archive-status">
+                                    <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                    </svg>{{ 'link.edit'| trans }}</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="group-btn-status">
+                                {% if (job.firstCheck is null and (job.status in [1,5])) or creatorIsAdmin %}
+                                    {% set daftColSize = 6 %}
+                                    <div class="col-md-6">
+                                        <a id="adminCheck" class="btn btn-inverse"
+                                           href="{{ path('tj_inserate_job_route_checked_by_admin', { 'slug': job.slug }) }}">
+                                            {% if(job.status == 5) %}
+                                                {{ "admin.job.show.approveJob"|trans }}
+                                            {% else %}
+                                                {{ "admin.job.show.markAsCheched"|trans }}
+                                            {% endif %}
+                                        </a>
+                                    </div>
+                                {% else %}
+                                    {% set daftColSize = 12 %}
+                                {% endif %}
+                                <div class="col-md-{{ daftColSize }}">
+                                    {% if(job.status != 2) %}
+                                        <a href="{{ path('tj_inserate_job_route_draft',{ 'slug': job.slug }) }}"
+                                           class="draft-status">
+                                            <img class="icon-inline"  src="{{ asset('bundles/theaterjobsmain/img/draft-icon.svg') }}"/>
+                                            {{ 'link.draft'| trans }}
+                                        </a>
+                                    {% endif %}
+                                    <div class="switch switch-alt switch-no-border" id="watch_list"
+                                         style="float: right;">
+                                        <label class="switch-option switch-green switch-watchlist">
+                                            <input type="radio" name="watchlist"
+                                                   value="1" {{ (job.watchList) ? 'checked="checked"' : '' }}>
+                                            <div class="switch-toggle switch-1">
+                                                <svg class="icon-svg" width="20" height="20">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-visible') }}"></use>
+                                                </svg>
+                                            </div>
+                                        </label>
+                                        <label class="switch-option switch-green switch-watchlist">
+                                            <input type="radio" name="watchlist"
+                                                   value="0" {{ (not job.watchList) ? 'checked="checked"' : '' }}>
+                                            <div class="switch-toggle switch-2" id="unpublish">
+                                                <svg class="icon-svg" width="20" height="20">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                         xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-invisible') }}"></use>
+                                                </svg>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="job-comment">
+                <h3>{{ 'job.show.title.addComment'|trans }}</h3>
+                <div class="block-form">
+                    {{ form_start(commentsForm) }}
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ form_row(commentsForm.description) }}
+                            {{ form_row(commentsForm.inserate) }}
+
+                            <div style="text-align: right;">{{ form_widget(commentsForm.submit, {'attr': {'class': 'btn btn-default'} }) }}</div>
+                        </div>
+                    </div>
+                    {{ form_widget(commentsForm._token) }}
+                    {{ form_end(commentsForm) }}
+                </div>
+                <div class="block-comments">
+                    {{ m.showComments(job.adminComments, path('tj_job_comments_all',{'slug':job.slug})) }}
+                </div>
+
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+
+
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/resizeImage.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+
+        // This variable is used to check if the user has opened the job copy modal.
+        // If the modal is opened this variable is set to true. If the job is copied
+        // successfully the page will redirect and the variable will be reset.If the
+        // user closes the modal (trying to discard the job copy) we use this variable
+        // to pop up the message confirmation.
+        var jobCopyModalOpen = false;
+
+        $(function () {
+
+            $("#publishedAt").datetimepicker({
+                viewMode: 'months',
+                format: 'DD.MM.YYYY',
+                showClear: true,
+                showTodayButton: true,
+                toolbarPlacement: 'top',
+                defaultDate: moment(),
+                useCurrent: true,
+                locale: locale
+            }).on("dp.change", function (e) {
+                if ($(this).valid()) {
+                    $(this).closest('.has-error').removeClass('has-error');
+                }
+            }).on("dp.show", function (e) {
+                $(this).data("DateTimePicker").viewMode('months').format('DD.MM.YYYY');
+            });
+
+
+
+            {% if is_granted('ROLE_ADMIN') %}
+
+            $('label.switch-option input').on('click', function (e) {
+                var type = (
+                    $(this).parent().hasClass('switch-checked-by-admin') ? 1 : $(this).parent().hasClass('switch-watchlist') ? 2 : false
+                );
+
+                var option = $(this).val();
+                var slug = '{{ job.slug }}';
+                var url = null;
+
+                if (type === 1) {
+                    url = Routing.generate('tj_inserate_job_route_checked_by_admin', {slug: slug, '_locale': locale});
+                } else if (type === 2) {
+                    url = Routing.generate('tj_inserate_job_route_admin_watchlist', {slug: slug, '_locale': locale});
+                }
+
+                if (url !== null) $.post(url, {
+                    type: type, option: option, ref: document.referrer, _locale: locale
+                }, function (data) {
+                    if (typeof(data.redirect) !== "undefined" && data.redirect !== null) {
+                        window.location.replace(data.redirect);
+                    }
+                });
+
+            });
+
+            $('#publishedAtClose').on('click', function () {
+                $('#admin-function-published-at').hide();
+                $('.editpublishedLabel').show();
+                $('#publishedAtDate').show();
+            });
+            $('#editPublishedAt').on('click', function () {
+                $('#publishedAtDate').hide();
+                $('.editpublishedLabel').hide();
+
+                $('#admin-function-published-at').show();
+                $('#admin-function-published-at input').focus();
+            });
+
+            {% endif %}
+
+            {% if job.status  == 3 %}
+            $('#myModal').on('hide.bs.modal', function (e) {
+                if (jobCopyModalOpen) {
+                    e.preventDefault();
+                    e.stopImmediatePropagation();
+
+                    bootbox.confirm({
+                        message: trans('bootbox.discardCopy', locale),
+                        buttons: {
+                            confirm: {
+                                label: trans('bootbox.button.ok', locale),
+                                className: 'btn-success'
+                            },
+                            cancel: {
+                                label: trans('bootbox.button.cancel', locale),
+                                className: 'btn-danger'
+                            }
+                        },
+                        callback: function (check) {
+                            if (check) {
+                                var url = Routing.generate('tj_inserate_job_route_copy_failed');
+                                var slug = $('#editJob').attr('data-slug');
+                                $.post(url, {slug: slug}, function (data) {
+                                    if (data.status) {
+                                        jobCopyModalOpen = false;
+                                        $('#myModal').modal('hide');
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+
+//            @TODO after checking the copying function on the merged branch, to be removed this function
+            var jobCopyClicked = 0;
+            $('#copy_job_button').on('click', function (e) {
+                jobCopyClicked++;
+                if (jobCopyClicked === 1) {
+                    jobCopyModalOpen = true;
+                    e.preventDefault();
+                    var editBtn = $('#editJob');
+                    var slug = $(this).attr('data-slug');
+                    var url = Routing.generate('tj_inserate_job_route_copy', {slug: slug});
+
+                    $.post(url, {slug: slug}, function (data) {
+
+                    }).done(function (data) {
+                        var url_edit = Routing.generate('tj_inserate_job_route_edit', {
+                            slug: data.slug,
+                            _locale: locale
+                        });
+                        editBtn.attr('href', url_edit);
+                        editBtn.attr('data-slug', data.slug);
+                        editBtn.trigger('click');
+                        jobCopyClicked = 0;
+                    })
+                }
+            });
+            {% endif %}
+        });
+
+
+        {% for flash_message in app.session.flashBag.get('msg') %}
+        bootbox.alert({
+            message: '<p>{{ flash_message }}!</p>',
+            buttons: {
+                ok: {
+                    label: trans('bootbox.button.ok', locale)
+                }
+            }
+        });
+        {% endfor %}
+
+
+        var formComments = $('#job-comment form:eq(0)');
+        formComments.submit(function (e) {
+            e.preventDefault();
+            validFormInputs();
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $(".block-comments").html(data);
+                        $('#tj_admin_job_admin_comments_description').val('');
+                    }
+                });
+            }
+        });
+
+        $('#action_favorite').on('click', function () {
+            $(this).tooltip('destroy');
+            var action = $(this).attr('data-action');
+            var slug = "{{ job.slug }}";
+            var url = (action === 'remove') ? 'tj_inserate_job_favourite_remove' : 'tj_inserate_job_favourite_root';
+            url = Routing.generate(url, {slug: slug});
+
+            $.get(url, function (data) {
+                if (data.status === 'SUCCESS') {
+                    if (action === 'remove') {
+                        $('#action_favorite').removeClass('active').attr('data-action', 'add');
+                        $('.favorite-icon-name').addClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                    } else {
+                        $('#action_favorite').addClass('active').attr('data-action', 'remove');
+                        $('.favorite-icon-name').removeClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                        bootboxAfterFavoriteSuccesful();
+                    }
+                }
+            })
+        });
+
+
+        $('#delete-job').on('click', function (e) {
+            e.preventDefault();
+            var path = $(this).attr('href');
+            bootbox.confirm(trans('bootbox.wantToDelete', locale), function (result) {
+                if (result) {
+                    window.location.href = path;
+                }
+            });
+        });
+
+        $('#applyButtonPublishFirst').on('click', function () {
+            if ($(this).attr('data-action') === 'publishFirst')
+                bootbox.alert("{{ 'bootbox.job.application.publishProfile'|trans }}.", function () {
+                    console.log('');
+                });
+            else
+                bootbox.alert("Sorry, the information on your profile is older than one year. Please update your profile first, before you apply.", function () {
+                    console.log('');
+                });
+        });
+
+        $('.gratification-position').click(function () {
+            gratificationExplanation()
+        });
+
+    </script>
+{% endblock %}

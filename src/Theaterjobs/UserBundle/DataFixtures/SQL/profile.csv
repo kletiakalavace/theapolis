@@ -1,0 +1,23 @@
+firstName,lastName,subtitle,slug,isPublished,showWizard,profession,category,education_type,organization_id,start_date,finished,end_date,experience,management,skills,driving_license
+Simple,User,Simple User,simple-user,0,1,,Autoren-1,,,,,,,,,
+Member,Ship,Member Ship,member-ship,0,1,,Schauspieler-mannliche-rollen-1,,,,,,,,,
+Admin,Istrator,Admin Istrator,admin-istrator,1,1,,Schauspieler-weibliche-rollen-1,,,,,,,,,
+Sören,Fenner,Sören Fenner,soren-fenner,1,1,,Schauspielregie-1,,,,,,,,,
+User,Orga,User Orga,user-orga,0,1,,Schauspielmusik-1,,,,,,,,,
+Member,Orga,Member Orga,member-orga,0,1,,Sonstige-schauspiel-1,,,,,,,,,
+User2,Orga,User2 Orga,user2-orga,0,1,,Choreografie-direktion-1,,,,,,,,,
+User,OrgaOther,User OrgaOther,user-orgaother,0,1,,Tanzer-mannliche-rollen-1,,,,,,,,,
+Renate,Panke,Renate Panke,renate-panke,0,1,,Tanzer-weibliche-rollen-1,,,,,,,,,
+Nicole,Koenig,Nicole Koenig,nicole-koenig,1,1,,Sonstige-tanz-1,,,,,,,,,
+Kay,Ramczyk,Kay Ramczyk,kay-ramczyk,1,1,,Komposition-1,,,,,,,,,
+Mikiko,Feldmeier,Mikiko Feldmeier,mikiko-feldmeier,1,1,Schauspieler (männliche Rollen),Dirigat-musikalische-leitung-1,university,Theater der Bundesstadt Bonn,2006,0,,less_than_two_years,0,Skiing;Serbian,b
+Martin,Heim,Martin Heim,martin-heim,1,1,Schauspielmusik,Dirigat-musikalische-leitung-1,college,Capitol-Theater,2002,0,,no_experience,0,Iceskating,b
+Marina,Erdmann,Marina Erdmann,marina-erdmann,1,1,Choreografie / Direktion,Musiktheaterregie-1,professional_training,Düsseldorfer Marionetten-Theater,2010,1,2011,two_four_years,0,Dream-Dancer,b
+Karen,Suender,Karen Suender,karen-suender,1,1,Komposition,Musiktheaterregie-1,vocational_school,Konzertdirektion Landgraf,2012,0,,more_than_four_years,0,Schauspieler;Sitting around,b
+Cyrus,Rahbar,Cyrus Rahbar,cyrus-rahbar,1,1,Sopran,Musiktheaterregie-1,further_education,Vereinigte Bühnen Wien,2009,0,,more_than_four_years,0,Sitting around,b
+Felix,Frenken,Felix Frenken,felix-frenken,1,1,Horn,Sanger-mannliche-solopartien-1,university_entrance,Hans Otto Theater,2008,0,,no_experience,0,Jazzdance;US-English,b
+Frederik,Beyer,Frederik Beyer,frederik-beyer,1,1,Requisite,Sanger-weibliche-solopartien-1,secondary_school,Landesbühne Niedersachsen Nord,1995,1,1998,two_four_years,1,Ballett,b
+Isabel,Delemarre,Isabel Delemarre,isabel-delemarre,1,1,Gewandmeisterei,Violine-1,no_degree,Thalia Theater ,,,,less_than_two_years,0,Jazzdancce,b
+Florian,Schmitt,Florian Schmitt,florian-schmitt,1,1,Personalwesen,Violine-1,university_entrance,Theater und Orchester Neubrandenburg / Neustrelitz,2003,0,,no_experience,0,Ballet,b
+Katharina,Forster,Katharina Forster,katharina-forster,1,1,Hausverwaltung,Kontrabass-1,doctorate,Theater und Orchester Neubrandenburg / Neustrelitz,2007,1,2011,more_than_four_years,1,Latinum,b
+Martina,Strahl,Martina Strahl,martina-strahl,1,1,Moderation / Sprechen,Kontrabass-1,university,Vereinigte Bühnen Wien,1989,0,,less_than_two_years,0,French,b

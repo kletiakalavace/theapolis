@@ -1,0 +1,85 @@
+{% extends '::base.html.twig' %}
+{% form_theme edit_form '@VichUploader/Form/fields.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+    "@TheaterjobsProfileBundle/Resources/public/less/audioplayer.less" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block content %}
+    <div class="row" style="min-height: 1000px!important;;">
+        <div class="col-md-6">
+            <h1>{{ 'tj.profile.media.audio.title' | trans }}</h1>
+            {{ form_start(edit_form) }}
+            {{ form_row(edit_form._token) }}
+            {{ form_row(edit_form.uploadFile) }}
+            {{ form_row(edit_form.uploadFileImage) }}
+            {% if app.request.get('id') %}
+                <img src="{{ imgBase64 }}" style="width:auto;height:160px;" id="imgAudio">
+            {% endif %}
+            {# {% if app.request.get('id') %}
+                 {{ form_row(edit_form.file,{'attr':{'class':'hidden'} }) }}
+                 <div class="playerContainer col-md-12">
+                     <div class="player pull-left">
+                         <div class="pl"></div>
+                         <div class="marquee title">
+                         </div>
+                         <div class="controls">
+                             <div class="play"></div>
+                             <div class="pause"></div>
+                             <div class="rew"></div>
+                             <div class="fwd"></div>
+                         </div>
+                         <div class="volume"></div>
+                         <div class="tracker"></div>
+                     </div>
+                     <ol class="playlist hidden">
+                         <li audiourl="./../../../..{{ entity.getLogoWebPath  }}">{{entity.path|slice(0,entity.path|length-4)}}</li>
+                     </ol>
+                 </div>
+                 <a class="btn btn-wanrning hidden" id="leaveAudio" href="#">{{ 'tj.profile.leave.previous.audio' | trans }}</a>
+                 <a class="btn btn-wanrning" id="changeAudio" href="#">{{ 'tj.profile.change.audio' | trans }}</a>
+             {% endif %}#}
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter='?uglifyjs2'
+    "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+    "@TheaterjobsProfileBundle/Resources/public/js/profile/audioplayer.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        $(function () {
+            $('form[name="theaterjobs_profilebundle_media_audio"]').validate({
+                rules: {
+                    "theaterjobs_profilebundle_media_audio[file]": function () {
+                        if (!$("#theaterjobs_profilebundle_media_audio_file").hasClass('hidden')) {
+                            return true;
+                        }
+                    }
+                }
+            });
+            $("#changeAudio").click(function () {
+                $("#theaterjobs_profilebundle_media_audio_file").removeClass("hidden");
+                $(".playerContainer").addClass('hidden');
+                $("#leaveAudio").removeClass("hidden");
+                $(this).addClass('hidden');
+            });
+            $("#leaveAudio").click(function () {
+                $("#theaterjobs_profilebundle_media_audio_file").addClass("hidden");
+                $(".playerContainer").removeClass('hidden');
+                $("#changeAudio").removeClass("hidden");
+                $(this).addClass('hidden');
+            });
+            $("#theaterjobs_profilebundle_media_audio_title").rules("add", {minlength: 1, maxlength: 60});
+        });
+
+    </script>
+{% endblock %}

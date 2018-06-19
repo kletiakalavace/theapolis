@@ -1,0 +1,23 @@
+{% set isActive = active_nav(path("tj_profile_profile_show", {slug : app.user.profile.slug})) == 2 %}
+{% set profilePhoto =  profile_photo(profile,'uploadFile','small_thumbnail') %}
+{% set filter = '' %}
+
+{% if profile.mediaImage|first.filter is defined %}
+    {% set filter = profile.mediaImage|first.filter %}
+{% endif %}
+
+
+<a class="navbar-left navbar-nav-user {{ isActive ? 'active' : '' }}"
+   data-hash="user" data-toggle="modal" data-target="#myUser"
+   href="{{ path('tj_main_default_user_modal') }}">
+    <div class="user">
+        <div class="profile-photo-xs user-image">
+            <figure class="{{ filter }}">
+                <img id="modalProfileImg" src="{{ profilePhoto }}" alt="Small profile sample">
+            </figure>
+        </div>
+        <div class="user-name {{ app.user.hasNotifications ? "has-notification" : "" }}">
+            {{ app.user.profile | defaultName }}
+        </div>
+    </div>
+</a>

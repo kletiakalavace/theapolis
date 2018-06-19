@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+{% form_theme edit_form '@VichUploader/Form/fields.html.twig' %}
+
+{% block content %}
+    <div class="row" style="min-height: 1000px!important;;">
+        <div class="col-md-6">
+            <h1>{{ 'tj.profile.media.pdf.title' | trans }}</h1>
+            {{ form_start(edit_form) }}
+            {{ form_row(edit_form._token) }}
+            {{ form_widget(edit_form.uploadFile) }}
+            {{ form_end(edit_form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter='?uglifyjs2'
+    "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+//        $('#theaterjobs_profilebundle_media_pdf_privacy option:nth-child(1)').removeAttr("selected");
+//        $('#theaterjobs_profilebundle_media_pdf_privacy option:nth-child(2)').attr("selected", "selected");
+        $(function () {
+            $('form[name="theaterjobs_profilebundle_media_pdf"]').validate({
+                rules: {
+                    "theaterjobs_profilebundle_media_pdf[file]": function () {
+                        if (!$("#theaterjobs_profilebundle_media_pdf_file").hasClass('hidden')) {
+                            return true;
+                        }
+                    }
+                }
+            });
+            $("#changePdf").click(function () {
+                $("#theaterjobs_profilebundle_media_pdf_file").removeClass("hidden");
+                $("#pdfLink").addClass('hidden');
+                $("#leavePdf").removeClass("hidden");
+                $(this).addClass('hidden');
+            });
+            $("#leavePdf").click(function () {
+                $("#theaterjobs_profilebundle_media_pdf_file").addClass("hidden");
+                $("#pdfLink").removeClass('hidden');
+                $("#changePdf").removeClass("hidden");
+                $(this).addClass('hidden');
+            });
+        });
+    </script>
+{% endblock %}

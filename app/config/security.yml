@@ -1,0 +1,136 @@
+security:
+    always_authenticate_before_granting:  true
+    acl:
+        connection: default
+    encoders:
+        FOS\UserBundle\Model\UserInterface:
+            algorithm:            pbkdf2
+            hash_algorithm:       sha512
+            encode_as_base64:     true
+            iterations:           10000
+
+    role_hierarchy:
+        ROLE_ABO:         ROLE_MEMBER
+        ROLE_MEMBER:      ROLE_USER
+        ROLE_ADMIN:       [ROLE_MEMBER, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_EMPLOYER:    ROLE_USER
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+#        refresh:
+#            pattern:  ^/api/token/refresh
+#            stateless: true
+#            anonymous: true
+#        gettoken:
+#            pattern:  ^/api/getToken$
+#            stateless: true
+#            gfreeau_get_jwt:
+#                # this is the default config
+#                username_parameter: username
+#                password_parameter: password
+#                post_only: true
+#                authentication_provider: security.authentication.provider.dao
+#                user_checker: security.user_checker
+#                success_handler: lexik_jwt_authentication.handler.authentication_success
+#                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+ # protected firewall, where a user will be authenticated by its jwt token
+#        api:
+#            pattern:   ^/api
+#            stateless: true
+#            # default configuration
+#            lexik_jwt: ~ # check token in Authorization Header, with a value prefix of e:    bearer
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/
+            form_login:
+                provider:             fos_userbundle
+                success_handler:      theaterjobs_user.component.authentication.handler
+                failure_handler:      theaterjobs_user.component.authentication.handler
+                csrf_provider:        form.csrf_provider
+                login_path:           /#login
+                use_forward:          false
+                check_path:           fos_user_security_check
+                failure_path:         null
+                default_target_path:  tj_main_default_home
+                use_referer:          true
+
+            remember_me:
+                key:      %secret%
+                #14 days
+                lifetime: 1209600
+                path:     /
+                domain:   ~
+            logout:
+                path:   fos_user_security_logout
+                handlers : [theaterjobs_user.security.logout_handler]
+                success_handler: theaterjobs_user.component.authentication.handler.logout.success
+                # Das ist nur temporär wegen eines Bugs in php 5.4.9 siehe https://github.com/symfony/symfony/issues/5868
+                # invalidate_session: false
+            anonymous:    true
+            switch_user: ~
+
+    access_control:
+#   Admin Bundle
+        - { path: '^/[a-z]+/admin/*', role: ROLE_ADMIN, methods: "(POST|GET)" }
+#   Inserate Bundle
+#   AdminCommentsController
+        - { path: '^/[a-z]+/admincomments/*', role: ROLE_ADMIN, methods: "(POST|GET)" }
+#   ApplicationTrackController
+        - { path: '^/[a-z]+/applicationRequest/*', role: ROLE_MEMBER, methods: "(POST|GET)" }
+#        Old Routes
+        - { path: '^/noAuth', access: "isAnonymous()" }
+        - { path: '^/api/getToken', access: "isAnonymous()" }
+        - { path: '^/api/token/refresh', access: "isAnonymous()" }
+        - { path: '^/api', access: "isFullyAuthenticated()" }
+        - { path: '^/[a-z]+/login$', access: "isAnonymous()" }
+        - { path: '^/[a-z]+/register/confirmed/\w+', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/register/confirm/\w+/\w+', role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^/[a-z]+/register', access: "isAnonymous()" }
+        - { path: '^/[a-z]+/resetting', access: "isAnonymous()" }
+        - { path: '^/[a-z]+/resetting/reset/', access: "isAnonymous()" }
+        - { path: '^/[a-z]+/userModal', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/people/(addprofilefavourite|removeprofilefavourite|favourites|wizard|update/media|notifications|notification|change|views|edit/[a-z]|position|profilePhoto|new|delete|skills/\w)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/admin/job/(jobsfromothers|employment)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/admin/(category|jobtitle|skill|tags)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/admin/membership/[a-z]*[\d+]', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/admin/cronjob', methods: POST, access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/faq/(category|question)', methods: POST, access: "hasRole('ROLE_USER')" }
+#        - { path: '^/[a-z]+/userorganization/(new|suggest|choose|create)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/faq/category/update', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/(jobmail|education|notificationsettings|dashboard|membership|employments|productions|experiences|accountSettings|emailchangerequest|passwordchange)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/network/(new|logodelete|archive|mynetwork|drafts|archived|favouritelist|addnetworkfavourite|removenetworkfavourite)', access: "hasRole('ROLE_USER')" }
+#        - { path: '^/[a-z]+/organization/(get/tags)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/piece/(new|archive|logodelete|favouritelist|addpiecefavourite|removepiecefavourite)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/(select|confirmBankData)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/(executePayment|successPaymentSofort|cancelPaymentSofort|notifyPaymentSofort)', role: ROLE_USER}
+        - { path: '^/[a-z]+/membership/billing-address/(new|edit|update)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/billing/storno', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/booking/(mybookings|new)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/checkout/(prepayment|direct-debit|checkout)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/debitaccount/(new|edit|update)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/paymentmethod/select', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/paypal/(executePayment|cancelPayment|list)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/membership/sepamandate/(new|show|list)', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/work/application/(interesting|archive|addapplication|closeapplications)', access: "hasRole('ROLE_MEMBER')" }
+        - { path: '^/[a-z]+/network/create', methods: POST, access: "hasRole('ROLE_MEMBER')"}
+#        - { path: '^/[a-z]+/organization/get/users', access: "hasRole('ROLE_MEMBER')" }
+        - { path: '^/[a-z]+/profile/changeviewstracking', access: "hasRole('ROLE_MEMBER')" }
+        - { path: '^/[a-z]+/piece/create', methods: POST, access: "hasRole('ROLE_MEMBER')"}
+        - { path: '^/[a-z]+/work/(check|administrate|movetoadmins|sendjobmail|removefromadmins)', access: "hasRole('ROLE_ADMIN')"}
+        - { path: '^/[a-z]+/network/deleted', access: "hasRole('ROLE_ADMIN')"}
+        - { path: '^/[a-z]+/notificationsettings/useractivity', access: "hasRole('ROLE_ADMIN')"}
+        - { path: '^/[a-z]+/education/deleted', access: "hasRole('ROLE_ADMIN')"}
+        - { path: '^/[a-z]+/complain/(index|single)', access: "hasRole('ROLE_ADMIN')"}
+        - { path: '^/[a-z]+/membership/paymentmethod/(block|unblock|list)', access: "hasRole('ROLE_ADMIN')"}
+        - { path: '^/[a-z]+/(admin|siteinfo|admincomments|stats)', access: "hasRole('ROLE_ADMIN')" }
+        - { path: '^/[a-z]+/account/settings/(allowedto|userentities|blockdeletion|unblockdeletion|startPayment)', access: "hasRole('ROLE_ADMIN')" }
+        - { path: '^/[a-z]+/account/settings/*', access: "hasRole('ROLE_USER')" }
+        - { path: '^/[a-z]+/faq/(question|category)', access: "hasRole('ROLE_ADMIN')" }
+#        - { path: '^/[a-z]+/organization/(new|delete|close|notreachable|activate)', access: "hasRole('ROLE_ADMIN')" }
+        - { path: '^/[a-z]/admin/jobqueues.*', access: "hasRole('ROLE_ADMIN')"}

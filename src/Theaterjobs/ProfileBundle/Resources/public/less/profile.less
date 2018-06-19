@@ -1,0 +1,855 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template fileige
+    Created on : Apr 20, 2016, 10:08:40 AM
+    Author     : Kletia
+*/
+
+
+
+// New styles
+.profile-header{
+  width: 100%;
+  margin-bottom: 50px;
+  padding-top:30px;
+}
+.profile-header:before, .profile-header:after{
+  content: '';
+  display: table;
+}
+.profile-header:after{
+  clear: both;
+}
+.profile-pic-holder{
+  width: 35%;
+  float: left;
+}
+.profile-pic{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-pic > img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+.profile-generals{
+  width: 65%;
+  padding: 0 0 0 50px;
+  float: left;
+}
+.profile-generals h1{
+  font-size: 72px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-family: "Kepler Std";
+  color:#1f1f1f;
+}
+.profile-generals p{
+  font-size: 18px;
+  color:#202020;
+  font-family: 'Aktiv Grotesk', sans-serif;
+  margin-bottom: 20px;
+  font-weight:normal;
+  line-height: 1.5;
+}
+.profile-stars span{
+  font-size: 30px;
+  color: #A8A8A8;
+}
+
+.profile-general-stats{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.profile-general-stats .profile-stats{
+  text-align: center;
+  background-color: #e6e6e6;
+  padding: 32px;
+}
+.profile-general-stats .profile-stats .profile-stats-data-title{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  color: #1f1f1f;
+  margin-bottom: 30px;
+}
+.profile-general-stats .profile-stats .profile-stats-data{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 0.46;
+  text-align: center;
+  color: #1f1f1f;
+
+}
+.profile-general-stats .profile-stats:last-child{
+  margin-bottom: 20px;
+}
+.profile-general-stats .profile-stats .profile-stats-data.city-profile{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.07;
+  text-align: center;
+  color: #1f1f1f;
+}
+.profile-pics-holder{
+  width: 100%;
+}
+.profile-pics-holder .img-holder{
+  width: 95%;
+  height: 300px;
+  margin: 20px auto;
+  background-color: #e6e6e6;
+}
+.profile-insta-join .img-holder{
+  width: 95%;
+  height: 160px;
+  margin: 20px auto;
+  background-color: #e6e6e6;
+}
+
+.row .profile-info{
+  padding: 0;
+}
+.row .profile-info:nth-child(2n+2) .user-info{
+  margin-right: 0;
+}
+.row .profile-info:nth-child(2n+2) .user-info .user-info-data{
+  width: 80%;
+}
+.user-info{
+  box-sizing: border-box;
+  padding: 39px 0;
+  color:#fff;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: 'Aktiv Grotesk', sans-serif;
+}
+.user-info.masonry-grid-item{
+  width: 100%;
+}
+.user-info .user-info-data{
+  width: 100%;
+  margin: 30px auto;
+  padding-left: 67px;
+}
+.user-info .user-info-data.production-data{
+  width: 60%;
+  margin: 30px auto;
+  padding-left:0;
+}
+.user-info .user-info-data.production-data h4{
+  margin-left:-67px;
+}
+.user-info-data h4{
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.32;
+  font-family: 'Aktiv Grotesk', sans-serif;
+  margin-bottom:25px;
+}
+.user-info-data h5{
+  font-size:20px;
+  text-transform:uppercase;
+  font-weight: 700;
+  margin: 30px 0;
+}
+.user-info-data ul{
+  list-style:none;
+  padding-left:0;
+  margin-bottom: 50px;
+}
+.user-info-data li span{
+  margin-left:30px;
+
+}
+.user-info-data li{
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.78;
+}
+.user-info-data .social{
+  margin-top: 50px;
+}
+.user-info-data .social a{
+  margin-right: 20px;
+}
+.user-info-data .social a.bg-white span.icon-instagram {
+  margin: 1px 0 0 3px;
+}
+.masonry-grid-item-profile {
+  width: 231px;
+  float: left;
+}
+.masonry-grid-item-insta-profile {
+  width: 147px;
+  float: left;
+}
+.item-half{
+  width:49%;
+}
+.masonry-item-profile-info{
+  width: 49.2%;
+  margin-bottom:20px;
+}
+.profile-insta-join h4{
+  font-size:23px;
+  font-weight:800;
+  padding-bottom:30px;
+}
+.footer-profile{
+  background-color:#e6e6e6;
+  padding:50px 0;
+}
+.profile-show-layout.navbar{
+  min-height:100px;
+  padding:0;
+}
+.profile-show-layout.navbar > .container {
+  padding-top: 30px;
+}
+.profile-show-layout.navbar .logo-homepage{
+  width:125px
+}
+.profile-stars{
+  margin-top:43px;
+}
+.recommend-profile{
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-right: 10px;
+  float: left;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.recommend-profile img{
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  display: block;
+}
+.profile-stars span.title-recommend{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 3;
+  color: #202020;
+}
+.bg-grey{
+  background-color: #e6e6e6;
+  margin-left: 30px;
+  width: 31%;
+}
+.row-eq-height .bg-grey:first-child{
+  margin-left:0;
+}
+
+.tj-carousel{
+  //width: 100%;
+  height: 700px;
+  margin: 30px 0 0 0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.tj-carousel .tj-carousel-media-stats-holder{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999999;
+}
+.tj-carousel .tj-carousel-media-stats-holder .tj-carousel-media-stats{
+  margin: 10px 0;
+  background: #1f1f1f;
+  padding: 9px 14px 3px;
+
+}
+.tj-carousel .tj-carousel-media-stats-holder .tj-carousel-media-stats p{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.tj-carousel .tj-carousel-previous{
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 82px;
+  font-size: 40px;
+  font-weight: 300;
+  color: #1F1F1F;
+  z-index: 999999;
+}
+.tj-carousel .tj-carousel-next{
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 82px;
+  font-size: 40px;
+  font-weight: 300;
+  color: #1F1F1F;
+  z-index: 999999;
+}
+.tj-carousel .tj-carousel-items{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+
+}
+.tj-carousel .tj-carousel-item{
+  margin-right: 30px;
+  height: 700px;
+  width:1068px !important;
+}
+.tj-carousel .tj-carousel-item img{
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+.tj-carousel .slick-prev,.tj-carousel .slick-next{
+  width:80px;
+  height:80px;
+  opacity:1;
+  font-size:40px;
+  z-index:9999;
+}
+.tj-carousel .slick-next{
+  right:50px;
+}
+.tj-carousel .slick-next:before{
+  content: "\f105";
+  font-family: 'FontAwesome';
+  color: #1f1f1f;
+  font-size: 69px;
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  line-height: 79px;
+}
+.tj-carousel .slick-prev:before{
+  content: "\f104";
+  font-family: 'FontAwesome';
+  color: #1f1f1f;
+  font-size: 69px;
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  line-height: 79px;
+}
+.slick-prev {
+  left: 50px;
+}
+
+.instagram-content.profile-instagram:after, .instagram-content.profile-instagram:before{
+  content: "";
+  width: 0;
+  height: 0;
+  position: inherit;
+  background-image: none;
+
+}
+
+.production-data{
+  width: 100%;
+}
+.production-title{
+  font-weight: 700;
+}
+.timeline{
+  margin-bottom: 30px;
+}
+.timeline li{
+  position: relative;
+  width:100%;
+  list-style-type: none;
+  margin: 0;
+  background: transparent;
+}
+.timeline li:before{
+  position: absolute;
+  content:'';
+  width: 5px;
+  left:0;
+  top:0;
+  height:100%;
+  background: #fff;
+}
+.timeline li:after{
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0;
+  transform: translateX(-50%);
+  border: 4px solid #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #87162D;
+}
+.timeline li div{
+  position: relative;
+  bottom: 0;
+  min-width: 400px;
+  padding: 3px 30px 30px 30px;
+}
+.cs-modal-body .timeline li div{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 3px 0px 30px 30px;
+  min-width: 950px;
+}
+.timeline li div time{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: -70px;
+  margin: 0;
+  line-height: 1;
+}
+.timeline li div p{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.timeline-link{
+    padding: 5px 28px;
+}
+
+.education-block li{
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+.education-block li div time{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.education-block li div p{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.user-bio-project-block{
+  padding: 50px 15px;
+}
+.bio-block h2{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.11;
+  color: #202020;
+}
+.bio-block p{
+  font-family: "Kepler Std";
+  font-size: 21px;
+  line-height: 1.33;
+  color: #1f1f1f;
+  margin-bottom: 30px;
+  width:93%;
+}
+.bio-block a{
+  font-size: 18px;
+}
+
+.current-project-block h2{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.11;
+}
+.current-project-block p{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 18px;
+  line-height: 1.56;
+  font-weight: 400;
+}
+.current-project-block time{
+  font-family: 'Aktiv Grotesk', sans-serif;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 700;
+}
+.group-slider-info{
+  position: absolute;
+  z-index: 9999;
+  left: 20px;
+  top:20px;
+}
+.group-slider-info span{
+  display: block;
+  background: #1f1f1f;
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Aktiv Grotesk', sans-serif;
+}
+.content-slider-carousel{
+  position: relative;
+}
+.show-more-production{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  padding: 123px 168px;
+  color:#fff;
+}
+.show-additional-course{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  padding: 123px 168px;
+  color:#fff;
+}
+.btn-add-hide-additional span{
+  height:10px;
+  border:2px solid #fff;
+  display: block;
+}
+.btn-add-hide-additional .plus-line{
+  transform:rotate(10deg)
+}
+.btn-add-hide-additional .minus-line{
+  transform:rotate(-10deg)
+}
+.full-width{
+  width:100% !important;
+}
+#show-more-production,#show-additional-course{
+  cursor:pointer;
+}
+.gruop-contact span{
+  display: inline-block;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background-color: #1f1f1f;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left:10px;
+}
+
+.profile-show-layout-hash{
+  min-height:100px;
+  padding:0;
+  background-color: #ffffff;
+  position: relative;
+}
+.profile-show-layout-hash .navbar-toggle{
+  display: block;
+  position: absolute;
+  right: 245px;
+  transition: all 300ms;
+  transform: rotateX(0deg) translateY(0px);
+}
+.profile-show-layout-hash .navbar-toggle .icon-bar{
+  background-color: #1f1f1f;
+}
+.profile-show-layout-hash .nav{
+  transform: translateY(-200px);
+  transition: all 300ms;
+  background-color: #ffffff;
+}
+.profile-show-layout-hash .nav li a{
+  color: #1f1f1f;
+}
+.profile-show-layout-hash .nav li a:hover{
+  color: #1f1f1f;
+}
+.profile-show-layout-hash .nav li a:focus{
+  color: #1f1f1f;
+}
+
+// Profile people list style
+.profile-people-list{
+  margin: 0 165px 100px 165px;
+}
+.profile-people-list .profile-people-list-title h1{
+  font-stretch: normal;
+  font-family: "Kepler Std Display";
+  font-size: 72px;
+  text-align: center;
+  margin: 100px 0 70px 0;
+  font-weight: normal;
+  font-style: normal;
+  color: #1F1F1F;
+}
+
+.profile-people-list .profile-people-list-search-block .profile-people-list-search-block-title{
+  margin-bottom: 20px;
+}
+.profile-people-list .profile-people-list-search-block .profile-people-list-search-block-title p{
+  font-stretch: normal;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-size: 20px;
+  line-height: 1;
+  color: #1F1F1F;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.profile-people-list .profile-people-list-search-block-content{
+  background-color: #87162d;
+  box-sizing: border-box;
+  padding: 20px 50px;
+  margin-bottom: 20px;
+}
+.profile-people-list .profile-people-list-search-block-content .form-group{
+  margin-left: 20px;
+}
+.profile-people-list .profile-people-list-search-block-content .button{
+  margin-left: 20px;
+}
+.profile-people-list .profile-people-list-search-block-content .mapArea{
+  width: 300px;
+}
+.profile-people-list .profile-people-list-search-block-content .input-group .form-control{
+  border-right: none;
+}
+.profile-people-list .profile-people-list-search-block-content .input-group select.form-control{
+  padding: 11px 20px;
+}
+.profile-people-list .profile-people-list-search-block-content .input-group-addon{
+  background: #ffffff;
+  color: #a9a9a9;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  padding: 14px 13px;
+  font-size: 20px;
+  border-color: #a9a9a9;
+}
+.profile-people-list .sort-block{
+  margin-bottom: 20px;
+}
+.profile-people-list .profile-people-list-filter-block{
+  padding: 20px 0;
+  border-bottom: 3px solid #e6e6e6;
+  margin-bottom: 20px;
+}
+.profile-people-list .profile-people-list-filter-block .filter-block-title{
+  font-stretch: normal;
+  font-size: 14px;
+  font-family: "Aktiv Grotesk", sans-serif;
+  line-height: 1;
+  color: #1F1F1F;
+  font-weight: bold;
+  margin-right: 20px;
+  text-transform: uppercase;
+}
+.profile-people-list .profile-people-list-filter-block .filter-block-link{
+  font-stretch: normal;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-style: normal;
+  color: #6d6d6d !important;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.panel{
+  padding: 30px 30px;
+  background-color: #f2f2f2;
+  border-radius: 0;
+  margin-bottom: 10px;
+}
+.panel-info{
+  border: none;
+}
+
+.panel-info > .panel-heading{
+  background-color: transparent;
+  color: #1F1F1F;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-size: 20px;
+  font-stretch: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+}
+.panel-info > .panel-heading > a{
+  color: #1F1F1F;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-size: 20px;
+  font-stretch: normal;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.panel-body ul{
+  list-style: none;
+  padding: 0;
+}
+.panel-body ul li.form-inline{
+  margin-bottom: 10px;
+}
+
+.checkbox-label{
+  font-stretch: normal;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-style: normal;
+  line-height: 1.60;
+  color: #cd2036;
+  font-size: 18px;
+  font-weight: normal;
+}
+.category-count{
+  font-stretch: normal;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-style: normal;
+  line-height: 1.60;
+  color: #a9a9a9;
+  font-size: 18px;
+}
+
+.noUi-horizontal .noUi-handle{
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #F2F2F2;
+  border: 6px solid #cd2036;
+  border-radius: 50%;
+  left: -8px !important;
+}
+.noUi-handle:after, .noUi-handle:before{
+  content: none !important;
+}
+.noUi-horizontal{
+  height: 11px !important;
+}
+.noUi-connect{
+  background: #cd2036 !important;
+}
+
+.content-div-img{
+  margin-bottom: 30px;
+  background: #ffffff;
+}
+.info-profil-item a:hover{
+  text-decoration: none;
+}
+.name-profil{
+  font-family: "Aktiv Grotesk",sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.3;
+  color: #cd2036;
+  font-size: 20px;
+  font-weight: bold;
+}
+.subtitle-profile{
+  color: #000000;
+  font-stretch: normal;
+  font-size: 14px;
+  font-family: "Aktiv Grotesk", sans-serif;
+  line-height: 1.5;
+  font-weight: normal;
+  font-style: normal;
+}
+.favourite-profil-list{
+  color: #62c39f;
+}
+
+.ui-front{
+  width: 400px !important;
+  background: #87162D;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ui-front .ui-menu-item{
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.ui-front .ui-menu-item:hover{
+  background: darken(#87162D, 10%);
+}
+
+.filter-container-ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+.single-filter{
+  background: #6d6d6d;
+  padding: 5px 10px 8px 10px;
+  font-family: "Aktiv Grotesk", sans-serif;
+  font-size: 14px;
+  font-stretch: normal;
+  color: #ffffff;
+  font-weight: normal;
+}
+.remove-single-filter{
+  margin-left: 10px;
+}
+
+.sort-by-label{
+  margin-right: 20px;
+  margin-top: 6px;
+}
+
+.select2-choices{
+  background-image: none !important;
+}
+
+/*.select2-search-choice{
+  background: #87162D !important;
+  border: none !important;
+  color: #ffffff !important;
+  padding: 10px !important;
+  background-image: none !important;
+}*/
+
+.select2-result li{
+  color: #ffffff !important;
+}
+.select2-highlighted{
+  background: darken(#87162D, 10%) !important;
+}
+
+.profile-form-top{
+  width: 73%;
+  display: inline-block;
+}

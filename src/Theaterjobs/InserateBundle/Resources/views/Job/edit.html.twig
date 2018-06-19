@@ -1,0 +1,511 @@
+{% import 'macro.html.twig' as m %}
+<div class="modal-body movebottom" id="addJobs">
+    <!-- Skills -->
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-10 col-md-push-1">
+                <h2>{{ 'work.edit.title'|trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {% if( entity.status == 1) %}
+                            {% if(admin) %}
+                                {{ form_row(form.title,{'attr' : {'autocomplete': 'off' } }) }}
+                            {% else%}
+                                {{ form_row(form.title,{'attr' : {'autocomplete': 'off' ,'readonly': 'true'}}) }}
+                            {% endif %}
+                        {% else%}
+                            {{ form_row(form.title,{'attr' : {'autocomplete': 'off' } }) }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" class="education-radio" name="radio-education" {% if entity.gratification.id < 6 %} checked {% endif %}
+                                           value="1">
+                                    <span class="faux-radio"></span>{{ 'work.new.label.jobOffer'|trans }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            {% set isMember = is_granted('ROLE_MEMBER') %}
+                            <div class="radio {{ isMember ? '' : 'unusable' }}">
+                                <label>
+                                    <input type="radio" class="education-offer education-radio" name="radio-education" value="0" {% if entity.gratification.id > 5 %} checked {% endif %} >
+                                    <span class="faux-radio"></span> {{ 'work.new.label.educationOffer'|trans }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-{% if( entity.organization) %}6{% else %}12{% endif %} ">
+                        {{ form_row(form.categories,{'attr' : {'multiple': 'false'} }) }}
+                    </div>
+                    {% if( entity.organization) %}
+                        <div class="col-md-6">
+                            {{ form_row(form.organization,{'value' : entity.organization.name, 'attr' : {'multiple': 'false','readonly':'readonly'},'required' : true }) }}
+                            {{ form_row(form.createMode,{'attr' : {'class': 'hidden'}, 'value' : 1 }) }}
+                        </div>
+                    {% else %}
+                        {{ form_row(form.createMode,{'attr' : {'class': 'hidden'}, 'value' : 2 }) }}
+                    {% endif %}
+                </div>
+                <div class="row row-gratification">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{ form_label(form.gratification) }}
+                            <div class="gratification-job {% if entity.gratification.id > 5 %} hidden {% endif %}">
+                                <div class="group-value">
+                                    {% for key, var in form.gratification %}
+                                        {% if key < 6 %}
+                                            <div class="hidden">{{ form_widget(var) }}</div>
+                                            <span class="slider-steps"
+                                                  style="display: inline-block;margin-left: 0;text-align: center">
+                                            <div class="levels" data-toggle="tooltip" data-placement="bottom"
+                                                 title="{{ var.vars.label }}">
+                                            {% for i in 1..key %}
+                                                {% if(loop.last) %}
+                                                    <span class="levels-layer">{{ i }}</span>
+                                                {% else %}
+                                                    <span class="levels-layer"></span>
+                                                {% endif %}
+                                            {% endfor %}
+                                            </div>
+                                         </span>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div id="range-slider"></div>
+                            </div>
+                            <div class="gratification-edu {% if entity.gratification.id < 6 %} hidden {% endif %}">
+                                {% for key, var in form.gratification %}
+                                    {% if key > 5 %}
+                                        <div class="radio">
+                                            <label>
+                                                {{ form_widget(var) }}
+                                                <span class="faux-radio"></span>
+                                                {{ var.vars.label }}
+                                            </label>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row no-padding-right">
+                    <div class="col-md-4 checkbox-termsConditions">
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label id="terms-conditions">
+                                    {{ form_widget(form.asap) }}
+                                    <span class="faux-checkbox"></span>
+                                    {{ form_label(form.asap) }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 no-padding-right"  {% if(form.asap.vars.checked)%} style="display: none" {% endif %}>
+                        {{ form_row(form.engagementStart) }}
+                    </div>
+                    <div {%if(form.asap.vars.checked) %} class="col-md-8"  {% else %}  class="col-md-4 no-padding-left" {% endif %} >
+                        {{ form_row(form.engagementEnd) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {%  if(form.asap.vars.checked) %}
+                            {{ form_row(form.applicationEnd, { 'attr':{'disabled':'disabled'} }) }}
+                        {% else %}
+                            {{ form_row(form.applicationEnd) }}
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        {% if(form.vars.value.applicationEnd) %}
+                            {{ form_row(form.publicationEnd, { 'attr':{'readonly':'readonly'} }) }}
+                        {% else %}
+                            {{ form_row(form.publicationEnd) }}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="row row-localized">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" class="localization-radio" name="radio-localization" {% if( (form.vars.value.geolocation) and (form.vars.value.geolocation !='' )) %} checked {% endif %} value="1">
+                                    <span class="faux-radio"></span>{{ 'work.new.label.localized'|trans }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" class="localization-radio" name="radio-localization" {% if((form.vars.value.geolocation is null) or (form.vars.value.geolocation =='')) %} checked {% endif %} value="0">
+                                    <span class="faux-radio"></span> {{ 'work.new.label.unlocalized'|trans }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 {% if((form.vars.value.geolocation is null) or (form.vars.value.geolocation =='')) %} hidden{% endif %}" id="localization-group">
+                        <label>{{ 'work.edit.label.enterLocation'|trans }}</label>
+                        <div id="map_container" style="width: 177px;margin: auto;position:relative">
+                            <div class="input-group input-find input-location-news">
+                                <input id="pac-input" class="pac-control form-control" type="text"
+                                       placeholder="{{ "work.edit.placeholder.enterLocation" | trans }}">
+                                <span id="currentLocation"
+                                      class="input-group-addon btn btn-success"><i class="fa fa-map-marker"></i>
+                                </span>
+                            </div>
+                            <div id="map" style="height:230px"></div>
+                            <div class="hidden">
+                                {% if((form.vars.value.geolocation is null) or (form.vars.value.geolocation =='')) %}
+                                    {{ form_row(form.geolocation, { 'attr':{'disabled':'disabled'} }) }}
+                                {% else %}
+                                    {{ form_row(form.geolocation)}}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(form.email) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 editor-job-contact">
+                        {{ form_row(form.contact,{'attr':{'class' : 'usefultextarea  ckeditor'} } ) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 new-job">
+                        <label>{{ 'work.edit.label.uploadLogo'|trans }}</label>
+                        <div id="profile-media" class="upload-image-news upload-image">
+                            <div class="news_cover">
+                                <img id="medianews" src="{% if form.vars.value.path is not null %} {{ vich_uploader_asset(form.vars.value, 'uploadFile') | imagine_filter('profile_photo') }} {% elseif form.vars.value.organization is not null and form.vars.value.organization.path %}{{ vich_uploader_asset(form.vars.value.organization, 'uploadFile') | imagine_filter('news_show') }}{% endif %}"/>
+                                <label class="display-slider-add-content upload-block upload-logo-job"
+                                       id="news-label-image">
+                                    {{ form_widget(form.uploadFile) }}
+                                    + {{ 'work.edit.label.addLogo'| trans }} <br> 1:1
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 new-job">
+                        <label>{{ 'work.edit.label.backgroundHeader'| trans }}</label>
+                        <div id="cover-media" class="upload-image-news upload-image">
+                            <div class="news_cover">
+                                <img id="mediacover" src="{% if form.vars.value.pathCover is not null %} {{ vich_uploader_asset(form.vars.value, 'uploadFileCover') | imagine_filter('profile_photo') }} {% endif %}"/>
+                                <label class="display-slider-add-content upload-block" id="news-label-cover-image">
+                                    {{ form_widget(form.uploadFileCover) }}
+                                    + {{ 'work.edit.label.addImage'| trans }} <br> (1440 x 810) px
+                                </label>
+                            </div>
+                        </div>
+                        {% if form.vars.value.pathCover is not null %}
+                            {{ form_row(form.copyrightText) }}
+                        {% else %}
+                            {{ form_row(form.copyrightText, { 'attr':{'disabled':'disabled'} }) }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 editor-desc-news">
+                        {{ form_row(form.description,{'attr':{'class' : 'usefultextarea  ckeditor'} } ) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                    </div>
+                    {{ form_widget(form._token) }}
+                    {{ form_widget(form.optedForDel) }}{# to store and pass to server side which of the images will be deleted.#}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form, {'render_rest': false}) }}
+        {{ m.error }}
+        {{ m.info_localized }}
+        <input type="hidden" id="initialDate" value="{{ entity.createdAt|date("d.m.Y") }}">
+    </div>
+</div>
+
+<script>
+    {% if form is defined %}
+    var LatLng = null;
+    var oldLatLng = null;
+    {% if  form.geolocation.vars.value %}
+        LatLng = "{{ form.geolocation.vars.value }}";
+        oldLatLng = LatLng.split(",");
+    {% endif %}
+    {% endif %}
+    var CKDescription = '{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/bio.js') }}';
+    var CKContact='{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/contact.js') }}';
+</script>
+
+{% javascripts
+"@TheaterjobsMainBundle/Resources/public/js/map/location.js"
+'@TheaterjobsInserateBundle/Resources/public/js/job/job_edit.js'
+"@TheaterjobsMainBundle/Resources/public/js/resizeImage.js"
+%}
+
+<script>
+    $.getScript("{{ asset_url }}");
+</script>
+{% endjavascripts %}
+
+<script>
+    var isJobPublished = {{ entity.published ? 'true' : 'false' }};
+    var copyrightField = $('#tj_inserate_form_job_copyrightText');
+
+    var fileInputCoverImage = $('.uploadCoverImage :input');
+    fileInputCoverImage.change(function () {
+
+        copyrightField.rules("add", "required");
+        copyrightField.prop('disabled', false);
+        copyrightField.valid();
+
+        var reader = new FileReader();
+        var urlBase46 = null;
+        var file = this.files[0];
+        var ext = file.name.split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'svg']) === -1) {
+            toastr.error("The allowed types are ['gif', 'png', 'jpg', 'jpeg', 'svg']");
+            $(this).val("");
+            return;
+        }
+        else if (file.size === 10971520) {
+            toastr.error("The max upload size is 10M");
+            $(this).val("");
+            return;
+        }
+        $(reader).load(function (e) {
+            urlBase46 = e.target.result;
+            $('#mediacover').attr('src', base64toBlobUrl(urlBase46));
+        });
+        reader.readAsDataURL(file);
+        optForDelete('mediacover',false);
+        imgRemoveBtnInit ('remove-button-cover','news-label-cover-image','cover-media','tj_inserate_form_job_uploadFileCover_file','mediacover',false);
+    });
+
+
+    var fileInputAudioImage = $('.uploadAudioImage :input');
+    fileInputAudioImage.change(function () {
+        var reader = new FileReader();
+        var urlBase46 = null;
+        var file = this.files[0];
+        var ext = file.name.split('.').pop().toLowerCase();
+        if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'svg']) === -1) {
+            toastr.error("The allowed types are ['gif', 'png', 'jpg', 'jpeg', 'svg']");
+            $(this).val("");
+            return;
+        }
+        else if (file.size === 10971520) {
+            toastr.error("The max upload size is 10M");
+            $(this).val("");
+            return;
+        }
+        $(reader).load(function (e) {
+            urlBase46 = e.target.result;
+            $('#medianews').attr('src', base64toBlobUrl(urlBase46));
+        });
+        reader.readAsDataURL(file);
+        optForDelete('medianews',false);
+        imgRemoveBtnInit ('remove-button','news-label-image','profile-media','tj_inserate_form_job_uploadFile_file','medianews');
+
+    });
+
+    function imgRemoveBtnInit (id,imgLabel,media,input,src){
+
+        var removeButt = '<label class="remove-image-button-news" id="'+id+'">' +
+            '<svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">' +
+            '<use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use></svg></label>';
+
+        $('#'+media).children(".remove-image-button-news").remove();
+        $('#'+media).append(removeButt);
+        $("#"+imgLabel).addClass('display_hover');
+
+        $('#'+id).click(function () {
+            if(input === 'mediaCover'){
+                copyrightField.rules("remove", "required");
+                copyrightField.prop('disabled', true);
+                copyrightField.valid();
+            }
+
+            $("#"+imgLabel).removeClass('display_hover');
+            optForDelete(src,true);
+            resetFile($('#'+input));
+            $('#'+src).attr('src', '');
+            $(this).remove();
+        });
+    }
+
+    function checkHasImg(src){
+        var actualSource = $('#'+src).attr('src');
+        if(actualSource !== ''){
+            if(src === 'medianews'){
+                imgRemoveBtnInit ('remove-button','news-label-image','profile-media','tj_inserate_form_job_uploadFile_file','medianews');
+            }
+            else{
+                imgRemoveBtnInit ('remove-button-cover','news-label-cover-image','cover-media','tj_inserate_form_job_uploadFileCover_file','mediacover');
+            }
+        }
+    }
+
+    function optForDelete(src, del){
+        var imageForDelArray = JSON.parse($("#tj_inserate_form_job_optedForDel").val());
+        var i = (src === 'medianews') ? 0:1;
+        imageForDelArray[i] = del;
+        $("#tj_inserate_form_job_optedForDel").val(JSON.stringify(imageForDelArray));
+    }
+
+    var slider = document.getElementById('range-slider');
+    var slider_nodes = 0;
+    var steps = [];
+
+    {% for var in form.gratification %}
+    {% if var.vars.value < 6 %}
+    steps.push({grat_id:{{ var.vars.value }}, grat_label: '{{ var.vars.label }}'});
+    slider_nodes ++;
+    {% endif %}
+    {% endfor %}
+
+    var gratification = {{gratificationPosition}};
+    //IF offer is an education offer.
+    //Set slider default node to 2 (default gratification is with id 3 but slider nodes starts at 0).
+    //ELSE Set slider default node to gratificationId - 1 (slider nodes starts at 0).
+    var sliderStart = (gratification > 5) ? 2 : gratification-1;
+
+    noUiSlider.create(slider, {
+        start: sliderStart,
+        connect: [true, false],
+        step: 1,
+        range: {
+            'min': 0,
+            'max': slider_nodes - 1
+        }
+    });
+
+    radioButt = document.getElementsByName('tj_inserate_form_job[gratification]');
+
+    slider.noUiSlider.on('slide', function (values, handle) {
+        radioButt[parseInt(values[handle])].checked = true;
+    });
+
+    var varSpecialStepWidth = 0.087;
+    var varSpecialSliderWidth = 0.15;
+    $(window).resize(function () {
+        if ($(this).width() < 784) {
+            varSpecialStepWidth = 0.3;
+            varSpecialSliderWidth = 0.15;
+        } else {
+            varSpecialStepWidth = 0.087;
+            varSpecialSliderWidth = 0.15;
+        }
+    });
+
+    $(document).ready(function () {
+
+        checkHasImg('medianews');
+        checkHasImg('mediacover');
+
+        if ($(window).width() < 784) {
+            varSpecialStepWidth = 0.3;
+            varSpecialSliderWidth = 0.15;
+        }
+        else {
+            varSpecialStepWidth = 0.087;
+            varSpecialSliderWidth = 0.15;
+        }
+
+        var step_width = 100 / slider_nodes - slider_nodes * varSpecialStepWidth;
+        $('.slider-steps').css('width', step_width + '%');
+        $('#range-slider').css({
+            'margin-left': 100 / slider_nodes / 2 + '%',
+            'width': (slider_nodes - 1) * 100 / slider_nodes + varSpecialSliderWidth + '%'
+        });
+    });
+
+    $("#tj_inserate_form_job_categories").on("change", function (e) {
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+
+        }
+    });
+
+    $('form[name="tj_inserate_form_job"] input, form[name="tj_inserate_form_job"] select').on('keyup change', function() {
+
+        if ($(this).valid()) {
+            $(this).tooltip('destroy');
+            $(this).parent().tooltip('destroy');
+            $(this).closest('.has-error').removeClass('has-error');
+
+        }
+    });
+
+    $('.levels-layer').click(function(){gratificationExplanation()});
+
+    $("form[name=tj_inserate_form_job]").validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+        },
+        ignore: [],
+        rules: {
+            "login[username]": {
+                required: false
+            }
+        }
+    });
+
+    var gratificationVal = {{ entity.gratification.id }};
+
+    var selectedValues = $('#tj_inserate_form_job_categories').val();
+
+    var catOpt = $('#tj_inserate_form_job_categories');
+    var allOpt = catOpt.clone();
+
+    var lastCatoption = catOpt.find('optgroup').last();
+
+    allOpt = allOpt.find('optgroup:not(:last-child)');
+    catOpt.empty();
+    catOpt.append(allOpt);
+
+
+    if (gratificationVal > 5 ) {
+        $('.gratification-edu').removeClass('hidden');
+        $('.gratification-job').addClass('hidden');
+        catOpt.empty();
+        catOpt.append(lastCatoption);
+    }
+    else {
+        $('.gratification-edu').addClass('hidden');
+        $('.gratification-job').removeClass('hidden');
+        catOpt.empty();
+        catOpt.append(allOpt);
+    }
+
+    $('.education-radio').change(function() {
+        if($(this).val()== 1) {
+            $("input[name=background][value='some value']").prop("checked",true);
+        }
+
+    });
+
+    //Add values to select2
+    $("#tj_inserate_form_job_categories").select2('val',selectedValues.toString().split(','));
+
+</script>

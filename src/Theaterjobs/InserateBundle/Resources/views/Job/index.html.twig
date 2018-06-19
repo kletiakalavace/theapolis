@@ -1,0 +1,128 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('jobIndex')) }}
+    <div class="page-wrap" id="jobs">
+        {{ form_start(form) }}
+        <div class="container" id="workSearch">
+            <div class="block">
+                <!-- Page header -->
+                <div class="page-header">
+                    <h1><span id="searchCategory">{{ "work.list.title.work" | trans }}</span></h1>
+                </div>
+                <div class="panel-filter">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-3 col-xs-12">
+                            <div class="form-group no-margin {{ is_granted('ROLE_MEMBER') ? '' : is_granted('ROLE_USER') ? 'unusable' : 'registerFirst' }}">
+                                {{ form_label(form.searchPhrase) }}
+                                {% if is_granted('ROLE_MEMBER') %}
+                                    {{ form_widget(form.searchPhrase) }}
+                                {% else %}
+                                    {{ form_widget(form.searchPhrase, {'attr':{'style':'pointer-events: none;' } }) }}
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group form-group-with-aside no-margin">
+                                <label class="control-label required slabel"
+                                       for="area">{{ "work.search.label.place" | trans }}</label>
+                                <div id="map_container" style="width: 900px;margin: auto;">
+                                    <div class="input-group input-find input-location-people {{ is_granted('ROLE_MEMBER') ? '' : is_granted('ROLE_USER') ? 'unusable' : 'registerFirst' }}">
+                                        <input id="pac-input"
+                                               class="pac-control form-control form-control-location"
+                                               type="text" onchange="locationChange();"
+                                               style="{{ is_granted('ROLE_MEMBER') ? '' : 'pointer-events: none;' }}"
+                                               placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                                        {{ form_widget(form.location,{'attr':{'class' : 'hidden'}}) }}
+                                    </div>
+                                    <div id="map" class="hidden"></div>
+                                </div>
+                                <div class="form-group-aside">
+                                    {{ form_label(form.area) }}
+                                    {{ form_widget(form.area,{ 'attr': {'onchange': 'areaChange(this);'}}) }}
+                                    {% if showStatus == 1 %}
+                                        {{ form_widget(form.status,{'attr':{'class':'hidden'}}) }}
+                                    {% endif %}
+                                    {% if is_granted('ROLE_MEMBER') %}
+                                        {{ form_widget(form.gratification,{'attr':{'class':'hidden'}}) }}
+                                    {% else %}
+                                        {{ form_widget(form.gratification,{'attr':{'class':'hidden unusable'}}) }}
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-3 col-xs-12">
+                            <a href="#" id="btn-search-location">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="jobPartial">
+                    <h3> {{ 'work.list.subtitle.OrSearchbyCategory'| trans }}</h3>
+                    <div class="row row-multi-row row-flex">
+                        {% for category in aggs.categories.buckets %}
+                            <div class="col-md-4 col-xs-6 col-xxs-12">
+                                <a class="category {% if category.key == 'bildung' %} category-purple {% endif %}"
+                                   href="{{ path('tj_inserate_job_route_list', { 'category': category.key }) }}">
+                                    <img src="{{ custom_imagine_filter("bundles/theaterjobscategory/images/categories/"~category.img) }}"
+                                         alt="{{ category.title }}">
+                                    <h2 class="h2-alt">{{ category.title }}</h2>
+                                    <p class="category-count">{{ category.doc_count }}</p>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% do form.subcategories.setRendered %}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/map/placeSuggest.js'
+        '@TheaterjobsMainBundle/Resources/public/js/geohash.js'
+        "@TheaterjobsMainBundle/Resources/public/js/resizeImage.js"
+        '@TheaterjobsInserateBundle/Resources/public/js/job/job.index.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        {% for flash_message in app.session.flashBag.get('msg') %}
+        bootbox.alert({
+            message: '<p>{{ flash_message }}!</p>'
+        });
+        {% endfor %}
+
+        {% for flash_message in app.session.flashBag.get('deleteMsg') %}
+        customAlert('.page-header', 'success', '{{ flash_message }}');
+        {% endfor %}
+
+        function customAlert(appendTo, status, text) {
+            var elementBox;
+            elementBox = '<div class="message-info message-' + status + '">' + text + '<span class="close-message">' +
+                '<svg id="x-close" class="icon-svg icon-svg-inverse" width="20" height="20">' +
+                '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>' +
+                '</svg>' +
+                '</span>' +
+                '</div>';
+
+            $(elementBox).insertBefore(appendTo).delay(5000).fadeOut('400', function () {
+                $(this).remove();
+            });
+
+            $('#x-close').click(function (el) {
+                $('.message-info').remove();
+            });
+
+            $('html, body').animate({scrollTop: '0px'}, 300);
+        }
+    </script>
+{% endblock %}

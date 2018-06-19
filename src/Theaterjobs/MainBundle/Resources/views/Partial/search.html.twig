@@ -1,0 +1,187 @@
+<div class="container">
+    {% set noResults=0 %}
+    {% if peoples.getTotalItemCount() > 0 %}
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>{{ 'search.results.People'|trans }}</h3>
+            </div>
+            <div class="col-xs-7">
+                <ul class="search-list">
+                    {% for people in peoples %}
+                        {% set profilePhoto =  profile_photo(people,'uploadFile','logos') %}
+                        {% set filter = '' %}
+
+                        {% if people.mediaImage|first.filter is defined %}
+                            {% set filter = people.mediaImage|first.filter %}
+                        {% endif %}
+
+                        <li>
+                            {% if people.subtitle2 is defined %}
+                                <div class="profile-photo-xs profile-photo-inline photo-profile-center">
+                                    <figure class="{{ filter }}">
+                                        <img src="{{ profilePhoto }}">
+                                    </figure>
+                                </div>
+                                <a href="{{ path('tj_profile_profile_show', { 'slug': people.slug }) }}">
+                                    {{ people.subtitle }}
+                                </a>
+                                <p class="p-alt">
+                                    <small>{{ people.subtitle2 }}</small>
+                                </p>
+                            {% else %}
+                                <div class="profile-photo-xs profile-photo-inline">
+                                    <figure class="{{ filter }}">
+                                        <img src="{{ profilePhoto }}">
+                                    </figure>
+                                </div>
+                                <a href="{{ path('tj_profile_profile_show', { 'slug': people.slug }) }}">
+                                    {{ people.subtitle }}
+                                </a>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+
+                    {% if peoples.getTotalItemCount() > 3 %}
+                        <a class="pull-right link-more-resultSearch"
+                           href="{{ path('tj_profile_profile_list', { 'searchPhrase': search }) }}">
+                            {{ 'general.link.moreResults'|trans }}
+                        </a>
+                    {% endif %}
+                </ul>
+
+            </div>
+        </div>
+        {% set noResults=1 %}
+    {% endif %}
+
+    {% if organizations.getTotalItemCount() > 0  %}
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>{{ 'search.results.Organization'|trans }}</h3>
+            </div>
+            <div class="col-xs-7">
+                <ul class="search-list">
+                    {% for organization in organizations %}
+                        <li>
+                            {% if organization.path is defined and organization.path %}
+                                {% set orgLogo =  vich_uploader_asset(organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Organization') | imagine_filter("list_photo") %}
+                            {% else %}
+                                {% set orgLogo = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                            {% endif %}
+                            <div class="profile-photo-xs profile-photo-inline">
+                                <img src="{{ orgLogo }}">
+                            </div>
+                            <a href="{{ path('tj_organization_show', { 'slug': organization.slug }) }}">{{ organization.name }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if organizations.getTotalItemCount() > 3 %}
+                        <a class="pull-right link-more-resultSearch"
+                           href="{{ path('tj_main_organization_home', { 'searchPhrase': search }) }}">
+                            {{ 'general.link.moreResults'|trans }}
+                        </a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% set noResults=1 %}
+    {% endif %}
+
+    {% if not is_granted('ROLE_USER') %}
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>{{ 'search.results.Jobs' | trans }}</h3>
+            </div>
+            <div class="col-xs-7">
+                <ul class="search-list">
+                    {{ 'general.job.results.registerFirst' | trans }}
+                </ul>
+            </div>
+        </div>
+    {% elseif not is_granted('ROLE_MEMBER') %}
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>{{ 'search.results.Jobs' | trans }}</h3>
+            </div>
+            <div class="col-xs-7">
+                <ul class="search-list">
+                    {{ 'general.job.results.becomeMember' | trans }}
+                </ul>
+            </div>
+        </div>
+    {% else %}
+        {% if jobs.getTotalItemCount() > 0  %}
+            <div class="row">
+                <div class="col-xs-3">
+                    <h3>{{ 'search.results.Jobs'|trans }}</h3>
+                </div>
+                <div class="col-xs-7">
+                    <ul class="search-list">
+                        {% for job in jobs %}
+                            <li>
+                                {% if job.path is defined and job.path %}
+                                    {% set jobLogo =  vich_uploader_asset(organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Job') | imagine_filter("list_photo") %}
+                                {% else %}
+                                    {% set jobLogo = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                                {% endif %}
+
+                                <div class="profile-photo-xs profile-photo-inline">
+                                    <img src="{{ jobLogo }}">
+                                </div>
+                                <a
+                                        {% if not is_granted('ROLE_USER') %} class="registerFirst"
+                                        {% elseif not is_granted('ROLE_MEMBER') %} class="unusable"
+                                        {% else %} href="{{ path('tj_inserate_job_route_show', { 'slug': job.slug }) }}" {% endif %}
+                                >
+                                    {{ job.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                        {% if jobs.getTotalItemCount() > 3 %}
+                            <a class="pull-right link-more-resultSearch"
+                               href="{{ path('tj_inserate_job_route_list', { 'searchPhrase': search }) }}">
+                                {{ 'general.link.moreResults'|trans }}
+                            </a>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            {% set noResults=1 %}
+        {% endif %}
+    {% endif %}
+
+    {% if news.getTotalItemCount() > 0  %}
+        <div class="row">
+            <div class="col-xs-3">
+                <h3>{{ 'search.results.News'|trans }}</h3>
+            </div>
+            <div class="col-xs-7">
+                <ul class="search-list">
+                    {% for new in news %}
+                        <li>
+                            {% if new.path is defined and new.path %}
+                                {% set newsLogo =  vich_uploader_asset(new, "uploadFile" , 'Theaterjobs\\NewsBundle\\Entity\\News') | imagine_filter("news_list") %}
+                            {% else %}
+                                {% set newsLogo = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                            {% endif %}
+                            <div class="profile-photo-xs profile-photo-inline">
+                                <img src="{{ newsLogo }}">
+                            </div>
+                            <a href="{{ path('tj_news_show', { 'slug': new.slug }) }}">{{ new.title }}</a>
+                        </li>
+                    {% endfor %}
+                    {% if news.getTotalItemCount() > 3 %}
+                        <a class="pull-right link-more-resultSearch"
+                           href="{{ path('tj_news', { 'searchPhrase': search }) }}">
+                            {{ 'general.link.moreResults'|trans }}
+                        </a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+        {% set noResults=1 %}
+    {% endif %}
+
+    {% if noResults==0 %}
+        <h3>{{ 'general.link.noResults'|trans }}</h3>
+    {% endif %}
+</div>

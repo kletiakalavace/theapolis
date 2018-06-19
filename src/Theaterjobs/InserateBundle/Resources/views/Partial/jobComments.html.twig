@@ -1,0 +1,2 @@
+{% import '::macro.html.twig' as m %}
+{{ m.showComments(entity.adminComments, path('tj_job_comments_all',{'slug':entity.slug})) }}

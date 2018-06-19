@@ -1,0 +1,81 @@
+{% import '@TheaterjobsMain/mainMacro.html.twig' as mm %}
+
+<div class="block">
+    <!-- Page header -->
+    {% set hasSearches = searches | length > 0 %}
+    <div class="page-header search-header">
+        <h1>{{ 'user.list.searchResults'|trans }}</h1>
+        {% if not hasSearches %}
+            <div class="separator"></div>
+        {% endif %}
+    </div>
+    {% for search in searches %}
+        {% set showTitle = false %}
+        {#Check if first record#}
+        {% if loop.index == 1 %}
+            {% set init = search.ShortEntity %}
+        {% endif %}
+        {% if loop.index > 1 and searches[loop.index - 1].ShortEntity != init %}
+            <div class="separator separator-full search-separator"></div>
+            {% set init = search.ShortEntity %}
+            {% set showTitle = true %}
+        {% endif %}
+        <div class="row list-searchResult">
+            <div class="col-lg-2 col-md-2 entity-title" data-index="{{ loop.index }}">
+                {% if loop.index == 1 %}
+                    <h3 class="margin-md">{{ ('user.list.searchResults.'~search.ShortEntity) | trans }}</h3>
+                {% endif %}
+                {% if loop.index > 1 and showTitle %}
+                    <h3 class="margin-md">
+                        {{ ('user.list.searchResults.'~search.ShortEntity) | trans }}</h3>
+                    {% set showTitle = false %}
+                {% endif %}
+            </div>
+            <div class="col-lg-10 col-md-10 display-row" >
+                <ul class="search-list search-user-list">
+                    <li>
+                        <div class="col-sm-12 search-title-link">
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                {{ mm.render_search_tags(search.paramsArr) }}
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="row">
+                                    {% if search.ShortEntity == 'job' %}
+                                        <div class="radio notify-check notification" onclick="notifyMeDaily(this)">
+                                            <label>{{ 'user.searchlist.notifyMeDaily'| trans }}
+                                                <input class="check-input once-input"
+                                                   id="checkbox-{{ search.id }}" data-hash="{{ search.id }}"
+                                                   type="checkbox" {{ search.notification == 1 ? 'checked' : '' }}>
+                                                <span class="faux-checkbox"></span>
+                                            </label>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="remove-search">
+                                <a href="javascript:;" onclick="removeSaveSearch('{{ search.id }}')" class="remove">
+                                    {{ 'link.remove'| trans }}
+                                </a>
+                            </div>
+                            <div class="show-result">
+                                <div class="row">
+                                    {% set linkParams = search.getParams %}
+                                    <a href="{{ path(search.routeName, linkParams ) }}">
+                                        {{ 'user.searchlist.link.showResults'| trans }}
+                                    </a>
+                                </div>
+                            </div>
+                            <hr class="small-line-separator"/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+    {# @TODO Change style to tell the user there is no save searches#}
+    <div id="no-save-searches" class="middle-block {{ (searches | length) > 0 ? 'hidden' : '' }}">
+            <h3 class="text-center">{{ "empty.saveSearch.description" | trans }}</h3>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+{% block breadcrumb %}
+      <li class="active">{{ 'tj.breadrumbs.user.notificationsetings' | trans}}</li>
+ {% endblock %}
+{% block content %}
+    <h1>{{ 'tj.user.notification.settings.list' | trans }}</h1>
+    <form action="{{path('notificationsettings')}}" method="POST">
+        <div class="row">
+            <div class='col-md-6'>
+                <h3>{{ 'notification.require.noAction' | trans }}</h3>
+                {% for notification in notificNoAction %}
+                    {% if notification.id in activeNotifications %}
+                        <div class="col-md-12">
+                            <label>
+                                <input type="checkbox" name="notification[]" value="{{notification.id}}" checked="checked"> {{notification.title}}
+                            </label>
+                        </div>
+                    {% else %}
+                        <div class="col-md-12">
+                            <label>
+                                <input type="checkbox" name="notification[]" value="{{notification.id}}"> {{notification.title}}
+                            </label>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class='col-md-6'>
+                <h3>{{ 'notification.require.action' | trans }}</h3>
+                {% for notification in notificAction %}
+                    {% if notification.id in activeNotifications %}
+                        <div class="col-md-12">
+                            <label>
+                                <input type="checkbox" name="notification[]" value="{{notification.id}}" checked="checked"> {{notification.title}}
+                            </label>
+                        </div>
+                    {% else %}
+                        <div class="col-md-12">
+                            <label>
+                                <input type="checkbox" name="notification[]" value="{{notification.id}}"> {{notification.title}}
+                            </label>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row col-md-6"><input type="submit" class="btn btn-primary" name="submit" value="{{ 'tj.user.notification.settings.button.save' | trans }}"></div>
+    </form>
+
+{% endblock %}

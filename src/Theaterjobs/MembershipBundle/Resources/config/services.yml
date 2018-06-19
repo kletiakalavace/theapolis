@@ -1,0 +1,5 @@
+services:
+# EXAMPLE
+#    app.mailer:
+#        class:     AppBundle\Mailer
+#        arguments: ['%app.mailer.transport%']

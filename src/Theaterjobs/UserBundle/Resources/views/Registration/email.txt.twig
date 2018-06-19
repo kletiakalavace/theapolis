@@ -1,0 +1,38 @@
+{% trans_default_domain 'emails' %}
+{% block subject %}
+    {% autoescape false %}
+        {{ 'registration.email.subject'| trans }}
+    {% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% endblock %}
+{% block body_html %}
+
+{% if choice == 'free' -%}
+{{ 'email.registration.salutation'|trans }} {{ user.profile.firstName}} {{user.profile.lastName }},
+<br><br>
+{{ 'email.registration.insertProfile'|trans }}
+<a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a>
+<br><br>
+{{ 'email.registration.greetings'|trans }}
+<br>
+{% elseif choice == 'member' -%}
+{{ 'email.registration.salutation'|trans }} {{ user.profile.firstName}} {{user.profile.lastName }},
+<br><br>
+{{ 'email.registration.becomeMember'|trans }}
+<a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a>
+<br><br>
+{{ 'email.registration.greetings'|trans }}
+<br>
+{% else -%}
+{{ 'email.registration.salutation'|trans }} {{ user.profile.firstName}} {{user.profile.lastName }},
+<br><br>
+{{ 'email.registration.insertJob'|trans }}
+<a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a>
+<br><br>
+{{ 'email.registration.greetings'|trans }}
+<br>
+{% endif -%}
+<br>
+{% endblock %}
+{% include "TheaterjobsMainBundle:Mailer:footer.txt.twig" %}

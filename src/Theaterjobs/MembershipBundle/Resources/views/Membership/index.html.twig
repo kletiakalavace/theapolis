@@ -1,0 +1,104 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'membership.index.title'| trans }}{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        {{ m.flashbags(app.session.flashbag.get('membershipIndex')) }}
+        <div class="block">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'membership.header.title.becomeMember' | trans }}</h1>
+                        <p class="p-alt">{{ 'membership.header.description' | trans }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="block block-large block-green">
+            <div class="container">
+                <div class="block-header row">
+                    <div class="col-xs-8 col-xs-offset-2">
+                        <h2>{{ 'membership.options.title.membershipOptions' | trans }}</h2>
+                        <p class="hide-xs">{{ 'membership.options.description' | trans }}</p>
+                    </div>
+                </div>
+                <div class="row row-flex no-flex-md">
+                    <div class="col-md-4 col-xs-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="h3 text-danger hide-md">{{ 'membership.membership.card.free' | trans }}</p>
+                                <h2 class="h2-alt">{{ 'membership.card.professional' | trans }}</h2>
+                                <ul class="list-unstyled list-small">
+                                    <li>{{ 'membership.card.awesome.profile' | trans }}</li>
+                                    <li>{{ 'membership.card.people' | trans }}</li>
+                                    <li>{{ 'membership.card.organizations' | trans }}</li>
+                                    <li>{{ 'membership.card.productions' | trans }}</li>
+                                    <li>{{ 'membership.card.educations' | trans }}</li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <a href="{{ path('fos_user_registration_register_choise',{'choice':'free'}) }}"
+                                   class="btn btn-primary">{{ 'menu.button.join' | trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="h3 text-danger hide-md">{{ 'membership.card.paid' | trans }}</p>
+                                <h2 class="h2-alt">{{ 'membership.card.professional' | trans }}</h2>
+                                <ul class="list-unstyled list-small">
+                                    <li>{{ 'membership.card.awesome.profile' | trans }}</li>
+                                    <li>{{ 'membership.card.people' | trans }}</li>
+                                    <li>{{ 'membership.card.organizations' | trans }}</li>
+                                    <li>{{ 'membership.card.productions' | trans }}</li>
+                                    <li>{{ 'membership.card.educations' | trans }}</li>
+                                    <li class="text-danger"><strong>+{{ 'membership.card.link.jobs' | trans }}</strong></li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer">
+                                <a href="{{ path('fos_user_registration_register_choise',{'choice':'free'}) }}"
+                                   class="btn btn-primary">{{ 'menu.button.join' | trans }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="h3 text-info hide-md">{{ 'membership.card.free' | trans }}</p>
+                                <h2 class="h2-alt">{{ 'membership.add.jobs' | trans }}</h2>
+                                <p class="p-alt text-small">{{ 'membership.card.description' | trans }}</p>
+                                <p class="p-alt text-small">{{'membership.card.no.public.profile' | trans }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <p><a class="btn btn-info">{{ 'menu.button.join' | trans }}</a></p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script>
+        $(function () {
+            var colum_eq = $('.column-eq');
+
+            var heights = colum_eq.map(function () {
+                        return $(this).height();
+                    }).get(),
+                    maxHeight = Math.max.apply(null, heights);
+
+            colum_eq.css({
+                "min-height": maxHeight + "px"
+            });
+        });
+    </script>
+{% endblock %}
+
+

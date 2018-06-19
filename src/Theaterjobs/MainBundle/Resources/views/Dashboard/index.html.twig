@@ -1,0 +1,362 @@
+{% extends "::base.html.twig" %}
+{% import "@TheaterjobsMain/mainMacro.html.twig" as mainM %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('dashboard')) }}
+    {% if  is_granted('ROLE_USER') %}
+        <div class="dashboard-one">
+            <div class="container">
+                <div class="block">
+                    <!-- Profile header -->
+                    <div class="profile-header">
+                        {% set profilePhoto =  profile_photo(profile,'uploadFile','profile_modal') %}
+                        {% set filter = '' %}
+                        {% if profile.mediaImage|first.filter is defined %}
+                            {% set filter = profile.mediaImage|first.filter %}
+                        {% endif %}
+
+                        <div class="profile-header-left">
+                            <div class="profile-header-photo">
+                                <div class="profile-photo-lg {{ filter }}">
+                                    <a href="{{ path('tj_profile_profile_show', {'slug': app.user.profile.slug}) }}">
+                                        <figure class="{{ filter }}">
+                                            <img src="{{ profilePhoto }}" alt="{{ profile | defaultName }}">
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-header-content">
+
+                            <h1>{{ 'dashboard.profile.hi'|trans }} {{ profile | defaultName }}</h1>
+                            <ul class="profile-header-list">
+                                {% if (is_granted('ROLE_ADMIN')) %}
+                                    <li>
+                                        <span class="label label-default">{% if (is_granted('ROLE_ADMIN')) %} {{ 'Administrator' | trans }} {% elseif is_granted('ROLE_MEMBER') %} {{ 'Member' | trans }}  {% else %} {{ 'Registered user' | trans }} {% endif %}</span>
+                                    </li>
+                                {% endif %}
+                                <li>
+                                    {% if choice is not null %}
+                                        {% if choice == 'free' %}
+                                            <p><a href="{{ path('tj_membership_booking_new') }}"
+                                                  class="nowrap">{{ 'dashboard.link.becomeMember'| trans }} →</a></p>
+                                        {% elseif choice == 'member' %}
+                                            <p><a href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}"
+                                                  class="nowrap">{{ 'dashboard.link.enterYourProfile'| trans }} →</a>
+                                            </p>
+                                        {% elseif choice == 'job' %}
+                                            <p><a href="{{ path('tj_membership_booking_new') }}"
+                                                  class="nowrap">{{ 'dashboard.link.becomeMember'| trans }} →</a></p>
+                                        {% endif %}
+                                    {% else %}
+                                        {% if is_granted('ROLE_MEMBER') %}
+                                            {% if dateDiff is not null and dateDiff <= 40 %}
+                                                {% if paymentMethod and paymentMethod == 'direct' and not(profile.user.quitContract) %}
+                                                    {% set adviceLabel = ('dashboard.label.directdebit.membershipExpiresOn' | trans ) ~' '~ profile.user.membershipExpiresAt | date('d.m.Y') %}
+                                                    {% set linkUrl =  path('tj_user_account_settings') %}
+                                                    {% set  linkLabel = 'dashboard.link.editDirectDebitData'| trans %}
+                                                {% else %}
+                                                    {% set adviceLabel = ('dashboard.label.membershipExpiresOn' | trans ) ~' '~ profile.user.membershipExpiresAt | date('d.m.Y') %}
+                                                    {% set linkUrl =  path('tj_membership_booking_new') %}
+                                                    {% set  linkLabel = 'dashboard.link.prolongMembership'| trans %}
+                                                {% endif %}
+                                                <p><span class="p-alt text-small">{{ adviceLabel }}</span>
+                                                    <a href="{{ linkUrl }}" class="nowrap">{{ linkLabel }} →</a>
+                                                </p>
+                                            {% endif %}
+                                        {% elseif is_granted('ROLE_USER') %}
+                                            <p><a href="{{ path('tj_membership_booking_new') }}"
+                                                  class="nowrap">{{ 'dashboard.link.becomeMember'| trans }} →</a></p>
+                                        {% endif %}
+                                    {% endif %}
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="profile-header-controls">
+                            {% if choice is not null %}
+                                {% if choice == 'free' %}
+                                    <p><a href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}"
+                                          class="btn btn-default">{{ 'dashboard.link.enterYourProfile'| trans }}</a></p>
+                                    <p class="p-alt tex-small">{{ 'dashboard.desc.joinOurCommunity'| trans }}</p>
+                                {% elseif choice == 'member' %}
+                                    <p><a href="{{ path('tj_membership_booking_new') }}"
+                                          class="btn btn-default">{{ 'dashboard.link.becomeMember'| trans }}</a></p>
+                                    <p class="p-alt tex-small">{{ 'dashboard.desc.publishYourProfile'| trans }}</p>
+                                {% elseif choice == 'job' %}
+                                    <p><a href="{{ path('tj_inserate_job_route_select_job_type') }}"
+                                          data-target="#myModal" data-hash="newjob"
+                                          data-toggle="modal"
+                                          data-color="#87162D"
+                                          class="btn btn-default">{{ 'dashboard.link.addaJob'| trans }}</a></p>
+                                    <p class="p-alt tex-small">{{ 'dashboard.desc.publishJobOffer'| trans }}.</p>
+                                {% endif %}
+                            {% else %}
+                                {% if profile.isPublished %}
+                                    <p><a href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}"
+                                          class="btn btn-default">{{ 'dashboard.link.editYourProfile'| trans }}</a>
+                                    </p>
+                                    <p class="p-alt text-small">{{ 'dashboard.descripion.editYourProfile'| trans }}.</p>
+                                {% else %}
+                                    {% if isProfileFilled %}
+                                        <p><a href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}"
+                                              class="btn btn-default">{{ 'dashboard.link.publishYourProfile'| trans }}</a>
+                                        </p>
+                                        <p class="p-alt text-small">{{ 'dashboard.descripion.publishYourProfile'| trans }}.</p>
+                                    {% else %}
+                                        <p><a href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}"
+                                              class="btn btn-default">{{ 'dashboard.link.enterYourProfile'| trans }}</a>
+                                        </p>
+                                        <p class="p-alt text-small">{{ 'dashboard.descripion.enterYourProfile'| trans }}.</p>
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Highlights -->
+                    {#  <h3>{{ 'dashboard.title.lastvisit'|trans }}</h3>#}
+                    <div class="row d-flex no-flex-sm">
+                        {#All jobs#}
+                        <div class="col-sm-4 col-xs-12">
+
+                            <div class="highlight highlight-primary-dark">
+                                <div class="highlight-wrap">
+                                    <div class="highlight-title">{{ 'dashboard.box.newJobs' | trans }}</div>
+                                    <a href="{{ path('tj_inserate_job_route_list', {sortBy : 'date'}) }}">
+                                        <div class="highlight-large">{{ dashboardBox[0].data.count }}</div>
+                                    </a>
+                                    <div class="highlight-description">{{ 'dashboard.box.newJobs.description' | trans }}</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {#All Profiles#}
+                        <div class="col-sm-4 col-xs-12">
+
+                            <div class="highlight highlight-purple">
+                                <div class="highlight-wrap">
+                                    <div class="highlight-title">{{ ("dashboard.box." ~ dashboardBox[1].kind) | trans }}</div>
+                                    <a href="{{ path('tj_profile_profile_show', {slug : app.user.profile.slug}) }}">
+                                        <div class="highlight-large">{{ dashboardBox[1].data.count }}</div>
+                                    </a>
+                                    <div class="highlight-description">{{ 'dashboard.box.profileVisits.description' | trans }}</div>
+                                </div>
+                            </div>
+
+                        </div>
+                        {#All job views/News#}
+                        <div class="col-sm-4 col-xs-12">
+
+                            <div class="highlight highlight-blue">
+                                <div class="highlight-wrap">
+                                    {% if profile.contactSection and (profile.contactSection.city is not null or profile.contactSection.country is not null) %}
+                                        <div class="highlight-title">{{ 'people.show.highlight.label.livesIn'| trans }}
+                                            <i class="" style="cursor:pointer;margin-left:3px;" aria-hidden="true"
+                                               href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}">
+                                            </i>
+                                        </div>
+                                        <div class="highlight-medium" id="profileLiveIn">
+                                            {{ profile.contactSection.city }}<br> {{ profile.contactSection.country }}
+                                        </div>
+                                    {% else %}
+                                        <div class="highlight-title">{{ 'people.show.highlight.label.livesIn'| trans }}</div>
+                                        <a class="add-content"
+                                           href="{{ path('tj_profile_profile_show',{'slug':profile.slug}) }}">
+                                            + {{ 'people.add.highlight.location' | trans }}</a>
+                                    {% endif %}
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Updates -->
+            <div class="block block-gray">
+                <div class="container">
+                    <div class="row">
+                        {% if fos_message_nb_unread() > 0 or allNotifications > 0 or recentNews|length > 0 %}
+                        <div class="col-md-8 col-xs-12 notification-msg">
+                            {% if fos_message_nb_unread() > 0 %}
+                                <h3> {{ 'dashboard.title.messages' | trans }}</h3>
+                                {{ mainM.dashboardMessages() }}
+                            {% endif %}
+
+                            {% if allNotifications > 0 %}
+                                <h3>{{ 'dashboard.title.notifications' | trans }}</h3>
+                                {{ mainM.dashboardNotificiations(notifications) }}
+                            {% endif %}
+
+                            {% if recentNews|length > 0 %}
+                                <h3 class="text-center-xs">{{ 'dashboard.recentnews.title'|trans }}</h3>
+                                {{ mainM.dashboardNews(recentNews) }}
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        <aside class="col-md-4 col-xs-12 mgtop floating pull-right">
+                            {% if userOrganizations|length > 0 %}
+                                <div class="panel panel-white">
+                                    <h4 class="panel-head">{{ 'dashboard.myOrganizations'|trans }}</h4>
+                                    {% for orga in userOrganizations %}
+                                        {% if orga.organization.path is defined and orga.organization.path %}
+                                            {% set orgaPhoto = vich_uploader_asset(orga.organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Organization') | imagine_filter("list_photo") %}
+                                        {% else %}
+                                            {% set orgaPhoto = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                                        {% endif %}
+                                        <div class="profile organization-list title-middle">
+                                            {% if orgaPhoto is defined  and orgaPhoto is not null %}
+                                                <div class="photo-overflow-visible">
+                                                    <div class="profile-photo-md"><img src="{{ orgaPhoto }}"></div>
+                                                </div>
+                                            {% endif %}
+                                            <div class="profile-content">
+                                                <h4>
+                                                    <a href="{{ path('tj_organization_show',{slug:orga.organization.slug}) }}">
+                                                        {{ orga.organization.name }}
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                            <div class="panel panel-white ">
+                                <h4 class="panel-head">{{ "dashboard.quickLinks" |trans }}</h4>
+                                <ul class="list-spaced unstyled">
+                                    {% if app.user is not null %}
+                                        {% if(app.user.profile.searches|length > 0) %}
+                                            <li>
+                                                <a href="{{ path("tj_saved_searches_list") }}"><strong>{{ 'user.show.items.searches' | trans }}
+                                                        ({{ app.user.profile.searches|length }})</strong></a></li>
+                                        {% endif %}
+                                        <li>
+                                            <a href="{{ path('tj_profile_profile_show', {'slug': app.user.profile.slug}) }}">
+                                                <strong>{{ 'user.show.items.profile' | trans }}</strong>
+                                            </a>
+                                        </li>
+                                        {% if( nrAppliedJobs > 0 ) %}
+                                            <li>
+                                            <a href="{{ path('tj_inserate_job_route_list', {'applied' : 1}) }}"><strong>{{ 'user.show.items.applications' | trans }}
+                                                    ({{ nrAppliedJobs }}) </strong></a></li>{% endif %}
+
+                                        {{ m.showFavourites(app.user.profile.userFavourite, app.user.profile.organisationFavourite, app.user.profile.jobFavourite, app.user.profile.newsFavourite) }}
+                                    {% endif %}
+
+                                    {% if( userJobs > 0 ) %}
+                                        <li>
+                                        <a href="{{ path('tj_inserate_job_route_myjobs', {'status' : ['1', '2', '3', '5']}) }}"><strong>{{ 'user.show.items.myJobs' | trans }}
+                                                ({{ userJobs }}) </strong></a></li>{% endif %}
+
+                                    <li>
+                                        <a href="{{ path('tj_user_account_settings') }}"><strong>{{ 'user.show.items.account' | trans }}</strong></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="panel panel-white ">
+                                <h4 class="panel-head">{{ "dashboard.insert" |trans }}</h4>
+                                <ul class="list-spaced unstyled">
+                                    <li>
+                                        <a class="nowrap "
+                                           href="{{ path('tj_inserate_job_route_select_job_type') }}"
+                                           data-target="#myModal" data-hash="newjob"
+                                           data-toggle="modal"
+                                           data-color="#87162D">{{ "link.addJobs"| trans }} →</a>
+                                    </li>
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <li>
+                                            <a class="nowrap "
+                                               href="{{ path('tj_main_organization_new') }}" data-target="#myModal" data-hash="newNews  "
+                                               data-toggle="modal"
+                                               data-color="#87162D">{{ "link.addOrganization"| trans }} →</a>
+                                        </li>
+                                        <li>
+                                            <a class="nowrap" href="{{ path('tj_news_new') }}"
+                                               data-target="#myModal" data-hash="newNews  "
+                                               data-toggle="modal"
+                                               data-color="#87162D">{{ "link.addNews"| trans }} →</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                            {% if is_granted("ROLE_ADMIN") %}
+                                {% if onlineAdmins.totalHits > 0 %}
+                                    <div class="panel panel-white">
+                                        <h4 class="panel-head">{{ "dashboard.onlineAdmins" |trans }}
+                                            ({{ onlineAdmins.totalHits }})</h4>
+                                        {% for admin in onlineAdmins.results %}
+                                            {% set fullName = admin.profileName ? admin.subtitle : admin.firstName~' '~admin.lastName %}
+                                            {% set profilePhoto =  profile_photo(admin,'uploadFile','news_list') %}
+                                            {% set filter = '' %}
+
+                                            {% if admin.mediaImage|first.filter is defined %}
+                                                {% set filter = admin.mediaImage|first.filter %}
+                                            {% endif %}
+
+                                            <div class="profile organization-list title-middle">
+                                                <div class="photo-overflow-visible">
+                                                    <div class="profile-photo-md {{ filter }}">
+                                                        <img src="{{ profilePhoto }}" alt="{{ fullName }}">
+                                                    </div>
+                                                </div>
+                                                <div class="profile-content">
+                                                    {% if app.user.id == admin.user.id %}
+                                                        <h4>
+                                                            <a>
+                                                                {{ fullName }}
+                                                            </a>
+                                                        </h4>
+                                                        <p>
+                                                            {{ "dashboard.onlineadmins.You" |trans }}
+                                                        </p>
+                                                    {% else %}
+                                                        <h4>
+                                                            <a href="{{ path('tj_profile_profile_show',{slug:admin.slug}) }}">
+                                                                {{ fullName }}
+                                                            </a>
+                                                        </h4>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                                <div class="panel panel-white">
+                                    <h4 class="panel-head">{{ 'admin.dashbord.box.Stats.title'|trans }}</h4>
+                                    <ul class="p-alt list-inline list-spaced list-ofstatistics">
+                                        <li>{{ 'admin.dashbord.box.Stats.registeredUsers'|trans }}
+                                            : {{ registeredUsersCount }}</li>
+                                        <li>{{ 'admin.dashbord.box.Stats.Members'|trans }} : {{ membersCount }}</li>
+                                        <li>{{ 'admin.dashbord.box.Stats.publishedProfiles'|trans }}
+                                            : {{ publishedProfilesCount }}</li>
+                                        <li>{{ 'admin.dashbord.box.Stats.publishedJobs'|trans }}
+                                            : {{ publishedJobsCount }}</li>
+                                        <li>{{ 'admin.dashbord.box.Stats.onlineMembers'|trans }}
+                                            : {{ onlineMmembersCount }}</li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </aside>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+
+{% block js %}
+    {{ parent() }}
+    <script>
+        $('.fav-itms .show-submenu-favorite').click(function (e) {
+            $(this).parent().find('.dropdown-favorite-list').slideToggle('fast');
+        });
+    </script>
+{% endblock %}

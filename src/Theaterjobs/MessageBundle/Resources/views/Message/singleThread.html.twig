@@ -1,0 +1,86 @@
+<div id="thread{{ thread.id }}">
+    {% set receipt = thread_receipt(thread, app.user) %}
+    <div class="col-md-12">
+        {#header messenger#}
+        <div class="row row-heaader">
+            <div class="col-md-10 header-messenger">
+                <div class="person-active">
+                    <div class="img-header-messenger">
+                        <a href="{{ path('tj_profile_profile_show', {slug : receipt.profile.slug}) }}">
+                            {% set profilePhoto =  profile_photo(receipt.profile,'uploadFile','logos') %}
+                            {% set filter = '' %}
+
+                            {% if receipt.profile.mediaImage|first.filter is defined %}
+                                {% set filter = receipt.profile.mediaImage|first.filter %}
+                            {% endif %}
+                            <figure class="{{ filter }}">
+                                <img src="{{ profilePhoto }}">
+                            </figure>
+                        </a>
+                    </div>
+                    <span style="display:none" id="isActive">
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i></span>
+                </div>
+                <div class="name-messenger">
+                    <div class="name-profile">
+                        <h3><a href="{{ path('tj_profile_profile_show', {slug : receipt.profile.slug}) }}">
+                            {{ receipt.profile | defaultName }}</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {#chat of messenger#}
+        <div class="row">
+            <div class="col-md-12 subject-messenger">
+                <h4>{{ thread.subject }}</h4>
+                <div class="separator"></div>
+            </div>
+
+            <div class="col-md-12 content-msg">
+                {% if messages | length >= 5 %}
+                    <a style="text-align:center;"><p class="p-alt" id="showMore" data-page="2">Show More</p></a>
+                {% endif %}
+                {% include 'TheaterjobsMessageBundle:Message/Pagination/messages.html.twig' with {'messages' : messages} %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 no-padding reply-message">
+                <form name="replyForm" action="{{ path('tj_message_thread_reply',{id:thread.id}) }}" method="POST">
+                    <div class="form-group">
+                        <textarea name="body" class="form-control"
+                                  placeholder="{{ 'message.placeholder.typeMessage' |trans }}" required>
+
+                        </textarea>
+                    </div>
+                    <button type="submit" id="replyButton" class="btn btn-default">
+                        <span>{{ 'button.message.reply'|trans }}</span>
+                        <svg class="icon-svg icon-inline" width="30" height="30">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-play') }}"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+
+    <script>
+        var threadID = {{ thread.id }};
+        var senderID = '{{ senderID }}';
+        var nodeServer = '{{ nodeServer }}';
+        var socketThreadID = '{{ socketThreadID }}';
+        var sound = new Audio();
+        sound.src = '{{ asset('bundles/theaterjobsmessage/message_sound.wav') }}';
+    </script>
+
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsMessageBundle/Resources/public/js/singleThread.js" %}
+        <script src="{{ asset_url }}"></script>
+
+    {% endjavascripts %}
+
+
+{% endblock %}

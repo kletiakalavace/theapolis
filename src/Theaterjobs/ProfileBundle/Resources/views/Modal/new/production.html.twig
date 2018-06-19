@@ -1,0 +1,122 @@
+{% import '::macro.html.twig' as m %}
+{% form_theme form.occupation 'form_div_layout.html.twig' %}
+{% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+"@TheaterjobsProfileBundle/Resources/public/css/prodEmpl.css" %}
+<link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+<div class="modal-body movebottom" id="productionNew">
+    <div class="container no-padding-mobile">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.newProduction'| trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                        <div class="first">
+                            <div class='prod'>
+                                <div class="form-group">
+                                    {{ form_row(form.production.organizationRelated) }}
+                                </div>
+                            </div>
+                            <div class="second" id='second' hidden>
+                                <div class="form-group">
+                                    {{ form_row(form.production.name) }}
+                                </div>
+                                <div class='prod part2'>
+                                    <div class="form-group">
+                                        {{ form_row(form.production.year) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(form.production.creators) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(form.production.directors) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    {{ form_row(form.occupation, {'attr': {'class': 'form-control'} }) }}
+                                </div>
+                                <div id="rolediv" hidden>
+                                    <div class="from-group">
+                                        {{ form_row(form.occupationDescription.roleName) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(form.occupationDescription.assistant) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.occupationAssistant'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(form.occupationDescription.management) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.occupationManagement'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group username-newProd">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(form.usedNameCheck) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.username.checkbox'|trans }}
+                                            </label>
+                                        </div>
+                                        <div class="used-name hidden">
+                                            {{ form_row(form.usedName) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(form.occupationDescription.description) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        {{ form_row(form.start) }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        {{ form_row(form.end) }}
+                                    </div>
+                                    <div class="form-group col-md-4 pull-right checkbox-isfinished">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(form.ongoing) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.participation.ongoingProduction'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" style="text-align: center;position:relative;">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <button type="button" class="close-footer" data-dismiss="modal"
+                                                    aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                                            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ m.error }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% block js %}
+    {% javascripts filter='?uglifyjs2'
+        "@TheaterjobsProfileBundle/Resources/public/js/production/main.js"
+        "@TheaterjobsProfileBundle/Resources/public/js/production/new.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

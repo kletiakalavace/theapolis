@@ -1,0 +1,224 @@
+parameters:
+  domain: "theaterjobs21.local"
+  router.request_context.host: theaterjobs21.local
+  router.request_context.scheme: http
+
+  wkhtmltopdf: /home/jana/bin/wkhtmltopdf-amd64
+  wkhtmltoimage: /home/jana/bin/wkhtmltoimage-amd64
+
+  season:
+    start: 08-15
+    end: 07-15
+
+  period:
+    no_declaration: 3
+
+  categories_root:
+    jobs: 1
+    market: 117
+    profile: 1
+    voice: 117
+
+  database_driver: pdo_mysql
+  database_host: theapolis
+  database_port: rW8Va4JrAkYC
+  database_name: theaterjobs21
+  database_user: theaterjobs2
+  database_password: jk0409
+
+  old_database_host: mysql5.theaterjobs.de
+  old_database_name: db159502_27
+  old_database_user: db159502_27
+  old_database_password: jk0409
+
+  mailer_transport: smtp
+  mailer_host: mail.theapolis.de
+  mailer_user: info@theapolis.de
+  mailer_password: qafpPWF@0
+  mailer_encryption: tls
+  mailer_auth_mode: plain
+  mailer_port: 25
+  mailer_from: info@theaterjobs.de
+  mailer_key: key-ba0ab16e581a0bcebdb77a919c18edea
+  mailer_domain: sandbox999f9e6c93624fa6a045f8fa41ccb689.mailgun.org
+
+  locale: de
+  secret: cf90d824d60531a7d41cd500e58988ab8ca3d457
+  debug_toolbar:          true
+  debug_redirects:        false
+  use_assetic_controller: true
+  company_name: THEAPOLIS
+  company_street: 'Schomburgstraße 118a'
+  company_zip: 22767
+  company_city: Hamburg
+  company_country: Deutschland
+  company_phone: +49-(0)40-22633929
+  company_fax: +49-(0)40-22633929
+  company_email: info@theapolis.de
+  company_email_save: 'info[at]theaterjobs[dot]de'
+  company_url: 'http://www.theaterjobs.de'
+  company_taxnumber: 080/218/02590
+  company_vatnumber: DE206540361
+  company_financeoffice: Hamburg-Altona
+  company_ceo: 'Sören Fenner'
+  company_accountholder: 'Sören Fenner'
+  company_accountnumber: 15293160
+  company_bankcode: 20030000
+  company_bankname: 'Triodos Bank'
+  company_iban: 'DE21500310001026095006'
+  company_bic: TRODDEF1
+  company_ch_accountnumber: 40-705830-3
+  company_ch_bankcode: 'Clearing Nr. 09000'
+  company_ch_bankname: 'Postfinance, Schweiz'
+  company_ch_iban: CH1709000000407058303
+  company_ch_bic: POFICHBEXXX
+  sepa_creditor_id: DE69ZZZ00000750283
+  sepa_bic_min_length: 8
+  sepaapi_username: theaterjobs.de
+  sepaapi_code: MDRAF-CPPFM-DLFPC
+
+  node:              /usr/local/bin/node
+  node_modules:      /usr/local/lib/node_modules
+  bower:             /usr/local/lib/node_modules/bower/bin/bower
+  uglifyjs2:         /usr/local/bin/uglifyjs
+  uglifycss:         /usr/local/bin/uglifycss
+
+  elastic_host : localhost
+  elastic_port : 9200
+
+  node_url : https://theaterjobsapp.theapolis.de
+
+  paypal.express_checkout.username: fenner-facilitator_api1.theaterjobs.de
+  paypal.express_checkout.password: RJ36CYJMTT2UP4PT
+  paypal.express_checkout.signature: AJIyfNZJaF.3pGj3YWTxtga9BID9AG-f.zQIO0HcZFl-SwUR3nXVOIRE
+  paypal.express_checkout.sandbox: true
+  disk_quota: 50
+  img_limit: 20
+  audio_limit: 10
+  pdf_limit: 10
+  pdf_file_size: 5M
+  pagination: 10
+  autosuggestion_pagination: 5
+  news_years_range: 4
+  jwt_private_key_path: %kernel.root_dir%/var/jwt/private.pem   # ssh private key path
+  jwt_public_key_path:  %kernel.root_dir%/var/jwt/public.pem    # ssh public key path
+  jwt_key_pass_phrase:  'theapolis'                             # ssh key pass phrase
+  jwt_token_ttl:        86400
+  jwt_reftresh_token_ttl: 2592000
+  job_hunt_priority: {1: 'High', 2: 'Middle', 3: 'Low', 4: 'Inactiv'}
+  job_status: {1: 'Published', 2: 'Drafts', 3: 'Archived', 4: 'Deleted', 5: 'Pending'}
+  organization_status: {1: 'Pending', 2: 'Active', 3: 'Unknown', 4: 'Closed'}
+  job_base_categories:
+    2:
+        key: schauspiel
+        img: schauspiel.jpg
+    9:
+        key: tanz
+        img: tanz.jpg
+    14:
+        key: musiktheater
+        img: musiktheater.jpg
+    22:
+        key: chor
+        img: chor.jpg
+    31:
+        key: orchester
+        img: orchester.jpg
+    36:
+        key: ausstattung
+        img: ausstattung.jpg
+    52:
+        key: technik
+        img: technik.jpg
+    63:
+        key: organisation
+        img: organisation.jpg
+    77:
+        key: administration
+        img: administration.jpg
+    88:
+        key: sonstige
+        img: others.jpg
+    94:
+        key: bildung
+        img: others.jpg
+
+  people_base_categories:
+    164:
+        key : schauspiel
+        img : schauspiel.jpg
+    171:
+        key : tanz
+        img : tanz.jpg
+    176:
+        key : musiktheater
+        img : musiktheater.jpg
+    184:
+        key : chor
+        img : chor.jpg
+    193:
+        key : orchester
+        img : orchester.jpg
+    198:
+        key : ausstattung
+        img : ausstattung.jpg
+    214:
+        key : technik
+        img : technik.jpg
+    225:
+        key : organisation
+        img : organisation.jpg
+    239:
+        key : administration
+        img : administration.jpg
+    250:
+        key : sonstige
+        img : others.jpg
+
+  job_hunt_interval: [3,7,10,14,30]
+  combinations:
+   2items: ['#CD2036','#87162D']
+   3items: ['#87162D','#631953','#244372']
+   4items: ['#CD2036','#87162D','#631953','#244372']
+   5items: ['#CD2036','#87162D','#631953','#244372', '#1F1F1F']
+   6items: ['#87162D','#631953','#244372','#87162D','#631953','#244372']
+   7items: ['#CD2036','#87162D','#631953','#244372','#87162D','#631953','#CD2036']
+   8items: ['#CD2036','#87162D','#631953','#244372','#CD2036','#87162D','#631953','#244372']
+  url_hasher_padding: 10
+  session.name: theapolis
+  google_maps_api_key: AIzaSyBSQpJMPY-EstBDb-RUJQWvxcv8TmcKSKg
+  messagelength: 3000
+  node_server: http://192.168.7.243:1337
+  node_api: http://127.0.0.1:1337
+  node_api_token: 7c8401dc87fd625d507ec433cd976d81
+  paginationLimit : 20
+  paginationThreadLimit: 5
+  defaultRegistrationChoice: member
+
+  organization_orchestra: { a-plus: choiceA_plus, a: choiceA, b: choiceB, c: choiceC, d: choiceD, other: choiceOther}
+  #Fos Params
+  email_expiration: 86400
+  from_email_address: info@theapolis.de
+  registration_from_email_address: info@theapolis.de
+  resetting_from_email_address: info@theapolis.de
+  account_settings_email_expiration: 86400
+  #Base mailer
+  noreply_email: noreply@theapolis.de
+  # Paypal Configuration
+  paypalClientId: ARzQqinJT8AE2vd87eC2b42u4iUKlhfbwb79INcv-qg3yKOi2BsqMbLNu6I89braWBrBPX-BVU31XltT
+  paypalClientSecret: EFp0gXsZpHjiwGTo5S1QpoFbKkMUnQCQ9OnEXL2hSV8XXZ4IUU-75Kg0Qh3QZmlEdNOBA_5Cc2Womsx-
+  paypal_mode: sandbox
+  # Sofort Configuration
+  sofort_config_key: 132721:286895:b87231efe0ab43636a47118897293869
+  mogelmail_key: 15e30c48bfe821e559a4b449498d60ceab85f8a8
+  # JMS Job Queue Configuration
+  jms_job_queue:
+      queue_options_defaults:
+          max_concurrent_jobs: 10
+      queue_options:
+          cron:
+              max_concurrent_jobs: 10
+          app:
+              max_concurrent_jobs: 20
+  liveMode: 0
+  remind_job_email_confirmation_days: 3

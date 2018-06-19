@@ -1,0 +1,69 @@
+{% extends "::base.html.twig" %}
+{% block css %}
+    {{ parent() }}
+{% endblock css %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('membershipNew')) }}
+    <div class="header-membership">
+        <a href="{{ path("tj_main_default_home") }}" class="navbar-brand-membership">
+            <img src="{{ asset('bundles/theaterjobsmain/img/theapolis-logo.svg') }}" alt="Theater bist Du">
+        </a>
+    </div>
+    <div class="container membership-modal">
+        <div class="block">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'membership.new.title.premiumMembership'| trans }}</h1>
+                        <p class="p-alt">{{ 'membership.new.description'| trans }}</p>
+                        <div class="separator"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <form method="POST" id="membership_booking" {{ form_enctype(form) }} action="{{ path('tj_membership_booking_new') }}"
+                      role="form" name="booking">
+                    <p id="membership-name" data-membership="{{ membership.slug }}"></p>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-7">
+                                {% include 'TheaterjobsMembershipBundle:BillingAddress:_formContent.html.twig' %}
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="row">
+                                        <div class="methodPayment">
+                                            <div class="col-md-12 col-lg-12">
+                                                <label>{{ 'membership.new.label.paymentMethod'| trans }}</label>
+                                                {{ form_widget(form.paymentmethod) }}
+                                                <div id="debit-account" style="display: none">
+                                                    {% include 'TheaterjobsMembershipBundle:Booking:_debitaccount.html.twig' %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 bookingInfo">
+                                {% include 'TheaterjobsMembershipBundle:Booking:_preCalculate.html.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_widget(form._token) }}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block footer %}
+    <div class="footer-membership">
+        <span class="info-contact"> <b>{{ 'membership.order.footer.Needhelp'|trans }}?</b> {{ 'membership.order.footer.Callusat'|trans }} +49-40-226 33 929</span>
+    </div>
+{% endblock footer %}
+{% block js %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMembershipBundle/Resources/public/js/billingAddress.js" %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock js %}

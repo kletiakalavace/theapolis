@@ -1,0 +1,253 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="organizationData">
+    <div class="container no-padding-mobile">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2> {{ 'organization.edit.mainTitle.editOrganizationData'| trans }}</h2>
+                {{ form_start(edit_form) }}
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(edit_form._token) }}
+                        <div class="form-group col-md-6 no-padding">
+                            {{ form_label(edit_form.organizationKind) }}
+                            {% for var in edit_form.organizationKind %}
+                                <div class="checkbox">
+                                    <label>
+                                        {{ form_widget(var) }}
+                                        <span class="faux-checkbox"></span>
+                                        {{ var.vars.label }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group col-md-6 no-padding">
+                            {{ form_label(edit_form.organizationSection) }}
+                            {% for var in edit_form.organizationSection %}
+                                <div class="checkbox">
+                                    <label>
+                                        {{ form_widget(var) }}
+                                        <span class="faux-checkbox"></span>
+                                        {{ var.vars.label }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-12 no-padding orchestra-class hidden">
+                            {{ form_row(edit_form.orchestraClass) }}
+                        </div>
+                        <div class="col-md-12 no-padding">
+                            {{ form_row(edit_form.staff) }}
+                        </div>
+                        <div class="col-md-12 no-padding" id="staffSection">
+                            {{ form_label(edit_form.organizationStaff) }}
+                            <ul class="staff"
+                                data-prototype='{{ form_widget(edit_form.organizationStaff.vars.prototype) }}'>
+                                {% for organizationStaff in edit_form.organizationStaff %}
+                                    <li>
+                                        {{ form_row(organizationStaff.title) }}
+                                        {{ form_row(organizationStaff.groupNumber) }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="col-md-12 no-padding" id="full-width">
+                            {{ form_row(edit_form.organizationSchedule) }}
+                            {{ form_row(edit_form.form) }}
+                            {{ form_row(edit_form.organizationOwner) }}
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div style="text-align: center">
+                    <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                    <div style="display: inline-block">{{ form_row(edit_form.submit, { 'attr': { 'class': 'btn btn-inverse-primary center' } }) }}</div>
+                </div>
+                {{ form_end(edit_form, {'render_rest': false}) }}
+                {{ m.error }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    //orchestra class checks
+    if ($('#tj_inserate_form_organization_organizationSection_6').is(':checked')) {
+        $('.orchestra-class').removeClass('hidden');
+    }
+
+    $('#tj_inserate_form_organization_organizationSection_6').change(function () {
+        if ($(this).is(':checked')) {
+            $('.orchestra-class').removeClass('hidden');
+        } else {
+            $('.orchestra-class').addClass('hidden');
+        }
+    });
+
+    var $addStaffLink = $('<a href="#" class="add_staff_link pull-left"><svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20"><use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-new') }}"></use></svg> {{ "organization.edit.addNewGroup"| trans }}</a>');
+    var $newLinkLiStaff = $('<li></li>').append($addStaffLink);
+
+    function addTagForm($collectionHolder, $newLinkLi) {
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.data('prototype');
+        // get the new index
+        var index = $collectionHolder.data('index');
+        // Replace '__name__' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        var newForm = prototype.replace(/__name__/g, index);
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+        // Display the form in the page in an li, before the "Add a tag" link li
+        var $newFormLi = $('<li class="staff-group"></li>').append(newForm);
+        addTagFormDeleteLink($newFormLi);
+        $newLinkLi.before($newFormLi);
+    }
+
+    function addTagFormDeleteLink($tagFormLi) {
+        var $removeFormA = $('<a href="#" class="delete-staff"><svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14"><use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use> </svg> {{ "link.remove" | trans }}</a>');
+        $tagFormLi.append($removeFormA);
+        $removeFormA.on('click', function (e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+            bootbox.confirm({
+                message: "{{ 'organization.edit.bootbox.removeGroup' |trans}}?",
+                buttons: {
+                    confirm: {
+                        label: 'Yes',
+                        className: 'btn-success'
+                    },
+                    cancel: {
+                        label: 'No',
+                        className: 'btn-danger'
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        // remove the li for the tag form
+                        $tagFormLi.remove();
+                    }
+                }
+            });
+        });
+    }
+
+    function validateDataTitle() {
+        var returnVal = true;
+        $('.staff >li.staff-group').each(function () {
+            var dataTitle = $(this).find($('input.groupTitle'));
+            var dataNumber = $(this).find($('input.groupNumber'));
+            if (!dataTitle.val() ) {
+                toolTipError('This field is required.', dataTitle);
+                returnVal = false;
+                $('.text-danger').removeClass('hidden');
+            }
+            if (!dataNumber.val() || dataNumber.val() <= 0) {
+                toolTipError('This field is required.', dataNumber);
+                returnVal = false;
+                $('.text-danger').removeClass('hidden');
+            }
+
+            if (returnVal) {
+                dataTitle.closest('.has-error').removeClass('has-error');
+                dataNumber.closest('.has-error').removeClass('has-error');
+                $('.text-danger').addClass('hidden');
+                if (typeof dataTitle.attr('aria-describedby') !== "undefined") {
+                    dataTitle.tooltip('destroy');
+                    dataTitle.removeAttr('aria-describedby');
+                    dataNumber.tooltip('destroy');
+                    dataNumber.removeAttr('aria-describedby');
+                }
+                returnVal = true;
+            }
+
+        });
+        //console.log(returnVal);
+        return returnVal;
+    }
+
+    // Get the ul that holds the collection of tags
+    $collectionHolderStaff = $('ul.staff');
+    $collectionHolderStaff.find('li').each(function () {
+        addTagFormDeleteLink($(this));
+    });
+    // add the "add a tag" anchor and li to the tags ul
+    $collectionHolderStaff.append($newLinkLiStaff);
+    // count the current form inputs we have (e.g. 2), use that as the new
+    // index when inserting a new item (e.g. 2)
+    $collectionHolderStaff.data('index', $collectionHolderStaff.find(':input').length);
+    $addStaffLink.on('click', function (e) {
+        if (validateDataTitle()) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+            // add a new tag form (see next code block)
+            addTagForm($collectionHolderStaff, $newLinkLiStaff);
+        }
+
+    });
+
+    const orgaDataForm = $('#organizationData form');
+    addLoadingSvg(orgaDataForm);
+    const loading = orgaDataForm.find('.submit-rolling-svg');
+
+    orgaDataForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        validFormInputs();
+        if ($(this).valid()) {
+            loading.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    loading.hide();
+                    if (data.errors) {
+                        for (var key in data.errors) {
+                            var el = $('#organizationData form').find('input[name="' + key + '"]');
+                            el.parent().addClass('has-error');
+                            toolTipError(data.errors[key], el);
+                        }
+                    } else {
+                        $('.organization-data').html(data.content);
+                        $('.logs-block').html(data.logs);
+                        valid = true;
+                    }
+                },
+                error: function () {
+                    loading.hide();
+                    serverError();
+                }
+            }).done(function () {
+                if (valid) {
+                    $('#myModal').modal('hide');
+
+                    var grids = $("[data-masonry]");
+                    grids.each(function () {
+                        $(this).masonry({
+                            itemSelector: "[data-masonry-item]"
+                        });
+
+                        $(this).masonry("on", "layoutComplete", function () {
+                            $("[data-masonry-item] .panel").each(function () {
+                                $(this).bleedPanel();
+                            });
+                        });
+                        $(this).masonry();
+                    });
+                }
+            });
+        }
+    });
+
+    $("form[name=tj_inserate_form_organization]").validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+        },
+        ignore: [],
+        rules: {
+            "login[username]": {
+                required: false
+            }
+        }
+    });
+</script>

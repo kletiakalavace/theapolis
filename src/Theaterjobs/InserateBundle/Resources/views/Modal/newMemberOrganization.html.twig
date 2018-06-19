@@ -1,0 +1,97 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body" id="organizationContact">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'organization.edit.mainTitle.addTeamMember'| trans }}</h2>
+                    {{ form_start(form) }}
+                    {{ form_row(form._token) }}
+                <div class="form-group">
+                    {{ form_row(form.user) }}
+                </div>
+                <div class="form-group" style="text-align: center;position:relative;">
+                    <div class="form-inline">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        <div class="form-group">
+                            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                        </div>
+                    </div>
+                </div>
+                {{ form_end(form, {'render_rest': false}) }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const orgaSlug = '{{ entity.organization.slug }}';
+    $(document).ready(function () {
+        const orgaContactForm = $('#organizationContact form');
+        orgaContactForm.validate({
+            rules: {
+                theaterjobs_userbundle_userorganization_user: {
+                    required: true
+                }
+            },
+            errorPlacement: function (error, element) {
+                toolTipError(error.text(), element);
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+                $(element).tooltip('destroy');
+            }
+        });
+        addLoadingSvg(orgaContactForm);
+        const loading = orgaContactForm.find('.submit-rolling-svg');
+
+        orgaContactForm.submit(function (e) {
+            e.preventDefault();
+            if (loading.is(':visible')) {return;}
+            if ($(this).valid()) {
+                loading.show();
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: Routing.generate('tj_main_user_organization_create', {_locale: locale, slug: orgaSlug}),
+                    data: orgaContactForm.serialize(),
+                    success: function (data) {
+                        loading.hide();
+                        if (data.errors) {
+                            const errors = Object.values(data.errors);
+                            for(let err of errors){
+                                bootbox.alert({
+                                    message: err,
+                                    buttons: {
+                                        ok: {
+                                            label: trans('bootbox.button.ok', locale)
+                                        }
+                                    }
+                                })
+                            }
+                            return;
+                        } else if (data.formErrors) {
+                            renderFormErrors(data.formErrors, orgaContactForm);
+                            return;
+                        } else {
+                            bootbox.alert({
+                                message: data.message,
+                                buttons: {
+                                    ok: {
+                                        label: trans('bootbox.button.ok', locale)
+                                    }
+                                }
+                            });
+                        }
+                        $('.team-block').html(data.content);
+                        $('.logs-block').html(data.logs);
+                        removeMembersEvent();
+                        renderBoxes();
+                    },
+                    error: function () {
+                        loading.hide();
+                        serverError();
+                    }
+                });
+            }
+        });
+    });
+</script>
+

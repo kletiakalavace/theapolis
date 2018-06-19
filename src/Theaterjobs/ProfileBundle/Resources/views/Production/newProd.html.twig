@@ -1,0 +1,268 @@
+{% import '::macro.html.twig' as m %}
+
+<div class="modal-body movebottom" id="productionNew">
+    <div class="container no-padding-mobile">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.newProduction'| trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                        <div class="first">
+                            <div class='prod'>
+                                <div class="form-group">
+                                    {{ form_row(form.organizationRelated) }}
+                                </div>
+                            </div>
+                            <div class="second" id='second' hidden>
+                                <div class="form-group">
+                                    {{ form_row(form.name) }}
+                                </div>
+                                <div class='prod part2'>
+                                    <div class="form-group">
+                                        {{ form_row(form.year) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(form.creators) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(form.directors) }}
+                                    </div>
+                                </div>
+                                <div class="form-group" style="text-align: center;position:relative;">
+                                    <div class="form-inline">
+                                        <div class="form-group">
+                                            <button type="button" class="close-footer" data-dismiss="modal"
+                                                    aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                                            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ m.error }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $('.tag-orga-input').select2({
+        minimumInputLength: 3,
+        formatInputTooShort: function () {
+            $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+        },
+        maximumSelectionSize: 1,
+        cache: true,
+        quietMillis: 250,
+        tags: true,
+        tokenSeparators: [';'],
+        createSearchChoice: function (term, page) {
+            $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+            if (page.some(function (item) {
+                    return item.text.toLowerCase() === term.toLowerCase();
+                })) {
+                return;
+            }
+
+            return {
+                id: $.trim(term),
+                text: $.trim(term) + '  ({{ "profile.new.production.newOrganization"|trans }})'
+            };
+
+        },
+        ajax: {
+            url: Routing.generate('tj_productions_organization',{'_locale': locale}),
+            dataType: 'json',
+            data: function (term, page) {
+                return {
+                    q: term,
+                    page: page // page number
+                };
+            },
+            results: function (data, page) {
+                var more = false;
+                data.forEach(function (element) {
+                    more = (page * autosuggestion_pagination) < element.total_count;
+                    if (element.desc !== '') {
+                        element.text = element.text + "  (" + element.desc + ")";
+                    }
+                });
+                return {
+                    results: data,
+                    more: more
+                };
+            }
+        },
+        // Take default tags from the input value
+        initSelection: function (element, callback) {
+
+            var data = [];
+            function splitVal(string, separator) {
+                var val, i, l;
+                if (string === null || string.length < 1)
+                    return [];
+                val = string.split(separator);
+                for (i = 0, l = val.length; i < l; i = i + 1)
+                    val[i] = $.trim(val[i]);
+                return val;
+            }
+
+            $(splitVal(element.val(), ";")).each(function () {
+                data.push({
+                    id: this,
+                    text: this
+                });
+            });
+            callback(data);
+        },
+        formatSelectionTooBig: function (limit) {
+            return trans('maxOrganization.limit.onlyOne', locale);
+        }
+    }).on("select2-selecting", function (e) {
+
+//        $('#theaterjobs_profilebundle_productionparticipations_production_organizationRelated').attr('readonly','');
+        $('#second').show();
+
+    }).on("select2-removed", function (e) {
+        $('#second').hide();
+    });
+
+    $("#theaterjobs_profilebundle_production_year").datetimepicker({
+        viewMode: 'years',
+        format: 'YYYY',
+        showClear: true,
+        showTodayButton: true,
+        toolbarPlacement: 'top',
+        useCurrent: false,
+        locale: locale
+    });
+
+    $("#theaterjobs_profilebundle_production_year").on("dp.show", function (e) {
+        $(this).data("DateTimePicker").viewMode('years');
+        $(this).data("DateTimePicker").format('YYYY');
+    });
+
+
+    /*
+     make creator/director name autosuggestion select2
+     */
+    var creator = $('.tag-creator-input');
+    var director = $('.tag-director-input');
+
+    autoCreaDire(creator, 'creators_autosuggestion', 'creator');
+    autoCreaDire(director, 'directors_autosuggestion', 'director');
+
+
+    function autoCreaDire(input, group, name) {
+        input.select2({
+            minimumInputLength: 3,
+            formatInputTooShort: function () {
+                $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+            },
+            maximumSelectionSize: 3,
+            tags: true,
+            cache: true,
+            quietMillis: 250,
+            tokenSeparators: [';'],
+            createSearchChoice: function (term, page) {
+                $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+                if (page.some(function (item) {
+                        return item.text.toLowerCase() === term.toLowerCase();
+                    })) {
+                    return;
+                }
+
+                return {
+                    id: $.trim(term),
+                    text: $.trim(term) + ' (new ' + name + ')',
+                    check: true
+                };
+
+            },
+            ajax: {
+                url: Routing.generate(group,{'_locale': locale}),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        q: term,
+                        page: page // page number
+                    };
+                },
+                results: function (data, page) {
+                    var more = false;
+                    data.forEach(function (element) {
+                        more = (page * autosuggestion_pagination) < element.total_count;
+                    });
+
+                    return {
+                        results: data,
+                        more: more
+                    };
+                }
+            },
+            // Take default tags from the input value
+            initSelection: function (element, callback) {
+                var data = [];
+
+                function splitVal(string, separator) {
+                    var val, i, l;
+                    if (string === null || string.length < 1)
+                        return [];
+                    val = string.split(separator);
+                    for (i = 0, l = val.length; i < l; i = i + 1)
+                        val[i] = $.trim(val[i]);
+                    return val;
+                }
+
+                $(splitVal(element.val(), ",")).each(function () {
+                    data.push({
+                        id: this,
+                        text: this
+                    });
+                });
+                callback(data);
+            },
+            formatSelectionTooBig: function (limit) {
+                return 'Max ' + name + ' limit is ' + limit;
+            }
+        });
+    }
+
+    $('form[name="theaterjobs_profilebundle_production"]').validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+            $('#myModal').animate(
+                { scrollTop: $('.login-error-content').offset().top +2000 },
+                100);
+        },
+        ignore: [],
+        rules: {
+            'theaterjobs_profilebundle_production_name': {
+                required: true
+            }
+        }
+    });
+
+    $('form[name="theaterjobs_profilebundle_production"] input, form[name="theaterjobs_profilebundle_production"] select').on('keyup change', function () {
+
+        if ($(this).valid()) {
+            $(this).tooltip('destroy');
+            $(this).parent().tooltip('destroy');
+            $(this).closest('.has-error').removeClass('has-error');
+
+        }
+    });
+
+    $(".yearProduction").on("dp.change", function (e) {
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+            $(this).tooltip('destroy')
+        }
+    });
+
+</script>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-04T13:01:38Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="e68822f4b593e22fd9bff03bf37f7412ffade1e6" resname="ResetPassword.modal.password_already_requested">
+        <source>ResetPassword.modal.password_already_requested</source>
+        <target state="new">ResetPassword.modal.password_already_requested</target>
+        <jms:reference-file line="78">/../src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="42500204662c34ed0cd999cef6053aa45bf933aa" resname="ResetPassword.modal.request.invalid_username">
+        <source>ResetPassword.modal.request.invalid_username</source>
+        <target state="new">ResetPassword.modal.request.invalid_username</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="638dcdcb7d5fd979d8d6be4b65644cae2be91495" resname="account.settings.email.changed.successfully">
+        <source>account.settings.email.changed.successfully</source>
+        <target state="new">account.settings.email.changed.successfully</target>
+        <jms:reference-file line="165">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="12987f69cd2698f944b3df81123d0726c665fbe9" resname="accountSettings.emailChangeRequest.already.requested">
+        <source>accountSettings.emailChangeRequest.already.requested</source>
+        <target state="new">accountSettings.emailChangeRequest.already.requested</target>
+        <jms:reference-file line="85">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eff6f09d2691a55f26be206e89a2e16a8de13616" resname="accountSettings.emailChangeRequest.already.requested.is.used">
+        <source>accountSettings.emailChangeRequest.already.requested.is.used</source>
+        <target state="new">accountSettings.emailChangeRequest.already.requested.is.used</target>
+        <jms:reference-file line="128">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c47f63f23581aaa684e9eee5a589aa85890b7746" resname="accountSettings.emailChangeRequest.banned.byAdmin">
+        <source>accountSettings.emailChangeRequest.banned.byAdmin</source>
+        <target state="new">accountSettings.emailChangeRequest.banned.byAdmin</target>
+        <jms:reference-file line="112">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9d7752c77ca79390a60788a3a20465e46c486700" resname="accountSettings.emailChangeRequest.email.already.used">
+        <source>accountSettings.emailChangeRequest.email.already.used</source>
+        <target state="new">accountSettings.emailChangeRequest.email.already.used</target>
+        <jms:reference-file line="117">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d8067d2f582c9be4a62f2476d588779a4a4b6dd" resname="accountSettings.emailChangeRequest.expired">
+        <source>accountSettings.emailChangeRequest.expired</source>
+        <target state="new">accountSettings.emailChangeRequest.expired</target>
+        <jms:reference-file line="219">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="014205ce5cec444ed0a3dc036f05942f71e85f8f" resname="accountSettings.emailChangeRequest.provider.notFound">
+        <source>accountSettings.emailChangeRequest.provider.notFound</source>
+        <target state="new">accountSettings.emailChangeRequest.provider.notFound</target>
+        <jms:reference-file line="107">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4d361f6c1831dd2ad49421937f950468f0cdb7d" resname="flash.danger.not.added.role.user.member.no.contract.running">
+        <source>flash.danger.not.added.role.user.member.no.contract.running</source>
+        <target>flash.danger.not.added.role.user.member.no.contract.running</target>
+        <jms:reference-file line="738">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+        <jms:reference-file line="745">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e6859a331a8743ed13f94cfd804abbfe9df7834d" resname="flash.danger.not.removed.role.member.revoke.membership.first">
+        <source>flash.danger.not.removed.role.member.revoke.membership.first</source>
+        <target>flash.danger.not.removed.role.member.revoke.membership.first</target>
+        <jms:reference-file line="751">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d231dd3e926470874b0b4048ec44839aed2f6647" resname="flash.email.changed.alert.relogin.new.email">
+        <source>flash.email.changed.alert.relogin.new.email</source>
+        <target>flash.email.changed.alert.relogin.new.email</target>
+        <jms:reference-file line="188">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="409d28efd592dd0007b8e261bb38490934751f70" resname="flash.email.not.found">
+        <source>flash.email.not.found</source>
+        <target>flash.email.not.found</target>
+        <jms:reference-file line="215">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fee6f50aa11049c418bccb99d7c9f5c926d5a1d8" resname="flash.error.contract.quitted.ends_on %date%">
+        <source>flash.error.contract.quitted.ends_on %date%</source>
+        <target>flash.error.contract.quitted.ends_on %date%</target>
+        <jms:reference-file line="614">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47b0efd8c1a5e8ea0b1a2e2bb4cdac84bb25a728" resname="flash.error.forum.short.alias.min.four.character">
+        <source>flash.error.forum.short.alias.min.four.character</source>
+        <target>flash.error.forum.short.alias.min.four.character</target>
+        <jms:reference-file line="436">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="20d92ea64173db3340549c81f7cd302f6b0c3064" resname="flash.error.this_account_is_not_deletable">
+        <source>flash.error.this_account_is_not_deletable</source>
+        <target>flash.error.this_account_is_not_deletable</target>
+        <jms:reference-file line="295">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4d4d99a49180f78a9d0d56176bbf45765113493b" resname="flash.namechange.request.pending">
+        <source>flash.namechange.request.pending</source>
+        <target state="new">flash.namechange.request.pending</target>
+        <jms:reference-file line="185">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5831473e031c4415cd4cfc565fbad95298d7617e" resname="flash.new.email.addreses.dont.match">
+        <source>flash.new.email.addreses.dont.match</source>
+        <target>flash.new.email.addreses.dont.match</target>
+        <jms:reference-file line="170">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a69edbe84f5abe2e50942f5b70a8aa3e344651ce" resname="flash.new.email.addreses.same.oldMail">
+        <source>flash.new.email.addreses.same.oldMail</source>
+        <target>flash.new.email.addreses.same.oldMail</target>
+        <jms:reference-file line="102">/../src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="93fbc6d127b7bb164c8eecb5ce4f9df1ee84612d" resname="flash.organization.request.already.exists">
+        <source>flash.organization.request.already.exists</source>
+        <target>flash.organization.request.already.exists</target>
+        <jms:reference-file line="514">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b850119a3c0fbc84189d0fba5ab15883e2a68391" resname="flash.organization.request.created">
+        <source>flash.organization.request.created</source>
+        <target>flash.organization.request.created</target>
+        <jms:reference-file line="508">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32aea4041f63a45f306be8bb1121322953eb3045" resname="flash.organization.request.removed %title%">
+        <source>flash.organization.request.removed %title%</source>
+        <target>flash.organization.request.removed %title%</target>
+        <jms:reference-file line="510">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0a791063bd577dd080040d3d70ffde83450dcc6" resname="flash.organization.success.user.pending.aproval">
+        <source>flash.organization.success.user.pending.aproval</source>
+        <target>flash.organization.success.user.pending.aproval</target>
+        <jms:reference-file line="702">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="733">/../src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ba297375919cf3a747fa40ac55db161ae16b9e2" resname="flash.success.changed.forum.alias">
+        <source>flash.success.changed.forum.alias</source>
+        <target>flash.success.changed.forum.alias</target>
+        <jms:reference-file line="453">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="81b34e7099a80a046084cbaa1bbccc99f9b71784" resname="flash.success.changed.membership.expire.date">
+        <source>flash.success.changed.membership.expire.date</source>
+        <target>flash.success.changed.membership.expire.date</target>
+        <jms:reference-file line="536">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1327901605ff627cf6befc3c496da1c057445c5c" resname="flash.success.changed.user.role">
+        <source>flash.success.changed.user.role</source>
+        <target>flash.success.changed.user.role</target>
+        <jms:reference-file line="790">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b3285b965cfe9eb8cfe828dbd30c74e60ef4900" resname="flash.success.contract.quit.success">
+        <source>flash.success.contract.quit.success</source>
+        <target>flash.success.contract.quit.success</target>
+        <jms:reference-file line="605">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3fa24da22693a1a2fba1a35870b09ef2c4e3c86b" resname="flash.success.dashboard.%choice_type%.just_registered">
+        <source>flash.success.dashboard.%choice_type%.just_registered</source>
+        <target>flash.success.dashboard.%choice_type%.just_registered</target>
+        <jms:reference-file line="175">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b084f5082de4e01d9ca19c50c322d02feae9157a" resname="flash.success.membership.revoked">
+        <source>flash.success.membership.revoked</source>
+        <target>flash.success.membership.revoked</target>
+        <jms:reference-file line="429">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2ae7fa7f25dcc270504210093cc0e65069399032" resname="flash.success.notifications.saved">
+        <source>flash.success.notifications.saved</source>
+        <target>flash.success.notifications.saved</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/UserBundle/Controller/NotificationSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f109f20e18bfa3d79f91fc7b7ea95cb39dbd17cd" resname="flash.success.password_changed">
+        <source>flash.success.password_changed</source>
+        <target>flash.success.password_changed</target>
+        <jms:reference-file line="105">/../src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dfd7e4ccbbf00e6e157dafb694d1047947d23673" resname="flash.success.this_account_is_deletable">
+        <source>flash.success.this_account_is_deletable</source>
+        <target>flash.success.this_account_is_deletable</target>
+        <jms:reference-file line="684">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e08e90c34d5bf73b31570f5241effe1b76d6c45" resname="flash.success.this_account_is_not_deletable">
+        <source>flash.success.this_account_is_not_deletable</source>
+        <target>flash.success.this_account_is_not_deletable</target>
+        <jms:reference-file line="654">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="817ef528a7d093ad2007be7378bfdba9c2400cf7" resname="flash.success.user.rights.updated">
+        <source>flash.success.user.rights.updated</source>
+        <target>flash.success.user.rights.updated</target>
+        <jms:reference-file line="662">/../src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ca42d858ae25d6b7d58ffbf6a4f9795b7be86f3" resname="flash.user.login.bad.credentials">
+        <source>flash.user.login.bad.credentials</source>
+        <target>flash.user.login.bad.credentials</target>
+        <jms:reference-file line="215">/../src/Theaterjobs/UserBundle/Component/Authentication/Handler/AuthenticationHandler.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5be99608335f4dd5b5dbeec6dac0f36f37090ce0" resname="flash.user.login.confirm_token.first">
+        <source>flash.user.login.confirm_token.first</source>
+        <target state="new">flash.user.login.confirm_token.first</target>
+        <jms:reference-file line="173">/../src/Theaterjobs/UserBundle/Component/Authentication/Handler/AuthenticationHandler.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8dee830b31c0935372e70f52e59dc0ef6abbed83" resname="flash.user.login.many.attempts">
+        <source>flash.user.login.many.attempts</source>
+        <target>flash.user.login.many.attempts</target>
+        <jms:reference-file line="210">/../src/Theaterjobs/UserBundle/Component/Authentication/Handler/AuthenticationHandler.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="725c37b0879c165ae5cc60014dc653a4406865cc" resname="resetpassword.check_email">
+        <source>resetpassword.check_email</source>
+        <target state="new">resetpassword.check_email</target>
+        <jms:reference-file line="114">/../src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c7af8612431ff133a2969974003a3afe8b75627" resname="tj.debit.account.changed.mail.subject">
+        <source>tj.debit.account.changed.mail.subject</source>
+        <target state="new">tj.debit.account.changed.mail.subject</target>
+        <jms:reference-file line="205">/../src/Theaterjobs/UserBundle/Mailer/Mailer.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d630a7085b7fc60d8f1604311817da9e87eaa8" resname="tj.resetting.check_email">
+        <source>tj.resetting.check_email</source>
+        <target>tj.resetting.check_email</target>
+        <jms:reference-file line="128">/var/www/theaterjobs21/src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b1fcbc6d72af69c43ee7584c9750e2e993a4c80" resname="tj.resetting.password_already_requested">
+        <source>tj.resetting.password_already_requested</source>
+        <target>tj.resetting.password_already_requested</target>
+        <jms:reference-file line="92">/var/www/theaterjobs21/src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dafefdb5bec61e86021b285640a5ea4b69471cd3" resname="tj.resetting.request.invalid_username">
+        <source>tj.resetting.request.invalid_username</source>
+        <target>tj.resetting.request.invalid_username</target>
+        <jms:reference-file line="72">/var/www/theaterjobs21/src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

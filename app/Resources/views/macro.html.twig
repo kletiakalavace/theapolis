@@ -1,0 +1,1029 @@
+{#======================================================================================================================
+                                           General MACROS
+======================================================================================================================#}
+{#
+#
+#   User modal organization show
+#
+#}
+{% macro displayOrganization(userOrganizations) %}
+    {% set sum = 0 %}
+    {% for org in userOrganizations %}
+        {% if not org.revokedAt %}
+            {% set sum = sum + 1 %}
+        {% endif %}
+    {% endfor %}
+    {% if(sum > 0) %}
+        <li class="fav-itms">
+            <span class="{{ sum==0?'': 'show-submenu-favorite' }}">{{ 'user.show.items.organizations' | trans }}
+                ({{ sum }})
+            </span>
+            <ul>
+                {% for org in userOrganizations %}
+                    {% if not org.revokedAt %}
+                        <li>
+                            <a href="{{ path("tj_organization_show", {'slug': org.organization.slug }) }}"><span
+                                        class="show-submenu-favorite">{{ org.organization.name }}</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    {% endif %}
+{% endmacro %}
+
+{#
+#
+#  Show favourites in User Modal
+#
+#}
+{% macro showFavourites(user, organization, jobs, news) %}
+    {% set favPeople = user|length %}
+    {% set favNews = news|length %}
+    {% set favOrg = organization|length %}
+    {% set favJobs = jobs|length %}
+
+    {% set sum = favPeople + favNews + favOrg + favJobs %}
+    {% if( sum > 0 ) %}
+        <li class="fav-itms">
+            <span class="show-submenu-favorite">{{ 'user.show.items.favorite' | trans }} ({{ sum }})</span>
+            <ul class="dropdown-favorite-list">
+                {% if favPeople > 0 %}
+                    <li>
+                        <a href="{{ path('tj_profile_profile_list', { 'favorite': 1 }) }}">
+                            <span class="show-submenu-favorite">{{ 'user.show.items.favoritePeople' | trans }}
+                                ({{ favPeople }})</span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if favOrg > 0 %}
+                    <li>
+                        <a href="{{ path('tj_main_organization_home', { 'favorite': 1 }) }}">
+                            <span class="show-submenu-favorite">{{ 'user.show.items.favoriteOrganizations' | trans }}
+                                ({{ favOrg }})</span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if favJobs > 0 %}
+                    <li>
+                        <a href="{{ path('tj_inserate_job_route_list', { 'favorite': 1 }) }}">
+                            <span class="show-submenu-favorite">{{ 'user.show.items.favoriteJobs' | trans }}
+                                ({{ favJobs }})</span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% if favNews > 0 %}
+                    <li>
+                        <a href="{{ path('tj_news', { 'favorite': 1 }) }}">
+                            <span class="show-submenu-favorite">{{ 'user.show.items.favoriteNews' | trans }}
+                                ({{ favNews }})</span>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </li>
+    {% endif %}
+{% endmacro %}
+
+{# End of Profile Partials macros #}
+
+{% macro imageOptions() %}
+    <div id="imagePreview" class="imagePreview hidden">
+        <div align="center">
+            <img id="file_preview" src="" style="max-height: 300px;max-width: 500px;"/>
+        </div>
+        <hr/>
+        <div class="btn-group btn-group-justified">
+            <a href="javascript:;" id="imageModify" class="btn btn-success">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                {{ 'tj.image.modify' | trans }}</a>
+            <a href="javascript:;" id="imageReset" class="btn btn-success" disabled="disabled">
+                <i class="fa fa-repeat" aria-hidden="true"></i>
+                {{ 'tj.image.reset' | trans }}
+            </a>
+            <a href="javascript:;" class="btn btn-danger" id="imageRemove">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                {{ 'tj.image.remove' | trans }}
+            </a>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro crop(removeFilter) %}
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" data-case="1" role="dialog" id="imageCropModal"
+         aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" style="margin-top: 5%;">
+            <div class="modal-header" style="height: 30px;padding: 0;">
+                <button type="button" class="close crop-close" data-dismiss="modal" aria-label="Close">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-close') }}"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-content imageModalCrop">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3 group-edit-image docs-buttons">
+                            <div>
+                                <button type="button" class="btn btn-primary" data-method="zoom" data-option="0.1"
+                                        title="Zoom In">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title=""
+                                          data-original-title="Zoom In" data-placement="right">
+                                        <span class="fa fa-search-plus"></span>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-method="zoom" data-option="-0.1"
+                                        title="Zoom Out">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title=""
+                                          data-original-title="Zoom Out" data-placement="right">
+                                        <span class="fa fa-search-minus"></span>
+                                    </span>
+                                </button>
+                            </div>
+                            <button type="button" class="btn btn-primary" data-method="move" data-option="-10"
+                                    data-second-option="0" title="Move Left">
+                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Move Left"
+                                  data-placement="right">
+                                <span class="fa fa-arrow-left"></span>
+                            </span>
+                            </button>
+                            <button type="button" class="btn btn-primary" data-method="move" data-option="10"
+                                    data-second-option="0" title="Move Right">
+                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Move Right"
+                                  data-placement="right">
+                                <span class="fa fa-arrow-right"></span>
+                            </span>
+                            </button>
+                            <button type="button" class="btn btn-primary" data-method="move" data-option="0"
+                                    data-second-option="-10" title="Move Up">
+                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Move Up"
+                                  data-placement="right">
+                                <span class="fa fa-arrow-up"></span>
+                            </span>
+                            </button>
+                            <button type="button" class="btn btn-primary" data-method="move" data-option="0"
+                                    data-second-option="10" title="Move Down">
+                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Move Down"
+                                  data-placement="right">
+                                <span class="fa fa-arrow-down"></span>
+                            </span>
+                            </button>
+                            <button type="button" class="btn btn-primary" data-method="scaleX" data-option="-1"
+                                    title="Flip Horizontal">
+                            <span class="docs-tooltip" data-toggle="tooltip" title=""
+                                  data-original-title="Flip Horizontal" data-placement="right">
+                                <span class="fa fa-arrows-h"></span>
+                            </span>
+                            </button>
+                            <button type="button" class="btn btn-primary" data-method="scaleY" data-option="-1"
+                                    title="Flip Vertical">
+                            <span class="docs-tooltip" data-toggle="tooltip" title=""
+                                  data-original-title="Flip Vertical" data-placement="right">
+                                <span class="fa fa-arrows-v"></span>
+                            </span>
+                            </button>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary" data-method="rotate" data-option="-90"
+                                        title="Rotate Left">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title=""
+                                          data-original-title="cropper.rotate(-90)">
+                                      <span class="fa fa-rotate-left"></span>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-primary" data-method="rotate" data-option="90"
+                                        title="Rotate Right">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title=""
+                                          data-original-title="cropper.rotate(90)">
+                                      <span class="fa fa-rotate-right"></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="cropper-container cropper-bg">
+                            <img id="image_crop" src="">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 hidden">
+                        <div class="docs-data">
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataX">X</label>
+                                <input type="text" class="form-control" id="dataX" placeholder="x">
+                                <span class="input-group-addon">px</span>
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataY">Y</label>
+                                <input type="text" class="form-control" id="dataY" placeholder="y">
+                                ntrolpan class="input-group-addon">px</span>
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataWidth">Width</label>
+                                <input type="text" class="form-control" id="dataWidth" placeholder="width">
+                                <span class="input-group-addon">px</span>
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataHeight">Height</label>
+                                <input type="text" class="form-control" id="dataHeight" placeholder="height">
+                                <span class="input-group-addon">px</span>
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataRotate">Rotate</label>
+                                <input type="text" class="form-control" id="dataRotate" placeholder="rotate">
+                                <span class="input-group-addon">deg</span>
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataScaleX">ScaleX</label>
+                                <input type="text" class="form-control" id="dataScaleX" placeholder="scaleX">
+                            </div>
+                            <div class="input-group input-group-sm">
+                                <label class="input-group-addon" for="dataScaleY">ScaleY</label>
+                                <input type="text" class="form-control" id="dataScaleY" placeholder="scaleY">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if not removeFilter %}
+                    <div class="col-md-12 hidden" id="filters">
+                    </div>
+                {% endif %}
+                <div class="row uploadingSvg">
+                    <div class="col-md-{{ removeFilter?'4':'6' }} pull-right docs-buttons">
+                        <div class="row">
+                            {# Check if the we are changing the profile picture. #}
+                            {% if app.request.get('_route') == 'tj_profile_profile_show' %}
+                                {# Field is added with form tag because a single field can't be validated with JQuery without a form tag.
+                                   The value of the field will be passed to the true profile image form copright field declared as hidden.#}
+                                <form id="image_media_copyright_form">
+                                    <div class="form-group copyright-profilePicture">
+                                        <input type="text" id="image_media_copyright_input" required="required"  aria-required="true" name="image_media_copyright_input" placeholder="{{ 'media.image.copyright.input.placeholder'|trans }}" class="form-control">
+                                    </div>
+                                </form>
+                            {% endif %}
+                            {% if not removeFilter %}
+                                <button type="button" id="loadFilters" class="btn btn-info"
+                                        id="button"> {{ 'people.crop.button.filters'|trans }}</button>
+                            {% endif %}
+                            <button id="clear" type="button" class="btn btn-primary" data-method="clear" title="Clear">
+                            <span class="docs-tooltip" data-toggle="tooltip" title="" data-original-title="Clear Crop">
+                               {{ 'people.crop.button.clear'|trans }}
+                            </span>
+                            </button>
+                            <button type="button" class="btn btn-default"
+                                    id="button"> {{ 'people.crop.button.upload'|trans }}</button>
+                        </div>
+                    </div><!-- /.docs-buttons -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro dateFormat(job) %}
+    {% if job.engagementEnd is defined and job.engagementStart is defined %}
+        {% set yearChange = 0 %}
+        {% set monthChange = 0 %}
+        {% set msg= '' %}
+
+        {% if job.engagementEnd|date('Y') != job.engagementStart|date('Y') %}
+            {% set yearChange=1 %}
+        {% endif %}
+
+        {% if job.engagementEnd|date('m') != job.engagementStart|date('m') %}
+            {% set monthChange=1 %}
+        {% endif %}
+        {% if  job.engagementStart is null %}
+            {% set msg = 'job.list.date.till' | trans %}
+        {% elseif job.engagementEnd is null %}
+            {% set msg = 'job.list.date.from' | trans %}
+        {% endif %}
+
+        {% if  yearChange == 0 %}
+            {% if  monthChange == 0 %}
+                {{ msg }}
+                {{ job.engagementStart ? job.engagementStart | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') : '' }}
+                {{ msg ? '' : '-' }}
+                {{ job.engagementEnd ? job.engagementEnd | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') : '' }}
+            {% else %}
+                {{ msg }}
+                {{ job.engagementStart ? job.engagementStart | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') : '' }}
+                {{ msg ? '' : '-' }}
+                {{ job.engagementEnd ? job.engagementEnd | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') : '' }}
+            {% endif %}
+        {% else %}
+            {{ msg }}
+            {{ job.engagementStart ? job.engagementStart | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') : '' }}
+            {{ msg ? '' : '-' }}
+            {{ job.engagementEnd ? job.engagementEnd | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y')  : '' }}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro dateFormatJob(job) %}
+    {% if job.engagementEnd is defined and job.engagementStart is defined %}
+        {% set engStart =("work.show.label.EngagementStart") | trans %}
+        {% set engEnd =("work.show.label.EngagementEnd") | trans %}
+        {% set isJobShow =1 %}
+
+        {% set yearChange = 0 %}
+        {% set monthChange = 0 %}
+        {% set msg= '' %}
+
+        {% if job.engagementEnd|date('Y') != job.engagementStart|date('Y') %}
+            {% set yearChange=1 %}
+        {% endif %}
+
+        {% if job.engagementEnd|date('m') != job.engagementStart|date('m') %}
+            {% set monthChange=1 %}
+        {% endif %}
+
+        {% if  yearChange == 0 %}
+            {% if  monthChange == 0 %}
+                {{ (job.engagementStart and not job.asap) ? engStart ~ ' ' ~ job.engagementStart | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') : '' }}
+                <br>
+                {{ job.engagementEnd ? engEnd ~ ' ' ~ job.engagementEnd | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') : '' }}
+            {% else %}
+                {{ (job.engagementStart and not job.asap) ? engStart ~ ' ' ~ job.engagementStart | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') : '' }}
+                <br>
+                {{ job.engagementEnd ? engEnd ~ ' ' ~ job.engagementEnd | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') : '' }}
+            {% endif %}
+        {% else %}
+            {{ (job.engagementStart and not job.asap) ? engStart ~ ' ' ~ job.engagementStart | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') : '' }}
+            <br>
+            {{ job.engagementEnd ? engEnd ~ ' ' ~ job.engagementEnd | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y')  : '' }}
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro deFormat(dateDiff) %}
+    {% if app.request.locale | lower == 'de' and dateDiff is not null %}
+        {% set enArr = dateDiff | time_diff | split(' ') %}
+        {% set deArr = dateDiff | ago| split(' ') %}
+        {% set time = deArr[2] %}
+        {#Replace Minuten with Min. or Skunden with Sek.#}
+        {{ (dateDiff | ago) | replace({(time): time == "Sekunden" ? 'Sek.' : time == 'Minuten' ? 'Min.' : time}) }}
+    {% else %}
+        {{ dateDiff | ago }}
+    {% endif %}
+{% endmacro %}
+
+{% macro error() %}
+    <p class="p-alt text-danger hidden text-center">
+        <svg class="icon-svg icon-inline icon-svg-danger" width="30" height="30">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}"></use>
+        </svg>
+        <span class="login-error-content">
+            {{ 'messages.validate.fillMissingFields'|trans }}
+        </span>
+    </p>
+{% endmacro %}
+
+{% macro info_localized() %}
+    <p class="p-alt text-danger localized-fill hidden text-center">
+        <svg class="icon-svg icon-inline icon-svg-danger" width="30" height="30">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}"></use>
+        </svg>
+        <span class="login-error-content">
+            {{ 'messages.job.fillLocalizedField'|trans }}
+        </span>
+    </p>
+{% endmacro %}
+
+{% macro accountSettingsGeneralInfoBox(profile,billingAddress) %}
+    <dl>
+        <dt>{{ 'account.personalDetails.label.firstName' | trans }}</dt>
+        <dd>{{ profile.firstname }}</dd>
+
+        <dt>{{ 'account.personalDetails.label.lastName' | trans }}</dt>
+        <dd>{{ profile.lastName }}</dd>
+
+        {% if profile.subtitle is not null %}
+            <dt>{{ 'account.personalDetails.label.artistName' | trans }} </dt>
+            <dd>{{ profile.subtitle }}</dd>
+        {% endif %}
+
+        <dt>{{ 'account.personalDetails.label.trackViews' | trans }} </dt>
+        <dd>{% if(profile.doNotTrackViews) %} {{ "account.personalDetails.label.trackViews.Yes"|trans }} {% else %} {{ "account.personalDetails.label.trackViews.No"|trans }} {% endif %}</dd>
+        <br>
+    </dl>
+    <p class="p-alt">
+        <a href="{{ path('tj_profile_account_settings_generalInfoModal',{slug: profile.slug}) }}" data-target="#myModal"
+           data-hash="generalInfo" data-toggle="modal" data-color="#CD2036">
+            <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+            </svg> {{ 'link.edit'| trans }}
+        </a>
+    </p>
+
+    {% if billingAddress is not null %}
+        <h3>{{ 'account.personalDetails.title.billingAddress' | trans }} </h3>
+        <dl>
+            <dt>{{ 'account.personalDetails.label.addressFullname' | trans }} </dt>
+            <dd>{{ billingAddress.firstname }} {{ billingAddress.lastname }}</dd>
+
+            <dt>{{ 'account.personalDetails.label.addressStreet' | trans }} </dt>
+            <dd>{{ billingAddress.street }}</dd>
+
+            <dt>{{ 'account.personalDetails.label.addresZip' | trans }} </dt>
+            <dd>{{ billingAddress.zip }}</dd>
+
+            <dt>{{ 'account.personalDetails.label.addressCity' | trans }} </dt>
+            <dd>{{ billingAddress.city }}</dd>
+            <dt>{{ 'account.personalDetails.label.addressCountry' | trans }} </dt>
+            <dd>{{ billingAddress.country | country(app.request.locale) }}</dd>
+        </dl>
+        <p class="p-alt">
+            <a href="{{ path('tj_profile_account_settings_billing_address_modal',{slug:profile.slug}) }}"
+               data-target="#myModal"
+               data-hash="billingAddress" data-toggle="modal" data-color="#CD2036">
+                <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                </svg> {{ 'link.edit'| trans }}
+            </a>
+        </p>
+    {% endif %}
+
+
+{% endmacro %}
+
+{% macro searchBar() %}
+    {% block search %}
+        <div class="search" id="search">
+            <div class="search-bar">
+                <div class="container">
+                    <div class="search-form">
+                        <input class="search-field" type="text" placeholder="{{ "placeholder.search" | trans }}">
+                        <button class="btn btn-inverse" onclick="generalSearch()">
+                            {{ "button.search" | trans }}
+                        </button>
+                        <button class="search-close" id="search-close">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-close') }}"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="search-results">
+            </div>
+        </div>
+    {% endblock %}
+{% endmacro %}
+
+{% macro navigationMenu() %}
+    {% block nav %}
+
+        <nav class="navbar navbar-inverse {% if app.request.get('_route') == 'tj_main_default_home' %} large {% else %} fixed slide out in  {% endif %}">
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="row primary-admin-menu">
+                    <div class="large-top-menu">
+                        <div class="pull-right col-xs-12 no-padding-right">
+                            <div class="col-md-3 no-padding-left people-search">
+                                <div class="dropdown content-menu-admin">
+                                    <select class="form-control dropdown-admin-menu adminChoices">
+                                        <option data-class="people" value="{{ path('admin_people_index') }}">{{ 'admin.menu.peoplesearch' | trans }}
+                                        </option>
+                                        <option data-class="billing" value="{{ path('admin_invoices_index') }}">{{ 'admin.menu.invoicesearch' | trans }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            {{ render(controller('TheaterjobsMainBundle:Default:adminSearch')) }}
+                        </div>
+                        <div class="col-md-5 col-xs-12 admin-menu-top">
+                            <ul class="nav navbar-nav navbar-left has-active">
+                                <li>
+                                    <a href="#">
+                                        <span>{{ "adminMenu.link.people" | trans }}</span>
+                                    </a>
+                                    <span class="toggle-admin">+</span>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('tj_admin_pending_name_change_requests') }}">
+                                                <span>{{ "adminMenu.link.nameChanges" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_skill') }}">
+                                                <span>{{ "adminMenu.link.Skills" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_skill',{type:'languages'}) }}">
+                                                <span>{{ "adminMenu.link.newLanguages" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_billings_index') }}">
+                                                <span>{{ "adminMenu.link.debit" | trans }}</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>{{ "adminMenu.link.organization" | trans }}</span>
+                                    </a>
+                                    <span class="toggle-admin">+</span>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('tj_admin_pending_organizations') }}">
+                                                <span>{{ "adminMenu.link.newOrganization" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_pending_membership_applications') }}">
+                                                <span>{{ "adminMenu.link.teamMembershipApplications" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_stage_tags_index') }}">
+                                                <span>{{ "adminMenu.link.newStageTags" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_production') }}">
+                                                <span>{{ "adminMenu.link.newProductions" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_creator_index') }}">
+                                                <span>{{ "adminMenu.link.newCreators" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_admin_director_index') }}">
+                                                <span>{{ "adminMenu.link.newDirectors" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_vio_index') }}">
+                                                <span>Vio List</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_vio_reminder_index') }}">
+                                                <span>Vio Reminder</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ path('admin_vio_done_index') }}">
+                                                <span>Vio Done</span>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span>{{ "adminMenu.link.work" | trans }}</span>
+                                    </a>
+                                    <span class="toggle-admin">+</span>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('tj_admin_pending_job') }}">
+                                                <span>{{ "adminMenu.link.pendingJobs" | trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_job_hunt_todo_index') }}">
+                                                <span>{{ 'adminMenu.link.jobHuntTodo'|trans }}</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ path('tj_main_jobs_admin_watchlist') }}">
+                                                <span>{{ "adminMenu.link.jobsWatchlist" | trans }}</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="{{ path('admin_job_hunt_index') }}">
+                                                <span>{{ 'adminMenu.link.jobHunt'|trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('admin_job_hunt_done_index') }}">
+                                                <span>{{ 'adminMenu.link.jobHuntDone'|trans }}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('tj_main_job_other_list') }}">
+                                                <span>{{ "adminMenu.link.jobsiteReminder" | trans }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li><span class="name"><a
+                                                href="{{ path("admin_social_media") }}">{{ "adminMenu.link.socialMedia" | trans }}</a></span>
+                                </li>
+                                <li><span class="name"><a
+                                                href="{{ path("jms_jobs_overview") }}">{{ "adminMenu.link.cronJob" | trans }}</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="topbar-close-menu">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-close') }}"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="large-top-button">
+                        <div class="col-md-12">
+                            <h3>Administrator Menu</h3>
+                            <span class="topbar-mobile-menu">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-menu') }}"></use>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <div class="container">
+
+                <div class="navbar-header">
+                    <a href="{{ path("tj_main_default_home") }}" class="navbar-brand">
+                        <img src="{{ asset('bundles/theaterjobsmain/img/theapolis-logo.svg') }}" alt="Theater bist Du">
+                    </a>
+                </div>
+
+                <div class="navbar-right">
+                    <ul class="nav navbar-nav navbar-left has-active">
+                        <li class="hide-md">
+                            <a class="nav-link {{ active_nav(path("tj_profile_profile_index")) == 1 ? 'active' : '' }}"
+                               href="{{ path("tj_profile_profile_index") }}">{{ 'menuPrimary.link.people'| trans }}
+                            </a>
+                        </li>
+                        <li class="hide-md">
+                            <a class="nav-link {{ active_nav(path("tj_main_organization_home")) == 1 ? 'active' : '' }}"
+                               href="{{ path("tj_main_organization_home") }}">{{ 'menuPrimary.link.organisations'| trans }}
+                            </a>
+                        </li>
+                        <li class="hide-md">
+                            <a class="nav-link {{ active_nav(path("tj_inserate_job_route_home")) == 1 ? 'active' : '' }}"
+                               href="{{ path("tj_inserate_job_route_home") }}">{{ 'menuPrimary.link.work'| trans }}
+                            </a>
+                        </li>
+                        <li class="hide-md">
+                            <a class="nav-link {{ active_nav(path("tj_news")) == 1 ? 'active' : '' }}"
+                               href="{{ path("tj_news") }}">{{ 'menuPrimary.link.news'| trans }}
+                            </a>
+                        </li>
+                        <li><a class="nav-link" id="search-toggle">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </a></li>
+
+                        {% if not is_granted('ROLE_USER') %}
+                            <li class="hide-md"><a class="nav-link primary" data-toggle="modal" data-hash="login"
+                                                   data-target="#myModal"
+                                                   href="{{ path('tj_main_default_login_modal') }}">{{ 'menuPrimary.link.login'| trans }}</a>
+                            </li>
+
+                            <li class="hide-not-fixed hide-md {% if app.request.get('_route') == 'fos_user_registration_register_choise' %} hidden {% endif %}">
+                                <a class="btn btn-primary"
+                                   href="{{ path("tj_main_default_home") }}#membership">{{ 'menuPrimary.link.joinForFree'| trans }}</a>
+                            </li>
+                        {% endif %}
+                        <li class="hide-lg"><a class="nav-link" id="mobile-menu-toggle">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-menu') }}"></use>
+                                </svg>
+                            </a></li>
+
+                    </ul>
+
+                    {% if is_granted('ROLE_USER') %}
+                        {{ render(controller('TheaterjobsUserBundle:Security:loginIn')) }}
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="mobile-menu-close">
+                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-close') }}"></use>
+                </svg>
+            </button>
+
+            <ul class="mobile-menu-list">
+                <li><a href="{{ path("tj_profile_profile_index") }}">{{ 'menuPrimary.link.people'| trans }}</a></li>
+                <li><a href="{{ path("tj_main_organization_home") }}">{{ 'menuPrimary.link.organisations'| trans }}</a>
+                </li>
+                <li><a href="{{ path("tj_inserate_job_route_home") }}">{{ 'menuPrimary.link.work'| trans }}</a></li>
+                <li><a href="{{ path("tj_news") }}">{{ 'menuPrimary.link.news'| trans }}</a></li>
+                {% if not is_granted('ROLE_USER') %}
+                    <li><a class="nav-link primary" data-toggle="modal" data-hash="login"
+                           data-target="#myModal"
+                           href="{{ path('tj_main_default_login_modal') }}">{{ 'menuPrimary.link.logIn'| trans }}</a>
+                    </li>
+                    <li class="mobile-menu-separated"><a href="{{ path("tj_main_default_home") }}#membership"
+                                                         class="btn btn-inverse">{{ 'menuPrimary.link.joinForFree'| trans }}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+
+        {#{% if app.request.attributes.get('_route') == "theaterjobs_main_default_index" or app.request.attributes.get('_route') == "tj_main_default_home" %}#}
+        {#<div id="top-menu" class="navbar navbar-default">#}
+        {#{% else %}#}
+        {#<div class="navbar navbar-default small-nav">#}
+        {#{% endif %}#}
+        {#<div class="container-fluid">#}
+        {#<div class="navbar-header">#}
+        {#<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu"#}
+        {#aria-expanded="false">#}
+        {#<span class="icon-bar"></span>#}
+        {#<span class="icon-bar"></span>#}
+        {#<span class="icon-bar"></span>#}
+        {#</button>#}
+        {#<a href="{{ path('theaterjobs_main_default_index') }}">#}
+        {#<img src="{{ asset('bundles/theaterjobsmain/images/theapolis-logo.svg') }}" width="160" height="65"#}
+        {#alt="Theapolis logo"/>#}
+        {#</a>#}
+        {#</div>#}
+
+        {#<div class="collapse navbar-collapse" id="main-menu">#}
+        {#<ul class="nav navbar-nav navbar-right">#}
+        {#<li><a href="{{ path("tj_profile_profile_index") }}">{{ 'menu.link.people' | trans }}</a></li>#}
+        {# <li><a href="{{ path("tj_inserate_piece_route_home") }}">{{ 'menu.link.productions' | trans }}</a></li>#}
+        {#<li><a href="{{ path("tj_main_organization_home") }}">{{ 'menu.link.organizations' | trans }}</a></li>#}
+        {#<li><a href="#">{{ 'menu.link.work' | trans }}</a></li>#}
+        {#<li><a href="{{ path("tj_news") }}">{{ 'menu.link.news' | trans }}</a></li>#}
+        {#<li><a id="search-toggle" href="#"><span class="fa fa-search"></span></a></li>#}
+        {#{% if not is_granted("ROLE_USER") %}#}
+
+
+        {#<li>#}
+        {#<a class="red-link" data-toggle="modal" href="{{ path('tj_main_default_login_modal') }}"#}
+        {#data-target="#myModal">{{ 'menu.link.login' | trans }}#}
+
+
+        {#</a>#}
+
+        {#</li>#}
+        {#<li>#}
+        {#<a href="#bg-teal" class="button button-primary button-small">#}
+        {#{{ 'menu.button.join' | trans }}#}
+        {#</a>#}
+        {#</li>#}
+        {#{% else %}#}
+
+
+        {#{{ render(controller('TheaterjobsUserBundle:Security:loginIn')) }}#}
+        {#{% endif %}#}
+
+        {#</ul>#}
+        {#</div>#}
+        {#</div>#}
+
+
+        {#</div>#}
+        {#</div>#}
+    {% endblock %}
+{% endmacro %}
+
+{#
+    Shows activity logs of a user
+
+    @param profile Profile of a user
+    @param options[
+        activityLogs    => Entities
+        activityOptions => [allEntitiesPath => string]
+    ]
+#}
+{% macro activityLogsAdminBox(profile, options) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="panel panel-large panel-admin">
+            <h2 class="panel-head">
+                {{ 'user.accountSettings.activityLogs'| trans }}
+                <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+            </h2>
+            <div class="logs-block">
+                {{ _self.activityLogs(profile, options.activityLogs, options.activityOptions) }}
+            </div>
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{#
+    General function for activity logs
+
+    @var entity Entity of activity logs
+    @var activities []
+    @var options [allEntitiesPath => string]
+#}
+{% macro activityLogs(entity, activities, options) %}
+    <div class="panel-content contet-logList">
+        {% if activities | length > 0 %}
+            <div class="timeline timeline-inverse timeline-inverse-gray logList" id="logList">
+                {% for activity in activities %}
+                    {% if loop.index <= 3 %}
+                        {% set userName = (activity.createdBy ? activity.createdBy.profile : activity.user.profile) | defaultName %}
+                        {% if activity is not empty and ((activity.adminOnly and is_granted('ROLE_ADMIN')) or (not activity.adminOnly)) %}
+                            <div class="timeline-group">
+                                <div class="timeline-time" id="start">
+                                    {{ activity.createdAt | date('d.m.Y H:i') }}
+                                </div>
+                                <div class="timeline-item">
+                                    <p class="p-alt">
+                                        <b>{{ userName }}</b>
+                                        {% if activity.createdBy.hasRole('ROLE_ADMIN') %}
+                                            ({{ 'placeholder.admin' |trans({},'messages') }})
+                                        {% endif %}
+                                        {% if activity.activityText is not empty %}
+                                            <br> {{ activity.activityText | raw }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if activities | length > 3 %}
+                    <div class="timeline-group">
+                        <div class="timeline-time no-point" id="start">
+                            <span class="dotted"></span>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="p-alt">
+                                <b></b>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if entity.createdAt  is not empty %}
+                    <div class="timeline-group">
+                        <div class="timeline-time" id="start">
+                            <span>{{ entity.createdAt|date('d.m.Y H:i') }}</span>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="p-alt last-createDate">
+                                <b>{{ 'organization.show.detailBlock.createdDate' | trans }}</b>
+                            </p>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        {% else %}
+            {% if entity.createdAt is not empty %}
+                <div class="timeline first-timeline timeline-inverse timeline-inverse-gray logList" id="logList">
+                    <div class="timeline-group">
+                        <div class="timeline-time" id="start">
+                            <span>{{ entity.createdAt | date('d.m.Y H:i') }}</span>
+                        </div>
+                        <div class="timeline-item">
+                            <p class="p-alt last-createDate">
+                                <b>{{ 'organization.show.detailBlock.createdDate' | trans }}</b>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+        {% if activities | length > 3 %}
+            <p class="p-alt timeline-more">
+                <a href="{{ path(options.allEntitiesPath, {slug : options.slug}) }}" data-target="#myModal"
+                   data-toggle="modal" data-hash="logs"
+                   data-color="#F0F0F0">{{ 'button.showMore'| trans }}</a>
+                {#{{ modal.colors['8items'][7] }}#}
+            </p>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{#
+    Show all admin user comments
+
+    @param commentsForm AdminUserCommentsType form
+    @param entities all AdminUserComments comments
+    @param profile Profile entity
+#}
+{% macro adminUserComments(commentsForm, entities, profile) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        {{ _self.createCommentsForm(commentsForm) }}
+        <div class="block-comments">
+            {% set showAllPath = path('tj_user_admin_user_comments_get_all', {slug : profile.slug}) %}
+            {{ _self.showComments(entities, showAllPath) }}
+        </div>
+
+    {% endif %}
+{% endmacro %}
+
+{#
+    General Show Messages
+
+    @param entity[] The messages entity
+    @param showAllPath api route name to show all messages entities
+#}
+{% macro showComments(entity, showAllPath) %}
+
+    {% if entity | length > 0 %}
+        {% for comment in entity if comment.archivedAt is null %}
+            {% if loop.index <= 5 %}
+                {% set comment = get_admin_comment(comment) %}
+
+                {% set userName = comment.profile | defaultName %}
+                {# get the profile photo #}
+                {% set profilePhoto =  profile_photo(comment.profile, 'uploadFile', 'logos') %}
+                {% set filter = '' %}
+                {# get the filter profile photo #}
+                {% if comment.profile.mediaImage|first.filter is defined %}
+                    {% set filter = comment.profile.mediaImage|first.filter %}
+                {% endif %}
+
+                <div class="row row-comments">
+                    <div class="col-md-2 col-xs-2">
+                        <div class="circle-img-comment">
+                            <figure class="{{ filter }}">
+                                <img src="{{ profilePhoto }}">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-md-10 col-xs-10 padding-mobile-left">
+                        <h4>
+                            {% if comment.profile.isPublished %}
+                                <a href="{{ path('tj_profile_profile_show',{'slug':comment.profile.slug}) }}">
+                                    {{ userName }}
+                                </a>
+                            {% else %}
+                                {{ userName }}
+                            {% endif %}
+                        </h4>
+                        <p>{{ comment.description |nl2br }}</p>
+                        <span class="dt-news-comment">
+                            {{ comment.publishedAt|date('d.m.Y H:i') }}
+                        </span>
+                    </div>
+
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if entity | length >=6 %}
+            <p class="p-alt"><a class="pull-right"
+                                href="{{ showAllPath }}"
+                                data-target="#myModal" data-hash="comments"
+                                data-toggle="modal" data-color="#87162D">{{ 'button.link.showMore'|trans }}</a>
+            </p>
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{#
+    Create comments form
+
+    @param CommentsForm EntityType
+#}
+{% macro createCommentsForm(commentsForm) %}
+    <h3>{{ 'user.title.comments' | trans }}</h3>
+    <div class="block-form" id="user-comment">
+        {{ form_start(commentsForm) }}
+        <div class="row">
+            <div class="col-md-12">
+                {{ form_row(commentsForm.description) }}
+                <div style="text-align: right;">{{ form_widget(commentsForm.submit, {'attr': {'class': 'btn btn-default'} }) }}</div>
+            </div>
+        </div>
+        {{ form_widget(commentsForm._token) }}
+        {{ form_end(commentsForm) }}
+    </div>
+{% endmacro %}
+
+{#
+    Render flash bags based on type
+#}
+{% macro flashbags(flashbags) %}
+    {% for flashMessage in flashbags %}
+        {% for type, message in flashMessage %}
+            <div class="flash-message message-info message-{{ type }}"> {{ message }}
+                <span class="close-message">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                    </svg>
+                </span>
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endmacro %}

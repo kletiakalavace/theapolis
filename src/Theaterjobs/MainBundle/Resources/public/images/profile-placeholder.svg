@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>profile-placeholder</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="profile-placeholder">
+            <g id="Group">
+                <rect id="Rectangle-18" fill="#FFFFFF" x="0" y="0" width="160" height="160"></rect>
+                <path d="M81,111 C64.3700787,111 57.8188976,101 57.8188976,101 C57.8188976,101 50.7637795,101.5 38.1653543,109 C25.5669291,116.5 19.519685,142 19.519685,142 L17.519685,160 L145.480315,160 L142.480315,142 C142.480315,142 136.433071,116.5 123.834646,109 C111.23622,101.5 104.181102,101 104.181102,101 C104.181102,101 97.6299213,111 81,111 Z" id="Combined-Shape" fill="#A9A9A9"></path>
+                <ellipse id="Oval-10" fill="#A9A9A9" cx="80" cy="72" rx="24" ry="30"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

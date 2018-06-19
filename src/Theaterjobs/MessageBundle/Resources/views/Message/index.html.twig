@@ -1,0 +1,85 @@
+{% extends "::base.html.twig" %}
+{% block css %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+    "@TheaterjobsMessageBundle/Resources/public/css/style.css" %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block title %} {{ 'tj.message.title' | trans }} {% endblock %}
+
+{% block content %}
+
+    <div class="page-message">
+        <div class="no-messages" style="display: none">
+            <div class="container">
+                <div class="block">
+                    <div class="page-header">
+                        <h1>{{ "empty.messenger.title"|trans }}</h1>
+                        <div class="separator"></div>
+                    </div>
+                        <div class="middle-block">
+                            <h3>{{ "empty.messenger.description"|trans }}</h3>
+                        </div>
+                </div>
+            </div>
+        </div>
+        {#Cotent messenger#}
+        <div class="content-messenger" style="display: none;">
+            <div class="col-md-2 no-padding list-name" id="inboxList">
+                <div class="col-fixed">
+                    <div class="col-md-12 content-notification-msg">
+                        <div class="col-md-10 no-padding-left">
+                            <h3>Messenger</h3>
+                        </div>
+                        <div class="col-md-2 no-padding-right notification-newMessage">
+                            {% if fos_message_nb_unread() > 0 %}
+                                <span id="allNewMsgs">{{ fos_message_nb_unread() }}</span>
+                            {% endif %}
+                            {#<a href="{{ path('tj_message_index') }}" class="link-new-message">
+                                <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-mail') }}"></use>
+                                </svg>
+                            </a>#}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="group-searchMess">
+                            <button id="search-bar">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </button>
+                            <input type="text" id="search-input" class="form-control" placeholder="{{ 'messages.placeholder.searchmessenger'|trans }}" />
+                        </div>
+                    </div>
+                    <p id="searchLoading" style="display:none" ><img src='{{ asset('bundles/theaterjobsmain/images/rolling.svg') }}'></p>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <ul class="list-messenger">
+                        <a style="text-align:center;" >
+                            <p class="p-alt" style="display:none" id="showMoreThreads" data-page="2" >{{ 'messages.list.showmore'|trans}}</p>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 no-padding" id="inboxMessages">
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block footer %}
+{% endblock footer %}
+{% block js %}
+    <script>
+        var socket;
+        var replyThread = parseInt('{{ app.request.get('thread') ? app.request.get('thread') : 'false' }}');
+    </script>
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMessageBundle/Resources/public/js/main.js"
+    "@TheaterjobsMessageBundle/Resources/public/js/index.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

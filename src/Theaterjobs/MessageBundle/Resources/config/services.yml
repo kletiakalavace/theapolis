@@ -1,0 +1,26 @@
+parameters:
+    nodeAPI:  '%node_api%'
+    nodeAPIToken:  '%node_api_token%'
+
+services:
+  messages.twig_extension:
+    class: Theaterjobs\MessageBundle\Twig\MessagesExtension
+    public: false
+    tags:
+        - { name: twig.extension }
+    arguments:
+      - '@doctrine.orm.entity_manager'
+  thread_search.listener.theaterjobs:
+    class: Theaterjobs\MessageBundle\Listener\ThreadsIndexListener
+    arguments:
+        - '@fos_elastica.object_persister.theaterjobs.thread'
+        - '@fos_elastica.indexable'
+        - { index: theaterjobs, type: thread, identifier: id }
+        - '@fos_elastica.logger'
+    tags:
+        - { name: doctrine.event_subscriber }
+  node_emiter:
+    class: Theaterjobs\MessageBundle\Utils\NodeEmitter
+    arguments:
+      - '%node_api%'
+      - '%node_api_token%'

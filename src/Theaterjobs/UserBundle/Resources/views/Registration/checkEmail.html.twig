@@ -1,0 +1,11 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% import '@TheaterjobsUser/userMacro.html.twig' as um %}
+{% block content %}
+    {% if(state == 'confirmationSent') %}
+        {{ um.confirmationEmailSent(user) }}
+    {% elseif(state == 'confirmationResent') %}
+        {{ um.confirmationEmailResent(user) }}
+    {% elseif(state == 'confirmationLinkBroken')  %}
+        {{ um.brokenConfirmationLink() }}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% for entity in entities %}
+    {% set name = entity.user.profile | defaultName %}
+    <div class="activity activity-action u-clearfix activity-other">
+        <div class="creator member js-show-mem-menu">
+            {% set haveProfilePhoto='false' %}
+            {% for image in entity.user.profile.mediaImage() if image.isProfilePhoto %}
+                {% set haveProfilePhoto='true' %}
+                <div class="member js-member-on-card-menu">
+                    <img class="member-avatar" height="30" width="30"
+                         src="{{ vich_uploader_asset(image, 'uploadFile') | imagine_filter('profile_media') }}"
+                         title="{{ name }}">
+                </div>
+            {% endfor %}
+            {% if haveProfilePhoto=='false' %}
+                <div class="member js-member-on-card-menu">
+                        <span class="member-initials" title="{{ name }}">
+                            {{ entity.user.profile.firstName|slice(0, 1) }}{{ entity.user.profile.lastName|slice(0, 1) }}
+                        </span>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="activity-desc">
+            <strong>{{ name }}</strong> {{ entity.activityText|raw }}
+        </div>
+
+        <p class="activity-meta quiet">
+            <span class="date">{{ entity.createdAt|date('d.m.Y H:i') }}</span>
+        </p>
+    </div>
+{% endfor %}

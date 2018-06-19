@@ -1,0 +1,187 @@
+{% import 'macro.html.twig' as m %}
+
+<div class="modal-body movebottom" id="addNews">
+    <!-- Skills -->
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-10 col-md-push-1">
+                <h2>{{ 'news.edit.mainTitle.news'|trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(form.pretitle) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(form.title) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(form.organizations_helper,{'attr' : {'multiple': 'true', 'value' : organization_titles  } }) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{ form_row(form.users,{'attr' : {'multiple': 'true' } }) }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(form.tags_helper,{'attr' : {'multiple': 'true', 'value' : tag_titles  } }) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 short-descr-news">
+                        {{ form_row(form.shortDescription, { 'attr' : { 'class' : 'short-description' } }) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>{{ 'news.edit.enterLocation'|trans }}</label>
+                        <div id="map_container" style="width: 144px;margin: auto;position:relative">
+                            <div class="input-group input-find input-location-news">
+                                <input id="pac-input" class="pac-control form-control" type="text"
+                                       placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                                <span id="currentLocation"
+                                      class="input-group-addon btn btn-success"><i class="fa fa-map-marker"></i>
+                                </span>
+                            </div>
+                            <div id="map" style="height:144px"></div>
+                            <div class="hidden">
+                                {{ form_widget(form.geolocation) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        {{ form_row(form.imageDescription) }}
+                        <div id="profile-media" class="display-slider upload-image-news upload-image">
+                            <div class="news_cover">
+                                {% if form.vars.value.path is not null %}
+                                    <img id="medianews"
+                                         src="{{ vich_uploader_asset(form.vars.value, 'uploadFile') }}"/>
+                                    <label class="remove-image-button-news" id="deleteLogo"
+                                           data-char="{{ entity.slug }}">
+                                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                        </svg>
+                                    </label>
+                                    <label class="display-slider-add-content upload-block display_hover"
+                                           id="news-label-image">
+                                        {{ form_widget(form.uploadFile) }}
+                                        + {{ 'people.edit.label.editImage'| trans }} <br> (1440 x 810) px
+                                    </label>
+                                {% else %}
+                                    <img id="medianews" src=""/>
+                                    <label class="display-slider-add-content upload-block" id="news-label-image">
+                                        {{ form_widget(form.uploadFile) }}
+                                        + {{ 'people.add.label.addImage'| trans }} <br> (1440 x 810) px
+                                    </label>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 editor-desc-news">
+                        {{ form_row(form.description,{'attr':{'class' : 'usefultextarea  ckeditor'} } ) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="text-align: center;">
+                        <button type="button" class="close-footer" data-dismiss="modal"
+                                aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                    </div>
+                    {{ form_widget(form._token) }}
+                </div>
+            </div>
+            {{ m.error }}
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+<script>
+    var oldLatLng = null;
+    var LatLng = null;
+    {% if entity.geolocation %}
+    LatLng = "{{ entity.geolocation }}";
+    oldLatLng = LatLng.split(",");
+    {% endif %}
+    var ckConfig = '{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/news.js') }}';
+    var inputTerm;
+    var initUsers = '{{ existing_users|json_encode|raw }}';
+    //    usersAutocomplete($('#news_users'), inputTerm, initUsers);
+</script>
+{% block js %}
+    {% javascripts filter="?uglifyjs2"
+    '@TheaterjobsMainBundle/Resources/public/js/map/location.js'
+    "@TheaterjobsNewsBundle/Resources/public/js/news.js"
+    "@TheaterjobsNewsBundle/Resources/public/js/newsForm.js" %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        $('#news_pretitle,#news_title').bind("keyup change", function (e) {
+            if ($(this).valid()) {
+                $(this).closest('.has-error').removeClass('has-error');
+                $(this).tooltip('destroy');
+//                $(this).parent().tooltip('destroy');
+            }
+        });
+        $('#news_shortDescription').on('keyup change', function () {
+            if ($(this).valid()) {
+                $(this).closest('.has-error').removeClass('has-error');
+                $(this).tooltip('destroy');
+            }
+        });
+        /*
+         form validation
+         */
+        $('form[name="news"]').validate({
+            errorPlacement: function (error, element) {
+                toolTipError(error.text(), element);
+                $('.text-danger').removeClass('hidden');
+            }
+        });
+        var fileInputAudioImage = $('.uploadAudioImage :input');
+        fileInputAudioImage.change(function () {
+
+            var reader = new FileReader();
+            var urlBase46 = null;
+            var file = this.files[0];
+            var ext = file.name.split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg', 'svg']) === -1) {
+                toastr.error("The allowed types are ['gif', 'png', 'jpg', 'jpeg', 'svg']");
+                $(this).val("");
+                return;
+            }
+            else if (file.size === 10971520) {
+                toastr.error("The max upload size is 10M");
+                $(this).val("");
+                return;
+            }
+
+            $(reader).load(function (e) {
+                urlBase46 = e.target.result;
+                $('#medianews').attr('src', base64toBlobUrl(urlBase46));
+            });
+            reader.readAsDataURL(file);
+
+            var removeButt = '<label class="remove-image-button-news" id="remove-button">' +
+                '<svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">' +
+                '<use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use></svg></label>';
+            $('#profile-media').append(removeButt);
+            $("#news-label-image").addClass('display_hover');
+
+            // image remove
+            $('#remove-button').click(function () {
+                $("#news-label-image").removeClass('display_hover');
+                $('.uploadAudioImage :input').val('');
+                $('#medianews').attr('src', '');
+                $(this).remove();
+            });
+
+        });
+    </script>
+{% endblock %}

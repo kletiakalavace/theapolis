@@ -1,0 +1,8 @@
+.ui-helper-hidden-accessible {
+    display: none;
+}
+.ui-autocomplete {
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:44:02Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="bb42d65a66a933c193d4cb577137ba73ea341d37" resname="Title cannot be longer than {{ limit }} characters">
+        <source>Title cannot be longer than {{ limit }} characters</source>
+        <target>Title cannot be longer than {{ limit }} characters</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

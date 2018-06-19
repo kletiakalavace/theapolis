@@ -1,0 +1,50 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="mediaImage">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.add.mainTitle.image'| trans }}</h2>
+                {{ form_start(edit_form) }}
+                <div> {{ form_row(edit_form.title) }}</div>
+                <div>
+                    {{ form_row(edit_form._token) }}
+                    {{ form_row(edit_form.uploadFile) }}
+                    <div id="profile-media" class="display-slider upload-image modal-custom-file">
+
+                        <div class="display-slider-empty" style="position: absolute!important;">
+                            <img id="mediaBackground"
+                                 src="{{ asset('bundles/theaterjobsmain/img/empty-display.jpg') }}">
+                            <label class="display-slider-add-content upload-block">
+                                {{ form_widget(edit_form.path) }}
+                                + {{ 'people.add.label.addImages'| trans }}
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="imagesUploadingSvg" style="margin: 20px auto 0;text-align:center;">
+                    <div class="images-add-buttons">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">
+                            {{ 'footer.modal.closeModal'| trans }}
+                        </button>
+                        {{ form_widget(edit_form.submit,{'attr':{'class' : 'btn-inverse-primary mediaImage'}}) }}
+                    </div>
+                </div>
+                {{ form_end(edit_form) }}
+                <p class="p-alt text-danger-custom hidden text-center">
+                    <svg class="icon-svg icon-inline icon-svg-danger" width="30" height="30">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}"></use>
+                    </svg>
+                    <span class="login-error-content" id="span-text-danger"> </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% block js %}
+    {% javascripts filter='?uglifyjs2'
+        "@TheaterjobsProfileBundle/Resources/public/js/mediaImage/new.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

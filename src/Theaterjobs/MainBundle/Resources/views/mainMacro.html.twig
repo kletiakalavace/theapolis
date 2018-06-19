@@ -1,0 +1,129 @@
+{% macro dashboardMessages() %}
+    {% set newThreads = last_messages(app.user) %}
+    <ul class="list-unstyled">
+        {% for thread in newThreads %}
+            {% set lastThreadMessage = last_thread_msg(thread) %}
+            {% set receipt = thread_receipt(thread, app.user) %}
+            <li>
+                <div class="notice">
+                    <div class="profile-photo profile-photo-xs notice-author">
+                        {% set profilePhoto =  profile_photo(receipt.profile,'uploadFile','logos') %}
+                        {% set filter = '' %}
+
+                        {% if receipt.profile.mediaImage|first.filter is defined %}
+                            {% set filter = receipt.profile.mediaImage|first.filter %}
+                        {% endif %}
+
+                        <figure class="{{ filter }}">
+                            <img src="{{ profilePhoto }}" alt="{{ receipt | defaultName }}">
+                        </figure>
+                    </div>
+
+                    <div class="notice-content">
+                        <p class="notice-text">
+                            {{ (thread.subject | escape) | raw }}
+                        </p>
+                        <ul class="notice-footer">
+                            <li>
+                                <strong>
+                                    {{ receipt | defaultName }}
+                                </strong>
+                            </li>
+                            <li class="text-muted">
+                                {{ lastThreadMessage.createdAt | date('d.m.Y H:i:s') }}
+                            </li>
+                            <li class="notice-mobile-action">
+                                <a href="{{ path('tj_message_index',{ thread : thread.id }) }}">
+                                    {{ "dashboard.messages.Read"|trans }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="notice-action">
+                        <a href="{{ path('tj_message_index', { thread : thread.id }) }}">
+                            {{ "dashboard.messages.Read"|trans }}
+                        </a>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro dashboardNotificiations(notifications) %}
+    <ul class="list-unstyled">
+        {% for notification in notifications %}
+            <li>
+
+                <div class="notice notice-with-type">
+                    {% if notification.requireAction %}
+                        <div class="notice-type notice-red-action"></div>
+                    {% else %}
+                        <div class="notice-type notice-blue-inf"></div>
+                    {% endif %}
+
+                    <div class="notice-content">
+                        <p class="notice-text">
+                            {% if notification.translationKeys %}
+                                {{ notification.title | trans(notification.translationKeys, 'notification') }}
+                            {% else %}
+                                {{ notification.title | trans([], 'notification') }}
+                            {% endif %}
+                        </p>
+                        {#<p class="notice-text"><span class="pull-right listing-date"><small>{{ notification.createdAt | date('Y-m-d H:i:s') }}</small></span>
+                        </p>#}
+                    </div>
+                    <div class="notice-action"><a
+                                href="{{ path('tj_user_notifications') }}">{{ "dashboard.notification.Read"|trans }}</a>
+                    </div>
+                </div>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% macro dashboardNews(recentNews) %}
+    {% for  news in recentNews %}
+        <article class="news-post">
+            <div class="profile-photo profile-photo-md news-post-author">
+                {% set newsPicture = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                {% if news.path is defined and news.path %}
+                    {% set newsPicture =  vich_uploader_asset(news, "uploadFile" , 'Theaterjobs\\NewsBundle\\Entity\\News') | imagine_filter("news_list") %}
+                {% endif %}
+                <img src="{{ newsPicture }}"
+                     alt="{{ news.imageDescription ? news.imageDescription : '' }}">
+            </div>
+
+            <div class="news-post-content">
+                <p class="news-post-detail">{{ news.pretitle|raw}}</p>
+                <h2 class="h2-alt">
+                    <a href="{{ path("tj_news_show", {slug: news.slug}) }}">
+                        {{ news.title }}
+                    </a>
+                </h2>
+                <p class="p-alt">{{ news.shortDescription|raw }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endmacro %}
+
+{#
+    Render search tags related with jobs/news/people/organization
+#}
+{% macro render_search_tags(paramsArr) %}
+    {# Loop each param of url#}
+    {% for i, tag in paramsArr %}
+        {# Location Case #}
+        {% if i == 'location' %}
+            <div class="location grey-element">{{ ('saveSearch.' ~ i) | trans }}: <span>{{ tag }}</span> <a href="#"></a></div>
+        {# Boolean Tags Case Ex. Published, Favourite... #}
+        {% elseif tag == 1 and i not in ['searchPhrase', 'page'] %}
+            <div class="grey-element">{{ i | trans }} <a href="#"></a></div>
+        {# Value can be shown#}
+        {% else %}
+            <div class="grey-element">{{ ('saveSearch.' ~ i) | trans }}: {{ tag }} <a href="#"></a></div>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}

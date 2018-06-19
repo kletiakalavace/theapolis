@@ -1,0 +1,13 @@
+{% trans_default_domain 'emails' %}
+{{ "loginfailed.email.message.hello " | trans }} {{ name }},
+<br>
+<br>
+{{ "loginfailed.email.message.body1" | trans }}
+<br>
+<br>
+{{ "loginfailed.email.message.body2" | trans }}
+<br>
+<br>
+{{ "loginfailed.email.text.message.greetings" | trans }}
+<br><br>
+{% include "TheaterjobsMainBundle:Mailer:footer.txt.twig" %}

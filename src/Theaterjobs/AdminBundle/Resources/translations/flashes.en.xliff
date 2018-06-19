@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:41:13Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="5aa06902cbc0a4f80c04e4dd21953fce83d0f5cd" resname="delete.creator.headingContent">
+        <source>delete.creator.headingContent</source>
+        <target state="new">delete.creator.headingContent</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/Partial/productions.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="51e06a7439836815e73d2cb0050c6041a3d680b6" resname="delete.creator.paragrafContent">
+        <source>delete.creator.paragrafContent</source>
+        <target state="new">delete.creator.paragrafContent</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/Partial/productions.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd22bc2489f65195f7611eebcabb50705fff6a7f" resname="delete.director.headingContent">
+        <source>delete.director.headingContent</source>
+        <target state="new">delete.director.headingContent</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/AdminBundle/Resources/views/Director/Partial/productions.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e8e8025e84ddc340946f4d46bee576e4ab937b46" resname="delete.director.paragrafContent">
+        <source>delete.director.paragrafContent</source>
+        <target state="new">delete.director.paragrafContent</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/AdminBundle/Resources/views/Director/Partial/productions.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3e5c1dc01221712417507449268cc68d783252da" resname="flash.error.invoiceStatus.invalid">
+        <source>flash.error.invoiceStatus.invalid</source>
+        <target state="new">flash.error.invoiceStatus.invalid</target>
+        <jms:reference-file line="144">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bb3e03b55160f76ade376e89e25c3816db42fb2d" resname="flash.error.payment_already_blocked">
+        <source>flash.error.payment_already_blocked</source>
+        <target state="new">flash.error.payment_already_blocked</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e2a6817e83a9ddebd36a655e1133aececcb3c2ca" resname="flash.error.payment_blocked_doesnt_exists">
+        <source>flash.error.payment_blocked_doesnt_exists</source>
+        <target state="new">flash.error.payment_blocked_doesnt_exists</target>
+        <jms:reference-file line="116">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a98ecaaa23491a6bda268eee066a953b8d539d32" resname="flash.sepa.downloaded">
+        <source>flash.sepa.downloaded</source>
+        <target>flash.sepa.downloaded</target>
+        <jms:reference-file line="298">/home/manoolia/PhpstormProjects/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d94a14eea0baca97fe056d01afa56b378aeaa919" resname="flash.success.market.deleted">
+        <source>flash.success.market.deleted</source>
+        <target>flash.success.market.deleted</target>
+        <jms:reference-file line="245">/../src/Theaterjobs/AdminBundle/Controller/MarketController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fca35c4038f7f3f0bfaeb797ab9207f84c1d1dd5" resname="flash.success.market.edited">
+        <source>flash.success.market.edited</source>
+        <target>flash.success.market.edited</target>
+        <jms:reference-file line="238">/../src/Theaterjobs/AdminBundle/Controller/MarketController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="545cb5c3113954311219ddb9bba289aa3e7cbe3d" resname="flash.success.payment_already_blocked">
+        <source>flash.success.payment_already_blocked</source>
+        <target>flash.success.payment_already_blocked</target>
+        <jms:reference-file line="343">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="198fe2f145d6b59b1e343b3ac2375fdeee45e4c4" resname="flash.success.payment_blocked">
+        <source>flash.success.payment_blocked</source>
+        <target>flash.success.payment_blocked</target>
+        <jms:reference-file line="65">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d27f89094d0896eaf80d49909a7adb20018f067a" resname="flash.success.payment_blocked_doesnt_exists">
+        <source>flash.success.payment_blocked_doesnt_exists</source>
+        <target>flash.success.payment_blocked_doesnt_exists</target>
+        <jms:reference-file line="388">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c0417d028466df9d44d92c223fcb9089f9db148" resname="flash.success.payment_unblocked">
+        <source>flash.success.payment_unblocked</source>
+        <target>flash.success.payment_unblocked</target>
+        <jms:reference-file line="109">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f16ad65491f432b37d2f1d827e7b1aaff1dd060" resname="tj.admin.success.merged.organization %nonExistentOrga% tj.with.text %existentOrga%">
+        <source>tj.admin.success.merged.organization %nonExistentOrga% tj.with.text %existentOrga%</source>
+        <target>tj.admin.success.merged.organization %nonExistentOrga% tj.with.text %existentOrga%</target>
+        <jms:reference-file line="158">/../src/Theaterjobs/AdminBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,133 @@
+{% extends "::base.html.twig" %}
+{#{% block title %}{{ 'default.error404.titel'| trans }}{% endblock title %}#}
+{% block title %}Gratification{% endblock title %}
+{% block nav %}
+{% endblock %}
+    {% block content %}
+            <div class="container">
+                <div class="block">
+
+                    <div class="page-header">
+                        <h1>{{ "gratification.title.gratification" | trans }}</h1>
+                    </div>
+                    <p class="p-alt">{{ "gratification.description.gratification" | trans }}</p>
+                    <div class="verguetungsart">
+                        <div class="levels-cont">
+                            <div class="levels">
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer">5</span>
+                            </div>
+                        </div>
+                        <div class="levels-text">
+                            <h5>{{gratification.4.name}}</h5>
+                        </div>
+                    </div>
+                    <div class="levels-list">
+                        <ul class="list-unstyled list-small">
+                            <li>{{ "gratification.level5.list1" | trans }}</li>
+                            <li>{{ "gratification.level5.list2" | trans }}</li>
+                            <li>{{ "gratification.level5.list3" | trans }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="verguetungsart">
+                        <div class="levels-cont">
+                            <div class="levels">
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer">4</span>
+                            </div>
+                        </div>
+                        <div class="levels-text">
+                            <h5>{{gratification.3.name}}</h5>
+                        </div>
+                    </div>
+                    <div class="levels-list">
+                        <ul class="list-unstyled list-small">
+                            <li>{{ "gratification.level4.list1" | trans }}</li>
+                            <li>{{ "gratification.level4.list2" | trans }}</li>
+                            <li>{{ "gratification.level4.list3" | trans }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="verguetungsart">
+                        <div class="levels-cont">
+                            <div class="levels">
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer">3</span>
+                            </div>
+                        </div>
+                        <div class="levels-text">
+                            <h5>{{gratification.2.name}}</h5>
+                        </div>
+                    </div>
+                    <div class="levels-list">
+                        <ul class="list-unstyled list-small">
+                            <li>{{ "gratification.level3.list1" | trans }}</li>
+                            <li>{{ "gratification.level3.list2" | trans }}</li>
+                            <li>{{ "gratification.level3.list3" | trans }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="verguetungsart">
+                        <div class="levels-cont">
+                            <div class="levels">
+                                <span class="levels-layer"></span>
+                                <span class="levels-layer">2</span>
+                            </div>
+                        </div>
+                        <div class="levels-text">
+                            <h5>{{gratification.1.name}}</h5>
+                        </div>
+                    </div>
+                    <div class="levels-list">
+                        <ul class="list-unstyled list-small">
+                            <li>{{ "gratification.level2.list1" | trans }}</li>
+                            <li>{{ "gratification.level2.list2" | trans }}</li>
+                            <li>{{ "gratification.level2.list3" | trans }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="verguetungsart">
+                        <div class="levels-cont">
+                            <div class="levels">
+                                <span class="levels-layer">1</span>
+                            </div>
+                        </div>
+                        <div class="levels-text">
+                            <h5>{{gratification.0.name}}</h5>
+                        </div>
+                    </div>
+                    <div class="levels-list">
+                        <ul class="list-unstyled list-small">
+                            <li>{{ "gratification.level1.list1" | trans }}</li>
+                            <li>{{ "gratification.level1.list2" | trans }}</li>
+                            <li>{{ "gratification.level1.list3" | trans }}</li>
+                        </ul>
+                    </div>
+
+                    <p class="p-alt">{{ "gratification.footer.paragraph1" | trans }}</p>
+                    <p class="p-alt">{{ "gratification.footer.paragraph2" | trans }}</p>
+                    <p class="p-alt">{{ "gratification.footer.paragraph3" | trans }}</p>
+                    <p class="p-alt"><span style="font-size: 23px"><b>{{ "gratification.footer.education.title" | trans }}</b></span><br><span>{{ "gratification.footer.education.Description" | trans }}</span></p>
+                    <div class="free-grat">
+                        <div class="gratification-8"></div>
+                    </div>
+                    <p class="p-alt"><b>{{ "gratification.footer.education.Paid" | trans }}</b><br><span>{{ "gratification.footer.education.Paid.Description" | trans }}</span></p>
+                    <div class="free-grat">
+                        <div class="gratification-7"></div>
+                    </div>
+                    <p class="p-alt"><b>{{ "gratification.footer.education.Free" | trans }}</b><br><span>{{ "gratification.footer.education.Free.Description" | trans }}</span></p>
+                        <div class="free-grat">
+                            <div class="gratification-6"></div>
+                        </div>
+                    <p class="p-alt"><b>{{ "gratification.footer.education.withCost" | trans }}</b><br><span>{{ "gratification.footer.education.withCost.Description" | trans }}</span></p>
+
+                </div>
+            </div>
+    {% endblock %}

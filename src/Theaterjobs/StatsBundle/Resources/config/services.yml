@@ -1,0 +1,5 @@
+services:
+  helper.botchecker:
+    class: Theaterjobs\StatsBundle\DependencyInjection\BotChecker
+    arguments:
+      - '@request_stack'

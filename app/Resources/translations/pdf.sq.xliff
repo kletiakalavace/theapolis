@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:35Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="45b230df0400c7a95483124e00eb882feec8d9dc" resname="membership.pdf.footer.accountholder">
+        <source>membership.pdf.footer.accountholder</source>
+        <target state="new">membership.pdf.footer.accountholder</target>
+        <jms:reference-file line="21">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="13413f5cff16f3c314c1da505be7671ca6692e3c" resname="membership.pdf.footer.accountnumber">
+        <source>membership.pdf.footer.accountnumber</source>
+        <target state="new">membership.pdf.footer.accountnumber</target>
+        <jms:reference-file line="22">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d3714a8cf78ec7b731c6ad0190c689ad9ef2ddec" resname="membership.pdf.footer.bankcode">
+        <source>membership.pdf.footer.bankcode</source>
+        <target state="new">membership.pdf.footer.bankcode</target>
+        <jms:reference-file line="23">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df32926f19e3ae3f587990d14dade6a3f8ee36b1" resname="membership.pdf.footer.bankname">
+        <source>membership.pdf.footer.bankname</source>
+        <target state="new">membership.pdf.footer.bankname</target>
+        <jms:reference-file line="24">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed9bf8b996c18cf4350d7cadb0578d7db82a92b1" resname="membership.pdf.footer.bic">
+        <source>membership.pdf.footer.bic</source>
+        <target state="new">membership.pdf.footer.bic</target>
+        <jms:reference-file line="26">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="efdfb394f510e1c42f59bc9b6ae0e482705e0a3a" resname="membership.pdf.footer.ceo">
+        <source>membership.pdf.footer.ceo</source>
+        <target state="new">membership.pdf.footer.ceo</target>
+        <jms:reference-file line="7">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="96d3f83405cbaf49e79466e92688d9516f9b289b" resname="membership.pdf.footer.company">
+        <source>membership.pdf.footer.company</source>
+        <target state="new">membership.pdf.footer.company</target>
+        <jms:reference-file line="6">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="60bb9ef3c3bb786bc8f2229b1029798a664a62ef" resname="membership.pdf.footer.email">
+        <source>membership.pdf.footer.email</source>
+        <target state="new">membership.pdf.footer.email</target>
+        <jms:reference-file line="10">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="89911d4e0e5a56fa67b26f92739031e2032e44b4" resname="membership.pdf.footer.fax">
+        <source>membership.pdf.footer.fax</source>
+        <target state="new">membership.pdf.footer.fax</target>
+        <jms:reference-file line="9">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a86f7460c7fbf41ce708474301497a4faf4251ec" resname="membership.pdf.footer.financeoffice">
+        <source>membership.pdf.footer.financeoffice</source>
+        <target state="new">membership.pdf.footer.financeoffice</target>
+        <jms:reference-file line="17">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2099ec11485a25a5188f74f1d1e347517c4385b0" resname="membership.pdf.footer.iban">
+        <source>membership.pdf.footer.iban</source>
+        <target state="new">membership.pdf.footer.iban</target>
+        <jms:reference-file line="25">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="53128174a1153ba63bea84a6cf95ff21bdb8d515" resname="membership.pdf.footer.phone">
+        <source>membership.pdf.footer.phone</source>
+        <target state="new">membership.pdf.footer.phone</target>
+        <jms:reference-file line="8">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7c230ba3e2bd4adb57e6fd3703df5d70e1bcb3e7" resname="membership.pdf.footer.taxnumber">
+        <source>membership.pdf.footer.taxnumber</source>
+        <target state="new">membership.pdf.footer.taxnumber</target>
+        <jms:reference-file line="15">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5e96053634247d2d0cbfd6f0695f46d710fb62ec" resname="membership.pdf.footer.url">
+        <source>membership.pdf.footer.url</source>
+        <target state="new">membership.pdf.footer.url</target>
+        <jms:reference-file line="11">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b479d434cb3aab583961e17435dc19a93d1001b" resname="membership.pdf.footer.vatnumber">
+        <source>membership.pdf.footer.vatnumber</source>
+        <target state="new">membership.pdf.footer.vatnumber</target>
+        <jms:reference-file line="16">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/footer.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f57bbf838e7f745094c06640bb7355f0905775d1" resname="membership.sepa_mandate.bic">
+        <source>membership.sepa_mandate.bic</source>
+        <target state="new">membership.sepa_mandate.bic</target>
+        <jms:reference-file line="32">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fd3ad7290bb9296c89499924c7055e1381c44be5" resname="membership.sepa_mandate.creditor">
+        <source>membership.sepa_mandate.creditor</source>
+        <target state="new">membership.sepa_mandate.creditor</target>
+        <jms:reference-file line="8">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0030fd26ddc8d14fc0f7c559be6e9efab2b71f8" resname="membership.sepa_mandate.creditor-id">
+        <source>membership.sepa_mandate.creditor-id</source>
+        <target state="new">membership.sepa_mandate.creditor-id</target>
+        <jms:reference-file line="12">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce157243384637de0b8e17e624be228044f505dc" resname="membership.sepa_mandate.empower-text">
+        <source>membership.sepa_mandate.empower-text</source>
+        <target state="new">membership.sepa_mandate.empower-text</target>
+        <jms:reference-file line="21">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd2049b3cb41b4dedfd6677ea30f08f6808a52e1" resname="membership.sepa_mandate.iban">
+        <source>membership.sepa_mandate.iban</source>
+        <target state="new">membership.sepa_mandate.iban</target>
+        <jms:reference-file line="28">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="02c82632865c8bf95fc2388a05bab5cd7c53456c" resname="membership.sepa_mandate.mandate-reference">
+        <source>membership.sepa_mandate.mandate-reference</source>
+        <target state="new">membership.sepa_mandate.mandate-reference</target>
+        <jms:reference-file line="16">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="98001ae1fb729a5e633e9d781352a5e98f072110" resname="membership.sepa_mandate.restoration-info-header">
+        <source>membership.sepa_mandate.restoration-info-header</source>
+        <target state="new">membership.sepa_mandate.restoration-info-header</target>
+        <jms:reference-file line="35">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b9cb62e910ac3e61c3aea80fbc2df94237b20569" resname="membership.sepa_mandate.restoration-info-text">
+        <source>membership.sepa_mandate.restoration-info-text</source>
+        <target state="new">membership.sepa_mandate.restoration-info-text</target>
+        <jms:reference-file line="36">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="319f0e2e282aa8cf5cdc430a970dcb8660f7a441" resname="membership.sepa_mandate.title">
+        <source>membership.sepa_mandate.title</source>
+        <target state="new">membership.sepa_mandate.title</target>
+        <jms:reference-file line="6">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="33e5c8d29bba338e456e1468e5ca5b4f2510fa9e" resname="membership.sepa_mandate_account-holder">
+        <source>membership.sepa_mandate_account-holder</source>
+        <target state="new">membership.sepa_mandate_account-holder</target>
+        <jms:reference-file line="24">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/sepaPdf.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

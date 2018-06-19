@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:38:30Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="5ba1b7df5f27789ed1031ad65c8c090dd4921f2c" resname="Duplicated Social media for this profile!">
+        <source>Duplicated Social media for this profile!</source>
+        <target state="new">Duplicated Social media for this profile!</target>
+      </trans-unit>
+      <trans-unit id="950a49f8afc6c5ee063a057d5cbfded4304c0aa0" resname="The email '{{ value }}' is not a valid email.">
+        <source>The email '{{ value }}' is not a valid email.</source>
+        <target state="new">The email '{{ value }}' is not a valid email.</target>
+      </trans-unit>
+      <trans-unit id="9b9e70fa90f31cf0f6d4cfe95671d1c7a6a6bc00" resname="Your actuality text cannot be longer than {{ limit }} characters">
+        <source>Your actuality text cannot be longer than {{ limit }} characters</source>
+        <target state="new">Your actuality text cannot be longer than {{ limit }} characters</target>
+      </trans-unit>
+      <trans-unit id="fdce3e32032348cac83445259bdd0bec6f9f654d" resname="age.from.less.than.age.to">
+        <source>age.from.less.than.age.to</source>
+        <target state="new">age.from.less.than.age.to</target>
+      </trans-unit>
+      <trans-unit id="bc2f611f352e99fd55c7cd019290b34207591b93" resname="age.greater_equal.than.one">
+        <source>age.greater_equal.than.one</source>
+        <target state="new">age.greater_equal.than.one</target>
+      </trans-unit>
+      <trans-unit id="40af2e2552d07e3d0cff970c050cd4c669d3f3a9" resname="age.lower_equal.than.ninety_nine">
+        <source>age.lower_equal.than.ninety_nine</source>
+        <target state="new">age.lower_equal.than.ninety_nine</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

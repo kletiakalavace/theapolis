@@ -1,0 +1,155 @@
+{% extends "::base.html.twig" %}
+{% block css %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+        "@TheaterjobsMessageBundle/Resources/public/css/style.css" %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+{% block title %} {{ 'tj.message.title' | trans }} {% endblock %}
+
+{% block content %}
+
+    <div class="page-message">
+        {#Cotent messenger#}
+        <div class="content-messenger">
+            <div class="col-md-2 no-padding list-name">
+                <div class="col-fixed">
+                    <div class="col-md-12 content-notification-msg">
+                        <div class="col-md-4 notification-newMessage">
+                            <i class="fa fa-envelope-o"
+                               aria-hidden="true"></i>
+                            {% if fos_message_nb_unread() > 0 %}
+                                <span id="allNewMsgs">{{ fos_message_nb_unread() }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <h3>Messenger</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="group-searchMess">
+                            <button id="search-bar">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </button>
+                            <input type="text" value="{{ profile | defaultName }}" id="search-input"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <p id="searchLoading" style="display:none"><img
+                                src='{{ asset('bundles/theaterjobsmain/images/rolling.svg') }}'></p>
+                </div>
+                <div class="col-md-12 no-padding">
+                    <ul class="list-messenger">
+                        <li class="newThread active">
+                            <div class="col-md-12">
+                                <div href="{{ path('tj_messages_load_new_thread', {slug : profile.slug}) }}"
+                                     class="singleThread">
+                                    <div class="cover-img-messenger">
+                                        {% set profilePhoto =  profile_photo(profile,'uploadFile','logos') %}
+                                        {% set filter = '' %}
+
+                                        {% if profile.mediaImage|first.filter is defined %}
+                                            {% set filter = profile.mediaImage|first.filter %}
+                                        {% endif %}
+                                        <figure class="{{ filter }}">
+                                            <img src="{{ profilePhoto }}">
+                                        </figure>
+                                    </div>
+
+                                    {#Check if user has read the message#}
+                                    <div class="list-name-messenger">
+                                                <span class="name-profile">
+                                                    {{ profile | defaultName }}
+                                                </span>
+                                        <p class="p-alt"></p>
+                                    </div>
+                                    <div class="nrUnread"></div>
+                                </div>
+                                <span class="time-messenger"></span>
+                            </div>
+                        </li>
+
+                        <a style="text-align:center">
+                            <p style="display:none" id="showMoreThreads" data-page="2">Show More</p>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 no-padding" id="inboxMessages">
+                <div id="newThread">
+                    <div class="col-md-12">
+                        {#header messenger#}
+                        <div class="row row-heaader">
+                            <div class="col-md-10 header-messenger">
+                                <div class="person-active">
+                                    <div class="img-header-messenger">
+                                        <a href="{{ path('tj_profile_profile_show', {slug : profile.slug}) }}">
+                                            <figure class="{{ filter }}">
+                                                <img src="{{ profilePhoto }}">
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="name-messenger">
+                                    <div class="name-profile">
+                                        <h3>{{ profile | defaultName }}</h3>
+                                        <p class="undertitle-messenger">Our undertitle</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {#chat of messenger#}
+                        <form id="newForm" action="{{ path('tj_message_thread_create', {slug: profile.slug}) }}"
+                              method="POST">
+                            <div class="row">
+                                <input type="hidden" name="user" value="{{ profile.user.id }}"/>
+                                <div class="col-md-12 subject-messenger">
+                                    <input type="text" name="subject" maxlength="40" class="form-control"
+                                           placeholder="{{ 'message.placeholder.subject'|trans }}" id="subjectInput"
+                                           required/>
+                                    <div class="separator"></div>
+                                </div>
+                                <div class="col-md-12 content-msg"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 no-padding reply-message">
+                                    <div class="form-group">
+                                        <textarea name="body" class="form-control"
+                                                  placeholder="{{ 'message.placeholder.typeMessage' |trans }}" required>
+
+                                        </textarea>
+                                    </div>
+                                    <button type="submit" id="newButton" class="btn btn-default">
+                                        <span>{{ 'button.message.send'|trans }}</span>
+                                        <svg class="icon-svg icon-inline" width="30" height="30">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-play') }}"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block footer %}
+{% endblock footer %}
+{% block js %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsMessageBundle/Resources/public/js/main.js"
+        "@TheaterjobsMessageBundle/Resources/public/js/New/new.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        var socket;
+        //Load threads
+        $('#search-bar').click();
+    </script>
+{% endblock %}

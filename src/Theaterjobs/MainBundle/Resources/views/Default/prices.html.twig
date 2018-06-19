@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+
+    <div class="container prices-cont">
+        <div class="block">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'prices.title'| trans }}</h1>
+                        <div class="separator"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="row col-md-12 space-bottom">
+                    <h3>{{ 'prices.paragraph.subtitle1'| trans }}</h3>
+                    <p>{{ 'prices.paragraph.description1'| trans }}</p>
+                </div>
+                <div class="row col-md-12 space-bottom">
+                    <h3>{{ 'prices.paragraph.subtitle2'| trans }}</h3>
+                    <p>{{ 'prices.paragraph.description2'| trans }}</p>
+                </div>
+                <div class="row col-md-12 space-bottom">
+                    <h3>{{ 'prices.paragraph.subtitle3'| trans }}</h3>
+                    <p>{{ 'prices.paragraph.description3.1'| trans }}</p>
+
+                    <ul>
+                        <li>{{ 'prices.paragraph.list3.1'| trans }}</li>
+                        <li>{{ 'prices.paragraph.list3.2'| trans }}</li>
+                        <li>{{ 'prices.paragraph.list3.3'| trans }}</li>
+                        <li>{{ 'prices.paragraph.list3.4'| trans }}</li>
+                    </ul>
+                    <p>{{ 'prices.paragraph.description3.2'| trans }}</p>
+                    {% if not is_granted('ROLE_USER') %}
+                        <p>{{ 'prices.paragraph.description5'| trans }}
+                            <a href="{{ path('fos_user_registration_register_choise',{'choice':'free'}) }} ">{{ 'link.register'| trans }}</a>
+                        </p>
+                        <p>{{ 'prices.paragraph.description6'| trans }}
+                            <a class="nav-link primary" data-toggle="modal" data-hash="login" data-target="#myModal"
+                               href="{{ path('tj_main_default_login_modal') }}">
+                                {{ 'prices.link.login'| trans }}
+                            </a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

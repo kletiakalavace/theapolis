@@ -1,0 +1,104 @@
+{% import 'macro.html.twig' as m %}
+
+{#{% block content %}#}
+<div class="modal-body movebottom" id="addNews">
+    <!-- Skills -->
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-10 col-md-push-1">
+                <h2>{{ 'organization.title.create.membershipApplication'|trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12 editor-desc-news">
+                        <p class="p-alt" style="margin-bottom:0">{{ 'organization.description.create.membershipApplication'|trans }}</p>
+                        {{ form_row(form.applicationText,{'attr':{'class' : 'usefultextarea  ckeditor'} } ) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="text-align: center;">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'}, 'label' : 'new.teammembership.application.Send'|trans }) }}
+                    </div>
+                    {{ form_widget(form._token) }}
+                    {#{{ m.error }}#}
+                </div>
+            </div>
+
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{#{% endblock %}#}
+
+{% block js %}
+    <script>
+        var textareaId = $('.ckeditor').attr('id');
+        CKEDITOR.replace(textareaId, {
+            customConfig: '{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/appForm.js') }}'
+        });
+
+        //var ckConfig = '{#{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/appForm.js') }}#}';
+
+     var form = $('form[name="tj_inserate_form_organization_new_team_membership_application"]');
+    </script>
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsInserateBundle/Resources/public/js/job/application/applicationForm.js" %}
+    <script>
+        $.getScript("{{ asset_url }}");
+    </script>
+    {% endjavascripts %}
+    <script>
+        addLoadingSvg(form);
+        const loading = form.find('.submit-rolling-svg');
+
+        form.submit(function (e) {
+            e.preventDefault();
+            if (loading.is(':visible')) {return;}
+            var submitBtn = $('#tj_inserate_form_organization_new_team_membership_application_submit');
+            var valid = false;
+            validFormInputs();
+            if ($(this).valid()) {
+                submitBtn.attr('type','button');
+                loading.show();
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        loading.hide();
+                        if (data.errors) {
+                            for (var key in data.errors) {
+                                var el = form.find('input[name="' + key + '"]');
+                                el.parent().addClass('has-error');
+                                toolTipError(data.errors[key], el);
+                            }
+                            submitBtn.attr('type','submit');
+                        }else if(data.error === false) {
+                            valid = true;
+                            $('#applyButton').remove();
+                            $('#applicationSection').prepend(data.appliedInfo);
+                            bootbox.alert({message: data.message});
+                        }
+                        else if(data.error === true) {
+                            bootbox.alert({message: data.message});
+                            submitBtn.attr('type','submit');
+                        }
+                    },
+                    error : function () {
+                        submitBtn.attr('type','submit');
+                    }
+                }).done(function (data) {
+                    if(valid) {
+                        $('#myModal').modal('hide');
+                        $('#news-block form').submit();
+                        $('#applyForTeamMembership').remove();
+                    }
+                });
+            }
+        });
+
+    </script>
+{% endblock %}

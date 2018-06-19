@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="block">
+        <div class="page-header">
+            <h1><span>{{ 'admin.title.executeCornjob' | trans }}</span></h1>
+        </div>
+
+        <form action="{{ path("tj_admin_cronjob_exec")}}" method="POST">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input class="form-control" type="date" name="today" />
+                    <br/>
+                </div>
+                <div class="col-sm-6">
+                    <select class="form-control" name="cron" >
+                        <option value="theaterjobs:cron:job:delete">{{ 'admin.corn.select.job.delete' | trans }}</option>
+                        <option value="theaterjobs:cron:job:archive">{{ 'admin.corn.select.job.archive' | trans }}</option>
+                        <option value="theaterjobs:cron:job:destroy">{{ 'admin.corn.select.job.destroy' | trans }}</option>
+                        <option value="theaterjobs:cron:jobmail:queue">{{ 'admin.corn.select.jobmail.queue' | trans }}</option>
+                        <option value="theaterjobs:cron:jobmail:send">{{ 'admin.corn.select.jobmail.send' | trans }}</option>
+                        <option value="theaterjobs:cron:job:notify-publication-end">{{ 'admin.corn.select.job.notify.publicationEnd' | trans }}</option>
+                        <option value="theaterjobs:cron:pen:archive">{{ 'admin.corn.select.pen.archive' | trans }}</option>
+                        <option value="theaterjobs:cron:profile:archive">{{ 'admin.corn.select.profile.archive' | trans }}</option>
+                        <option value="theaterjobs:applicationNotify">{{ 'admin.corn.select.applicationNotify' | trans }}</option>
+                        <option value="theaterjobs:cron:actuality:notify">{{ 'admin.corn.select.actuality.notify' | trans }}</option>
+                        <option value="theaterjobs:cron:externalJobPortals">{{ 'admin.corn.select.externalJobPortals' | trans }}</option>
+                        <option value="theaterjobs:cron:prepaymentCheck">{{ 'admin.corn.select.prepaymentCheck' | trans }}</option>
+                        <option value="theaterjobs:cron:clearPaypal">{{ 'admin.corn.select.clearPaypal' | trans }}</option>
+                        <option value="theaterjobs:cron:directDebitRecurring">{{ 'admin.corn.select.directDebitRecurring' | trans }}</option>
+                        <option value="theaterjobs:cron:directDebitNotify">{{ 'admin.corn.select.directDebitNotify' | trans }}</option>
+                        <option value="theaterjobs:cron:endMembership">{{ 'admin.corn.select.endMembership' | trans }}</option>
+                        <option value="theaterjobs:cron:profile:views:notify">{{ 'admin.corn.select.views.notify' | trans }}</option>
+                    </select>
+                    <br/>
+                </div>
+            </div>
+            <button class="btn btn-default" type="submit">{{ 'admin.corn.Submit' | trans }}</button>
+        </form>
+
+        {% if result is defined %}
+            <br>
+            <pre>{{result}}</pre>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

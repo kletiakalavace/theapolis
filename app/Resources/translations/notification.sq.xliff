@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:35Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="904f638ff8b3adfdb4166d84b776c97485e984a5" resname="tj.activity.job.first.check %jobTitle%">
+        <source>tj.activity.job.first.check %jobTitle%</source>
+        <target state="new">tj.activity.job.first.check %jobTitle%</target>
+        <jms:reference-file line="669">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c66b8d429176a2b5f495b7dd3354704906c9261" resname="tj.activity.job.second.check %jobTitle%">
+        <source>tj.activity.job.second.check %jobTitle%</source>
+        <target state="new">tj.activity.job.second.check %jobTitle%</target>
+        <jms:reference-file line="681">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63c11d4f148fb1579bbc548af1755f1e81fd388b" resname="tj.notification.actuality.status.fifty.days.old">
+        <source>tj.notification.actuality.status.fifty.days.old</source>
+        <target state="new">tj.notification.actuality.status.fifty.days.old</target>
+        <jms:reference-file line="43">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Command/ActualityNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aa53a1fa76c980d8b1b133a61a3758612062edd3" resname="tj.notification.admin.reply.on.complain %title%">
+        <source>tj.notification.admin.reply.on.complain %title%</source>
+        <target state="new">tj.notification.admin.reply.on.complain %title%</target>
+        <jms:reference-file line="573">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66da319540ca8a326fc2c500cf9f7a9a547e5e83" resname="tj.notification.aplication.new.unanswered %jobTitle%">
+        <source>tj.notification.aplication.new.unanswered %jobTitle%</source>
+        <target state="new">tj.notification.aplication.new.unanswered %jobTitle%</target>
+        <jms:reference-file line="1474">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e416c9210c6d90a6ae8b635ee50a8aaed095fe03" resname="tj.notification.aplication.on.job %jobTitle%">
+        <source>tj.notification.aplication.on.job %jobTitle%</source>
+        <target state="new">tj.notification.aplication.on.job %jobTitle%</target>
+        <jms:reference-file line="1037">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="533decd941d662a1edc4995aba1a83b6c24863a2" resname="tj.notification.aplication.on.job.closed %jobTitle%">
+        <source>tj.notification.aplication.on.job.closed %jobTitle%</source>
+        <target state="new">tj.notification.aplication.on.job.closed %jobTitle%</target>
+        <jms:reference-file line="1626">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69292598d2edeed4076b792bcaa0b007872381f6" resname="tj.notification.aplication.on.job.seen.owner %jobTitle%">
+        <source>tj.notification.aplication.on.job.seen.owner %jobTitle%</source>
+        <target state="new">tj.notification.aplication.on.job.seen.owner %jobTitle%</target>
+        <jms:reference-file line="1460">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="95f7c9132e7523421e1b5d8663a6503f5dcb1a07" resname="tj.notification.application.for.job.closed %title%">
+        <source>tj.notification.application.for.job.closed %title%</source>
+        <target state="new">tj.notification.application.for.job.closed %title%</target>
+        <jms:reference-file line="629">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d2eceb1e267350e3e48f7cfdc29cd043fa322a2" resname="tj.notification.bank.data.changed">
+        <source>tj.notification.bank.data.changed</source>
+        <target state="new">tj.notification.bank.data.changed</target>
+        <jms:reference-file line="162">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="394f3a0834b449eda45023c1c659caf9d206aee7" resname="tj.notification.become.member">
+        <source>tj.notification.become.member</source>
+        <target state="new">tj.notification.become.member</target>
+        <jms:reference-file line="107">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="535c0820f798119c6179bd92825b18ab8267b880" resname="tj.notification.become.member.to.access.job.market">
+        <source>tj.notification.become.member.to.access.job.market</source>
+        <target state="new">tj.notification.become.member.to.access.job.market</target>
+        <jms:reference-file line="108">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d35c3899acb7b8e8bb2609b019a7055ae66d65fd" resname="tj.notification.billing.cancelled.by.admin">
+        <source>tj.notification.billing.cancelled.by.admin</source>
+        <target state="new">tj.notification.billing.cancelled.by.admin</target>
+        <jms:reference-file line="517">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b007458ddf3d2f227f7b33b184b8f0199b07216" resname="tj.notification.complain.from.user %s%">
+        <source>tj.notification.complain.from.user %s%</source>
+        <target state="new">tj.notification.complain.from.user %s%</target>
+        <jms:reference-file line="64">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Controller/ComplainController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da8f323fae0710b5cbea63a610f27b051072cda5" resname="tj.notification.contract.quited.success">
+        <source>tj.notification.contract.quited.success</source>
+        <target state="new">tj.notification.contract.quited.success</target>
+        <jms:reference-file line="579">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bb59c8576e09828989b555673682597870fce29" resname="tj.notification.draft.ten.days.old %title%">
+        <source>tj.notification.draft.ten.days.old %title%</source>
+        <target state="new">tj.notification.draft.ten.days.old %title%</target>
+        <jms:reference-file line="78">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/DraftNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d2ebe747887bc48a1e31869f8b69c38503806362" resname="tj.notification.education.members.only.saved.draft">
+        <source>tj.notification.education.members.only.saved.draft</source>
+        <target state="new">tj.notification.education.members.only.saved.draft</target>
+        <jms:reference-file line="96">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0200bf5d60c19239b91e7062d7ad0e36dce0f9e" resname="tj.notification.education.not.update.for.hundredseventy.days %s%">
+        <source>tj.notification.education.not.update.for.hundredseventy.days %s%</source>
+        <target state="new">tj.notification.education.not.update.for.hundredseventy.days %s%</target>
+        <jms:reference-file line="166">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="169912b35f8ced8a2dc097cd268b3765bd4da7d6" resname="tj.notification.education.not.update.for.thirty.days %s%">
+        <source>tj.notification.education.not.update.for.thirty.days %s%</source>
+        <target state="new">tj.notification.education.not.update.for.thirty.days %s%</target>
+        <jms:reference-file line="86">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d94e2e22982a9d5ce2fc2b1e1176fee260cb9b2" resname="tj.notification.email.notif.disable.by.admin">
+        <source>tj.notification.email.notif.disable.by.admin</source>
+        <target state="new">tj.notification.email.notif.disable.by.admin</target>
+        <jms:reference-file line="345">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a89070c2e38d4982c208465d950716c8a35321ec" resname="tj.notification.enjoy.membership">
+        <source>tj.notification.enjoy.membership</source>
+        <target state="new">tj.notification.enjoy.membership</target>
+        <jms:reference-file line="158">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="126">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="023888325e4ea925ceea0a18fa2e3b0a5d7aa365" resname="tj.notification.expiration.info %days% %day% %amount%">
+        <source>tj.notification.expiration.info %days% %day% %amount%</source>
+        <target state="new">tj.notification.expiration.info %days% %day% %amount%</target>
+        <jms:reference-file line="346">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+        <jms:reference-file line="158">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/EventListener/MembershipOrderListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed71f0b7552ca1f19122b74d07d74a7df027d216" resname="tj.notification.fourteen.days.without.payment.cancel.after.sixteen">
+        <source>tj.notification.fourteen.days.without.payment.cancel.after.sixteen</source>
+        <target state="new">tj.notification.fourteen.days.without.payment.cancel.after.sixteen</target>
+        <jms:reference-file line="56">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/PrepaidCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b1190ce878939ed7207709858763480ebb1fef4" resname="tj.notification.hello.user %title%">
+        <source>tj.notification.hello.user %title%</source>
+        <target state="new">tj.notification.hello.user %title%</target>
+        <jms:reference-file line="345">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+        <jms:reference-file line="157">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/EventListener/MembershipOrderListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="90b16c14cad7d6d3e6b980b673be89828a795f44" resname="tj.notification.here.can.edit.information">
+        <source>tj.notification.here.can.edit.information</source>
+        <target state="new">tj.notification.here.can.edit.information</target>
+        <jms:reference-file line="68">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a10a79cfd6ec6ff2ab6aaca09d025aed7b92a426" resname="tj.notification.job.application.rejected %title%">
+        <source>tj.notification.job.application.rejected %title%</source>
+        <target state="new">tj.notification.job.application.rejected %title%</target>
+        <jms:reference-file line="482">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5234aea509896c3ff1693469e3e3668efebf2760" resname="tj.notification.job.application.replied %title%">
+        <source>tj.notification.job.application.replied %title%</source>
+        <target state="new">tj.notification.job.application.replied %title%</target>
+        <jms:reference-file line="668">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="48616895007a0fd15c7a25e041b412446ea7c3c7" resname="tj.notification.job.deleted.sixty.days %title%">
+        <source>tj.notification.job.deleted.sixty.days %title%</source>
+        <target state="new">tj.notification.job.deleted.sixty.days %title%</target>
+        <jms:reference-file line="53">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/JobApplicationDeletionNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="38c7195e0bfc820fc41cccc305630448e4490456" resname="tj.notification.job.ends.five.days %title%">
+        <source>tj.notification.job.ends.five.days %title%</source>
+        <target state="new">tj.notification.job.ends.five.days %title%</target>
+        <jms:reference-file line="54">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/JobPublicationEndingNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7f6f707131a401024d2a5eab0f90853c70b8672" resname="tj.notification.job.published %jobTitle%">
+        <source>tj.notification.job.published %jobTitle%</source>
+        <target state="new">tj.notification.job.published %jobTitle%</target>
+        <jms:reference-file line="657">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="874494ebce694feee09b8186373eb2ff0cc24bbf" resname="tj.notification.membership.about.to.expire">
+        <source>tj.notification.membership.about.to.expire</source>
+        <target state="new">tj.notification.membership.about.to.expire</target>
+        <jms:reference-file line="133">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Controller/DashboardController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="023f9812686cfae316f1344338e5871a99a5b092" resname="tj.notification.membership.expired">
+        <source>tj.notification.membership.expired</source>
+        <target state="new">tj.notification.membership.expired</target>
+        <jms:reference-file line="59">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/EndMembershipCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16ba381383a10fc461039c56f45437dcbdde9a8a" resname="tj.notification.membership.extended">
+        <source>tj.notification.membership.extended</source>
+        <target state="new">tj.notification.membership.extended</target>
+        <jms:reference-file line="101">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/DirectDebitRecurringCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="751e23f022867f8fcdf646865104fbe18d46094b" resname="tj.notification.message.from.user %title%">
+        <source>tj.notification.message.from.user %title%</source>
+        <target state="new">tj.notification.message.from.user %title%</target>
+        <jms:reference-file line="231">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+        <jms:reference-file line="295">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="686b29d61b85c6c8e0ae18bff3ff088f752c7fc4" resname="tj.notification.network.not.update.for.thirty.days %s%">
+        <source>tj.notification.network.not.update.for.thirty.days %s%</source>
+        <target state="new">tj.notification.network.not.update.for.thirty.days %s%</target>
+        <jms:reference-file line="70">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0aa64f021687cb329a0dccc5ec7034e86931f852" resname="tj.notification.network.not.updated.hundredseventy.days %s%">
+        <source>tj.notification.network.not.updated.hundredseventy.days %s%</source>
+        <target state="new">tj.notification.network.not.updated.hundredseventy.days %s%</target>
+        <jms:reference-file line="150">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="666863b747498b6d70348e163ea92f44dd822749" resname="tj.notification.new.complain.user %title%">
+        <source>tj.notification.new.complain.user %title%</source>
+        <target state="new">tj.notification.new.complain.user %title%</target>
+        <jms:reference-file line="593">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd86c3fdd766694ae46290780fa6a674b6c2ac70" resname="tj.notification.new.reply.application.job %title%">
+        <source>tj.notification.new.reply.application.job %title%</source>
+        <target state="new">tj.notification.new.reply.application.job %title%</target>
+        <jms:reference-file line="403">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37026573a584ab1bea38f3ddbde41099d69332ba" resname="tj.notification.number.profile.views %title%">
+        <source>tj.notification.number.profile.views %title%</source>
+        <target state="new">You have %title% views</target>
+        <jms:reference-file line="53">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Command/ProfileViewsNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d6cdb56066ef9adc8aa82666cab14ad241200e5" resname="tj.notification.order.received.waiting.money">
+        <source>tj.notification.order.received.waiting.money</source>
+        <target state="new">tj.notification.order.received.waiting.money</target>
+        <jms:reference-file line="270">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7420577736a5326530352c8c9f0aff439fcd1e9d" resname="tj.notification.part.of.organization %title%">
+        <source>tj.notification.part.of.organization %title%</source>
+        <target state="new">tj.notification.part.of.organization %title%</target>
+        <jms:reference-file line="67">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccd6e41514c1db7976fd22bb45853e4ddf3626ed" resname="tj.notification.payment.by.admin.enjoy">
+        <source>tj.notification.payment.by.admin.enjoy</source>
+        <target state="new">tj.notification.payment.by.admin.enjoy</target>
+        <jms:reference-file line="323">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e29f6ba61af9ae82b891ee7ca4c72342ef1fb7f" resname="tj.notification.payment.for.member">
+        <source>tj.notification.payment.for.member</source>
+        <target state="new">tj.notification.payment.for.member</target>
+        <jms:reference-file line="55">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/PrepaidCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a43a6a9a490bcf0545227bd5b902f16adc390660" resname="tj.notification.piece.not.update.for.hundredseventy.days %s%">
+        <source>tj.notification.piece.not.update.for.hundredseventy.days %s%</source>
+        <target state="new">tj.notification.piece.not.update.for.hundredseventy.days %s%</target>
+        <jms:reference-file line="182">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e83eb4b64bab0dcbafde69045d9307ffd2d950af" resname="tj.notification.piece.not.update.for.thirty.days %s%">
+        <source>tj.notification.piece.not.update.for.thirty.days %s%</source>
+        <target state="new">tj.notification.piece.not.update.for.thirty.days %s%</target>
+        <jms:reference-file line="102">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/PenArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f75f8ea2868c57f733badf03699fbd12a9a5010e" resname="tj.notification.problem.pulling.money.order.withdrawn">
+        <source>tj.notification.problem.pulling.money.order.withdrawn</source>
+        <target state="new">tj.notification.problem.pulling.money.order.withdrawn</target>
+        <jms:reference-file line="434">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7855ac35116ae9c31ec425f1215e17ca5a2e07ab" resname="tj.notification.profile.not.update.hundredseventy.days">
+        <source>tj.notification.profile.not.update.hundredseventy.days</source>
+        <target state="new">tj.notification.profile.not.update.hundredseventy.days</target>
+        <jms:reference-file line="80">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/ProfileArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bc0133be0e6726f330f39de8382e4f1e4b37ca9" resname="tj.notification.profile.not.update.thirty.days">
+        <source>tj.notification.profile.not.update.thirty.days</source>
+        <target state="new">tj.notification.profile.not.update.thirty.days</target>
+        <jms:reference-file line="50">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Command/CronJob/ProfileArchiveCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8423f56aec1755f7d684281ea3e09a2cd0e2f62f" resname="tj.notification.profile.rejection.msg.replied">
+        <source>tj.notification.profile.rejection.msg.replied</source>
+        <target state="new">tj.notification.profile.rejection.msg.replied</target>
+        <jms:reference-file line="719">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22e89be351b6b3c76917e4e56b387941199dd033" resname="tj.notification.profile.rejection.msg.replied.from.user %title%">
+        <source>tj.notification.profile.rejection.msg.replied.from.user %title%</source>
+        <target state="new">tj.notification.profile.rejection.msg.replied.from.user %title%</target>
+        <jms:reference-file line="729">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MessageBundle/Controller/MessageController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3a34cef943b90b39f8dd107656aa9082df796619" resname="tj.notification.profile.viewed.become.member">
+        <source>tj.notification.profile.viewed.become.member</source>
+        <target state="new">tj.notification.profile.viewed.become.member</target>
+        <jms:reference-file line="52">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Command/ProfileViewsNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1053dc77ada763607bd218090a0f704ca4aaea25" resname="tj.notification.recurring.credit.in.next.days">
+        <source>tj.notification.recurring.credit.in.next.days</source>
+        <target state="new">tj.notification.recurring.credit.in.next.days</target>
+        <jms:reference-file line="56">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/NotifyDirectDebitCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc1a5ca75845ecc102eb6a10740dabd2de819006" resname="tj.notification.request.join.organization %title%">
+        <source>tj.notification.request.join.organization %title%</source>
+        <target state="new">tj.notification.request.join.organization %title%</target>
+        <jms:reference-file line="419">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="446">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="520">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="89a7b6b42ab4a223c48f446969c894edb7a9b42d" resname="tj.notification.request.on.organization.accepted %title%">
+        <source>tj.notification.request.on.organization.accepted %title%</source>
+        <target state="new">tj.notification.request.on.organization.accepted %title%</target>
+        <jms:reference-file line="356">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5a97fe6c3ba02bc91bb1ec99d2d3d4c65a632c0" resname="tj.notification.request.on.organization.revoked %title%">
+        <source>tj.notification.request.on.organization.revoked %title%</source>
+        <target state="new">tj.notification.request.on.organization.revoked %title%</target>
+        <jms:reference-file line="303">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c9f921e9ddb1b963e175fc5ddff415fd1378aef1" resname="tj.notification.surf.anonymos.or.not">
+        <source>tj.notification.surf.anonymos.or.not</source>
+        <target state="new">tj.notification.surf.anonymos.or.not</target>
+        <jms:reference-file line="120">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

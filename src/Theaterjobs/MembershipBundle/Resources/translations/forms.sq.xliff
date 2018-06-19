@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:15:49Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="ddbbb51e6b6cb2127fb560e8c13ecf186d19789b" resname="account.edit.emptyValue.billingAddresscountry">
+        <source>account.edit.emptyValue.billingAddresscountry</source>
+        <target state="new">Billing address country</target>
+        <jms:reference-file line="97">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="31208284784e6f73fbbb66469a091958c3234603" resname="account.edit.label.billingAddressCity">
+        <source>account.edit.label.billingAddressCity</source>
+        <target state="new">City</target>
+        <jms:reference-file line="87">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f5f40f6299b61efd5e318e2822f33e466a621350" resname="account.edit.label.billingAddressCompany">
+        <source>account.edit.label.billingAddressCompany</source>
+        <target state="new">Company</target>
+        <jms:reference-file line="52">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d74560f31c639e172322a8212c27848942165c73" resname="account.edit.label.billingAddressCountry">
+        <source>account.edit.label.billingAddressCountry</source>
+        <target state="new">Country</target>
+        <jms:reference-file line="95">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ae2578f30e95a76733e7dd2e3a42452ec3f2af0" resname="account.edit.label.billingAddressEmail">
+        <source>account.edit.label.billingAddressEmail</source>
+        <target state="new">Email</target>
+        <jms:reference-file line="105">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0cf3249c08e46c7f9c3fa53475441783f7e41bb" resname="account.edit.label.billingAddressFirstname">
+        <source>account.edit.label.billingAddressFirstname</source>
+        <target state="new">First name</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2e1db2ae122f97f839f77b63b29f759b87dab987" resname="account.edit.label.billingAddressLastname">
+        <source>account.edit.label.billingAddressLastname</source>
+        <target state="new">Last name</target>
+        <jms:reference-file line="43">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70edb8eebf52957923b9e9da415f3ef6866effe6" resname="account.edit.label.billingAddressStreet">
+        <source>account.edit.label.billingAddressStreet</source>
+        <target state="new">Street</target>
+        <jms:reference-file line="71">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="98502a13e0a0b6005793a146d149be9e6d82139c" resname="account.edit.label.billingAddressVatId">
+        <source>account.edit.label.billingAddressVatId</source>
+        <target state="new">account.edit.label.billingAddressVatId</target>
+        <jms:reference-file line="61">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce1314a8c065bd90a67b510fd8361447e220349f" resname="account.edit.label.billingAddressZip">
+        <source>account.edit.label.billingAddressZip</source>
+        <target state="new">Zip</target>
+        <jms:reference-file line="79">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a285983ffa5364371f21d64d1fcadcf9e0e05ef7" resname="billingAddress.placeholder.vatId">
+        <source>billingAddress.placeholder.vatId</source>
+        <target state="new">VAT ID</target>
+        <jms:reference-file line="62">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c5267c49f5c86a04c4d7c9f31b8632cdc8471f2" resname="billingAddress.placeholder.vatId.Empty">
+        <source>billingAddress.placeholder.vatId.Empty</source>
+        <target state="new">Empty</target>
+        <jms:reference-file line="65">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23bf7ea6955cf33df8bb854d851da16696b10f5f" resname="billingAddress.placeholder.vatId.noCompany">
+        <source>billingAddress.placeholder.vatId.noCompany</source>
+        <target state="new">No company</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="903c24bb40b51d2114596c29bd38051767d2dd42" resname="billingAddress.placeholder.vatId.notAvailable">
+        <source>billingAddress.placeholder.vatId.notAvailable</source>
+        <target state="new">Not available</target>
+        <jms:reference-file line="63">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="905d61fc9a0beb19949816371e24c2c82d2f50a4" resname="billingAddress.placeholder.vatId.notFor_de">
+        <source>billingAddress.placeholder.vatId.notFor_de</source>
+        <target state="new">Not for de</target>
+        <jms:reference-file line="64">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b394ce61a9bc2d18f839449a8cf502d1eda7a71c" resname="form.empty_value.billing_address.country">
+        <source>form.empty_value.billing_address.country</source>
+        <target state="new">Country</target>
+        <jms:reference-file line="96">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b727125ecc7356517c860d0c1b9b53ea58905944" resname="form.label.billing_address.city">
+        <source>form.label.billing_address.city</source>
+        <target state="new">City</target>
+        <jms:reference-file line="87">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ac0df13be67bd6596af5a0b9363a9d8d4f60f3a3" resname="form.label.billing_address.company">
+        <source>form.label.billing_address.company</source>
+        <target state="new">form.label.billing_address.company</target>
+        <jms:reference-file line="52">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="38a946ae256cd705743135c9839f41ed52a66100" resname="form.label.billing_address.email">
+        <source>form.label.billing_address.email</source>
+        <target state="new">form.label.billing_address.email</target>
+        <jms:reference-file line="104">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb2d904693ad5e04ba56d3dec45ef21db99ab56e" resname="form.label.billing_address.firstname">
+        <source>form.label.billing_address.firstname</source>
+        <target state="new">form.label.billing_address.firstname</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4b97d741131ae4b988eac94b6431b4928598ac72" resname="form.label.billing_address.lastname">
+        <source>form.label.billing_address.lastname</source>
+        <target state="new">form.label.billing_address.lastname</target>
+        <jms:reference-file line="43">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc6eda144a46ea1fe1790f8715984078b464f219" resname="form.label.billing_address.street">
+        <source>form.label.billing_address.street</source>
+        <target state="new">form.label.billing_address.street</target>
+        <jms:reference-file line="71">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bfa7e4fd11bff451fdfd7119804a588425937e1" resname="form.label.billing_address.vat_id">
+        <source>form.label.billing_address.vat_id</source>
+        <target state="new">form.label.billing_address.vat_id</target>
+        <jms:reference-file line="61">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8e2a359954f85a1c458fbfe5eb8b43c69e146b96" resname="form.label.billing_address.zip">
+        <source>form.label.billing_address.zip</source>
+        <target state="new">form.label.billing_address.zip</target>
+        <jms:reference-file line="79">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4a8ac85f6e8aa5c2fd423cc17214f1dd656e902b" resname="form.label.debit_account.accountHolder">
+        <source>form.label.debit_account.accountHolder</source>
+        <target state="new">form.label.debit_account.accountHolder</target>
+        <jms:reference-file line="26">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63d823ce4347c614bfdf64d78abe199d326f2625" resname="form.label.debit_account.bank.name">
+        <source>form.label.debit_account.bank.name</source>
+        <target state="new">form.label.debit_account.bank.name</target>
+        <jms:reference-file line="41">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="392e490f2e0b04170fa332dca38b74876de82f2c" resname="form.label.debit_account.bic">
+        <source>form.label.debit_account.bic</source>
+        <target state="new">form.label.debit_account.bic</target>
+        <jms:reference-file line="36">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dcc7bf6e06de0cbc4b0edac1773aecefe7cf815e" resname="form.label.debit_account.iban">
+        <source>form.label.debit_account.iban</source>
+        <target state="new">form.label.debit_account.iban</target>
+        <jms:reference-file line="31">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="28839f5eab46ac7bf4d0109b710ef0d0ef0b5f99" resname="form.label.membership">
+        <source>form.label.membership</source>
+        <target state="new">form.label.membership</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/MembershipBundle/Form/Type/MembershipType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b8c71b44890846b3cb22dbc1e0ab3b34319ccfbc" resname="form.placeholder.billing_address.city">
+        <source>form.placeholder.billing_address.city</source>
+        <target state="new">form.placeholder.billing_address.city</target>
+        <jms:reference-file line="89">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c240723632ada3ed6a7b5a58c8e2f1180b6b4e9e" resname="form.placeholder.billing_address.company">
+        <source>form.placeholder.billing_address.company</source>
+        <target state="new">form.placeholder.billing_address.company</target>
+        <jms:reference-file line="55">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d386206bb390b98dd4f29d41613fc626635734" resname="form.placeholder.billing_address.email">
+        <source>form.placeholder.billing_address.email</source>
+        <target state="new">form.placeholder.billing_address.email</target>
+        <jms:reference-file line="107">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4e37c3610a69bff09e02d004c0b00ee1fed6260" resname="form.placeholder.billing_address.firstname">
+        <source>form.placeholder.billing_address.firstname</source>
+        <target state="new">form.placeholder.billing_address.firstname</target>
+        <jms:reference-file line="37">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a710b3b9094f50eeab01bec54e1f09b9752dec83" resname="form.placeholder.billing_address.lastname">
+        <source>form.placeholder.billing_address.lastname</source>
+        <target state="new">form.placeholder.billing_address.lastname</target>
+        <jms:reference-file line="45">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7126a11a7a3878e03773f70757d2321c2863f06c" resname="form.placeholder.billing_address.street">
+        <source>form.placeholder.billing_address.street</source>
+        <target state="new">form.placeholder.billing_address.street</target>
+        <jms:reference-file line="73">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b6a04ddec899b0d18c8bca9f22b3d33b10a9f0c7" resname="form.placeholder.billing_address.vat_id">
+        <source>form.placeholder.billing_address.vat_id</source>
+        <target state="new">form.placeholder.billing_address.vat_id</target>
+        <jms:reference-file line="62">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="008b833d7d2d4af75164dfc808d6366adc1575f9" resname="form.placeholder.billing_address.vat_id_empty">
+        <source>form.placeholder.billing_address.vat_id_empty</source>
+        <target state="new">form.placeholder.billing_address.vat_id_empty</target>
+        <jms:reference-file line="65">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3bbecc65be08b68cf3a06e4c3dd84522177e91cc" resname="form.placeholder.billing_address.vat_id_no_company">
+        <source>form.placeholder.billing_address.vat_id_no_company</source>
+        <target state="new">form.placeholder.billing_address.vat_id_no_company</target>
+        <jms:reference-file line="66">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbd609264429f227f03a262e2713b5fa6f4305df" resname="form.placeholder.billing_address.vat_id_not_available">
+        <source>form.placeholder.billing_address.vat_id_not_available</source>
+        <target state="new">form.placeholder.billing_address.vat_id_not_available</target>
+        <jms:reference-file line="63">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e3f1b3df7d2e8392e8016732b89ecd1a5a443512" resname="form.placeholder.billing_address.vat_id_not_for_de">
+        <source>form.placeholder.billing_address.vat_id_not_for_de</source>
+        <target state="new">form.placeholder.billing_address.vat_id_not_for_de</target>
+        <jms:reference-file line="64">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0ce2bdcfdc44ba081773bef3e47802baff7e81e6" resname="form.placeholder.billing_address.zip">
+        <source>form.placeholder.billing_address.zip</source>
+        <target state="new">form.placeholder.billing_address.zip</target>
+        <jms:reference-file line="81">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="299fd7da0abdb600349d1191cfe829d8b54c474a" resname="membership.new.VATNumber">
+        <source>membership.new.VATNumber</source>
+        <target state="new">VAT Number</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0cd76644edd92db08a8c56bec7394b9dca9a1159" resname="membership.new.city">
+        <source>membership.new.city</source>
+        <target state="new">City</target>
+        <jms:reference-file line="80">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c1909afe9891889903a78be804d3dd409283a67" resname="membership.new.companyName">
+        <source>membership.new.companyName</source>
+        <target state="new">Company Name</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d68df40d5d1e2e73e11181dc62ff54496255c54d" resname="membership.new.country">
+        <source>membership.new.country</source>
+        <target state="new">Country</target>
+        <jms:reference-file line="91">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+        <jms:reference-file line="92">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f357c50307395a500257c39a81546163e7957f30" resname="membership.new.email">
+        <source>membership.new.email</source>
+        <target state="new">membership.new.email</target>
+        <jms:reference-file line="132">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e26b7b7dab0505088e0ca64f173c93fa92abb04e" resname="membership.new.firstname">
+        <source>membership.new.firstname</source>
+        <target state="new">First name</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="25b7517cc823dbe5d6cb9357e79cb9d06900f99f" resname="membership.new.label.accountHolder">
+        <source>membership.new.label.accountHolder</source>
+        <target state="new">Account holder full name</target>
+        <jms:reference-file line="47">/../src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1a6c74cf413d89daa45bc000d7e5066da484b1fc" resname="membership.new.label.iban">
+        <source>membership.new.label.iban</source>
+        <target state="new">IBAN</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0d45f40844b043119e687804187f0e9776c6132" resname="membership.new.lastname">
+        <source>membership.new.lastname</source>
+        <target state="new">Last name</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2f4a3ec09eebbd7d96d639b8afa24a800023a92" resname="membership.new.street">
+        <source>membership.new.street</source>
+        <target state="new">Street</target>
+        <jms:reference-file line="64">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="835bd72335d9c18cd8a1a0f79148db67002094c6" resname="membership.new.zipCode">
+        <source>membership.new.zipCode</source>
+        <target state="new">ZIP Code</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/MembershipBundle/Form/Type/BillingAddressType.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,64 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="contact">
+    <div class="container">
+        <div class="row invoice-mobile-head">
+            <h1 class="text-center">{{ 'account.mainTitle.invoiceArchive' | trans }} {% if is_granted('ROLE_ADMIN') and profile  %} - {{ profile|defaultName }} {% endif %} </h1>
+            <br>
+            <br>
+            <div class="row mobile-table-6">
+                <div class="col-lg-2 col-md-3">{{ 'account.table.header.date' | trans }}</div>
+                <div class="col-lg-10 col-md-9">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12">{{ 'account.table.header.rechNr' | trans }}</div>
+                        <div class="col-md-3 col-sm-12">{{ 'account.table.header.paymentMethod' | trans }}</div>
+                        <div class="col-md-3 col-sm-12">{{ 'account.table.header.sum' | trans }}</div>
+                        <div class="col-md-3 col-sm-12">{{ 'account.table.header.file' | trans }}</div>
+                        </div>
+                </div>
+            </div>
+            <div class="separator separator-full"></div>
+            <div class="row invoice-mobile-table">
+
+            {% for item in bills %}
+                <div class="col-lg-2 col-sm-12 col-md-3">
+                    <div class="margin-md">{{ item.createdAt | date('d.m.Y') }}</div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-sm-12">
+                    <ul class="search-list">
+
+                        <li>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-12">{{ item.number }}</div>
+                                <div class="col-md-3 col-sm-12">{{ item.booking.paymentMethod.title | capitalize }} </div>
+                                <div class="col-md-3 col-sm-12">{{ item.sumGross | localizedcurrency('EUR') }}</div>
+                                <div class="col-md-3 col-sm-12">
+                                    <div class="row links-download-pdf">
+                                        <div class="col-md-6 col-sm-6 col-xs-6"><a style="color: #ffffff"
+                                           href="{{ path('tj_membership_download_invoice_bill', { id: item.id} ) }}"
+                                           class="link-payment">{{ 'account.table.link.bill' | trans }}</a>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            {% if item.booking.paymentMethod.Debit %}
+                                                <a style="color: #ffffff" href="{{ path('tj_membership_download_invoice_sepa', { id: item.id } ) }}"
+                                                   class="link-payment">{{ 'account.table.link.sepa' | trans }}
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

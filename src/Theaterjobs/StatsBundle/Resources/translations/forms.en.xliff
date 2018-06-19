@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-09-05T16:12:16Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="9bcc0bae5941c5f11b59c4f573cccd26fa7a8054" resname="form.stats.button.statistics">
+        <source>form.stats.button.statistics</source>
+        <target>form.stats.button.statistics</target>
+        <jms:reference-file line="200">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d6784a710a7841bb78a388f3a5d22a13012f864" resname="form.stats.choice.entity.educations">
+        <source>form.stats.choice.entity.educations</source>
+        <target>form.stats.choice.entity.educations</target>
+        <jms:reference-file line="117">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="36a67e0f5015b791944135813766b16d7d436e53" resname="form.stats.choice.entity.empty">
+        <source>form.stats.choice.entity.empty</source>
+        <target>form.stats.choice.entity.empty</target>
+        <jms:reference-file line="119">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="558af5f4e5118345877d35ecc915be13acf91dcb" resname="form.stats.choice.entity.jobs">
+        <source>form.stats.choice.entity.jobs</source>
+        <target>form.stats.choice.entity.jobs</target>
+        <jms:reference-file line="114">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50e6868fd6edb55a8edcc70b6cf692ea4cf57658" resname="form.stats.choice.entity.network">
+        <source>form.stats.choice.entity.network</source>
+        <target>form.stats.choice.entity.network</target>
+        <jms:reference-file line="116">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="07a2280f629ebade1b45c801fcfaf86fd85e3645" resname="form.stats.choice.entity.pieces">
+        <source>form.stats.choice.entity.pieces</source>
+        <target>form.stats.choice.entity.pieces</target>
+        <jms:reference-file line="115">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="34e6f2466b42e8f3795b4f2c042953ccea12f5ae" resname="form.stats.choice.entity.users">
+        <source>form.stats.choice.entity.users</source>
+        <target>form.stats.choice.entity.users</target>
+        <jms:reference-file line="113">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37b2a765dfaf630ce626ee0cc3dcb02720ca48e2" resname="form.stats.choice.members.type.1_year">
+        <source>form.stats.choice.members.type.1_year</source>
+        <target>form.stats.choice.members.type.1_year</target>
+        <jms:reference-file line="178">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2af3565943b9eaa41d4a2908cb76c0870d6ca2b6" resname="form.stats.choice.members.type.3_months">
+        <source>form.stats.choice.members.type.3_months</source>
+        <target>form.stats.choice.members.type.3_months</target>
+        <jms:reference-file line="177">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a00d8bb8cb5501b88eb4c63ed6de84b784f8ddba" resname="form.stats.choice.members.type.all">
+        <source>form.stats.choice.members.type.all</source>
+        <target>form.stats.choice.members.type.all</target>
+        <jms:reference-file line="176">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c629831e5b42ae4346bdd41e44c4df7752a007e" resname="form.stats.choice.memberships.type.all">
+        <source>form.stats.choice.memberships.type.all</source>
+        <target>form.stats.choice.memberships.type.all</target>
+        <jms:reference-file line="167">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="01136d3f7138719416bc0620d5dd64ca2fef424a" resname="form.stats.choice.memberships.type.lost">
+        <source>form.stats.choice.memberships.type.lost</source>
+        <target>form.stats.choice.memberships.type.lost</target>
+        <jms:reference-file line="169">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd75947c213ce57353d275cd14de1940f33897c8" resname="form.stats.choice.memberships.type.new">
+        <source>form.stats.choice.memberships.type.new</source>
+        <target>form.stats.choice.memberships.type.new</target>
+        <jms:reference-file line="168">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="93e8703f5179a58732b8f20fe4c90fc273266465" resname="form.stats.choice.payments.time.all">
+        <source>form.stats.choice.payments.time.all</source>
+        <target>form.stats.choice.payments.time.all</target>
+        <jms:reference-file line="157">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed37e2bb1cd40b27e6955e95b92b26e1bdf6542a" resname="form.stats.choice.payments.time.first">
+        <source>form.stats.choice.payments.time.first</source>
+        <target>form.stats.choice.payments.time.first</target>
+        <jms:reference-file line="158">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f6ed52d62a708a710cd47f2bedf413a6c7ec6d38" resname="form.stats.choice.payments.time.recurring">
+        <source>form.stats.choice.payments.time.recurring</source>
+        <target>form.stats.choice.payments.time.recurring</target>
+        <jms:reference-file line="159">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63ded66c3023d696aef448e57b7e5f8b347396ca" resname="form.stats.choice.payments.time.renewals">
+        <source>form.stats.choice.payments.time.renewals</source>
+        <target>form.stats.choice.payments.time.renewals</target>
+        <jms:reference-file line="160">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="74517b468d0c284d3d844fb80aae264397c09913" resname="form.stats.choice.payments.type.all">
+        <source>form.stats.choice.payments.type.all</source>
+        <target>form.stats.choice.payments.type.all</target>
+        <jms:reference-file line="148">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="21de68e5ea53b8649a4df3b04985ce4da58c8838" resname="form.stats.choice.payments.type.direct.debit">
+        <source>form.stats.choice.payments.type.direct.debit</source>
+        <target>form.stats.choice.payments.type.direct.debit</target>
+        <jms:reference-file line="149">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b209c6f38d5cec2676a90c519e68c14c7567628" resname="form.stats.choice.payments.type.paypal">
+        <source>form.stats.choice.payments.type.paypal</source>
+        <target>form.stats.choice.payments.type.paypal</target>
+        <jms:reference-file line="150">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d93e531a795a8ea523c795ed21d2771d992b2ec" resname="form.stats.choice.payments.type.prepayment">
+        <source>form.stats.choice.payments.type.prepayment</source>
+        <target>form.stats.choice.payments.type.prepayment</target>
+        <jms:reference-file line="151">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4dc5cd01c27bb0ddcb7d6159ca2722b3485b0c90" resname="form.stats.choice.registered.all">
+        <source>form.stats.choice.registered.all</source>
+        <target>form.stats.choice.registered.all</target>
+        <jms:reference-file line="139">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6919c9646c075ce9cc5b075feab74462527c6ef0" resname="form.stats.choice.registered.members">
+        <source>form.stats.choice.registered.members</source>
+        <target>form.stats.choice.registered.members</target>
+        <jms:reference-file line="141">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="499ab5b7a84eb5c47361b1e119a125e076f2357b" resname="form.stats.choice.registered.non.members">
+        <source>form.stats.choice.registered.non.members</source>
+        <target>form.stats.choice.registered.non.members</target>
+        <jms:reference-file line="140">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ecfde2ef2d69ead2d3428c7323043a4ccce6ab0" resname="form.stats.choice.status.all">
+        <source>form.stats.choice.status.all</source>
+        <target>form.stats.choice.status.all</target>
+        <jms:reference-file line="184">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c1ac4ab9ae5c4034a16c3d620ebccca9de3bce98" resname="form.stats.choice.status.archived">
+        <source>form.stats.choice.status.archived</source>
+        <target>form.stats.choice.status.archived</target>
+        <jms:reference-file line="186">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f5b059421ff9200a91988d9d56c1be071a23a16" resname="form.stats.choice.status.published">
+        <source>form.stats.choice.status.published</source>
+        <target>form.stats.choice.status.published</target>
+        <jms:reference-file line="185">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40ddeae1f6757a5a8aa86af6ac9dcf51107dfae5" resname="form.stats.choice.users.all">
+        <source>form.stats.choice.users.all</source>
+        <target>form.stats.choice.users.all</target>
+        <jms:reference-file line="126">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c15f174b3838bbac028b69d4f6fc0d071e1906a5" resname="form.stats.choice.users.deleted">
+        <source>form.stats.choice.users.deleted</source>
+        <target>form.stats.choice.users.deleted</target>
+        <jms:reference-file line="128">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="83e94399bea6421b7c0c37e276c95f3621ea808f" resname="form.stats.choice.users.jobs.admins">
+        <source>form.stats.choice.users.jobs.admins</source>
+        <target>form.stats.choice.users.jobs.admins</target>
+        <jms:reference-file line="194">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="deb3fb6df97ea08bfc7f5435d787648f38aa4bfd" resname="form.stats.choice.users.jobs.all_users">
+        <source>form.stats.choice.users.jobs.all_users</source>
+        <target>form.stats.choice.users.jobs.all_users</target>
+        <jms:reference-file line="193">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99b35682d5a190cbe88cb20bbe53fc84da288ea4" resname="form.stats.choice.users.jobs.others">
+        <source>form.stats.choice.users.jobs.others</source>
+        <target>form.stats.choice.users.jobs.others</target>
+        <jms:reference-file line="195">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d28b631c9371e11e266e2f063f0a93da0d1d95bb" resname="form.stats.choice.users.memberships">
+        <source>form.stats.choice.users.memberships</source>
+        <target>form.stats.choice.users.memberships</target>
+        <jms:reference-file line="129">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c82188e7b631dedcb2d8bd3c48daed3e924aad72" resname="form.stats.choice.users.paying.members.with.profile">
+        <source>form.stats.choice.users.paying.members.with.profile</source>
+        <target>form.stats.choice.users.paying.members.with.profile</target>
+        <jms:reference-file line="131">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40c9614b30a24a1f0605b942556411a4382f82ea" resname="form.stats.choice.users.payment.types">
+        <source>form.stats.choice.users.payment.types</source>
+        <target>form.stats.choice.users.payment.types</target>
+        <jms:reference-file line="130">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="51e20ab892abe082f8c6cd843985306d21011f72" resname="form.stats.choice.users.registered">
+        <source>form.stats.choice.users.registered</source>
+        <target>form.stats.choice.users.registered</target>
+        <jms:reference-file line="127">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7033b4f6ce8a4f06a7d06ad2b609c5b476360540" resname="form.stats.label.date.from">
+        <source>form.stats.label.date.from</source>
+        <target>form.stats.label.date.from</target>
+        <jms:reference-file line="123">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+        <jms:reference-file line="124">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="171790de07a47377da8ef55d8502bfbd40cfc6f7" resname="form.stats.label.entity">
+        <source>form.stats.label.entity</source>
+        <target>form.stats.label.entity</target>
+        <jms:reference-file line="121">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="713f65044e95a2f004e2402ef4b18e2efb9be358" resname="form.stats.label.job.users">
+        <source>form.stats.label.job.users</source>
+        <target>form.stats.label.job.users</target>
+        <jms:reference-file line="198">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c4f019ab44bce093bb62a3651cbbdc1fd45b7f1" resname="form.stats.label.members.type">
+        <source>form.stats.label.members.type</source>
+        <target>form.stats.label.members.type</target>
+        <jms:reference-file line="181">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="18c81eaa54b52362b9c8f20d1036eb1224ab37f7" resname="form.stats.label.memberships.type">
+        <source>form.stats.label.memberships.type</source>
+        <target>form.stats.label.memberships.type</target>
+        <jms:reference-file line="172">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c140aba8908c45aeac7151a0024a522202fea0d2" resname="form.stats.label.payments.time">
+        <source>form.stats.label.payments.time</source>
+        <target>form.stats.label.payments.time</target>
+        <jms:reference-file line="163">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="deeceb1a738466b6e89bacd02e6cb11bae30254f" resname="form.stats.label.payments.type">
+        <source>form.stats.label.payments.type</source>
+        <target>form.stats.label.payments.type</target>
+        <jms:reference-file line="154">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0de4c19133ef343bf55d18990a0b9772d75d92e9" resname="form.stats.label.registered">
+        <source>form.stats.label.registered</source>
+        <target>form.stats.label.registered</target>
+        <jms:reference-file line="144">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed73476d32baff99e545cf1e5c68bd9c0308dd8a" resname="form.stats.label.status">
+        <source>form.stats.label.status</source>
+        <target>form.stats.label.status</target>
+        <jms:reference-file line="189">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d34874177157ca6fbd8af12385854f1c4e680434" resname="form.stats.label.user">
+        <source>form.stats.label.user</source>
+        <target>form.stats.label.user</target>
+        <jms:reference-file line="135">/var/www/theaterjobs21/src/Theaterjobs/StatsBundle/Controller/StatsController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

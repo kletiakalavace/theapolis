@@ -1,0 +1,41 @@
+{% import 'macro.html.twig' as m %}
+<div class="modal-body movebottom" id="general">
+    <!-- Skills -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2>{{ 'user.comment.title.allComments'|trans }}</h2>
+                {% block content %}
+                    {% if comments | length > 0 %}
+                        {% for comment in comments if comment.archivedAt is null %}
+                            <div class="row row-comments">
+                                <div class="col-md-2">
+                                    <div class="circle-img-comment">
+                                        {% set profilePhoto =  profile_photo(comment.user.profile,'uploadFile','logos') %}
+                                        {% set filter = '' %}
+
+                                        {% if comment.user.profile.mediaImage|first.filter is defined %}
+                                            {% set filter = comment.user.profile.mediaImage|first.filter %}
+                                        {% endif %}
+                                        <figure class="{{ filter }}">
+                                            <img src="{{ profilePhoto }}">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <h4>
+                                        <a href="{{ path('tj_profile_profile_show',{'slug':comment.user.profile.slug}) }}">
+                                            {{ comment.user.profile | defaultName }}
+                                        </a>
+                                    </h4>
+                                    <p>{{ comment.description }}</p>
+                                    <span class="dt-news-comment">{{ comment.publishedAt|date('d.m.Y H:i') }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>

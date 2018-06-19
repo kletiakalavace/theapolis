@@ -1,0 +1,18 @@
+{% extends 'TheaterjobsAdminBundle::AdminBase.html.twig' %}
+{% block breadcrumb %}
+    <li><a href="{{ path('tj_admin_home') }}" >{{ 'tj.breadcrumb.admin' | trans}}</a></li>
+    <li><a href="{{ path('tj_admin_production') }}">{{ 'tj.breadcrumb.production' | trans}}</a></li>
+
+    <li>{{ 'tj.breadcrumb.skill.edit' | trans }} : {{ entity.title }}</li>
+{% endblock %}
+
+{% block content -%}
+    <div class="container">
+        <div class="block">
+            <div class="page-header">
+                <h1>Production edit</h1>
+            </div>
+            {{ form(edit_form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% block footer %}
+    {% trans_default_domain 'pdf' %}
+    <footer class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="border-top: 6px solid #CD2036;display: block;width: 66px;display: block;float:left;border-bottom:0;margn-bottom:20px;">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-xs-4 no-padding">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.company'| trans  }}#}
+                    Firma: {{ company.name }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.ceo'| trans  }}#}
+                    Geschäftsführer: {{ company.ceo }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.phone'| trans  }}#}
+                    Telefon: {{ company.phone }}</p>{#
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>{{ 'membership.pdf.footer.fax'| trans  }} {{ company.fax }}</p>#}
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.email'| trans  }}#}
+                    E-Mail: {{ company.email }}</p>
+                {#<p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>#}{#{{ 'membership.pdf.footer.url'| trans  }}#}{#
+                    Website: {{ company.url }}</p>#}
+            </div>
+
+            <div class="col-xs-4 no-padding">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.taxnumber'| trans  }}#}
+                    Steuernummer: {{ company.taxnumber }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.vatnumber'| trans  }}#}
+                    USt.Nr.: {{ company.vatnumber }}</p>{#
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>{{ 'membership.pdf.footer.financeoffice'| trans  }} {{ company.financeoffice }}</p>#}
+            </div>
+
+            <div class="col-xs-4 no-padding">
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.accountholder'| trans  }}#}
+                    Bankverbindung:<br> {{ company.name }}, {{ company.accountholder }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.iban'| trans  }}#}
+                    IBAN: <br>{{ company.iban }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.bic'| trans  }}#}
+                    BIC: {{ company.bic }}</p>{#
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>{{ 'membership.pdf.footer.accountnumber'| trans  }} {{ company.accountnumber }}</p>
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 15px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>{{ 'membership.pdf.footer.bankcode'| trans  }} {{ company.bankcode }}</p>#}
+                <p style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;line-height:22px;margin-bottom:0px;display: block;margin-top:0px;'>{#{{ 'membership.pdf.footer.bankname'| trans  }}#}
+                    Bankname: {{ company.bankname }}</p>
+
+
+            </div>
+        </div>
+    </footer>
+{% endblock footer %}

@@ -1,0 +1,24 @@
+parameters:
+  theaterjobs.inserate.organization.repository.class: Theaterjobs\InserateBundle\Entity\OrganizationRepository
+
+services:
+
+  theaterjobs.inserate.organization.repository:
+    class: '%theaterjobs.inserate.organization.repository.class%'
+    factory_service: 'doctrine.orm.entity_manager'
+    factory_method: 'getRepository'
+    arguments:
+      - 'TheaterjobsInserateBundle:Organization'
+
+  app.twig_extension.diff:
+    class: Theaterjobs\InserateBundle\Twig\Extension\getDecoratedDiff
+    public: false
+    tags:
+      - { name: 'twig.extension' }
+
+  twig.filter.organization.name:
+    public: false
+    class: Theaterjobs\InserateBundle\Twig\OrganizationNameExtension
+    arguments: ["@fos_elastica.index.theaterjobs.organization","@fos_elastica.manager"]
+    tags:
+      - { name: twig.extension }

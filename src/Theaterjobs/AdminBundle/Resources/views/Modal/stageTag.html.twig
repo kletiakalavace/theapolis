@@ -1,0 +1,66 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>  {{ 'admin.edit.mainTitle.stageTags' | trans }} </h2>
+                <h3>{{ entity.title?:'' }}</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(form) }}
+                        <div class="form-group">
+                            {{ form_row(form.title) }}
+                        </div>
+                        <div class="form-inline">
+                            {{ form_widget(form.submit,{'attr':{'class':'btn btn-inverse-primary btn btn-inverse btn-primary btn-update-modal'} }) }}
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    generalSelect2(
+        '#theaterjobs_inseratebundle_tags_title',
+        trans('organization.edit.stageTags.newTag', locale),
+        Routing.generate('tj_organization_get_tags', {'_locale': locale, newCheck: {{ newCheck }} }),
+        trans('stage.max.limit.only.one', locale),
+    );
+
+    //form submit
+    const formStage = $("form[name=theaterjobs_inseratebundle_tags]");
+
+    formStage.validate({
+        errorPlacement: (error, element) => {
+            toolTipError(error.text(), element);
+        },
+        ignore: []
+    });
+    validFormInputs();
+
+    formStage.submit((e) => {
+        e.preventDefault();
+        if ($(e.currentTarget).valid()) {
+            $.ajax({
+                type: $(e.currentTarget).attr('method'),
+                url: $(e.currentTarget).attr('action'),
+                data: $(e.currentTarget).serialize(),
+                success: (data) => {
+                    if (data.success) {
+                        $('#searchTagChoices', adminSearchForm).val(1);
+                        $('input:text', adminSearchForm).val('');
+                        dataTableReload();
+                    }
+                },
+                error: () => {
+                    serverError();
+                }
+            }).done(() => {
+                $('#myModal').modal('hide');
+            });
+        }
+    });
+</script>

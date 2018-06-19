@@ -1,0 +1,73 @@
+{% block content %}
+    <div id="preCalculate" style='width:100%;'>
+        <div class="header-booking">
+            <h3 style='word-wrap: break-word;'>{{ 'membership.new.yourBooking'| trans }}</h3>
+            <span>{{ 'membership.summaryBlock.description'| trans }}</span>
+            <hr>
+        </div>
+        <div class="content-booking">
+            <div class="row col-md-12">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <span>{{ 'membership.new.sumNet'| trans }}</span>
+                    </div>
+                    <div class="col-lg-1 pull-right col-md-4 col-xs-6">
+                        <span class="pull-right">{{ preCalculate.net | localizedcurrency('EUR') }}</span>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        {{ preCalculate.percentage ~ '% ' }}{{ 'membership.new.taxrate' | trans }}
+                    </div>
+                    <div class="col-lg-1 pull-right col-xs-6">
+                        <span class="pull-right">{{ preCalculate.vat | localizedcurrency('EUR') }}</span>
+                    </div>
+
+                </div>
+                {% if isPaypal %}
+                    <div class="row" id="tax-paypal">
+                        <div class="col-lg-6 col-md-6 col-xs-7">
+                            <span>{{ 'membership.new.paypal.fee'| trans }}</span>
+                        </div>
+                        <div class="col-lg-1 pull-right col-md-4">
+                            <span class="pull-right">{{' ' ~ preCalculate.paypalNet | localizedcurrency('EUR') }}</span>
+                        </div>
+                    </div>
+                    <div class="row" id="net-paypal">
+                        <div class="col-lg-6 col-md-6 col-xs-7">
+                            {{ preCalculate.percentage ~ '% ' }}{{ 'membership.new.taxrate' | trans }}
+                        </div>
+                        <div class="col-lg-1 pull-right col-md-4">
+                            <span class="pull-right">{{' ' ~ preCalculate.paypalVat | localizedcurrency('EUR') }}</span>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="footer-booking col-md-12 no-padding">
+            <div>
+                <hr>
+                <div class="col-lg-3 col-xs-6">
+                    <strong>{{ 'membership.new.total'| trans }}</strong>
+                </div>
+                <div class="col-lg-1 pull-right">
+                    <span class="pull-right"><strong>{{ preCalculate.gross | localizedcurrency('EUR') }}</strong></span>
+                </div>
+            </div>
+            <div id="invoice">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="ttl-amts">
+                            <button type="submit" class="btn btn-primary btn-lg" id="normal-submit">{{ 'button.buyNow'|trans }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <a href="{{ path('tj_main_dashboard_index') }}" id="cancel-order">{{ 'membership.new.Cancelorder'|trans }}</a>
+        </div>
+
+    </div>
+{% endblock content %}
+

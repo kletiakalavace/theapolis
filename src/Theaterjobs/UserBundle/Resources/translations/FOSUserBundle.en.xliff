@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-04T13:01:38Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="9e7ac02f093fc21df96737b7f8f2028928000404" resname="ResetPassword.confirm.modal.mainTitle.resetPassword">
+        <source>ResetPassword.confirm.modal.mainTitle.resetPassword</source>
+        <target state="new">ResetPassword.confirm.modal.mainTitle.resetPassword</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/UserBundle/Resources/views/Resetting/reset_content.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c848483b2862392c26dcdcdefd266c9644f3def8" resname="ResetPassword.modal.mainTitle.resetPassword">
+        <source>ResetPassword.modal.mainTitle.resetPassword</source>
+        <target state="new">ResetPassword.modal.mainTitle.resetPassword</target>
+        <jms:reference-file line="17">/home/laura/theaterjobs21/src/Theaterjobs/UserBundle/Resources/views/Resetting/reset_content.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

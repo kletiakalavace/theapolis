@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:44:02Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c64b5ea692327ae1e9cb74081f58718d440ac5e8" resname="flash.alert.base.recheck_input">
+        <source>flash.alert.base.recheck_input</source>
+        <target>flash.alert.base.recheck_input</target>
+        <jms:reference-file line="222">/../src/Theaterjobs/MainBundle/Controller/BaseController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="788281886f331f1c39e36a2530ada046f69ecb4a" resname="flash.success.advice.requested">
+        <source>flash.success.advice.requested</source>
+        <target>flash.success.advice.requested</target>
+        <jms:reference-file line="94">/../src/Theaterjobs/MainBundle/Controller/AdviceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63cdae61726bf79735c9bdd9b668c20b37b0eadd" resname="flash.success.complain.created">
+        <source>flash.success.complain.created</source>
+        <target>flash.success.complain.created</target>
+        <jms:reference-file line="83">/../src/Theaterjobs/MainBundle/Controller/ComplainController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d94549953c86fc44afbccbb493d1864b6e09a79" resname="tj.error.site.exists">
+        <source>tj.error.site.exists</source>
+        <target>tj.error.site.exists</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/MainBundle/Controller/SiteInfoController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

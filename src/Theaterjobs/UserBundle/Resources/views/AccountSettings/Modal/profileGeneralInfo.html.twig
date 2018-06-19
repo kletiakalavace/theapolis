@@ -1,0 +1,141 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2>{{ 'account.edit.title.personalData' | trans }}</h2>
+                {{ form_start(form, {'method': 'PUT'}) }}
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        {{ form_widget(form._token) }}
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">{{ form_row(form.firstName) }}</div>
+                            <div class="col-md-6 col-xs-12"> {{ form_row(form.lastName) }}</div>
+                            <div class="col-md-12 col-xs-12"> {{ form_row(form.subtitle) }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            {{ form_widget(form.doNotTrackViews) }}
+                                            <span class="faux-checkbox"></span>
+                                            {{ "account.edit.label.trackViews" |trans }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="row">
+                            <p class="p-alt" style="text-align: center;"> {{ form_widget(form.submit,{'attr': {'class': 'btn btn-inverse-primary'}},{'label':'form.button.generalInfo.save' | trans({},'forms')}) }}</p>
+                        </p>
+                    </div>
+                </div>
+                {{ form_end(form, {'render_rest':false  }) }}
+                {{ m.error }}
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+{#</div>#}
+
+{% block js %}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsUserBundle/Resources/public/js/generalInfo/generalInfo.js" %}
+    <script>
+        $.getScript("{{ asset_url }}");
+    </script>
+    {% endjavascripts %}
+    <script>
+        var trackViewsCheckBox = $('#tj_user_form_master_data_doNotTrackViews');
+        trackViewsCheckBox.change(function() {
+            if(!this.checked) {
+                bootbox.confirm({
+                    message: "{{ 'account.edit.bootbox.confirm.trackviews'|trans}}",
+                    buttons: {
+                        confirm: {
+                            label: trans('bootbox.button.yes', locale),
+                            className: 'btn-success'
+                        },
+                        cancel: {
+                            label: trans('bootbox.button.no', locale),
+                            className: 'btn-danger'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            if (result === false) {
+                                trackViewsCheckBox.prop('checked', true);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        $('form[name="tj_user_form_master_data"]').submit(function (e) {
+            e.preventDefault();
+            var form = $('form[name="tj_user_form_master_data"]');
+            var valid = false;
+            validFormInputs();
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.error) {
+                            // popupCase('There was an erronametj_r with your request.Please refresh and try again 1111.');
+                            for (var i = 0; i < data.errors.length; i++) {
+                                var el = $(data.errors[i].field);
+                                el.parent().addClass('has-error');
+                                toolTipError(data.errors[i].message, el);
+                            }
+                        }
+                        else {
+                            $('.user .user-name').html(data.newName);
+                            $('#generalInfoBox').html(data.data);
+                            valid = true;
+                        }
+                    },
+                    error: function () {
+                        popupCase('{{ "accountsettings.namechangerequest.error" |trans}}.');
+                        customAlert('#accountSettingsBlock','error','{{ "accountsettings.namechangerequest.error" |trans}}.');
+                    }
+
+                }).done(function (data) {
+                    if (valid) {
+                        $('#myModal').modal('hide');
+                        if(data.requestedNameMessage !== '')
+                        {
+                            customAlert('#accountSettingsBlock','success',data.requestedNameMessage);
+                        }
+                        else if(data.requestedNameChange){
+                            customAlert('#accountSettingsBlock','success','{{ "notification.account.personalDetails.namechangerequest"|trans }}');
+                        }
+                        else{
+                            customAlert('#accountSettingsBlock','success','{{ "notification.account.personalDetails.accountinfoupdate"|trans }}');
+                        }
+
+                    }
+                });
+            }
+        });
+
+        $("form[name=tj_user_form_master_data]").validate({
+            errorPlacement: function (error, element) {
+                toolTipError(error.text(), element);
+                $('.text-danger').removeClass('hidden');
+            },
+            ignore: [],
+            rules: {
+                "tj_user_form_master_data[subtitle]": {
+                    minlength: 3
+                }
+            }
+        });
+    </script>
+{% endblock %}

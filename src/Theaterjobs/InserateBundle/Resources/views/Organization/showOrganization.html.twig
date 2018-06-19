@@ -1,0 +1,430 @@
+{% import '::macro.html.twig' as m %}
+{% import '@TheaterjobsInserate/organizationMacro.twig' as om %}
+
+<div class="container show-organization">
+    <div class="block">
+        <!-- header -->
+        <div class="profile-header">
+            <div class="profile-header-left">
+                <div class="profile-header-photo" id="logo-block">
+                    {{ om.organizationLogo(entity, formLogo, canEdit) }}
+                    <ul class="profile-header-actions medium">
+                        {% if entity.status == 2 or is_granted('ROLE_ADMIN') %}
+                            <li class="favorite-organization">
+                                {% if not is_granted('ROLE_USER') %}
+                                    <a class="icon favourite-news-btn registerFirst">
+                                        <div>
+                                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                {% else %}
+                                    {% set isFav = entity in app.user.profile.organisationFavourite %}
+                                    <a class="icon favourite-news-btn {% if isFav %}active{% endif %}"
+                                       id="action_favorite" data-entity="organization" href="javascript:;"
+                                       data-action="{% if isFav %}remove{% else %}add{% endif %}" data-toggle="tooltip"
+                                       data-placement="bottom" {% if isFav %} title="{{ 'people.show.tooltip.removeFromFavourites' | trans }}" {% else %} title="{{ 'people.show.tooltip.addToFavourites' | trans }}" {% endif %}>
+                                        <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star-small') }}"></use>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+                            </li>
+                        {% endif %}
+                        {% if entity.status == 4 and not is_granted('ROLE_ADMIN') %}
+                            <p class="desc-dateFavourtiePeople view-org">
+                                <svg class="icon-svg icon-play" data-toggle="tooltip" data-placement="bottom"
+                                     title="{{ 'organization.show.tooltip.closedOrga'|trans }}">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-private') }}"></use>
+                                </svg>
+                            </p>
+                        {% endif %}
+                    </ul>
+                    <svg class="icon-svg icon-svg-success favorite-icon-name {% if app.user and entity not in app.user.profile.organisationFavourite %}hidden {% elseif  not app.user %} {% endif %}"
+                         width="50" height="50">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-star') }}"></use>
+                    </svg>
+                </div>
+
+            </div>
+
+            <div class="profile-header-content">
+                {{ om.organizationName(entity, nameForm, canEdit) }}
+                {% if entity.status != 4 %}
+
+                    {% if ((is_granted('ROLE_USER')  and entity.status == 2 and entity.isVisibleInList == 'true' ) or is_granted('ROLE_ADMIN')) and  entity.status != 4 %}
+                        {% if canEdit %}
+                            <a href="{{ path('tj_inserate_job_route_new',{'orgaId':entity.id}) }}"
+                               data-target="#myModal" data-hash="addOrgaJob" data-toggle="modal" data-color="#87162D">
+                                {{ 'link.organization.addJob'|trans }}
+                            </a>
+                        {% endif %}
+                        {% if  not canEdit and not hasTeamMembershipApplication %}
+                            <a id="applyForTeamMembership"
+                               href="{{ path('tj_main_organization_create_team_membership_application',{slug : entity.slug}) }}"
+                               data-target="#myModal" data-hash="applyForTeamMembership" data-toggle="modal"
+                               data-color="#87162D">
+                                {{ 'link.organization.applyForTeamMembership'|trans }}
+                            </a>
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="profile-header-controls oranization-header-controls">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="row">
+                        <div class="status-block" id="status">
+                            {{ om.organizationStatus(statusForm) }}
+                        </div>
+                    </div>
+                    <div class="row groupVioVisib">
+                        <div class="group-admin-visible">
+                            {{ om.organizationVisibility(entity) }}
+                        </div>
+                        <div class="group-admin-vio">
+                            <div class="vio-block" id="vio">
+                                {{ om.organizationVio(entity) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="row highlight-organization">
+        {% set showRelatedPeople = related_people > 0 ? 1 : 0 %}
+        {#Show all jobs with all statuses#}
+        {% if is_granted("ROLE_ADMIN") or canEdit %}
+            {% set showRelatedJobs = related_jobs.status.buckets | length ? 1 : 0 %}
+            {#If length is one and they are deleted one , hide them#}
+            {#{% elseif is_granted("ROLE_USER") %}#}
+            {#{% set countHelpPublishedJobs = 0 %}#}
+            {#{% for related_job in related_jobs.status.buckets if related_job.key == 1 %}#}
+            {#{% set countHelpPublishedJobs = countHelpPublishedJobs + 1 %}#}
+            {#{% endfor %}#}
+            {#{% set showRelatedJobs = countHelpPublishedJobs ? 1 : 0 %}#}
+
+        {% else %}
+            {% set countHelpPublishedJobs = 0 %}
+            {% for related_job in related_jobs.status.buckets if related_job.key == 1 %}
+                {% set countHelpPublishedJobs = countHelpPublishedJobs + 1 %}
+            {% endfor %}
+            {% set showRelatedJobs = countHelpPublishedJobs ? 1 : 0 %}
+        {% endif %}
+
+        {% set showRelatedNews = related_news > 0 ? 1 : 0 %}
+        {% set showLocation = entity.geolocation is not null ? 1 : 0 %}
+
+        {% set cols =
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 1) and (canEdit or showLocation == 1)) ? 6 :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 1) and (not canEdit or showLocation == 0)) ? 12 :
+
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 2) and (canEdit or showLocation == 1)) and (showRelatedJobs) ? 3 :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 2) and (canEdit or showLocation == 1)) and (showRelatedJobs == 0) ? 4 :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 2) and (not canEdit or showLocation == 0)) ? 6 :
+
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 3) and (canEdit or showLocation == 1)) ? '6 margin-bottom' :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 3) and (not canEdit or showLocation == 0) and (showRelatedJobs)) ? 3 %}
+
+        {% set colsJobs =
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 1) and (canEdit or showLocation == 1)) ? 6 :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 1) and (not canEdit or showLocation == 0)) ? 12 :
+
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 2) and (canEdit or showLocation == 1)) and (showRelatedJobs) ? 6 :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 2) and (canEdit or showLocation == 1)) and (showRelatedJobs == 0) ? 4 :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 2) and (not canEdit or showLocation == 0)) ? 6 :
+
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 3) and (canEdit or showLocation == 1)) ? '6 margin-bottom' :
+            ((showRelatedPeople + showRelatedJobs + showRelatedNews == 3) and (not canEdit or showLocation == 0)) ? 6 %}
+
+        {% if(showRelatedPeople) %}
+            <div class="col-sm-{{- cols }} col-xs-12">
+                <div class="highlight">
+                    <div class="highlight-wrap">
+                        <div class="highlight-title">
+                            {{ 'organization.show.highlight.label.relatedPeople'| trans }}
+                        </div>
+                        <div class="highlight-large">
+                            <a href="{{ path('tj_profile_profile_list',{'organization': entity.slug }) }}">
+                                {{ (related_people > 0) ? related_people : '...' }}
+                            </a>
+                        </div>
+                        <span>{{ 'organization.show.relatedPeople.subtitle' | trans  }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if(showRelatedNews) %}
+            <div class="col-sm-{{ cols }} col-xs-12">
+                <div class="highlight">
+                    <div class="highlight-wrap">
+                        <div class="highlight-title">
+                            {{ 'organization.show.highlight.label.relatedNews'| trans }}
+                        </div>
+                        <div class="highlight-large">
+                            <a href="{{ path('tj_news',{'organization': entity.slug }) }}">
+                                {{ related_news }}
+                            </a>
+                        </div>
+                        <span>{{ 'organization.show.relatedNews.subtitle' | trans }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if(showRelatedJobs) %}
+            <div class="col-sm-{{- colsJobs }} col-xs-12">
+                <div class="highlight">
+                    <div class="highlight-wrap">
+                        <div class="highlight-title">
+                            {{ 'organization.show.highlight.label.relatedWork'| trans }}
+                        </div>
+                        {{ om.organizationRelatedJobs(entity.slug,related_jobs, canEdit ) }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if((showLocation) or canEdit ) %}
+            <div class="col-sm-{{ cols }} col-xs-12 {% if cols == 4 or cols == 3 %} location-smallfont {% endif %}">
+                <div class="highlight">
+                    <div class="highlight-wrap">
+                        <div class="livesIn-block">
+                            {{ om.organizationLocation(entity, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Text content -->
+<div class="container">
+    <div class="block">
+        <div class="row">
+            {% set hasDesc = false %}
+            {% set hasApplicationInfo = false %}
+            {% if entity.description is not null %} {% set hasDesc = true %}  {% else %} {% set hasDesc = false %} {% endif %}
+            {% if entity.organisationApplicationInfoText is not null and is_granted('ROLE_MEMBER') %} {% set hasApplicationInfo = true %}  {% else %} {% set hasApplicationInfo = false %} {% endif %}
+
+            {% if hasDesc or canEdit %}
+                <div class="col-sm-{% if hasApplicationInfo or canEdit %}8{% else %}12{% endif %}  col-xs-12">
+                    <h2>{{ 'organization.show.block.mainTitle.desc' | trans }}</h2>
+                    <div class="bio-block description-organization">
+                        {{ om.organizationDescription(entity, canEdit) }}
+                    </div>
+                </div>
+            {% endif %}
+            {% if hasApplicationInfo or canEdit %}
+                <div class="col-sm-{% if hasDesc or canEdit %}4{% else %}12{% endif %} col-xs-12">
+                    <h2> {{ 'organization.show.block.mainTitle.Appinfo' | trans }} </h2>
+                    <div class="bio-block application-organization">
+                        {{ om.organizationApplicationInfo(entity, canEdit) }}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+<!-- Detail blocks -->
+<div class="no-overflow">
+    <div class="container">
+        <div class="row grid-layout grid-ipad-responsive" data-masonry>
+            {% set orgaKind = entity.organizationKind %}
+            {% set orgaSection = entity.organizationSection %}
+            {% set orgaOrchestraClass = entity.orchestraClass %}
+            {% set orgaStaff = entity.staff %}
+            {% set orgaOrganizationStaff = entity.organizationStaff %}
+            {% set orgaSchedule = entity.organizationSchedule %}
+            {% set orgaForm = entity.form %}
+
+            {% if ( (orgaKind is not null and orgaKind|length !=0 ) or (orgaSection is not null and orgaSection|length !=0 ) or
+                (orgaOrchestraClass is not null and orchestra == true) or orgaStaff is not null or
+                (orgaOrganizationStaff is not null and orgaOrganizationStaff|length !=0)
+                or orgaSchedule is not null or orgaForm is not null or entity.organizationOwner is not null) or canEdit %}
+
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-primary panel-bleed-left">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.organizationData'| trans }}
+                            <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+                        </h2>
+                        <div class="organization-data">
+                            {{ om.organizationData(entity, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if (entity.organizationStage is not null and entity.organizationStage | length > 0) or canEdit %}
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-primary-dark panel-bleed-right">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.stages'| trans }}
+                            <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+                        </h2>
+                        <div class="stage-block">
+                            {{ om.organizationStages(entity, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if (grantsList is not null and grantsList | length > 0) or canEdit %}
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-violet panel-bleed-left">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.budgetGrants'| trans }}
+                            <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+                        </h2>
+                        <div class="grants-block">
+                            {{ om.organizationGrants(entity,grantsList, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if (entity.organizationVisitors is not null and entity.organizationVisitors | length > 0
+                or entity.organizationPerformance is not null and entity.organizationPerformance | length > 0 ) or canEdit %}
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-secondary panel-bleed-right">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.performanceVisitors'| trans }}
+                            <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+                        </h2>
+                        <div class="performance-block">
+                            {{ om.organizationPerformances(entity,listPerformances, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if is_granted('ROLE_MEMBER') %}
+                {{ om.organizationNews(application) }}
+            {% endif %}
+            {% if (entity.contactSection is not null and (entity.contactSection.contact is not null or entity.contactSection.email is not null)) or canEdit %}
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-violet panel-bleed-left">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.contact'| trans }}
+                            <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+                        </h2>
+                        <div class="contact-block">
+                            {{ om.organizationContact(entity, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if canEdit %}
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-primary-dark panel-bleed-right">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.teamMembers'| trans }}
+                            <span class="toggle-arrow">
+                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                            </svg>
+                        </span>
+                        </h2>
+                        <span class="box-title-note">
+                            ({{ 'organization.show.teammemberbox.onlyvisibleforteammembers'|trans }})
+                        </span>
+                        <div class="team-block">
+                            {{ om.organizationTeamMembers(entity, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-primary panel-bleed-right">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.logs'| trans }}
+                            <span class="toggle-arrow">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                </svg>
+                            </span>
+                        </h2>
+                        <span class="box-title-note">
+                            ({{ 'organization.show.logsbox.onlyvisibleforteammembers'|trans }})
+                        </span>
+                        <div class="logs-block">
+                            {{ om.organizationLogs(entity,activity, canEdit) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if canEdit and teamMemberPendingJobPublicationRequests|length > 0 %}
+                <div class="col-md-6 col-xs-12" data-masonry-item>
+                    <div class="panel panel-large panel-secondary panel-bleed-right">
+                        <h2 class="panel-head">
+                            {{ 'organization.show.detailBlock.mainTitle.pendingJobPublications'| trans }}
+                            <span class="toggle-arrow">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                </svg>
+                            </span>
+                        </h2>
+                        <div class="logs-block">
+                            {{ om.organizationPendingJobPublications(teamMemberPendingJobPublicationRequests) }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <h3>{{ 'button.title.comments'|trans }}</h3>
+            <div>
+                <div class="block-form" id="orga-comment">
+                    {{ form_start(commentsForm) }}
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ form_row(commentsForm.description) }}
+                            <div style="text-align: right;">
+                                {{ form_widget(commentsForm.submit, {'attr': {'class': 'btn btn-default'} }) }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_row(commentsForm.organization) }}
+                    {{ form_widget(commentsForm._token) }}
+                    {{ form_end(commentsForm) }}
+                </div>
+                <div class="block-comments organization-list-coments">
+                    {{ m.showComments(entity.adminComments, path('tj_organization_comments_all',{'slug':entity.slug})) }}                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

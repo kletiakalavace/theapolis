@@ -1,0 +1,242 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body" id="organizationContact">
+    <div class="container no-padding-mobile">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'organization.edit.mainTitle.editContact'| trans }}</h2>
+                {{ form_start(edit_form) }}
+                <input type="hidden" name="contact" value="1">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        {{ form_widget(edit_form._token) }}
+                        {{ form_widget(edit_form.contactSection.contact,{'attr':{'class' : 'ckeditor'} }) }}
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        {{ form_row(edit_form.contactSection.email) }}
+                    </div>
+                    <div class="col-xs-12 col-md-6" id="social-container">
+                        <ul id="social-fields-list" class="list-unstyled"
+                            data-prototype="{{ form_widget(edit_form.contactSection.social.vars.prototype)|e }}">
+                            <div class="form-group">
+                                {{ form_label(edit_form.contactSection.social) }}
+                            </div>
+                            {% for social in edit_form.contactSection.social %}
+                                <li>
+                                    {{ form_errors(social) }}
+                                    {{ form_row(social.socialMedia) }}
+                                    {{ form_row(social.link) }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="form-group">
+                            <div class="col-md-6 no-padding-left">
+                                <a href="javascript:;" class="btn btn-inverse btn-sm hide"
+                                   id="add-another-social">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    {{ 'people.edit.button.addSocialMedia' | trans }}</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div style="text-align: center">
+                    <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                    <div style="display: inline-block">{{ form_row(edit_form.submit, {'attr': {'class': 'btn btn-inverse-primary center'} }) }}</div>
+                </div>
+
+                {{ form_end(edit_form, {'render_rest': false}) }}
+                {#{{ m.error }}#}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var textareaId = $('.ckeditor').attr('id');
+
+    CKEDITOR.replace(textareaId, {
+        customConfig: '{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/contact.js') }}'
+    });
+
+    $('#social-fields-list select').select2();
+    var updateForm = $('#organizationContact form');
+    addLoadingSvg(updateForm);
+    const loading = updateForm.find('.submit-rolling-svg');
+    var socialHolder = $("#social-container").height();
+    updateForm.validate({
+        errorPlacement: function (error, element) {
+            element.parent().addClass('has-error');
+            $('#organizationContact .text-danger').removeClass('hidden');
+            return false;
+        }
+    });
+    if (socialHolder == 40) {
+        socialHolder = 250;
+    } else {
+        socialHolder = $("#social-container").height();
+    }
+
+    updateForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        validFormInputs();
+        var valid = false;
+        // $(this).valid()
+        if (true) {
+            $('#' + textareaId).html(CKEDITOR.instances[textareaId].getData());
+            loading.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    loading.hide();
+                    if (data.errors) {
+                        for (var key in data.errors) {
+                            var el = $('#organizationContact form').find('input[name="' + key + '"]');
+                            el.parent().addClass('has-error');
+                            toolTipError(data.errors[key], el);
+                        }
+                    }
+                    else{
+                        console.log(data.content);
+                        $('.contact-block').html(data.content);
+                        $('.logs-block').html(data.logs);
+                        valid = true;
+                    }
+                },
+                error: function () {
+                    loading.hide();
+                    serverError();
+                }
+            }).done(function () {
+                if(valid) {
+                    $('#myModal').modal('hide');
+
+                    var grids = $("[data-masonry]");
+                    grids.each(function () {
+                        $(this).masonry({
+                            itemSelector: "[data-masonry-item]"
+                        });
+
+                        $(this).masonry("on", "layoutComplete", function () {
+                            $("[data-masonry-item] .panel").each(function () {
+                                $(this).bleedPanel();
+                            });
+                        });
+                        $(this).masonry();
+                    });
+                }
+            });
+        }
+    });
+
+    function validInputs() {
+        $("input[name*='[link]']").each(function () {
+            $(this).rules("add", "url")
+        });
+    }
+    function createPrototype(listnew, listselect, addnew, elementCount, maxElements) {
+        if ($(listselect).length == maxElements) {
+            $(addnew).addClass('hide');
+        }
+        var arrElement = $(listselect).first().children().map(function () {
+            return this.value
+        }).get();
+        $(addnew).click(function (e) {
+            e.preventDefault();
+            if ($(listselect).size() <= maxElements) {
+                if (arrElement.length === 0) {
+                    arrElement = $(listselect).first().children().map(function () {
+                        return this.value;
+                    }).get();
+                }
+                var arrVaules = $(listselect).map(function () {
+                    return this.value
+                }).get();
+                // grab the prototype template
+                var newWidget = $(listnew).attr('data-prototype');
+                // replace the "__name__" used in the id and name of the prototype
+                // with a number that's unique to your emails
+                // end name attribute looks like name="contact[emails][2]"
+                newWidget = newWidget.replace(/__name__/g, elementCount);
+                // create a new list element and add it to the list
+                var newLi = $('<li></li>').html(newWidget);
+                newLi.appendTo($(listnew));
+                addTagFormDeleteLink(newLi, listselect, addnew, maxElements, 0);
+                if ($(listselect).size() == maxElements) {
+                    $(addnew).addClass('hide');
+                } else {
+                    $(addnew).removeClass('hide');
+                }
+
+                elementCount++;
+                validInputs();
+                $(listselect).select2();
+            }
+        });
+    }
+
+    function check() {
+        var results = [];
+        $('#social-fields-list :selected').each(function () {
+            results.push($(this).val());
+        });
+
+        for (var i = 0; i < results.length - 1; i++) {
+            if (results[i + 1] == results[i]) {
+                toastr.success('Please check social medias there are dublicates!');
+                return false;
+            }
+        }
+        return true;
+    }
+
+    validInputs();
+    var social = $('#tj_user_form_master_data_social');
+    social.prev().closest('label').remove();
+    social.remove();
+    var socialList = '#social-fields-list';
+    var socialListSelect = '#social-fields-list select';
+    var addNewSocial = '#add-another-social';
+    var socialCount = $(socialListSelect).size();
+    var maxSocialCreator = {{ socialSize }};
+    createPrototype(socialList, socialListSelect, addNewSocial, socialCount, maxSocialCreator);
+    $(socialList).find('li').each(function () {
+        addTagFormDeleteLink($(this), socialList, addNewSocial, maxSocialCreator, 1);
+    });
+
+    //disableSelect(socialListSelect);
+    if (socialCount == maxSocialCreator) {
+        $(addNewSocial).addClass('hide');
+    } else {
+        $(addNewSocial).removeClass('hide');
+    }
+
+    function addTagFormDeleteLink(tagFormLi, listinput, add, max, deleteForm) {
+        var deleteHtml = "";
+        if (deleteForm == 1)
+            deleteHtml = "onclick='deleteFunction()'";
+        var removeFormA = $('<div class="form-group"><div class="col-md-12 no-padding-right"><a style="margin-top: 4px;margin-bottom:23px" class="btn btn-inverse btn-sm pull-right" href="javascript:;" ' + deleteHtml + '><i class="fa fa-trash" aria-hidden="true"></i> </a> </div> </div>');
+        tagFormLi.append(removeFormA);
+        removeFormA.on('click', function (e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+            // remove the li for the tag form
+            tagFormLi.remove();
+            if ($(listinput).length <= max) {
+                $(add).removeClass('hide');
+            }
+        });
+    }
+
+    function deleteFunction() {
+        $.ajax({
+            type: updateForm.attr('method'),
+            url: updateForm.attr('action'),
+            data: updateForm.serialize()
+        });
+    }
+</script>

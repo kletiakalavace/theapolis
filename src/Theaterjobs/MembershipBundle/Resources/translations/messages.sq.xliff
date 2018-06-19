@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:15:49Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="931ce9e0c1342b28aec66f6e94b302358c8b0750" resname="Iban is blacklisted">
+        <source>Iban is blacklisted</source>
+        <target state="new">Iban is blacklisted</target>
+        <jms:reference-file line="99">/../src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc552570cdf7c9ed1ee25e3aa9750b489d5d8b91" resname="account.mainTitle.invoiceArchive">
+        <source>account.mainTitle.invoiceArchive</source>
+        <target state="new">Invoice archive</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="261ddc71ee97f2709b5b7dd1e2056e41180a8df3" resname="account.settings.Iban.not.valid">
+        <source>account.settings.Iban.not.valid</source>
+        <target state="new">Iban not valid</target>
+        <jms:reference-file line="93">/../src/Theaterjobs/MembershipBundle/Form/Type/DebitAccountType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0b70f5fdc331156764bb63842e90f490214535f" resname="account.table.header.accountHolder">
+        <source>account.table.header.accountHolder</source>
+        <target state="new">Account holder</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="798f6ab0acc9d59d9435deb2da75b6dc0759932b" resname="account.table.header.date">
+        <source>account.table.header.date</source>
+        <target state="new">Date</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="78f7e81d6113b30bc71b7c5b4825edcb657f490a" resname="account.table.header.file">
+        <source>account.table.header.file</source>
+        <target state="new">File</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1ba4d5527032877bfa53be86db0b55d5d4c74712" resname="account.table.header.paymentMethod">
+        <source>account.table.header.paymentMethod</source>
+        <target state="new">Payment method</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccabca681835b32be7220864c3767e9e3e5e2c81" resname="account.table.header.rechNr">
+        <source>account.table.header.rechNr</source>
+        <target state="new">Rech-Nr</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b0ec242123a7291a3ac357ef4613af89b66a55dd" resname="account.table.header.sum">
+        <source>account.table.header.sum</source>
+        <target state="new">Sum</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="48ad159016eef9250f4ad062ad33b3a0c5b4e025" resname="account.table.link..bill">
+        <source>account.table.link..bill</source>
+        <target state="new">account.table.link..bill</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9471966911184776dd745878ff708bd857b719b6" resname="account.table.link..sepa">
+        <source>account.table.link..sepa</source>
+        <target state="new">account.table.link..sepa</target>
+        <jms:reference-file line="39">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ec17290b0e0d462c7e9c80c42185156a4c58a8eb" resname="account.table.link.bill">
+        <source>account.table.link.bill</source>
+        <target state="new">Bill</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d20b84cbcecc81425f7626380153db070494d52" resname="account.table.link.sepa">
+        <source>account.table.link.sepa</source>
+        <target state="new">Sepa</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/invoiceArchive.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1c03d1f34422a4a20353cfdda3b95ee8ccdc60b8" resname="accountHolder">
+        <source>accountHolder</source>
+        <target state="new">accountHolder</target>
+        <jms:reference-file line="81">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+        <jms:reference-file line="24">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBankData.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="adbda9947a78f0234e5ad16704fd7517dec412bc" resname="add.company.name.and.vat.id">
+        <source>add.company.name.and.vat.id</source>
+        <target state="new">add.company.name.and.vat.id</target>
+        <jms:reference-file line="18">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c480d65d5f870af1ee8fae10c9d7fe9df3234a88" resname="add.email.text">
+        <source>add.email.text</source>
+        <target state="new">add.email.text</target>
+        <jms:reference-file line="88">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="919a43b62ebf0eb2a117465fabbf3100d771aa8a" resname="allowed.payment.methods">
+        <source>allowed.payment.methods</source>
+        <target state="new">allowed.payment.methods</target>
+        <jms:reference-file line="126">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/newWithWizard.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae5c790ce99539871791898651d77f209b2b71d9" resname="are.you.sure.popup">
+        <source>are.you.sure.popup</source>
+        <target state="new">are.you.sure.popup</target>
+        <jms:reference-file line="45">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="85">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="74df8ad773eacae5773d42c9456eee9a58b3d327" resname="authorize.theapolis.to.use.paypal.text">
+        <source>authorize.theapolis.to.use.paypal.text</source>
+        <target state="new">authorize.theapolis.to.use.paypal.text</target>
+        <jms:reference-file line="45">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2f770ab3de28e9665a9a7db25706a121d4275d4" resname="available.payment.methods.heading.text">
+        <source>available.payment.methods.heading.text</source>
+        <target state="new">available.payment.methods.heading.text</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/paymentMethodsByProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7ba685d8388e05b9797c63a540cab6874daae7e" resname="bank.data.changed">
+        <source>bank.data.changed</source>
+        <target state="new">bank.data.changed</target>
+        <jms:reference-file line="271">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4879099d57f427429e87dea5c0390256d00c8984" resname="bic">
+        <source>bic</source>
+        <target state="new">bic</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBankData.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8616f61b46702de5e6060074c031bf8a35fe337c" resname="blocked.payment.methods">
+        <source>blocked.payment.methods</source>
+        <target state="new">blocked.payment.methods</target>
+        <jms:reference-file line="131">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/newWithWizard.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e3f2a78ae96d186f6bf94963900f490a2ed9de97" resname="blocked.payment.methods.heading.text">
+        <source>blocked.payment.methods.heading.text</source>
+        <target state="new">blocked.payment.methods.heading.text</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/paymentMethodsByProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="76c0c0540394a115918bf1af83db29e4b22e213d" resname="button.back">
+        <source>button.back</source>
+        <target state="new">button.back</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formOrder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67cec2cec4a96f36fafee2fd4f83baaf3e0f5ea7" resname="button.buyNow">
+        <source>button.buyNow</source>
+        <target state="new">Buy now</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf71d1c0a503d2bed66603122f9905a74acc6fbc" resname="button.change">
+        <source>button.change</source>
+        <target state="new">button.change</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formAccountSettings.html.twig</jms:reference-file>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/_formAccountSettings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df90443eda5fa6e0ec474957d9b99bd6cc42ae85" resname="button.create">
+        <source>button.create</source>
+        <target state="new">button.create</target>
+        <jms:reference-file line="91">/../src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4e49febd2de7216895ad397d1a1f05d8cf3ba6cc" resname="button.next">
+        <source>button.next</source>
+        <target state="new">button.next</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formOrder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73a3119ffece16bce1fa3733fc838eb19b3774f2" resname="click.to.see.sepa">
+        <source>click.to.see.sepa</source>
+        <target state="new">click.to.see.sepa</target>
+        <jms:reference-file line="272">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71b21161ffa1e6516bcc072aaf5ef38cbe85b511" resname="company">
+        <source>company</source>
+        <target state="new">company</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8e68b3e5af636475363c23b52ade8e6064b05806" resname="country">
+        <source>country</source>
+        <target state="new">country</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="091d596c557558e9cd77202e1196c1fb99f8a0b6" resname="debit.data.limit.is.one">
+        <source>debit.data.limit.is.one</source>
+        <target state="new">debit.data.limit.is.one</target>
+        <jms:reference-file line="157">/../src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a88b7dcd1a9e3e17770bbaa6d7515b31a2d7e85d" resname="email">
+        <source>email</source>
+        <target state="new">email</target>
+        <jms:reference-file line="54">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e579150a91a7fe0cafc116d3c411a557fd137708" resname="firstName">
+        <source>firstName</source>
+        <target state="new">firstName</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb0d06191053b5cfd3305ccc8b8ad84a8188c7af" resname="flash.error.membership.bic.notGenerated">
+        <source>flash.error.membership.bic.notGenerated</source>
+        <target state="new">flash.error.membership.bic.notGenerated</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a8f3db998ab8b6b6307a1508a4046142e7ce6f20" resname="flash.error.membership.billing.notFound">
+        <source>flash.error.membership.billing.notFound</source>
+        <target state="new">flash.error.membership.billing.notFound</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c983c95f369976860d01051cac4001f64ad5c42" resname="flash.error.membership.debit.contract.exists">
+        <source>flash.error.membership.debit.contract.exists</source>
+        <target state="new">flash.error.membership.debit.contract.exists</target>
+        <jms:reference-file line="88">/../src/Theaterjobs/MembershipBundle/Security/BookingVoter.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00c9e78cc3feaac632f94cd95a3648f966d5abbd" resname="flash.error.membership.iban.invalid">
+        <source>flash.error.membership.iban.invalid</source>
+        <target state="new">flash.error.membership.iban.invalid</target>
+        <jms:reference-file line="223">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5df3e1e7007c557adf4fe990e0ae747e9af58f55" resname="flash.error.membership.pending.exists">
+        <source>flash.error.membership.pending.exists</source>
+        <target state="new">flash.error.membership.pending.exists</target>
+        <jms:reference-file line="81">/../src/Theaterjobs/MembershipBundle/Security/BookingVoter.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09982c57ba38ae0d7738f7107ef69987e4f4bb0b" resname="flash.error.membership.sofort.problem">
+        <source>flash.error.membership.sofort.problem</source>
+        <target state="new">flash.error.membership.sofort.problem</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="17e5ee9e867b178cc780d95b20a21cf0685a0c8b" resname="flash.error.membership.user.blacklisted">
+        <source>flash.error.membership.user.blacklisted</source>
+        <target state="new">flash.error.membership.user.blacklisted</target>
+        <jms:reference-file line="238">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="49e99054839339a26a2450c403bd0d205b8918be" resname="flash.error.membership.user.doesnt.exist">
+        <source>flash.error.membership.user.doesnt.exist</source>
+        <target state="new">flash.error.membership.user.doesnt.exist</target>
+        <jms:reference-file line="131">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="508b184d92f5a9a36cfbffd83ca36da02b75b83f" resname="flash.message.error.membership.problem">
+        <source>flash.message.error.membership.problem</source>
+        <target state="new">You have a problem with your membership</target>
+        <jms:reference-file line="154">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="120">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef951c3087e9628419215a21b7614d8a8666000a" resname="flash.success.change.debit.account">
+        <source>flash.success.change.debit.account</source>
+        <target state="new">flash.success.change.debit.account</target>
+        <jms:reference-file line="110">/../src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6239fc0f7f8c1d17c7e6394030396f326b909cd0" resname="flash.success.membership.complete.thanks">
+        <source>flash.success.membership.complete.thanks</source>
+        <target state="new">flash.success.membership.complete.thanks</target>
+        <jms:reference-file line="133">/../src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+        <jms:reference-file line="150">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="116">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b7aa99ec903fa612b63813b477b0421c309001b" resname="flash.success.membership.problem">
+        <source>flash.success.membership.problem</source>
+        <target state="new">flash.success.membership.problem</target>
+        <jms:reference-file line="65">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc43d8283fdb1894237175e4a7976d12fcd3b82d" resname="flash.success.order.received">
+        <source>flash.success.order.received</source>
+        <target state="new">flash.success.order.received</target>
+        <jms:reference-file line="335">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae78451db0637ea4681a5a38c2fa00bb818e42e8" resname="flash.warning.membership.canceled.payment">
+        <source>flash.warning.membership.canceled.payment</source>
+        <target state="new">flash.warning.membership.canceled.payment</target>
+        <jms:reference-file line="176">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="142">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="86287f13660709ddf658bddbfb17b3e46e4722db" resname="flash.warning.membership.data.not-cleaned">
+        <source>flash.warning.membership.data.not-cleaned</source>
+        <target state="new">flash.warning.membership.data.not-cleaned</target>
+        <jms:reference-file line="195">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="174">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="98f4e3f99346add7c0e90436409833cab261129d" resname="flash.warning.membership.pending.exists">
+        <source>flash.warning.membership.pending.exists</source>
+        <target state="new">flash.warning.membership.pending.exists</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="db0d2b57d29111a8bbf925945a0605a6393c2f46" resname="flash.warning.prepayment.membership.extended.once">
+        <source>flash.warning.prepayment.membership.extended.once</source>
+        <target state="new">flash.warning.prepayment.membership.extended.once</target>
+        <jms:reference-file line="77">/../src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e317dc9acb50a7a5fd7755fe3fd301876dd63fef" resname="flash.warning.xml.file.not.created.problem">
+        <source>flash.warning.xml.file.not.created.problem</source>
+        <target state="new">flash.warning.xml.file.not.created.problem</target>
+        <jms:reference-file line="390">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a719ecfc02bf177dcb24d859b0ceaa296b7bf5d" resname="for.user">
+        <source>for.user</source>
+        <target state="new">for.user</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/paymentMethodsByProfile.html.twig</jms:reference-file>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/paymentMethodsByProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5fbd61de9a62476869d8405303e97a5e0036ffac" resname="form.button.create">
+        <source>form.button.create</source>
+        <target state="new">form.button.create</target>
+        <jms:reference-file line="90">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d2d9aa26385f277dc8babb60e13fbddf8d3b8bb1" resname="form.label.iban_blacklist.iban">
+        <source>form.label.iban_blacklist.iban</source>
+        <target state="new">form.label.iban_blacklist.iban</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Form/IbanBlacklistType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1fe1827dd977766e8dff78e8c2f9ee95c00866db" resname="form.placeholder.iban_blacklist.iban">
+        <source>form.placeholder.iban_blacklist.iban</source>
+        <target state="new">form.placeholder.iban_blacklist.iban</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/MembershipBundle/Form/IbanBlacklistType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="595fe7210b9783af79657f03a215b07698defb4f" resname="homepage.membership.add.jobs">
+        <source>homepage.membership.add.jobs</source>
+        <target state="new">homepage.membership.add.jobs</target>
+        <jms:reference-file line="95">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d7c30867aa8e53f5481ed23b28f7a2fe52afd05" resname="homepage.membership.card.add.job">
+        <source>homepage.membership.card.add.job</source>
+        <target state="new">homepage.membership.card.add.job</target>
+        <jms:reference-file line="80">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cab7e9609d56c9a0f11bfadd17deaff4bbe87958" resname="homepage.membership.card.awesome.profile">
+        <source>homepage.membership.card.awesome.profile</source>
+        <target state="new">homepage.membership.card.awesome.profile</target>
+        <jms:reference-file line="52">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="81847d25a341ba5d801fea2e207deef02f13047a" resname="homepage.membership.card.description">
+        <source>homepage.membership.card.description</source>
+        <target state="new">homepage.membership.card.description</target>
+        <jms:reference-file line="98">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09fbbfdf959276a1e04b3a91022768b79e5118da" resname="homepage.membership.card.educations">
+        <source>homepage.membership.card.educations</source>
+        <target state="new">homepage.membership.card.educations</target>
+        <jms:reference-file line="56">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="79">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="320b2434e001e5bdb64fb7d2d621de595d765046" resname="homepage.membership.card.free">
+        <source>homepage.membership.card.free</source>
+        <target state="new">homepage.membership.card.free</target>
+        <jms:reference-file line="46">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="92">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5c8ff042ca3fe4fc48266d23d1ad2d33a663bbc2" resname="homepage.membership.card.no.public.profile">
+        <source>homepage.membership.card.no.public.profile</source>
+        <target state="new">homepage.membership.card.no.public.profile</target>
+        <jms:reference-file line="100">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="525048858edeeb25dece4d4ef9366a9b71238417" resname="homepage.membership.card.organizations">
+        <source>homepage.membership.card.organizations</source>
+        <target state="new">homepage.membership.card.organizations</target>
+        <jms:reference-file line="54">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="77">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="214784d31440381ac27c1f4f1facf4092ab15ce8" resname="homepage.membership.card.paid">
+        <source>homepage.membership.card.paid</source>
+        <target state="new">homepage.membership.card.paid</target>
+        <jms:reference-file line="68">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7261efe32393bba5c1e46303bf576b562f076ae8" resname="homepage.membership.card.people">
+        <source>homepage.membership.card.people</source>
+        <target state="new">homepage.membership.card.people</target>
+        <jms:reference-file line="53">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="76">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3fa21a9777ac5ae7173085f0e94585e7179f9e22" resname="homepage.membership.card.productions">
+        <source>homepage.membership.card.productions</source>
+        <target state="new">homepage.membership.card.productions</target>
+        <jms:reference-file line="55">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="78">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c878aefc597477248186d96b336506c38a0bc737" resname="homepage.membership.card.professional">
+        <source>homepage.membership.card.professional</source>
+        <target state="new">homepage.membership.card.professional</target>
+        <jms:reference-file line="49">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="71">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f266b3045a76661805df36542e19c674d82de179" resname="homepage.membership.description">
+        <source>homepage.membership.description</source>
+        <target state="new">homepage.membership.description</target>
+        <jms:reference-file line="39">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="58cc997ad93f41819f9a5984841fba078c3abc1d" resname="homepage.membership.title">
+        <source>homepage.membership.title</source>
+        <target state="new">homepage.membership.title</target>
+        <jms:reference-file line="38">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e5e80ef839ab85568a592041317fdca6d7e83ac8" resname="iban">
+        <source>iban</source>
+        <target state="new">iban</target>
+        <jms:reference-file line="69">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBankData.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b831e6db1df18849e299185189dedcc8416735d" resname="lastName">
+        <source>lastName</source>
+        <target state="new">lastName</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="551b224cf2eb9fb78b377300ca5a086a1667964b" resname="mail.update.debit_account.description">
+        <source>mail.update.debit_account.description</source>
+        <target state="new">mail.update.debit_account.description</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d0909255dbdb6c26a78fbb6e006bcdb46ea800a7" resname="mail.update.debit_account.greeting">
+        <source>mail.update.debit_account.greeting</source>
+        <target state="new">mail.update.debit_account.greeting</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="19b3654c9d579f8130d11bdc8adbe649b5c386ab" resname="mail.update.debit_account.welcome">
+        <source>mail.update.debit_account.welcome</source>
+        <target state="new">Hello</target>
+        <jms:reference-file line="1">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c54dcf7e78ca681f99c327557316350bb62b7365" resname="membership.add.jobs">
+        <source>membership.add.jobs</source>
+        <target state="new">membership.add.jobs</target>
+        <jms:reference-file line="73">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="686aa79252f8e137f362d8f3f4b3a906dd219d49" resname="membership.billing.create.thankyou-header">
+        <source>membership.billing.create.thankyou-header</source>
+        <target state="new">membership.billing.create.thankyou-header</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/checkoutComplete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bef30b3094357591c5b35714b8007c6764e77475" resname="membership.billing.create.thankyou-text">
+        <source>membership.billing.create.thankyou-text</source>
+        <target state="new">membership.billing.create.thankyou-text</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/checkoutComplete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d78ee88c5313aa2528e2904aed3a0f6071135c0e" resname="membership.billing.create.title">
+        <source>membership.billing.create.title</source>
+        <target state="new">membership.billing.create.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/checkoutComplete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="616b2921de76c612278377d7db0a4552112c89fa" resname="membership.billing_address.button.back">
+        <source>membership.billing_address.button.back</source>
+        <target state="new">membership.billing_address.button.back</target>
+        <jms:reference-file line="154">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="78">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4913fa3c5e0063d1bc3b611f62cf39dd904b13dd" resname="membership.billing_address.edit_billing_address">
+        <source>membership.billing_address.edit_billing_address</source>
+        <target state="new">membership.billing_address.edit_billing_address</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="59eae7d5181023eab896999fda8fc6601a77f230" resname="membership.billing_address.new_billing_address">
+        <source>membership.billing_address.new_billing_address</source>
+        <target state="new">membership.billing_address.new_billing_address</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd7b2e8c419c0bda55104f79520c3b6dbbe6cad3" resname="membership.billing_address.title">
+        <source>membership.billing_address.title</source>
+        <target state="new">membership.billing_address.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/new.html.twig</jms:reference-file>
+        <jms:reference-file line="9">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea9f830072700cbe9eca508abf791c1ef1c9e672" resname="membership.booking.button.submit">
+        <source>membership.booking.button.submit</source>
+        <target state="new">membership.booking.button.submit</target>
+        <jms:reference-file line="156">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f8af78e289d56490d1967732f585f971f27edd93" resname="membership.booking.my_bookings.title">
+        <source>membership.booking.my_bookings.title</source>
+        <target state="new">membership.booking.my_bookings.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="72397e2c5bb93e62a0cbc02931b3a19efa3d4dc5" resname="membership.booking_new.title">
+        <source>membership.booking_new.title</source>
+        <target state="new">membership.booking_new.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/newWithWizard.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d83a892bce43b3418842f643012ae6e7be0557dc" resname="membership.booking_overview.billing_address">
+        <source>membership.booking_overview.billing_address</source>
+        <target state="new">membership.booking_overview.billing_address</target>
+        <jms:reference-file line="80">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="13">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a245b235775893dfba923790dd8f425cd5b4c36d" resname="membership.booking_overview.button.edit">
+        <source>membership.booking_overview.button.edit</source>
+        <target state="new">membership.booking_overview.button.edit</target>
+        <jms:reference-file line="89">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2aec9d1cc64b572a38328fd84c4f07d4a5e46d2" resname="membership.booking_overview.paymentcosts">
+        <source>membership.booking_overview.paymentcosts</source>
+        <target state="new">membership.booking_overview.paymentcosts</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1595ec8cf9a6e6cc981bfaeda133451d49f957f1" resname="membership.booking_overview.sum_gross">
+        <source>membership.booking_overview.sum_gross</source>
+        <target state="new">membership.booking_overview.sum_gross</target>
+        <jms:reference-file line="120">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="130">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="675085865016cc666cadef0d090fca1b54feae94" resname="membership.booking_overview.sum_net">
+        <source>membership.booking_overview.sum_net</source>
+        <target state="new">membership.booking_overview.sum_net</target>
+        <jms:reference-file line="103">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="35">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d5970a18395a942c2242eb366ce188b61806609" resname="membership.booking_overview.taxrate">
+        <source>membership.booking_overview.taxrate</source>
+        <target state="new">membership.booking_overview.taxrate</target>
+        <jms:reference-file line="111">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a492e72b8d049add52bb5009d196cba57b5661fa" resname="membership.booking_overview.title">
+        <source>membership.booking_overview.title</source>
+        <target state="new">membership.booking_overview.title</target>
+        <jms:reference-file line="69">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="74">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="2">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1f38c962cfc0a4a3c9c4a030da140ca2653ad66c" resname="membership.booking_overview.vat">
+        <source>membership.booking_overview.vat</source>
+        <target state="new">membership.booking_overview.vat</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f6074a398467fa2487cdf7cde68e1a5ebcc6926b" resname="membership.booking_overview.your_booking">
+        <source>membership.booking_overview.your_booking</source>
+        <target state="new">membership.booking_overview.your_booking</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/overview.html.twig</jms:reference-file>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/overview_old.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd895023823c7efdbe91aaf3324f3cc56b58aca2" resname="membership.booking_success.title">
+        <source>membership.booking_success.title</source>
+        <target state="new">membership.booking_success.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/bookingSuccess.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69fe2ec2e25de238cd119f089e5d4df3b78fc29c" resname="membership.button.select">
+        <source>membership.button.select</source>
+        <target state="new">membership.button.select</target>
+        <jms:reference-file line="23">views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c57ca3232f9e30341f46e4ff49df01de37d98ffb" resname="membership.card.awesome.profile">
+        <source>membership.card.awesome.profile</source>
+        <target state="new">membership.card.awesome.profile</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="54">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d1f4e9de0faf644b0bde813d29fbeb3dac90efbd" resname="membership.card.description">
+        <source>membership.card.description</source>
+        <target state="new">membership.card.description</target>
+        <jms:reference-file line="74">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0296660e6b443312cb5cc81373cc7c074e4b645" resname="membership.card.educations">
+        <source>membership.card.educations</source>
+        <target state="new">membership.card.educations</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="58">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fe10195a52ba7e9a2995ce677b541d80e3974887" resname="membership.card.free">
+        <source>membership.card.free</source>
+        <target state="new">membership.card.free</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c09df75b18b1f6f3eac0997d63a728ea801e8de3" resname="membership.card.link.jobs">
+        <source>membership.card.link.jobs</source>
+        <target state="new">membership.card.link.jobs</target>
+        <jms:reference-file line="59">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2db07ad3ffff22118cacae070ce2765ee2ce4514" resname="membership.card.no.public.profile">
+        <source>membership.card.no.public.profile</source>
+        <target state="new">membership.card.no.public.profile</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="62a4830db08e6d85f1a4e23c34c69f9f5f1d97e4" resname="membership.card.organizations">
+        <source>membership.card.organizations</source>
+        <target state="new">membership.card.organizations</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="56">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="456e3865cf1a30e95871b1d54e3ce4ede94cec76" resname="membership.card.paid">
+        <source>membership.card.paid</source>
+        <target state="new">membership.card.paid</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="74b9d4c6615527ccd3a6188693d24b9069f6387d" resname="membership.card.people">
+        <source>membership.card.people</source>
+        <target state="new">membership.card.people</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="55">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0aedd14c128d9fe637d292fe874e51cbd41b37e9" resname="membership.card.productions">
+        <source>membership.card.productions</source>
+        <target state="new">membership.card.productions</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="57">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e6cdad5fad7b33cd9a97b94ea176612f0aeb1012" resname="membership.card.professional">
+        <source>membership.card.professional</source>
+        <target state="new">membership.card.professional</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="52">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="10199bbfa5f86f678bb0292489060b76620e1ea3" resname="membership.cart.empty">
+        <source>membership.cart.empty</source>
+        <target state="new">membership.cart.empty</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ec5cdac2fddfb9094369f9c87599ca9010b38797" resname="membership.cart.overview">
+        <source>membership.cart.overview</source>
+        <target state="new">membership.cart.overview</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f863725766d331944a05a9196909bbd04c748e93" resname="membership.cart.title">
+        <source>membership.cart.title</source>
+        <target state="new">membership.cart.title</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/index.html.twig</jms:reference-file>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Cart/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99fdd58e29032ec98fd3745f819afa811fa8790a" resname="membership.checkout.prepayment.thankyou-header">
+        <source>membership.checkout.prepayment.thankyou-header</source>
+        <target state="new">membership.checkout.prepayment.thankyou-header</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutComplete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="100e38f7e09fa35b97b1dc904490891b33d5fd4d" resname="membership.checkout.prepayment.thankyou-text">
+        <source>membership.checkout.prepayment.thankyou-text</source>
+        <target state="new">membership.checkout.prepayment.thankyou-text</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutComplete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="676baedda5428f86b6125aca2f27ade05e7a7f75" resname="membership.checkout.prepayment.title">
+        <source>membership.checkout.prepayment.title</source>
+        <target state="new">membership.checkout.prepayment.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutComplete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d4523bcdfea9b2129e63f08c8d14cb89a57422a1" resname="membership.complete.note">
+        <source>membership.complete.note</source>
+        <target state="new">membership.complete.note</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/complete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b3fd339ddb0b98d03451671ea4b7226ae911179d" resname="membership.complete.thanks">
+        <source>membership.complete.thanks</source>
+        <target state="new">membership.complete.thanks</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/complete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="36bd0297f5211594940e0c56ad1205ff32f0230d" resname="membership.debitAccount.editBankingData">
+        <source>membership.debitAccount.editBankingData</source>
+        <target state="new">Edit banking data</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d3270130004fe737d13788d4f578bc34981d3341" resname="membership.debit_account.addBankingData">
+        <source>membership.debit_account.addBankingData</source>
+        <target state="new">membership.debit_account.addBankingData</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="46054d039638ef58c5410531495ed1233b5cb929" resname="membership.debit_account.edit_debit_account">
+        <source>membership.debit_account.edit_debit_account</source>
+        <target state="new">membership.debit_account.edit_debit_account</target>
+        <jms:reference-file line="8">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a4e42097c5ef309b9bf5129ceee1030cf0b28805" resname="membership.debit_account.insert_debit_account">
+        <source>membership.debit_account.insert_debit_account</source>
+        <target state="new">membership.debit_account.insert_debit_account</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutDirectDebit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2a449d5749db24be7ad79c2da2c9a80da60983a7" resname="membership.debit_account.new_debit_account">
+        <source>membership.debit_account.new_debit_account</source>
+        <target state="new">membership.debit_account.new_debit_account</target>
+        <jms:reference-file line="8">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="307cf0e2730f9fddf2eb2c1984c618b562f90c35" resname="membership.debit_account.title">
+        <source>membership.debit_account.title</source>
+        <target state="new">membership.debit_account.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutDirectDebit.html.twig</jms:reference-file>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutDirectDebit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d7a2c65a98fc6e531ccef0d19e56e037791877c0" resname="membership.header.description">
+        <source>membership.header.description</source>
+        <target state="new">membership.header.description</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bb96ba879dd9a910f8fdd3346e0cfbabc8dd7122" resname="membership.header.title.becomeMember">
+        <source>membership.header.title.becomeMember</source>
+        <target state="new">membership.header.title.becomeMember</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1500ed4ccfa0f7e20ba6e6d8ffa3fae98d07d0fc" resname="membership.index.select_paymentmethod">
+        <source>membership.index.select_paymentmethod</source>
+        <target state="new">membership.index.select_paymentmethod</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/bookingSuccess.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f8f8418c509cbdd51dc283b8f61ba18e0d248774" resname="membership.index.title">
+        <source>membership.index.title</source>
+        <target state="new">membership.index.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d063c53e1003a705ef733048b1096e0d64c81261" resname="membership.membership.card.free">
+        <source>membership.membership.card.free</source>
+        <target state="new">membership.membership.card.free</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="60cb49e43bfe11ed6a5a292ced6717f2eabba91e" resname="membership.new.Cancelorder">
+        <source>membership.new.Cancelorder</source>
+        <target state="new">Cancel order</target>
+        <jms:reference-file line="68">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd73d0a247f0c53ceb841a90be2ad4e4c5c39705" resname="membership.new.bankName">
+        <source>membership.new.bankName</source>
+        <target state="new">Bank name</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/_formOrder.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcaab509d89b34110b334faf616888b7aa6d310f" resname="membership.new.description">
+        <source>membership.new.description</source>
+        <target state="new">As a member, you can see all job-offers and publish your profile. Please enter your ordering information here and choose payment method.</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1c098527b6d23a09de466da48c4a8d41dba8d694" resname="membership.new.label.paymentMethod">
+        <source>membership.new.label.paymentMethod</source>
+        <target state="new">Payment method</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bfd5d45f34e9d6f9c79e65a82df6a74094667e61" resname="membership.new.link.addCompanyDetails">
+        <source>membership.new.link.addCompanyDetails</source>
+        <target state="new">Add company details</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ee5d747932f21f9bf8a75519c7ed6cb62a5bb157" resname="membership.new.link.removeComapanyDetails">
+        <source>membership.new.link.removeComapanyDetails</source>
+        <target state="new">Remove company details</target>
+        <jms:reference-file line="74">/../src/Theaterjobs/MembershipBundle/Resources/views/BillingAddress/_formContent.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="779b72b9419b862991357a46fd8254e258a9726b" resname="membership.new.paypal.description">
+        <source>membership.new.paypal.description</source>
+        <target state="new">Description</target>
+        <jms:reference-file line="54">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e4b0028fb3c2f8ed8c26a0df1cea23532fd3d2bf" resname="membership.new.paypal.fee">
+        <source>membership.new.paypal.fee</source>
+        <target state="new">PayPal fee</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+        <jms:reference-file line="135">/../src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="edce55618a8cd74c254e90209d9e954f32933942" resname="membership.new.paypal.link">
+        <source>membership.new.paypal.link</source>
+        <target state="new">PayPal terms and conditions</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b912655ca6bbc2ae395c799179fb53bcc53fbc65" resname="membership.new.sumNet">
+        <source>membership.new.sumNet</source>
+        <target state="new">Price</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="52a96e13b25af2e6f39cc7add2cf698ae33e3295" resname="membership.new.taxrate">
+        <source>membership.new.taxrate</source>
+        <target state="new">VAT</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+        <jms:reference-file line="38">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fcdafc79df70a62bb691eaad2d56ae72cdc3615c" resname="membership.new.title">
+        <source>membership.new.title</source>
+        <target state="new">membership.new.title</target>
+        <jms:reference-file line="93">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/newWithWizard.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ac31366a0244f0e2690efa9c50000570e71c2d2c" resname="membership.new.title.premiumMembership">
+        <source>membership.new.title.premiumMembership</source>
+        <target state="new">Membership</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2bde134e9506ed2d2ff3c7b0363fbd0705ce06f1" resname="membership.new.total">
+        <source>membership.new.total</source>
+        <target state="new">Total</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0a90dc711d8b0798f44ee7b1556f1628c9a9ff8d" resname="membership.new.yourBooking">
+        <source>membership.new.yourBooking</source>
+        <target state="new">Your Booking</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7012767b09b972a341b88ffadeef9716585668fe" resname="membership.options.description">
+        <source>membership.options.description</source>
+        <target state="new">membership.options.description</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="507e31cdb46a3bb0684a12fa5a242391c8d8af49" resname="membership.options.title.membershipOptions">
+        <source>membership.options.title.membershipOptions</source>
+        <target state="new">membership.options.title.membershipOptions</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a4c1ae4faa497263a6085bcce2940a175e4583c" resname="membership.paymentmethod.select.title">
+        <source>membership.paymentmethod.select.title</source>
+        <target state="new">membership.paymentmethod.select.title</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/select.html.twig</jms:reference-file>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/select.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="049d407179dd2ed9f9d150d138fdf221d8cacba9" resname="membership.paymentmethod.select.todo">
+        <source>membership.paymentmethod.select.todo</source>
+        <target state="new">membership.paymentmethod.select.todo</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/select.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b5dd1321ea37149c6a1080882a92ac300bb9f40" resname="membership.pdf.direct_debit.text">
+        <source>membership.pdf.direct_debit.text</source>
+        <target state="new">membership.pdf.direct_debit.text</target>
+        <jms:reference-file line="122">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d2d91053db3266eb4231b35beffcbb547159fba" resname="membership.pdf.immediate.text">
+        <source>membership.pdf.immediate.text</source>
+        <target state="new">membership.pdf.immediate.text</target>
+        <jms:reference-file line="126">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e3dbffd8b644239b0142862c55a6db9335dc4b2f" resname="membership.pdf.invoice_account_id">
+        <source>membership.pdf.invoice_account_id</source>
+        <target state="new">membership.pdf.invoice_account_id</target>
+        <jms:reference-file line="63">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f6bf2a830b38a0c4399b8eb88f3fdef0ce43db4" resname="membership.pdf.invoice_date">
+        <source>membership.pdf.invoice_date</source>
+        <target state="new">membership.pdf.invoice_date</target>
+        <jms:reference-file line="31">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="069fa507fc4194f3ef3fe0c56d9b54f29636904f" resname="membership.pdf.invoice_greeter">
+        <source>membership.pdf.invoice_greeter</source>
+        <target state="new">membership.pdf.invoice_greeter</target>
+        <jms:reference-file line="43">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67351259a18386aaa7e5ba735359656c0e2ea081" resname="membership.pdf.invoice_membership">
+        <source>membership.pdf.invoice_membership</source>
+        <target state="new">membership.pdf.invoice_membership</target>
+        <jms:reference-file line="62">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="48d6ff1f7de9c748b07612d40f9c41d642be6b9f" resname="membership.pdf.invoice_membership_duration">
+        <source>membership.pdf.invoice_membership_duration</source>
+        <target state="new">membership.pdf.invoice_membership_duration</target>
+        <jms:reference-file line="116">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3498dfb7caa43b0ffbd983f5e938c0fdeeef369a" resname="membership.pdf.invoice_membership_duration_period">
+        <source>membership.pdf.invoice_membership_duration_period</source>
+        <target state="new">membership.pdf.invoice_membership_duration_period</target>
+        <jms:reference-file line="117">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed0334ede3e45252f04c0b5cc9e6a36341f5b081" resname="membership.pdf.invoice_number">
+        <source>membership.pdf.invoice_number</source>
+        <target state="new">membership.pdf.invoice_number</target>
+        <jms:reference-file line="32">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="61e1b6cfca688fee73f3d8e91199e7bdb9823ee3" resname="membership.pdf.invoice_paymentmethod">
+        <source>membership.pdf.invoice_paymentmethod</source>
+        <target state="new">membership.pdf.invoice_paymentmethod</target>
+        <jms:reference-file line="77">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+        <jms:reference-file line="94">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="60d95925d52a2e03deddae5ba8067878490a018b" resname="membership.pdf.invoice_reason_for_transfer">
+        <source>membership.pdf.invoice_reason_for_transfer</source>
+        <target state="new">membership.pdf.invoice_reason_for_transfer</target>
+        <jms:reference-file line="113">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="859a764e1c589ce6c0c6ac05c204d1a1d740fb2b" resname="membership.pdf.invoice_reason_for_transfer_billing_no">
+        <source>membership.pdf.invoice_reason_for_transfer_billing_no</source>
+        <target state="new">membership.pdf.invoice_reason_for_transfer_billing_no</target>
+        <jms:reference-file line="114">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2e48188aca4302225ab6991c88ad44cf4bce32e9" resname="membership.pdf.invoice_right_of_rescission">
+        <source>membership.pdf.invoice_right_of_rescission</source>
+        <target state="new">membership.pdf.invoice_right_of_rescission</target>
+        <jms:reference-file line="119">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c9f12015e7358d9b852de33c5d50bd5f6a0e81a" resname="membership.pdf.invoice_right_of_rescission_gtac">
+        <source>membership.pdf.invoice_right_of_rescission_gtac</source>
+        <target state="new">membership.pdf.invoice_right_of_rescission_gtac</target>
+        <jms:reference-file line="120">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="362b9f0af1133544f6e0ecbb47d730fa0c55d499" resname="membership.pdf.invoice_sum_gross">
+        <source>membership.pdf.invoice_sum_gross</source>
+        <target state="new">membership.pdf.invoice_sum_gross</target>
+        <jms:reference-file line="75">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+        <jms:reference-file line="92">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="efa679cd2e05c27176d29102edc4daae7423b6e8" resname="membership.pdf.invoice_sum_net">
+        <source>membership.pdf.invoice_sum_net</source>
+        <target state="new">membership.pdf.invoice_sum_net</target>
+        <jms:reference-file line="73">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="90877dba398f9ceacbee6946261cdd4bc527b31a" resname="membership.pdf.invoice_text_direct">
+        <source>membership.pdf.invoice_text_direct</source>
+        <target state="new">membership.pdf.invoice_text_direct</target>
+        <jms:reference-file line="50">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="026bd4ea30938f3d71b2de3ef921c30d3548048f" resname="membership.pdf.invoice_text_immediate">
+        <source>membership.pdf.invoice_text_immediate</source>
+        <target state="new">membership.pdf.invoice_text_immediate</target>
+        <jms:reference-file line="54">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69c23cfde2355fa7c004cd07cafa2b29431ef843" resname="membership.pdf.invoice_text_paypal">
+        <source>membership.pdf.invoice_text_paypal</source>
+        <target state="new">membership.pdf.invoice_text_paypal</target>
+        <jms:reference-file line="52">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b7a80446cbd54cc61163c38f4578a13b746583ad" resname="membership.pdf.invoice_text_prepay">
+        <source>membership.pdf.invoice_text_prepay</source>
+        <target state="new">membership.pdf.invoice_text_prepay</target>
+        <jms:reference-file line="48">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63f230c818c45a91b45d18d2bb55717637c1c955" resname="membership.pdf.invoice_total">
+        <source>membership.pdf.invoice_total</source>
+        <target state="new">membership.pdf.invoice_total</target>
+        <jms:reference-file line="79">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+        <jms:reference-file line="96">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="06cdac6d0a0f05fd70ce9eb485ba3d9228f4a663" resname="membership.pdf.invoice_user">
+        <source>membership.pdf.invoice_user</source>
+        <target state="new">membership.pdf.invoice_user</target>
+        <jms:reference-file line="64">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="42d95074f7f0922169b2901e7f38a5d708836f8a" resname="membership.pdf.invoice_vat_od">
+        <source>membership.pdf.invoice_vat_od</source>
+        <target state="new">membership.pdf.invoice_vat_od</target>
+        <jms:reference-file line="66">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="91080257babb1845134fce299ff61707913d1a77" resname="membership.pdf.invoice_vat_rate">
+        <source>membership.pdf.invoice_vat_rate</source>
+        <target state="new">membership.pdf.invoice_vat_rate</target>
+        <jms:reference-file line="74">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="34565cb96c209fe097dc2e64477c448932cae4c4" resname="membership.pdf.paypal.text">
+        <source>membership.pdf.paypal.text</source>
+        <target state="new">membership.pdf.paypal.text</target>
+        <jms:reference-file line="124">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Pdf/billingPdf.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fd3ad7290bb9296c89499924c7055e1381c44be5" resname="membership.sepa_mandate.creditor">
+        <source>membership.sepa_mandate.creditor</source>
+        <target state="new">membership.sepa_mandate.creditor</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0030fd26ddc8d14fc0f7c559be6e9efab2b71f8" resname="membership.sepa_mandate.creditor-id">
+        <source>membership.sepa_mandate.creditor-id</source>
+        <target state="new">membership.sepa_mandate.creditor-id</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce157243384637de0b8e17e624be228044f505dc" resname="membership.sepa_mandate.empower-text">
+        <source>membership.sepa_mandate.empower-text</source>
+        <target state="new">membership.sepa_mandate.empower-text</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0d9186da72e3bfaee6e3414da0b4fcf8b6a47061" resname="membership.sepa_mandate.info">
+        <source>membership.sepa_mandate.info</source>
+        <target state="new">membership.sepa_mandate.info</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="02c82632865c8bf95fc2388a05bab5cd7c53456c" resname="membership.sepa_mandate.mandate-reference">
+        <source>membership.sepa_mandate.mandate-reference</source>
+        <target state="new">membership.sepa_mandate.mandate-reference</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="26">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="26">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b0456d1fe2295eb6830184e6b97d9bbd5087f267" resname="membership.sepa_mandate.mandate-reference-text">
+        <source>membership.sepa_mandate.mandate-reference-text</source>
+        <target state="new">membership.sepa_mandate.mandate-reference-text</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="27">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="27">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce73a91092ec418aeea45c7696ad137a458be1a4" resname="membership.sepa_mandate.panel-title">
+        <source>membership.sepa_mandate.panel-title</source>
+        <target state="new">membership.sepa_mandate.panel-title</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="be4c46033894992043382d8d6757e92492c1f07a" resname="membership.sepa_mandate.please_agree_sepa">
+        <source>membership.sepa_mandate.please_agree_sepa</source>
+        <target state="new">membership.sepa_mandate.please_agree_sepa</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="98001ae1fb729a5e633e9d781352a5e98f072110" resname="membership.sepa_mandate.restoration-info-header">
+        <source>membership.sepa_mandate.restoration-info-header</source>
+        <target state="new">membership.sepa_mandate.restoration-info-header</target>
+        <jms:reference-file line="50">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="44">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="48">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b9cb62e910ac3e61c3aea80fbc2df94237b20569" resname="membership.sepa_mandate.restoration-info-text">
+        <source>membership.sepa_mandate.restoration-info-text</source>
+        <target state="new">membership.sepa_mandate.restoration-info-text</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="45">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="319f0e2e282aa8cf5cdc430a970dcb8660f7a441" resname="membership.sepa_mandate.title">
+        <source>membership.sepa_mandate.title</source>
+        <target state="new">membership.sepa_mandate.title</target>
+        <jms:reference-file line="2">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="2">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="2">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="33e5c8d29bba338e456e1468e5ca5b4f2510fa9e" resname="membership.sepa_mandate_account-holder">
+        <source>membership.sepa_mandate_account-holder</source>
+        <target state="new">membership.sepa_mandate_account-holder</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/MembershipBundle/Resources/views/Checkout/checkoutSepa.html.twig</jms:reference-file>
+        <jms:reference-file line="33">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/new.html.twig</jms:reference-file>
+        <jms:reference-file line="33">/../src/Theaterjobs/MembershipBundle/Resources/views/Sepamandate/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="602fe05a54ada55e9dd52ba89a838484d1c58522" resname="membership.starting.from ">
+        <source>membership.starting.from </source>
+        <target state="new">membership.starting.from </target>
+        <jms:reference-file line="19">views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afa84ba4aff42f603abbb31c6afe7260f3b56dbc" resname="membership.summaryBlock.description">
+        <source>membership.summaryBlock.description</source>
+        <target state="new">Description</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/_preCalculate.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="262ab0b878d0ad1092642955e3a9e5851a1d5259" resname="menu.button.join">
+        <source>menu.button.join</source>
+        <target state="new">menu.button.join</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="65">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+        <jms:reference-file line="78">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2bc4409fbe21150935ea97178bdea2d92707df8b" resname="notification.theapolis.will.get.money.mail.subject">
+        <source>notification.theapolis.will.get.money.mail.subject</source>
+        <target state="new">theapolis.will.get.money.mail.subject</target>
+        <jms:reference-file line="129">/../src/Theaterjobs/MembershipBundle/Command/GenerateBillCommand.php</jms:reference-file>
+        <jms:reference-file line="190">/../src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de343c07e66c80190cd92678d77f8beba6ae3262" resname="paypal.title.fee">
+        <source>paypal.title.fee</source>
+        <target state="new">paypal fee</target>
+        <jms:reference-file line="79">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47a55a59ce1aba52f8929a64570f03f16894e633" resname="paypal.title.vat">
+        <source>paypal.title.vat</source>
+        <target state="new">paypal vat</target>
+        <jms:reference-file line="73">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="643e01e1cffa0a33177a0e1580e21cb555ecdc0c" resname="register.membership.description">
+        <source>register.membership.description</source>
+        <target>Lorem ipsum dolor sit amet, consectetuer adipiscing  laoreet dolore magna aliquam erat volutpat.</target>
+        <jms:reference-file line="33">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="be66a0740fbd11afefcc9b56a97b5903ab67f38f" resname="register.membership.title">
+        <source>register.membership.title</source>
+        <target>Become a member</target>
+        <jms:reference-file line="32">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Membership/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad929e76e963e92b87a51576682138a69f1e38af" resname="sofort.payment.reason">
+        <source>sofort.payment.reason</source>
+        <target state="new">sofort.payment.reason</target>
+        <jms:reference-file line="65">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d3a9fb075d49be97f6eaec99399d8cfdd38c7361" resname="street">
+        <source>street</source>
+        <target state="new">street</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="35bc496ff57f545e36ab95d1c09569711063f028" resname="table.heading.actions">
+        <source>table.heading.actions</source>
+        <target state="new">table.heading.actions</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/MembershipBundle/Resources/views/IbanBlacklist/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7fa90dfdece652d02d19f9666e335bb16241212c" resname="table.heading.createdAt">
+        <source>table.heading.createdAt</source>
+        <target state="new">table.heading.createdAt</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/IbanBlacklist/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="360eedf8feb9fb3a80726cc76a01b16878b89e6b" resname="table.heading.iban">
+        <source>table.heading.iban</source>
+        <target state="new">table.heading.iban</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/MembershipBundle/Resources/views/IbanBlacklist/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="efc3de277b08c74f085228bfa1328e5739c7c3b6" resname="tj.I.accept">
+        <source>tj.I.accept</source>
+        <target state="new">tj.I.accept</target>
+        <jms:reference-file line="45">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afef7544c5e06ef4c025e669dd33c6ebd640d38b" resname="tj.account.settings.link">
+        <source>tj.account.settings.link</source>
+        <target state="new">tj.account.settings.link</target>
+        <jms:reference-file line="108">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="76">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b05fa698e7eec16cc7d28b1eca0696eb6faf49d" resname="tj.button.buy.now">
+        <source>tj.button.buy.now</source>
+        <target state="new">tj.button.buy.now</target>
+        <jms:reference-file line="56">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="348dc3ebd2e019858afb94bfc8542744a7026d39" resname="tj.button.text.not.paid">
+        <source>tj.button.text.not.paid</source>
+        <target state="new">tj.button.text.not.paid</target>
+        <jms:reference-file line="114">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="25e90b66a9d5fdd888c2fc2c48e5ebefc8b629bf" resname="tj.button.text.paid">
+        <source>tj.button.text.paid</source>
+        <target state="new">tj.button.text.paid</target>
+        <jms:reference-file line="113">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4cf14a42080403b7ae8b7fc0d1708463a8ee6fb7" resname="tj.download.sepa.frst">
+        <source>tj.download.sepa.frst</source>
+        <target state="new">tj.download.sepa.frst</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="17edcdf4679db52f943a0d94310dca55eaa0f70f" resname="tj.download.sepa.rcur">
+        <source>tj.download.sepa.rcur</source>
+        <target state="new">tj.download.sepa.rcur</target>
+        <jms:reference-file line="91">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8ed37cf3b429cce1f0dc3c9d8295ba9fef5799f2" resname="tj.membership.bank.data.correct">
+        <source>tj.membership.bank.data.correct</source>
+        <target state="new">tj.membership.bank.data.correct</target>
+        <jms:reference-file line="88">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="08a2c736b7eba4f47d8f82109d137b9e6b0dc4fd" resname="tj.membership.billing_number">
+        <source>tj.membership.billing_number</source>
+        <target state="new">tj.membership.billing_number</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="01a95e59c187e660db285cbb3ac2de01a8b69c60" resname="tj.membership.date">
+        <source>tj.membership.date</source>
+        <target state="new">tj.membership.date</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2258b8013c4a702a7696337cc124d5a46bf33d00" resname="tj.membership.duration">
+        <source>tj.membership.duration</source>
+        <target state="new">tj.membership.duration</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fe7f70ad79325db43ee3d088be47d7a185f1dff5" resname="tj.membership.edit.bank">
+        <source>tj.membership.edit.bank</source>
+        <target state="new">tj.membership.edit.bank</target>
+        <jms:reference-file line="87">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6812d32b3843ba0f8122191ee9e0250b589b81d6" resname="tj.membership.extend.info">
+        <source>tj.membership.extend.info</source>
+        <target state="new">tj.membership.extend.info</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+        <jms:reference-file line="8">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/complete.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e6bbd992082388ba9a9d2725699a20f39dd6cd5d" resname="tj.membership.payment_method">
+        <source>tj.membership.payment_method</source>
+        <target state="new">tj.membership.payment_method</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbadac30d7adcae5bdf29f5c7803f00342597a8e" resname="tj.membership.pdf">
+        <source>tj.membership.pdf</source>
+        <target state="new">tj.membership.pdf</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb2ebdbb241a9f1fdfd0b1e75bdd8c20676d4172" resname="tj.membership.status">
+        <source>tj.membership.status</source>
+        <target state="new">tj.membership.status</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4ebbfc40197f9cbf43e8bd62b6cfdd3eab13e451" resname="tj.membership.total">
+        <source>tj.membership.total</source>
+        <target state="new">tj.membership.total</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="94d97d57c346cdd2dce12ad04fd07fd1d8021930" resname="tj.membership.type.">
+        <source>tj.membership.type.</source>
+        <target state="new">tj.membership.type.</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="13ab2aa094585587baca2c7fd02c11c9928bbce1" resname="tj.my_bookings">
+        <source>tj.my_bookings</source>
+        <target state="new">tj.my_bookings</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Booking/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b4f05223b9ff806b7ae5973229555a46c140299" resname="tj.notification.renew.enjoy.membership">
+        <source>tj.notification.renew.enjoy.membership</source>
+        <target state="new">Your membership was renew succesfully</target>
+        <jms:reference-file line="282">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="253">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0c8206de6580612830d85072d1990436c907ff5" resname="tj.payment.rules">
+        <source>tj.payment.rules</source>
+        <target state="new">tj.payment.rules</target>
+        <jms:reference-file line="45">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d43bdc0e08f8b1d6efd985afb6a85b75bd6ce75" resname="tj.paypal.fee">
+        <source>tj.paypal.fee</source>
+        <target state="new">tj.paypal.fee</target>
+        <jms:reference-file line="40">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e01a9162a3885d6f870f7950d691aa74cf94b5eb" resname="tj.paypal.procedure.text">
+        <source>tj.paypal.procedure.text</source>
+        <target state="new">tj.paypal.procedure.text</target>
+        <jms:reference-file line="41">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Resources/views/Booking/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a98ce9f5284ed0c1bddf133c96a9ac0b341966de" resname="tj.popup.block.payment.method">
+        <source>tj.popup.block.payment.method</source>
+        <target state="new">tj.popup.block.payment.method</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/paymentMethodsByProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="60bf79b4c9dcc678651220b053c7e2ebbcf723ec" resname="tj.popup.enable.payment.method ">
+        <source>tj.popup.enable.payment.method </source>
+        <target state="new">tj.popup.enable.payment.method </target>
+        <jms:reference-file line="7">/../src/Theaterjobs/MembershipBundle/Resources/views/Paymentmethod/paymentMethodsByProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f6998fafd027230d98d1fe59586004e07b748012" resname="tj.remove.from.list">
+        <source>tj.remove.from.list</source>
+        <target state="new">tj.remove.from.list</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/MembershipBundle/Resources/views/IbanBlacklist/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4fcefa9f6357a19551012a09cab3d71445417d1c" resname="tj.table.heading.account.holder">
+        <source>tj.table.heading.account.holder</source>
+        <target state="new">tj.table.heading.account.holder</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="64">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="28a7d40a673af95347a2b831453f67f91304a3f9" resname="tj.table.heading.actions">
+        <source>tj.table.heading.actions</source>
+        <target state="new">tj.table.heading.actions</target>
+        <jms:reference-file line="102">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="28">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="68">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="373ff8c9299d22d31d603f1ecc61fa41e5629517" resname="tj.table.heading.bic">
+        <source>tj.table.heading.bic</source>
+        <target state="new">tj.table.heading.bic</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="66">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="72ad03df5e2d50fed5fd0dcee1abc9105785f2ac" resname="tj.table.heading.bill">
+        <source>tj.table.heading.bill</source>
+        <target state="new">tj.table.heading.bill</target>
+        <jms:reference-file line="101">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="63">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d7a95734b2599ada5c1402687ed99ba3aa89e2f5" resname="tj.table.heading.created.at">
+        <source>tj.table.heading.created.at</source>
+        <target state="new">tj.table.heading.created.at</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="98">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da4cfde45b463a30218cf26b47a886e707167210" resname="tj.table.heading.ends.on">
+        <source>tj.table.heading.ends.on</source>
+        <target state="new">tj.table.heading.ends.on</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="67">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d0caa304ce0b514d255d86f1d45ec3959d150278" resname="tj.table.heading.iban">
+        <source>tj.table.heading.iban</source>
+        <target state="new">tj.table.heading.iban</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="65">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cfc36265e8623a8f1f37622fbc6faa90f6d66e35" resname="tj.table.heading.profile">
+        <source>tj.table.heading.profile</source>
+        <target state="new">tj.table.heading.profile</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="61">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="99">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef526ec0d1c044142a30e505f6f58d3756d13237" resname="tj.table.heading.total">
+        <source>tj.table.heading.total</source>
+        <target state="new">tj.table.heading.total</target>
+        <jms:reference-file line="100">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="22">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+        <jms:reference-file line="62">/../src/Theaterjobs/MembershipBundle/Resources/views/Billing/uncheckedBillings.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f9789259042ceeaa332e1863083aabbd0bbddc93" resname="tj.theapolis.will.get.money.mail.subject">
+        <source>tj.theapolis.will.get.money.mail.subject</source>
+        <target state="new">tj.theapolis.will.get.money.mail.subject</target>
+        <jms:reference-file line="367">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fa8ac88174b7e3406965718f5650b8b25f96270a" resname="tj.user.activity.extended.membership">
+        <source>tj.user.activity.extended.membership</source>
+        <target state="new">tj.user.activity.extended.membership</target>
+        <jms:reference-file line="114">/../src/Theaterjobs/MembershipBundle/Command/GenerateBillCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50ef8fe2d32eb74562ef38dde6f8c02fd9a13dd6" resname="user.mailer.footer.line1">
+        <source>user.mailer.footer.line1</source>
+        <target state="new">user.mailer.footer.line1</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4a655ed3fb1f9f29a39e325cedabc30b12e7f9a4" resname="user.mailer.footer.line10">
+        <source>user.mailer.footer.line10</source>
+        <target state="new">user.mailer.footer.line10</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c137e32589fe2174c1afe2ffa854e0c17d2950d3" resname="user.mailer.footer.line11">
+        <source>user.mailer.footer.line11</source>
+        <target state="new">user.mailer.footer.line11</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de8b0a2eb39572ffa45e0d456ce58dcd933df54b" resname="user.mailer.footer.line12">
+        <source>user.mailer.footer.line12</source>
+        <target state="new">user.mailer.footer.line12</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6ca785a705c94046785d8f066cd4c784bc0add6c" resname="user.mailer.footer.line2">
+        <source>user.mailer.footer.line2</source>
+        <target state="new">user.mailer.footer.line2</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea0272dbceea817851e3e9cd1555020ff1803cd8" resname="user.mailer.footer.line3">
+        <source>user.mailer.footer.line3</source>
+        <target state="new">user.mailer.footer.line3</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ffbdd9c8b317cb359bf698620a419f8aec3e1847" resname="user.mailer.footer.line4">
+        <source>user.mailer.footer.line4</source>
+        <target state="new">user.mailer.footer.line4</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4dbe20450185be0c358dd7fcf65e3acc74b57e6e" resname="user.mailer.footer.line5">
+        <source>user.mailer.footer.line5</source>
+        <target state="new">user.mailer.footer.line5</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5f0adffc99f7fe152c8fcda27ad603cff5dce9cc" resname="user.mailer.footer.line6">
+        <source>user.mailer.footer.line6</source>
+        <target state="new">user.mailer.footer.line6</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ac260c7eb4d3ef423c3d0a963ab4855cce9c7520" resname="user.mailer.footer.line7">
+        <source>user.mailer.footer.line7</source>
+        <target state="new">user.mailer.footer.line7</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc0ee8f6d497d9a5157ef8637620757140e0b276" resname="user.mailer.footer.line8">
+        <source>user.mailer.footer.line8</source>
+        <target state="new">user.mailer.footer.line8</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29b977531fdedc48e5b0ffcbcc4642b2532a44e5" resname="user.mailer.footer.line9">
+        <source>user.mailer.footer.line9</source>
+        <target state="new">user.mailer.footer.line9</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c28d79a8a8b9c9648cf6eb25773b2f9c16300b6c" resname="vatId">
+        <source>vatId</source>
+        <target state="new">vatId</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0b2eba63303bc946ad21420e97a470ea4f1cf53" resname="view.your.sepa.mandatory">
+        <source>view.your.sepa.mandatory</source>
+        <target state="new">view.your.sepa.mandatory</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/MembershipBundle/Resources/views/DebitAccount/email/updateDebitAccount.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f13e27693c85aed522df8c3fcb0bb0110ca54e14" resname="zip">
+        <source>zip</source>
+        <target state="new">zip</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/MembershipBundle/Resources/views/Membership/confirmBank.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

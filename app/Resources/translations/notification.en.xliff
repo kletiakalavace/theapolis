@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:46Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="1ecefc53c60f79c070b72c686e753df17eff8706" resname="dashboard.notification.actuality.status.old">
+        <source>dashboard.notification.actuality.status.old</source>
+        <target state="new">dashboard.notification.actuality.status.old</target>
+        <jms:reference-file line="74">src/Theaterjobs/ProfileBundle/Command/ActualityNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="15b968949343390f0979bf0f64909089bf11e55a" resname="dashboard.notification.actuality.status.old.description">
+        <source>dashboard.notification.actuality.status.old.description</source>
+        <target state="new">dashboard.notification.actuality.status.old.description</target>
+        <jms:reference-file line="80">src/Theaterjobs/ProfileBundle/Command/ActualityNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9007ec8320c6b9f49eb684ebc49d80c79b9f1db7" resname="dashboard.notification.user.profile.unpublished">
+        <source>dashboard.notification.user.profile.unpublished</source>
+        <target state="new">dashboard.notification.user.profile.unpublished</target>
+        <jms:reference-file line="1777">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32a650a878116c1de61f57ad66363e6c28727586" resname="dashboard.notification.user.profile.unpublished.description">
+        <source>dashboard.notification.user.profile.unpublished.description</source>
+        <target state="new">dashboard.notification.user.profile.unpublished.description</target>
+        <jms:reference-file line="1782">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37026573a584ab1bea38f3ddbde41099d69332ba" resname="tj.notification.number.profile.views %title%">
+        <source>tj.notification.number.profile.views %title%</source>
+        <target state="new">tj.notification.number.profile.views %title%</target>
+        <jms:reference-file line="53">src/Theaterjobs/ProfileBundle/Command/ProfileViewsNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3a34cef943b90b39f8dd107656aa9082df796619" resname="tj.notification.profile.viewed.become.member">
+        <source>tj.notification.profile.viewed.become.member</source>
+        <target state="new">tj.notification.profile.viewed.become.member</target>
+        <jms:reference-file line="52">src/Theaterjobs/ProfileBundle/Command/ProfileViewsNotificationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99343942308fa681fc437fbf1d2bc6c7ea452d1c" resname="tj.notification.user.profile.changed.to.unpublished">
+        <source>tj.notification.user.profile.changed.to.unpublished</source>
+        <target state="new">tj.notification.user.profile.changed.to.unpublished</target>
+        <jms:reference-file line="1854">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2f93ef64b796e4390b23554608a9711fde868b6" resname="tj.notification.user.profile.unpublished">
+        <source>tj.notification.user.profile.unpublished</source>
+        <target state="new">tj.notification.user.profile.unpublished</target>
+        <jms:reference-file line="1848">src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

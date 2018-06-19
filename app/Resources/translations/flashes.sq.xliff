@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:35Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c64b5ea692327ae1e9cb74081f58718d440ac5e8" resname="flash.alert.base.recheck_input">
+        <source>flash.alert.base.recheck_input</source>
+        <target state="new">flash.alert.base.recheck_input</target>
+        <jms:reference-file line="152">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Controller/BaseController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aea8e0b2f36d57e7386ac641ec4192b136844127" resname="flash.danger.education.deleted">
+        <source>flash.danger.education.deleted</source>
+        <target state="new">flash.danger.education.deleted</target>
+        <jms:reference-file line="363">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0d96c3766c48e413540924915a4ac1f135efa502" resname="flash.danger.job.deleted">
+        <source>flash.danger.job.deleted</source>
+        <target state="new">flash.danger.job.deleted</target>
+        <jms:reference-file line="572">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4d361f6c1831dd2ad49421937f950468f0cdb7d" resname="flash.danger.not.added.role.user.member.no.contract.running">
+        <source>flash.danger.not.added.role.user.member.no.contract.running</source>
+        <target state="new">flash.danger.not.added.role.user.member.no.contract.running</target>
+        <jms:reference-file line="428">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+        <jms:reference-file line="435">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e6859a331a8743ed13f94cfd804abbfe9df7834d" resname="flash.danger.not.removed.role.member.revoke.membership.first">
+        <source>flash.danger.not.removed.role.member.revoke.membership.first</source>
+        <target state="new">flash.danger.not.removed.role.member.revoke.membership.first</target>
+        <jms:reference-file line="441">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23cbbbb949025db235ea8f68444640a3dc452db4" resname="flash.danger.piece.deleted %piecetitle%">
+        <source>flash.danger.piece.deleted %piecetitle%</source>
+        <target state="new">flash.danger.piece.deleted %piecetitle%</target>
+        <jms:reference-file line="701">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7a652cf6808ef1c0dfd5dcd164b74e717bbd1f1" resname="flash.email.changed.alert.checkEmail">
+        <source>flash.email.changed.alert.checkEmail</source>
+        <target state="new">flash.email.changed.alert.checkEmail</target>
+        <jms:reference-file line="110">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d231dd3e926470874b0b4048ec44839aed2f6647" resname="flash.email.changed.alert.relogin.new.email">
+        <source>flash.email.changed.alert.relogin.new.email</source>
+        <target state="new">flash.email.changed.alert.relogin.new.email</target>
+        <jms:reference-file line="169">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="409d28efd592dd0007b8e261bb38490934751f70" resname="flash.email.not.found">
+        <source>flash.email.not.found</source>
+        <target state="new">flash.email.not.found</target>
+        <jms:reference-file line="174">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fee6f50aa11049c418bccb99d7c9f5c926d5a1d8" resname="flash.error.contract.quitted.ends_on %date%">
+        <source>flash.error.contract.quitted.ends_on %date%</source>
+        <target state="new">flash.error.contract.quitted.ends_on %date%</target>
+        <jms:reference-file line="604">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="221dba48127498c9686cf7bb58c4c17f11031b88" resname="flash.error.education.is.in.favourites">
+        <source>flash.error.education.is.in.favourites</source>
+        <target state="new">flash.error.education.is.in.favourites</target>
+        <jms:reference-file line="601">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47b0efd8c1a5e8ea0b1a2e2bb4cdac84bb25a728" resname="flash.error.forum.short.alias.min.four.character">
+        <source>flash.error.forum.short.alias.min.four.character</source>
+        <target state="new">flash.error.forum.short.alias.min.four.character</target>
+        <jms:reference-file line="177">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5cbb5e8cfd18de2864d95f6da1abc22be0227ca1" resname="flash.error.job.already.checked">
+        <source>flash.error.job.already.checked</source>
+        <target state="new">flash.error.job.already.checked</target>
+        <jms:reference-file line="638">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="676badf895490bb03e841cb65f0f1a133bfa8ead" resname="flash.error.job.is.in.favourites">
+        <source>flash.error.job.is.in.favourites</source>
+        <target state="new">flash.error.job.is.in.favourites</target>
+        <jms:reference-file line="1323">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="12254beabee57d0fee815ab866d69e6c29ad1e10" resname="flash.error.job.not.updated">
+        <source>flash.error.job.not.updated</source>
+        <target state="new">flash.error.job.not.updated</target>
+        <jms:reference-file line="1108">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0d82d0749be60e4ff05bdb9fd2def5104423eeda" resname="flash.error.job.you.are.firstCheck">
+        <source>flash.error.job.you.are.firstCheck</source>
+        <target state="new">flash.error.job.you.are.firstCheck</target>
+        <jms:reference-file line="684">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="01afc5bbde315fe2fe38827d32f950e49ec35e13" resname="flash.error.jobmail.donot.exist">
+        <source>flash.error.jobmail.donot.exist</source>
+        <target state="new">flash.error.jobmail.donot.exist</target>
+        <jms:reference-file line="468">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8facb7e36de5da380ae8a5b524cde002a18f2e7a" resname="flash.error.jobmail.name.not.empty">
+        <source>flash.error.jobmail.name.not.empty</source>
+        <target state="new">flash.error.jobmail.name.not.empty</target>
+        <jms:reference-file line="473">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c406cb0109b3257ba633a5359873ec6d9dc50bac" resname="flash.error.membership.order.processing">
+        <source>flash.error.membership.order.processing</source>
+        <target state="new">flash.error.membership.order.processing</target>
+        <jms:reference-file line="79">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87f87a086594a5e8200bdf82eddbe5ec04100089" resname="flash.error.network.is.in.favourites">
+        <source>flash.error.network.is.in.favourites</source>
+        <target state="new">flash.error.network.is.in.favourites</target>
+        <jms:reference-file line="631">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1deeb3ae7428aeb2b7535e2f024333374844ddd1" resname="flash.error.no.access">
+        <source>flash.error.no.access</source>
+        <target state="new">flash.error.no.access</target>
+        <jms:reference-file line="251">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+        <jms:reference-file line="238">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2ba3c1220603359b4d0555f340f1e9a7327552c7" resname="flash.error.organization.has_active_jobs %name%">
+        <source>flash.error.organization.has_active_jobs %name%</source>
+        <target state="new">flash.error.organization.has_active_jobs %name%</target>
+        <jms:reference-file line="864">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dabe7626dc151e0c9c2fbe0ea422dbfae13fe657" resname="flash.error.organization.has_active_users %name%">
+        <source>flash.error.organization.has_active_users %name%</source>
+        <target state="new">flash.error.organization.has_active_users %name%</target>
+        <jms:reference-file line="868">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2e8a2a2bf557037acc27a955d94c6104aae9309e" resname="flash.error.organization.no_permissions %name%">
+        <source>flash.error.organization.no_permissions %name%</source>
+        <target state="new">flash.error.organization.no_permissions %name%</target>
+        <jms:reference-file line="484">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+        <jms:reference-file line="559">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+        <jms:reference-file line="885">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fe14f215831b7b94ad9d37d9282a6bc81f37c91" resname="flash.error.payment.canceled">
+        <source>flash.error.payment.canceled</source>
+        <target state="new">flash.error.payment.canceled</target>
+        <jms:reference-file line="182">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="157">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32115fd267b7950911b4ed22ce9e34a90bd5f000" resname="flash.error.payment.invalid.bic">
+        <source>flash.error.payment.invalid.bic</source>
+        <target state="new">flash.error.payment.invalid.bic</target>
+        <jms:reference-file line="82">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="83af74c520f6dd52c140b6506b7cff53757d3975" resname="flash.error.piece.already.in.favourites %jobtitle%">
+        <source>flash.error.piece.already.in.favourites %jobtitle%</source>
+        <target state="new">flash.error.piece.already.in.favourites %jobtitle%</target>
+        <jms:reference-file line="761">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="20d92ea64173db3340549c81f7cd302f6b0c3064" resname="flash.error.this_account_is_not_deletable">
+        <source>flash.error.this_account_is_not_deletable</source>
+        <target state="new">flash.error.this_account_is_not_deletable</target>
+        <jms:reference-file line="237">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc2c1e8ca8f0f63ba3e7d344ce5aeeb9bd5f913d" resname="flash.error.validating.vat_id">
+        <source>flash.error.validating.vat_id</source>
+        <target state="new">flash.error.validating.vat_id</target>
+        <jms:reference-file line="102">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+        <jms:reference-file line="154">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cec8b73205c7e0f66cfa045995e0946b2ce1c391" resname="flash.job.archived.not.editable">
+        <source>flash.job.archived.not.editable</source>
+        <target state="new">flash.job.archived.not.editable</target>
+        <jms:reference-file line="413">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e3642371096345576530cc1395efdb1a25ff5289" resname="flash.jobmail.activate.success">
+        <source>flash.jobmail.activate.success</source>
+        <target state="new">flash.jobmail.activate.success</target>
+        <jms:reference-file line="182">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e64265fd085723b556f4282c6b3412cc744f57cf" resname="flash.jobmail.deactivate.success">
+        <source>flash.jobmail.deactivate.success</source>
+        <target state="new">flash.jobmail.deactivate.success</target>
+        <jms:reference-file line="199">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5831473e031c4415cd4cfc565fbad95298d7617e" resname="flash.new.email.addreses.dont.match">
+        <source>flash.new.email.addreses.dont.match</source>
+        <target state="new">flash.new.email.addreses.dont.match</target>
+        <jms:reference-file line="116">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/EmailChangeRequestController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="26c86e6331bb54c1e2286c2162ce39308ff39bbc" resname="flash.no.jobapplication.off.without.contacts">
+        <source>flash.no.jobapplication.off.without.contacts</source>
+        <target state="new">flash.no.jobapplication.off.without.contacts</target>
+        <jms:reference-file line="176">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="476">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb46c5ecb22280b9ab04b91e557bc6ccc2234bb5" resname="flash.no.jobarchiving.before.applicationEndDate">
+        <source>flash.no.jobarchiving.before.applicationEndDate</source>
+        <target state="new">flash.no.jobarchiving.before.applicationEndDate</target>
+        <jms:reference-file line="596">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b8a21fba8515a4fdb0ec14476208cc6e8ce6f38" resname="flash.no.networkarchiving.before.applicationEndDate %networktitle%">
+        <source>flash.no.networkarchiving.before.applicationEndDate %networktitle%</source>
+        <target state="new">flash.no.networkarchiving.before.applicationEndDate %networktitle%</target>
+        <jms:reference-file line="382">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="068710fb75cd1a5733f77f6a1c86428650b41053" resname="flash.no.organization.name.in.job.title">
+        <source>flash.no.organization.name.in.job.title</source>
+        <target state="new">flash.no.organization.name.in.job.title</target>
+        <jms:reference-file line="209">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf318f7c65d161fe9b989fce3134b5106bdeff8c" resname="flash.no.piecearchiving.before.applicationEndDate %piecetitle%">
+        <source>flash.no.piecearchiving.before.applicationEndDate %piecetitle%</source>
+        <target state="new">flash.no.piecearchiving.before.applicationEndDate %piecetitle%</target>
+        <jms:reference-file line="348">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="93fbc6d127b7bb164c8eecb5ce4f9df1ee84612d" resname="flash.organization.request.already.exists">
+        <source>flash.organization.request.already.exists</source>
+        <target state="new">flash.organization.request.already.exists</target>
+        <jms:reference-file line="549">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="81">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b850119a3c0fbc84189d0fba5ab15883e2a68391" resname="flash.organization.request.created">
+        <source>flash.organization.request.created</source>
+        <target state="new">flash.organization.request.created</target>
+        <jms:reference-file line="348">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="543">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="58">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5982869326138434f51c48a187efadacde3b00d5" resname="flash.organization.request.created %jobtitle%">
+        <source>flash.organization.request.created %jobtitle%</source>
+        <target state="new">flash.organization.request.created %jobtitle%</target>
+        <jms:reference-file line="242">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="58a7bca25203b8426ac750d428f409ce27866d7d" resname="flash.organization.request.removed">
+        <source>flash.organization.request.removed</source>
+        <target state="new">flash.organization.request.removed</target>
+        <jms:reference-file line="293">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f0a791063bd577dd080040d3d70ffde83450dcc6" resname="flash.organization.success.user.pending.aproval">
+        <source>flash.organization.success.user.pending.aproval</source>
+        <target state="new">flash.organization.success.user.pending.aproval</target>
+        <jms:reference-file line="437">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+        <jms:reference-file line="464">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/UserOrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63804fa7d7d852b176f0e1473b57554e731779e9" resname="flash.profile.error.category.should.be.performance">
+        <source>flash.profile.error.category.should.be.performance</source>
+        <target state="new">flash.profile.error.category.should.be.performance</target>
+        <jms:reference-file line="2433">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5a0e4ce0cbddda54da1c7d38b68a29e83482b00" resname="flash.profile.error.is.in.favourites">
+        <source>flash.profile.error.is.in.favourites</source>
+        <target state="new">flash.profile.error.is.in.favourites</target>
+        <jms:reference-file line="689">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d0bf92cd8e4968bd611a6ab3f2d182b63dec231" resname="flash.profile.error.is.not.in.your.favourites">
+        <source>flash.profile.error.is.not.in.your.favourites</source>
+        <target state="new">flash.profile.error.is.not.in.your.favourites</target>
+        <jms:reference-file line="717">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce50d46e068f81d227cc41cf1a92cb2dcd305797" resname="flash.profile.media.audio.limit.reached">
+        <source>flash.profile.media.audio.limit.reached</source>
+        <target state="new">flash.profile.media.audio.limit.reached</target>
+        <jms:reference-file line="3000">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23d3ffba3121dabb566a3e6840706c8869fde626" resname="flash.profile.media.image.limit.reached">
+        <source>flash.profile.media.image.limit.reached</source>
+        <target state="new">flash.profile.media.image.limit.reached</target>
+        <jms:reference-file line="2773">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="208508c21063de121f04c37a16b7767364198a06" resname="flash.profile.media.pdf.limit.reached">
+        <source>flash.profile.media.pdf.limit.reached</source>
+        <target state="new">flash.profile.media.pdf.limit.reached</target>
+        <jms:reference-file line="2898">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00ab8e1904800ac709426d0677f55ac550d4e138" resname="flash.profile.not.reachable">
+        <source>flash.profile.not.reachable</source>
+        <target state="new">flash.profile.not.reachable</target>
+        <jms:reference-file line="376">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="837341cee4f15b9625932e36a0ff7f18eec8ba9d" resname="flash.profile.professions.category.limit.six.reached">
+        <source>flash.profile.professions.category.limit.six.reached</source>
+        <target state="new">flash.profile.professions.category.limit.six.reached</target>
+        <jms:reference-file line="3208">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf8208fbad1b88174925366ee726c150d8468da4" resname="flash.profile.success.added.to.favourites">
+        <source>flash.profile.success.added.to.favourites</source>
+        <target state="new">flash.profile.success.added.to.favourites</target>
+        <jms:reference-file line="683">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fe5add6822a5b34faa0ded0c8bbd6918ecde08f9" resname="flash.profile.success.removed.from.favourites">
+        <source>flash.profile.success.removed.from.favourites</source>
+        <target state="new">flash.profile.success.removed.from.favourites</target>
+        <jms:reference-file line="712">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dec99315cf816dc024701ffa4b8a6c2a11a72096" resname="flash.profile.success.unpublished">
+        <source>flash.profile.success.unpublished</source>
+        <target state="new">flash.profile.success.unpublished</target>
+        <jms:reference-file line="1581">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9d299e1e402d0874d1bf14ce9c826035ab3270b8" resname="flash.profile.views.become.member.to.view">
+        <source>flash.profile.views.become.member.to.view</source>
+        <target state="new">flash.profile.views.become.member.to.view</target>
+        <jms:reference-file line="96">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Resources/views/Profile/showProfileViews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a98ecaaa23491a6bda268eee066a953b8d539d32" resname="flash.sepa.downloaded">
+        <source>flash.sepa.downloaded</source>
+        <target state="new">flash.sepa.downloaded</target>
+        <jms:reference-file line="285">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5b1358a2963a8975b5b09be9db32f25662043a1" resname="flash.success.account_withdraw">
+        <source>flash.success.account_withdraw</source>
+        <target state="new">flash.success.account_withdraw</target>
+        <jms:reference-file line="473">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="788281886f331f1c39e36a2530ada046f69ecb4a" resname="flash.success.advice.requested">
+        <source>flash.success.advice.requested</source>
+        <target state="new">flash.success.advice.requested</target>
+        <jms:reference-file line="94">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Controller/AdviceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a27578118d3cdb678e87d7f5f551e7af1b7ce131" resname="flash.success.bill.canceled">
+        <source>flash.success.bill.canceled</source>
+        <target state="new">flash.success.bill.canceled</target>
+        <jms:reference-file line="76">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb5831aa8e878ab122361354132401663203d2b4" resname="flash.success.change.billing.address">
+        <source>flash.success.change.billing.address</source>
+        <target state="new">flash.success.change.billing.address</target>
+        <jms:reference-file line="114">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+        <jms:reference-file line="166">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef951c3087e9628419215a21b7614d8a8666000a" resname="flash.success.change.debit.account">
+        <source>flash.success.change.debit.account</source>
+        <target state="new">flash.success.change.debit.account</target>
+        <jms:reference-file line="155">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ba297375919cf3a747fa40ac55db161ae16b9e2" resname="flash.success.changed.forum.alias">
+        <source>flash.success.changed.forum.alias</source>
+        <target state="new">flash.success.changed.forum.alias</target>
+        <jms:reference-file line="194">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="81b34e7099a80a046084cbaa1bbccc99f9b71784" resname="flash.success.changed.membership.expire.date">
+        <source>flash.success.changed.membership.expire.date</source>
+        <target state="new">flash.success.changed.membership.expire.date</target>
+        <jms:reference-file line="548">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1327901605ff627cf6befc3c496da1c057445c5c" resname="flash.success.changed.user.role">
+        <source>flash.success.changed.user.role</source>
+        <target state="new">flash.success.changed.user.role</target>
+        <jms:reference-file line="480">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63cdae61726bf79735c9bdd9b668c20b37b0eadd" resname="flash.success.complain.created">
+        <source>flash.success.complain.created</source>
+        <target state="new">flash.success.complain.created</target>
+        <jms:reference-file line="78">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Controller/ComplainController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b3285b965cfe9eb8cfe828dbd30c74e60ef4900" resname="flash.success.contract.quit.success">
+        <source>flash.success.contract.quit.success</source>
+        <target state="new">The contract has been quit successfully.</target>
+        <jms:reference-file line="590">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da138d7d3f7a1aabe6fdb76ba3016cc17c99b30c" resname="flash.success.dashboard.welcometext.free">
+        <source>flash.success.dashboard.welcometext.free</source>
+        <target state="new">flash.success.dashboard.welcometext.free</target>
+        <jms:reference-file line="140">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0afc659eee09129121d94a19e9d73e5a29420a57" resname="flash.success.dashboard.welcometext.job">
+        <source>flash.success.dashboard.welcometext.job</source>
+        <target state="new">flash.success.dashboard.welcometext.job</target>
+        <jms:reference-file line="147">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2b6e5bfcdc7bedf22c758c8e043d4e34f6819745" resname="flash.success.dashboard.welcometext.member">
+        <source>flash.success.dashboard.welcometext.member</source>
+        <target state="new">flash.success.dashboard.welcometext.member</target>
+        <jms:reference-file line="132">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/RegistrationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="294507ba87d78f81c332f5190b2af0e4be904915" resname="flash.success.education.added.to.favourites">
+        <source>flash.success.education.added.to.favourites</source>
+        <target state="new">flash.success.education.added.to.favourites</target>
+        <jms:reference-file line="595">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7dfeee7661842f4a20c57ebbb04143c45a62b374" resname="flash.success.education.archived">
+        <source>flash.success.education.archived</source>
+        <target state="new">flash.success.education.archived</target>
+        <jms:reference-file line="393">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="85a847f1fa4ec893a3045cc834ef3994487526c5" resname="flash.success.education.created">
+        <source>flash.success.education.created</source>
+        <target state="new">flash.success.education.created</target>
+        <jms:reference-file line="107">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70c3d7b3a0867014ba5858d9b4298e96d74ddc21" resname="flash.success.education.created.not.published.gratification.free">
+        <source>flash.success.education.created.not.published.gratification.free</source>
+        <target state="new">flash.success.education.created.not.published.gratification.free</target>
+        <jms:reference-file line="112">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2346d13cf676852d41ceb541482b8fa61d3d88fe" resname="flash.success.education.created.not.published.gratification.with.costs">
+        <source>flash.success.education.created.not.published.gratification.with.costs</source>
+        <target state="new">flash.success.education.created.not.published.gratification.with.costs</target>
+        <jms:reference-file line="110">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7421442999f38e68b56f3bbc66cf6d0c448d6904" resname="flash.success.education.removed.from.favourites">
+        <source>flash.success.education.removed.from.favourites</source>
+        <target state="new">flash.success.education.removed.from.favourites</target>
+        <jms:reference-file line="623">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70527a7d03c18a1409295d6d6938f6938d2c26df" resname="flash.success.education.updated">
+        <source>flash.success.education.updated</source>
+        <target state="new">flash.success.education.updated</target>
+        <jms:reference-file line="312">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cb0390bb7035c061cc31cd781f45f55ba11d2fbb" resname="flash.success.job.added.to.favourites">
+        <source>flash.success.job.added.to.favourites</source>
+        <target state="new">flash.success.job.added.to.favourites</target>
+        <jms:reference-file line="1316">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="08377bc3d5253ab4ee570cd5844d964b2078ebb3" resname="flash.success.job.application.completed">
+        <source>flash.success.job.application.completed</source>
+        <target state="new">flash.success.job.application.completed</target>
+        <jms:reference-file line="1050">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fc04b329e920a940a49d8194aac1d6106f7944d" resname="flash.success.job.applications.archived">
+        <source>flash.success.job.applications.archived</source>
+        <target state="new">flash.success.job.applications.archived</target>
+        <jms:reference-file line="1682">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0c58da50c816be41786b89d6640cc3e5a7f63b0" resname="flash.success.job.applications.closed">
+        <source>flash.success.job.applications.closed</source>
+        <target state="new">flash.success.job.applications.closed</target>
+        <jms:reference-file line="1641">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40ecbc1d06e031b9600bb2b67869145faa28d5f1" resname="flash.success.job.archived">
+        <source>flash.success.job.archived</source>
+        <target state="new">flash.success.job.archived</target>
+        <jms:reference-file line="611">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cec25f7391944820e6189807fc96afcbe364532e" resname="flash.success.job.created">
+        <source>flash.success.job.created</source>
+        <target state="new">flash.success.job.created</target>
+        <jms:reference-file line="204">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92814618b1308002ed2fec1e28106c7ec367f802" resname="flash.success.job.firstCheck">
+        <source>flash.success.job.firstCheck</source>
+        <target state="new">flash.success.job.firstCheck</target>
+        <jms:reference-file line="665">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad64a457508db434fe9fa1a30ade41a86df5fdd2" resname="flash.success.job.is.in.adminlist">
+        <source>flash.success.job.is.in.adminlist</source>
+        <target state="new">flash.success.job.is.in.adminlist</target>
+        <jms:reference-file line="1532">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="04439cd5e381d6a0f20d260bf6f69186cc566621" resname="flash.success.job.removed.from.favourites">
+        <source>flash.success.job.removed.from.favourites</source>
+        <target state="new">flash.success.job.removed.from.favourites</target>
+        <jms:reference-file line="1375">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="253d1bef386e31bed26ae66b4d2cf0353da053bd" resname="flash.success.job.secondCheck">
+        <source>flash.success.job.secondCheck</source>
+        <target state="new">flash.success.job.secondCheck</target>
+        <jms:reference-file line="677">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8eeb38f179a7afceb9d69ea41ccd2d62c4e127ff" resname="flash.success.job.taken">
+        <source>flash.success.job.taken</source>
+        <target state="new">flash.success.job.taken</target>
+        <jms:reference-file line="1435">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c34535a31d2ed7f6d938c862054d576ddb9b8a05" resname="flash.success.job.updated">
+        <source>flash.success.job.updated</source>
+        <target state="new">flash.success.job.updated</target>
+        <jms:reference-file line="1100">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afd6600335bc4926d1e71d3ab784631dc2515fd1" resname="flash.success.job.was.removed.from.adminlist">
+        <source>flash.success.job.was.removed.from.adminlist</source>
+        <target state="new">flash.success.job.was.removed.from.adminlist</target>
+        <jms:reference-file line="1593">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b6d5e5d3ce94a44b0a157625adcbe2a34dc3db4" resname="flash.success.job_updated">
+        <source>flash.success.job_updated</source>
+        <target state="new">flash.success.job_updated</target>
+        <jms:reference-file line="520">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="13291bd1f2d85aa590eabc8a2941eaafa255c206" resname="flash.success.jobmail.activated">
+        <source>flash.success.jobmail.activated</source>
+        <target state="new">flash.success.jobmail.activated</target>
+        <jms:reference-file line="1558">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c54dbb2227dff5fe6780a4c22ac40136f61c2fc6" resname="flash.success.jobmail.deactivated">
+        <source>flash.success.jobmail.deactivated</source>
+        <target state="new">flash.success.jobmail.deactivated</target>
+        <jms:reference-file line="1554">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d476c374afd28709efee8a47d0cf37f9c976744f" resname="flash.success.jobmail.edited">
+        <source>flash.success.jobmail.edited</source>
+        <target state="new">flash.success.jobmail.edited</target>
+        <jms:reference-file line="482">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3edb95bd3b648c96d76d74bbfca96f537671c985" resname="flash.success.master_data">
+        <source>flash.success.master_data</source>
+        <target state="new">flash.success.master_data</target>
+        <jms:reference-file line="109">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+        <jms:reference-file line="113">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3167f1be59143055f1c2c56e4756fe8ea80de9b0" resname="flash.success.membership.membership_deselected">
+        <source>flash.success.membership.membership_deselected</source>
+        <target state="new">flash.success.membership.membership_deselected</target>
+        <jms:reference-file line="134">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e13e53f7cd721cde12edde307642bd1ebdb6f516" resname="flash.success.membership.membership_selected">
+        <source>flash.success.membership.membership_selected</source>
+        <target state="new">flash.success.membership.membership_selected</target>
+        <jms:reference-file line="125">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b084f5082de4e01d9ca19c50c322d02feae9157a" resname="flash.success.membership.revoked">
+        <source>flash.success.membership.revoked</source>
+        <target state="new">flash.success.membership.revoked</target>
+        <jms:reference-file line="518">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a397dcbd175010130b973092d21e7f3db560bf67" resname="flash.success.network.added.to.favourites">
+        <source>flash.success.network.added.to.favourites</source>
+        <target state="new">flash.success.network.added.to.favourites</target>
+        <jms:reference-file line="624">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6790aa2133259d8601ef8ba5e79e371755b2c8bf" resname="flash.success.network.archived">
+        <source>flash.success.network.archived</source>
+        <target state="new">flash.success.network.archived</target>
+        <jms:reference-file line="397">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8fd5e428f490e482a4bdba1733840c5fae0331e0" resname="flash.success.network.created">
+        <source>flash.success.network.created</source>
+        <target state="new">flash.success.network.created</target>
+        <jms:reference-file line="96">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b6d86118a3f2797d8d88bb833947c09d39980a51" resname="flash.success.network.deleted">
+        <source>flash.success.network.deleted</source>
+        <target state="new">flash.success.network.deleted</target>
+        <jms:reference-file line="357">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="209ceed8cd4f824f1f9b3b3dfe94731b3f8a6f14" resname="flash.success.network.removed.from.favourites">
+        <source>flash.success.network.removed.from.favourites</source>
+        <target state="new">flash.success.network.removed.from.favourites</target>
+        <jms:reference-file line="653">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb26594016b7773f0f9ea3816a0624b9fa4043a4" resname="flash.success.network.updated">
+        <source>flash.success.network.updated</source>
+        <target state="new">flash.success.network.updated</target>
+        <jms:reference-file line="308">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ddb5ea158464cbe0653a90205cab8add30a70d5b" resname="flash.success.news.created">
+        <source>flash.success.news.created</source>
+        <target state="new">flash.success.news.created</target>
+        <jms:reference-file line="122">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40b823d28dafce1d25c70cc4e2eec97feac51535" resname="flash.success.news.deleted">
+        <source>flash.success.news.deleted</source>
+        <target state="new">flash.success.news.deleted</target>
+        <jms:reference-file line="350">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d82b7653c31931c5fa4ea90fe0a897a9a667ae72" resname="flash.success.news.updated">
+        <source>flash.success.news.updated</source>
+        <target state="new">flash.success.news.updated</target>
+        <jms:reference-file line="314">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2ae7fa7f25dcc270504210093cc0e65069399032" resname="flash.success.notifications.saved">
+        <source>flash.success.notifications.saved</source>
+        <target state="new">flash.success.notifications.saved</target>
+        <jms:reference-file line="46">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/NotificationSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="510a15f61afadde0e89160626c8f8a05f96c9703" resname="flash.success.organization_active %name%">
+        <source>flash.success.organization_active %name%</source>
+        <target state="new">flash.success.organization_active %name%</target>
+        <jms:reference-file line="1129">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cc9f62e668b0c990191f5b0578b21511788c6e15" resname="flash.success.organization_archived %name%">
+        <source>flash.success.organization_archived %name%</source>
+        <target state="new">flash.success.organization_archived %name%</target>
+        <jms:reference-file line="877">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e72d8270070908695ef5d33be1cd9d4e75c18ceb" resname="flash.success.organization_created %name%">
+        <source>flash.success.organization_created %name%</source>
+        <target state="new">flash.success.organization_created %name%</target>
+        <jms:reference-file line="247">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="44d92a7ef533c0975e5e14092f92af18d39a6dbb" resname="flash.success.organization_status_closed %name%">
+        <source>flash.success.organization_status_closed %name%</source>
+        <target state="new">flash.success.organization_status_closed %name%</target>
+        <jms:reference-file line="982">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a8b10a608730682c8a9023181798b767a78f6ed1" resname="flash.success.organization_status_not_reachable %name%">
+        <source>flash.success.organization_status_not_reachable %name%</source>
+        <target state="new">flash.success.organization_status_not_reachable %name%</target>
+        <jms:reference-file line="1007">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c6bb7c98a384594267043cf73bab96cada7bf5c" resname="flash.success.organization_updated %name%">
+        <source>flash.success.organization_updated %name%</source>
+        <target state="new">flash.success.organization_updated %name%</target>
+        <jms:reference-file line="699">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9a3a3a57da2774af1e20f53cfc05ffcfd61b60ff" resname="flash.success.password.error">
+        <source>flash.success.password.error</source>
+        <target state="new">flash.success.password.error</target>
+        <jms:reference-file line="105">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f109f20e18bfa3d79f91fc7b7ea95cb39dbd17cd" resname="flash.success.password_changed">
+        <source>flash.success.password_changed</source>
+        <target state="new">flash.success.password_changed</target>
+        <jms:reference-file line="96">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/PasswordResetController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="198fe2f145d6b59b1e343b3ac2375fdeee45e4c4" resname="flash.success.payment_blocked">
+        <source>flash.success.payment_blocked</source>
+        <target state="new">flash.success.payment_blocked</target>
+        <jms:reference-file line="117">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PaymentmethodController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c0417d028466df9d44d92c223fcb9089f9db148" resname="flash.success.payment_unblocked">
+        <source>flash.success.payment_unblocked</source>
+        <target state="new">flash.success.payment_unblocked</target>
+        <jms:reference-file line="144">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PaymentmethodController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8b2506ce1a05e492c327de456409b36bd70a68f6" resname="flash.success.piece.added.to.favourites %piecetitle%">
+        <source>flash.success.piece.added.to.favourites %piecetitle%</source>
+        <target state="new">flash.success.piece.added.to.favourites %piecetitle%</target>
+        <jms:reference-file line="755">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1ba86d1e34a1fa1c9265c3d02255d5f604502726" resname="flash.success.piece.created.notPublished %piecetitle%">
+        <source>flash.success.piece.created.notPublished %piecetitle%</source>
+        <target state="new">flash.success.piece.created.notPublished %piecetitle%</target>
+        <jms:reference-file line="180">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29ae15fcf64bc26a5f798fbc9a20f589d9d5acaa" resname="flash.success.piece.removed.from.favourites %piecetitle%">
+        <source>flash.success.piece.removed.from.favourites %piecetitle%</source>
+        <target state="new">flash.success.piece.removed.from.favourites %piecetitle%</target>
+        <jms:reference-file line="783">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ee2e1cc32d03014aaf4f5a6a83184f4a0ab2b8b6" resname="flash.success.piece.unpublished %piecetitle%">
+        <source>flash.success.piece.unpublished %piecetitle%</source>
+        <target state="new">flash.success.piece.unpublished %piecetitle%</target>
+        <jms:reference-file line="368">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="51e6dd6bf9481ae2c11cecc14e469414c453556d" resname="flash.success.piece.updated %piecetitle%">
+        <source>flash.success.piece.updated %piecetitle%</source>
+        <target state="new">flash.success.piece.updated %piecetitle%</target>
+        <jms:reference-file line="643">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b1425491b02fc740a00751fd51ff979c3e674c54" resname="flash.success.piece_published %name%">
+        <source>flash.success.piece_published %name%</source>
+        <target state="new">flash.success.piece_published %name%</target>
+        <jms:reference-file line="290">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2956af1ba78040c6ff0ce4a27800a8ed1735a6af" resname="flash.success.profile.update.admin.queue">
+        <source>flash.success.profile.update.admin.queue</source>
+        <target state="new">flash.success.profile.update.admin.queue</target>
+        <jms:reference-file line="21">/home/mirela/Documents/thea/theaterjobs21/src/Theaterjobs/ProfileBundle/Resources/views/Profile/successProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dfd7e4ccbbf00e6e157dafb694d1047947d23673" resname="flash.success.this_account_is_deletable">
+        <source>flash.success.this_account_is_deletable</source>
+        <target state="new">flash.success.this_account_is_deletable</target>
+        <jms:reference-file line="683">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e08e90c34d5bf73b31570f5241effe1b76d6c45" resname="flash.success.this_account_is_not_deletable">
+        <source>flash.success.this_account_is_not_deletable</source>
+        <target state="new">flash.success.this_account_is_not_deletable</target>
+        <jms:reference-file line="663">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="817ef528a7d093ad2007be7378bfdba9c2400cf7" resname="flash.success.user.rights.updated">
+        <source>flash.success.user.rights.updated</source>
+        <target state="new">flash.success.user.rights.updated</target>
+        <jms:reference-file line="359">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/AccountSettingsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ca42d858ae25d6b7d58ffbf6a4f9795b7be86f3" resname="flash.user.login.bad.credentials">
+        <source>flash.user.login.bad.credentials</source>
+        <target state="new">flash.user.login.bad.credentials</target>
+        <jms:reference-file line="186">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Component/Authentication/Handler/AuthenticationHandler.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8dee830b31c0935372e70f52e59dc0ef6abbed83" resname="flash.user.login.many.attempts">
+        <source>flash.user.login.many.attempts</source>
+        <target state="new">flash.user.login.many.attempts</target>
+        <jms:reference-file line="177">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Component/Authentication/Handler/AuthenticationHandler.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fcc0f8ed954f021587acb510b2022118f95d744" resname="flash.warning.become.member">
+        <source>flash.warning.become.member</source>
+        <target state="new">flash.warning.become.member</target>
+        <jms:reference-file line="194">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c0c57bfb69d33052dfa0c7120277b6893600639" resname="iban.added.in.blacklist">
+        <source>iban.added.in.blacklist</source>
+        <target state="new">iban.added.in.blacklist</target>
+        <jms:reference-file line="65">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a89d4f0f9fcb2a2fe3e0742393d185f8fecb6c09" resname="iban.already.in.blacklist">
+        <source>iban.already.in.blacklist</source>
+        <target state="new">iban.already.in.blacklist</target>
+        <jms:reference-file line="53">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="efbc96b6d5f656e24f97b22910454b164f3cef67" resname="iban.removed.from.blacklist">
+        <source>iban.removed.from.blacklist</source>
+        <target state="new">iban.removed.from.blacklist</target>
+        <jms:reference-file line="114">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c7af8612431ff133a2969974003a3afe8b75627" resname="tj.debit.account.changed.mail.subject">
+        <source>tj.debit.account.changed.mail.subject</source>
+        <target state="new">tj.debit.account.changed.mail.subject</target>
+        <jms:reference-file line="178">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d94549953c86fc44afbccbb493d1864b6e09a79" resname="tj.error.site.exists">
+        <source>tj.error.site.exists</source>
+        <target state="new">tj.error.site.exists</target>
+        <jms:reference-file line="66">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Controller/SiteInfoController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2ee0fce3195c38b003775069935ddaee0787890" resname="tj.mail.body.account.withdraw">
+        <source>tj.mail.body.account.withdraw</source>
+        <target state="new">tj.mail.body.account.withdraw</target>
+        <jms:reference-file line="459">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea3f822d4fcee34b2edcc240082e8d5753cab44b" resname="tj.mail.subject.account.withdraw">
+        <source>tj.mail.subject.account.withdraw</source>
+        <target state="new">tj.mail.subject.account.withdraw</target>
+        <jms:reference-file line="456">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1024a0d4b31d5ae5c7d9a963df2cca46aa00de67" resname="tj.membership.paypal.bill.description">
+        <source>tj.membership.paypal.bill.description</source>
+        <target state="new">tj.membership.paypal.bill.description</target>
+        <jms:reference-file line="88">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d630a7085b7fc60d8f1604311817da9e87eaa8" resname="tj.resetting.check_email">
+        <source>tj.resetting.check_email</source>
+        <target state="new">tj.resetting.check_email</target>
+        <jms:reference-file line="129">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b1fcbc6d72af69c43ee7584c9750e2e993a4c80" resname="tj.resetting.password_already_requested">
+        <source>tj.resetting.password_already_requested</source>
+        <target state="new">tj.resetting.password_already_requested</target>
+        <jms:reference-file line="93">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dafefdb5bec61e86021b285640a5ea4b69471cd3" resname="tj.resetting.request.invalid_username">
+        <source>tj.resetting.request.invalid_username</source>
+        <target state="new">tj.resetting.request.invalid_username</target>
+        <jms:reference-file line="73">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/UserBundle/Controller/ResettingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6643c316a4269d1878959f7dc4b4c6242a07567b" resname="tj.technical.problem.try_again">
+        <source>tj.technical.problem.try_again</source>
+        <target state="new">tj.technical.problem.try_again</target>
+        <jms:reference-file line="158">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+        <jms:reference-file line="121">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

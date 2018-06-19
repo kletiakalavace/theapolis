@@ -1,0 +1,14 @@
+{% import '@TheaterjobsProfile/profileMacro.twig' as pm %}
+
+{{ pm.profileLocation(entity, owner) }}
+
+<script>
+    var LatLng = "";
+    {% if entity.contactSection and entity.contactSection.geolocation %}
+    LatLng = "{{ entity.contactSection.geolocation }}";
+    oldLatLng = LatLng.split(",");
+    $('#locate').click(function (e) {
+        initialize();
+    });
+    {% endif %}
+</script>

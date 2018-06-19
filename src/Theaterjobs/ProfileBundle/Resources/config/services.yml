@@ -1,0 +1,27 @@
+services:
+
+  twig.profile.cast.to.array:
+    public: false
+    class: Theaterjobs\ProfileBundle\Twig\CastToArrayExtension
+    tags:
+      - { name: twig.extension }
+
+  twig.profile.country:
+    public: false
+    class: Theaterjobs\ProfileBundle\Twig\CountryExtension
+    tags:
+      - { name: twig.extension }
+
+  twig.profile.photo:
+    public: false
+    class: Theaterjobs\ProfileBundle\Twig\ProfilePhotoExtension
+    arguments: ["@service_container"]
+    tags:
+      - { name: twig.extension }
+
+  twig.profile.media.photo:
+    public: false
+    class: Theaterjobs\ProfileBundle\Twig\ProfileMediaPhotoExtension
+    arguments: ["@service_container",'@router']
+    tags:
+      - { name: twig.extension }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:41:13Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="46606295c92b477982c74c8510ae9fb13bff7d5f" resname="dashboard.notification.nameChange.approved %new_firstname% %new_lastname%">
+        <source>dashboard.notification.nameChange.approved %new_firstname% %new_lastname%</source>
+        <target>dashboard.notification.nameChange.approved %new_firstname% %new_lastname%</target>
+        <jms:reference-file line="162">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5437cd413d9b98b3e0683ceee650e9b13aca243" resname="dashboard.notification.nameChange.approved.description %new_firstname% %new_lastname%">
+        <source>dashboard.notification.nameChange.approved.description %new_firstname% %new_lastname%</source>
+        <target>dashboard.notification.nameChange.approved.description %new_firstname% %new_lastname%</target>
+        <jms:reference-file line="170">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="34cdff3b380fd17929739439a2ed1dcddb4d0e10" resname="dashboard.notification.nameChange.rejected %old_firstname% %old_lastname%">
+        <source>dashboard.notification.nameChange.rejected %old_firstname% %old_lastname%</source>
+        <target>dashboard.notification.nameChange.rejected %old_firstname% %old_lastname%</target>
+        <jms:reference-file line="236">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f77f04ddac5d94f343d19483395e081579883a44" resname="dashboard.notification.nameChange.rejected.description">
+        <source>dashboard.notification.nameChange.rejected.description</source>
+        <target>dashboard.notification.nameChange.rejected.description</target>
+        <jms:reference-file line="244">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d6cdb56066ef9adc8aa82666cab14ad241200e5" resname="tj.notification.order.received.waiting.money">
+        <source>tj.notification.order.received.waiting.money</source>
+        <target>tj.notification.order.received.waiting.money</target>
+        <jms:reference-file line="288">/var/www/theaterjobs21/src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

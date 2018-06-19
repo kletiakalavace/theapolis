@@ -1,0 +1,183 @@
+{% import '::macro.html.twig' as m %}
+{% import '@TheaterjobsProfile/profileMacro.twig' as pm %}
+
+{# pass subcategories array to get the title from the checked value used in filter bar #}
+{{ pm.peopleFilterBar(form.vars.data, form, subcategories) }}
+
+<div class="col-xs-6 col-xxs-12">
+    <p class="p-alt">
+        <small>{{ knp_results(profiles, path('tj_profile_profile_list')) }}</small>
+    </p>
+</div>
+
+<div>
+    <aside class="col-md-4 col-xs-12 pull-right">
+        {% if category %}
+            <div class="filter-group panel" style="margin-top:15px; ">
+                <h3 class="toggle collapsed" data-toggle="collapse" data-target="#category-subcategories"
+                    aria-expanded="false">{{ "people.subtitle.subcategories" | trans }}
+                    <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset("bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle") }}"></use>
+                    </svg>
+                </span>
+                </h3>
+
+                <div class="collapse filter-group-content" id="category-subcategories" aria-expanded="false"
+                     style="height: 0px;">
+                    <div class="collapse-body">
+                        <h3 class="h3-desktop">{{ "people.subtitle.subcategories" | trans }}</h3>
+                        <ul class="list-unstyled" id="category">
+                            {% for var in form.subcategories %}
+                                {% set subcategoriesCounts = aggs.aggregations.subcategories.buckets | aggregation_count( var.vars.value) %}
+                                <li class="{{ subcategoriesCounts > 0 ? '':'hidden' }}">
+                                    <div class="checkbox">
+                                        <label class="subcategory-sidebar">
+                                            {{ form_widget(var, { 'attr': {'onchange': 'filterListSearchForm()'}}) }}
+                                            <span class="faux-checkbox"></span>
+                                            {{ var.vars.label }}
+                                        </label>
+                                        <span class="checkbox-number">
+                                            {{ subcategoriesCounts }}
+                                        </span>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            {% if aggs.categories is defined %}
+                <div class="filter-group panel" style="margin-top:15px;">
+                    <h3 class="toggle collapsed" data-toggle="collapse" data-target="#category-subcategories"
+                        aria-expanded="false">{{ "people.subtitle.categories" | trans }}
+                        <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset("bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle") }}"></use>
+                    </svg>
+                </span>
+                    </h3>
+
+                    <div class="collapse filter-group-content" id="category-subcategories" aria-expanded="false"
+                         style="height: 0px;">
+                        <div class="collapse-body">
+                            <h3 class="h3-desktop">{{ "people.subtitle.categories" | trans }}</h3>
+                            <ul class="list-unstyled" id="category">
+                                {% for categoryAggs in aggs.categories.buckets %}
+                                    {% if categoryAggs.doc_count > 0 %}
+                                        <li>
+                                            <div class="checkbox">
+                                                <label class="subcategory-sidebar">
+                                                    <input type="checkbox" onclick="peopleCategoryCheckBox(this);"
+                                                           data-category="1"
+                                                           value="{{ categoryAggs.key|lower|replace(' ','') }}">
+                                                    <span class="faux-checkbox"></span>
+                                                    {{ categoryAggs.title }}
+                                                </label>
+                                                <span class="checkbox-number">
+                                                {{ categoryAggs.doc_count }}
+                                            </span>
+                                            </div>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% do form.subcategories.setRendered %}
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="panel panel-admin" style="margin-top:15px;">
+                <h3 class="toggle collapsed" data-toggle="collapse" data-target="#role-age" aria-expanded="false">
+                    {{ "people.subtitle.status" | trans }}
+                    <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset("bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle") }}"></use>
+                    </svg>
+                </span>
+                </h3>
+
+                <div class="collapse" id="role-age" aria-expanded="false" style="height: 0px;">
+                    <div class="collapse-body">
+                        <div class="form-group">
+                            {{ form_widget(form.published,{ 'attr': {'onchange': 'filterListSearchForm()'}}) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </aside>
+</div>
+
+<!-- END Filters -->
+<div class="col-md-8 col-xs-12">
+    <div class="row row-flex row-multi-row people-list">
+        {% for profile in profiles %}
+            {% set profilePhoto =  profile_photo(profile) %}
+            {% set filter = '' %}
+            {% if profile.mediaImage|first.filter is defined %}
+                {% set filter = profile.mediaImage|first.filter %}
+            {% endif %}
+            {% set isPublished = profile.isPublished ? 1 : 0 %}
+
+            <div class="col-md-6 col-sm-6 col-xs-6 col-xxs-12 {% if not (isPublished) and not is_granted('ROLE_ADMIN') %} status-unpublished-favorite {% endif %}">
+                <div class="profile">
+                    <div class="photo-overflow-visible profile-list-favorite">
+                        <div class="profile-photo-md">
+                            <figure class="{{ filter }}">
+                                <img src="{{ profilePhoto }}">
+                            </figure>
+                        </div>
+                        {% if app.user %}
+                            {{ profile | favorite(app.user.profile.userFavourite) }}
+                        {% endif %}
+                    </div>
+                    <div class="profile-content contentFavourite-peopleList">
+                        <div class="peoplelist-center">
+                            <h4 class="nameFavorite-peopleList">
+                                {% if isPublished or is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('tj_profile_profile_show', { 'slug': profile.slug }) }}">
+                                    {% endif %}
+                                    {{ profile | highlight('subtitle.autocomplete') }}
+                                    {% if isPublished or is_granted('ROLE_ADMIN') %}
+                                </a>
+                                {% endif %}
+                            </h4>
+                            <small>
+                                {{ profile.subtitle2 is defined ? profile | highlight('subtitle2.autocomplete') : '' }}
+                            </small>
+                            {% if not isPublished and profile|un_favorite(app.user,'people') %}
+                                <a class="removeFavoriteList" onclick="removeFavorite('{{ profile.slug }}')">
+                                    {{ 'favorite.list.people.remove.from.favorites' | trans }}
+                                </a>
+                            {% endif %}
+                            <div class="pull-right">
+                                {% if not isPublished and profile.unPublishedAt is defined %}
+                                    <p class="desc-dateFavourtiePeople"> {{ "people.label.unpublished" | trans }} {{ profile.unPublishedAt | ago }} </p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="navigation">
+        {{ knp_pagination_render(profiles) }}
+    </div>
+</div>
+<script>
+    {% if app.request.isXmlHttpRequest %}
+        {% if category %}
+            document.getElementById('searchCategory').textContent = '{{ category.title }}';
+        {% else %}
+            document.getElementById('searchCategory').textContent = '{{ "people.title.people" | trans }}';
+        {% endif %}
+    {% endif %}
+</script>

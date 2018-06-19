@@ -1,0 +1,319 @@
+{% extends "::base.html.twig" %}
+{% import '::macro.html.twig' as m %}
+{% import '@TheaterjobsProfile/profileMacro.twig' as pm %}
+
+{% set title = entity | defaultName %}
+
+{% block css %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+        "@TheaterjobsMainBundle/Resources/public/components/blueimp-gallery/css/blueimp-gallery.css"
+        "@TheaterjobsMainBundle/Resources/public/components/blueimp-gallery/css/blueimp-gallery-indicator.css"
+        "@TheaterjobsMainBundle/Resources/public/components/raty/lib/jquery.raty.css"
+        "@TheaterjobsMainBundle/Resources/public/components/slick-carousel/slick/slick.css"
+        "@TheaterjobsProfileBundle/Resources/public/less/audioplayer.less" %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+{% block title %}
+    title
+{% endblock %}
+
+{% block modal %}
+    {{ parent() }}
+    {{ m.crop }}
+{% endblock %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('profileShow')) }}
+    <div class="container show-people">
+        <div class="block">
+            <!-- Profile header -->
+            <div class="profile-header">
+                <!-- Profile Picture -->
+                <div class="profile-header-left">
+                    {{ pm.profilePicture(edit_form_image,entity,owner) }}
+                </div>
+                <!-- Profile Subtitle -->
+                <div class="profile-header-content">
+                    {{ pm.profileUndertitle(entity,owner) }}
+                </div>
+            </div>
+
+            <!-- Highlights -->
+            {% if is_granted('ROLE_USER') %}
+                <div class="row row-flex no-flex-sm" id="profileBoxes">
+                    {{ pm.profileBoxes(entity,yearsField,owner) }}
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+
+
+    <!-- Display slider -->
+
+    {{ pm.profileSlider(entity, owner) }}
+
+
+    <!-- Text content -->
+    <div class="container">
+        <div class="block">
+
+            <div class="row">
+                <div class="{% if entity.profileActualityText is not null or (entity.profileActualityText is null and owner) %}col-sm-8 col-xs-12 {% else %}center col-sm-8 col-xs-12 {% endif %}">
+                    {% if (entity.biographySection and entity.biographySection.biography is not empty) or owner %}
+                        <h2>{{ 'people.show.block.mainTitle.bio' | trans }}</h2>
+                        <div class="bio-block">
+                            {{ pm.profileBio(entity, owner) }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="{% if (entity.biographySection and entity.biographySection.biography is not empty) or owner %}col-sm-4 col-xs-12 {% else %}center col-sm-4 col-xs-12 {% endif %}">
+                    {% if entity.profileActualityText is not null or (entity.profileActualityText is null and owner) %}
+                        <h2> {{ 'people.show.block.mainTitle.latestProject' | trans }} </h2>
+                        <div class="latest-block">
+                            {{ pm.profileActuality(entity, owner) }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Detail blocks -->
+    <div class="no-overflow">
+        <div class="container">
+            {% if is_granted('ROLE_USER') %}
+            <div class="row grid-layout grid-ipad-responsive" data-masonry>
+                {% if entity.showProfileBoxContent or owner %}
+                    <div class="col-md-6 col-xs-12" data-masonry-item>
+                        <div class="panel panel-large panel-primary">
+                            <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.profile'| trans }}
+                                <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                            </h2>
+                            <div class="profile-block">
+                                {{ pm.profileGeneral(entity, owner) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if participations|length > 0 or owner %}
+                    <div class="col-md-6 col-xs-12" data-masonry-item>
+                        <div class="panel panel-large panel-primary-dark production-block">
+                            <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.productions'| trans }}
+                                <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                            </h2>
+                            <div class="production-block">
+                                {{ pm.profileProduction(entity,owner,participations) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if experiences|length > 0 or owner %}
+                    <div class="col-md-6 col-xs-12" data-masonry-item>
+                        <div class="panel panel-large panel-gray-dark">
+                            <h2 class="panel-head">
+                                {{ 'people.show.detailBlock.mainTitle.experience'| trans }}
+                                <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                            </h2>
+                            <div class="experience-block">
+                                {{ pm.profileExperience(entity,owner,experiences) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if (entity.qualificationSection is not null and  entity.qualificationSection.qualifications | length > 0) or owner %}
+                    <div class="col-md-6 col-xs-12" data-masonry-item>
+
+                        <div class="panel panel-large panel-secondary">
+                            <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.education'| trans }}
+                                <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                            </h2>
+                            <div class="education-block">
+                                {{ pm.profileEducation(entity,owner) }}
+                            </div>
+                        </div>
+
+                    </div>
+                {% endif %}
+                {% endif %}
+
+                {% if not is_granted('ROLE_USER') %}
+                    <div class="col-md-6 col-xs-12" data-masonry-item>
+
+                        <div class="panel panel-large panel-secondary">
+                            <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.moreInfo'| trans }}
+                                <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                            </h2>
+                            <div class="moreinfo-block">
+                                <a data-toggle="modal" data-hash="login"
+                                   data-target="#myModal"
+                                   href="{{ path('tj_main_default_login_modal') }}">{{ 'people.show.detailBlock.loginForVisitors'| trans }}</a>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endif %}
+
+                {% if (entity.contactSection is not null and entity.contactSection.contact is not null) or owner %}
+                    <div class="col-md-6 col-xs-12" data-masonry-item>
+                        <div class="panel panel-large panel-violet">
+                            <h2 class="panel-head"> {{ 'people.show.detailBlock.mainTitle.contact'| trans }}
+                                <span class="toggle-arrow">
+                                    <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                    </svg>
+                                </span>
+                            </h2>
+                            <div class="contact-block">
+                                {{ pm.profileContact(entity, owner) }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if is_granted('ROLE_USER') %}
+                    {% if entity.oldExperience is not null %}
+                        <div class="col-md-6 col-xs-12" data-masonry-item>
+
+                            <div class="panel panel-large panel-gray-dark" id="experienceOld_block">
+                                <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.oldExperience'| trans }}
+                                    <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                                </h2>
+                                {% if owner %}
+                                    <span class="box-title-note">({{ "people.show.detailBlock.mainTitle.oldExperience.description"|trans }}
+                                        )</span>
+                                {% endif %}
+                                <div class="experienceOld-block">
+                                    {{ pm.profileOldExperience(entity, owner) }}
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endif %}
+                    {% if entity.oldEducation is not null %}
+                        <div class="col-md-6 col-xs-12" data-masonry-item>
+
+                            <div class="panel panel-large panel-secondary" id="educationOld_block">
+                                <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.oldEducation'| trans }}
+                                    <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                                </h2>
+                                {% if owner %}
+                                    <span class="box-title-note">({{ "people.show.detailBlock.mainTitle.oldEducation.description"|trans }}
+                                        )</span>
+                                {% endif %}
+                                <div class="educationOld-block">
+                                    {{ pm.profileOldEducation(entity, owner) }}
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endif %}
+
+                    {% if entity.oldExtras is not null %}
+                        <div class="col-md-6 col-xs-12" data-masonry-item>
+
+                            <div class="panel panel-large panel-primary panel-bleed-right" id="extraOld_block">
+                                <h2 class="panel-head">{{ 'people.show.detailBlock.mainTitle.oldExtras'| trans }}
+                                    <span class="toggle-arrow">
+                                        <svg class="icon-svg icon-svg-primary icon-inline" width="20" height="20">
+                                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                        </svg>
+                                    </span>
+                                </h2>
+                                {% if owner %}
+                                    <span class="box-title-note">({{ "people.show.detailBlock.mainTitle.oldExtras.description"|trans }}
+                                        )</span>
+                                {% endif %}
+                                <div class="extrasOld-block">
+                                    {{ pm.profileOldExtras(entity, owner) }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script>
+        //Vars that need backend info
+        let oldLatLng = null;
+        {% if entity.contactSection and entity.contactSection.geolocation %}
+        oldLatLng = "{{ entity.contactSection.geolocation }}".split(",");
+        {% endif %}
+
+        //JQuery events that needs backend info
+        $('#action_favorite').on('click', function () {
+            $(this).tooltip('destroy');
+            const action = $(this).attr('data-action');
+            const slug = "{{ entity.slug }}";
+            let url = (action === 'remove') ? 'tj_profile_remove_favourite_root' : 'tj_profile_favourite_root';
+            url = Routing.generate(url, {slug: slug});
+            $.get(url, function (data) {
+                if (data.status === 'SUCCESS') {
+                    if (action === 'remove') {
+                        $('#action_favorite').removeClass('active').attr('data-action', 'add');
+                        $('.favorite-icon-name').addClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                    } else {
+                        $('#action_favorite').addClass('active').attr('data-action', 'remove');
+                        $('.favorite-icon-name').removeClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                        bootboxAfterFavoriteSuccesful();
+                    }
+                }
+            })
+        });
+    </script>
+    {% javascripts
+        "@TheaterjobsMainBundle/Resources/public/js/resizeImage.js"
+        "@TheaterjobsMainBundle/Resources/public/js/upload.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js"
+        '@TheaterjobsMainBundle/Resources/public/js/map/location.js'
+        "@TheaterjobsMainBundle/Resources/public/components/modernizr/modernizr.js"
+        '@TheaterjobsProfileBundle/Resources/public/js/profile/show.js'
+        "@TheaterjobsProfileBundle/Resources/public/js/profile/prodEmpl.js" %}
+        <script src="{{ asset_url }}"></script>
+        <script>
+            var publicswitch = {{ entity.isPublished|number_format }};
+        </script>
+    {% endjavascripts %}
+{% endblock %}

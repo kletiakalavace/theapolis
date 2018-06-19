@@ -1,0 +1,115 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="block">
+
+            <!-- Page header -->
+            <div class="page-header">
+                <h1>
+                    <span>
+                        {{ 'admin.vio.title.vioList'| trans }}
+                    </span>
+                </h1>
+            </div>
+            {{ form_start(form,{'attr':{'id' : 'formVioSearch'}}) }}
+            {{ form_end(form) }}
+            <table id="data-table" class="display nowrap hidden" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th class="text-danger" data-name="organization">
+                        {{ "admin.vio.label.Organization"|trans }}
+                    </th>
+                    <th class="text-danger" data-name="interval">
+                        {{ "admin.vio.label.Interval"|trans }}
+                    </th>
+                    <th class="text-danger" data-name="createdAt">
+                        {{ "admin.vio.label.created"|trans }}
+                    </th>
+                    <th class="text-danger no-sort">
+                        {{ "admin.vio.label.Action"|trans }}
+                    </th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="row admin-pagination">
+                <div class="col-md-8 col-sm-12">
+                    <div class="dataTables_paginate paging_bootstrap_extended" id="datatable_ajax_paginate">
+                        <div class="pagination-panel">
+                            <span{{ 'admin.nameChange.label.page'| trans }}></span>
+                            <a href="javascript:;" data-page="0" disabled
+                               class="circle-red datatable-paginate-btn datatable-paginate-previous"
+                               id="data-table-previous"><i class="fa fa-angle-left"></i></a>
+                            <input value="1" id="data-table-page-number" type="text"
+                                   class="pagination-panel-input form-control input-sm input-inline input-mini"
+                                   maxlength="5">
+                            <a href="javascript:;" data-page="2"
+                               class="circle-red datatable-paginate-btn datatable-paginate-next"
+                               id="data-table-next"><i class="fa fa-angle-right"></i></a>
+                            <span>{{ 'admin.nameChange.label.of'| trans }}</span> <span
+                                    class="pagination-panel-total"></span>
+                        </div>
+                    </div>
+                    <div class="dataTables_length" id="datatable_ajax_length">
+                        <label>
+                            <span id="data-table-pages-total"></span>
+                            <span class="seperator">|</span>
+                            <span id="data-table-total" class="seperator"></span>
+                            <span>{{ 'admin.nameChange.label.view'| trans }}</span>
+                            <select id="data-table-page-length" aria-controls="datatable_ajax"
+                                    class="form-control input-xs input-sm input-inline select-page-length">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                            </select> <span>{{ 'admin.nameChange.label.records'| trans }}</span>
+                        </label>
+                    </div>
+                    <div class="dataTables_info" id="datatable_ajax_info" role="status" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        "@TheaterjobsAdminBundle/Resources/js/dataTable/load.js" %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        dataTableURL = Routing.generate('tj_admin_load_vio', {'_locale': locale});
+        adminSearchForm = $('#formVioSearch');
+
+        $(() => {
+            dataTableInitialize();
+        });
+
+        vioSave = (id) => {
+            const el = $('#interval-' + id);
+            const oldInterval = parseInt(el.attr('data-old'));
+            const interval = parseInt(el.val());
+            if (oldInterval !== interval) {
+                $.ajax({
+                    type: 'PUT',
+                    url: Routing.generate('admin_vio_update', {id: id, '_locale': locale}),
+                    data: {interval: interval},
+                    success: (data) => {
+                        if (data.success) {
+                            popupCase('Interval was updated successfully!');
+                        }
+                    },
+                    error: () => {
+                        el.val(oldInterval);
+                        serverError();
+                    }
+                });
+            }
+        };
+    </script>
+{% endblock %}

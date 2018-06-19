@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+{% block breadcrumb %}
+    <li>
+        <a href="{{path('tj_inserate_job_route_home')}}">{{ 'tj.breadcrumbs.job.index' | trans }}</a>
+    </li>
+    <li>{{'tj.breadcrumbs.job.option.choose' | trans}}</li>
+    {% endblock %}
+    {% block content %}
+    <div class="row">
+        {% for entity in entities %}
+            <div class="col-md-3">
+
+                <div class="thumbnail">
+                    <img src="">
+                    <a href="{{path('tj_organization_show',{slug:entity.slug})}}">{{entity.name}}</a>
+                </div>
+
+            </div>
+        {% endfor %}
+        <div class="col-md-3">
+
+            <div class="thumbnail">
+                <img src="">
+                {% if education is defined  and education%}
+                    <a href="{{path('tj_inserate_education_route_new',{orgaId:-1})}}">{{'tj.insert.education.myself' | trans}}</a>
+                {% else %}
+                    <a href="{{path('tj_inserate_job_route_new',{orgaId:-1})}}">{{'tj.insert.job.myself' | trans}}</a>
+                {% endif %}
+            </div>
+
+        </div>
+        <div class="col-md-3">
+
+            <div class="thumbnail">
+                <img src="">
+                <a href="{{path('tj_main_organization_home')}}">{{'tj.apply.for.new.organization' | trans}}</a>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

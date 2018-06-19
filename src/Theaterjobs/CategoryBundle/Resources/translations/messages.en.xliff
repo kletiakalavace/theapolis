@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2017-09-05T16:09:10Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="952f79a687be9de0dffd8eb8ea13c8a33bbc84a5" resname="tj.category.creation">
+        <source>tj.category.creation</source>
+        <target>tj.category.creation</target>
+        <jms:reference-file line="4">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73b47eb7c0fff0da53d6c69f542fb04a487efd42" resname="tj.category.edit">
+        <source>tj.category.edit</source>
+        <target>tj.category.edit</target>
+        <jms:reference-file line="4">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea5e3071a19bd27f211b1512f824dce49f3b248c" resname="tj.category.jobs.within">
+        <source>tj.category.jobs.within</source>
+        <target>tj.category.jobs.within</target>
+        <jms:reference-file line="26">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f2c2ef5288defa76d196c3d682097cccea676d7b" resname="tj.category.list">
+        <source>tj.category.list</source>
+        <target>tj.category.list</target>
+        <jms:reference-file line="4">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5630592034950d1c2485be5e52b728115c027d4a" resname="tj.category.no.orga.specified">
+        <source>tj.category.no.orga.specified</source>
+        <target>tj.category.no.orga.specified</target>
+        <jms:reference-file line="66">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/show.html.twig</jms:reference-file>
+        <jms:reference-file line="107">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf5c051ddf97cf4f039570ba57eb496b20dd9e7b" resname="tj.category.profiles.within">
+        <source>tj.category.profiles.within</source>
+        <target>tj.category.profiles.within</target>
+        <jms:reference-file line="24">/var/www/theaterjobs21/src/Theaterjobs/CategoryBundle/Resources/views/Category/show.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

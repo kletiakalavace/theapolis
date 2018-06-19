@@ -1,0 +1,165 @@
+theaterjobs_file_system:
+    resource: "@TheaterjobsFileSystemBundle/Controller/"
+    type:     annotation
+    prefix:   /files
+    options: { i18n: false }
+
+theaterjobs_inserate:
+    resource: "@TheaterjobsInserateBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/
+    defaults: { _locale: "%locale%"}
+    options: { i18n: false }
+
+fos_user_registration_confirmed_choice:
+  path: /{_locale}/register/confirmed/{choice}
+  defaults: { _controller: TheaterjobsUserBundle:Registration:confirmed, _locale: "%locale%" }
+  methods: [GET]
+  options: { i18n: false }
+
+fos_user_registration_confirm_choice:
+  path: /{_locale}/register/confirm/{choice}/{token}
+  defaults: { _controller: TheaterjobsUserBundle:Registration:confirm, _locale: "%locale%" }
+  options: { i18n: false }
+
+fos_user_registration_check_email_choice:
+  path: /{_locale}/register/check-email/{choice}
+  defaults: { _controller: TheaterjobsUserBundle:Registration:checkEmail, _locale: "%locale%" }
+  requirements: { choice: 'job|member|free' }
+  options: { i18n: false }
+
+fos_user_registration_register_choise:
+  path: /{_locale}/register/{choice}
+  defaults: { _controller: TheaterjobsUserBundle:Registration:register, _locale: "%locale%", choice: "%defaultRegistrationChoice%"}
+  requirements: { choice: 'job|member|free' }
+  options: { i18n: false }
+
+
+theaterjobs_user:
+    resource: "@TheaterjobsUserBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/user
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+theaterjobs_message:
+    resource: "@TheaterjobsMessageBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/messages
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+theaterjobs_membership:
+    resource: "@TheaterjobsMembershipBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/membership
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+theaterjobs_profile:
+    resource: "@TheaterjobsProfileBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/people
+    defaults: { _locale: "%locale%" }
+
+theaterjobs_admin:
+    resource: "@TheaterjobsAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/admin
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+theaterjobs_news:
+    resource: "@TheaterjobsNewsBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/news
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+theaterjobs_category:
+    resource: "@TheaterjobsCategoryBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/categories
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+theaterjobs_account_settings:
+    resource: "@TheaterjobsUserBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+    
+theaterjobs_stats:
+    resource: "@TheaterjobsStatsBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}/stats
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%/
+        permanent: true
+    options: { i18n: false }
+
+theaterjobs_main:
+    resource: "@TheaterjobsMainBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    defaults: { _locale: "%locale%" }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix:   /{_locale}
+    defaults: { _locale: "%locale%" }
+    options: { expose: true, i18n: false }
+
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix:   /{_locale}/register
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix:   /{_locale}/resetting
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix:   /{_locale}/profile
+    defaults: { _locale: "%locale%" }
+    options: { i18n: false }
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    options: { i18n: false }
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+    options: { i18n: false }
+
+asset_route:
+    path: /theaterjobs21/web/bundles/
+    options: { expose:true, i18n: false }
+
+img_route:
+    path: /bundles/theaterjobsmain/images/
+    options: { expose:true, i18n: false }
+
+logo_route:
+    path: /..
+    options: { expose:true, i18n: false }
+
+#Job queues panel
+JMSJobQueueBundle:
+    resource: "@JMSJobQueueBundle/Controller/"
+    type: annotation
+    prefix: /{_locale}/admin/jobqueues
+    options: { expose:true, i18n: false }

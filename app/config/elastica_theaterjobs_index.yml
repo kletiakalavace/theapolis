@@ -1,0 +1,758 @@
+fos_elastica:
+  clients:
+    default:
+      host: '%elastic_host%'
+      port: '%elastic_port%'
+  indexes:
+    theaterjobs:
+      settings:
+        index:
+          max_result_window: 50000
+          analysis:
+            analyzer:
+              ngram_analyzer:
+                type: custom
+                tokenizer: ngram_tokenizer
+                filter   : [lowercase]
+              autocomplete:
+                type: custom
+                tokenizer: autocomplete
+                filter   : [lowercase]
+            tokenizer:
+               ngram_tokenizer:
+                type: nGram
+                min_gram: 2
+                max_gram: 10
+               autocomplete:
+                type: edge_ngram
+                min_gram: 3
+                max_gram: 50
+                token_chars: [letter, digit]
+      client: default
+      types:
+      ### Mapping the Profile ###
+      ### Start ###
+        profile:
+          mappings:
+            id:
+              type: integer
+            firstName:
+              type: text
+              copy_to: full_name
+            lastName:
+              type: text
+              copy_to: full_name
+            full_name:
+              type: text
+              fields:
+                ngram:
+                  type: text
+                  analyzer: ngram_analyzer
+            subtitle:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                ngram:
+                  type: text
+                  analyzer: ngram_analyzer
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            subtitle2:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            profileName:
+              type: boolean
+            slug:
+              type: keyword
+            contactSection:
+              type: object
+              properties:
+                geolocation:
+                  type: geo_point
+            createdAt:
+              type: date
+              format: date_optional_time
+            isPublished:
+              type: boolean
+            user:
+              type: object
+              properties:
+                id:
+                  type: integer
+                online:
+                  type: boolean
+                email:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    ngram:
+                      type: text
+                      analyzer: ngram_analyzer
+                lastLogin:
+                  type: date
+                roles:
+                  type: keyword
+            oldCategories:
+              type: object
+              properties:
+                parent:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    slug:
+                      type: keyword
+                id:
+                  type: integer
+            mediaImage:
+              type: object
+              properties:
+                id:
+                  type: integer
+                path:
+                 type: keyword
+                subdir:
+                 type: keyword
+                filter:
+                  type: keyword
+                isProfilePhoto:
+                 type: boolean
+            qualificationSection:
+              type: object
+              properties:
+                qualifications:
+                  type: object
+                  properties:
+                    categories:
+                      type: object
+                      properties:
+                        parent:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              copy_to: oldCategories.parent.id
+                            slug:
+                              type: keyword
+                              copy_to: oldCategories.parent.slug
+                        id:
+                          type: integer
+                          copy_to: oldCategories.id
+                        slug:
+                          type: keyword
+                          copy_to: oldCategories.slug
+                    organizationRelated:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        slug:
+                          type: keyword
+            productionParticipations:
+              type: object
+              properties:
+                occupation:
+                  type: object
+                  properties:
+                    parent:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          copy_to: oldCategories.parent.id
+                        slug:
+                          type: keyword
+                          copy_to: oldCategories.parent.slug
+                    id:
+                      type: integer
+                      copy_to: oldCategories.id
+                    slug:
+                      type: keyword
+                      copy_to: oldCategories.slug
+                production:
+                  type: object
+                  properties:
+                    organizationRelated:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        slug:
+                          type: keyword
+            experience:
+              type: object
+              properties:
+                occupation:
+                  type: object
+                  properties:
+                    parent:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          copy_to: oldCategories.parent.id
+                        slug:
+                          type: keyword
+                          copy_to: oldCategories.parent.slug
+                    id:
+                      type: integer
+                      copy_to: oldCategories.id
+                    slug:
+                      type: keyword
+                      copy_to: oldCategories.slug
+                organization:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    slug:
+                      type: keyword
+          persistence:
+            driver: orm
+            model: Theaterjobs\ProfileBundle\Entity\Profile
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\ProfileBundle\Entity\ProfileElasticaRepository
+      ### End ###
+
+      ### Mapping the Billing ###
+      ### Start ###
+        billing:
+          mappings:
+            id:
+              type: integer
+            number:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                ngram:
+                  type: text
+                  analyzer: ngram_analyzer
+            createdAt:
+              type: date
+              format: date_optional_time
+            iban:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                ngram:
+                  type: text
+                  analyzer: ngram_analyzer
+            billingStatus:
+              type: object
+              properties:
+                name:
+                  type: keyword
+            booking:
+              type: object
+              properties:
+                id:
+                  type: integer
+                profile:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    slug:
+                      type: keyword
+                    firstName:
+                      type: text
+                      copy_to: full_name
+                    lastName:
+                      type: text
+                      copy_to: full_name
+                    full_name:
+                      type: text
+                      fields:
+                        raw:
+                          type: keyword
+                        ngram:
+                          type: text
+                          analyzer: ngram_analyzer
+                paymentmethod:
+                  type: object
+                  properties:
+                    short:
+                      type: text
+                      fields:
+                        raw:
+                          type: keyword
+                        ngram:
+                          type: text
+                          analyzer: ngram_analyzer
+            billingAddress:
+              type: nested
+              properties:
+                country:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    ngram:
+                      type: text
+                      analyzer: ngram_analyzer
+          persistence:
+            driver: orm
+            model: Theaterjobs\MembershipBundle\Entity\Billing
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\MembershipBundle\Entity\BillingElasticaRepository
+      ### End ###
+
+      ### Mapping the Organization ###
+      ### Start ###
+        organization:
+          mappings:
+            id:
+              type: integer
+            name:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            status:
+              type: integer
+            description:
+              type: keyword
+            path:
+              type: keyword
+            subdir:
+              type: keyword
+            slug:
+              type: keyword
+            updatedAt:
+              type: date
+              format: date_optional_time
+            geolocation:
+              type: geo_point
+            isVisibleInList:
+              type: boolean
+            organizationKind:
+              type: object
+              properties:
+                id:
+                  type: integer
+            organizationSection:
+              type: object
+              properties:
+                id:
+                  type: integer
+            organizationStage:
+              type: object
+              properties:
+                tags:
+                  type: object
+                  properties:
+                    title:
+                      type: keyword
+            userOrganizations:
+              type: object
+              properties:
+                user:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                revokedAt:
+                  type: date
+                  format: date_optional_time
+          persistence:
+            driver: orm
+            model: Theaterjobs\InserateBundle\Entity\Organization
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\InserateBundle\Entity\OrganizationElasticaRepository
+        ### End ###
+
+      ### Mapping the News ###
+      ### Start ###
+        news:
+          mappings:
+            id:
+              type: integer
+            title:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            pretitle:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            publishAt:
+              type: date
+              format: date_optional_time
+            updatedAt:
+              type: date
+              format: date_optional_time
+            published:
+              type: boolean
+            slug:
+              type: keyword
+            path:
+              type: keyword
+            subdir:
+              type: keyword
+            imageDescription:
+              type: keyword
+            shortDescription:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            organizations:
+              type: object
+              properties:
+                id:
+                  type: integer
+                slug:
+                  type: keyword
+                name:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    autocomplete:
+                      type: text
+                      analyzer: autocomplete
+            tags:
+              type: object
+              properties:
+                title:
+                  type: keyword
+            imageDescription:
+              type: keyword
+          persistence:
+            driver: orm
+            model: Theaterjobs\NewsBundle\Entity\News
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\NewsBundle\Entity\NewsElasticaRepository
+      ### End ###
+
+      ### Mapping the Jobs ###
+      ### Start ###
+        job:
+          mappings:
+            id:
+              type: integer
+            status:
+              type: integer
+            title:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            slug:
+              type: keyword
+            path:
+              type: keyword
+            subdir:
+              type: keyword
+            asap:
+              type: boolean
+            geolocation:
+              type: geo_point
+            createdAt:
+              type: date
+              format: date_optional_time
+            publishedAt:
+              type: date
+              format: date_optional_time
+            archivedAt:
+              type: date
+              format: date_optional_time
+            organization:
+              type: object
+              properties:
+                name:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    autocomplete:
+                      type: text
+                      analyzer: autocomplete
+                slug:
+                 type: keyword
+                id:
+                  type: integer
+                path:
+                  type: keyword
+                subdir:
+                  type: keyword
+            user:
+              type: object
+              properties:
+                id:
+                  type: integer
+                profile:
+                  type: object
+                  properties:
+                    mediaImage:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        path:
+                         type: keyword
+                        subdir:
+                         type: keyword
+                        isProfilePhoto:
+                         type: boolean
+                    subtitle:
+                      type: keyword
+                    firstName:
+                      type: keyword
+                    lastName:
+                      type: keyword
+                    profileName:
+                      type: boolean
+                    isPublished:
+                      type: boolean
+            gratification:
+              type: object
+              properties:
+                id:
+                  type: integer
+            categories:
+              type: object
+              properties:
+                parent:
+                 type: object
+                 properties:
+                   slug:
+                     type: keyword
+                id:
+                  type: integer
+            engagementStart:
+              type: date
+              format: date_optional_time
+            engagementEnd:
+              type: date
+              format: date_optional_time
+            publicationEnd:
+              type: date
+              format: date_optional_time
+            statusChangedAt:
+              type: date
+              format: date_optional_time
+            createMode:
+              type: integer
+          persistence:
+            driver: orm
+            model: Theaterjobs\InserateBundle\Entity\Job
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\InserateBundle\Entity\JobElasticaRepository
+      ### End ###
+
+      ### Mapping the Save Searches ###
+      ### Start ###
+        searches:
+          mappings:
+            plainParams:
+              type: keyword
+            notification:
+              type: integer
+            entity:
+              type: keyword
+            routeName:
+              type: keyword
+            categorySlug:
+              type: keyword
+            profile:
+              type: object
+              properties:
+                id:
+                  type: integer
+                firstName:
+                  type: keyword
+                lastName:
+                  type: keyword
+                user:
+                  type: object
+                  properties:
+                    email:
+                      type: keyword
+          persistence:
+            driver: orm
+            model: Theaterjobs\MainBundle\Entity\SaveSearch
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\MainBundle\Entity\SaveSearchElasticaRepository
+      ### End ###
+
+      ### Mapping Threads ###
+      ### Start ###
+        thread:
+          mappings:
+            id:
+              type: integer
+            subject:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                autocomplete:
+                  type: text
+                  analyzer: autocomplete
+            metadata:
+              type: object
+              properties:
+                isDeleted:
+                  type: boolean
+                participant:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    profile:
+                      type: object
+                      properties:
+                        firstName:
+                          type: keyword
+                        lastName:
+                          type: keyword
+                        subtitle:
+                          type: keyword
+            messages:
+              type: object
+              properties:
+                id:
+                  type: integer
+                createdAt:
+                  type: date
+                  format: date_optional_time
+          persistence:
+            driver: orm
+            model: Theaterjobs\MessageBundle\Entity\Thread
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\MessageBundle\Entity\ThreadElasticaRepository
+      ### End ###
+
+      ### Mapping ApplicationTrack ###
+      ### Start ###
+        application_track:
+          mappings:
+            id:
+              type: integer
+            profile:
+              type: object
+              properties:
+                id:
+                  type: integer
+          persistence:
+            driver: orm
+            model: Theaterjobs\InserateBundle\Entity\ApplicationTrack
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\InserateBundle\Entity\ApplicationTrackElasticaRepository
+      ### End ###
+
+      ### Mapping Production ###
+      ### Start ###
+        production:
+          mappings:
+            id:
+              type: integer
+            name:
+              type: text
+              fields:
+                raw:
+                  type: keyword
+                ngram:
+                  type: text
+                  analyzer: ngram_analyzer
+            organizationRelated:
+              type: object
+              properties:
+                name:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    ngram:
+                      type: text
+                      analyzer: ngram_analyzer
+            creators:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    ngram:
+                      type: text
+                      analyzer: ngram_analyzer
+            directors:
+              type: object
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: text
+                  fields:
+                    raw:
+                      type: keyword
+                    ngram:
+                      type: text
+                      analyzer: ngram_analyzer
+            checked:
+              type: boolean
+            year:
+              type: keyword
+          persistence:
+            driver: orm
+            model: Theaterjobs\ProfileBundle\Entity\Production
+            identifier: id
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\ProfileBundle\Entity\ProductionElasticaRepository
+      ### End ###

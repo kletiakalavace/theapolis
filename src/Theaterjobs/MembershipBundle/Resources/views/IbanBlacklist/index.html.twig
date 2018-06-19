@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('ibanBlacklist')) }}
+    <h1>Iban Blacklist</h1>
+    {{form(form,{'attr':{'class':'form-inline'} })}}
+    <div class="col-md-6">
+        <table class="records_list table table-striped">
+            <thead>
+                <tr>
+                    <th>{{'table.heading.iban'|trans}}</th>
+                    <th>{{'table.heading.createdAt'|trans}}</th>
+                    <th>{{'table.heading.actions'|trans}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entity in entities %}
+                    <tr>
+                        <td>{{ entity.iban }}</td>
+                        <td>{% if entity.createdAt %}{{ entity.createdAt|date('d.m.Y H:i:s') }}{% endif %}</td>
+                        <td>
+                            <ul>
+
+                                <li>
+                                    <a href="{{ path('ibanblacklist_delete', { 'id': entity.id }) }}">{{'tj.remove.from.list'|trans}}</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+    %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+    <script>
+        $('form[name="theaterjobs_membershipbundle_ibanblacklist"]').validate({
+            ignore: ":hidden",
+            rules: {
+                'theaterjobs_membershipbundle_ibanblacklist[iban]': {
+                    
+                        required: true,
+                        
+                }
+            }
+
+        });
+
+    </script>
+{% endblock %}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:15:49Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="fa83d49aa0ebf45259696675a9893579180e2707" resname="payment.activity.label.emailends.in10days %user%">
+        <source>payment.activity.label.emailends.in10days %user%</source>
+        <target state="new">payment.activity.label.emailends.in10days %user%</target>
+        <jms:reference-file line="197">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/DirectDebitExpirationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a137a398d73bf8524d467c51de093be38ea1d640" resname="tj.user.activity.debt.days %day%">
+        <source>tj.user.activity.debt.days %day%</source>
+        <target state="new">tj.user.activity.debt.days %day%</target>
+        <jms:reference-file line="460">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8c7cc7ac8b0e810276acc593320047853adae8d" resname="tj.user.activity.extended.prepayment.clearing.user %user%">
+        <source>tj.user.activity.extended.prepayment.clearing.user %user%</source>
+        <target state="new">tj.user.activity.extended.prepayment.clearing.user %user%</target>
+        <jms:reference-file line="333">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4447f48de07e2d6df118d5c2ceb3d20d98d2db1f" resname="tj.user.activity.payment.clearing.user %user%">
+        <source>tj.user.activity.payment.clearing.user %user%</source>
+        <target state="new">tj.user.activity.payment.clearing.user %user%</target>
+        <jms:reference-file line="330">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3327f0bd2157ac38982a37aa46eb37b7bd572130" resname="tj.user.activity.payment.made.with %paymentMethod%">
+        <source>tj.user.activity.payment.made.with %paymentMethod%</source>
+        <target state="new">tj.user.activity.payment.made.with %paymentMethod%</target>
+        <jms:reference-file line="241">/../src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3f66056d48f006ae7a33de3b665bfda523e6d4b5" resname="tj.user.activity.prepaid.billing.admin.canceled">
+        <source>tj.user.activity.prepaid.billing.admin.canceled</source>
+        <target state="new">tj.user.activity.prepaid.billing.admin.canceled</target>
+        <jms:reference-file line="514">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="34847039a37cbbec2aa83c7b5d9ba10c87e97332" resname="tj.user.activity.revoked.membership %name%">
+        <source>tj.user.activity.revoked.membership %name%</source>
+        <target state="new">tj.user.activity.revoked.membership %name%</target>
+        <jms:reference-file line="456">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9349ee2be8a30767447914056add1d13dbf6d44d" resname="tj.user.activity.sepa.downloaded %type%">
+        <source>tj.user.activity.sepa.downloaded %type%</source>
+        <target state="new">tj.user.activity.sepa.downloaded %type%</target>
+        <jms:reference-file line="284">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

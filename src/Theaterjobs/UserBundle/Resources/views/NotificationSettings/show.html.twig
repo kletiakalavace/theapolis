@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block content -%}
+    <h1>{{ 'tj.user.notification.settings' | trans }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>{{ 'tj.user.notification.settings.id' | trans }}</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    {#<li>
+        <a href="{{ path('notificationsettings') }}">
+            Back to the list
+        </a>
+    </li>#}
+    <li>
+        <a href="{{ path('notificationsettings_edit', { 'id': entity.id }) }}">
+            {{ 'tj.user.notification.settings.link.edit' | trans }}
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

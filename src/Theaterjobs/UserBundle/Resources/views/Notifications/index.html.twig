@@ -1,0 +1,85 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="block">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'dashboard.allNotifications' | trans }}
+                            <span class="hidden"   id="totalNotificationCount"></span>
+                        </h1>
+                        <p>
+                            <span id="redNotificationCount"> {{ totalNrNotification - nrUnseenNotification }}</span> {{ 'dashboard.readNotification'|trans }} /
+                            <span id="unseenNotificationCount">{{ nrUnseenNotification }}</span> {{ 'dashboard.unreadNotification'|trans }}
+                        </p>
+                        <div class="separator"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for notification in requiredNotification %}
+                    <div class="col-md-12 notificationWrapper">
+                        <div class="notice notice-with-type"
+                             style="background-color:{{ notification.seen?'#F0F0F0':'#dff0d8' }} !important;">
+                            <div class="notice-type notice-red-action"></div>
+                            {% if notification.linkKeys %}
+                                <a href="{{ path(notification.link, notification.linkKeys) }}" class="notice-content">
+                            {% else %}
+                                <a href="{{ path(notification.link) }}" class="notice-content">
+                            {% endif %}
+                                    <div class="notice-content">
+                                        <p class="notice-text">
+                                            {% if notification.translationKeys %}
+                                                {{ notification.title | trans(notification.translationKeys, 'notification') }}
+                                            {% else %}
+                                                {{ notification.title | trans([], 'notification') }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {# All notifications #}
+                {% for notific in notification %}
+                    <div class="col-md-12 notificationWrapper" id="notification-{{ notific.id }}">
+                        <div class="notice notice-with-type" style="background-color:{{ notific.seen?'#F0F0F0':'#dff0d8' }} !important;">
+                            <div class="notice-type notice-blue-inf"></div>
+                            {% if notific.linkKeys %}
+                                <a href="{{ path(notific.link, notific.linkKeys) }}" class="notice-content">
+                            {% else %}
+                                <a href="{{ path(notific.link) }}" class="notice-content">
+                            {% endif %}
+                                <div class="notice-content">
+                                    <p class="notice-text">
+                                        {% if notific.translationKeys %}
+                                            {{ notific.title | trans(notific.translationKeys, 'notification') }}
+                                        {% else %}
+                                            {{ notific.title | trans([], 'notification') }}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </a>
+                            <span class="hideNotification" onclick="deleteNotification({{ notific.id }})">
+                                 <svg class="icon-svg icon-svg-inverse icon-inline" width="14" height="14">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                                 </svg>
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsUserBundle/Resources/public/js/notification/index.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

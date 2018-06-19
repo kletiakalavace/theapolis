@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:33Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="ccfec0d9188ce4133ea944b160a37d3b0e77b95a" resname="tj . user . activity . profile . update">
+        <source>tj . user . activity . profile . update</source>
+        <target state="new">tj . user . activity . profile . update</target>
+        <jms:reference-file line="1289">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef49e645c887ec3f7fcf0116c7e95b61dabdcbec" resname="tj.user.activity.profile.employment.new">
+        <source>tj.user.activity.profile.employment.new</source>
+        <target state="new">tj.user.activity.profile.employment.new</target>
+        <jms:reference-file line="77">/../src/Theaterjobs/ProfileBundle/Controller/EmploymentsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a948d49e2c9ef56e3df81c6ee4976017c53ca970" resname="tj.user.activity.profile.production.new">
+        <source>tj.user.activity.profile.production.new</source>
+        <target state="new">tj.user.activity.profile.production.new</target>
+        <jms:reference-file line="102">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProductionsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d235ddc72ed0881c8ace1d9372d69f2076b91c6" resname="tj.user.activity.profile.production.updated">
+        <source>tj.user.activity.profile.production.updated</source>
+        <target state="new">tj.user.activity.profile.production.updated</target>
+        <jms:reference-file line="306">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProductionsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c194744a225bbe4a1d01c9e8f15242e70aec0e9" resname="tj.user.activity.profile.update">
+        <source>tj.user.activity.profile.update</source>
+        <target state="new">tj.user.activity.profile.update</target>
+        <jms:reference-file line="1030">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+        <jms:reference-file line="1094">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+        <jms:reference-file line="946">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:33Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="63804fa7d7d852b176f0e1473b57554e731779e9" resname="flash.profile.error.category.should.be.performance">
+        <source>flash.profile.error.category.should.be.performance</source>
+        <target state="new">flash.profile.error.category.should.be.performance</target>
+        <jms:reference-file line="2481">/home/manoolia/html/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a5a0e4ce0cbddda54da1c7d38b68a29e83482b00" resname="flash.profile.error.is.in.favourites">
+        <source>flash.profile.error.is.in.favourites</source>
+        <target state="new">flash.profile.error.is.in.favourites</target>
+        <jms:reference-file line="648">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d0bf92cd8e4968bd611a6ab3f2d182b63dec231" resname="flash.profile.error.is.not.in.your.favourites">
+        <source>flash.profile.error.is.not.in.your.favourites</source>
+        <target state="new">flash.profile.error.is.not.in.your.favourites</target>
+        <jms:reference-file line="687">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce50d46e068f81d227cc41cf1a92cb2dcd305797" resname="flash.profile.media.audio.limit.reached">
+        <source>flash.profile.media.audio.limit.reached</source>
+        <target state="new">flash.profile.media.audio.limit.reached</target>
+        <jms:reference-file line="1307">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fca56b5468557ba08371225876c8216f21aca86e" resname="flash.profile.media.image.limit.fifteen.reached">
+        <source>flash.profile.media.image.limit.fifteen.reached</source>
+        <target state="new">flash.profile.media.image.limit.fifteen.reached</target>
+        <jms:reference-file line="2201">ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23d3ffba3121dabb566a3e6840706c8869fde626" resname="flash.profile.media.image.limit.reached">
+        <source>flash.profile.media.image.limit.reached</source>
+        <target state="new">flash.profile.media.image.limit.reached</target>
+        <jms:reference-file line="1207">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="208508c21063de121f04c37a16b7767364198a06" resname="flash.profile.media.pdf.limit.reached">
+        <source>flash.profile.media.pdf.limit.reached</source>
+        <target state="new">flash.profile.media.pdf.limit.reached</target>
+        <jms:reference-file line="1463">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="00ab8e1904800ac709426d0677f55ac550d4e138" resname="flash.profile.not.reachable">
+        <source>flash.profile.not.reachable</source>
+        <target state="new">flash.profile.not.reachable</target>
+        <jms:reference-file line="387">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="837341cee4f15b9625932e36a0ff7f18eec8ba9d" resname="flash.profile.professions.category.limit.six.reached">
+        <source>flash.profile.professions.category.limit.six.reached</source>
+        <target state="new">flash.profile.professions.category.limit.six.reached</target>
+        <jms:reference-file line="3737">/home/laura/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf8208fbad1b88174925366ee726c150d8468da4" resname="flash.profile.success.added.to.favourites">
+        <source>flash.profile.success.added.to.favourites</source>
+        <target state="new">flash.profile.success.added.to.favourites</target>
+        <jms:reference-file line="639">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fe5add6822a5b34faa0ded0c8bbd6918ecde08f9" resname="flash.profile.success.removed.from.favourites">
+        <source>flash.profile.success.removed.from.favourites</source>
+        <target state="new">flash.profile.success.removed.from.favourites</target>
+        <jms:reference-file line="678">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dec99315cf816dc024701ffa4b8a6c2a11a72096" resname="flash.profile.success.unpublished">
+        <source>flash.profile.success.unpublished</source>
+        <target state="new">flash.profile.success.unpublished</target>
+        <jms:reference-file line="1735">/home/manoolia/html/theaterjobs21/src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9d299e1e402d0874d1bf14ce9c826035ab3270b8" resname="flash.profile.views.become.member.to.view">
+        <source>flash.profile.views.become.member.to.view</source>
+        <target state="new">flash.profile.views.become.member.to.view</target>
+        <jms:reference-file line="96">/../src/Theaterjobs/ProfileBundle/Resources/views/Profile/showProfileViews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3edb95bd3b648c96d76d74bbfca96f537671c985" resname="flash.success.master_data">
+        <source>flash.success.master_data</source>
+        <target state="new">flash.success.master_data</target>
+        <jms:reference-file line="2529">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2956af1ba78040c6ff0ce4a27800a8ed1735a6af" resname="flash.success.profile.update.admin.queue">
+        <source>flash.success.profile.update.admin.queue</source>
+        <target state="new">flash.success.profile.update.admin.queue</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/ProfileBundle/Resources/views/Profile/successProfile.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="593692d4898d8f2dd7e86d8971beb985e0d96a07" resname="people.statistic.flash.pretitle.becomeMemberToView">
+        <source>people.statistic.flash.pretitle.becomeMemberToView</source>
+        <target state="new">people.statistic.flash.pretitle.becomeMemberToView</target>
+        <jms:reference-file line="93">/../src/Theaterjobs/ProfileBundle/Resources/views/Modal/statistics.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bd804982b95ee09a467567dcb2dca6f2b25dfec7" resname="profile.success.published">
+        <source>profile.success.published</source>
+        <target state="new">Profile successfully published</target>
+        <jms:reference-file line="649">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="618429c80fe1d39ff4a8d313089141aae76a6d26" resname="profile.success.unpublished">
+        <source>profile.success.unpublished</source>
+        <target state="new">Profile successfully unpublished</target>
+        <jms:reference-file line="672">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1510fcb129af276270a342d25d30dea74d41897c" resname="profile.unpublished.flashes.contact.notEmpty">
+        <source>profile.unpublished.flashes.contact.notEmpty</source>
+        <target state="new">profile.unpublished.flashes.contact.notEmpty</target>
+        <jms:reference-file line="1017">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aa293d3777036768b54c7a12b07fe4e80bbd3163" resname="publish.profile.required.Education">
+        <source>publish.profile.required.Education</source>
+        <target state="new">at least one entry in Education</target>
+        <jms:reference-file line="633">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cac0a7a9238716a1be9c4a12b1a4f68e3a4d1874" resname="publish.profile.required.ProfilePhoto">
+        <source>publish.profile.required.ProfilePhoto</source>
+        <target state="new">Profile photo</target>
+        <jms:reference-file line="624">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e61b18ed2ce5e4a7663610a162ce3a5ca067712e" resname="publish.profile.required.Undertitle">
+        <source>publish.profile.required.Undertitle</source>
+        <target state="new">Undertitle</target>
+        <jms:reference-file line="627">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="157b505481b52c247227bbf6865d75cdee9919fe" resname="publish.profile.required.contactSection">
+        <source>publish.profile.required.contactSection</source>
+        <target state="new">information in the Contact Section</target>
+        <jms:reference-file line="630">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4b8ccdfdc1710d551aba4b516302976ddb5d67ca" resname="publish.profile.required.headingContent">
+        <source>publish.profile.required.headingContent</source>
+        <target state="new">Sorry, but we need more information to publish </target>
+        <jms:reference-file line="2">/../src/Theaterjobs/ProfileBundle/Resources/views/Partial/publishValidation.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a79f443ac2768b1d6fdc0b804dc8df2e6dd9cfb7" resname="publish.profile.required.paragrafContent">
+        <source>publish.profile.required.paragrafContent</source>
+        <target state="new">We need to be sure that you are a theatre-professional. Therefore, please fill out</target>
+        <jms:reference-file line="5">/../src/Theaterjobs/ProfileBundle/Resources/views/Partial/publishValidation.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6eaf7f15be24eed24af37012cb5c2ea9a9ed15e2" resname="publish.profile.required.productionExperience">
+        <source>publish.profile.required.productionExperience</source>
+        <target state="new">at least one entry in Production or Experience</target>
+        <jms:reference-file line="634">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32e9d1f3246d525a77966f2c4240960fe635b328" resname="publish.profile.success.Heading">
+        <source>publish.profile.success.Heading</source>
+        <target state="new">Congratulations, you are now part of the Community</target>
+        <jms:reference-file line="705">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7383d78505fd391cb3099e9654f5a45c6ec16d30" resname="publish.profile.success.Paragraf">
+        <source>publish.profile.success.Paragraf</source>
+        <target state="new">Your profile has been successfully published on our site.</target>
+        <jms:reference-file line="708">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0fd1e77cfd1fe7988db44947f3d5f18b33acdd51" resname="unpublish.profile.title">
+        <source>unpublish.profile.title</source>
+        <target state="new"> Sorry, you are leaving</target>
+        <jms:reference-file line="755">/../src/Theaterjobs/ProfileBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

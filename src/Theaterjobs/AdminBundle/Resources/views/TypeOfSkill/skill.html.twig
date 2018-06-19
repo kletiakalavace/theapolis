@@ -1,0 +1,47 @@
+{% extends 'TheaterjobsAdminBundle::AdminBase.html.twig' %}
+{% block breadcrumb %}
+    <li><a href="{{ path('tj_admin_home') }}" >{{ 'tj.breadcrumb.admin' | trans}}</a></li>
+    <li><a href="{{ path('tj_admin_typeofskill_index') }}">{{ 'tj.breadcrumb.typeOfSkill' | trans}}</a></li>
+    
+    <li><a href="{{ path('tj_admin_typeofskill_show', {'id' : type.id}) }}">{{ type.title }}</a></li>
+    
+    <li>{{ 'tj.breadcrumb.skills' | trans }}</li>
+{% endblock %}
+{% block contents %}
+    {% block stylesheets %}
+        {{ parent() }}
+        {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+
+                "@TheaterjobsMainBundle/Resources/public/less/gratification_occupation.less"
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h1>Skill/{{ type.title}}</h1>
+        <a href="{{ path('tj_admin_skill_new') }}" class='btn btn-success'>New Skill</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type of skill</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entity in entities %}
+                    <tr>
+                        <td>{{ entity.title }}<td>
+                        <td>{{entity.typeOfSkill.title}}</td>
+                        <td>
+                            <a href="{{ path('tj_admin_skill_edit', { id: entity.id}) }}" class="btn btn-default">Edit</a> | 
+                            <a href="{{ path('tj_admin_skill_delete', { id : entity.id}) }}" class="btn btn-danger" data-alert='{{ 'Do you really want to remove skill ' | trans }} "{{ entity.title }}"?'>Remove</a> 
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+         </table>
+     </div>
+     </div>
+{% endblock %}

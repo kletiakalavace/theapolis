@@ -1,0 +1,215 @@
+{% import '::macro.html.twig' as m %}
+{% import '@TheaterjobsInserate/jobMacro.twig' as jm %}
+
+{# pass subcategories array to get the title from the checked value used in filter bar #}
+{{ jm.jobsFilterBar(form.vars.data, form, 'tj_inserate_job_route_list_team', false, subcategories) }}
+
+<div class="col-xs-6 col-xxs-12">
+    <p class="p-alt">
+        {% if orgaName is not null %}
+            <small>{{ knp_results(jobs, path('tj_inserate_job_route_list_team', {organization: orgaName}) ) }}</small>
+        {% else %}
+            <small>{{ knp_results(jobs, path('tj_inserate_job_route_list_team') ) }}</small>
+        {% endif %}
+    </p>
+</div>
+
+<div class="{{ jobs.getTotalItemCount() > 0 ? '' : 'hidden' }}">
+    <!-- Filters -->
+
+    <aside class="col-md-4 col-xs-12 pull-right no-padding">
+        <div class="filter-group" style="margin-top:15px;">
+            <a class="filter-group-mobile-toggle">
+                {{ 'orgawork.list.showfilters'|trans }}
+                <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-primary" width="20" height="20">
+                        <use xlink:href="assets/images/icon-sprite.svg#icon-arrow-toggle"></use>
+                    </svg>
+                </span>
+            </a>
+            <div class="filter-group-content">
+                <div class="panel">
+                    {% if category %}
+                        <h3> {{ 'work.filter.title.subcategories' | trans }}</h3>
+                        <ul class="list-unstyled" id="categ">
+                            {% for var in form.subcategories %}
+                                {% set subcategoriesCounts = aggs.aggregations.subcategories.buckets | aggregation_count( var.vars.value) %}
+                                <li class="{{ subcategoriesCounts > 0 ? '':'hidden' }}">
+                                    <div class="checkbox">
+                                        <label class="subcategory-sidebar">
+                                            {{ form_widget(var, { 'attr': {'onchange': 'checkboxClick($(this));'}}) }}
+                                            <span class="faux-checkbox"></span>
+                                            {{ var.vars.label }}
+                                        </label>
+                                        <span class="checkbox-number">
+                                                        {{ subcategoriesCounts }}
+                                                    </span>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <h3> {{ 'work.filter.title.categories' | trans }}</h3>
+                        <ul class="list-unstyled" id="categ">
+                            {% for categoryAggs in aggs.aggregations.categories.buckets %}
+                                {% if categoryAggs.doc_count > 0 %}
+                                    <li>
+                                        <div class="checkbox">
+                                            <label class="subcategory-sidebar">
+                                                <input type="checkbox" onclick="checkboxClickTeam($(this));"
+                                                       data-category="1"
+                                                       value="{{ categoryAggs.key|lower|replace(' ','') }}">
+                                                <span class="faux-checkbox"></span>
+                                                {{ categoryAggs.title }}
+                                            </label>
+                                            <span class="checkbox-number">
+                                                {{ categoryAggs.doc_count }}
+                                            </span>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                        {% do form.subcategories.setRendered %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-admin" style="margin-top:15px;">
+            <h3>{{ 'work.filter.title.status' | trans }}</h3>
+            <div>
+                <div id="status" class="checkbox-status">
+                    {% for var in form.status %}
+                        {% set statusCounts = aggs.aggregations.status_count.buckets | aggregation_count( var.vars.value) %}
+
+                        <div class="checkbox {{ statusCounts > 0 ? '':'hidden' }}">
+                            <label>
+                                {{ form_widget(var, { 'attr': {'onchange': 'filterListSearchForm()'}}) }}
+                                <span class="faux-checkbox"></span>
+                                {{ var.vars.label | trans }}
+                            </label>
+                            <span class="checkbox-number"> {{ statusCounts }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="panel" style="margin-top:15px;">
+            <h3>{{ 'work.filter.title.gratification' | trans }}</h3>
+            <div id="gratification">
+                <ul class="list-unstyled">
+                    {% for var in form.gratification %}
+                        {% set gratificationCounts = aggs.aggregations.gratification.buckets | aggregation_count( var.vars.value) %}
+                        <li class="{{ gratificationCounts > 0 ? '':'hidden' }}">
+                            <div class="checkbox">
+                                <label class="subcategory-sidebar">
+                                    {{ form_widget(var, { 'attr': {'onclick':"checkboxClick($(this));"}}) }}
+                                    <span class="faux-checkbox"></span>
+                                    {{ var.vars.label | capitalize }}
+                                </label>
+                                <span class="checkbox-number">
+                                                {{ gratificationCounts }}
+                                            </span>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- END Filters -->
+<div class="col-md-8 col-xs-12">
+    {% for job in jobs %}
+        <div class="listing" href="{{ path('tj_inserate_job_route_show', { 'slug': job.slug }) }}">
+            <a href="{{ path('tj_inserate_job_route_show', { 'slug': job.slug }) }}">
+                {% set orgLogo = asset('bundles/theaterjobsmain/images/profile-placeholder.svg') %}
+                {% set checkJobLogo=0 %}
+                {% if job.path is defined and job.path %}
+                    {% set orgLogo =  vich_uploader_asset(job, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Job') | imagine_filter("list_photo") %}
+                    {% set checkJobLogo=1 %}
+                {% endif %}
+                {% if job.organization and checkJobLogo==0 %}
+                    {% if job.organization.path is defined and job.organization.path %}
+                        {% set orgLogo =  vich_uploader_asset(job.organization, "uploadFile" , 'Theaterjobs\\InserateBundle\\Entity\\Organization') | imagine_filter("list_photo") %}
+                    {% endif %}
+                {% endif %}
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        {% if job.organization %}
+                            <h2 class="h2-alt">{{ job.organization.name }}</h2>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <h5>{{ job | highlight('title.autocomplete') }}
+                            {{ job | favorite(app.user.profile.jobFavourite) }}
+                        </h5>
+                        <p class="p-alt">
+                            {% if job.asap %}
+                                <small>{{ "work.show.startASAP" | trans }}</small>
+                            {% endif %}
+                            <small>{{ m.dateFormat(job) }}</small>
+                            {% if job.engagementEnd is not defined or job.engagementStart is not defined %}
+                                {% if job.engagementStart is defined and job.engagementStart is not null and not job.asap %}
+                                    <small>{{ 'job.list.date.from' | trans }}
+                                        {{ job.engagementStart|localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') }}</small>
+                                {% endif %}
+                                {% if job.engagementEnd is defined and job.engagementEnd  is not null %}
+                                    <small>{% if job.asap %} - {% else %} {{ 'job.list.date.till' | trans }} {% endif %}
+                                        {{ job.engagementEnd|localizeddate('none', 'none', app.request.locale, null, 'd. MMMM Y') }}</small>
+                                {% endif %}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="row listing-footer test">
+                    <div class="col-sm-6 hide-sm logo-organization-joblist">
+                        <img src="{{ orgLogo }}">
+                    </div>
+                    <div class="col-sm-2 col-xs-12">
+
+                    </div>
+                    <div class="col-sm-4 col-xs-12 text-right">
+                        {% if job.publishedAt is defined %}
+                            <p class="listing-date">{{ job.publishedAt | ago }}</p>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </a>
+            <div class="gratification-block-link">
+                <a href="{{ path('tj_gratifiction_explanation_page') }}" target="_blank"
+                   id="anchor_gratifications" class="levels-details">
+                    <div class="levels">
+                        {% if job.gratification %}
+                            {{ jm.gratificationCoins(job.gratification) }}
+                        {% endif %}
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="navigation">
+        {{ knp_pagination_render(jobs) }}
+    </div>
+
+</div>
+
+{% block js %}
+    {% javascripts
+        "@TheaterjobsMainBundle/Resources/public/components/nouislider/distribute/nouislider.min.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        {% if app.request.isXmlHttpRequest %}
+        {% if category %}
+        document.getElementById('searchCategory').textContent = '{{ category.title }}';
+        {% else %}
+        document.getElementById('searchCategory').textContent = '{{ "work.category.work" | trans }}';
+        {% endif %}
+        {% endif %}
+    </script>
+
+{% endblock %}

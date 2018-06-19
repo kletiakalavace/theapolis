@@ -1,0 +1,116 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                {{ form_start(form, {'method': 'POST'}) }}
+                <h3>{{ 'account.edit.title.billingAddress' | trans }} </h3>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        {{ form_widget(form._token) }}
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">{{ form_row(form.billingAddress.firstname) }}</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">{{ form_row(form.billingAddress.lastname) }}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">{{ form_row(form.billingAddress.street) }}</div>
+                            <div class="col-md-6">{{ form_row(form.billingAddress.zip) }}</div>
+                        </div>
+                        <div class="row">
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">{{ form_row(form.billingAddress.city) }}</div>
+                            <div class="col-md-6">{{ form_row(form.billingAddress.country) }}</div>
+                        </div>
+                        <p class="row">
+                        <p class="p-alt"
+                           style="text-align: center;"> {{ form_widget(form.submit,{'attr': {'class': 'btn btn-inverse-primary'}},{'label':'form.button.generalInfo.save' | trans({},'forms')}) }}</p>
+                        </p>
+                    </div>
+
+                </div>
+                {{ form_end(form, {'render_rest':false  }) }}
+                {{ m.error }}
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+{#</div>#}
+
+{% block js %}
+    {% javascripts filter="?uglifyjs2"
+    "@TheaterjobsUserBundle/Resources/public/js/generalInfo/generalInfo.js" %}
+    <script>
+        $.getScript("{{ asset_url }}");
+    </script>
+    {% endjavascripts %}
+    <script>
+        $('#tj_user_form_billing_address_billingAddress_country').select2();
+        $('form[name="tj_user_form_billing_address"]').submit(function (e) {
+            e.preventDefault();
+            var form = $('form[name="tj_user_form_billing_address"]');
+            var valid = false;
+
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.error) {
+                            // popupCase('There was an error with your request.Please refresh and try again 1111.');
+                            for (var i = 0; i < data.errors.length; i++) {
+                                var el = $(data.errors[i].field);
+                                el.parent().addClass('has-error');
+                                toolTipError(data.errors[i].message, el);
+                            }
+                        }
+                        else {
+                            $('#generalInfoBox').html(data.data);
+                            valid = true;
+                        }
+                    },
+                    error: function () {
+                        popupCase('There was an error with your request.Please refresh and try again.');
+                        customAlert('#accountSettingsBlock', 'error', 'There was an error with your request.Please refresh and try again.');
+                    }
+
+                }).done(function (data) {
+                    if (valid) {
+                        $('#myModal').modal('hide');
+                        customAlert('#accountSettingsBlock', 'success', 'Billing address successfully updated.');
+                    }
+                });
+            }
+        });
+
+        $("form[name=tj_user_form_billing_address]").validate({
+            errorPlacement: function (error, element) {
+                toolTipError(error.text(), element);
+                $('.text-danger').removeClass('hidden');
+            },
+            ignore: [],
+            rules: {
+                "login[username]": {
+                    required: false
+                }
+            }
+        });
+        $('form[name="tj_user_form_billing_address"] input, form[name="tj_user_form_billing_address"] select').on('keyup change', function() {
+            if ($(this).valid()) {
+                $(this).tooltip('destroy');
+                $(this).parent().tooltip('destroy');
+                $(this).closest('.has-error').removeClass('has-error');
+
+            }
+        });
+    </script>
+{% endblock %}

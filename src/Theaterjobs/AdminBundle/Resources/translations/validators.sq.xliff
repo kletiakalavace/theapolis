@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:41:23Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="8ee3bc69c7458edf98b2567b8925f2e49def2e71" resname="This entity already exists!">
+        <source>This entity already exists!</source>
+        <target state="new">This entity already exists!</target>
+      </trans-unit>
+      <trans-unit id="706c5b072b3ade5bed82ddcb25cee11c650efd8b" resname="This field cant be empty!">
+        <source>This field cant be empty!</source>
+        <target state="new">This field cant be empty!</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

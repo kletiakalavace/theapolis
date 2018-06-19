@@ -1,0 +1,125 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery/dist/jquery.js"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/jquery-ui.min.js"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+    "@TheaterjobsMainBundle/Resources/public/js/configs/translation/jquery_validation_trans.js"
+    "@TheaterjobsMainBundle/Resources/public/js/configs/translation/trans.js"
+%}
+<script src="{{ asset_url }}" type="text/javascript"></script>
+{% endjavascripts %}
+{% import '::macro.html.twig' as m %}
+<div class="reset-page-modal">
+<form action="{{ path('fos_user_resetting_reset', {'token': token}) }}" {{ form_enctype(form) }} method="POST" class="fos_user_resetting_reset">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'ResetPassword.confirm.modal.mainTitle.resetPassword'| trans }}</h2>
+                {{ form_widget(form) }}
+                <div class="reset-btn">
+                    <input type="submit" class="btn btn-inverse-primary btn-resetPass" value="{{ 'button.logIn'|trans({},'forms') }}" />
+                </div>
+                <div class="error-onpage">{{ m.error }}</div>
+            </div>
+        </div>
+    </div>
+</form>
+<a href="/" class="close-reset" >
+    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://127.0.0.1:8000/bundles/theaterjobsmain/img/icon-sprite.svg#icon-close"></use>
+    </svg>
+</a>
+</div>
+
+<script type="application/javascript">
+$(document).ready(function () {
+    var ResetForm = $('.reset-page-modal form');
+    ResetForm.validate({
+        ignore: [],
+        rules: {
+            'fos_user_resetting_form[plainPassword][first]': {
+                required: true,
+                minlength: 8
+            },
+            'fos_user_resetting_form[plainPassword][second]': {
+                required: true,
+                equalTo: '#fos_user_resetting_form_plainPassword_first'
+            }
+        },
+        messages: {
+            'fos_user_resetting_form[plainPassword][first]': {
+                required: trans('tooltip.newPasswordRequired', locale),
+                minlength: jQuery.validator.format(trans('tooltip.password.validate.Length', locale))
+            },
+            'fos_user_resetting_form[plainPassword][second]': {
+                required: trans('tooltip.passwordconfirmationRequired', locale),
+                equalTo: trans('tooltip.passwordconfirmationdontMatch', locale)
+            }
+        },
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+            return false;
+        }
+    });
+    validFormInputs();
+})
+</script>
+
+<script>
+    //master.js
+
+    function validFormInputs() {
+        var el = $("form input, form select, form textarea");
+        el.unbind('input');
+        el.each(function () {
+            $(this).on("input", function () {
+                if ($(this).valid()) {
+                    $(this).closest('.has-error').removeClass('has-error');
+                    if (typeof $(this).attr('aria-describedby') !== "undefined") {
+                        $(this).tooltip('destroy');
+                        $(this).removeAttr('aria-describedby');
+                    }
+                }
+            });
+        });
+        tootltipFIrstelement = 0;
+    }
+
+    function toolTipError(error, element) {
+        if (!element.is(':checkbox')) {
+            var isSelect2 = (element.prev().hasClass('select2-container')) ? element.parent() : false;
+            if (isSelect2 === false) {
+                element.parent().addClass('has-error');
+            } else {
+                element.parent().addClass('has-error');
+                element = isSelect2;
+            }
+            element.tooltip({
+                'trigger': 'focus',
+                'title': error,
+                'placement': 'top'
+            });
+
+
+            if (tootltipFIrstelement === 0) {
+                element.focus();
+                tootltipFIrstelement = 1;
+            }
+        }
+        else {
+
+            element.parent().tooltip({
+                'trigger': 'focus',
+                'title': error,
+                'placement': 'top'
+            });
+
+            if (tootltipFIrstelement === 0) {
+                element.focus();
+                tootltipFIrstelement = 1;
+            }
+        }
+        return false;
+    }
+</script>

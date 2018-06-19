@@ -1,0 +1,71 @@
+<div class="modal-body movebottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'people.edit.mainTitle.editActualityUpdate'| trans }}</h2>
+                {{ form_start(form, {'attr':{'id' : 'actuality'}}) }}
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ form_row(form._token) }}
+                            {{ form_row(form.profileActualityText, {'attr':{'class' : 'form-control'} }) }}
+                        </div>
+                    </div>
+                    <br/>
+                    <div style="text-align: center">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        <div style="display: inline-block">{{ form_row(form.submit, { 'attr': { 'class': 'btn btn-inverse-primary center ' } }) }}</div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var editor = CKEDITOR.replace('theaterjobs_profile_actuality_type_profileActualityText', {
+        customConfig: '{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/actuality.js') }}'
+    });
+    const actualityForm = $('#actuality');
+    addLoadingSvg(actualityForm);
+    const loading = actualityForm.find('.submit-rolling-svg');
+
+    editor.on('notificationShow', function (evt) {
+        evt.data.notification.update(
+            {
+                message: '<h5>'+ trans('content.pasted.above.limit', locale) +'</h5>',
+                type: 'warning',
+                duration: 3000
+            }
+        );
+    });
+
+    actualityForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        loading.show();
+        validFormInputs();
+        CKEDITOR.instances['theaterjobs_profile_actuality_type_profileActualityText'].updateElement();
+        $.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            success: function (data) {
+                loading.hide();
+                if (data.success) {
+                    $('.latest-block').html(data.data);
+                    $('#myModal').modal('hide');
+                } else {
+                    const errors = data.errors;
+                    for (var i = 0; i < errors.length; i++) {
+                        var el = $(errors[i].field);
+                        el.parent().addClass('has-error');
+                        toolTipError(errors[i].message, el);
+                    }
+                }
+            },
+            error: function () {
+                loading.hide();
+                serverError();
+            }
+        });
+    });
+</script>

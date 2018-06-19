@@ -1,0 +1,216 @@
+<div class="hidden" id="totalEntitiesNumber">{{ total }}</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    {% if jobs | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="jobsAccordionHeading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#jobAccordion" aria-expanded="true" aria-controls="jobAccordion">
+                        {{ 'tj.account.setting.jobs' | trans }} ({{ jobs | length }})
+                    </a>
+                </h4>
+            </div>
+            <div id="jobAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="jobsAccordionHeading">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.job.title' | trans }}</th>
+                            <th>{{ 'tj.job.created.date' | trans }}</th>
+                            <th>{{ 'tj.job.publication.date' | trans }}</th>
+                            <th>{{ 'tj.job.archived.date' | trans }}</th>
+                        </tr>
+                        {% for job in jobs %}
+                            <tr>
+                                <td><a href="{{ path('tj_inserate_job_route_show',{slug:job.slug}) }}" target="_blank">{{ job.title }}</a></td>
+                                <td>{{ job.createdAt | date('d.m.Y') }}</td>
+                                <td>{{ job.publishedAt | date('d.m.Y') }}</td>
+                                <td>{% if job.archivedAt is not null %}{{ job.archivedAt | date('d.m.Y') }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if educations | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="educationAccordionHeading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#educationAccordion" aria-expanded="false" aria-controls="educationAccordion">
+                        {{ 'tj.account.setting.educations' | trans }} ({{ educations | length }})
+                    </a>
+                </h4>
+            </div>
+            <div id="educationAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="educationAccordionHeading">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.education.title' | trans }}</th>
+                            <th>{{ 'tj.education.created.date' | trans }}</th>
+                            <th>{{ 'tj.education.publication.date' | trans }}</th>
+                            <th>{{ 'tj.education.archived.date' | trans }}</th>
+                        </tr>
+                        {% for education in educations %}
+                            <tr>
+                                <td><a href="{{ path('tj_inserate_education_route_show',{slug:education.slug}) }}" target="_blank">{{ education.title }}</a></td>
+                                <td>{{ education.createdAt | date('d.m.Y') }}</td>
+                                <td>{{ education.publishedAt | date('d.m.Y') }}</td>
+                                <td>{% if education.archivedAt is not null %}{{ education.archivedAt | date('d.m.Y') }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if networks | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="networkAccordionHeading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#networkAccordion" aria-expanded="false" aria-controls="networkAccordion">
+                        {{ 'tj.account.setting.networks' | trans }} ({{ networks | length }})
+                    </a>
+                </h4>
+            </div>
+            <div id="networkAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="networkAccordionHeading">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.network.title' | trans }}</th>
+                            <th>{{ 'tj.network.created.date' | trans }}</th>
+                            <th>{{ 'tj.network.publication.date' | trans }}</th>
+                            <th>{{ 'tj.network.archived.date' | trans }}</th>
+                        </tr>
+                        {% for network in networks %}
+                            <tr>
+                                <td><a href="{{ path('tj_inserate_network_route_show',{slug:network.slug}) }}" target="_blank">{{ network.title }}</a></td>
+                                <td>{{ network.createdAt | date('d.m.Y') }}</td>
+                                <td>{{ network.publishedAt | date('d.m.Y') }}</td>
+                                <td>{% if network.archivedAt is not null %}{{ network.archivedAt | date('d.m.Y') }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if pieces | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="piecesAccordionHeading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#piecesAccordion" aria-expanded="false" aria-controls="piecesAccordion">
+                        {{ 'tj.account.setting.pieces' | trans }} ({{ pieces | length }})
+                    </a>
+                </h4>
+            </div>
+            <div id="piecesAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="piecesAccordionHeading">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.piece.title' | trans }}</th>
+                            <th>{{ 'tj.piece.created.date' | trans }}</th>
+                            <th>{{ 'tj.piece.publication.date' | trans }}</th>
+                            <th>{{ 'tj.piece.archived.date' | trans }}</th>
+                        </tr>
+                        {% for piece in pieces %}
+                            <tr>
+                                <td><a href="{{ path('tj_inserate_piece_route_show',{slug:piece.slug}) }}" target="_blank">{{ piece.title }}</a></td>
+                                <td>{{ piece.createdAt | date('d.m.Y') }}</td>
+                                <td>{% if piece.publishedAt is not null %}{{ piece.publishedAt | date('d.m.Y') }}{% endif %}</td>
+                                <td>{% if piece.archivedAt is not null %}{{ piece.archivedAt | date('d.m.Y') }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {#{% if forums | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="forumAccordionHeading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#forumAccordion" aria-expanded="false" aria-controls="forumAccordion">
+                        {{ 'tj.account.setting.forums' | trans }} ({{ forums | length }})
+                    </a>
+                </h4>
+            </div>
+            #}{#<div id="forumAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="forumAccordionHeading">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.forum.title' | trans }}</th>
+                            <th>{{ 'tj.forum.created.date' | trans }}</th>
+                            <th>{{ 'tj.forum.archived.date' | trans }}</th>
+                        </tr>
+                        #}{##}{#{% for forum in forums %}
+                            <tr>
+                                <td><a href="{{ path('tj_forum_replies_index',{id:forum.topic.id}) }}" target="_blank">{{ forum.topic.title }}</a></td>
+                                <td>{{ forum.topic.confirmedAt | date('d.m.Y') }}</td>
+                                <td>{% if forum.topic.archivedAt is not null %}{{ forum.topic.archivedAt | date('d.m.Y') }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}#}{##}{#
+                    </table>
+                </div>
+            </div>#}{#
+        </div>
+    {% endif %}#}
+    {% if news | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="newsAccordionHeading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#newsAccordion" aria-expanded="false" aria-controls="newsAccordion">
+                        {{ 'tj.account.setting.news' | trans }} ({{ news | length }})
+                    </a>
+                </h4>
+            </div>
+            <div id="newsAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="newsAccordionHeading">
+                <div class="panel-body">       
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.news.title' | trans }}</th>
+                            <th>{{ 'tj.news.created.date' | trans }}</th>
+                            <th>{{ 'tj.news.publication.date' | trans }}</th>
+                            <th>{{ 'tj.news.archived' | trans }}</th>
+                        </tr>
+                        {% for new in news %}
+                            <tr>
+                                <td><a href="{{ path('tj_news_show',{slug:new.news.slug}) }}" target="_blank">{{ new.news.title }}</a></td>
+                                <td>{{ new.news.createdAt | date('d.m.Y') }}</td>
+                                <td>{{ new.news.publishAt | date('d.m.Y') }}</td>
+                                <td>{% if new.news.archived %}{{ 'tj.news.archived' | trans }}{% else %}{{ 'tj.news.not.archived' | trans }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if organizations | length > 0 %}
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="organizationsAccordionHeading">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#organizationsAccordion" aria-expanded="false" aria-controls="organizationsAccordion">
+                        {{ 'tj.account.setting.organizations' | trans }} ({{ organizations | length }})
+                    </a>
+                </h4>
+            </div>
+            <div id="organizationsAccordion" class="panel-collapse collapse" role="tabpanel" aria-labelledby="organizationsAccordionHeading">
+                <div class="panel-body">
+                    <table class="table table-bordered table-hover">
+                        <tr>
+                            <th>{{ 'tj.organization.title' | trans }}</th>
+                            <th>{{ 'tj.organization.created.date' | trans }}</th>
+                            <th>{{ 'tj.organization.archived.date' | trans }}</th>
+                        </tr>
+                        {% for organization in organizations %}
+                            <tr>
+                                <td><a href="{{ path('tj_organization_show',{slug:organization.slug}) }}" target="_blank">{{ organization.name }}</a></td>
+                                <td>{{ organization.createdAt | date('d.m.Y') }}</td>
+                                <td>{% if organization.archivedAt is not null %}{{ organization.archivedAt | date('d.m.Y') }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>

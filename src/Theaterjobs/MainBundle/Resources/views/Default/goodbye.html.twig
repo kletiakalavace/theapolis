@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'default.goodbye.titel'| trans }}{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="block">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'default.goodbye.content.header'| trans }}</h1>
+                        <p class="goodbye-p p-alt">{{ 'default.goodbye.content.text'| trans }}</p>
+                        <p class="goodbye-p p-alt">{{ 'theaterjobs.yourteam'| trans }}</p>
+                        <p>
+                            <a class="btn btn-primary" href="{{ path('tj_main_default_home') }}">
+                                {{ 'link.home'| trans }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script>
+        $('#myModal').on('shown', function () {
+            document.getElementById('username').focus();
+            $('#username').focus();
+        });
+    </script>
+{% endblock %}
+

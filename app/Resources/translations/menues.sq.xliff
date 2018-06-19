@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-05T10:57:35Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="dfb58e4fd501a527924a890b0befebe5f317c52b" resname="menu.admin.categories">
+        <source>menu.admin.categories</source>
+        <target state="new">menu.admin.categories</target>
+        <jms:reference-file line="72">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66fec315f89ede9eab91aedf76076fe42e6a6858" resname="menu.admin.cron.job">
+        <source>menu.admin.cron.job</source>
+        <target state="new">menu.admin.cron.job</target>
+        <jms:reference-file line="121">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cb62f0c1c5c58f51b809ce7fa4fa591469407f45" resname="menu.admin.entities.stats">
+        <source>menu.admin.entities.stats</source>
+        <target state="new">menu.admin.entities.stats</target>
+        <jms:reference-file line="128">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84014233de3ef4aae2642cbde73e896968dee25a" resname="menu.admin.external.portals">
+        <source>menu.admin.external.portals</source>
+        <target state="new">menu.admin.external.portals</target>
+        <jms:reference-file line="93">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e3d96ca82fba16ecaf6e3b9481390711dbfb8eb" resname="menu.admin.faq">
+        <source>menu.admin.faq</source>
+        <target state="new">menu.admin.faq</target>
+        <jms:reference-file line="37">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FaqAdminMenu.php</jms:reference-file>
+        <jms:reference-file line="44">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FaqAdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ec98b0fa02c29cfe1c62a82d2eb60a3f3db79308" resname="menu.admin.faq.categories">
+        <source>menu.admin.faq.categories</source>
+        <target state="new">menu.admin.faq.categories</target>
+        <jms:reference-file line="50">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FaqAdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="76d655e62dd5889cbbb79e1d38f54772f07ca1fe" resname="menu.admin.faq.categories.new">
+        <source>menu.admin.faq.categories.new</source>
+        <target state="new">menu.admin.faq.categories.new</target>
+        <jms:reference-file line="56">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FaqAdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8851e7cc5b5c825f893699a1445d1a916f03b2d8" resname="menu.admin.faq.questions">
+        <source>menu.admin.faq.questions</source>
+        <target state="new">menu.admin.faq.questions</target>
+        <jms:reference-file line="63">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FaqAdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9bbefa730d95d1e2e54499657813b9994ec8f114" resname="menu.admin.faq.questions.new">
+        <source>menu.admin.faq.questions.new</source>
+        <target state="new">menu.admin.faq.questions.new</target>
+        <jms:reference-file line="69">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FaqAdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1fb09cf3481bd684929c64c449f31a45c358d64e" resname="menu.admin.home">
+        <source>menu.admin.home</source>
+        <target state="new">menu.admin.home</target>
+        <jms:reference-file line="37">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e18a4b5c411d0744d9b39a6c75ab7d5a46f84ae6" resname="menu.admin.iban.blacklist">
+        <source>menu.admin.iban.blacklist</source>
+        <target state="new">menu.admin.iban.blacklist</target>
+        <jms:reference-file line="135">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="398a12150c23a34177b36cec093efa54c7801732" resname="menu.admin.jobs">
+        <source>menu.admin.jobs</source>
+        <target state="new">menu.admin.jobs</target>
+        <jms:reference-file line="51">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1fd9792d7d6f2255e4cfcb8df7d679e8ae3ffe87" resname="menu.admin.new.organizations">
+        <source>menu.admin.new.organizations</source>
+        <target state="new">menu.admin.new.organizations</target>
+        <jms:reference-file line="58">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e0e094ef6edf0c345658eaa293b63eb999b3e479" resname="menu.admin.organization.category.new">
+        <source>menu.admin.organization.category.new</source>
+        <target state="new">menu.admin.organization.category.new</target>
+        <jms:reference-file line="79">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="25a8ec1a1286334d7e5962b39bfe41f8f824e89b" resname="menu.admin.search">
+        <source>menu.admin.search</source>
+        <target state="new">menu.admin.search</target>
+        <jms:reference-file line="86">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c223fc83d570f99f66baddcdb0664cb2a2ae3d66" resname="menu.admin.unchecked.billing">
+        <source>menu.admin.unchecked.billing</source>
+        <target state="new">menu.admin.unchecked.billing</target>
+        <jms:reference-file line="114">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/AdminMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b305d71a5ee3761e16949239e73588794ae8fac2" resname="menu.dashboard.my">
+        <source>menu.dashboard.my</source>
+        <target state="new">menu.dashboard.my</target>
+        <jms:reference-file line="37">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/DashboardMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="166821b6495608aab88ccd48ffe73fab3791284b" resname="menu.education.all">
+        <source>menu.education.all</source>
+        <target state="new">menu.education.all</target>
+        <jms:reference-file line="48">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="777443d5dd625b8fbbfda000ca9cacf695a1fea8" resname="menu.education.archived">
+        <source>menu.education.archived</source>
+        <target state="new">menu.education.archived</target>
+        <jms:reference-file line="71">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf30f47d7f651b63be7259056837e15f9b870445" resname="menu.education.deleted">
+        <source>menu.education.deleted</source>
+        <target state="new">menu.education.deleted</target>
+        <jms:reference-file line="80">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="47b16bfcada25765ab0a03e6cb451c2a6fb0e4e5" resname="menu.education.drafts">
+        <source>menu.education.drafts</source>
+        <target state="new">menu.education.drafts</target>
+        <jms:reference-file line="64">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d764f6b430be65dd0ec7a910306f3e80e8a1bda" resname="menu.education.favorites">
+        <source>menu.education.favorites</source>
+        <target state="new">menu.education.favorites</target>
+        <jms:reference-file line="90">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7de235d6b2452f97a991a29abe480aa97485f6c0" resname="menu.education.home">
+        <source>menu.education.home</source>
+        <target state="new">menu.education.home</target>
+        <jms:reference-file line="40">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="20b0559c85d390e62797762e58c7b0816b3126a2" resname="menu.education.my">
+        <source>menu.education.my</source>
+        <target state="new">menu.education.my</target>
+        <jms:reference-file line="107">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c90ad538f76e7c415dd418738376797db0bda08f" resname="menu.education.new">
+        <source>menu.education.new</source>
+        <target state="new">menu.education.new</target>
+        <jms:reference-file line="56">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/EducationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aac2d75b13694239147febf13c6fbf88822ee6a6" resname="menu.footer.app">
+        <source>menu.footer.app</source>
+        <target state="new">menu.footer.app</target>
+        <jms:reference-file line="70">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FooterMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da836cfaaae4d22417fc29766db4965607b18f8d" resname="menu.footer.imprint">
+        <source>menu.footer.imprint</source>
+        <target state="new">menu.footer.imprint</target>
+        <jms:reference-file line="42">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FooterMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9ccc083fa9d9e127cef94e8e094437bc48c01de3" resname="menu.footer.prices">
+        <source>menu.footer.prices</source>
+        <target state="new">menu.footer.prices</target>
+        <jms:reference-file line="63">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FooterMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f796d18df8451ec0f3e173394fef9355ba690a5a" resname="menu.footer.terms">
+        <source>menu.footer.terms</source>
+        <target state="new">menu.footer.terms</target>
+        <jms:reference-file line="49">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/FooterMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50ed4910640f63c2db6fbf80db548883ecbb6882" resname="menu.forum.all">
+        <source>menu.forum.all</source>
+        <target state="new">menu.forum.all</target>
+        <jms:reference-file line="37">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ForumMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afc339a4ac7aefa88702fed824478929dc66fd8c" resname="menu.forum.home">
+        <source>menu.forum.home</source>
+        <target state="new">menu.forum.home</target>
+        <jms:reference-file line="29">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ForumMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf01e92849b0b07b9cf119f0d8819a031bf56d21" resname="menu.home.about">
+        <source>menu.home.about</source>
+        <target state="new">menu.home.about</target>
+        <jms:reference-file line="80">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2ae80f0841af9bde87fbb3ce15353bbb93ec9e8a" resname="menu.home.home">
+        <source>menu.home.home</source>
+        <target state="new">menu.home.home</target>
+        <jms:reference-file line="38">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2a0987750ad18ed989ab48b7c6197e77ad26fff0" resname="menu.home.news">
+        <source>menu.home.news</source>
+        <target state="new">menu.home.news</target>
+        <jms:reference-file line="52">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="deba0999d3ed5d4f247ce1d5b27275cdc3a069c8" resname="menu.home.philosophy">
+        <source>menu.home.philosophy</source>
+        <target state="new">menu.home.philosophy</target>
+        <jms:reference-file line="59">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8f1520a621537255d7247144b82ffed27f4d4e50" resname="menu.home.prices">
+        <source>menu.home.prices</source>
+        <target state="new">menu.home.prices</target>
+        <jms:reference-file line="73">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d601f83e871115201fa4dbed7f4eb0c066a39146" resname="menu.home.startpage">
+        <source>menu.home.startpage</source>
+        <target state="new">menu.home.startpage</target>
+        <jms:reference-file line="45">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ff81244ee11f7713c50e15754c078c9b784ae42" resname="menu.home.terms_and_trades">
+        <source>menu.home.terms_and_trades</source>
+        <target state="new">menu.home.terms_and_trades</target>
+        <jms:reference-file line="66">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/HomeMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1a41e0c8a02ce56ca5194a06aae1beaf50304492" resname="menu.job.all">
+        <source>menu.job.all</source>
+        <target state="new">menu.job.all</target>
+        <jms:reference-file line="47">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8faccc4e12918003ddcbeb6c1d4ec313fce6a8c3" resname="menu.job.employments">
+        <source>menu.job.employments</source>
+        <target state="new">menu.job.employments</target>
+        <jms:reference-file line="88">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f99ac6aa3d2906538d6723c1973a3df2cbb52922" resname="menu.job.favorites">
+        <source>menu.job.favorites</source>
+        <target state="new">menu.job.favorites</target>
+        <jms:reference-file line="69">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f991cbf4da9ddf6c57691a6a043e74c9ac418286" resname="menu.job.home">
+        <source>menu.job.home</source>
+        <target state="new">menu.job.home</target>
+        <jms:reference-file line="39">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf66881649a5d8bf5ec6718219228cd5fe314ef0" resname="menu.job.my">
+        <source>menu.job.my</source>
+        <target state="new">menu.job.my</target>
+        <jms:reference-file line="75">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d52bdc7f9cae144a4aa7643811372a83b4443d66" resname="menu.job.my.applications">
+        <source>menu.job.my.applications</source>
+        <target state="new">menu.job.my.applications</target>
+        <jms:reference-file line="81">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4a61902d017607a47902a697a11e81ff3205645" resname="menu.job.my.for">
+        <source>menu.job.my.for</source>
+        <target state="new">menu.job.my.for</target>
+        <jms:reference-file line="134">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a612585d8a4ab2c5ec56e26c1c18a22ddb2fa67a" resname="menu.job.new">
+        <source>menu.job.new</source>
+        <target state="new">menu.job.new</target>
+        <jms:reference-file line="62">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="acc1aa882691f93cbd293a6ce805bf611069e98e" resname="menu.job.stored.search">
+        <source>menu.job.stored.search</source>
+        <target state="new">menu.job.stored.search</target>
+        <jms:reference-file line="96">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/JobMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="86bc4ec55a4822aecff1941253c330732a6f5e3e" resname="menu.network.all">
+        <source>menu.network.all</source>
+        <target state="new">menu.network.all</target>
+        <jms:reference-file line="48">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="703d0c32ec34d13bc2f0ba6514b0763e97da8c8e" resname="menu.network.archived">
+        <source>menu.network.archived</source>
+        <target state="new">menu.network.archived</target>
+        <jms:reference-file line="71">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4d396d06c7848a1f118196adf048cee90690f723" resname="menu.network.deleted">
+        <source>menu.network.deleted</source>
+        <target state="new">menu.network.deleted</target>
+        <jms:reference-file line="80">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1886f637cd24aab731a65ed5c5012d0415516d17" resname="menu.network.drafts">
+        <source>menu.network.drafts</source>
+        <target state="new">menu.network.drafts</target>
+        <jms:reference-file line="64">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2f765ae9690bb1cbe9294bd2b7de59a85b1a301" resname="menu.network.favorites">
+        <source>menu.network.favorites</source>
+        <target state="new">menu.network.favorites</target>
+        <jms:reference-file line="90">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16c02986bf0830cf2c588d734ecf3170f7744344" resname="menu.network.home">
+        <source>menu.network.home</source>
+        <target state="new">menu.network.home</target>
+        <jms:reference-file line="40">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2a94517e204439e1eed9c4da6267f0db2ce19e2e" resname="menu.network.my">
+        <source>menu.network.my</source>
+        <target state="new">menu.network.my</target>
+        <jms:reference-file line="107">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d4ae8a4ac3b55b1ef73ad1d8eacb5e860ad203e" resname="menu.network.new">
+        <source>menu.network.new</source>
+        <target state="new">menu.network.new</target>
+        <jms:reference-file line="56">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/NetworkMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f5262fad25e3a97026ed5de22c3f8e7c49146bb0" resname="menu.organization.all">
+        <source>menu.organization.all</source>
+        <target state="new">menu.organization.all</target>
+        <jms:reference-file line="37">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/OrganizationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0484c3facd78b1bac12982055f228b6ece2595cb" resname="menu.organization.home">
+        <source>menu.organization.home</source>
+        <target state="new">menu.organization.home</target>
+        <jms:reference-file line="29">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/OrganizationMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5a4d0e18966298aeb9dc7821019b4110c9b3654" resname="menu.piece.all">
+        <source>menu.piece.all</source>
+        <target state="new">menu.piece.all</target>
+        <jms:reference-file line="42">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PieceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cfef909c1fa425603b7426914caa0b615a6384d9" resname="menu.piece.favorites">
+        <source>menu.piece.favorites</source>
+        <target state="new">menu.piece.favorites</target>
+        <jms:reference-file line="60">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PieceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cc2d306155db5b7a1d83b4f7f63e5a0ea158244e" resname="menu.piece.home">
+        <source>menu.piece.home</source>
+        <target state="new">menu.piece.home</target>
+        <jms:reference-file line="34">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PieceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="17b31f88c3a342e563050acdb8a5165143e44a53" resname="menu.piece.my">
+        <source>menu.piece.my</source>
+        <target state="new">menu.piece.my</target>
+        <jms:reference-file line="77">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PieceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fab33d1f6c76f62a2955214359c4695d78b5b16d" resname="menu.piece.new">
+        <source>menu.piece.new</source>
+        <target state="new">menu.piece.new</target>
+        <jms:reference-file line="50">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PieceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2fa74a67798fdd075d0fcb385d86c77449bd9334" resname="menu.profile.all">
+        <source>menu.profile.all</source>
+        <target state="new">menu.profile.all</target>
+        <jms:reference-file line="44">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PeopleMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e68f5f464448193009696879a41502402dae4b8" resname="menu.profile.favorites">
+        <source>menu.profile.favorites</source>
+        <target state="new">menu.profile.favorites</target>
+        <jms:reference-file line="77">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PeopleMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="56f60014282066ef0fd4de6b344098a1fc06a2f7" resname="menu.profile.home">
+        <source>menu.profile.home</source>
+        <target state="new">menu.profile.home</target>
+        <jms:reference-file line="37">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PeopleMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb02947a1a4a413046842c89350f31488df2c87b" resname="menu.profile.myProfile">
+        <source>menu.profile.myProfile</source>
+        <target state="new">menu.profile.myProfile</target>
+        <jms:reference-file line="68">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/PeopleMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ee491d133f88667d67ce3b85ba3ef863bc0fae4c" resname="menu.service.home">
+        <source>menu.service.home</source>
+        <target state="new">menu.service.home</target>
+        <jms:reference-file line="40">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ServiceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7012a4dab05c98c879a225abd50359fe2e46b3e2" resname="menu.service.news">
+        <source>menu.service.news</source>
+        <target state="new">menu.service.news</target>
+        <jms:reference-file line="47">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ServiceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d0912b13623e404b48d289aaa26f76eb53ecb30" resname="menu.service.news.drafts">
+        <source>menu.service.news.drafts</source>
+        <target state="new">menu.service.news.drafts</target>
+        <jms:reference-file line="57">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ServiceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9cb6b3ea1fca1e77b390259eaad7a6f1b3efab3b" resname="menu.service.news.my">
+        <source>menu.service.news.my</source>
+        <target state="new">menu.service.news.my</target>
+        <jms:reference-file line="78">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ServiceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3050b80f8275a56296c7047d14b057d6ef66cd5c" resname="menu.service.news.new">
+        <source>menu.service.news.new</source>
+        <target state="new">menu.service.news.new</target>
+        <jms:reference-file line="64">/home/manoolia/Desktop/theaterjobs21/src/Theaterjobs/MainBundle/Menu/ServiceMenu.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cc0443c376309c9a6456047960c34b490b78e0ff" resname="menu.upperlink.about_us">
+        <source>menu.upperlink.about_us</source>
+        <target>About us</target>
+        <jms:reference-file line="14">/../../../../../../app/Resources/views/guestmenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3f494845cf9e247a77e8582cf69f89d194d4f994" resname="menu.upperlink.account.settings">
+        <source>menu.upperlink.account.settings</source>
+        <target>My account-settings</target>
+        <jms:reference-file line="36">/../../../../../../app/Resources/views/usermenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c060625f189db3a6e6fb333b13092c5c6e9e4fcf" resname="menu.upperlink.contact">
+        <source>menu.upperlink.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="8">/../../../../../../app/Resources/views/guestmenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5efc08aeed522c42445b89d11884dc034144e9cd" resname="menu.upperlink.faq">
+        <source>menu.upperlink.faq</source>
+        <target>FAQ</target>
+        <jms:reference-file line="11">/../../../../../../app/Resources/views/guestmenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="912c25d30489751d82c308b2f29e2e0b4e3058fc" resname="menu.upperlink.login">
+        <source>menu.upperlink.login</source>
+        <target>Login</target>
+        <jms:reference-file line="2">/../../../../../../app/Resources/views/guestmenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c8cc8c391be0737c7b7ba32eba22ccbb53f945c" resname="menu.upperlink.logout">
+        <source>menu.upperlink.logout</source>
+        <target>Logout</target>
+        <jms:reference-file line="45">/../../../../../../app/Resources/views/usermenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a631fe66d1cce5e0c6024b25a4f253d278ce70c1" resname="menu.upperlink.profile">
+        <source>menu.upperlink.profile</source>
+        <target>My profile</target>
+        <jms:reference-file line="29">/../../../../../../app/Resources/views/usermenu.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc40f55c4a89f69511d14c48eec7c1054e69d204" resname="menu.upperlink.register">
+        <source>menu.upperlink.register</source>
+        <target>Register</target>
+        <jms:reference-file line="5">/../../../../../../app/Resources/views/guestmenu.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

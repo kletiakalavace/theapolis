@@ -1,0 +1,93 @@
+{{ form_errors(form) }}
+<div class="col-lg-12 col-md-12">
+    {# firstname, lastname #}
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-12">
+            {{ form_row(form.profile.billingAddress.firstname) }}
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12">
+            {{ form_row(form.profile.billingAddress.lastname) }}
+        </div>
+    </div>
+    {# street and streetnumber #}
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            {{ form_row(form.profile.billingAddress.street) }}
+        </div>
+    </div>
+    {# zip, city, country #}
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-xs-12">
+            {{ form_row(form.profile.billingAddress.zip) }}
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-12">
+            {{ form_row(form.profile.billingAddress.city) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            {{ form_row(form.profile.billingAddress.country, {
+                'attr': {
+                    'data-eu-countries': euCountries,
+                    'data-eu-mapped-countries': euMappedCountries,
+                }
+            }) }}
+        </div>
+    </div>
+
+    {# company information #}
+    <div class="row" id="company_information">
+        <div class="col-lg-12 col-md-12">
+            <p id="show-billing-company-vat">
+                <a id="showCompanyInfo" data-show-on-click="#billing-company-vat,#hideCompanyInfo" data-hide-on-click="#"  class="pull-left company_details">
+                 <span>{{ 'membership.new.link.addCompanyDetails'|trans }}</span>  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    {# company, vat-id #}
+    <fieldset id="billing-company-vat" style="display:none;">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                {{ form_row(form.profile.billingAddress.company) }}
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group {% if form.profile.billingAddress.vatId.vars.errors|length %}has-error has-feedback{% endif %}"
+                     id="vatcontainer">
+                    {{ form_label(form.profile.billingAddress.vatId) }}
+
+                    {{ form_widget(form.profile.billingAddress.vatId, {
+                        'attr': {
+                            'data-placeholder-enabled': 'billingAddress.placeholder.vatId'| trans({}, "forms"),
+                            'data-placeholder-disabled': 'billingAddress.placeholder.vatId.notAvailable'| trans({}, "forms"),
+                            'data-placeholder-de': 'billingAddress.placeholder.vatId.notFor_de'| trans({}, "forms"),
+                            'data-placeholder-empty': 'billingAddress.placeholder.vatId.Empty'| trans({}, "forms"),
+                            'data-placeholder-no-company': 'billingAddress.placeholder.vatId.noCompany'| trans({}, "forms")
+                        }
+                    }
+                    ) }}
+
+                    {{ form_errors(form.profile.billingAddress.vatId) }}
+
+                    <a id="hideCompanyInfo" data-show-on-click="#showCompanyInfo" data-hide-on-click="#billing-company-vat"  class="pull-right company_details" style="display: none">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i> <span>{{ 'membership.new.link.removeComapanyDetails'|trans }}</span>
+                    </a>
+                </div>
+                {#                {{form_row(form.profile.billingAddress.availablePaymentMethods)}}#}
+            </div>
+        </div>
+    </fieldset>
+
+    {# invoice email information #}
+    <div class="row">
+        <div class="col-lg-12">
+            <p id="show-billing-invoive-email">
+                <a data-show-on-click="#billing-invoive-email" data-hide-on-click="#show-billing-invoive-email"
+                   href="#" style="display: none;">
+                   {{ 'add.email.text'|trans }}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>

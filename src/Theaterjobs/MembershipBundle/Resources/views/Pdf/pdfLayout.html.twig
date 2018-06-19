@@ -1,0 +1,56 @@
+{% block html %}
+    {% trans_default_domain 'pdf' %}
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="imagetoolbar" content="false" />
+            <meta name="robots" content="noarchive" />
+            <title>Billing/SEPA</title>
+            {% block stylesheets %}
+                <style type="text/css">
+                    html {
+                        position: relative;
+                        min-height: 100%;
+                    }
+
+                    body {
+                        background: #fff !important;
+                        font-family: 'Noto Serif', serif;
+                        margin: 0;
+                        padding: 1cm 1cm 1cm 0cm;
+                        font-size: 8pt;
+                        width: 210mm;
+                        height: 297mm;
+                    }
+
+                    #logo {
+                        height: 1cm;
+                        width: 4.5cm;
+                    }
+
+                    article, #salutation {
+                        margin-top: 2cm;
+                    }
+
+                    h3 {
+                        font-size: 10pt;
+                    }
+
+                    footer {
+                        position: absolute;
+                        bottom: 0;
+                        font-size: 6pt;
+                        line-height: 0.5pt;
+                        width: 210mm;
+                    }
+                </style>
+            {% endblock %}
+        </head>
+        <body>
+            {% block header %}<!-- HEADER -->{% endblock header %}
+            {% block content %}<!-- CONTENT -->{% endblock content %}
+            {% block footer %}<!-- FOOTER -->{% endblock footer %}
+        </body>
+    </html>
+{% endblock html %}

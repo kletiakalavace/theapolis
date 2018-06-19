@@ -1,0 +1,131 @@
+{% import '::macro.html.twig' as m %}
+{% form_theme edit_form.occupation 'form_div_layout.html.twig' %}
+{% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+"@TheaterjobsProfileBundle/Resources/public/css/prodEmpl.css" %}
+<link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+<div class="modal-body movebottom" id="productionEdit">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.editProduction'| trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(edit_form) }}
+                        {% if participation.production.checked == true %}
+                            <div class="alert bg-white errorModal"><p
+                                        class="text-warning">{{ 'people.edit.message.editProduction.chekedByAdmins'| trans }}</p>
+                            </div>
+                        {% endif %}
+                        <div class="first">
+                            <div class='prod'>
+                                <div class="form-group">
+                                    {{ form_row(edit_form.production.organizationRelated,{'attr': {'readonly': true}}) }}
+                                </div>
+                            </div>
+                            <div class="second" id='second'>
+                                <div class="form-group">
+                                    {{ form_row(edit_form.production.name) }}
+                                </div>
+                                <div class='prod part2'>
+                                    <div class="form-group">
+                                        {{ form_row(edit_form.production.year) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(edit_form.production.creators) }}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(edit_form.production.directors) }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    {{ form_row(edit_form.occupation, {'attr': {'class': 'form-control'} }) }}
+                                </div>
+                                <div id="rolediv" hidden>
+                                    <div class="from-group">
+                                        {{ form_row(edit_form.occupationDescription.roleName) }}
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(edit_form.occupationDescription.assistant) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.occupationAssistant'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(edit_form.occupationDescription.management) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.occupationManagement'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group username-newProd">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(edit_form.usedNameCheck) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.username.checkbox'|trans }}
+                                            </label>
+                                        </div>
+                                        <div class="used-name  {% if edit_form.usedNameCheck.vars.checked == false %} hidden {% endif %}">
+                                            {{ form_row(edit_form.usedName) }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(edit_form.occupationDescription.description) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 form-group">
+                                        {{ form_row(edit_form.start) }}
+                                    </div>
+                                    <div class="col-md-4 form-group">
+                                        {{ form_row(edit_form.end) }}
+                                    </div>
+                                    <div class="form-group col-md-4 pull-right checkbox-isfinished">
+                                        <div class="checkbox">
+                                            <label>
+                                                {{ form_widget(edit_form.ongoing) }}
+                                                <span class="faux-checkbox"></span>
+                                                {{ 'people.edit.placeholder.participation.ongoingProduction'| trans }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{ form_widget(edit_form.submit,{'attr':{'class':'hidden'} }) }}
+                    {{ form_end(edit_form) }}
+                    </div>
+                    <div class="form-inline" style="text-align: center">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                        <button type="button" class="btn btn-inverse-primary btn btn-inverse btn-primary btn-update-modal"
+                                onclick="javascript:$('#productionEdit form:eq(0)').submit()" >{{ 'button.update'| trans }}
+                                <span class="submit-rolling-svg" style="display: none"></span>
+                        </button>
+                        <div class="delete-btn">
+                            {{ form_start(delete_form) }}
+                            <p class="text-center">
+                                {{ form_widget(delete_form.submit,{'attr':{'class':'btn-delete-modal btn-inverse'} }) }}
+                            </p>
+                            {{ form_end(delete_form) }}
+                        </div>
+                    </div>
+                {{ m.error }}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var prodChecked = {{ participation.production.checked ? 'true' : 'false' }};
+</script>
+{% javascripts filter="?uglifyjs2"
+    "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/ui/widgets/autocomplete.js"
+    "@TheaterjobsProfileBundle/Resources/public/js/production/main.js"
+    "@TheaterjobsProfileBundle/Resources/public/js/production/edit.js" %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+{% endjavascripts %}

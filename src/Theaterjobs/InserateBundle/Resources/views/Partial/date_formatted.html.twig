@@ -1,0 +1,5 @@
+{#Datatables reorder data on the front end based on the text of the sortable column so for a correct ordering we need the Y-m-d H:i:s format.#}
+<p class="hidden">
+    {{ date | date("Y-m-d H:i:s") }}
+</p>
+{{ date | localizeddate('none', 'none', app.request?app.request.locale:'de', null, 'd. MMM YYYY HH:mm') }}

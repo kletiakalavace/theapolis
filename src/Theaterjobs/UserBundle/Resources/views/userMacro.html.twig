@@ -1,0 +1,463 @@
+{% macro accountMembershipBlock(paymentMethod, expireDate, showBuyMembership, debitAccount, bankName, owner, profile) %}
+    {% import _self as um %}
+
+    {% if not profile.bookings.count %}
+        {# User has not a single membership #}
+        {{ um.noMembershipBlock() }}
+    {% else %}
+        {% if expireDate %}
+            {# User has an active membership #}
+            {{ um.activeMembershipBlock(profile, debitAccount, paymentMethod, bankName, expireDate, showBuyMembership) }}
+        {% else %}
+            {# User had a membership but its expired/revoked #}
+            {{ um.expiredMembershipBlock(debitAccount, bankName, owner, profile) }}
+        {% endif %}
+    {% endif %}
+
+{% endmacro %}
+
+{#
+    * Block data when the user has no single membership
+#}
+{% macro noMembershipBlock() %}
+    <dl>
+        <dt>{{ 'account.contract.label.membershipUntil' | trans }}</dt>
+        <dd class="expire-date-text">
+            {{ 'account.contract.membershipuntil.noMembership' | trans }}
+        </dd>
+    </dl>
+    <p class="p-alt membership-payment">
+        {#Buy a new membership#}
+        <a href="{{ path('tj_membership_booking_new') }}"
+           data-hash="membership">
+            <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                 height="20">
+                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+            </svg>
+            {{ 'link.buy.membership'| trans }}
+        </a>
+    </p>
+{% endmacro %}
+
+
+{#
+    * Block data when the user had a membership but its expired/revoked
+#}
+{% macro expiredMembershipBlock(debitAccount, bankName, owner, profile) %}
+    {% import _self as um %}
+    {# No membership label#}
+    <dl>
+        <dt>{{ 'account.contract.label.membershipUntil' | trans }}</dt>
+        <dd class="expire-date-text">
+            {{ 'account.contract.membershipuntil.noMembership' | trans }}
+        </dd>
+    </dl>
+
+    {# Button to buy new membership#}
+    <p class="p-alt membership-payment">
+        {#Buy a new membership#}
+        <a href="{{ path('tj_membership_booking_new') }}"
+           data-hash="membership">
+            <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                 height="20">
+                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+            </svg>
+            {{ 'link.buy.membership'| trans }}
+        </a>
+    </p>
+    {{ um.accountSettingsBankingData(debitAccount, bankName, owner, profile) }}
+{% endmacro %}
+
+{#
+    * Block data when the user has an active membership
+#}
+{% macro activeMembershipBlock(profile, debitAccount, paymentMethod, bankName, expireDate, showBuyMembership, owner) %}
+    {% import _self as um %}
+    <dl>
+        {# Membership Until #}
+        <dt>{{ 'account.contract.label.membershipUntil' | trans }}</dt>
+        <dd class="expire-date-text">
+            {% if paymentMethod.debit and profile.user.quitContractDate is null %}
+                {# Recurring Direct Debit #}
+                {{ 'account.contract.unlimited' | trans }}
+            {% else %}
+                {# Canceled directDebit/sofort/paypal #}
+                {{ expireDate | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM YYYY') }}
+            {% endif %}
+        </dd>
+
+        {#Payment Method #}
+        <dt>{{ 'account.contract.label.paymentMethod' | trans }}</dt>
+        <dd class="payment-method-text"> {{ paymentMethod.title | capitalize }} </dd>
+
+        {# Debit Method details #}
+        {% if paymentMethod.debit %}
+            {# Paid Until #}
+            <dt> {{ 'account.contract.label.paidUntil' | trans }} </dt>
+            <dd class="expire-date-text">
+                {{ expireDate | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM YYYY') }}
+            </dd>
+
+            {# Quit contract date #}
+            {% if profile.user.quitContractDate is not null %}
+                <dt id="label-contract-quit">{{ 'account.contract.quitOn' | trans }}</dt>
+                <dd id="date-contract-quit">
+                    {{ profile.user.quitContractDate | localizeddate('none', 'none', app.request.locale, null, 'd. MMMM YYYY') }}
+                </dd>
+
+                {# Quit contract Button #}
+            {% else %}
+                <p class="p-alt">
+                    <a href="{{ path('tj_user_account_settings_quit_contract', {slug: profile.slug }) }}"
+                       id="quitContractButton">
+                        {{ 'link.quit.contract' | trans }} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </p>
+            {% endif %}
+
+            {# Renew membership button#}
+            {% if showBuyMembership %}
+                <p class="p-alt membership-payment">
+                    <a href="{{ path('tj_membership_booking_new') }}"
+                       data-hash="membership">
+                        <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                             height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg>
+                        {{ 'link.renew.membership'| trans }}
+                    </a>
+                </p>
+            {% endif %}
+        {% endif %}
+    </dl>
+    {{ um.accountSettingsBankingData(debitAccount, bankName, owner, profile) }}
+{% endmacro %}
+
+{% macro confirmationEmailSent(user) %}
+    <div class="container">
+        <div class="block thanku-page">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'register.thankU.title' | trans }}!</h1>
+                        <p class="p-alt">{{ 'register.thankU.description' | trans }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>
+                    <svg class="icon-svg icon-svg-success" width="80" height="80">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-final') }}"></use>
+                    </svg>
+                </p>
+                <p class="p-alt">{{ 'register.thankU.subtitle1' | trans }}
+                    <a href="{{ path('theaterjobs_main_default_index') }}">{{ 'register.thankU.link.home' | trans }}</a>
+                    {#{{ 'register.thankU.subtitle2' | trans }}
+                    <a class="nav-link primary" data-toggle="modal" data-hash="login"
+                       data-target="#myModal"
+                       href="{{ path('tj_main_default_login_modal') }}">{{ 'register.thankU.link.login' | trans }}</a>#}
+                <p class="p-alt">{{ 'register.thankU.description1' | trans }}
+                    <a class="nav-link primary"
+                       href="{{ path('resend_confirmation',{'email':user.email}) }}">{{ 'register.thankU.link.clickHere' | trans }}
+                        .
+                    </a>{#{{ 'register.thankU.description2' | trans }}#}</p>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro confirmationEmailResent(user) %}
+    <div class="container">
+        <div class="block thanku-page">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'register.confirmation.thankU.title' | trans }}!</h1>
+                        <p class="p-alt">{{ 'register.confirmation.thankU.description' | trans }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>
+                    <svg class="icon-svg icon-svg-success" width="80" height="80">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-final') }}"></use>
+                    </svg>
+                </p>
+                <p class="p-alt">{{ 'register.confirmation.thankU.subtitle1' | trans }}
+                    <a href="{{ path('theaterjobs_main_default_index') }}">{{ 'register.confirmation.thankU.link.home' | trans }}</a>
+                    {{ 'register.confirmation.thankU.title' | trans }}!
+                </p>
+                <p class="p-alt">{#<a class="nav-link primary" data-toggle="modal" data-hash="login"
+                       data-target="#myModal"
+                       href="{{ path('tj_main_default_login_modal') }}">{{ 'register.confirmation.thankU.link.login' | trans }}</a>#}
+                    <a class="nav-link primary"
+                       href="{{ path('resend_confirmation',{'email':user.email}) }}">{{ 'register.confirmaion.link.resendLink' | trans }}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro brokenConfirmationLink() %}
+    <div class="container">
+        <div class="block">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'register.thankU.errorTitle' | trans }}! </h1>
+                        <p class="p-alt">{{ 'register.thankU.errorDescription' | trans }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>
+                    <svg class="icon-svg icon-svg-danger circle-danger" width="80" height="80">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning') }}"></use>
+                    </svg>
+                </p>
+                <p class="p-alt">
+
+                    {{ 'register.thankU.subtitle1' | trans }}
+                    <a href="{{ path('theaterjobs_main_default_index') }}">{{ 'register.thankU.link.home' | trans }}</a>
+                    {{ 'register.thankU.subtitle2' | trans }}
+                    <a class="nav-link primary" data-toggle="modal" data-hash="login"
+                       data-target="#myModal"
+                       href="{{ path('tj_main_default_login_modal') }}">{{ 'register.invalidlink.thankU.link.login' | trans }}</a>
+
+                </p>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro accountSettingsAdminBox(profile, options) %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="panel panel-large panel-admin panel-bleed-right" id="accountSettingsAdminBox">
+            <h2 class="panel-head">{{ 'account.adminBox.title' | trans }}
+                <span class="toggle-arrow">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}">
+                        </use>
+                    </svg>
+                </span>
+            </h2>
+
+            <div class="panel-content">
+                <div>
+                    <ul class="p-alt list-inline list-spaced list-ofstatistics">
+                        {#Link to profile#}
+                        <li>
+                            <p class="p-alt">
+                                <a href="{{ path('tj_profile_profile_show', {slug : profile.slug }) }}">
+                                    {{ 'link.profile' | trans }}
+                                </a>
+                            </p>
+                        </li>
+                        {#Link to User jobs#}
+                        <li>
+                            <p class="p-alt">
+                                <a href="{{ path('tj_inserate_job_route_list', {forUser : profile.slug}) }}">
+                                    {{ 'link.userJobs' | trans }}
+                                </a>
+                            </p>
+                        </li>
+                        {#Link to user organizations#}
+                        <li>
+                            <p class="p-alt">
+                                <a href="{{ path('tj_main_organization_home', {forUser : profile.slug}) }}">
+                                    {{ 'link.users.organization' | trans }}
+                                </a>
+                            </p>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <ul class="p-alt list-inline list-spaced list-ofstatistics">
+                    {#Revoke membership#}
+                    {% if(options.hasMembership != false) %}
+                        <li>
+                            <p class="p-alt">
+                                <a id="removeMembership"
+                                   href="{{ path('tj_user_account_settings_revoke_membership', {slug : profile.slug }) }}">
+                                    {{ 'link.revokeMembership' | trans }}
+                                </a>
+                            </p>
+                        </li>
+                    {% endif %}
+                    {#Email Warning#}
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       id="emailWarning" {{ (options.hasEmailWarning == true) ? 'checked' : '' }}>
+                                <span class="faux-checkbox"></span> {{ 'link.emailWarning' | trans }}
+                            </label>
+                        </div>
+                    </li>
+                    {#Block Debit Card#}
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       id="blockDebitCard" {{ (options.hasBlockDebitCard == true) ? 'checked' : '' }}>
+                                <span class="faux-checkbox"></span> {{ 'link.blockDebitCard' | trans }}
+                            </label>
+                        </div>
+                    </li>
+                    {#Block Paypal#}
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       id="blockPaypal" {{ (options.hasBlockPaypal == true) ? 'checked' : '' }}>
+                                <span class="faux-checkbox"></span> {{ 'link.blockPaypal' | trans }}
+                            </label>
+                        </div>
+                    </li>
+                    {#Block Account Deletion#}
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       id="blockAccountDeletion" {{ (options.hasBlockAccountDeletion == true) ? 'checked' : '' }}>
+                                <span class="faux-checkbox"></span> {{ 'link.blockAccountDeletion' | trans }}
+                            </label>
+                        </div>
+                    </li>
+                    {#Block Email#}
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" id="blockEmail" {{ (options.hasBlockEmail) ? 'checked' : '' }}>
+                                <span class="faux-checkbox"></span> {{ 'link.blockEmail' | trans }}
+                            </label>
+                        </div>
+
+                    </li>
+                    {#Change Invoice Status#}
+                    {% if options.invoice != null %}
+                        <li>
+                            <label for="invoiceSelect">Invoice Status</label>
+                            <select id="invoiceSelect">
+                                {% for status in options.invoice.status %}
+                                    {% set selected = status.id == options.invoice.statusId %}
+
+                                    <option {{ selected ? 'selected="selected"':'' }}
+                                            value="{{ status.id }}">
+                                        {{ status.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" id="invoiceId" value="{{ options.invoice.id }}">
+                        </li>
+                        <br>
+                    {% endif %}
+                    {#Change Paid Until of Membership#}
+                    {% if options.hasMembership != false %}
+                        <label class="control-label required" for="tj_user_account_settings_admin_modal">Paid
+                            Until.</label>
+                        <input type="text" id="tj_user_account_settings_admin_modal"
+                               class="year endDate form-control valid"
+                               value="{{ options.hasMembership | date('d.m.Y') }}"/>
+                    {% endif %}
+                    {#Profile id#}
+                    <li>
+                        <p class="p-alt">
+                            {{ 'account.adminBox.label.userId' | trans }}: {{ profile.user.id }}
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+{% endmacro %}
+
+{#
+    * Account settings block data including invoice archive
+#}
+{% macro accountSettingsBankingData(debitAccount, bankName, owner, profile) %}
+    {% import _self as um %}
+    {# Invoice Archives #}
+    <p class="p-alt">
+        <a href="{{ path('tj_membership_invoice', {slug: profile.slug }) }}"
+           data-target="#myModal" data-toggle="modal"
+           data-hash="invoice-archive"
+           data-color="#244372">
+            {{ 'link.invoiceArchive' | trans }}
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </a>
+    </p>
+
+    {% if debitAccount is not empty %}
+        <h2 class="panel-head bankingdatatitle">
+            {{ 'account.bankingData.title' | trans }}
+            <span class="toggle-arrow">
+                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                         xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                </svg>
+            </span>
+        </h2>
+        <div class="panel-content" id="bankingData">
+            {{ um.bankData(debitAccount, bankName, profile.lastSepaMandate, owner) }}
+        </div>
+    {% else %}
+        <a href="{{ path('tj_membership_debitaccount_new') }}" data-target="#myModal" data-toggle="modal"
+           data-hash="addIban"
+           data-color="#244372">
+            <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+            </svg>
+            {{ 'link.add'| trans }}
+        </a>
+    {% endif %}
+{% endmacro %}
+
+{#
+    * Displays bank data, Acc Holder, Current Sepa
+#}
+{% macro bankData(debitAccount, bankName, lastSepa, owner) %}
+    <dl>
+        <dt>{{ 'account.contract.label.accountHolderName' | trans }}</dt>
+        <dd class="">
+            {{ debitAccount.accountHolder }}
+        </dd>
+        <dt>{{ 'account.contract.label.iBan' | trans }}</dt>
+        <dd class="">
+            {{ debitAccount.iban | slice(0, (debitAccount.iban | length - 4 )) -}}XXXX
+        </dd>
+        {% if bankName is not null and bankName.bankName != null %}
+            <dt>{{ 'account.contract.label.bankName' | trans }}</dt>
+            <dd class="">
+                {{ bankName.bankName }}
+            </dd>
+        {% endif %}
+        <dt></dt>
+        <dd style="width:100%;margin-left:50%;">{% if lastSepa and is_granted('ROLE_ADMIN') and not (owner) %}
+                <a href="{{ path('tj_membership_download_current_sepa', { id: lastSepa.id, slug: debitAccount.profile.slug } ) }}"
+                   class="current-sepa"><i class="fa fa-file-text"
+                                           aria-hidden="true"> </i>{{ 'account.membership.currentSepa' | trans }}
+                </a>
+            {% elseif lastSepa %}
+                <a href="{{ path('tj_membership_download_current_sepa', { id: lastSepa.id, slug: null } ) }}"
+                   class="current-sepa"><i class="fa fa-file-text"
+                                           aria-hidden="true"> </i>{{ 'account.membership.currentSepa' | trans }}
+                </a>
+            {% endif %}
+        </dd>
+    </dl>
+    <a href="{{ path('tj_membership_debitaccount_edit', {id: debitAccount.id}) }}" data-target="#myModal"
+       data-toggle="modal" data-hash="editIban"
+       data-color="#244372">
+        <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+        </svg>
+        {{ 'link.edit'| trans }}
+    </a>
+{% endmacro %}

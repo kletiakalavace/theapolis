@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+    <meta http-equiv="imagetoolbar" content="false"/>
+    <meta name="robots" content="noarchive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block metadata %}
+        {{ sonata_seo_title() }}
+        {{ sonata_seo_metadatas() }}
+    {% endblock metadata %}
+
+    {% block css %}
+        <link rel="stylesheet" href="https://use.typekit.net/ozx2dlu.css">
+        {% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+        "@TheaterjobsMainBundle/Resources/public/components/bootstrap/less/bootstrap.less"
+        "@TheaterjobsMainBundle/Resources/public/components/fontawesome/less/font-awesome.less"
+        "@TheaterjobsMainBundle/Resources/public/less/animate.css"
+        "@TheaterjobsMainBundle/Resources/public/less/typeahead.less"
+        "@TheaterjobsMainBundle/Resources/public/components/toastr/toastr.less"
+        "@TheaterjobsMainBundle/Resources/public/components/lightgallery/dist/css/lightgallery.min.css"
+        "@TheaterjobsMainBundle/Resources/public/components/cropper/dist/cropper.min.css"
+        "@TheaterjobsMainBundle/Resources/public/components/mediaelement/build/mediaelementplayer.min.css"
+        "@TheaterjobsMainBundle/Resources/public/less/secondary.less"
+        "@TheaterjobsMainBundle/Resources/public/less/primary.less"
+        "@TheaterjobsMainBundle/Resources/public/less/resp-primary.less"
+        "@TheaterjobsMainBundle/Resources/public/less/responsive.less"
+        "@TheaterjobsMainBundle/Resources/public/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"
+        "@TheaterjobsMainBundle/Resources/public/components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
+        "@TheaterjobsMainBundle/Resources/public/less/cssgram.min.css"
+        "@TheaterjobsMainBundle/Resources/public/components/plyr/dist/plyr.css"
+        "@TheaterjobsMainBundle/Resources/public/components/datatables/media/css/jquery.dataTables.css"
+        "@TheaterjobsMainBundle/Resources/public/less/datatables-responsive.css"
+        "@TheaterjobsMainBundle/Resources/public/less/responsive-bootstrap.css" %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico', absolute=true) }}"/>
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+</head>
+
+
+<body class="error404" title="Foto: Anja Beutler, Künstlerin: Antje Pfundtner">
+<div class="content-404">
+    <div class="container">
+        <div class="block">
+            <div class="error-page">
+                <a href="{{ path('theaterjobs_main_default_index', {_locale : locale}) }}">
+                    <img class="logo-error-page" src="{{ asset('bundles/theaterjobsmain/images/theapolis-logo.svg') }}">
+                </a>
+
+
+                <h1>{{ "error404.page.title" | trans({}, null, locale) }}</h1>
+                <p class="p-alt">{{ "error404.page.paragraf1" | trans({}, null, locale) }}<br>{{ "error404.page.paragraf2" | trans({}, null, locale) }}</p>
+                <p class="p-alt">{{ "error404.page.paragraf3" | trans({}, null, locale) }}</p>
+                <a href="{{ path('theaterjobs_main_default_index', {_locale : locale}) }}" class="btn btn-inverse">{{ "error404.page.link" | trans({}, null, locale) }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% block js %}
+    {% javascripts filter="?uglifyjs2"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery/dist/jquery.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery-ui/jquery-ui.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/bootstrap/dist/js/bootstrap.js"
+        "@TheaterjobsMainBundle/Resources/public/components/toastr/toastr.min.js"
+        "@TheaterjobsMainBundle/Resources/public/components/lightgallery/dist/js/lightgallery.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jquery.validation/dist/jquery.validate.min.js"
+        "@TheaterjobsMainBundle/Resources/public/js/master.js"
+    %}
+        <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+</body>
+</html>
+</body>
+</html>

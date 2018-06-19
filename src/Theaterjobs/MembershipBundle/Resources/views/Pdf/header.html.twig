@@ -1,0 +1,25 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+{% block header %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-7 col-sm-7" style="padding: 30px 0;position: relative;">
+                <img src="{{ asset('bundles/theaterjobsmain/img/logopdf.png') }}" alt="Theapolis logo"
+                     width="120">
+            </div>
+            <div class="col-xs-5 col-sm-5 pull-right">
+                <p class="street-address text-right"
+                   style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;text-transform:uppercase;font-size: 14px;color:#1F1F1F;min-height: 12px;margin-bottom:0px;display: block;margin-top:0px;padding-bottom:0;'>{{ company.name }}<p>
+                <p class="street-address text-right"
+                   style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 18px;margin-bottom:0px;display: block;margin-top:0px;'>{{ company.street }}</p>
+                <p class="postal-code text-right"
+                   style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 21px;margin-bottom:0;display: block;margin-top:0px;'>{{ company.zip }} {{ company.city }}</p>
+                <p class="country-name text-right"
+                   style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 21px;margin-bottom:0;display: block;margin-top:0px;'>{{ company.country }}</p>
+                <p class="country-name text-right"
+                   style='font-family: "aktiv-grotesk", Helvetica, Arial, sans-serif;font-size: 14px;color:#1F1F1F;min-height: 21px;margin-bottom:0;display: block;margin-top:0px;'>{{ company.email }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock header %}

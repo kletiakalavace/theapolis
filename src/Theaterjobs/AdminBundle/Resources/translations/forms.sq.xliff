@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:41:23Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="6a72085653e4c5be8c7640c868ef787cbcf063d1" resname="All">
+        <source>All</source>
+        <target state="new">All</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+        <jms:reference-file line="32">/../src/Theaterjobs/AdminBundle/Form/AdminPeopleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="539bcc0e155b04f578282e0e19b1c86eb78c1dcc" resname="Billing No">
+        <source>Billing No</source>
+        <target state="new">Billing No</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d523ebbd10146cdfd39dee077f04c9d08468d0bc" resname="Country">
+        <source>Country</source>
+        <target state="new">Country</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e13e0554f557ba882751e261b5a60777b337bea6" resname="Creation">
+        <source>Creation</source>
+        <target state="new">Creation</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84add5b2952787581cb9a8851eef63d1ec75d22b" resname="Email">
+        <source>Email</source>
+        <target state="new">Email</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Form/AdminPeopleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f50d964e731e22206e408120d861b46b3f2044e4" resname="Iban">
+        <source>Iban</source>
+        <target state="new">Iban</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2df48ad223beccb8f6821904f38bb72e782904a8" resname="Last Login">
+        <source>Last Login</source>
+        <target state="new">Last Login</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Form/AdminPeopleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f383f6a23c878e9717b3cb18f23c0501726f3ae6" resname="Payment Method">
+        <source>Payment Method</source>
+        <target state="new">Payment Method</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b233e775d63bb8b86cf031776d4caea613f59cda" resname="Registration">
+        <source>Registration</source>
+        <target state="new">Registration</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Form/AdminPeopleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d0df2936b0977456ff1971c53189da3f8be253" resname="Select a status">
+        <source>Select a status</source>
+        <target state="new">Select a status</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f8a2389a20ca0752aa9e95093515517e90e194c" resname="User">
+        <source>User</source>
+        <target state="new">User</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Form/AdminPeopleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0494868443dac292b893c0f66de275253d4f51d8" resname="admin.invoicelist.choices">
+        <source>admin.invoicelist.choices</source>
+        <target state="new">admin.invoicelist.choices</target>
+        <jms:reference-file line="28">/../src/Theaterjobs/AdminBundle/Form/AdminBillingType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="64003342c671e3083a94ef526bb8ffd568b7fc4f" resname="admin.peoplelist.choices">
+        <source>admin.peoplelist.choices</source>
+        <target state="new">admin.peoplelist.choices</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/AdminBundle/Form/AdminPeopleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2eddadcf7d07998a79209915efe917ec27a508a" resname="admin.production.choice.All">
+        <source>admin.production.choice.All</source>
+        <target state="new">admin.production.choice.All</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a0e9670ceac63a216cf9aac6eb3b33a0dc58b79" resname="admin.production.choice.Creator">
+        <source>admin.production.choice.Creator</source>
+        <target state="new">admin.production.choice.Creator</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67e6da1632a83d00c40b6494326efbb668780547" resname="admin.production.choice.Director">
+        <source>admin.production.choice.Director</source>
+        <target state="new">admin.production.choice.Director</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="556603f3e3ab8fbcd6a8af669a546ad638d6988b" resname="admin.production.choice.Name">
+        <source>admin.production.choice.Name</source>
+        <target state="new">admin.production.choice.Name</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="354cdfd2688bb034ae0f268636eecb8744880508" resname="admin.production.choice.Organization">
+        <source>admin.production.choice.Organization</source>
+        <target state="new">admin.production.choice.Organization</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="999a5eaff29ebfc3a80248e20bde4a680ba7af70" resname="admin.production.choice.Year">
+        <source>admin.production.choice.Year</source>
+        <target state="new">admin.production.choice.Year</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="660b14a63558896ce7af67156decc42a64d9a0a9" resname="admin.production.status.Checked">
+        <source>admin.production.status.Checked</source>
+        <target state="new">admin.production.status.Checked</target>
+        <jms:reference-file line="47">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="78a6830d06e036d5fa4e9cf4b9caf56a70f25f8d" resname="admin.production.status.Unchecked">
+        <source>admin.production.status.Unchecked</source>
+        <target state="new">admin.production.status.Unchecked</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/AdminBundle/Form/ProductionSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="29eb00d55f6b31de1f4cca632b637d03b0b5d669" resname="form.button.save">
+        <source>form.button.save</source>
+        <target state="new">form.button.save</target>
+        <jms:reference-file line="330">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+        <jms:reference-file line="304">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="989d1ab1d7e995cd16886fcf13b9ef49c38f3a48" resname="user.organization.alreadymember">
+        <source>user.organization.alreadymember</source>
+        <target state="new">user.organization.alreadymember</target>
+        <jms:reference-file line="209">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87a2a8901127f007e710691ee9352560f90b771f" resname="user.userOrganization.members.limit.reached">
+        <source>user.userOrganization.members.limit.reached</source>
+        <target state="new">user.userOrganization.members.limit.reached</target>
+        <jms:reference-file line="181">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

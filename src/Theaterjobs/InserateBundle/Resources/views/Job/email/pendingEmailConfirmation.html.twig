@@ -1,0 +1,10 @@
+{% trans_default_domain 'emails' %}
+{{ "email.salutation" | trans }} {{user.profile.firstName}} {{user.profile.lastName}}
+<div>
+    <br>
+    {{ "pending:email:confirmation:email:notification" | trans }} : {{ absolute_url(path(route, { 'slug': slug })) }}
+</div>
+<br>
+{{ "email.Greetings" | trans }}
+<br><br>
+{% include "TheaterjobsMainBundle:Mailer:footer.txt.twig" %}

@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'default.contact.us.title'| trans }}{% endblock title %}
+{% block breadcrumb %} 
+    <li>{{ 'tj.breadcrumbs.contact.us' | trans }}</li>
+{% endblock %}
+{% block content %}
+    <div class="row jumbotron">
+        <div class="col-md-12 container">
+            {% if contact | length > 0 %}
+                <div class="panel panel-info">
+                    <div class="panel panel-heading">
+                        <h3>{{ contact.0.title }}</h3>
+                    </div>
+                    <div class="panel panel-body">
+                        {{ contact.0.description | raw }}
+                    </div>
+                </div>                    
+                <div class="row">
+                    {% for image in contact.0.siteInfoMedia %}
+                        <div class="col-md-6">
+                            <img class="pull-left img-thumbnail" src="{{ asset(image.getWebPath()) }}" style="width: 200px;margin-right: 2%;"/>
+                            <span style="">
+                                <h3>{{ image.title }}</h3>
+                                {{ image.description }}
+                            </span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

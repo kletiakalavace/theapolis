@@ -1,0 +1,35 @@
+imports:
+    - { resource: config.yml }
+
+parameters:
+    old_database_host: localhost
+    old_database_name: db159502_27
+    old_database_user: root
+    old_database_password: jk0409
+
+framework:
+    router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
+    profiler: { only_exceptions: false }
+    templating:
+      assets_base_urls:
+        http:  ["http://%domain%"]
+
+web_profiler :
+    intercept_redirects : false
+    toolbar: true
+
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        firephp:
+            type:  firephp
+            level: info
+
+assetic:
+    use_controller: false
+swiftmailer:
+    disable_delivery:  false
+    #delivery_address:

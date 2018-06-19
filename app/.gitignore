@@ -1,0 +1,75 @@
+.idea
+php-cs-fixer.phar
+.buildpath
+.project
+.settings/
+.travis.yml
+LICENSE
+UPGRADE.md
+composer.lock
+*~
+.DS_Store
+*.bak
+
+src/Theaterjobs/MainBundle/Resources/public/components/
+bin/symfony_requirements
+bin/doctrine-dbal
+app/bootstrap.php.cache
+bin/security-checker
+bin/wkhtmltoimage-amd64
+bin/wkhtmltopdf-amd64
+/nbproject/private/
+/nbproject/project.xml
+/nbproject/project.properties
+*translations
+!/Resources/translations/
+
+# Cache and logs (Symfony2)
+/app/cache/*
+/app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+# Assets and user uploads
+/web/bundles
+/web/css
+/web/js
+/web/assetic
+/web/media
+/web/upload/
+# Assets managed by Bower
+/web/assets/vendor/
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# Composer PHAR
+/composer.phar
+
+# Backup entities generated with doctrine:generate:entities command
+*/Entity/*~
+
+# Managed by Composer
+/app/bootstrap.php.cache
+/var/bootstrap.php.cache
+/var/logs
+/var/cache
+/var/SymfonyRequirements.php
+/bin/*
+!bin/console
+!bin/symfony_requirements
+/vendor/
+.blackfire.yml
+sessions/
+
+.rsync_cache
+/app/SymfonyRequirements.php
+/app/config/parameters.yml
+
+/src/Theaterjobs/MainBundle/Resources/public/components/
+
+PayPal.log
+/app/check.php

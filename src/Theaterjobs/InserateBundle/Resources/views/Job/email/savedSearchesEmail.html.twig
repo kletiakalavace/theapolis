@@ -1,0 +1,30 @@
+{% trans_default_domain 'emails' %}
+
+{% block subject %}
+    {% autoescape false %}
+        {{ 'savedSearches.newJobs.email.subject'| trans }}
+    {% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% endblock %}
+{% block body_html %}
+
+
+
+    {{ 'job.publish.email.hello'| trans }} {{profile.firstName}} {{profile.lastName }},<br>
+    {{ body | raw}}
+    <br>
+{% endblock %}
+    {{ 'user.mailer.footer.line1' |trans }}<br>
+    {{ 'user.mailer.footer.line2' |trans }}<br>
+    {{ 'user.mailer.footer.line3' |trans }}<br>
+    {{ 'user.mailer.footer.line4' |trans }}<br>
+    {{ 'user.mailer.footer.line5' |trans }}<br>
+    {{ 'user.mailer.footer.line6' |trans }}<br>
+    {{ 'user.mailer.footer.line7' |trans }}<br>
+    {{ 'user.mailer.footer.line8' |trans }}<br>
+    {{ 'user.mailer.footer.line9' |trans }}<br>
+    {{ 'user.mailer.footer.line10' |trans }}<br>
+    {{ 'user.mailer.footer.line11' |trans }}<br>
+    {{ 'user.mailer.footer.line12' |trans }}
+

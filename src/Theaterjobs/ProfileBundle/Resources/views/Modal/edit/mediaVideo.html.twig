@@ -1,0 +1,115 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="mediaEditVideo">
+    <div class="container">
+        {{ form_start(edit_form) }}
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.video'| trans }}</h2>
+                {{ form_row(edit_form._token) }}
+                <div class="form-group">
+                    {{ form_row(edit_form.url) }}
+                </div>
+                {% set video=edit_form.vars.value %}
+                <video data-plyr='{ title: "video" }' data-url="{{ video.url }}"></video>
+            </div>
+            <div class="group-forms-add" style="width: 442px;margin: 0 auto;">
+                <div class="videos-add-buttons">
+                    {{ form_widget(edit_form.submit,{'attr':{'class' : 'btn-inverse-primary float-right update-upload mediaImage'}}) }}
+                    {{ form_end(edit_form) }}
+                    {{ form_start(delete_form) }}
+                    {{ form_widget(delete_form.submit,{'attr':{'class' : 'btn-inverse pull-left update-upload mediaImage'}}) }}
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+
+        </div>
+        {#{{ m.error }}#}
+    </div>
+</div>
+
+<script>
+    var player = plyr.setup();
+    var url = $('#mediaEditVideo video').data('url');
+    videoPlayer(player[0], url);
+
+    $('input[type="url"]').on('input', function () {
+        url = $(this).val();
+        if (url) {
+            videoPlayer(player[0], url);
+        }
+    });
+    var formEditVideo = $('#mediaEditVideo form:eq(0)');
+    addLoadingSvg(formEditVideo);
+    const loading1 = formEditVideo.find('#theaterjobs_profilebundle_videos_submit .submit-rolling-svg');
+
+    formEditVideo.validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+        }
+    });
+    formEditVideo.submit(function (e) {
+        e.preventDefault();
+        if (loading1.is(':visible')) {return;}
+        if ($(this).valid()) {
+            loading1.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function (data) {
+                    var previousChildrenNr = $('.display-slider-item').length;
+                    $('.slider-block').html(data);
+                    sliderInterval(previousChildrenNr);
+                    loading1.hide();
+                    $('#myModal').modal('hide');
+                },
+                error: function () {
+                    loading1.hide();
+                    serverError();
+                }
+            });
+        }
+    });
+
+    var formVideoDelete = $('#mediaEditVideo form:eq(1)');
+    const loading2 = formVideoDelete.find('.submit-rolling-svg');
+    formVideoDelete.submit(function (e) {
+        e.preventDefault();
+        if (loading2.is(':visible')) {return;}
+        bootbox.confirm({
+            message: trans('bootbox.wantToDelete',locale),
+            buttons: {
+                confirm: {
+                    label: trans('bootbox.button.yes',locale),
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: trans('bootbox.button.no',locale),
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    loading2.show();
+                    $.ajax({
+                        type: "DELETE",
+                        url: formVideoDelete.attr('action'),
+                        success: function (data) {
+                            $('.slider-block').html(data);
+                            var interval = setInterval(function () {
+                                $(window).trigger("load");
+                                clearInterval(interval);
+                            }, 3000);
+                            loading2.hide();
+                            $('#myModal').modal('hide');
+                        },
+                        error: function () {
+                            loading2.hide();
+                            $('#myModal').modal('hide');
+                        }
+                    });
+                }
+            }
+        });
+    });
+</script>

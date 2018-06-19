@@ -1,0 +1,9 @@
+users,organization,gratification,ocupation,engagement_start,engagement_end,application_end,publication_end,title,description,hideOrganizationLogo,createdAt,updatedAt,publishedAt,archivedAt,contact
+user,NULL,> 3.500/350/35€,normal,0,0,0,0,Archived Job 60 days ago,<p>This job is created by a user who doesn't have an organization!</p>,1,0,0,-120,-60,
+userOrg,Die Badische Landesbühne,"> 750/75/7,50€",teaching activity,0,0,0,0,Archived Job 180 days ago,<p>First job for die badische organization.</p>,0,0,0,-200,-180,
+userOrg,Die Badische Landesbühne,> 1.500/150/15€,"competitions, opportunities",0,0,0,-1,Job with publication end 1 day ago,<p>First job for die badische organization.</p>,1,0,0,-30,0,
+userOrg,Staatsoperette Dresden,> 1.500/150/15€,"competitions, opportunities",1,90,5,5,Job with publication end in the future,<p>First job for Staatsoperette Dresden organization.</p>,1,0,0,-40,0,
+userOrg2,Die Badische Landesbühne,"> 750/75/7,50€",normal,0,0,0,0,Archive job from die badische userOrga2,<p>First job for die badische by userOrga2</p>,0,0,0,-50,-40,
+userOrg2,Die Badische Landesbühne,"< 750/75/7,50€",teaching activity,0,0,0,0,Archived job from userOrga2,<p>Second job for die badische by userOrga2</p>,0,0,0,-60,-40,
+userOrgOther,Theater Plauen-Zwickau,"> 750/75/7,50€","lab, trainees, voluntary service",0,0,0,0,Archived job from plauen,<p>First job for organization Theater Plauen by userOrgaOther</p>,0,0,0,-70,-40,
+userOrgOther,Theater Plauen-Zwickau,"> 750/75/7,50€",education,0,0,0,0,Archive job from plauen by userOrgaOther,<p>Second job for organization Theater Plauen by userOrgaOther</p>,0,0,0,-80,-40,

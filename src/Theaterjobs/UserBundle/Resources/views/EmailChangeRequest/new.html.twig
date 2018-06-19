@@ -1,0 +1,48 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2> {{ 'account.edit.mainTitle.changeEmailRequest'| trans }}</h2>
+
+                {{ form_start(form) }}
+                {{ form_row(form.children._token) }}
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+
+                        {{ form_row(form.oldMail) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">{{ form_row(form.newMail.children.first) }}</div>
+                    <div class="col-md-6">{{ form_row(form.newMail.children.second) }}</div>
+                </div>
+
+                <div class="row">
+                        <div class="groupbtn-chng-email">
+                            {{ form_widget(form.submit,{'attr':{'class':'btn-inverse'} ,'label':'button.emailReset' | trans({},'forms')}) }}
+                            {% if emailWarning %}
+                            <button id="emailFix" class="btn-inverse btn btn-primary">{{ 'button.email.ok'|trans }}</button>
+                            {% endif %}
+                        </div>
+                </div>
+
+                {{ form_end(form) }}
+                {{ m.error }}
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+    <script>
+        var slug = "{{ profile.slug }}";
+    </script>
+    {% javascripts filter="?uglifyjs2"
+    '@TheaterjobsUserBundle/Resources/public/js/emailChangeRequest/emailChangeRequest.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+

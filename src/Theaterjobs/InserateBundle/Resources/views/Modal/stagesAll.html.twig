@@ -1,0 +1,69 @@
+<div class="modal-body ">
+    <div class="container">
+        <div class="row">
+            <div class="all-stage-list col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'organization.show.modal.maintitle.stages'| trans }}</h2>
+                {% if entity.organizationStage is not null and entity.organizationStage | length > 0 %}
+                    {% if canEdit %}
+                        <p class="p-alt">
+                            <a data-href="{{ path('tj_main_organization_stages_modal_edit', { modal:'modal', slug:entity.slug }) }}"
+                               class="edit-stages">
+                                <svg class="icon-svg icon-svg-inverse icon-inline" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                </svg> {{ 'link.edit'| trans }}
+                            </a>
+                        </p>
+                    {% endif %}
+                    <div class="panel-content">
+                        {% for stage in entity.organizationStage %}
+                            <h5>{{ stage.stageTitle }}</h5>
+                            <p class="p-alt">
+                                {% if stage.stageSeats is not empty %}
+                                    {{ 'organization.show.detailBlock.label.seats'| trans }} {{ stage.stageSeats }}
+                                {% endif %}
+                                {% if stage.stageWidth is not empty or stage.stageDepth is not empty %}
+                                    {% if stage.stageWidth is not empty %}
+                                        <br>{{ 'organization.show.detailBlock.label.stageWidth'| trans }} {{ stage.stageWidth }} m
+                                    {%- endif -%}
+                                    {%- if stage.stageWidth is not empty -%}
+                                        {%- if stage.stageWidth is not empty -%},  {% endif %}
+                                        {{ 'organization.show.detailBlock.label.stageDepth'| trans }} {{ stage.stageDepth }} m
+                                    {% endif %}
+                                {% endif %}
+                                {% if stage.portalWidth is not null or stage.portalDepth is not empty %}
+                                    {% if stage.portalWidth is not empty %}
+                                        <br>{{ 'organization.show.detailBlock.label.portalWidth'| trans }} {{ stage.portalWidth }} m
+                                    {%- endif -%}
+                                    {%- if stage.portalDepth is not empty -%}
+                                        {%- if stage.portalWidth is not empty -%},  {% endif %}
+                                        {{ 'organization.show.detailBlock.label.portalHeight'| trans }} {{ stage.portalDepth }} m
+                                    {% endif %}
+                                {% endif %}
+                                {% if stage.hubStages is not null %}
+                                    <br>{{ 'organization.show.detailBlock.label.hubstages'| trans }} {{ stage.hubStages }}
+                                {% endif %}
+                                {% if stage.moreInfo is not empty %}
+                                    <br>{{ 'organization.show.detailBlock.label.moreInfo'| trans }}: {{ stage.moreInfo }}
+                                {% endif %}
+                                {% if stage.tags| length>0 %}
+                                    <br>
+                                    {% for tag in stage.tags %}
+                                        {% if tag is not null %}
+                                        <a class="tags-stageBox-organization"
+                                           href="{{ path('tj_main_organization_home',{tags:tag.title}) }}"> {{ tag.title -}} </a>{% if not loop.last %}, {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.edit-stages').click(function () {
+        $("#myModal").find(".modal-content").load($(this).data('href'));
+    });
+</script>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:43:50Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="77f127a059265ed4d957d887dcdcf09c27c2eb39" resname="error403.page.link">
+        <source>error403.page.link</source>
+        <target state="new">error403.page.link</target>
+        <jms:reference-file line="57">/../src/Theaterjobs/MainBundle/Resources/views/Default/error403.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9bb5c0a5a58c315c0b54de4b96c3f2d7493a9178" resname="error403.page.paragraf1">
+        <source>error403.page.paragraf1</source>
+        <target state="new">error403.page.paragraf1</target>
+        <jms:reference-file line="55">/../src/Theaterjobs/MainBundle/Resources/views/Default/error403.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f97c7e72a192bcb750a11f01d7669f72ebf005a5" resname="error403.page.paragraf2">
+        <source>error403.page.paragraf2</source>
+        <target state="new">error403.page.paragraf2</target>
+        <jms:reference-file line="67">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error403.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67bfd69584ea6855d42d2fbd4d465e2ec67006f2" resname="error403.page.paragraf3">
+        <source>error403.page.paragraf3</source>
+        <target state="new">error403.page.paragraf3</target>
+        <jms:reference-file line="56">/../src/Theaterjobs/MainBundle/Resources/views/Default/error403.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2d072162138002d0caa5d7fc6d364f34b8b16984" resname="error403.page.title">
+        <source>error403.page.title</source>
+        <target state="new">Not allowed to see this page.</target>
+        <jms:reference-file line="54">/../src/Theaterjobs/MainBundle/Resources/views/Default/error403.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b99a56910924e70a4b7a6735c203816467a412e" resname="error404.page.link">
+        <source>error404.page.link</source>
+        <target state="new">Not found.</target>
+        <jms:reference-file line="69">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error404.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="897941d0d6611c992b118b77e46ec2c4879d7489" resname="error404.page.paragraf1">
+        <source>error404.page.paragraf1</source>
+        <target state="new">error404.page.paragraf1</target>
+        <jms:reference-file line="67">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error404.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8607d59080175bc343924328b95b7b0ec63d4f01" resname="error404.page.paragraf2">
+        <source>error404.page.paragraf2</source>
+        <target state="new">error404.page.paragraf2</target>
+        <jms:reference-file line="67">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error404.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="56a1f7a708c117c23c5918a89ab8b3fc0912803a" resname="error404.page.paragraf3">
+        <source>error404.page.paragraf3</source>
+        <target state="new">error404.page.paragraf3</target>
+        <jms:reference-file line="68">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error404.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4fbe0b5afa9edf3ef00edb961d7d00d90715ae20" resname="error500.page.link">
+        <source>error500.page.link</source>
+        <target state="new">error500.page.link</target>
+        <jms:reference-file line="69">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error500.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7b12ace6149aef9e67eb85b5ae60cfab06a8bcc" resname="error500.page.paragraf1">
+        <source>error500.page.paragraf1</source>
+        <target state="new">error500.page.paragraf1</target>
+        <jms:reference-file line="67">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error500.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0cc0c9bb766ac13bf11e8ca98eb03d5ddcb10c06" resname="error500.page.paragraf2">
+        <source>error500.page.paragraf2</source>
+        <target state="new">error500.page.paragraf2</target>
+        <jms:reference-file line="67">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error500.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="54909f8ffaf86942e4b07a512f0261170760378c" resname="error500.page.paragraf3">
+        <source>error500.page.paragraf3</source>
+        <target state="new">error500.page.paragraf3</target>
+        <jms:reference-file line="68">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error500.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="852ed4c6b7f1568e62cc0303db5607257f949171" resname="error500.page.title">
+        <source>error500.page.title</source>
+        <target state="new">error500.page.title</target>
+        <jms:reference-file line="66">/home/laura/theaterjobs21/src/Theaterjobs/MainBundle/Resources/views/Default/error500.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:15:49Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="c406cb0109b3257ba633a5359873ec6d9dc50bac" resname="flash.error.membership.order.processing">
+        <source>flash.error.membership.order.processing</source>
+        <target state="new">flash.error.membership.order.processing</target>
+        <jms:reference-file line="87">/../src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6fe14f215831b7b94ad9d37d9282a6bc81f37c91" resname="flash.error.payment.canceled">
+        <source>flash.error.payment.canceled</source>
+        <target state="new">flash.error.payment.canceled</target>
+        <jms:reference-file line="182">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="181">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32115fd267b7950911b4ed22ce9e34a90bd5f000" resname="flash.error.payment.invalid.bic">
+        <source>flash.error.payment.invalid.bic</source>
+        <target state="new">flash.error.payment.invalid.bic</target>
+        <jms:reference-file line="76">/../src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc2c1e8ca8f0f63ba3e7d344ce5aeeb9bd5f913d" resname="flash.error.validating.vat_id">
+        <source>flash.error.validating.vat_id</source>
+        <target state="new">flash.error.validating.vat_id</target>
+        <jms:reference-file line="102">/../src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+        <jms:reference-file line="154">/../src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a98ecaaa23491a6bda268eee066a953b8d539d32" resname="flash.sepa.downloaded">
+        <source>flash.sepa.downloaded</source>
+        <target state="new">flash.sepa.downloaded</target>
+        <jms:reference-file line="287">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5b1358a2963a8975b5b09be9db32f25662043a1" resname="flash.success.account_withdraw">
+        <source>flash.success.account_withdraw</source>
+        <target state="new">flash.success.account_withdraw</target>
+        <jms:reference-file line="479">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a27578118d3cdb678e87d7f5f551e7af1b7ce131" resname="flash.success.bill.canceled">
+        <source>flash.success.bill.canceled</source>
+        <target state="new">flash.success.bill.canceled</target>
+        <jms:reference-file line="76">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb5831aa8e878ab122361354132401663203d2b4" resname="flash.success.change.billing.address">
+        <source>flash.success.change.billing.address</source>
+        <target state="new">flash.success.change.billing.address</target>
+        <jms:reference-file line="114">/../src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+        <jms:reference-file line="166">/../src/Theaterjobs/MembershipBundle/Controller/BillingAddressController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef951c3087e9628419215a21b7614d8a8666000a" resname="flash.success.change.debit.account">
+        <source>flash.success.change.debit.account</source>
+        <target state="new">flash.success.change.debit.account</target>
+        <jms:reference-file line="250">/../src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3167f1be59143055f1c2c56e4756fe8ea80de9b0" resname="flash.success.membership.membership_deselected">
+        <source>flash.success.membership.membership_deselected</source>
+        <target state="new">flash.success.membership.membership_deselected</target>
+        <jms:reference-file line="300">/../src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e13e53f7cd721cde12edde307642bd1ebdb6f516" resname="flash.success.membership.membership_selected">
+        <source>flash.success.membership.membership_selected</source>
+        <target state="new">flash.success.membership.membership_selected</target>
+        <jms:reference-file line="291">/../src/Theaterjobs/MembershipBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="198fe2f145d6b59b1e343b3ac2375fdeee45e4c4" resname="flash.success.payment_blocked">
+        <source>flash.success.payment_blocked</source>
+        <target state="new">flash.success.payment_blocked</target>
+        <jms:reference-file line="117">/../src/Theaterjobs/MembershipBundle/Controller/PaymentmethodController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6c0417d028466df9d44d92c223fcb9089f9db148" resname="flash.success.payment_unblocked">
+        <source>flash.success.payment_unblocked</source>
+        <target state="new">flash.success.payment_unblocked</target>
+        <jms:reference-file line="144">/../src/Theaterjobs/MembershipBundle/Controller/PaymentmethodController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c0c57bfb69d33052dfa0c7120277b6893600639" resname="iban.added.in.blacklist">
+        <source>iban.added.in.blacklist</source>
+        <target state="new">iban.added.in.blacklist</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a89d4f0f9fcb2a2fe3e0742393d185f8fecb6c09" resname="iban.already.in.blacklist">
+        <source>iban.already.in.blacklist</source>
+        <target state="new">iban.already.in.blacklist</target>
+        <jms:reference-file line="54">/../src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="efbc96b6d5f656e24f97b22910454b164f3cef67" resname="iban.removed.from.blacklist">
+        <source>iban.removed.from.blacklist</source>
+        <target state="new">iban.removed.from.blacklist</target>
+        <jms:reference-file line="115">/../src/Theaterjobs/MembershipBundle/Controller/IbanBlacklistController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c7af8612431ff133a2969974003a3afe8b75627" resname="tj.debit.account.changed.mail.subject">
+        <source>tj.debit.account.changed.mail.subject</source>
+        <target state="new">tj.debit.account.changed.mail.subject</target>
+        <jms:reference-file line="140">/../src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2ee0fce3195c38b003775069935ddaee0787890" resname="tj.mail.body.account.withdraw">
+        <source>tj.mail.body.account.withdraw</source>
+        <target state="new">tj.mail.body.account.withdraw</target>
+        <jms:reference-file line="468">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea3f822d4fcee34b2edcc240082e8d5753cab44b" resname="tj.mail.subject.account.withdraw">
+        <source>tj.mail.subject.account.withdraw</source>
+        <target state="new">tj.mail.subject.account.withdraw</target>
+        <jms:reference-file line="467">/../src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1024a0d4b31d5ae5c7d9a963df2cca46aa00de67" resname="tj.membership.paypal.bill.description">
+        <source>tj.membership.paypal.bill.description</source>
+        <target state="new">tj.membership.paypal.bill.description</target>
+        <jms:reference-file line="93">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6643c316a4269d1878959f7dc4b4c6242a07567b" resname="tj.technical.problem.try_again">
+        <source>tj.technical.problem.try_again</source>
+        <target state="new">tj.technical.problem.try_again</target>
+        <jms:reference-file line="121">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

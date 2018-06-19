@@ -1,0 +1,31 @@
+{% trans_default_domain 'emails' %}
+
+{% block subject %}
+    {% autoescape false %}
+        {{ 'job.publish.email.subject %jobTitle%' | trans({'%jobTitle%' : title}) }}
+    {% endautoescape %}
+{% endblock %}
+{% block body_text %}
+{% endblock %}
+{% block body_html %}
+
+    {{ 'job.publish.email.hello'| trans }} {{ user.profile.firstName}} {{user.profile.lastName }},
+    <br><br>
+    {{ 'job.publish.email.description'| trans }}
+    <p><a href="{{ confirmationUrl }}">{{ confirmationUrl }}</a></p>
+    {{ 'job.publish.email.greetings'| trans }}<br><br>
+{% endblock %}
+    {{ 'user.mailer.footer.line1' |trans }}<br>
+    {{ 'user.mailer.footer.line2' |trans }}<br>
+    {{ 'user.mailer.footer.line3' |trans }}<br>
+    {{ 'user.mailer.footer.line4' |trans }}<br>
+    {{ 'user.mailer.footer.line5' |trans }}<br>
+    {{ 'user.mailer.footer.line6' |trans }}<br>
+    {{ 'user.mailer.footer.line7' |trans }}<br>
+    {{ 'user.mailer.footer.line8' |trans }}<br>
+    {{ 'user.mailer.footer.line9' |trans }}<br>
+    {{ 'user.mailer.footer.line10' |trans }}<br>
+    {{ 'user.mailer.footer.line11' |trans }}<br>
+    {{ 'user.mailer.footer.line12' |trans }}
+    {#{% include "TheaterjobsUserBundle:Mailer:footer.txt.twig" %}#}
+

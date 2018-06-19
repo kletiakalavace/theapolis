@@ -1,0 +1,69 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2">
+                <h2> {{ 'account.edit.mainTitle.deleteAccount'| trans }}</h2>
+                <p class="p-alt"> {{ 'account.edit.description.deleteAccount'| trans }}</p>
+                {{ form_start(form,{'method': 'POST','action': path('tj_user_account_settings_delete',{slug:entity.slug})}) }}
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        {{ form_errors(form) }}
+                        {{ form_row(form.password) }}
+                    </div>
+                </div>
+                <p class="row">
+                    <p class="p-alt" style="text-align: center;">
+                        {{ form_widget(form.submit,{'attr': {'class': 'btn btn-inverse-primary'}, 'label':'button.accountDelete' | trans({},'forms') }) }}</p>
+                    </p>
+                </p>
+                {{ form_end(form) }}
+                <br/>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+    {% javascripts filter="?uglifyjs2"
+    '@TheaterjobsUserBundle/Resources/public/js/deleteAccount.js'
+    %}
+    <script>
+        $.getScript("{{ asset_url }}");
+    </script>
+    {% endjavascripts %}
+    <script>
+        $('form[name="tj_user_profile_delete_passCheck"]').submit(function (e) {
+            e.preventDefault();
+            var form = $('form[name="tj_user_profile_delete_passCheck"]');
+            var valid = false;
+            validFormInputs();
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: new FormData(this),
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        if (data.error) {
+                            for(var i=0;i<data.errors.length; i++){
+                                var el = $(data.errors[i].field);
+                                el.parent().addClass('has-error');
+                                toolTipError(data.errors[i].message, el);
+                            }
+                        }
+                    },
+                    error:function () {
+                        popupCase('There was an error with your request.Please refresh and try again.');
+                    }
+                }).done(function (data) {
+                    if(valid) {
+                        $('#myModal').modal('hide');
+                        popupCase('Account successfully deleted.');
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}

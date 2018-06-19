@@ -1,0 +1,28 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="block">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                        <h1>{{ 'kiba.title' | trans }}</h1>
+                        <p class="p-alt">{{ 'kiba.subtitle' | trans }}</p>
+                        <div class="separator"></div>
+                    </div>
+                </div>
+                </div>
+                <div>
+                    <div class="row text-center">
+                        <img src="{{ asset('bundles/theaterjobsmain/img/kiba-titel.jpg') }}" alt="Schauspiel" class="img-kiba">
+                        <div class="col-xs-12 col-md-12">
+                            <p class="description-kiba">{{ 'kiba.description' | trans }}</p>
+                            <a target="_blank" href="{{ asset('bundles/theaterjobsmain/files/kiba-2017.pdf') }}" class="btn btn-default">{{ 'kiba.download.pdf' | trans }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

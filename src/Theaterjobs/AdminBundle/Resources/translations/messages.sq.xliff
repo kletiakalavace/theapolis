@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:41:23Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="6e157c5da4410b7e9de85f5c93026b9176e69064" resname="Create">
+        <source>Create</source>
+        <target state="new">Create</target>
+        <jms:reference-file line="155">/../src/Theaterjobs/AdminBundle/Controller/JobHuntController.php</jms:reference-file>
+        <jms:reference-file line="135">/../src/Theaterjobs/AdminBundle/Controller/JobHuntDoneController.php</jms:reference-file>
+        <jms:reference-file line="233">/../src/Theaterjobs/AdminBundle/Controller/SkillController.php</jms:reference-file>
+        <jms:reference-file line="312">/../src/Theaterjobs/AdminBundle/Controller/SocialMediaController.php</jms:reference-file>
+        <jms:reference-file line="331">/../src/Theaterjobs/AdminBundle/Controller/SocialMediaController.php</jms:reference-file>
+        <jms:reference-file line="185">/../src/Theaterjobs/AdminBundle/Controller/StageTagsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f6fdbe48dc54dd86f63097a03bd24094dedd713a" resname="Delete">
+        <source>Delete</source>
+        <target state="new">Delete</target>
+        <jms:reference-file line="387">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+        <jms:reference-file line="360">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+        <jms:reference-file line="263">/../src/Theaterjobs/AdminBundle/Controller/JobHuntController.php</jms:reference-file>
+        <jms:reference-file line="301">/../src/Theaterjobs/AdminBundle/Controller/JobHuntDoneController.php</jms:reference-file>
+        <jms:reference-file line="379">/../src/Theaterjobs/AdminBundle/Controller/SkillController.php</jms:reference-file>
+        <jms:reference-file line="256">/../src/Theaterjobs/AdminBundle/Controller/SocialMediaController.php</jms:reference-file>
+        <jms:reference-file line="278">/../src/Theaterjobs/AdminBundle/Controller/StageTagsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bfd37afbb50501e3555bebfef737fb3214e907ee" resname="Do you really want to deny organization ">
+        <source>Do you really want to deny organization </source>
+        <target state="new">Do you really want to deny organization </target>
+        <jms:reference-file line="81">/../src/Theaterjobs/AdminBundle/Resources/views/UserOrganization/organizationRequests.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b4a860aba6e9bdb51e35dc4dff41186ea1806485" resname="Do you really want to remove skill ">
+        <source>Do you really want to remove skill </source>
+        <target state="new">Do you really want to remove skill </target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/TypeOfSkill/skill.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ea8f0d02371e3267b086392b1f463d0c520d86e5" resname="Merge">
+        <source>Merge</source>
+        <target state="new">Merge</target>
+        <jms:reference-file line="215">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+        <jms:reference-file line="205">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+        <jms:reference-file line="251">/../src/Theaterjobs/AdminBundle/Controller/SkillController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6eef6648406c333a4035cd5e60d0bf2ecf2606d7" resname="None">
+        <source>None</source>
+        <target state="new">None</target>
+        <jms:reference-file line="217">/../src/Theaterjobs/AdminBundle/Controller/BillingController.php</jms:reference-file>
+        <jms:reference-file line="218">/../src/Theaterjobs/AdminBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d0df2936b0977456ff1971c53189da3f8be253" resname="Select a status">
+        <source>Select a status</source>
+        <target state="new">Select a status</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Form/CreatorSearchType.php</jms:reference-file>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Form/DirectorSearchType.php</jms:reference-file>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Form/SkillSearchType.php</jms:reference-file>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Form/StageTagSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb91e24fa52d8d2b32937bf04d843f730319a902" resname="Update">
+        <source>Update</source>
+        <target state="new">Update</target>
+        <jms:reference-file line="205">/../src/Theaterjobs/AdminBundle/Controller/JobHuntController.php</jms:reference-file>
+        <jms:reference-file line="224">/../src/Theaterjobs/AdminBundle/Controller/JobHuntDoneController.php</jms:reference-file>
+        <jms:reference-file line="335">/../src/Theaterjobs/AdminBundle/Controller/SkillController.php</jms:reference-file>
+        <jms:reference-file line="274">/../src/Theaterjobs/AdminBundle/Controller/SocialMediaController.php</jms:reference-file>
+        <jms:reference-file line="293">/../src/Theaterjobs/AdminBundle/Controller/SocialMediaController.php</jms:reference-file>
+        <jms:reference-file line="232">/../src/Theaterjobs/AdminBundle/Controller/StageTagsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a4cdfe4d2d7e0f4026edd22ba59b46720478fa1" resname="admin.action.link.check">
+        <source>admin.action.link.check</source>
+        <target state="new">admin.action.link.check</target>
+        <jms:reference-file line="332">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3461714022e1109936bfb3782463bea46769ab31" resname="admin.action.link.delete">
+        <source>admin.action.link.delete</source>
+        <target state="new">admin.action.link.delete</target>
+        <jms:reference-file line="334">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="693423a32b9f9667e53aa775eb4f61fe852bdb4d" resname="admin.action.link.edit">
+        <source>admin.action.link.edit</source>
+        <target state="new">admin.action.link.edit</target>
+        <jms:reference-file line="328">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d72e56c335b137c4bbfcd7d813ccdb38ea1625a4" resname="admin.action.link.show">
+        <source>admin.action.link.show</source>
+        <target state="new">admin.action.link.show</target>
+        <jms:reference-file line="326">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba0c208674cec482f15b8b02be0ba5e9aebcbbe6" resname="admin.action.link.uncheck">
+        <source>admin.action.link.uncheck</source>
+        <target state="new">admin.action.link.uncheck</target>
+        <jms:reference-file line="330">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="217d00b15e98abc2709c248eb51799c95ecd2e87" resname="admin.billings.label.fileName">
+        <source>admin.billings.label.fileName</source>
+        <target state="new">admin.billings.label.fileName</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c3d9bd69516209d39d4afd6b600328f2d073e22" resname="admin.billings.label.lastDownloadedAt">
+        <source>admin.billings.label.lastDownloadedAt</source>
+        <target state="new">admin.billings.label.lastDownloadedAt</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c4f7d5be0f16e5636ec83e9c5ffd8a76a1a7454" resname="admin.billings.label.lastDownloadedBy">
+        <source>admin.billings.label.lastDownloadedBy</source>
+        <target state="new">admin.billings.label.lastDownloadedBy</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aed51a7cc57961b9386c779c4c29dc235ab54237" resname="admin.confirm.user.alreadymember.teamMembershipApplication">
+        <source>admin.confirm.user.alreadymember.teamMembershipApplication</source>
+        <target state="new">admin.confirm.user.alreadymember.teamMembershipApplication</target>
+        <jms:reference-file line="264">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cd882fdeb8759a0cd216c56d3f38018927ca283a" resname="admin.confirm.user.succes.teamMembershipApplication">
+        <source>admin.confirm.user.succes.teamMembershipApplication</source>
+        <target state="new">admin.confirm.user.succes.teamMembershipApplication</target>
+        <jms:reference-file line="257">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bdf7a2468b608a09da695a2e814410ac6350139e" resname="admin.corn.Submit">
+        <source>admin.corn.Submit</source>
+        <target state="new">admin.corn.Submit</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="02d4a408394993bf3b28c9f21557c92036059a23" resname="admin.corn.select.actuality.notify">
+        <source>admin.corn.select.actuality.notify</source>
+        <target state="new">admin.corn.select.actuality.notify</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="582afdb8dfe3b7a341ecc5a82d1a0481b8482e57" resname="admin.corn.select.applicationNotify">
+        <source>admin.corn.select.applicationNotify</source>
+        <target state="new">admin.corn.select.applicationNotify</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1f713c123db3cf68a6993163bf94a0281396f4c7" resname="admin.corn.select.clearPaypal">
+        <source>admin.corn.select.clearPaypal</source>
+        <target state="new">admin.corn.select.clearPaypal</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57fb77fc0eeba22adce64e054390fee86af51b05" resname="admin.corn.select.directDebitNotify">
+        <source>admin.corn.select.directDebitNotify</source>
+        <target state="new">admin.corn.select.directDebitNotify</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="959743f596f9433c1868fc692ccb724a435834a9" resname="admin.corn.select.directDebitRecurring">
+        <source>admin.corn.select.directDebitRecurring</source>
+        <target state="new">admin.corn.select.directDebitRecurring</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="91050ba5ed643132eb0121dee5c8468fee16db20" resname="admin.corn.select.endMembership">
+        <source>admin.corn.select.endMembership</source>
+        <target state="new">admin.corn.select.endMembership</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="82c3fcd4d55a8e39ed3a40a261dfa19d58b1a89f" resname="admin.corn.select.externalJobPortals">
+        <source>admin.corn.select.externalJobPortals</source>
+        <target state="new">admin.corn.select.externalJobPortals</target>
+        <jms:reference-file line="28">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7da0d13a87d552cdbac62d45c267c8e1c73fdce9" resname="admin.corn.select.job.archive">
+        <source>admin.corn.select.job.archive</source>
+        <target state="new">admin.corn.select.job.archive</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70d407528628488d0b1d6833d307da6312082655" resname="admin.corn.select.job.delete">
+        <source>admin.corn.select.job.delete</source>
+        <target state="new">admin.corn.select.job.delete</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f8d352f9696e93e604dbd934d075a12bd959c663" resname="admin.corn.select.job.destroy">
+        <source>admin.corn.select.job.destroy</source>
+        <target state="new">admin.corn.select.job.destroy</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b87f9c7d7644d51e39f4d99433b7be72985c335e" resname="admin.corn.select.job.notify.publicationEnd">
+        <source>admin.corn.select.job.notify.publicationEnd</source>
+        <target state="new">admin.corn.select.job.notify.publicationEnd</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2d352634a1e7ecabaf245f724db4ab4a6a1ac52f" resname="admin.corn.select.jobmail.queue">
+        <source>admin.corn.select.jobmail.queue</source>
+        <target state="new">admin.corn.select.jobmail.queue</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7994b4d48bf416b9d6b5edb5bfc9978843e1cd40" resname="admin.corn.select.jobmail.send">
+        <source>admin.corn.select.jobmail.send</source>
+        <target state="new">admin.corn.select.jobmail.send</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="197020579e80b506eb10bbc8a1c798ab15dde2b9" resname="admin.corn.select.pen.archive">
+        <source>admin.corn.select.pen.archive</source>
+        <target state="new">admin.corn.select.pen.archive</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1b737ffaf8e643b5f6d9f30ae86ae90f10b6c2c4" resname="admin.corn.select.prepaymentCheck">
+        <source>admin.corn.select.prepaymentCheck</source>
+        <target state="new">admin.corn.select.prepaymentCheck</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="805bb81f6d50bce9e0397f1d2d2ac4b43a569276" resname="admin.corn.select.profile.archive">
+        <source>admin.corn.select.profile.archive</source>
+        <target state="new">admin.corn.select.profile.archive</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc7aaab2b3f04b730662f6d0b2a3481ca69652d0" resname="admin.corn.select.views.notify">
+        <source>admin.corn.select.views.notify</source>
+        <target state="new">admin.corn.select.views.notify</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="890513d4ed03a0dde2e0b9096739fb69271b2d72" resname="admin.creatorList.Actions">
+        <source>admin.creatorList.Actions</source>
+        <target state="new">admin.creatorList.Actions</target>
+        <jms:reference-file line="45">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8e30fb870dcaa4a7e296fdfc8ac1473fcb0cbaa" resname="admin.creatorList.Checked">
+        <source>admin.creatorList.Checked</source>
+        <target state="new">admin.creatorList.Checked</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Form/CreatorSearchType.php</jms:reference-file>
+        <jms:reference-file line="43">/../src/Theaterjobs/AdminBundle/Form/DirectorSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70dd407d7c35cd7602b9458f2f4d12dd771e5d73" resname="admin.creatorList.Choices">
+        <source>admin.creatorList.Choices</source>
+        <target state="new">admin.creatorList.Choices</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Form/CreatorSearchType.php</jms:reference-file>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Form/DirectorSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7129c01c4d212ba402aee7c17fefaf3fffa19b4e" resname="admin.creatorList.Name">
+        <source>admin.creatorList.Name</source>
+        <target state="new">admin.creatorList.Name</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="19ceda2476a67938ee56c6dc87a1e4aa64a55693" resname="admin.creatorList.Search">
+        <source>admin.creatorList.Search</source>
+        <target state="new">admin.creatorList.Search</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3822a531c6e35025a7e9d37a8251d2e612388ce3" resname="admin.creatorList.Unchecked">
+        <source>admin.creatorList.Unchecked</source>
+        <target state="new">admin.creatorList.Unchecked</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/AdminBundle/Form/CreatorSearchType.php</jms:reference-file>
+        <jms:reference-file line="44">/../src/Theaterjobs/AdminBundle/Form/DirectorSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2430f19e685aa18844e916dc9414233aad39764d" resname="admin.creatorList.Updated">
+        <source>admin.creatorList.Updated</source>
+        <target state="new">admin.creatorList.Updated</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1cf7c6f67a225af96ed96e91f7463fec552d1ce" resname="admin.creatorList.searchFor">
+        <source>admin.creatorList.searchFor</source>
+        <target state="new">admin.creatorList.searchFor</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70b7adb338278eadb78a805a967c720c4c409c34" resname="admin.director.table.button.delete">
+        <source>admin.director.table.button.delete</source>
+        <target state="new">admin.director.table.button.delete</target>
+        <jms:reference-file line="95">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+        <jms:reference-file line="96">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92acc32ef714b946e3f93490fdb341860a2c8b17" resname="admin.director.table.button.edit">
+        <source>admin.director.table.button.edit</source>
+        <target state="new">admin.director.table.button.edit</target>
+        <jms:reference-file line="91">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+        <jms:reference-file line="92">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32cca34028b65a917ca30b4d177a0799b2ff8aea" resname="admin.director.table.button.merge">
+        <source>admin.director.table.button.merge</source>
+        <target state="new">admin.director.table.button.merge</target>
+        <jms:reference-file line="94">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+        <jms:reference-file line="95">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e31ce795ed474fb5165d89ad9e1768d4eb3a6a24" resname="admin.directorList.Actions">
+        <source>admin.directorList.Actions</source>
+        <target state="new">admin.directorList.Actions</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16abef97b47b0688ccfefa4669198f44ac97ab93" resname="admin.directorList.Name">
+        <source>admin.directorList.Name</source>
+        <target state="new">admin.directorList.Name</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dbf3fe705dfaa053734987f80a44c3e691e08f66" resname="admin.directorList.Search">
+        <source>admin.directorList.Search</source>
+        <target state="new">admin.directorList.Search</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b7aa8dae70f1fb6ec95978a4626ba07bc44eb8f9" resname="admin.directorList.Updated">
+        <source>admin.directorList.Updated</source>
+        <target state="new">admin.directorList.Updated</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fd585d76a8054613dd2ae816e7dd5c73f2686d1b" resname="admin.directorList.searchFor">
+        <source>admin.directorList.searchFor</source>
+        <target state="new">admin.directorList.searchFor</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="15">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f33dbdac5ce72abb3b04580ef9208906595f8292" resname="admin.edit.mainTitle.Creators">
+        <source>admin.edit.mainTitle.Creators</source>
+        <target state="new">admin.edit.mainTitle.Creators</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/creator.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c0f2c8b7b35ac594ab5d83ee189e79cfd5eaea0" resname="admin.edit.mainTitle.Director">
+        <source>admin.edit.mainTitle.Director</source>
+        <target state="new">admin.edit.mainTitle.Director</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/director.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fadd901089c11de87bf369308060de7de39f1b5a" resname="admin.edit.mainTitle.Languages">
+        <source>admin.edit.mainTitle.Languages</source>
+        <target state="new">admin.edit.mainTitle.Languages</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/skill.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7bae7b00fa5b67648c535c27360c4c596909e305" resname="admin.edit.mainTitle.Skills">
+        <source>admin.edit.mainTitle.Skills</source>
+        <target state="new">admin.edit.mainTitle.Skills</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/skill.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7330d85f1147c357bf131ee2461f0303c9d33d8" resname="admin.edit.mainTitle.editJobHunt">
+        <source>admin.edit.mainTitle.editJobHunt</source>
+        <target state="new">admin.edit.mainTitle.editJobHunt</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/jobhunt.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b5dc187a98f02c462a867ceae3cf78a2cb05d88d" resname="admin.edit.mainTitle.socialMedia">
+        <source>admin.edit.mainTitle.socialMedia</source>
+        <target state="new">admin.edit.mainTitle.socialMedia</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/socialmedia.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="715c4367ef76f2e82bcdf360568045c6bdabfaef" resname="admin.edit.mainTitle.stageTags">
+        <source>admin.edit.mainTitle.stageTags</source>
+        <target state="new">admin.edit.mainTitle.stageTags</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Modal/stageTag.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="67034da2ceaf1168c77db29abe8c9ed9a0b48f81" resname="admin.invoicelist.BillingNo">
+        <source>admin.invoicelist.BillingNo</source>
+        <target state="new">admin.invoicelist.BillingNo</target>
+        <jms:reference-file line="49">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e0f81cf7e02f90d73e56ed4072f709c9c3c28f0" resname="admin.invoicelist.Country">
+        <source>admin.invoicelist.Country</source>
+        <target state="new">admin.invoicelist.Country</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1cc2c65c186f4a0190c0f8a822768af6e26925a" resname="admin.invoicelist.Creation">
+        <source>admin.invoicelist.Creation</source>
+        <target state="new">admin.invoicelist.Creation</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="371b141210d61e363e62e44bd504e8df74974f7f" resname="admin.invoicelist.Iban">
+        <source>admin.invoicelist.Iban</source>
+        <target state="new">admin.invoicelist.Iban</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="83fb12fc7230c5a0eeae1e4b834e22b36f48fa46" resname="admin.invoicelist.Kind">
+        <source>admin.invoicelist.Kind</source>
+        <target state="new">admin.invoicelist.Kind</target>
+        <jms:reference-file line="64">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8852311a332c1b77ba3b0c8eafeeb560346cf06" resname="admin.invoicelist.PaymentMethod">
+        <source>admin.invoicelist.PaymentMethod</source>
+        <target state="new">admin.invoicelist.PaymentMethod</target>
+        <jms:reference-file line="55">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c34d0cbb72ff01432523da7c4b567a1eb000d84" resname="admin.invoicelist.Searchfor">
+        <source>admin.invoicelist.Searchfor</source>
+        <target state="new">admin.invoicelist.Searchfor</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="03a75f1cb568df3a3f9bf4abb60e2daad56d3d97" resname="admin.invoicelist.User">
+        <source>admin.invoicelist.User</source>
+        <target state="new">admin.invoicelist.User</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2652b28ab091dc2512f997850bb0b46049b2412" resname="admin.invoicelist.button.Search">
+        <source>admin.invoicelist.button.Search</source>
+        <target state="new">admin.invoicelist.button.Search</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="976df78e5a795628b6628ccb119d6f4f4ab5f853" resname="admin.jobSiteReminder.label.publicationDate">
+        <source>admin.jobSiteReminder.label.publicationDate</source>
+        <target state="new">admin.jobSiteReminder.label.publicationDate</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/AdminBundle/Resources/views/Job/listjobstofetch.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="19cdfe308597c8b4e260a9bf0f3b8b2b5557424b" resname="admin.jobSiteReminder.label.title">
+        <source>admin.jobSiteReminder.label.title</source>
+        <target state="new">admin.jobSiteReminder.label.title</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/AdminBundle/Resources/views/Job/listjobstofetch.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1417c928518f422b42e647621fce31ec140b53b1" resname="admin.jobhunt.label.Actions">
+        <source>admin.jobhunt.label.Actions</source>
+        <target state="new">admin.jobhunt.label.Actions</target>
+        <jms:reference-file line="45">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b77f5cbd8264df43ec49b15e5e8e2f2daf08bc81" resname="admin.jobhunt.label.Comment">
+        <source>admin.jobhunt.label.Comment</source>
+        <target state="new">admin.jobhunt.label.Comment</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae075e12d4d5da608028801496ba5a3c1bb66df2" resname="admin.jobhunt.label.Created">
+        <source>admin.jobhunt.label.Created</source>
+        <target state="new">admin.jobhunt.label.Created</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="72c882ecfd3d37a7b88e89fcffee739768333b82" resname="admin.jobhunt.label.Createdat">
+        <source>admin.jobhunt.label.Createdat</source>
+        <target state="new">admin.jobhunt.label.Createdat</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e3438fb863e372ce2a3ce70ac6106b3a27e8f074" resname="admin.jobhunt.label.Description">
+        <source>admin.jobhunt.label.Description</source>
+        <target state="new">admin.jobhunt.label.Description</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bf7ea44ef0e69888c9d59563d570243e0f3e4e6c" resname="admin.jobhunt.label.Interval">
+        <source>admin.jobhunt.label.Interval</source>
+        <target state="new">admin.jobhunt.label.Interval</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c36cee9fa81276ba0593eefdd741952d5fdf5925" resname="admin.jobhunt.label.Name">
+        <source>admin.jobhunt.label.Name</source>
+        <target state="new">admin.jobhunt.label.Name</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="30">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="525a8ce8412803d4ab00b698b6d7a92726aff60e" resname="admin.jobhunt.label.Organization">
+        <source>admin.jobhunt.label.Organization</source>
+        <target state="new">admin.jobhunt.label.Organization</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="07bb146d796db9ada5cf3483af05e665413d0ae8" resname="admin.jobhunt.label.Status">
+        <source>admin.jobhunt.label.Status</source>
+        <target state="new">admin.jobhunt.label.Status</target>
+        <jms:reference-file line="28">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="db1cc364b5cc42fc847f77a2acb05abaaa273664" resname="admin.jobhunt.label.ToSent">
+        <source>admin.jobhunt.label.ToSent</source>
+        <target state="new">admin.jobhunt.label.ToSent</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="175e76e6fe52ac1544d507a1dbb0070a126062e7" resname="admin.jobhunt.label.Url">
+        <source>admin.jobhunt.label.Url</source>
+        <target state="new">admin.jobhunt.label.Url</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f4918a162f06a6c5e23f7821fd6fa792cdc28571" resname="admin.jobhunt.label.User">
+        <source>admin.jobhunt.label.User</source>
+        <target state="new">admin.jobhunt.label.User</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cb0fa5ffa336eaf158751c7ef2535d5fb62604a4" resname="admin.jobhuntDone.label.comment">
+        <source>admin.jobhuntDone.label.comment</source>
+        <target state="new">admin.jobhuntDone.label.comment</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="56c183aa0c4110b6596cd3e83c0a2573212e94d2" resname="admin.jobhuntDone.label.created">
+        <source>admin.jobhuntDone.label.created</source>
+        <target state="new">admin.jobhuntDone.label.created</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5c76bafef1e7d07b20368c8dafe33256c0a4140a" resname="admin.jobhuntDone.label.name">
+        <source>admin.jobhuntDone.label.name</source>
+        <target state="new">admin.jobhuntDone.label.name</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5560f4496fc66f990c5f2168424d35dc66ec49e9" resname="admin.jobhuntDone.label.user">
+        <source>admin.jobhuntDone.label.user</source>
+        <target state="new">admin.jobhuntDone.label.user</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1329defeb70ae85697ba84e3bd7a6850d9ab7eed" resname="admin.jobpublishedlist.organization.NotSet">
+        <source>admin.jobpublishedlist.organization.NotSet</source>
+        <target state="new">admin.jobpublishedlist.organization.NotSet</target>
+        <jms:reference-file line="274">/../src/Theaterjobs/AdminBundle/Controller/JobController.php</jms:reference-file>
+        <jms:reference-file line="88">/../src/Theaterjobs/AdminBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8e31124b6bb7c5fb1a80792eb5efc8ea68f1dd6c" resname="admin.jobtodo.Save">
+        <source>admin.jobtodo.Save</source>
+        <target state="new">admin.jobtodo.Save</target>
+        <jms:reference-file line="87">/../src/Theaterjobs/AdminBundle/Controller/JobHuntToDoController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2306f6b3121df49cfc936fad8a504f40ffaa81bb" resname="admin.jobtodo.daysAgo">
+        <source>admin.jobtodo.daysAgo</source>
+        <target state="new">admin.jobtodo.daysAgo</target>
+        <jms:reference-file line="82">/../src/Theaterjobs/AdminBundle/Controller/JobHuntToDoController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="876d9338c5dda614c17d8c55eea1444e26792454" resname="admin.language.title">
+        <source>admin.language.title</source>
+        <target state="new">admin.language.title</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="084445d180d72be144b048fcbd0e054c19946d84" resname="admin.list.button.Search">
+        <source>admin.list.button.Search</source>
+        <target state="new">admin.list.button.Search</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a6ce1ed51f6e7fb6edbcc3ad23f2d65448c99c26" resname="admin.list.searchFor">
+        <source>admin.list.searchFor</source>
+        <target state="new">admin.list.searchFor</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="52a6acfd2a149016584bc2e2a6d0c600ed77370d" resname="admin.nameChange.jobHuntList">
+        <source>admin.nameChange.jobHuntList</source>
+        <target state="new">admin.nameChange.jobHuntList</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f8d66a0b677902e041af13119cd3e00a3181f552" resname="admin.nameChange.label.actions">
+        <source>admin.nameChange.label.actions</source>
+        <target state="new">admin.nameChange.label.actions</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b5db50af46996c35c4a563cefdb94b3aa37c2bdd" resname="admin.nameChange.label.date">
+        <source>admin.nameChange.label.date</source>
+        <target state="new">admin.nameChange.label.date</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aecc46176e6c9bd16e4892175388e5bcac8188e1" resname="admin.nameChange.label.email">
+        <source>admin.nameChange.label.email</source>
+        <target state="new">admin.nameChange.label.email</target>
+        <jms:reference-file line="18">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="42edd8764530e9189fe0a130241b75936cdff2e6" resname="admin.nameChange.label.new">
+        <source>admin.nameChange.label.new</source>
+        <target state="new">admin.nameChange.label.new</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd1e2d4193c32afac4c57b27d857162610e08a17" resname="admin.nameChange.label.of">
+        <source>admin.nameChange.label.of</source>
+        <target state="new">admin.nameChange.label.of</target>
+        <jms:reference-file line="89">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+        <jms:reference-file line="47">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+        <jms:reference-file line="71">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+        <jms:reference-file line="62">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="52">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+        <jms:reference-file line="71">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="66">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+        <jms:reference-file line="54">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="47">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+        <jms:reference-file line="89">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+        <jms:reference-file line="67">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+        <jms:reference-file line="81">/../src/Theaterjobs/AdminBundle/Resources/views/SocialMedia/index.html.twig</jms:reference-file>
+        <jms:reference-file line="66">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="53">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="140f019664e8a6d945069e04d3c178f83152cdd4" resname="admin.nameChange.label.old">
+        <source>admin.nameChange.label.old</source>
+        <target state="new">admin.nameChange.label.old</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="788ae7014e46897587d82c51a1bf6b6a486e3d63" resname="admin.nameChange.label.page">
+        <source>admin.nameChange.label.page</source>
+        <target state="new">admin.nameChange.label.page</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+        <jms:reference-file line="57">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+        <jms:reference-file line="52">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+        <jms:reference-file line="58">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="51">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="57">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+        <jms:reference-file line="61">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+        <jms:reference-file line="57">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+        <jms:reference-file line="67">/../src/Theaterjobs/AdminBundle/Resources/views/SocialMedia/index.html.twig</jms:reference-file>
+        <jms:reference-file line="52">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="43">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2b66d1930ece53cacdfb4a86c4382b764702fe90" resname="admin.nameChange.label.records">
+        <source>admin.nameChange.label.records</source>
+        <target state="new">admin.nameChange.label.records</target>
+        <jms:reference-file line="107">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+        <jms:reference-file line="64">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+        <jms:reference-file line="89">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+        <jms:reference-file line="80">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="69">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+        <jms:reference-file line="90">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="78">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="84">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+        <jms:reference-file line="73">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="69">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="65">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+        <jms:reference-file line="93">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+        <jms:reference-file line="107">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+        <jms:reference-file line="84">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+        <jms:reference-file line="100">/../src/Theaterjobs/AdminBundle/Resources/views/SocialMedia/index.html.twig</jms:reference-file>
+        <jms:reference-file line="85">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+        <jms:reference-file line="68">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+        <jms:reference-file line="68">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+        <jms:reference-file line="68">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="70">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bdd71ddc3e2bfa09da0d596c0f762496a94223d3" resname="admin.nameChange.label.view">
+        <source>admin.nameChange.label.view</source>
+        <target state="new">admin.nameChange.label.view</target>
+        <jms:reference-file line="98">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+        <jms:reference-file line="56">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+        <jms:reference-file line="80">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+        <jms:reference-file line="71">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+        <jms:reference-file line="80">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="69">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+        <jms:reference-file line="63">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+        <jms:reference-file line="56">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+        <jms:reference-file line="84">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+        <jms:reference-file line="98">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+        <jms:reference-file line="76">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+        <jms:reference-file line="90">/../src/Theaterjobs/AdminBundle/Resources/views/SocialMedia/index.html.twig</jms:reference-file>
+        <jms:reference-file line="75">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+        <jms:reference-file line="58">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+        <jms:reference-file line="62">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="752e23f9ef0d348820b2abe2c8198a36447be5f1" resname="admin.nameChange.select.Approved">
+        <source>admin.nameChange.select.Approved</source>
+        <target state="new">admin.nameChange.select.Approved</target>
+        <jms:reference-file line="269">/../src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09aad7ba5ef76c7228ada6bb73a98b61fa072def" resname="admin.nameChange.select.Pending">
+        <source>admin.nameChange.select.Pending</source>
+        <target state="new">admin.nameChange.select.Pending</target>
+        <jms:reference-file line="268">/../src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c93577f766211fd17bd6e62a83fb0867aadc30b4" resname="admin.nameChange.select.Rejected">
+        <source>admin.nameChange.select.Rejected</source>
+        <target state="new">admin.nameChange.select.Rejected</target>
+        <jms:reference-file line="270">/../src/Theaterjobs/AdminBundle/Controller/NameChangeController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="12487624a7101ca40301af0f88a7be11f1575292" resname="admin.news.bootbox.newsPublished">
+        <source>admin.news.bootbox.newsPublished</source>
+        <target state="new">admin.news.bootbox.newsPublished</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a1ef02997820b929c4d02d65ecda68657105119f" resname="admin.news.bootbox.newsUnpublished">
+        <source>admin.news.bootbox.newsUnpublished</source>
+        <target state="new">admin.news.bootbox.newsUnpublished</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/AdminBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="72836b1ac3d8eddda424cacbcd822c8f732650f7" resname="admin.pendingJobPublications.statusChoice.newlyPublished">
+        <source>admin.pendingJobPublications.statusChoice.newlyPublished</source>
+        <target state="new">admin.pendingJobPublications.statusChoice.newlyPublished</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Form/JobRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ece1063e5e8d3f8deedea0bfa672c7f22e89432" resname="admin.pendingJobPublications.statusChoice.pendingAdminApproval">
+        <source>admin.pendingJobPublications.statusChoice.pendingAdminApproval</source>
+        <target state="new">admin.pendingJobPublications.statusChoice.pendingAdminApproval</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/AdminBundle/Form/JobRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8dfa6f53d2406156042947be38f892472bbec215" resname="admin.pendingJobPublications.statusChoice.pendingEmailConfirmation">
+        <source>admin.pendingJobPublications.statusChoice.pendingEmailConfirmation</source>
+        <target state="new">admin.pendingJobPublications.statusChoice.pendingEmailConfirmation</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Form/JobRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d634242d4c8754e320e3a172743887213aafbed7" resname="admin.pendingJobPublications.statusChoices">
+        <source>admin.pendingJobPublications.statusChoices</source>
+        <target state="new">admin.pendingJobPublications.statusChoices</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Form/JobRequestType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8eed8cf2e87cbc5a2bd67817e2d26c40e79972ad" resname="admin.pendingJobPublications.tablehead.job">
+        <source>admin.pendingJobPublications.tablehead.job</source>
+        <target state="new">admin.pendingJobPublications.tablehead.job</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57563830037485bf0a9b887998a7b47bd75a0da1" resname="admin.pendingJobPublications.tablehead.organization">
+        <source>admin.pendingJobPublications.tablehead.organization</source>
+        <target state="new">admin.pendingJobPublications.tablehead.organization</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c367b7da96344ab6f7e925ee9705026be6ac892c" resname="admin.pendingJobPublications.tablehead.publishedAt">
+        <source>admin.pendingJobPublications.tablehead.publishedAt</source>
+        <target state="new">admin.pendingJobPublications.tablehead.publishedAt</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb61a6b01a6574a400387bf4c742daffcc9871f3" resname="admin.pendingJobPublications.tablehead.user">
+        <source>admin.pendingJobPublications.tablehead.user</source>
+        <target state="new">admin.pendingJobPublications.tablehead.user</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d99564876ecdee49a48e972fa61dab3b5d4b08cf" resname="admin.pendingOrganization.tablehead.createdAt">
+        <source>admin.pendingOrganization.tablehead.createdAt</source>
+        <target state="new">admin.pendingOrganization.tablehead.createdAt</target>
+        <jms:reference-file line="17">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="06618b58232e5c896794ff1f3dfc918146479946" resname="admin.pendingOrganization.tablehead.organization">
+        <source>admin.pendingOrganization.tablehead.organization</source>
+        <target state="new">admin.pendingOrganization.tablehead.organization</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a198ed68735e9529e0a30af4020b8084b8f96a04" resname="admin.pendingOrganization.tablehead.user">
+        <source>admin.pendingOrganization.tablehead.user</source>
+        <target state="new">admin.pendingOrganization.tablehead.user</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92980c02c6f31d23f914373289925ac47d389f40" resname="admin.pendingTeamMembershipApp.button.Confirm">
+        <source>admin.pendingTeamMembershipApp.button.Confirm</source>
+        <target state="new">admin.pendingTeamMembershipApp.button.Confirm</target>
+        <jms:reference-file line="121">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="70031ca3d592f5da21d1a579088486a911dc1e5b" resname="admin.pendingTeamMembershipApp.button.Reject">
+        <source>admin.pendingTeamMembershipApp.button.Reject</source>
+        <target state="new">admin.pendingTeamMembershipApp.button.Reject</target>
+        <jms:reference-file line="125">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8bdf3633c3538c068206f59a46d365792b24a414" resname="admin.pendingTeamMembershipApp.button.View">
+        <source>admin.pendingTeamMembershipApp.button.View</source>
+        <target state="new">admin.pendingTeamMembershipApp.button.View</target>
+        <jms:reference-file line="117">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3cfcddd0ff7ee0a5143347a0a14425a07b861afc" resname="admin.pendingTeamMembershipApp.label.action">
+        <source>admin.pendingTeamMembershipApp.label.action</source>
+        <target state="new">admin.pendingTeamMembershipApp.label.action</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="13edb1b7650597647ffd9a7560554944c7e30895" resname="admin.pendingTeamMembershipApp.label.createdAt">
+        <source>admin.pendingTeamMembershipApp.label.createdAt</source>
+        <target state="new">admin.pendingTeamMembershipApp.label.createdAt</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="87ceda07eacfb976dfc5013c75cb5274580ab743" resname="admin.pendingTeamMembershipApp.label.organization">
+        <source>admin.pendingTeamMembershipApp.label.organization</source>
+        <target state="new">admin.pendingTeamMembershipApp.label.organization</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f30c12c4be44074f032ee7573cb917b170a1260b" resname="admin.pendingTeamMembershipApp.label.user">
+        <source>admin.pendingTeamMembershipApp.label.user</source>
+        <target state="new">admin.pendingTeamMembershipApp.label.user</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f59df4c01d59bcaf94bb734a59ac215ce20f1f66" resname="admin.peoplelist.Email">
+        <source>admin.peoplelist.Email</source>
+        <target state="new">admin.peoplelist.Email</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="97e9b8f90d00574b9c5fd6413d7aa7ade6846ebc" resname="admin.peoplelist.Lastlogin">
+        <source>admin.peoplelist.Lastlogin</source>
+        <target state="new">admin.peoplelist.Lastlogin</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4f5833d6ad4ed9453be3cbe3b2af8ce3c47ced73" resname="admin.peoplelist.Registration">
+        <source>admin.peoplelist.Registration</source>
+        <target state="new">admin.peoplelist.Registration</target>
+        <jms:reference-file line="45">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bfcec9c07a047a1fd014bb1bbde02a036b8c21d6" resname="admin.peoplelist.Searchfor">
+        <source>admin.peoplelist.Searchfor</source>
+        <target state="new">admin.peoplelist.Searchfor</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="66f2aa539b06ab44c828ef989302051222517ee1" resname="admin.peoplelist.User">
+        <source>admin.peoplelist.User</source>
+        <target state="new">admin.peoplelist.User</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f3e2831f3b5e05c1ca601798b5838acd3a12069b" resname="admin.peoplelist.button.Search">
+        <source>admin.peoplelist.button.Search</source>
+        <target state="new">admin.peoplelist.button.Search</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8ec261ef4620bfe857255369fb883452c7070d3d" resname="admin.peoplelist.role">
+        <source>admin.peoplelist.role</source>
+        <target state="new">admin.peoplelist.role</target>
+        <jms:reference-file line="51">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="762939eaea3fa3a35a41f75a7826f2280a596416" resname="admin.productionList.title">
+        <source>admin.productionList.title</source>
+        <target state="new">admin.productionList.title</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="98064d7ef72eebc247014c12eabfb2071e83a97d" resname="admin.productionlist.Actions">
+        <source>admin.productionlist.Actions</source>
+        <target state="new">admin.productionlist.Actions</target>
+        <jms:reference-file line="64">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="76b0d538c69a50271ddd3d7a776cbd3d42e5188d" resname="admin.productionlist.Creators">
+        <source>admin.productionlist.Creators</source>
+        <target state="new">admin.productionlist.Creators</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9745977909f87b8971f3e86e936c79643c193a22" resname="admin.productionlist.Directors">
+        <source>admin.productionlist.Directors</source>
+        <target state="new">admin.productionlist.Directors</target>
+        <jms:reference-file line="55">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d7f052394cbd99c5b7e5323e74384f05da8e6dea" resname="admin.productionlist.Name">
+        <source>admin.productionlist.Name</source>
+        <target state="new">admin.productionlist.Name</target>
+        <jms:reference-file line="49">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d6e15b85721bb93d80e266bb19f147fd4edd558" resname="admin.productionlist.Organization">
+        <source>admin.productionlist.Organization</source>
+        <target state="new">admin.productionlist.Organization</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e772d9147cf370ffdbc40a25b7d73958ff75f455" resname="admin.productionlist.Premiered">
+        <source>admin.productionlist.Premiered</source>
+        <target state="new">admin.productionlist.Premiered</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c09dbc28863b65bbff32c642bfe65199d97b1a1e" resname="admin.showproduction.label.archivedAt">
+        <source>admin.showproduction.label.archivedAt</source>
+        <target state="new">admin.showproduction.label.archivedAt</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d7f91ba25875ced142d659be6659d4a24be41978" resname="admin.showproduction.label.checkedAt">
+        <source>admin.showproduction.label.checkedAt</source>
+        <target state="new">admin.showproduction.label.checkedAt</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc5123ef0b355484f9e77dfa7f6ff334cbee7e31" resname="admin.showproduction.label.creators">
+        <source>admin.showproduction.label.creators</source>
+        <target state="new">admin.showproduction.label.creators</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="30c94986fd1635c7918ecdcedd29abdde0081a6d" resname="admin.showproduction.label.directors">
+        <source>admin.showproduction.label.directors</source>
+        <target state="new">admin.showproduction.label.directors</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="009927ef1ecf125ea7aabcd18bf1435e36436719" resname="admin.showproduction.label.options">
+        <source>admin.showproduction.label.options</source>
+        <target state="new">admin.showproduction.label.options</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c40ac0328cd2d8e915b27a461805c79c63f0f5f0" resname="admin.showproduction.label.organization">
+        <source>admin.showproduction.label.organization</source>
+        <target state="new">admin.showproduction.label.organization</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8ccc9e83d8443e103e6b845a56b5c8f957e12447" resname="admin.showproduction.label.participantProfile">
+        <source>admin.showproduction.label.participantProfile</source>
+        <target state="new">admin.showproduction.label.participantProfile</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="186e018fcb2e9edf96328558170a690aa9f18fab" resname="admin.showproduction.label.premiereYear">
+        <source>admin.showproduction.label.premiereYear</source>
+        <target state="new">admin.showproduction.label.premiereYear</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0fea57cb5542343225fc3ebd3b8a7700794796ca" resname="admin.showproduction.label.productionInformation">
+        <source>admin.showproduction.label.productionInformation</source>
+        <target state="new">admin.showproduction.label.productionInformation</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3fdfeaacd69bb14a5a02ad6a7ff0667dfb0030ac" resname="admin.showproduction.label.title">
+        <source>admin.showproduction.label.title</source>
+        <target state="new">admin.showproduction.label.title</target>
+        <jms:reference-file line="14">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="603ade2f1d094893c55a7ca3b32f5d1d621d7852" resname="admin.showproduction.title">
+        <source>admin.showproduction.title</source>
+        <target state="new">admin.showproduction.title</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9ff9cfaba658eb8cb2336c9a191077ea2717a923" resname="admin.skill.label.Actions">
+        <source>admin.skill.label.Actions</source>
+        <target state="new">admin.skill.label.Actions</target>
+        <jms:reference-file line="47">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="786a0ef80ccdc5533225d7b63e11152893c16e0c" resname="admin.skill.label.Title">
+        <source>admin.skill.label.Title</source>
+        <target state="new">admin.skill.label.Title</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+        <jms:reference-file line="41">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9ec9e93ce0b1df5c3200eb50c3a52e6744251108" resname="admin.skill.label.Updated">
+        <source>admin.skill.label.Updated</source>
+        <target state="new">admin.skill.label.Updated</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0becda54e7cde82f16d17e6e6d6d92898be98208" resname="admin.skill.label.searchFor">
+        <source>admin.skill.label.searchFor</source>
+        <target state="new">admin.skill.label.searchFor</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="35b1dd02fafad2cc6dcadb7af11d697eadedcfe6" resname="admin.skills.title">
+        <source>admin.skills.title</source>
+        <target state="new">admin.skills.title</target>
+        <jms:reference-file line="11">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c8fe96842ee5912e8b0b6c66c4a915f3b83340a4" resname="admin.stage.tags.title">
+        <source>admin.stage.tags.title</source>
+        <target state="new">admin.stage.tags.title</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="12872582414223934da480db6c7cd612f8f79f44" resname="admin.stageTag.Checked">
+        <source>admin.stageTag.Checked</source>
+        <target state="new">admin.stageTag.Checked</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/AdminBundle/Form/SkillSearchType.php</jms:reference-file>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Form/StageTagSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5dbdfa3cf9710bdcf68685d9b3d3cc53bd814a4" resname="admin.stageTag.Choices">
+        <source>admin.stageTag.Choices</source>
+        <target state="new">admin.stageTag.Choices</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/AdminBundle/Form/SkillSearchType.php</jms:reference-file>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Form/StageTagSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d522002241ca1d9fc678f6a7eb456cc693117b0" resname="admin.stageTag.Unchecked">
+        <source>admin.stageTag.Unchecked</source>
+        <target state="new">admin.stageTag.Unchecked</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Form/SkillSearchType.php</jms:reference-file>
+        <jms:reference-file line="37">/../src/Theaterjobs/AdminBundle/Form/StageTagSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9ca16e97bc715d88e717beff38be5170536c7535" resname="admin.stageTag.label.Actions">
+        <source>admin.stageTag.label.Actions</source>
+        <target state="new">admin.stageTag.label.Actions</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="55bcaf44e316f655994ff47a34ebed3dcb44d42d" resname="admin.stageTag.label.Title">
+        <source>admin.stageTag.label.Title</source>
+        <target state="new">admin.stageTag.label.Title</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+        <jms:reference-file line="36">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9bfd551012ee7583c6a5c2abc2f33848c6c3f4b5" resname="admin.stageTag.label.Updated">
+        <source>admin.stageTag.label.Updated</source>
+        <target state="new">admin.stageTag.label.Updated</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4bb3136772998c7220b22a831b8e470c0cc4bf8d" resname="admin.stageTag.label.searchFor">
+        <source>admin.stageTag.label.searchFor</source>
+        <target state="new">admin.stageTag.label.searchFor</target>
+        <jms:reference-file line="19">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="faf016e5567d8639cfa7ec57f5de6af44cae764a" resname="admin.teammembershipapplication.removed.Successfully">
+        <source>admin.teammembershipapplication.removed.Successfully</source>
+        <target state="new">admin.teammembershipapplication.removed.Successfully</target>
+        <jms:reference-file line="296">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f163e5fdbe269dc84bcab99a23db84352376b283" resname="admin.title.billings">
+        <source>admin.title.billings</source>
+        <target state="new">admin.title.billings</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/sepaXml.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c60e629519a4e5be3b3edd7989a73fb883eeba9c" resname="admin.title.creatorList">
+        <source>admin.title.creatorList</source>
+        <target state="new">admin.title.creatorList</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5f6672eed4ae7fd9a156c9ecdcc096f639876e9c" resname="admin.title.directorList">
+        <source>admin.title.directorList</source>
+        <target state="new">admin.title.directorList</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ac486c8950acc909cf44285807075b9d71c2985d" resname="admin.title.executeCornjob">
+        <source>admin.title.executeCornjob</source>
+        <target state="new">admin.title.executeCornjob</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/AdminBundle/Resources/views/Admin/cron.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2dde0be9fdf1b628cb4715fa7266745cc9ff566a" resname="admin.title.invoucelist">
+        <source>admin.title.invoucelist</source>
+        <target state="new">admin.title.invoucelist</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/Billing/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57051eb36e3b90adf862c223831f211d27df8c6a" resname="admin.title.jobHuntTodoList">
+        <source>admin.title.jobHuntTodoList</source>
+        <target state="new">admin.title.jobHuntTodoList</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntToDo/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71d5d61e6d888e43cb8ee58978e43e50a2cce284" resname="admin.title.jobSiteReminder">
+        <source>admin.title.jobSiteReminder</source>
+        <target state="new">admin.title.jobSiteReminder</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/Job/listjobstofetch.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fef4bbe737869d077278ccfe22225c1dd8fd0065" resname="admin.title.jobhuntDone">
+        <source>admin.title.jobhuntDone</source>
+        <target state="new">admin.title.jobhuntDone</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/JobHuntDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a1cad65c6fb939fd1aa8b2afab7281e633abf619" resname="admin.title.jobwatchlist">
+        <source>admin.title.jobwatchlist</source>
+        <target state="new">admin.title.jobwatchlist</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/Job/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d656862a6a5ef423d397fc8e1440235bacb3c872" resname="admin.title.nameChangeRequests">
+        <source>admin.title.nameChangeRequests</source>
+        <target state="new">admin.title.nameChangeRequests</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/NameChangeRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2237524db066ba42a062fe7141d033f910fc0c8" resname="admin.title.pendingJobPublications">
+        <source>admin.title.pendingJobPublications</source>
+        <target state="new">admin.title.pendingJobPublications</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/JobRequests/list.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="440a8d94ff8ea71917a7b79bfed1d0f98acce7d9" resname="admin.title.pendingOrganizations">
+        <source>admin.title.pendingOrganizations</source>
+        <target state="new">admin.title.pendingOrganizations</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/pendingOrganizations.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9577ab817650cceb3ddd7d7a0e025c39c691aca6" resname="admin.title.pendingTeamMembershipApplications">
+        <source>admin.title.pendingTeamMembershipApplications</source>
+        <target state="new">admin.title.pendingTeamMembershipApplications</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/AdminBundle/Resources/views/TeamMembership/pending.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9f3dfb12b049f4b37baccb09b674f0d3523e172b" resname="admin.title.peoplelist">
+        <source>admin.title.peoplelist</source>
+        <target state="new">admin.title.peoplelist</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/AdminBundle/Resources/views/People/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="28cc1adff34a13982906e78e6906924218de2d90" resname="admin.vio.label.Action">
+        <source>admin.vio.label.Action</source>
+        <target state="new">admin.vio.label.Action</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="479d627e752f97a1da807a66e85dc36c53033619" resname="admin.vio.label.Interval">
+        <source>admin.vio.label.Interval</source>
+        <target state="new">admin.vio.label.Interval</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c28c5ecb11dbbc71662404db54944f7b6060fb23" resname="admin.vio.label.Organization">
+        <source>admin.vio.label.Organization</source>
+        <target state="new">admin.vio.label.Organization</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="641d6d2a06a6fed4a0946c439867fdaa63cdc953" resname="admin.vio.label.created">
+        <source>admin.vio.label.created</source>
+        <target state="new">admin.vio.label.created</target>
+        <jms:reference-file line="28">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="740ce590454dde646526e7375a3dc52d72db91f4" resname="admin.vio.title.vioList">
+        <source>admin.vio.title.vioList</source>
+        <target state="new">admin.vio.title.vioList</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/AdminBundle/Resources/views/Vio/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c41f60e681c0ae0af99bba3fe37e0033e0d8373" resname="admin.vioDone.label.Comment">
+        <source>admin.vioDone.label.Comment</source>
+        <target state="new">admin.vioDone.label.Comment</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fafc5fc92c0bd9ef4472dbaa39ffdaa261e6c90d" resname="admin.vioDone.label.Created">
+        <source>admin.vioDone.label.Created</source>
+        <target state="new">admin.vioDone.label.Created</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23b9e2e692d6396a26bc1a4796380a51e6896a58" resname="admin.vioDone.label.Organization">
+        <source>admin.vioDone.label.Organization</source>
+        <target state="new">admin.vioDone.label.Organization</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="224ca1393dec2dd73c49daac7543d60a1c60d118" resname="admin.vioDone.label.User">
+        <source>admin.vioDone.label.User</source>
+        <target state="new">admin.vioDone.label.User</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d93bf86d9e430c60fdb8ac6e3f9b368ea5490461" resname="admin.vioDone.title.vioList">
+        <source>admin.vioDone.title.vioList</source>
+        <target state="new">admin.vioDone.title.vioList</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/VioDone/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="455fd9401b294d04fa11ada6d2197e1f589abc6c" resname="admin.vioReminder.label.action">
+        <source>admin.vioReminder.label.action</source>
+        <target state="new">admin.vioReminder.label.action</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="58f21599259d8f404272bdb0fac06e8e8d9e5b8a" resname="admin.vioReminder.label.comment">
+        <source>admin.vioReminder.label.comment</source>
+        <target state="new">admin.vioReminder.label.comment</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9747aa25a355ccf0786ae186c7dc74c4556141b9" resname="admin.vioReminder.label.created">
+        <source>admin.vioReminder.label.created</source>
+        <target state="new">admin.vioReminder.label.created</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7eb2ae91d072884c6ebdba61185c7a6c84b1b46b" resname="admin.vioReminder.label.organization">
+        <source>admin.vioReminder.label.organization</source>
+        <target state="new">admin.vioReminder.label.organization</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="73d378e4118365427c449841c4027661128840b0" resname="admin.vioReminder.label.toSent">
+        <source>admin.vioReminder.label.toSent</source>
+        <target state="new">admin.vioReminder.label.toSent</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="64c0c07913a3744cfc3e6055dbfa868faf4d83c3" resname="admin.vioReminder.title.vioReminderList">
+        <source>admin.vioReminder.title.vioReminderList</source>
+        <target state="new">admin.vioReminder.title.vioReminderList</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/AdminBundle/Resources/views/VioReminder/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6d3bfe5ccc062fb9aa6b5cfe5bb8e53bc7b807f6" resname="billing.sepa.file.not.found">
+        <source>billing.sepa.file.not.found</source>
+        <target state="new">billing.sepa.file.not.found</target>
+        <jms:reference-file line="257">/../src/Theaterjobs/AdminBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5dc3c6bcdd675e57d3ac24ce0b56ed07e7db0a11" resname="button.addNew">
+        <source>button.addNew</source>
+        <target state="new">button.addNew</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/AdminBundle/Resources/views/Creator/index.html.twig</jms:reference-file>
+        <jms:reference-file line="12">/../src/Theaterjobs/AdminBundle/Resources/views/Director/index.html.twig</jms:reference-file>
+        <jms:reference-file line="14">/../src/Theaterjobs/AdminBundle/Resources/views/JobHunt/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/Theaterjobs/AdminBundle/Resources/views/Production/index.html.twig</jms:reference-file>
+        <jms:reference-file line="17">/../src/Theaterjobs/AdminBundle/Resources/views/Skill/index.html.twig</jms:reference-file>
+        <jms:reference-file line="34">/../src/Theaterjobs/AdminBundle/Resources/views/SocialMedia/index.html.twig</jms:reference-file>
+        <jms:reference-file line="13">/../src/Theaterjobs/AdminBundle/Resources/views/StageTags/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="df90443eda5fa6e0ec474957d9b99bd6cc42ae85" resname="button.create">
+        <source>button.create</source>
+        <target state="new">button.create</target>
+        <jms:reference-file line="285">/../src/Theaterjobs/AdminBundle/Controller/DirectorController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d29e57a058af847c08c0f3c90b7605bec7dbe4b0" resname="dashboard.notification.organization.teamMembership.approved %organizationName%">
+        <source>dashboard.notification.organization.teamMembership.approved %organizationName%</source>
+        <target state="new">dashboard.notification.organization.teamMembership.approved %organizationName%</target>
+        <jms:reference-file line="219">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e6b11a75fe6a805f6d730e57582d1afe5dcc8a8" resname="dashboard.notification.organization.teamMembership.approved.description %organizationName%">
+        <source>dashboard.notification.organization.teamMembership.approved.description %organizationName%</source>
+        <target state="new">dashboard.notification.organization.teamMembership.approved.description %organizationName%</target>
+        <jms:reference-file line="220">/../src/Theaterjobs/AdminBundle/Controller/TeamMembershipApplicationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9e0f116ca20284059682e50ab252824e0d2e7da4" resname="flash.danger.production.cannot.be.deleted">
+        <source>flash.danger.production.cannot.be.deleted</source>
+        <target state="new">flash.danger.production.cannot.be.deleted</target>
+        <jms:reference-file line="176">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2609055fa1addf3648c6a753cf6f2485364cf48b" resname="flash.error.emailNotBlacklisted">
+        <source>flash.error.emailNotBlacklisted</source>
+        <target state="new">flash.error.emailNotBlacklisted</target>
+        <jms:reference-file line="85">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7b4199ad76b3e667c0d8247795a42b48dbca4c14" resname="flash.error.paidUntil.format.error">
+        <source>flash.error.paidUntil.format.error</source>
+        <target state="new">flash.error.paidUntil.format.error</target>
+        <jms:reference-file line="199">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c05c5bd6b11192521578ff60e396039d0ceb48e" resname="flash.success.emailAlreadyBlacklisted">
+        <source>flash.success.emailAlreadyBlacklisted</source>
+        <target state="new">flash.success.emailAlreadyBlacklisted</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a60c0744179380d6598bcf5fa3ff0240b949dc14" resname="flash.success.emailBlacklisted">
+        <source>flash.success.emailBlacklisted</source>
+        <target state="new">flash.success.emailBlacklisted</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="52390b4f4b9f885960dd520ccaa536835242ff14" resname="flash.success.invoiceStatus.changed">
+        <source>flash.success.invoiceStatus.changed</source>
+        <target state="new">flash.success.invoiceStatus.changed</target>
+        <jms:reference-file line="154">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40b823d28dafce1d25c70cc4e2eec97feac51535" resname="flash.success.news.deleted">
+        <source>flash.success.news.deleted</source>
+        <target state="new">flash.success.news.deleted</target>
+        <jms:reference-file line="87">/../src/Theaterjobs/AdminBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e44505f560da3615392e29679177c4c07ff15f10" resname="flash.success.paidUntil.changed">
+        <source>flash.success.paidUntil.changed</source>
+        <target state="new">flash.success.paidUntil.changed</target>
+        <jms:reference-file line="190">/../src/Theaterjobs/AdminBundle/Controller/MembershipController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7c82a2917a81040446c7bf056229b6be8e20189" resname="flash.success.production.checked">
+        <source>flash.success.production.checked</source>
+        <target state="new">flash.success.production.checked</target>
+        <jms:reference-file line="210">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="913e27f2c86aa351b5aa75d7535a24d8f60fadad" resname="flash.success.production.deleted">
+        <source>flash.success.production.deleted</source>
+        <target state="new">flash.success.production.deleted</target>
+        <jms:reference-file line="171">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c3c00fc5fe0a30969c3558a62565a9ce962a35d" resname="flash.success.production.unchecked">
+        <source>flash.success.production.unchecked</source>
+        <target state="new">flash.success.production.unchecked</target>
+        <jms:reference-file line="233">/../src/Theaterjobs/AdminBundle/Controller/ProductionController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afbf9ab72b26acb6ac653eb129bf027ad3bcec94" resname="flash.success.removedEmailBlacklist">
+        <source>flash.success.removedEmailBlacklist</source>
+        <target state="new">flash.success.removedEmailBlacklist</target>
+        <jms:reference-file line="80">/../src/Theaterjobs/AdminBundle/Controller/ProfileController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5fbd61de9a62476869d8405303e97a5e0036ffac" resname="form.button.create">
+        <source>form.button.create</source>
+        <target state="new">form.button.create</target>
+        <jms:reference-file line="312">/../src/Theaterjobs/AdminBundle/Controller/CreatorController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d2db143efd393eec96857f307bd41c897aaef3bf" resname="form.choice.category.root">
+        <source>form.choice.category.root</source>
+        <target state="new">form.choice.category.root</target>
+        <jms:reference-file line="32">/../src/Theaterjobs/AdminBundle/Form/Type/CategoryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="386c7927d4f03355478fda1657102c197357d5bd" resname="form.social.label.image.file">
+        <source>form.social.label.image.file</source>
+        <target state="new">form.social.label.image.file</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/AdminBundle/Form/SocialMediaFileType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71e522d7cae44bbdce0ad41f224251151df82c58" resname="link.delete">
+        <source>link.delete</source>
+        <target state="new">link.delete</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc635472e92311abcba7662730aea74773b14b74" resname="link.edit">
+        <source>link.edit</source>
+        <target state="new">link.edit</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/AdminBundle/Resources/views/Production/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b310a14d6f7e426e28491aa63075e760c71bfb5" resname="organization.teamMembership.application.title">
+        <source>organization.teamMembership.application.title</source>
+        <target state="new">organization.teamMembership.application.title</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/AdminBundle/Resources/views/Organization/viewPendingTeamMembershipApplication.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b13f40a3766b812120b9403397330bb4b98410da" resname="tj.breadcrumb.admin">
+        <source>tj.breadcrumb.admin</source>
+        <target state="new">tj.breadcrumb.admin</target>
+        <jms:reference-file line="3">/../src/Theaterjobs/AdminBundle/Resources/views/Production/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">/../src/Theaterjobs/AdminBundle/Resources/views/Production/new.html.twig</jms:reference-file>
+        <jms:reference-file line="3">/../src/Theaterjobs/AdminBundle/Resources/views/TypeOfSkill/skill.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4c055dec7351f335d38246fdc35b6ae614c9df0b" resname="tj.breadcrumb.production">
+        <source>tj.breadcrumb.production</source>
+        <target state="new">tj.breadcrumb.production</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/AdminBundle/Resources/views/Production/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="4">/../src/Theaterjobs/AdminBundle/Resources/views/Production/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="15a29ae6e5d4f881a3f402ebd03d22e4f6df3444" resname="tj.breadcrumb.skill.edit">
+        <source>tj.breadcrumb.skill.edit</source>
+        <target state="new">tj.breadcrumb.skill.edit</target>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Production/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="6">/../src/Theaterjobs/AdminBundle/Resources/views/Production/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e8cf2f36b2d736e28e04ef8b97d5de718b2927cb" resname="tj.breadcrumb.skills">
+        <source>tj.breadcrumb.skills</source>
+        <target state="new">tj.breadcrumb.skills</target>
+        <jms:reference-file line="8">/../src/Theaterjobs/AdminBundle/Resources/views/TypeOfSkill/skill.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71655d55207113c72cba4ec02054eab8d5638021" resname="tj.breadcrumb.typeOfSkill">
+        <source>tj.breadcrumb.typeOfSkill</source>
+        <target state="new">tj.breadcrumb.typeOfSkill</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/AdminBundle/Resources/views/TypeOfSkill/skill.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,290 @@
+{% extends "::base.html.twig" %}
+{% import '::macro.html.twig' as m %}
+{% block modal %}
+    {{ parent() }}
+    {{ m.crop(true) }}
+{% endblock %}
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('organizationShow')) }}
+    <div id="organizationPartial">
+        {{ include('TheaterjobsInserateBundle:Organization:showOrganization.html.twig', { 'slug': entity }) }}
+    </div>
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script>
+        {% if entity is defined %}
+        var LatLng = null;
+        var oldLatLng = null;
+        {% if  entity.geolocation %}
+        LatLng = "{{ entity.geolocation }}";
+        oldLatLng = LatLng.split(",");
+        {% endif %}
+        {% endif %}
+    </script>
+
+    {% javascripts
+        "@TheaterjobsMainBundle/Resources/public/js/resizeImage.js"
+        "@TheaterjobsMainBundle/Resources/public/js/upload.js"
+        "@TheaterjobsMainBundle/Resources/public/components/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js"
+        '@TheaterjobsInserateBundle/Resources/public/js/organization/show.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        {% if entity is defined %}
+        (function ($) {
+            truncateText("#actualityContent", " ", 168);
+        })(jQuery);
+
+        $('#locate').click(function (e) {
+            initialize();
+        });
+        {% endif %}
+
+
+        // update comments after submit
+        var formComments = $('#orga-comment form:eq(0)');
+        formComments.submit(function (e) {
+            e.preventDefault();
+            validFormInputs();
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $(".block-comments").html(data);
+                        $('#tj_inseratee_organization_admincomments_description').val('');
+                    }
+                });
+            }
+        });
+
+        var publicswitch = $('input:radio[name=public]:checked').val();
+
+        function publish(el) {
+            var url = el.data('url');
+            $.get("" + url + "", function (data) {
+                if (data.unpublish) {
+                    $('#unpublish').css('background-color', '#CD2036');
+                    $('#unpublish svg').css('fill', '#fff');
+                    $('#publish').css('background-color', '#fff');
+                    $('#publish svg').css('fill', '#CD2036');
+                    publicswitch = el.val();
+                    $('#statistics').addClass('hidden');
+                    $('#unpublishLabel').removeClass('hidden');
+                    $('#publishLabel').addClass('hidden');
+                    $('.logs-block').html(data.logs);
+                    popupCase(data.text);
+                } else if (data.publish) {
+                    $('#publish').css('background-color', '#CD2036');
+                    $('#publish svg').css('fill', '#fff');
+                    $('#unpublish').css('background-color', '#fff');
+                    $('#unpublish svg').css('fill', '#CD2036');
+                    publicswitch = el.val();
+                    $('#statistics').removeClass('hidden');
+                    $('#publishLabel').removeClass('hidden');
+                    $('#unpublishLabel').addClass('hidden');
+                    $('.logs-block').html(data.logs);
+                    popupCase(data.text);
+                } else if (data.error) {
+                    popupCase(data.text);
+                }
+            });
+
+        }
+
+        $('input:radio[name=public]').click(function (e) {
+            e.preventDefault();
+            var el = $(this);
+            if (parseInt($(this).val()) !== parseInt(publicswitch)) {
+                if (parseInt($(this).val()) === 0) {
+                    bootbox.confirm({
+                        message: "{{ 'admin.orga.show.invisible.bootbox.content'|trans }}",
+                        buttons: {
+                            confirm: {
+                                label: "{{ 'admin.orga.show.invisible.bootbox.Yes'|trans }}",
+                                className: 'btn-success'
+                            },
+                            cancel: {
+                                label: "{{ 'admin.orga.show.invisible.bootbox.No'|trans }}",
+                                className: 'btn-danger'
+                            }
+                        },
+                        callback: function (result) {
+                            if (result) {
+                                publish(el);
+                            }
+                        }
+                    });
+                } else {
+                    publish(el);
+                }
+            }
+        });
+
+        var statusForm = $('#status form');
+
+        $(document).on("change", '[name="tj_inserate_form_organization_status[status]"]', function (e) {
+            statusForm.submit();
+        });
+
+        statusForm.submit(function (e) {
+            e.preventDefault();
+            validFormInputs();
+            $.ajax({
+                type: statusForm.attr('method'),
+                url: statusForm.attr('action'),
+                data: statusForm.serialize(),
+                success: function (data) {
+                    if (data.status) {
+                        console.log('aaaa');
+                        popupCase(data.text);
+                        $('.logs-block').html(data.logs);
+                    } else if (data.error) {
+                        console.log('aaaa');
+                        popupCase(data.message);
+                        $('#tj_inserate_form_organization_status_status_1').prop('checked', true)
+                    }
+                }
+            })
+        });
+
+        {% if entity is defined %}
+        var vioForm = $('#vio form');
+        $('#vio input[type=radio]').on('change', function (e) {
+            var checked = parseInt($(this).val());
+
+            var url = Routing.generate('admin_vio_create', {slug: "{{ entity.slug }}"});
+            if (checked === 0) {
+                url = Routing.generate('admin_vio_delete', {id: $(this).attr('data-vio')});
+            }
+            $.ajax({
+                type: 'POST',
+                url: url,
+                success: function (data) {
+                    if (data.success) {
+                        if (checked !== 0) {
+                            $('input[name=vio][value="0"]').attr('data-vio', data.id);
+                        }
+                    }
+                }
+            });
+        });
+        vioForm.submit(function (e) {
+            e.preventDefault();
+            validFormInputs();
+            $.ajax({
+                type: vioForm.attr('method'),
+                url: vioForm.attr('action'),
+                data: vioForm.serialize(),
+                success: function (data) {
+                    if (data.status) {
+                        popupCase(data.text);
+                        $('.logs-block').html(data.logs);
+                    }
+                }
+            })
+        });
+
+
+        $('#action_favorite').on('click', function () {
+            $(this).tooltip('destroy');
+            var action = $(this).attr('data-action');
+            var slug = "{{ entity.slug }}";
+            var url = (action === 'remove') ? 'tj_organization_favourite_remove' : 'tj_organization_favourite_root';
+            url = Routing.generate(url, {slug: slug});
+
+            $.get(url, function (data) {
+                if (data.status === 'SUCCESS') {
+                    if (action === 'remove') {
+                        $('#action_favorite').removeClass('active').attr('data-action', 'add');
+                        $('.favorite-icon-name').addClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                    } else {
+                        $('#action_favorite').addClass('active').attr('data-action', 'remove');
+                        $('.favorite-icon-name').removeClass('hidden');
+                        $('#action_favorite').attr('data-tooltip');
+                        $('[data-toggle="tooltip"]').tooltip();
+                        bootboxAfterFavoriteSuccesful();
+                    }
+                }
+            })
+        });
+
+
+        function removeMembersEvent() {
+            $('.remove-members').on('click', function (e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+                var userToDelete = $(this).attr('data-id');
+                var slug = "{{ entity.slug }}";
+                var url = Routing.generate('tj_user_organization_delete', {
+                    orgaSlug: slug,
+                    userId: userToDelete,
+                    '_locale': locale
+                });
+                bootbox.confirm({
+                    message: trans('bootbox.removeMember', locale),
+                    buttons: {
+                        confirm: {
+                            label: trans('bootbox.button.yes', locale),
+                            className: 'btn-success'
+                        },
+                        cancel: {
+                            label: trans('bootbox.button.no', locale),
+                            className: 'btn-danger'
+                        }
+                    },
+                    callback: function (result) {
+                        if (result) {
+                            var orgId = "{{ entity.id }}";
+                            $.ajax({
+                                url: url,
+                                dataType: 'json',
+                                success: function (data) {
+                                    if (data) {
+                                        if (data.success) {
+                                            if (data.selfRemoved) {
+                                                window.location.href = Routing.generate(
+                                                    'tj_main_dashboard_index',
+                                                    {'_locale': locale}
+                                                );
+                                                return;
+                                            }
+                                            bootbox.alert({
+                                                message: data.message,
+                                                buttons: {
+                                                    ok: {
+                                                        label: trans('bootbox.button.ok', locale)
+                                                    }
+                                                }
+
+                                            });
+                                            $('.team-block').html(data.content);
+                                            $('.logs-block').html(data.logs);
+                                            removeMembersEvent();
+                                        } else {
+                                            bootbox.alert({
+                                                message: data.message,
+                                                buttons: {
+                                                    ok: {
+                                                        label: trans('bootbox.button.ok', locale)
+                                                    }
+                                                }
+                                            });
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }
+                });
+            });
+        }
+
+        removeMembersEvent();
+        {% endif %}
+    </script>
+{% endblock %}

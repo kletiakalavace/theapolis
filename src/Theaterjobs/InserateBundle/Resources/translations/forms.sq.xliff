@@ -1,0 +1,2029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:38:30Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="fdc2e8a25bfd44453f55d10d48014fb19efdbabc" resname="10 Km">
+        <source>10 Km</source>
+        <target state="new">10 Km</target>
+        <jms:reference-file line="39">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d68b708c35f3de06713ba68baab50b4e6c6489a8" resname="100 Km">
+        <source>100 Km</source>
+        <target state="new">100 Km</target>
+        <jms:reference-file line="41">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c4b689abb1a9b5986e58835e9516598765162f5f" resname="150 Km">
+        <source>150 Km</source>
+        <target state="new">150 Km</target>
+        <jms:reference-file line="42">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="809f889f7dec5097437dfd80e490d82dc450f57a" resname="50 Km">
+        <source>50 Km</source>
+        <target state="new">50 Km</target>
+        <jms:reference-file line="40">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="50d6325b81bf418b56ac8cd5ef03616ee71437d6" resname="A-Z">
+        <source>A-Z</source>
+        <target state="new">A-Z</target>
+        <jms:reference-file line="69">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a733b809d2f1233496ab516eed0f3ef75cf3791a" resname="Active">
+        <source>Active</source>
+        <target state="new">Active</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/InserateBundle/Form/OrganizationStatusType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eddc813f35b12589c4e5493a8a8e500ddb10c57e" resname="Archived">
+        <source>Archived</source>
+        <target state="new">Archived</target>
+        <jms:reference-file line="68">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="85">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="88d86b7721d587644e9c4cf33a084202cb3b0ff0" resname="Closed">
+        <source>Closed</source>
+        <target state="new">Closed</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/InserateBundle/Form/OrganizationStatusType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb9a4bc1c0c153e4e4b042a79113b815b7e3021d" resname="Date">
+        <source>Date</source>
+        <target state="new">Date</target>
+        <jms:reference-file line="114">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="441bda6cd85689e476ebe10440f27967faef61a6" resname="Deleted">
+        <source>Deleted</source>
+        <target state="new">Deleted</target>
+        <jms:reference-file line="69">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22a31d86e0187b65e763143666d22094cedfe6a4" resname="Drafts">
+        <source>Drafts</source>
+        <target state="new">Drafts</target>
+        <jms:reference-file line="83">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="face221a61b84544623e81bca4b4711ab7c0e018" resname="Non-VIO">
+        <source>Non-VIO</source>
+        <target state="new">Non-VIO</target>
+        <jms:reference-file line="48">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationVioType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="96f608c16cef16caa06bf38901fb5f618a35a70b" resname="Pending">
+        <source>Pending</source>
+        <target state="new">Pending</target>
+        <jms:reference-file line="37">/../src/Theaterjobs/InserateBundle/Form/OrganizationStatusType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bcbe58794fc4972f161521f702acb3d0e1a62b21" resname="Please enter 3 characters">
+        <source>Please enter 3 characters</source>
+        <target state="new">Please enter 3 characters</target>
+        <jms:reference-file line="154">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="483bf2075c12023a5e849d12a42027be89c5e94b" resname="Published">
+        <source>Published</source>
+        <target state="new">Published</target>
+        <jms:reference-file line="67">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="84">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="99">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dcb70f5244f8883ac49c5eceb7d1e1cdeaf82711" resname="Relevance">
+        <source>Relevance</source>
+        <target state="new">Relevance</target>
+        <jms:reference-file line="68">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1d0df2936b0977456ff1971c53189da3f8be253" resname="Select a status">
+        <source>Select a status</source>
+        <target state="new">Select a status</target>
+        <jms:reference-file line="68">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc7819b34ff87570745fbe461e36a16f80e562ce" resname="Unknown">
+        <source>Unknown</source>
+        <target state="new">Unknown</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/InserateBundle/Form/OrganizationStatusType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fc291d3217a4638f4043150010d4ac42b04a712c" resname="VIO">
+        <source>VIO</source>
+        <target state="new">VIO</target>
+        <jms:reference-file line="49">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationVioType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b5bbdc0bbee39dafd06ff5a781efd7041f46f00b" resname="flash.jobmail.success">
+        <source>flash.jobmail.success</source>
+        <target>E-mail-notification activated.</target>
+        <jms:reference-file line="263">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e79a829d091dab3987cfebb8b659259664fced66" resname="form.button.execute.filters">
+        <source>form.button.execute.filters</source>
+        <target>Go</target>
+        <jms:reference-file line="272">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b47bbbd38ed4c8e7e2832a16038f43133c668ecc" resname="form.button.job.organization.change">
+        <source>form.button.job.organization.change</source>
+        <target>Change</target>
+        <jms:reference-file line="4">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/link.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="08617b1e8b167c4ce9031700828716e70082255c" resname="form.button.user.comment.create">
+        <source>form.button.user.comment.create</source>
+        <target>Create</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/InserateBundle/Resources/views/AdminComments/userAdminComments.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ffc9c65ba498b05aeedc64c1444b1b8c735b3e60" resname="form.choice.form_of_organization.empty_value">
+        <source>form.choice.form_of_organization.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/FormOfOrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="530fb0ef1ba4ba52c075586fb6ce459f63520bc5" resname="form.choice.gratification.empty_value">
+        <source>form.choice.gratification.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="50">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/GratificationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a13354103d3e82497cad867481c4edddf102ac6" resname="form.choice.inserate.organization.empty_value">
+        <source>form.choice.inserate.organization.empty_value</source>
+        <target>Please insert the name of your organisation here</target>
+        <jms:reference-file line="152">InserateBundle/Form/InserateType.php</jms:reference-file>
+        <jms:reference-file line="161">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="497eaf7ae6995a6c1e37d8ec958726565013f498" resname="form.choice.inserate.organization.kind.empty_value">
+        <source>form.choice.inserate.organization.kind.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/InserateBundle/Form/EducationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aa0bf7b79d1529d6de8186a7c2cbdbcce952b0d1" resname="form.choice.occupation.empty_value">
+        <source>form.choice.occupation.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/InserateBundle/Form/OccupationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8271d96de7c42eb8c0ef367239ac6d5b9f64be35" resname="form.choice.orchestraClass.a">
+        <source>form.choice.orchestraClass.a</source>
+        <target>TVK A</target>
+        <jms:reference-file line="248">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5997b8a752b40fde616b9d18bb5333e02c2dfcfb" resname="form.choice.orchestraClass.a_plus">
+        <source>form.choice.orchestraClass.a_plus</source>
+        <target>TVK A/F</target>
+        <jms:reference-file line="247">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c91e968ca92c4f58bc7750d5523db075c170ebd" resname="form.choice.orchestraClass.b">
+        <source>form.choice.orchestraClass.b</source>
+        <target>TVK B</target>
+        <jms:reference-file line="249">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="374db2d50d4336be2f94a0f39d00e16611485bc8" resname="form.choice.orchestraClass.c">
+        <source>form.choice.orchestraClass.c</source>
+        <target>TVK C</target>
+        <jms:reference-file line="250">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de48e9b9598d8c4e3ca5f2b27520fc13f3c15611" resname="form.choice.orchestraClass.d">
+        <source>form.choice.orchestraClass.d</source>
+        <target>TVK D</target>
+        <jms:reference-file line="251">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9aa5cb60d99f66674d6a7ddab26fc0953930ad38" resname="form.choice.orchestraClass.empty">
+        <source>form.choice.orchestraClass.empty</source>
+        <target>Please select</target>
+        <jms:reference-file line="256">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="11ad54dd07f403578cb04e99be66dc2f6ae31d00" resname="form.choice.orchestraClass.other">
+        <source>form.choice.orchestraClass.other</source>
+        <target>Other class</target>
+        <jms:reference-file line="252">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c0fef99123eb5f2b54b14fa527328b01bf6dc191" resname="form.choice.organization_kind.empty_value">
+        <source>form.choice.organization_kind.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="197">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3f9d5937030112a60a98ee0e089041bf1794fc92" resname="form.choice.organization_schedule.empty_value">
+        <source>form.choice.organization_schedule.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="207">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7190700459446e8b60c92876f962437984183f59" resname="form.choice.organization_section.empty_value">
+        <source>form.choice.organization_section.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/InserateBundle/Form/OrganizationSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5362f40a012c408082c2d12c615a2275b04dc96f" resname="form.choice.status.active">
+        <source>form.choice.status.active</source>
+        <target>Active</target>
+        <jms:reference-file line="265">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2958ba6518d8f68835a16be5ddf32fe42c094f2a" resname="form.choice.status.all">
+        <source>form.choice.status.all</source>
+        <target>All</target>
+        <jms:reference-file line="264">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="56ce2c6a7b495214eddc9fdeec028c910dd28f61" resname="form.choice.status.closed">
+        <source>form.choice.status.closed</source>
+        <target>Closed</target>
+        <jms:reference-file line="267">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f000bf92ae24ea6d9d6f0ab67a75534115664367" resname="form.choice.status.not_reachable">
+        <source>form.choice.status.not_reachable</source>
+        <target>Not reachable</target>
+        <jms:reference-file line="266">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a507e2ebea5369c0cc4e15a5d26a1da59e5fe11f" resname="form.education.choice.gratification.empty_value">
+        <source>form.education.choice.gratification.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="516">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f60e5dc83d218077dc84fa5acbc3a6e3207a57d" resname="form.education.choice.inserate.organization.kind.empty_value">
+        <source>form.education.choice.inserate.organization.kind.empty_value</source>
+        <target>Please select</target>
+        <jms:reference-file line="530">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b185def066b34354e111cd0c231bd3d370efda2f" resname="form.inserate.button.preview">
+        <source>form.inserate.button.preview</source>
+        <target>Preview</target>
+        <jms:reference-file line="218">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="77057b57e6b1246598e516868eb18e826222ec52" resname="form.inserate.button.save.as.draft">
+        <source>form.inserate.button.save.as.draft</source>
+        <target>Save as draft</target>
+        <jms:reference-file line="217">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a19035c8cc94aa1bd2ea7fd2c8893b477863f9e8" resname="form.inserate.education.button.save.publish">
+        <source>form.inserate.education.button.save.publish</source>
+        <target>Publish</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/InserateBundle/Form/EducationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="402438da7d70fe2baf7978f2303e58994998d127" resname="form.job.button.save.publish">
+        <source>form.job.button.save.publish</source>
+        <target>Publish</target>
+        <jms:reference-file line="101">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c84fc5a7dd21df84650410aabe8f819b660d7f98" resname="form.job_mail.button.delete">
+        <source>form.job_mail.button.delete</source>
+        <target>Delete</target>
+        <jms:reference-file line="326">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fb86379cb42ce6c0383611126d0c90df17324483" resname="form.jobmail.button.create">
+        <source>form.jobmail.button.create</source>
+        <target>Create</target>
+        <jms:reference-file line="100">InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1cab4831d61ab190b659dd0dd55e734aaf343848" resname="form.jobmail.button.update">
+        <source>form.jobmail.button.update</source>
+        <target>Update</target>
+        <jms:reference-file line="477">InserateBundle/Controller/JobmailQueryController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f657ddbdc945631a4f2b6c11a56b7acc81cff07" resname="form.label.VisitorsFrom">
+        <source>form.label.VisitorsFrom</source>
+        <target>Number of visitors from</target>
+        <jms:reference-file line="226">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b40904999898462940a63a5f9e719516ea593d9f" resname="form.label.VisitorsTo">
+        <source>form.label.VisitorsTo</source>
+        <target>Number of visitors to</target>
+        <jms:reference-file line="227">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d9beaf75793bc1e841175b3014de4f684d3186aa" resname="form.label.adminComment">
+        <source>form.label.adminComment</source>
+        <target>Admin-comment</target>
+        <jms:reference-file line="270">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1893f494beaf1ca86b25602bee5c720d47ba6f93" resname="form.label.admin_comment.description">
+        <source>form.label.admin_comment.description</source>
+        <target>Your comment</target>
+        <jms:reference-file line="23">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobAdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="89414c90b0ef3bebc7fbc41be73a735d7e8efcb0" resname="form.label.budgetFrom">
+        <source>form.label.budgetFrom</source>
+        <target>Budget from</target>
+        <jms:reference-file line="223">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b0cf416b396d61199bc40e997af4e76aca8dbe69" resname="form.label.budgetTo">
+        <source>form.label.budgetTo</source>
+        <target>Budget to</target>
+        <jms:reference-file line="224">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dbff23f1f9710771e57d49d1c51b79709c6d6b89" resname="form.label.comment.description">
+        <source>form.label.comment.description</source>
+        <target>Your comment</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/InserateBundle/Form/UserAdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef44ce80bdc2021d60cd180bec09b0ac3d0fa767" resname="form.label.eduaction.contact">
+        <source>form.label.eduaction.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="50">InserateBundle/Form/EducationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9a281ad8520af07e4132e0ec2417273fca382f7a" resname="form.label.education.area">
+        <source>form.label.education.area</source>
+        <target>Area</target>
+        <jms:reference-file line="538">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="767d8c46d9b4066184fa54611284f349cb9fe35c" resname="form.label.education.categories">
+        <source>form.label.education.categories</source>
+        <target>Categories</target>
+        <jms:reference-file line="544">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7601b6f96a3f0e1e50623c597d39a072ceeaba19" resname="form.label.education.gratification">
+        <source>form.label.education.gratification</source>
+        <target>Gratification</target>
+        <jms:reference-file line="515">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc3c03e73106c2831ac02c539107400816ed2870" resname="form.label.education.kind">
+        <source>form.label.education.kind</source>
+        <target>Kind</target>
+        <jms:reference-file line="529">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c48ad4fad29442d05392fc97e14f130c47141bff" resname="form.label.education.organization">
+        <source>form.label.education.organization</source>
+        <target>Organisation</target>
+        <jms:reference-file line="535">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a7da064e691de99fe103fa827aee274624ca0874" resname="form.label.form_of_organization">
+        <source>form.label.form_of_organization</source>
+        <target>Type</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/InserateBundle/Form/FormOfOrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf6df17688118761aea6b5260973109fe5e04c37" resname="form.label.grantsFrom">
+        <source>form.label.grantsFrom</source>
+        <target>Grants from</target>
+        <jms:reference-file line="221">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5acc743a8465431b6546056f19316b30c0782cb1" resname="form.label.grantsTo">
+        <source>form.label.grantsTo</source>
+        <target>Grants to</target>
+        <jms:reference-file line="222">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aedb1cc9e9234651bead9d5eaa2565831e1d5a7d" resname="form.label.gratification">
+        <source>form.label.gratification</source>
+        <target>Gratification</target>
+        <jms:reference-file line="52">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/GratificationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="46eef80f41923a964e6a952c6bd00dc03f0ec120" resname="form.label.inserate.adminInfoBox">
+        <source>form.label.inserate.adminInfoBox</source>
+        <target>Admin-info</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/InserateBundle/Form/InserateAdminType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccbb7a0b71c08837dd397133a9e17beb2e73ce92" resname="form.label.inserate.application_end">
+        <source>form.label.inserate.application_end</source>
+        <target>Application end</target>
+        <jms:reference-file line="103">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="93e0118d7d3af934ad89c1219a1a976e4ec1a2d9" resname="form.label.inserate.asap">
+        <source>form.label.inserate.asap</source>
+        <target>As soon as possible</target>
+        <jms:reference-file line="138">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="db5ebab89ec47747e9bb853ffefc0df8f1800426" resname="form.label.inserate.contact">
+        <source>form.label.inserate.contact</source>
+        <target state="new">form.label.inserate.contact</target>
+        <jms:reference-file line="197">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b8034c9c5e993ba9d93d4ea3442b803a11215e5" resname="form.label.inserate.description">
+        <source>form.label.inserate.description</source>
+        <target>Description</target>
+        <jms:reference-file line="70">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="52eb3fe595490d1e062aa3319a7f0627cb08b3b5" resname="form.label.inserate.education.kind">
+        <source>form.label.inserate.education.kind</source>
+        <target>Kind</target>
+        <jms:reference-file line="60">/../src/Theaterjobs/InserateBundle/Form/EducationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="83e59080a8356ced18b818ee24b022fc13489830" resname="form.label.inserate.email">
+        <source>form.label.inserate.email</source>
+        <target state="new">form.label.inserate.email</target>
+        <jms:reference-file line="202">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9063e79cc6e5fb12b9c74cdf3f503da7a8ba432d" resname="form.label.inserate.engagement_end">
+        <source>form.label.inserate.engagement_end</source>
+        <target>Engagement end</target>
+        <jms:reference-file line="92">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="26d3becdda6dbb882141897c06a392bb09b26c36" resname="form.label.inserate.engagement_start">
+        <source>form.label.inserate.engagement_start</source>
+        <target>Engagement start</target>
+        <jms:reference-file line="81">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="409d0747ff469a8c07445296888547304dd54dca" resname="form.label.inserate.geolocation">
+        <source>form.label.inserate.geolocation</source>
+        <target>Geolocation</target>
+        <jms:reference-file line="207">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="052f120e4fb80c1e7022a7990ecb681a5d386c3d" resname="form.label.inserate.image_file">
+        <source>form.label.inserate.image_file</source>
+        <target>Logo</target>
+        <jms:reference-file line="134">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="902b49b3a47b36337087ef0cd6d4107e6d9994f1" resname="form.label.inserate.organization">
+        <source>form.label.inserate.organization</source>
+        <target>Organisation</target>
+        <jms:reference-file line="151">InserateBundle/Form/InserateType.php</jms:reference-file>
+        <jms:reference-file line="160">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5da0474ce860ace16c75b4a7812543d61e1a0c95" resname="form.label.inserate.publication_end">
+        <source>form.label.inserate.publication_end</source>
+        <target>Publication end</target>
+        <jms:reference-file line="114">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f49e859a3f7126fe7439665a597b127d097a81fd" resname="form.label.inserate.published_at">
+        <source>form.label.inserate.published_at</source>
+        <target>Published at</target>
+        <jms:reference-file line="55">/../src/Theaterjobs/InserateBundle/Form/InserateAdminType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c323da22b8cf6cfcbfed75ee01b9898fe790c257" resname="form.label.inserate.title">
+        <source>form.label.inserate.title</source>
+        <target>Title</target>
+        <jms:reference-file line="63">InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a71ba2f20758d56297a06990f9d5b4ce9750a9d1" resname="form.label.job.contact">
+        <source>form.label.job.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="62">InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f592eaa7c5aa398dd4ca345b951015f93e3c5c87" resname="form.label.job.do.not.use.application">
+        <source>form.label.job.do.not.use.application</source>
+        <target>I don't want to use the online-application-function for this offer!</target>
+        <jms:reference-file line="79">InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7c2432877cc2943763b7b694c640a822400e61cc" resname="form.label.job.fromAge">
+        <source>form.label.job.fromAge</source>
+        <target>Playage from</target>
+        <jms:reference-file line="69">InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="749999b0d572e072ef5116e072c41b9b0168d588" resname="form.label.job.gratification">
+        <source>form.label.job.gratification</source>
+        <target>Gratification</target>
+        <jms:reference-file line="38">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="de252fde54514086c42150f4e2bc778875d9f673" resname="form.label.job.hideOrganizationLogo">
+        <source>form.label.job.hideOrganizationLogo</source>
+        <target>Don't show a logo.</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b181364f57a9964e6a715fdd84f1c73cc2764e3d" resname="form.label.job.toAge">
+        <source>form.label.job.toAge</source>
+        <target>Playage to</target>
+        <jms:reference-file line="74">InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="288927c3290229818a063d0860bc521450c31dae" resname="form.label.job_mail.name">
+        <source>form.label.job_mail.name</source>
+        <target>form.label.job_mail.name</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/InserateBundle/Form/JobmailQueryType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2dede1a5b3e8c18d3ffc2450e97098720b4a3c9e" resname="form.label.market.choreography">
+        <source>form.label.market.choreography</source>
+        <target>Choreography</target>
+        <jms:reference-file line="79">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="40eca866175f237e98a029d45f1b80917861ad50" resname="form.label.network.area">
+        <source>form.label.network.area</source>
+        <target>form.label.network.area</target>
+        <jms:reference-file line="443">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fffc538633c63ef14ab1445386d98ae2e53ce052" resname="form.label.network.categories">
+        <source>form.label.network.categories</source>
+        <target>Category</target>
+        <jms:reference-file line="449">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="71ac1e80412fd8f548fee785a8bb7b769b84d3bc" resname="form.label.network.gratification">
+        <source>form.label.network.gratification</source>
+        <target>Gratification</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/InserateBundle/Form/NetworkType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fa40e124951de80eddef76ee4cd6f60c30cef769" resname="form.label.occupation">
+        <source>form.label.occupation</source>
+        <target>Occupation</target>
+        <jms:reference-file line="54">/../src/Theaterjobs/InserateBundle/Form/OccupationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a4bf721dfba44e0a4bafbf1a2c6ba7d25af3c5dd" resname="form.label.orga.admin_comments">
+        <source>form.label.orga.admin_comments</source>
+        <target>Admin-Comments</target>
+        <jms:reference-file line="25">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationAdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4a4241f4e32446c4361e72354a0ac89d4280f233" resname="form.label.orga_join.description">
+        <source>form.label.orga_join.description</source>
+        <target>Join an organisation as a team-member</target>
+        <jms:reference-file line="23">/../src/Theaterjobs/InserateBundle/Form/ApplicationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7dc834d951ea6c98c1700c2f78d1862dbfb8245" resname="form.label.orga_join.title">
+        <source>form.label.orga_join.title</source>
+        <target>form.label.orga_join.title</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/InserateBundle/Form/ApplicationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f4f19247ea0b306f0a37038822504031d4c34cdb" resname="form.label.organization.city">
+        <source>form.label.organization.city</source>
+        <target state="new">form.label.organization.city</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/InserateBundle/Form/OrganizationLocationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2afba5c6a75784bf808bdeaf269dbbf046fc100a" resname="form.label.organization.country">
+        <source>form.label.organization.country</source>
+        <target state="new">form.label.organization.country</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/InserateBundle/Form/OrganizationLocationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc613c6d4c8c0b3ac0415d3ee58def96887aafad" resname="form.label.organization.description">
+        <source>form.label.organization.description</source>
+        <target state="new">form.label.organization.description</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/InserateBundle/Form/OrganizationDescriptionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1657e9fb917ec39f015d4937ba2c469c9b4583bc" resname="form.label.organization.ensemble">
+        <source>form.label.organization.ensemble</source>
+        <target>Ensemble</target>
+        <jms:reference-file line="176">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="563b0b68b3ce0e4d8e5bb3db13617abecf349929" resname="form.label.organization.ensemble.title">
+        <source>form.label.organization.ensemble.title</source>
+        <target>Title</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/InserateBundle/Form/OrganizationEnsembleType.php</jms:reference-file>
+        <jms:reference-file line="24">/../src/Theaterjobs/InserateBundle/Form/OrganizationEnsembleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0bb11259c43744d93e88cc188eb41226da250100" resname="form.label.organization.ensemble.users">
+        <source>form.label.organization.ensemble.users</source>
+        <target>User</target>
+        <jms:reference-file line="31">/../src/Theaterjobs/InserateBundle/Form/OrganizationEnsembleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bff7740108ec4cf3a34bb62a5d8172cc895cc60d" resname="form.label.organization.geolocation">
+        <source>form.label.organization.geolocation</source>
+        <target>Location</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/InserateBundle/Form/OrganizationLocationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eb4c8a1f1af7ae52f16867792399037cfbf75d36" resname="form.label.organization.grants">
+        <source>form.label.organization.grants</source>
+        <target>Grants</target>
+        <jms:reference-file line="189">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b1fe721620d697cfc7bb6d27f37b157f82220b9" resname="form.label.organization.hubStages">
+        <source>form.label.organization.hubStages</source>
+        <target>Number of stage lifts</target>
+        <jms:reference-file line="77">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="79">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a2d6dfd6b96a747e21ddc21c01f23079b2df223e" resname="form.label.organization.kind">
+        <source>form.label.organization.kind</source>
+        <target>Kind</target>
+        <jms:reference-file line="199">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e4e41928ac6053d4f9ea3dee0e0f1079b170746a" resname="form.label.organization.logo">
+        <source>form.label.organization.logo</source>
+        <target>Logo</target>
+        <jms:reference-file line="66">InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92b9bfc2dd76fb0625d56db60ef7fadec46250fd" resname="form.label.organization.name">
+        <source>form.label.organization.name</source>
+        <target>Name</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/InserateBundle/Form/OrganizationNameType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="438622fadc30e961da417ef3f109af331f1565a5" resname="form.label.organization.orchestraClass">
+        <source>form.label.organization.orchestraClass</source>
+        <target>Orchestra class</target>
+        <jms:reference-file line="154">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a4b65d0942ccafb0f6f2e653ee2c6638ddc53dfe" resname="form.label.organization.organizationform">
+        <source>form.label.organization.organizationform</source>
+        <target>Organisation form</target>
+        <jms:reference-file line="71">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3f3a1531d10d8a7a311ce6d12208415f68ddacec" resname="form.label.organization.owner">
+        <source>form.label.organization.owner</source>
+        <target>Owner</target>
+        <jms:reference-file line="52">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccc37e21e830b2568ff518c9dfb2fd87712addd2" resname="form.label.organization.performance">
+        <source>form.label.organization.performance</source>
+        <target>Performance statistics</target>
+        <jms:reference-file line="135">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8d1c87f1cf5643371a57db637d5b096620bc26a8" resname="form.label.organization.performance_number">
+        <source>form.label.organization.performance_number</source>
+        <target>Number of performances</target>
+        <jms:reference-file line="27">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationPerformanceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="69c34f8a089ead228aa9f1bb5bf9e0725717c7b8" resname="form.label.organization.performances">
+        <source>form.label.organization.performances</source>
+        <target>Performance statistics</target>
+        <jms:reference-file line="117">InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="72dc19281b30bd8127e26e1d1438b49837389395" resname="form.label.organization.portalDepth">
+        <source>form.label.organization.portalDepth</source>
+        <target>Portal height</target>
+        <jms:reference-file line="60">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="62">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e4f00453142f5b28921e47af0de5d1579e459ecc" resname="form.label.organization.portalWidth">
+        <source>form.label.organization.portalWidth</source>
+        <target>Portal width</target>
+        <jms:reference-file line="51">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="53">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf45e2f5fe1ffc26fa8a5aeeb71a712f445b63a7" resname="form.label.organization.schedule">
+        <source>form.label.organization.schedule</source>
+        <target>Kind of schedule</target>
+        <jms:reference-file line="209">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="231ffe8aaf4cd93a2483f5b8479a7543307e8c64" resname="form.label.organization.season">
+        <source>form.label.organization.season</source>
+        <target>In season</target>
+        <jms:reference-file line="24">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationPerformanceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1df8731b8b6e0a583f842edaa5c4b22f35e6d866" resname="form.label.organization.section">
+        <source>form.label.organization.section</source>
+        <target>Sections</target>
+        <jms:reference-file line="189">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7495f7a21634ce482d45862414d5727aff6ab66d" resname="form.label.organization.staff">
+        <source>form.label.organization.staff</source>
+        <target>Staff</target>
+        <jms:reference-file line="209">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2fe788084a37248b2a529a32b0f3a2b633301096" resname="form.label.organization.staff.group.number">
+        <source>form.label.organization.staff.group.number</source>
+        <target>Number</target>
+        <jms:reference-file line="35">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStaffType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="003f97e71421b6a62ed54c26a49897f9d8ce94ab" resname="form.label.organization.staff.group.title">
+        <source>form.label.organization.staff.group.title</source>
+        <target>Department</target>
+        <jms:reference-file line="23">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStaffType.php</jms:reference-file>
+        <jms:reference-file line="25">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStaffType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="27869b832c17cd8721e07a82ab2078eab915712e" resname="form.label.organization.staff.group.users.number">
+        <source>form.label.organization.staff.group.users.number</source>
+        <target>Number of staff in this department</target>
+        <jms:reference-file line="33">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStaffType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ab23e837539ba19fa76acd91641409b6bbe3b013" resname="form.label.organization.staffcomplete">
+        <source>form.label.organization.staffcomplete</source>
+        <target>Total number of staff</target>
+        <jms:reference-file line="61">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+        <jms:reference-file line="63">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bfd208dd5e2d6dfdefc7421d440cb0460ebfc0c0" resname="form.label.organization.stage">
+        <source>form.label.organization.stage</source>
+        <target>Stage information</target>
+        <jms:reference-file line="151">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a80e77646c2d2210c91d82cdb4c306eabc773c02" resname="form.label.organization.stageDepth">
+        <source>form.label.organization.stageDepth</source>
+        <target>Stage depth</target>
+        <jms:reference-file line="42">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="44">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0850e99c5f17e52cf8d40ff1756cb12a0927d3e1" resname="form.label.organization.stageSeats">
+        <source>form.label.organization.stageSeats</source>
+        <target>Number of seats</target>
+        <jms:reference-file line="86">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="88">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ff066eeccd4c767b1038cdd0ee6219c13e2c83f2" resname="form.label.organization.stageWidth">
+        <source>form.label.organization.stageWidth</source>
+        <target>Stage width</target>
+        <jms:reference-file line="33">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="35">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bd1907f4e048901bc459b0bd416804064a7a77c5" resname="form.label.organization.tags">
+        <source>form.label.organization.tags</source>
+        <target>Tags</target>
+        <jms:reference-file line="97">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b31c779a391dbb999a1d695bba688ff9bcb7864c" resname="form.label.organization.titleofstage">
+        <source>form.label.organization.titleofstage</source>
+        <target>Stage name</target>
+        <jms:reference-file line="23">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="25">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="64947c1c7b96c1a860f9433c4aaceb9e334918d6" resname="form.label.organization.turntable">
+        <source>form.label.organization.turntable</source>
+        <target>Revolving stage</target>
+        <jms:reference-file line="69">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+        <jms:reference-file line="71">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2ce24fdd1fc9c7190c2f9bf3980dddcf5fd26956" resname="form.label.organization.visitors">
+        <source>form.label.organization.visitors</source>
+        <target>Visitor statistics</target>
+        <jms:reference-file line="124">/../src/Theaterjobs/InserateBundle/Resources/views/Organization/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4fd992946b7343c52bf2e2bafe7b586ccc9453b0" resname="form.label.organization.visitors.number">
+        <source>form.label.organization.visitors.number</source>
+        <target>Number of visitors</target>
+        <jms:reference-file line="28">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationVisitorsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c263cf1f3d74c4250a914d287feed3f293bfcd7c" resname="form.label.organization.visitors.season">
+        <source>form.label.organization.visitors.season</source>
+        <target>In season</target>
+        <jms:reference-file line="24">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationVisitorsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c3f737b969af7f5c711663b74caa9876f0ae572" resname="form.label.organization.wage_from">
+        <source>form.label.organization.wage_from</source>
+        <target>Gratification from</target>
+        <jms:reference-file line="86">InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="64e47e7f7d2669b482dc478fc3a4c2a8ea3a4e10" resname="form.label.organization.wage_to">
+        <source>form.label.organization.wage_to</source>
+        <target>Gratification to</target>
+        <jms:reference-file line="94">InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d57c720fa3caeed972fc3576219637f6e1cfc44" resname="form.label.performancesFrom">
+        <source>form.label.performancesFrom</source>
+        <target>Performances from</target>
+        <jms:reference-file line="229">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5afd600e526d48c23a42c883b77d6fa2d104a8c8" resname="form.label.performancesTo">
+        <source>form.label.performancesTo</source>
+        <target>Performances to</target>
+        <jms:reference-file line="230">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5cfe7722b1b6021770363118c05b6ffcb325eca" resname="form.label.piece.actor">
+        <source>form.label.piece.actor</source>
+        <target>Performers</target>
+        <jms:reference-file line="87">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d25ed092b41c38190574f00778f2bea8eeef5d80" resname="form.label.piece.ageFrom">
+        <source>form.label.piece.ageFrom</source>
+        <target>Age from</target>
+        <jms:reference-file line="90">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4e4d150c89047cf404eaef1d731a3c77852e5697" resname="form.label.piece.ageOfAudienceFrom">
+        <source>form.label.piece.ageOfAudienceFrom</source>
+        <target>Age of audience from</target>
+        <jms:reference-file line="207">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84e0f7ec6fa24005a76ae3e4d6c152a15611c705" resname="form.label.piece.ageOfAudienceTo">
+        <source>form.label.piece.ageOfAudienceTo</source>
+        <target>Age of audience to</target>
+        <jms:reference-file line="215">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1a8335532b70b333f5b3ed3cff9b112412dffd8b" resname="form.label.piece.ageTo">
+        <source>form.label.piece.ageTo</source>
+        <target>Age to</target>
+        <jms:reference-file line="91">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37168a29f58e378d8179200460fb3ae79457bdc8" resname="form.label.piece.amountOfActors">
+        <source>form.label.piece.amountOfActors</source>
+        <target>Number of performers</target>
+        <jms:reference-file line="135">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f7ae98c782931be5661bcac3bfe0f839a453d50" resname="form.label.piece.amountOfTechnicians">
+        <source>form.label.piece.amountOfTechnicians</source>
+        <target>Number of technicians</target>
+        <jms:reference-file line="143">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c52ae8390e16abb75b4fce2b49c54996d3cff488" resname="form.label.piece.area">
+        <source>form.label.piece.area</source>
+        <target>Area</target>
+        <jms:reference-file line="104">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ddea90c3feedd283a78fc54fcd57e4502e187492" resname="form.label.piece.audienceMiscellaneous">
+        <source>form.label.piece.audienceMiscellaneous</source>
+        <target>More info about the audience</target>
+        <jms:reference-file line="223">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="19a952f99ac04be4eb15732840342cfc756f36c2" resname="form.label.piece.author">
+        <source>form.label.piece.author</source>
+        <target>Author</target>
+        <jms:reference-file line="32">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7228d4b7053c7c112cd128b17b65ba3da362e0d7" resname="form.label.piece.award">
+        <source>form.label.piece.award</source>
+        <target>Awards</target>
+        <jms:reference-file line="95">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3e5e6f9be121b3c7dc505254158778feee88ff05" resname="form.label.piece.break.no">
+        <source>form.label.piece.break.no</source>
+        <target>Without break</target>
+        <jms:reference-file line="87">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2129bdce15dfbc2171af8a788db7c9076eb7c472" resname="form.label.piece.break.yes">
+        <source>form.label.piece.break.yes</source>
+        <target>With break</target>
+        <jms:reference-file line="87">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="673795e13fdb5ad2fae438a1e27e1e42c9dd23db" resname="form.label.piece.categories">
+        <source>form.label.piece.categories</source>
+        <target>Categories</target>
+        <jms:reference-file line="110">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="25fd04af1f8080d9140131d4198d8e5fe249b23c" resname="form.label.piece.contact">
+        <source>form.label.piece.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bbb34f4324f76f5f9582332eec52bb739b5ad6bd" resname="form.label.piece.costFrom">
+        <source>form.label.piece.costFrom</source>
+        <target>Fee from</target>
+        <jms:reference-file line="92">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d979a16c72b945d8a7fcb140b90891849727a509" resname="form.label.piece.costTo">
+        <source>form.label.piece.costTo</source>
+        <target>Fee to</target>
+        <jms:reference-file line="93">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ce3d94f2df43317d122ff15500955bc93974cead" resname="form.label.piece.costume">
+        <source>form.label.piece.costume</source>
+        <target>Set design</target>
+        <jms:reference-file line="71">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2d1dcfc537ac5d39074c79d577e9f2a0e3c043b7" resname="form.label.piece.directedBy">
+        <source>form.label.piece.directedBy</source>
+        <target>Director</target>
+        <jms:reference-file line="47">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7028268a053e2f3fcb5c02cc88ccb8529643c47d" resname="form.label.piece.duration">
+        <source>form.label.piece.duration</source>
+        <target>Duration</target>
+        <jms:reference-file line="103">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b003900294fc2f7b9f87b43ec53728408ee94b6f" resname="form.label.piece.durationMax">
+        <source>form.label.piece.durationMax</source>
+        <target>Max. duration</target>
+        <jms:reference-file line="81">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="38d0a121136f6237bdcb137354dfa764ba36306a" resname="form.label.piece.durationMin">
+        <source>form.label.piece.durationMin</source>
+        <target>Min. duration</target>
+        <jms:reference-file line="80">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6bb777e0feba62b7a72f25d3e01c053652e4404a" resname="form.label.piece.durationOfBreak">
+        <source>form.label.piece.durationOfBreak</source>
+        <target>Duration of break</target>
+        <jms:reference-file line="111">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e65f20a0e86b79d71be4a340088cf82fdcc84a73" resname="form.label.piece.durationOfSTeardown">
+        <source>form.label.piece.durationOfSTeardown</source>
+        <target>Duration of stage strike</target>
+        <jms:reference-file line="127">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9c62e7db349d33c228481561635fa5c52603a5b8" resname="form.label.piece.durationOfSetup">
+        <source>form.label.piece.durationOfSetup</source>
+        <target>Duration of stage fit up</target>
+        <jms:reference-file line="119">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e16a79069010e43a025d2cff4c7ff81dc2723f83" resname="form.label.piece.for.sale">
+        <source>form.label.piece.for.sale</source>
+        <target state="new">form.label.piece.for.sale</target>
+        <jms:reference-file line="40">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="153744e975476f0ee7804f2394ad7f2e4e942a92" resname="form.label.piece.hasPerformingRights">
+        <source>form.label.piece.hasPerformingRights</source>
+        <target>Royalty included</target>
+        <jms:reference-file line="175">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="246">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="eccb9af3966120bf57915e22d7c977b43c51a415" resname="form.label.piece.honorarium">
+        <source>form.label.piece.honorarium</source>
+        <target>Gratification</target>
+        <jms:reference-file line="231">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6a7bec13c53e07f26a7b95b8f8a5fb4abc59751f" resname="form.label.piece.light">
+        <source>form.label.piece.light</source>
+        <target>Light</target>
+        <jms:reference-file line="191">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ffcacf72aef38749208805e4309b38c35c7612c1" resname="form.label.piece.minimumDepth">
+        <source>form.label.piece.minimumDepth</source>
+        <target>Min. depth</target>
+        <jms:reference-file line="98">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cacd927118dc3ec120aae6efd61947418f8f0646" resname="form.label.piece.minimumHeight">
+        <source>form.label.piece.minimumHeight</source>
+        <target>Min. height</target>
+        <jms:reference-file line="100">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6eb39ccf05e5e502c4ae0aee2de914e2e4caf6ac" resname="form.label.piece.minimumWidth">
+        <source>form.label.piece.minimumWidth</source>
+        <target>Min. width</target>
+        <jms:reference-file line="99">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a90e8cc5659cdd2c28387f5f0d4e364d628997fb" resname="form.label.piece.music">
+        <source>form.label.piece.music</source>
+        <target>Music</target>
+        <jms:reference-file line="63">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f64b90ca4d1ab8c064cd506fc99d93e124e89f22" resname="form.label.piece.performersNumberMax">
+        <source>form.label.piece.performersNumberMax</source>
+        <target>Max. performers</target>
+        <jms:reference-file line="95">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4e1131d9ca4d56c53eed9534c9361a36dacfc0c8" resname="form.label.piece.performersNumberMin">
+        <source>form.label.piece.performersNumberMin</source>
+        <target>Min. performers</target>
+        <jms:reference-file line="94">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8f21f2ca735a09dadce9ea2056f257a99f48bfed" resname="form.label.piece.profitSharing">
+        <source>form.label.piece.profitSharing</source>
+        <target>We also play for revenue-shares</target>
+        <jms:reference-file line="239">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="864ffcb65221833cc01e07478d9266d50b075844" resname="form.label.piece.settingMiscellaneous">
+        <source>form.label.piece.settingMiscellaneous</source>
+        <target>More information about fit up</target>
+        <jms:reference-file line="199">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e20213e2757be448beec3b883d11d19edb5322e8" resname="form.label.piece.setupDurationMax">
+        <source>form.label.piece.setupDurationMax</source>
+        <target>Max. fit up time</target>
+        <jms:reference-file line="83">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d0a746df6bf84c1a29c07c0d114f7cd0a342799" resname="form.label.piece.setupDurationMin">
+        <source>form.label.piece.setupDurationMin</source>
+        <target>Min. fit up time</target>
+        <jms:reference-file line="82">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="400da890316e95daa51458492f8c6313b1d48a4d" resname="form.label.piece.sound">
+        <source>form.label.piece.sound</source>
+        <target>Sound</target>
+        <jms:reference-file line="183">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b50f999fb935cdb5b965f51a7095619ee1027cb" resname="form.label.piece.staffMax">
+        <source>form.label.piece.staffMax</source>
+        <target>Max. staff-members</target>
+        <jms:reference-file line="97">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="036dcd769b718a0420a0263d0129c14befab5a85" resname="form.label.piece.staffMin">
+        <source>form.label.piece.staffMin</source>
+        <target>Min. staff-members</target>
+        <jms:reference-file line="96">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="86550274e564fe5da27f5b4f30866919625fae3e" resname="form.label.piece.stage">
+        <source>form.label.piece.stage</source>
+        <target>Stage</target>
+        <jms:reference-file line="55">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e8e547056800f9f4eb7ea8c402c282f0215638b" resname="form.label.piece.stageDepth">
+        <source>form.label.piece.stageDepth</source>
+        <target>Stage depth</target>
+        <jms:reference-file line="151">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="da8f738f2726efb077eddab1e0e409981e557ffb" resname="form.label.piece.stageHeight">
+        <source>form.label.piece.stageHeight</source>
+        <target>Stage height</target>
+        <jms:reference-file line="167">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cbe6a37783642df556180d61fb4bbbd3afab3809" resname="form.label.piece.stageMiscellaneous">
+        <source>form.label.piece.stageMiscellaneous</source>
+        <target>More information about the stage</target>
+        <jms:reference-file line="175">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5cd684f5097b7f08ddf89679474727dedab51fea" resname="form.label.piece.stageWidth">
+        <source>form.label.piece.stageWidth</source>
+        <target>Stage width</target>
+        <jms:reference-file line="159">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="437661d86d4f087cb6e87bac5d79fc0ba6210ac1" resname="form.label.piece.status">
+        <source>form.label.piece.status</source>
+        <target state="new">form.label.piece.status</target>
+        <jms:reference-file line="53">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ee650795efeb55b0b0e5d17758db43500e3bb0c3" resname="form.label.piece.subtitle">
+        <source>form.label.piece.subtitle</source>
+        <target>Subtitle</target>
+        <jms:reference-file line="24">InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b1a7b808c5900f9a8da3188e2122ea73d9ec1b78" resname="form.label.piece.teardownDurationMax">
+        <source>form.label.piece.teardownDurationMax</source>
+        <target>Strike duration to</target>
+        <jms:reference-file line="85">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6b331ae65bf47f36dd899e819ad1a8355d1b48ae" resname="form.label.piece.teardownDurationMin">
+        <source>form.label.piece.teardownDurationMin</source>
+        <target>Strike duration from</target>
+        <jms:reference-file line="84">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8716634e862fbddb452dbaf34488d1074fc1dafd" resname="form.label.portalDepthFrom">
+        <source>form.label.portalDepthFrom</source>
+        <target>Portal depth from</target>
+        <jms:reference-file line="239">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e5b2e1b8becfe17000c1177bea40f6058e1f5ca7" resname="form.label.portalDepthTo">
+        <source>form.label.portalDepthTo</source>
+        <target>Portal depth to</target>
+        <jms:reference-file line="240">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+        <jms:reference-file line="241">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a7dcc7168057dedbe0345fbb53a6724c3fcaa439" resname="form.label.portalWidthFrom">
+        <source>form.label.portalWidthFrom</source>
+        <target>Portal width from</target>
+        <jms:reference-file line="237">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="074a6d8bee80bba951cb768ad6755dbc88d99d59" resname="form.label.portalWidthTo">
+        <source>form.label.portalWidthTo</source>
+        <target>Portal width to</target>
+        <jms:reference-file line="238">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ec26af853f886e1fdce39cb0f339e5a602efc1af" resname="form.label.salaryFrom">
+        <source>form.label.salaryFrom</source>
+        <target>Gratification from</target>
+        <jms:reference-file line="243">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0e8a3ba39bead29e76643e4a4e1dd0bb887fcaa6" resname="form.label.salaryTo">
+        <source>form.label.salaryTo</source>
+        <target>Gratification to</target>
+        <jms:reference-file line="244">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5982d5af16535920c4b7260c8d37a3466a3bc293" resname="form.label.season_finance.choose">
+        <source>form.label.season_finance.choose</source>
+        <target>Select a season...</target>
+        <jms:reference-file line="220">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3a1df8b68d054de966e4a7da7a29912c03d3a6e9" resname="form.label.season_performance.choose">
+        <source>form.label.season_performance.choose</source>
+        <target>Select a season...</target>
+        <jms:reference-file line="228">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="42de59e4f95e9a5b5bb664075a41409b80fc4b3c" resname="form.label.season_visitors">
+        <source>form.label.season_visitors</source>
+        <target>Visitors</target>
+        <jms:reference-file line="225">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d80e014bde326ac78d60f24a212a1d235f7f9f8a" resname="form.label.staffTo">
+        <source>form.label.staffTo</source>
+        <target>Staff to</target>
+        <jms:reference-file line="242">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad087894f0a628c64f5c07c91ebbf58e42dfbc37" resname="form.label.stageDepthFrom">
+        <source>form.label.stageDepthFrom</source>
+        <target>Stage depth from</target>
+        <jms:reference-file line="233">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="08dc2bbd4550ad755cffd130934cf2006fc4e834" resname="form.label.stageDepthTo">
+        <source>form.label.stageDepthTo</source>
+        <target>Stage depth to</target>
+        <jms:reference-file line="234">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e2bd83c2972fdd62de3591854d3d03430a0ac8f9" resname="form.label.stageSeatsFrom">
+        <source>form.label.stageSeatsFrom</source>
+        <target>Seats from</target>
+        <jms:reference-file line="231">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ec8d61b6d721e65212e059dff8c097331ecfab88" resname="form.label.stageSeatsTo">
+        <source>form.label.stageSeatsTo</source>
+        <target>Seats to</target>
+        <jms:reference-file line="232">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e79bd0b533fabd71c315a785639131f4ec3c4ef6" resname="form.label.stageWidthFrom">
+        <source>form.label.stageWidthFrom</source>
+        <target>Stage width from</target>
+        <jms:reference-file line="235">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="803a77d7bbbb8ddde5a67350c6a2934fa8d5eb0c" resname="form.label.stageWidthTo">
+        <source>form.label.stageWidthTo</source>
+        <target>Stage width to</target>
+        <jms:reference-file line="236">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22c4139747f80139d5eef601840ea38abcae1119" resname="form.label.status">
+        <source>form.label.status</source>
+        <target>Status</target>
+        <jms:reference-file line="262">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b3feed67d563d7ec1a0761c2bdb66c85bc8bc2e1" resname="form.label.url">
+        <source>form.label.url</source>
+        <target>URL</target>
+        <jms:reference-file line="260">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f6f0ee146797bf37b270a4cf0b5c7ecdc92e247" resname="form.label.vacancy.organization">
+        <source>form.label.vacancy.organization</source>
+        <target>Vacancies</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/InserateBundle/Form/VacancyType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57cb27af241de66f07ce2fc7c2d79b7c33c08dfc" resname="form.label.vacancy.title">
+        <source>form.label.vacancy.title</source>
+        <target>Title</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/InserateBundle/Form/VacancyType.php</jms:reference-file>
+        <jms:reference-file line="23">/../src/Theaterjobs/InserateBundle/Form/VacancyType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dcdb6b0903feb71cc0ad490b5b80ee9ab475c0c5" resname="form.label.video.url">
+        <source>form.label.video.url</source>
+        <target>Video URL</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/InserateBundle/Form/VideoType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b734942fc687a22bdaa9a7d8df26ca696644d2ed" resname="form.option.choose.location">
+        <source>form.option.choose.location</source>
+        <target>Choose a location</target>
+        <jms:reference-file line="277">/../src/Theaterjobs/InserateBundle/Resources/views/Piece/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba51b441c7736fa87eca82e6f7a4f3f167722c06" resname="form.organization.orchestra.choice.a">
+        <source>form.organization.orchestra.choice.a</source>
+        <target>TVK A</target>
+        <jms:reference-file line="146">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e19324ed0613e6f8933bd6c153ebf82882da252c" resname="form.organization.orchestra.choice.a_plus">
+        <source>form.organization.orchestra.choice.a_plus</source>
+        <target>TVK A/F</target>
+        <jms:reference-file line="145">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="64dc8d5dc6d8ee2708f0ba886a25ac3d09b84a89" resname="form.organization.orchestra.choice.b">
+        <source>form.organization.orchestra.choice.b</source>
+        <target>TVK B</target>
+        <jms:reference-file line="147">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e20dbe4a9911ecfd53ef3519c1710c9da5ec9cca" resname="form.organization.orchestra.choice.c">
+        <source>form.organization.orchestra.choice.c</source>
+        <target>TVK C</target>
+        <jms:reference-file line="148">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="88aa11d161d681ba708317d6c40239948ca52671" resname="form.organization.orchestra.choice.d">
+        <source>form.organization.orchestra.choice.d</source>
+        <target>TVK D</target>
+        <jms:reference-file line="149">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0daf0443fc5e6d3ec979b287e68dfca94922358f" resname="form.organization.orchestra.choice.other">
+        <source>form.organization.orchestra.choice.other</source>
+        <target>Other TVK</target>
+        <jms:reference-file line="150">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="19470045a2fd9f6b0aac1686f7cccdfa015fea5d" resname="form.piece.button.save_draft">
+        <source>form.piece.button.save_draft</source>
+        <target>Save as draft</target>
+        <jms:reference-file line="132">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="317">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="519">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="610">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e1d424cb2abd6dc3ba84968ac75ed590486f20b5" resname="form.piece.button.save_exit">
+        <source>form.piece.button.save_exit</source>
+        <target>Save and exit</target>
+        <jms:reference-file line="131">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="316">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="518">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+        <jms:reference-file line="609">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e7cdf5dc8709610f562d1f62a29c66169e408fe1" resname="form.piece.button.update">
+        <source>form.piece.button.update</source>
+        <target state="new">form.piece.button.update</target>
+        <jms:reference-file line="1082">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="99106b38b98ffee82b8582e65d9b14893a930b9e" resname="form.piece.status.finished">
+        <source>form.piece.status.finished</source>
+        <target state="new">form.piece.status.finished</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5484afd55f013782460437a16566885d78dd4edf" resname="form.piece.status.planning">
+        <source>form.piece.status.planning</source>
+        <target state="new">form.piece.status.planning</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0e16c9f9c0e251ab0eb04a8dac87d2c15ae626b" resname="form.piece.status.running">
+        <source>form.piece.status.running</source>
+        <target state="new">form.piece.status.running</target>
+        <jms:reference-file line="47">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a680b769c9cc53333e076d195bf4a77726df604d" resname="form.placeholder.admin_comment.choose.option">
+        <source>form.placeholder.admin_comment.choose.option</source>
+        <target state="new">form.placeholder.admin_comment.choose.option</target>
+        <jms:reference-file line="29">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobAdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57987db5df8795c95a2dfde70e21b284790f34af" resname="form.placeholder.admin_comment.description">
+        <source>form.placeholder.admin_comment.description</source>
+        <target state="new">form.placeholder.admin_comment.description</target>
+        <jms:reference-file line="22">/../src/Theaterjobs/InserateBundle/Form/AdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="811edf5a7e867bb8c7190c946145c1af45765819" resname="form.placeholder.admin_comment.inserate.choose.option">
+        <source>form.placeholder.admin_comment.inserate.choose.option</source>
+        <target state="new">form.placeholder.admin_comment.inserate.choose.option</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/InserateBundle/Form/AdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="052c724c650d4868c77a713cd6c6084ba6039726" resname="form.placeholder.admin_comment.organization.choose.option">
+        <source>form.placeholder.admin_comment.organization.choose.option</source>
+        <target state="new">form.placeholder.admin_comment.organization.choose.option</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/InserateBundle/Form/AdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7da4f01402d8b7938528f2746736eb3fc411a7e6" resname="form.placeholder.area.choose">
+        <source>form.placeholder.area.choose</source>
+        <target>Please choose...</target>
+        <jms:reference-file line="215">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="03ee88bedb590d82add1e62e22fa8d02e5f48cb1" resname="form.placeholder.eduaction.contact">
+        <source>form.placeholder.eduaction.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/InserateBundle/Form/EducationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="fa5f15ff7e5f0ba056aa5453a90426b3495f7cfe" resname="form.placeholder.eduaction.gratification.choose">
+        <source>form.placeholder.eduaction.gratification.choose</source>
+        <target state="new">form.placeholder.eduaction.gratification.choose</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/InserateBundle/Form/EducationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2795a9a9a95acef743042e2a8a31c1f6d1bf1b57" resname="form.placeholder.education.area">
+        <source>form.placeholder.education.area</source>
+        <target>Area</target>
+        <jms:reference-file line="539">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/EducationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="32e62cd6e15539562ffb52db6dc222486e4da6d2" resname="form.placeholder.give.your.thoughts">
+        <source>form.placeholder.give.your.thoughts</source>
+        <target>Please share your thoughts with us....</target>
+        <jms:reference-file line="16">/../src/Theaterjobs/InserateBundle/Resources/views/AdminComments/userAdminComments.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="444e6946e7170fb19f3366e43702743261117291" resname="form.placeholder.inserate.adminInfoBox">
+        <source>form.placeholder.inserate.adminInfoBox</source>
+        <target>Admin-Info</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/InserateBundle/Form/InserateAdminType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="15c5f8d806d574666037e54aa39cc2552bd230b2" resname="form.placeholder.inserate.application_end">
+        <source>form.placeholder.inserate.application_end</source>
+        <target>Application end</target>
+        <jms:reference-file line="111">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="63fdb4e73605b1602069733edf9061a37e90e186" resname="form.placeholder.inserate.description">
+        <source>form.placeholder.inserate.description</source>
+        <target>Description</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dac02c177d582769865340147e0b65508bc11e36" resname="form.placeholder.inserate.engagement_end">
+        <source>form.placeholder.inserate.engagement_end</source>
+        <target>Engagement end</target>
+        <jms:reference-file line="100">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="06cbdb3b48a6c5336ad88770c1ffa513643dc3be" resname="form.placeholder.inserate.engagement_start">
+        <source>form.placeholder.inserate.engagement_start</source>
+        <target>Engagement start</target>
+        <jms:reference-file line="89">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a0da8b63b8d0cbfab042e190b7de53f199a43f80" resname="form.placeholder.inserate.publication_end">
+        <source>form.placeholder.inserate.publication_end</source>
+        <target>Publication end</target>
+        <jms:reference-file line="122">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="770df84c88e75f3683a9c9c3d9567b0d7c83563c" resname="form.placeholder.inserate.published_at">
+        <source>form.placeholder.inserate.published_at</source>
+        <target>Published at</target>
+        <jms:reference-file line="59">/../src/Theaterjobs/InserateBundle/Form/InserateAdminType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d51a59b6c6f19d2e2ac3c9f729692f52c158e73f" resname="form.placeholder.inserate.title">
+        <source>form.placeholder.inserate.title</source>
+        <target>Title</target>
+        <jms:reference-file line="69">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="53655cb2930b274a08e0466319771d402da78f31" resname="form.placeholder.job.contact">
+        <source>form.placeholder.job.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="62">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a253f2aebf7c6e1cf5a924419d948ae5c6d4303" resname="form.placeholder.job.fromAge">
+        <source>form.placeholder.job.fromAge</source>
+        <target>Playage from</target>
+        <jms:reference-file line="103">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ba9a804a5422bacdbe8d32067adac8d984c2ee70" resname="form.placeholder.job.toAge">
+        <source>form.placeholder.job.toAge</source>
+        <target>Playage to</target>
+        <jms:reference-file line="129">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="316cfc65de9fbc7c0091c3f2aac52c806c9e2695" resname="form.placeholder.location">
+        <source>form.placeholder.location</source>
+        <target>Location</target>
+        <jms:reference-file line="284">/../src/Theaterjobs/InserateBundle/Resources/views/Piece/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6e34f7fa9dfe74c7c92966a9918bb89eccfebb48" resname="form.placeholder.network.area">
+        <source>form.placeholder.network.area</source>
+        <target>Area</target>
+        <jms:reference-file line="444">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/NetworkController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6efeb9a7c3730b32a22d2545fcb3a331677094c9" resname="form.placeholder.orga.admin_comments">
+        <source>form.placeholder.orga.admin_comments</source>
+        <target state="new">form.placeholder.orga.admin_comments</target>
+        <jms:reference-file line="33">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationAdminCommentsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="57cf146a6948a6fe3436dd07f0633ed0242f8207" resname="form.placeholder.organization.budget">
+        <source>form.placeholder.organization.budget</source>
+        <target>Budget</target>
+        <jms:reference-file line="24">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationGrantsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc830d3ba3bdd9dd8637fb6043ba9a4cec353c94" resname="form.placeholder.organization.ensemble.users">
+        <source>form.placeholder.organization.ensemble.users</source>
+        <target>Users</target>
+        <jms:reference-file line="36">/../src/Theaterjobs/InserateBundle/Form/OrganizationEnsembleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="04f112a96d67b5becb95de242fc50cdb68f54ed5" resname="form.placeholder.organization.grants">
+        <source>form.placeholder.organization.grants</source>
+        <target>Grants</target>
+        <jms:reference-file line="30">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationGrantsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8e9b7ca8c2710cdcc38233bd629f729cb1228d11" resname="form.placeholder.organization.name">
+        <source>form.placeholder.organization.name</source>
+        <target>Name</target>
+        <jms:reference-file line="46">/../src/Theaterjobs/InserateBundle/Form/OrganizationNameType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="78ca6e87fa0f7d673378cdcf0d45b80281333980" resname="form.placeholder.organization.owner">
+        <source>form.placeholder.organization.owner</source>
+        <target>Owner</target>
+        <jms:reference-file line="54">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cdbd8d558c0d4233d6309281674b94ad0726c51a" resname="form.placeholder.organization.tags">
+        <source>form.placeholder.organization.tags</source>
+        <target>Tags</target>
+        <jms:reference-file line="100">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b5cc1a635f757abc1c9e083a2f4f831aff37fe00" resname="form.placeholder.organization.wage_from">
+        <source>form.placeholder.organization.wage_from</source>
+        <target>Gratification from</target>
+        <jms:reference-file line="88">InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="15bab746057921589dd2b3bd5a6ea6ef34404a6e" resname="form.placeholder.organization.wage_to">
+        <source>form.placeholder.organization.wage_to</source>
+        <target>Gratification to</target>
+        <jms:reference-file line="95">InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d21998d3c27287166e85fe42cc9520970ff6f5ca" resname="form.placeholder.piece.actor">
+        <source>form.placeholder.piece.actor</source>
+        <target>Performers</target>
+        <jms:reference-file line="74">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="89">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c5cbf824450d04cf6e22c927e5fe20504d2b85a5" resname="form.placeholder.piece.ageOfAudienceFrom">
+        <source>form.placeholder.piece.ageOfAudienceFrom</source>
+        <target>Age of audience from</target>
+        <jms:reference-file line="138">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="209">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f9734eaa9c847012de7d26cf24723cadbf406dd" resname="form.placeholder.piece.ageOfAudienceTo">
+        <source>form.placeholder.piece.ageOfAudienceTo</source>
+        <target>Age of audience to</target>
+        <jms:reference-file line="146">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="217">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="546d4bd96cf4183accf6a020d6dd684413b31380" resname="form.placeholder.piece.amountOfActors">
+        <source>form.placeholder.piece.amountOfActors</source>
+        <target>Number of performers</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="137">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="23c77653b40a148ecefbfbe8d0562822507785ed" resname="form.placeholder.piece.amountOfTechnicians">
+        <source>form.placeholder.piece.amountOfTechnicians</source>
+        <target>Number of technicians</target>
+        <jms:reference-file line="74">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="145">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d339f3b8559e86c3144a4b394c345593ed8f1f6d" resname="form.placeholder.piece.area">
+        <source>form.placeholder.piece.area</source>
+        <target>Area</target>
+        <jms:reference-file line="103">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Controller/PieceController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d928e06d9b23275613676ba05a572b34d969d9c7" resname="form.placeholder.piece.audienceMiscellaneous">
+        <source>form.placeholder.piece.audienceMiscellaneous</source>
+        <target>More information about the audience</target>
+        <jms:reference-file line="154">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="225">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c45b6013f3698241d868963d61f872a013b881a" resname="form.placeholder.piece.author">
+        <source>form.placeholder.piece.author</source>
+        <target>Author</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="34">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c185b0af007df86904de7f861efc470664163021" resname="form.placeholder.piece.award">
+        <source>form.placeholder.piece.award</source>
+        <target>Awards</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="97">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6386ba6eabf79a624f5b492c618551272d968bac" resname="form.placeholder.piece.choreography">
+        <source>form.placeholder.piece.choreography</source>
+        <target>Choreography</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="81">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b41ed69e9623dca47492bb3e827ca3a7194c588e" resname="form.placeholder.piece.contact">
+        <source>form.placeholder.piece.contact</source>
+        <target>Contact</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+        <jms:reference-file line="41">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5067f303d0b196390714defa646532337e7d568f" resname="form.placeholder.piece.costume">
+        <source>form.placeholder.piece.costume</source>
+        <target>Set design</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="73">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a133fbb0474560d981c3bd70d3972ec59d0382d6" resname="form.placeholder.piece.directedBy">
+        <source>form.placeholder.piece.directedBy</source>
+        <target>Director</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="49">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2c43c100d053eef6f91b96f4258f354460e11659" resname="form.placeholder.piece.duration">
+        <source>form.placeholder.piece.duration</source>
+        <target>Duration</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="105">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="56d2d9867d08f54c3419e40cb7f7ab41d4d57b4d" resname="form.placeholder.piece.durationOfBreak">
+        <source>form.placeholder.piece.durationOfBreak</source>
+        <target>Duration of break</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="113">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2865788b46f109c34c88a7723c3a32ad28948d9" resname="form.placeholder.piece.durationOfSTeardown">
+        <source>form.placeholder.piece.durationOfSTeardown</source>
+        <target>Duration of stage strike</target>
+        <jms:reference-file line="58">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="129">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="45461b2f398f4f4d4b92c244d0d21af5c0039771" resname="form.placeholder.piece.durationOfSetup">
+        <source>form.placeholder.piece.durationOfSetup</source>
+        <target>Duration of stage fitup</target>
+        <jms:reference-file line="50">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="121">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d70180cfc5f751fb7b87910f7be56416b9b71339" resname="form.placeholder.piece.honorarium">
+        <source>form.placeholder.piece.honorarium</source>
+        <target>Gratification</target>
+        <jms:reference-file line="162">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="233">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="06171044f2aaeb0d0defb9119644c4832534cb42" resname="form.placeholder.piece.light">
+        <source>form.placeholder.piece.light</source>
+        <target>Light</target>
+        <jms:reference-file line="122">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="193">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f394912c5e9509a518209e43ced3345301e5b7f4" resname="form.placeholder.piece.music">
+        <source>form.placeholder.piece.music</source>
+        <target>Music</target>
+        <jms:reference-file line="50">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="65">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7f82e02c8021290875eaf9b24a1bbf88227e6779" resname="form.placeholder.piece.profitSharing">
+        <source>form.placeholder.piece.profitSharing</source>
+        <target>We also play for revenue-shares</target>
+        <jms:reference-file line="170">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="241">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7af96e034255ab9561125ba53b48816d70f68b13" resname="form.placeholder.piece.settingMiscellaneous">
+        <source>form.placeholder.piece.settingMiscellaneous</source>
+        <target>More information about fit up</target>
+        <jms:reference-file line="130">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="201">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a818cb0b3f9c195321519e4a15e866408a4ba134" resname="form.placeholder.piece.sound">
+        <source>form.placeholder.piece.sound</source>
+        <target>Sound</target>
+        <jms:reference-file line="114">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="185">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed5ee6729e690f29aec41d0be1a717aaf1790714" resname="form.placeholder.piece.stage">
+        <source>form.placeholder.piece.stage</source>
+        <target>Stage</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/InserateBundle/Form/PieceSecondType.php</jms:reference-file>
+        <jms:reference-file line="57">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d457543b767443340789db275d576de524cb308c" resname="form.placeholder.piece.stageDepth">
+        <source>form.placeholder.piece.stageDepth</source>
+        <target>Stage depth</target>
+        <jms:reference-file line="82">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="153">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2a3f9e0e3e8208dfcbcadd8d3f9ea9607e68f731" resname="form.placeholder.piece.stageHeight">
+        <source>form.placeholder.piece.stageHeight</source>
+        <target>Stage height</target>
+        <jms:reference-file line="98">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="169">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5485cfc1bdbe7035d7e4a43eb6fb3ece966caeea" resname="form.placeholder.piece.stageMiscellaneous">
+        <source>form.placeholder.piece.stageMiscellaneous</source>
+        <target>More information about the stage</target>
+        <jms:reference-file line="106">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="177">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="62d0243e09b890e0dd5560b3b3caf6b7f24677a0" resname="form.placeholder.piece.stageWidth">
+        <source>form.placeholder.piece.stageWidth</source>
+        <target>Stage width</target>
+        <jms:reference-file line="90">/../src/Theaterjobs/InserateBundle/Form/PieceThirdType.php</jms:reference-file>
+        <jms:reference-file line="161">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b4d2134ae6d1e522fe8396f04602a27dc41c9056" resname="form.placeholder.piece.subtitle">
+        <source>form.placeholder.piece.subtitle</source>
+        <target>Subtitle</target>
+        <jms:reference-file line="28">/../src/Theaterjobs/InserateBundle/Form/PieceFirstType.php</jms:reference-file>
+        <jms:reference-file line="26">/../src/Theaterjobs/InserateBundle/Form/PieceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="51b6b457d3811af1f4f1d4532c40cff931b77c3e" resname="form.placeholder.search.keyword">
+        <source>form.placeholder.search.keyword</source>
+        <target>Keyword</target>
+        <jms:reference-file line="69">/../src/Theaterjobs/InserateBundle/Resources/views/Piece/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b63210c1db32fb92a28d57061582f87fc31e627b" resname="form.profile.label.contact.description">
+        <source>form.profile.label.contact.description</source>
+        <target state="new">form.profile.label.contact.description</target>
+        <jms:reference-file line="20">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/ContactSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7f7584cea3c34f197c8b7a6885d0b77346a01e85" resname="job.ad.label.coverImage.copyright">
+        <source>job.ad.label.coverImage.copyright</source>
+        <target state="new">job.ad.label.coverImage.copyright</target>
+        <jms:reference-file line="122">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e21f2b31e239d125900c69eb8d58f870204673e" resname="job.new.button.draft">
+        <source>job.new.button.draft</source>
+        <target state="new">Draft</target>
+        <jms:reference-file line="210">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7813f498ed8f487478794b9c3a83f0f8bf1d5565" resname="job.new.button.preview">
+        <source>job.new.button.preview</source>
+        <target state="new">Preview</target>
+        <jms:reference-file line="212">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2d8b2bb3b86bdaaa3e40e95531101287a6c0bbb4" resname="job.new.label.applicationEnd">
+        <source>job.new.label.applicationEnd</source>
+        <target state="new">Application End</target>
+        <jms:reference-file line="105">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a690aed97d3de680332597b05ba7a953844198cd" resname="job.new.label.category">
+        <source>job.new.label.category</source>
+        <target state="new">Category</target>
+        <jms:reference-file line="53">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/GratificationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="86fd0ff0f1a92670c54d4a94aece9cbce72e63ca" resname="job.new.label.engagementStart">
+        <source>job.new.label.engagementStart</source>
+        <target state="new">Engagement Start</target>
+        <jms:reference-file line="84">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6dadd1afb980d2a933b77068cb05e15fb2a0eb06" resname="job.new.label.engagement_end">
+        <source>job.new.label.engagement_end</source>
+        <target state="new">Engagement End</target>
+        <jms:reference-file line="95">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8c4c4067d8a7df235e006b41cf74102b9e3d3ece" resname="job.new.label.gratification">
+        <source>job.new.label.gratification</source>
+        <target state="new">Gratification</target>
+        <jms:reference-file line="53">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/GratificationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3a9b91dc729072e508dc867b5158740ee01e0372" resname="job.new.label.imageFile">
+        <source>job.new.label.imageFile</source>
+        <target state="new">job.new.label.imageFile</target>
+        <jms:reference-file line="127">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="68e526a7bf0244264c28aed4aa01da5013944aee" resname="job.new.label.inserateTitle">
+        <source>job.new.label.inserateTitle</source>
+        <target state="new">Title</target>
+        <jms:reference-file line="67">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cdf47670be749a5cbc0abf4330669b32377057dc" resname="job.new.label.publicationEnd">
+        <source>job.new.label.publicationEnd</source>
+        <target state="new">Publication End</target>
+        <jms:reference-file line="113">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4fb6e17ff9a22b34ad37cd18f560b502c8400d36" resname="job.status.archived">
+        <source>job.status.archived</source>
+        <target state="new">Archived</target>
+        <jms:reference-file line="68">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="85">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1bccf0b63c1d2dc901805942896ffdd9d5564af2" resname="job.status.deleted">
+        <source>job.status.deleted</source>
+        <target state="new">Deleted</target>
+        <jms:reference-file line="69">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d462bd68551db99ac5d2518595a166c7d87bbacf" resname="job.status.draft">
+        <source>job.status.draft</source>
+        <target state="new">Draft</target>
+        <jms:reference-file line="66">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="83">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1c68124c63d87f92db1bbe1ea90bace28153e2bb" resname="job.status.drafts">
+        <source>job.status.draft</source>
+        <target state="new">Draft</target>
+        <jms:reference-file line="66">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c939fb2773822728870f15bf9ae6413ee9113329" resname="job.status.pending">
+        <source>job.status.pending</source>
+        <target state="new">Pending</target>
+        <jms:reference-file line="70">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="86">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2bcc2a76f2838cc16f3c9af80417f133dce506b2" resname="job.status.published">
+        <source>job.status.published</source>
+        <target state="new">Published</target>
+        <jms:reference-file line="67">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="84">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="99">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1e7a1b44450dbc3538c2360f9ca4c42b66a46dc9" resname="membershipApplication.label.applicationText">
+        <source>membershipApplication.label.applicationText</source>
+        <target state="new">Application text</target>
+        <jms:reference-file line="24">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/TeamMembershipApplicationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c112e88173d4d3c5c1409a17bee4837673523991" resname="network">
+        <source>network</source>
+        <target state="new">network</target>
+        <jms:reference-file line="52">/../src/Theaterjobs/InserateBundle/Form/NetworkType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b25214e054310ff76bbf7d3efc2eba72de78147" resname="newOrganization.label.name">
+        <source>newOrganization.label.name</source>
+        <target state="new">Organization name</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/InserateBundle/Form/OrganizationNameType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8715bcc26489d4ae61ea7c4a363050c17984aa26" resname="news.edit.label.image">
+        <source>news.edit.label.image</source>
+        <target state="new">Image</target>
+        <jms:reference-file line="106">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+        <jms:reference-file line="113">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="96ba004b8c7aa00faab60b9bbac48dc9795e9dfb" resname="order.A-Z">
+        <source>order.A-Z</source>
+        <target state="new">A-Z</target>
+        <jms:reference-file line="87">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3fabb8edfcbdd97c448bf2672ae1e2a8040f48ac" resname="order.date">
+        <source>order.date</source>
+        <target state="new">Date</target>
+        <jms:reference-file line="114">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7af5fab2213bca677b6fdac3d50af92cf31ca6f" resname="order.relevance">
+        <source>order.relevance</source>
+        <target state="new">Relevance</target>
+        <jms:reference-file line="86">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d51214c75b3a85f4d7b50a49943396062b9a6b41" resname="organization.categories.noSelection">
+        <source>organization.categories.noSelection</source>
+        <target state="new">No selection</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/InserateBundle/Form/OrganizationScheduleType.php</jms:reference-file>
+        <jms:reference-file line="58">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="823c327926ac6eba15017bb304f16e0707abb6fa" resname="organization.edit.choice.form_of_organization.empty_value">
+        <source>organization.edit.choice.form_of_organization.empty_value</source>
+        <target state="new">Empty</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/InserateBundle/Form/FormOfOrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b50ce095e142b3424be32aac237331d370a17d77" resname="organization.edit.choice.orchestraClass.empty">
+        <source>organization.edit.choice.orchestraClass.empty</source>
+        <target state="new">Empty</target>
+        <jms:reference-file line="84">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2570e531614d9e18f74469001c598ae06ca7654" resname="organization.edit.label.applicationInfo">
+        <source>organization.edit.label.applicationInfo</source>
+        <target state="new">organization.edit.label.applicationInfo</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/InserateBundle/Form/OrganizationApplicationInfoType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cba9a593523aeda78e5848c634696f0d516a40d8" resname="organization.edit.label.budget">
+        <source>organization.edit.label.budget</source>
+        <target state="new">Budget</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/InserateBundle/Form/OrganizationGrantsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6e9d265f0ad1af5368312f588109484549a2ef8f" resname="organization.edit.label.contact">
+        <source>organization.edit.label.contact</source>
+        <target state="new">organization.edit.label.contact</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/InserateBundle/Form/ContactSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="92552541dc2cab3181ae57d85c8a379cbed54e46" resname="organization.edit.label.email">
+        <source>organization.edit.label.email</source>
+        <target state="new">Email</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/InserateBundle/Form/ContactSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="58f474ca193da505c84116225289354c924d1136" resname="organization.edit.label.grants">
+        <source>organization.edit.label.grants</source>
+        <target state="new">Grants</target>
+        <jms:reference-file line="53">/../src/Theaterjobs/InserateBundle/Form/OrganizationGrantsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d7dc97de5829e7a249b4a1398caafd20d3b325dc" resname="organization.edit.label.kind">
+        <source>organization.edit.label.kind</source>
+        <target state="new">Kind</target>
+        <jms:reference-file line="28">/../src/Theaterjobs/InserateBundle/Form/OrganizationKindType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="649b08ea8461ea0cd85a95c403b462d6c3bfbc90" resname="organization.edit.label.link">
+        <source>organization.edit.label.link</source>
+        <target state="new">Link</target>
+        <jms:reference-file line="22">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSocialMediaType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dc3dc9481682a6d664ec14c6403c1ad5ccc282e4" resname="organization.edit.label.moreInfo">
+        <source>organization.edit.label.moreInfo</source>
+        <target state="new">More Info</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/InserateBundle/Form/OrganizationGrantsType.php</jms:reference-file>
+        <jms:reference-file line="131">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7604f3efe86e791662a153fbcf18d75cfbac3165" resname="organization.edit.label.orchestraClass">
+        <source>organization.edit.label.orchestraClass</source>
+        <target state="new">Orchestra class</target>
+        <jms:reference-file line="83">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="65b83a5517c106afc106d5d488818fb9eec9ba5c" resname="organization.edit.label.organizationform">
+        <source>organization.edit.label.organizationform</source>
+        <target state="new">Form of organization</target>
+        <jms:reference-file line="57">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f67fa146fc901bef5af33e9597ad24342a1f4846" resname="organization.edit.label.owner">
+        <source>organization.edit.label.owner</source>
+        <target state="new">Owner</target>
+        <jms:reference-file line="34">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d997e12a0f72fffb42325287400bce498303ad05" resname="organization.edit.label.schedule">
+        <source>organization.edit.label.schedule</source>
+        <target state="new">Schedule</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/InserateBundle/Form/OrganizationScheduleType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="37914286a9a5a8d6df352307ee05df0855b5693d" resname="organization.edit.label.season">
+        <source>organization.edit.label.season</source>
+        <target state="new">Season</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/InserateBundle/Form/OrganizationGrantsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c9714a49a600d919dc962d64730aa9fa7c317fe0" resname="organization.edit.label.section">
+        <source>organization.edit.label.section</source>
+        <target state="new">Section</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/InserateBundle/Form/OrganizationSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="54775ba253af75aee7e087a549523f09584777ad" resname="organization.edit.label.socialMedia">
+        <source>organization.edit.label.socialMedia</source>
+        <target state="new">Social Media</target>
+        <jms:reference-file line="38">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/ContactSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5ce606d9c6917077e254f7453a3cce780d5dd707" resname="organization.edit.label.staff.number">
+        <source>organization.edit.label.staff.number</source>
+        <target state="new">Staff number</target>
+        <jms:reference-file line="35">/../src/Theaterjobs/InserateBundle/Form/OrganizationStaffType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d5351457fb12ad876552b9a0ca1145995a0721f" resname="organization.edit.label.staff.title">
+        <source>organization.edit.label.staff.title</source>
+        <target state="new">Staff title</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/InserateBundle/Form/OrganizationStaffType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1f583ca59cda794b9fce88f8b81c2e71127ea719" resname="organization.edit.label.staffcomplete">
+        <source>organization.edit.label.staffcomplete</source>
+        <target state="new">Staff complete</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b7fb0d223f3f32303ad83ec2a3acff56dc544365" resname="organization.edit.label.status">
+        <source>organization.edit.label.status</source>
+        <target state="new">Status</target>
+        <jms:reference-file line="33">/../src/Theaterjobs/InserateBundle/Form/OrganizationStatusType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0040d8fea9c398003d98ad16074fb4a927aef4a1" resname="organization.edit.orchestra.choiceA">
+        <source>organization.edit.orchestra.choiceA</source>
+        <target state="new">A</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c9890ca7efe856e8cf3924e8d59e3ffb2f9aedbf" resname="organization.edit.orchestra.choiceA_plus">
+        <source>organization.edit.orchestra.choiceA_plus</source>
+        <target state="new">A plus</target>
+        <jms:reference-file line="74">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d4766ad08c0a57a2118e8ce2e7867b4572258f2" resname="organization.edit.orchestra.choiceB">
+        <source>organization.edit.orchestra.choiceB</source>
+        <target state="new">B</target>
+        <jms:reference-file line="76">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="09889a41c51398779ddbbc8fd18ff48a9e117a40" resname="organization.edit.orchestra.choiceC">
+        <source>organization.edit.orchestra.choiceC</source>
+        <target state="new">C</target>
+        <jms:reference-file line="77">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9e3a0d23bba219bb37d607740bc70228b994853a" resname="organization.edit.orchestra.choiceD">
+        <source>organization.edit.orchestra.choiceD</source>
+        <target state="new">D</target>
+        <jms:reference-file line="78">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="398307a3bd863b17b886939a562aafe7f2a4ca29" resname="organization.edit.orchestra.choiceOther">
+        <source>organization.edit.orchestra.choiceOther</source>
+        <target state="new">Other</target>
+        <jms:reference-file line="79">/../src/Theaterjobs/InserateBundle/Form/OrganizationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d385d6cebde1a2284ad37463bea0c62af462edfd" resname="organization.edit.performance.label.number">
+        <source>organization.edit.performance.label.number</source>
+        <target state="new">Number</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/InserateBundle/Form/OrganizationPerformanceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="af228bea8b41540dc7bf7ec82295b75ac9594e44" resname="organization.edit.performance.label.season">
+        <source>organization.edit.performance.label.season</source>
+        <target state="new">Season</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/InserateBundle/Form/OrganizationPerformanceType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8b129a2d0fb5641ef2439f591480ea3f74981b5e" resname="organization.edit.stage.label.depth">
+        <source>organization.edit.stage.label.depth</source>
+        <target state="new">Depth</target>
+        <jms:reference-file line="81">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="81dfe71e2cc2310ee97faedf19ccb0dc361d7c13" resname="organization.edit.stage.label.height">
+        <source>organization.edit.stage.label.height</source>
+        <target state="new">Height</target>
+        <jms:reference-file line="66">/home/mirela/Documents/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d04ce24ec63ca3ad73c0ac9fe85dcab339d18221" resname="organization.edit.stage.label.hub">
+        <source>organization.edit.stage.label.hub</source>
+        <target state="new">Hub</target>
+        <jms:reference-file line="53">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f666f956281dcc84eac97c17c4659deebe827344" resname="organization.edit.stage.label.portalHeight">
+        <source>organization.edit.stage.label.portalHeight</source>
+        <target state="new">Portal height</target>
+        <jms:reference-file line="109">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e9be639abfb09dfddd221341b99e3b078b41742a" resname="organization.edit.stage.label.portalwidth">
+        <source>organization.edit.stage.label.portalwidth</source>
+        <target state="new">Portal width</target>
+        <jms:reference-file line="96">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5b15192aef160049704513c7044bb0693aed8280" resname="organization.edit.stage.label.seats">
+        <source>organization.edit.stage.label.seats</source>
+        <target state="new">Seats</target>
+        <jms:reference-file line="39">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9cb6457e1b8b348471fdab7cc94f01f755a90e30" resname="organization.edit.stage.label.title">
+        <source>organization.edit.stage.label.title</source>
+        <target state="new">Title</target>
+        <jms:reference-file line="26">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="962b9cd7219f970b69a9696c4a4355905d9e7e6f" resname="organization.edit.stage.label.turntable">
+        <source>organization.edit.stage.label.turntable</source>
+        <target state="new">Turntable</target>
+        <jms:reference-file line="141">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ac28da8230468aba8f66a503ffb9bfc2753dcd58" resname="organization.edit.stage.label.width">
+        <source>organization.edit.stage.label.width</source>
+        <target state="new">Width</target>
+        <jms:reference-file line="68">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a34a0ad7dfc203fe06ed767cdc85f6be220a6356" resname="organization.edit.stage.tags">
+        <source>organization.edit.stage.tags</source>
+        <target state="new">Tags</target>
+        <jms:reference-file line="125">/../src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a09d7f5455be77292f651ca0ca0f6672d351ef00" resname="organization.edit.visitors.label.number">
+        <source>organization.edit.visitors.label.number</source>
+        <target state="new">Number</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/InserateBundle/Form/OrganizationVisitorsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="22c27bb7c04724fde9e59646813b70bb3cf319ae" resname="organization.edit.visitors.label.season">
+        <source>organization.edit.visitors.label.season</source>
+        <target state="new">Season</target>
+        <jms:reference-file line="25">/../src/Theaterjobs/InserateBundle/Form/OrganizationVisitorsType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="080b0fa81dec193681133ad7058c112ad610a2ed" resname="organization.hasPublishedJobs.orMembers">
+        <source>organization.hasPublishedJobs.orMembers</source>
+        <target state="new">Organization has published jobs or members</target>
+        <jms:reference-file line="1623">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+        <jms:reference-file line="1713">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="189f27ebeaca78dfb388508457d1c821acced59a" resname="organization.search.label.distance">
+        <source>organization.search.label.distance</source>
+        <target state="new">Distance</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d3c0fd4f178113e9ba4a5a8492b1db707e2278bf" resname="organization.search.label.keyword">
+        <source>organization.search.label.keyword</source>
+        <target state="new">Keyword</target>
+        <jms:reference-file line="21">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d2ce80067eecfe4f03d33fb5efcb962dc06665a1" resname="organization.search.label.location">
+        <source>organization.search.label.location</source>
+        <target state="new">Location</target>
+        <jms:reference-file line="28">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0c9d450cbf111a49228dfa3d81e7ffc8f0eb4325" resname="organization.search.placeholder.location">
+        <source>organization.search.placeholder.location</source>
+        <target state="new">location</target>
+        <jms:reference-file line="30">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="81afc2ae54472d1852115925f38820fca9372eb1" resname="organization.show.label.vio">
+        <source>organization.show.label.vio</source>
+        <target state="new">organization.show.label.vio</target>
+        <jms:reference-file line="44">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationVioType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed5fcf67e44a64cb1eab6f3d2a0a8eb84c6bfc65" resname="organization.status.active">
+        <source>organization.status.active</source>
+        <target state="new">Active</target>
+        <jms:reference-file line="68">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="270563de6097059dfe9ca766fc118e06862bb694" resname="organization.status.closed">
+        <source>organization.status.closed</source>
+        <target state="new">Closed</target>
+        <jms:reference-file line="70">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="caa7526d2220ffd8f7b6de076a864b72bf2834eb" resname="organization.status.pending">
+        <source>organization.status.pending</source>
+        <target state="new">Pending</target>
+        <jms:reference-file line="67">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5d8dc6287456749f3e5814337f749d63c3168785" resname="organization.status.unknown">
+        <source>organization.status.unknown</source>
+        <target state="new">Unknown</target>
+        <jms:reference-file line="69">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cdebf2d71b31906711f29ccb3da2596759a166c1" resname="organization.teamMembership.notActive">
+        <source>organization.teamMembership.notActive</source>
+        <target state="new">organization.teamMembership.notActive</target>
+        <jms:reference-file line="1825">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="abf5f49a1db92288b62b908f452ec13af3b63e9c" resname="people.edit.label.link">
+        <source>people.edit.label.link</source>
+        <target state="new">people.edit.label.link</target>
+        <jms:reference-file line="22">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSocialMediaType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d59aea8a6a8aa362ed89aa78d9135d93d45de56" resname="people.edit.label.socialMedia">
+        <source>people.edit.label.socialMedia</source>
+        <target state="new">people.edit.label.socialMedia</target>
+        <jms:reference-file line="22">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/ContactSectionType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a9d440f77f2b5f844c55c9f7d52fa03b43dbe714" resname="people.edit.placeholder.pleaseEnter3Characters">
+        <source>people.edit.placeholder.pleaseEnter3Characters</source>
+        <target state="new">Please enter 3 characters</target>
+        <jms:reference-file line="160">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+        <jms:reference-file line="170">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+        <jms:reference-file line="72">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+        <jms:reference-file line="153">/home/laura/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationStageType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="35a49d29e2c9e95da17666a5ed70f7b3535d6eb5" resname="people.search.label.distance">
+        <source>people.search.label.distance</source>
+        <target state="new">Distance</target>
+        <jms:reference-file line="35">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="78867110e6d4d91da6a23e745bb5bf62beed2b2b" resname="people.search.label.keyword">
+        <source>people.search.label.keyword</source>
+        <target state="new">Keyword</target>
+        <jms:reference-file line="21">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e737a76af068b3c8a7c64a96bbb2b33f56e04bc1" resname="people.search.label.location">
+        <source>people.search.label.location</source>
+        <target state="new">people.search.label.location</target>
+        <jms:reference-file line="28">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3a5c223ff6c1c78975c5a4fb63f1f113ccb4c6b0" resname="people.search.placeholder.location">
+        <source>people.search.placeholder.location</source>
+        <target state="new">people.search.placeholder.location</target>
+        <jms:reference-file line="30">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/OrganizationSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e04c3b5a9195d97a45ec897d37e0833b9a382616" resname="tj.application.on.job.closed %jobTitle% ">
+        <source>tj.application.on.job.closed %jobTitle% </source>
+        <target>Sorry, applications for this offer are closed.</target>
+        <jms:reference-file line="2530">/../src/Theaterjobs/InserateBundle/Controller/JobController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="989d1ab1d7e995cd16886fcf13b9ef49c38f3a48" resname="user.organization.alreadymember">
+        <source>user.organization.alreadymember</source>
+        <target state="new">user.organization.alreadymember</target>
+        <jms:reference-file line="1804">/../src/Theaterjobs/InserateBundle/Controller/OrganizationController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f884ad02fb5178a87eb8dcc2e82581edfda8d4e4" resname="work.filter.label.noSelection">
+        <source>work.filter.label.noSelection</source>
+        <target state="new">No selection</target>
+        <jms:reference-file line="20">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3faeffecade132019cf96a0f9345c71c4e314b1e" resname="work.new.label.applicationEnd">
+        <source>work.new.label.applicationEnd</source>
+        <target state="new">End application</target>
+        <jms:reference-file line="99">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1f2d8cff096b91d59a8da5298edfd5ff50a8845" resname="work.new.label.contact">
+        <source>work.new.label.contact</source>
+        <target state="new">Contact</target>
+        <jms:reference-file line="80">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="463f8bd0ddf77d2582d7aef6ac1e7502ce4ea21b" resname="work.new.label.description">
+        <source>work.new.label.description</source>
+        <target state="new">Description</target>
+        <jms:reference-file line="87">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3ba9d9f9c6ec77f4ca6dbeb1eab86700127217fc" resname="work.new.label.email">
+        <source>work.new.label.email</source>
+        <target state="new">Email address</target>
+        <jms:reference-file line="94">/../src/Theaterjobs/InserateBundle/Form/JobType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8a0b5e26f0def3771791fa78ef6d14ebb6ff5ddb" resname="work.new.label.engagementEnd">
+        <source>work.new.label.engagementEnd</source>
+        <target state="new">End engagement</target>
+        <jms:reference-file line="89">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad03caa200bd2192d78cada396a69f7a88f6468a" resname="work.new.label.engagementStart">
+        <source>work.new.label.engagementStart</source>
+        <target state="new">Start engagement</target>
+        <jms:reference-file line="78">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e103b86d76d4b54ad93f1e2029cbce87bfb7c6e9" resname="work.new.label.gratification">
+        <source>work.new.label.gratification</source>
+        <target state="new">Gratification</target>
+        <jms:reference-file line="38">/../src/Theaterjobs/InserateBundle/Form/GratificationType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ad24f2b1ba9c6911caa06cb166c80a77c60ad197" resname="work.new.label.imageFile">
+        <source>work.new.label.imageFile</source>
+        <target state="new">work.new.label.imageFile</target>
+        <jms:reference-file line="121">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7a8c6a5def668fee9347f57c0bfe706023f4fdf7" resname="work.new.label.inserateAsap">
+        <source>work.new.label.inserateAsap</source>
+        <target state="new">Inserate asap</target>
+        <jms:reference-file line="132">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3b42df3cd50206a865500ab09c4685ae29e07507" resname="work.new.label.inserateTitle ">
+        <source>work.new.label.inserateTitle </source>
+        <target state="new">Title </target>
+        <jms:reference-file line="62">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="aaa793072ee956c63cf04dd7a991f5dbf497e1dd" resname="work.new.label.organization">
+        <source>work.new.label.organization</source>
+        <target state="new">Organization</target>
+        <jms:reference-file line="145">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+        <jms:reference-file line="154">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ef50f096f4b4cd830e5c4548dba1d7b4c0895084" resname="work.new.label.publicationEnd">
+        <source>work.new.label.publicationEnd</source>
+        <target state="new">End publication</target>
+        <jms:reference-file line="107">/../src/Theaterjobs/InserateBundle/Form/InserateType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8825f68c40158c6e48c4ea3f0285debe52558a04" resname="work.search.label.distance">
+        <source>work.search.label.distance</source>
+        <target state="new">distance</target>
+        <jms:reference-file line="48">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8400b3962cdfa6379f8499890e1f04153b7f0335" resname="work.search.label.keyword">
+        <source>work.search.label.keyword</source>
+        <target state="new">keyword</target>
+        <jms:reference-file line="34">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5dd362846d4ec26ccd8cf6a078e6f340ec0318d6" resname="work.search.label.location">
+        <source>work.search.label.location</source>
+        <target state="new">work.search.label.location</target>
+        <jms:reference-file line="124">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="41">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0ba4a1af828d72d8ebc5fb19c8c74f0e024dc1e9" resname="work.search.placeholder.location">
+        <source>work.search.placeholder.location</source>
+        <target state="new">work.search.placeholder.location</target>
+        <jms:reference-file line="126">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+        <jms:reference-file line="43">/home/manoolia/html/theaterjobs21/src/Theaterjobs/InserateBundle/Form/JobSearchType.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

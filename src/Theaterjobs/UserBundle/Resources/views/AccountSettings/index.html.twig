@@ -1,0 +1,619 @@
+{% extends "::base.html.twig" %}
+{% import '::macro.html.twig' as m %}
+{% import '@TheaterjobsUser/userMacro.html.twig' as um %}
+{% block content %}
+    <div class="page-wrap" id="">
+        <div class="container">
+            <div id="notifyEmailChangeRequest" {% if hasChangeEmailRequest|length == 0 %} style="display: none" {% endif %}
+                 class="message-info message-warning">{{ 'account.edit.warning.description'| trans }}
+                <span class="close-message">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                    </svg>
+                </span>
+            </div>
+            <div id="notifyNameChangeRequest" {% if hasChangeNameRequest|length == 0 %} style="display: none" {% endif %}
+                 class="message-info message-warning">{{ 'account.edit.warning.nameChangeRequest'| trans }}
+                <span class="close-message">
+                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                             xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>
+                    </svg>
+                </span>
+            </div>
+            {{ m.flashbags(app.session.flashbag.get('accountSettings')) }}
+            <div class="block" id="accountSettingsBlock">
+                <!-- Page header -->
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                            <h1 class="account-settings-title">  {{ 'account.title.account' | trans }} {% if is_granted('ROLE_ADMIN') and not (owner) %} - {{ profile|defaultName }} {% endif %}</h1>
+                            <p class="p-alt">{{ 'account.description' | trans }}</p>
+                            <div class="separator"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Detail blocks -->
+                <div class="no-overflow-x account-blocks">
+                    <div class="container account-boxes">
+                        <div class="row grid-layout" data-masonry>
+                            <div class="col-md-6 col-xs-12" data-masonry-item>
+                                <div class="panel panel-large panel-primary">
+                                    <h2 class="panel-head">{{ 'account.personalDetails.title' | trans }} <span
+                                                class="toggle-arrow"><svg
+                                                    class="icon-svg icon-svg-inverse" width="20" height="20"><use
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use></svg></span>
+                                    </h2>
+                                    <div class="panel-content" id="generalInfoBox">
+                                        {{ m.accountSettingsGeneralInfoBox(profile,billingAddress) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12" data-masonry-item>
+                                <div class="panel panel-large panel-primary-dark">
+                                    <h2 class="panel-head">{{ 'account.email.title' | trans }}
+                                        <span class="toggle-arrow">
+                                    <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                             xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}">
+
+                                        </use>
+                                    </svg>
+                                </span>
+                                    </h2>
+                                    <div class="panel-content">
+                                        <dl>
+                                            <dt>{{ 'account.email.label.EmailAddress' | trans }} </dt>
+                                            {#Current address#}
+                                            <dd>{{ profile.user.email }}</dd>
+                                        </dl>
+                                        <p class="p-alt">
+                                            <a href="{{ path('email_change_request_new') }}"
+                                               data-target="#myModal" data-toggle="modal" data-hash="changeEmail"
+                                               data-color="#87162D">
+                                                <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                                                     height="20">
+                                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                                </svg>
+                                                {{ 'link.change'| trans }}
+                                            </a>
+                                        </p>
+
+
+                                        <h2 class="panel-head">{{ 'account.password.title' | trans }}
+                                            <span class="toggle-arrow">
+                                   {# <svg class="icon-svg icon-svg-inverse" width="20" height="20"><use
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use></svg>#}
+                                </span>
+                                        </h2>
+                                        <div class="panel-content password-oneline">
+                                            <dl>
+
+                                                <dt id="dtPasswordChanged"{% if(profile.user.passwordLastEditAt is null) %} style="display:none"{% endif %} >{{ 'account.password.label.passwordChanged' | trans }}</dt>
+                                                <dd id="dtPasswordChanged1" {% if(profile.user.passwordLastEditAt is null) %} style="display:none"{% endif %} >
+                                                    <span id="passwordLastEdit">{{ profile.user.passwordLastEditAt | localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}</span>
+                                                </dd>
+                                                <dt id="dtPasswordUnchanged" {% if(profile.user.passwordLastEditAt) %} style="display:none"{% endif %}>{{ 'account.password.label.passwordNeverChanged' | trans }}</dt>
+                                                <dd id="dtPasswordUnchanged1"{% if(profile.user.passwordLastEditAt) %} style="display:none"{% endif %}></dd>
+                                            </dl>
+
+                                            <p class="p-alt">
+                                                <a href="{{ path('tj_profile_account_settings_resetPasswordModal',{slug:profile.slug}) }}"
+                                                   data-target="#myModal" data-toggle="modal" data-hash="changePassword"
+                                                   data-color="#87162D">
+                                                    <svg class="icon-svg icon-svg-inverse icon-inline" width="20"
+                                                         height="20">
+                                                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                                                    </svg>
+                                                    {{ 'link.change'| trans }}</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12" data-masonry-item>
+                                <div class="panel panel-large panel-secondary desc-list-panel">
+                                    <h2 class="panel-head">
+                                        {{ 'account.membership.title' | trans }}
+                                        <span class="toggle-arrow">
+                                            <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                            </svg>
+                                        </span>
+                                    </h2>
+                                    <div class="panel-content account-membership">
+                                        {{ um.accountMembershipBlock(paymentMethod, expireDate, showBuyMembership, debitAccount, bankName, owner, profile) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12" data-masonry-item>
+                                <div class="panel panel-large panel-admin">
+                                    <h2 class="panel-head">{{ 'account.DeleteAccount.title' | trans }}
+                                        <span class="toggle-arrow"><svg
+                                                    class="icon-svg icon-svg-inverse" width="20" height="20"><use
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                        xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                    </svg>
+                                </span>
+                                    </h2>
+                                    <div class="panel-content">
+                                        <p> {% if profile.user.disabledDeleteAccount %}
+                                                {{ 'account.DeleteAccount.NotAllowed.description' | trans }}
+                                            {% else %}
+                                                {{ 'account.DeleteAccount.description' | trans }}
+                                            {% endif %}
+                                        </p>
+                                        {% if not profile.user.disabledDeleteAccount %}
+                                            <ul class="p-alt list-inline list-spaced">
+                                                <li>
+                                                    <a class="pull-right {% if not profile.user.enabled and not is_granted("ROLE_ADMIN") %}disabled{% endif %}"
+                                                       id="deleteAccount" role="button">
+                                                        {{ 'link.delete'| trans }}
+                                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {% if(is_granted("ROLE_ADMIN")) %}
+                                <div class="col-md-6 col-xs-12" data-masonry-item>
+
+                                    <div class="panel panel-large panel-admin">
+                                        <h2 class="panel-head">{{ 'account.StatisticsBox.title' | trans }}
+                                            <span class="toggle-arrow"><svg
+                                                        class="icon-svg icon-svg-inverse" width="20" height="20"><use
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                            xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-arrow-toggle') }}"></use>
+                                                </svg>
+                                            </span>
+                                        </h2>
+                                        <div class="panel-content">
+                                            {# <p> {{ 'account.StatisticsBox.description' | trans }}</p>#}
+                                            <ul class="p-alt list-inline list-spaced list-ofstatistics">
+                                                <dl>
+                                                    <dt>{{ 'account.StatisticsBox.numberTotalLogins' | trans }}:</dt>
+                                                    <dd>{{ profile.user.loginCounter }}</dd>
+
+                                                    <dt>{{ 'account.StatisticsBox.lastTenDaysLogins' | trans }}:</dt>
+                                                    <dd>{{ options.last10DaysLogins|length }}</dd>
+
+                                                    <dt>{{ 'account.StatisticsBox.lastLogin' | trans }}:</dt>
+                                                    <dd>{{ profile.user.lastLogin|localizeddate('none', 'none', app.request.locale, null, 'd. MMM Y') }}</dd>
+
+                                                    <dt>{{ 'account.StatisticsBox.userOnline' | trans }}:</dt>
+                                                    {% if(profile.user.isOnline) %}
+                                                        Yes
+                                                    {% else %}
+                                                        No
+                                                    {% endif %}
+                                                </dl>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div class="col-md-6 col-xs-12" data-masonry-item>
+                                    {{ um.accountSettingsAdminBox(profile, options) }}
+                                </div>
+                            {% endif %}
+
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div class="col-md-6 col-xs-12" id="activity-logs" data-masonry-item>
+                                    {{ m.activityLogsAdminBox(profile, options) }}
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="col-md-12">
+                        {{ m.adminUserComments(options.comments.commentsForm, options.comments.commentsEntities, profile) }}
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    <script>
+
+        function customAlert(appendTo, status, text) {
+            var elementBox;
+            elementBox = '<div class="message-info message-' + status + '">' + text + '<span class="close-message">' +
+                '<svg class="icon-svg icon-svg-inverse" width="20" height="20">' +
+                '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close') }}"></use>' +
+                '</svg>' +
+                '</span>' +
+                '</div>';
+            $(elementBox).insertBefore(appendTo).delay(20000).fadeOut('slow', function () {
+                $(this).remove();
+            });
+            $('html, body').animate({scrollTop: '0px'}, 300);
+        }
+
+        $(document).on('click', '.close-message', function () {
+                $(this).parent().fadeOut("slow");
+            }
+        );
+
+        $('#quitContractButton').on('click', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            bootbox.confirm({
+                title: false,
+                message: trans("account.setting.membershipbox.quickcontractBootbox", locale),
+                buttons: {
+                    'confirm': {
+                        label: trans('bootbox.button.ok', locale)
+                    },
+                    'cancel': {
+                        label: trans('bootbox.button.cancel', locale)
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        // send the request through a post Method so no user
+                        // can open the link to quit the contract
+                        var profileSlug = '{{ profile.slug }}';
+                        var url = Routing.generate('tj_user_account_settings_quit_contract', {
+                            _locale: locale,
+                            slug: profileSlug
+                        });
+                        $.ajax({
+                            method: "POST",
+                            url,
+                            success: function (data) {
+                                if (data.success) {
+                                    window.location.reload();
+                                    return;
+                                }
+                                bootbox.alert({message: data.message})
+                            },
+                            error: function (data) {
+                                bootbox.alert({message: data.message})
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        {#Javascript events for admin box links #}
+        {% if is_granted('ROLE_ADMIN') %}
+            $('#removeMembership').on('click', function (e) {
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var url = Routing.generate(
+                            'tj_user_account_settings_revoke_membership',
+                            {slug: '{{ profile.slug }}', _locale: locale}
+                        );
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                    $('#removeMembership').closest('li').remove();
+                                    $('.account-membership').html(data.membershipBlock);
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            $('#emailWarning').on('click', function (e) {
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var check = e.currentTarget.checked;
+
+                        var url = Routing.generate(
+                            'tj_user_email_validate',
+                            {
+                                slug: '{{ profile.slug }}', _locale: locale, action: (check) ? 0 : 1
+                            }
+                        );
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                    e.currentTarget.checked = !check;
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            $('#blockDebitCard').on('click', function (e) {
+                e.preventDefault();
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var check = e.currentTarget.checked;
+                        //Debit card id
+                        const PAYMENT_ID = 2;
+
+                        var url = Routing.generate(
+                            (check) ? 'tj_membership_admin_paymentmethod_unblock' : 'tj_membership_admin_paymentmethod_block',
+                            {
+                                slug: '{{ profile.slug }}',
+                                _locale: locale,
+                                payment_id: PAYMENT_ID
+                            }
+                        );
+
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                    e.currentTarget.checked = !check;
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            $('#blockPaypal').on('click', function (e) {
+                e.preventDefault();
+
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var check = e.currentTarget.checked;
+                        //Paypal id
+                        const PAYMENT_ID = 3;
+
+                        var url = Routing.generate(
+                            (check) ? 'tj_membership_admin_paymentmethod_unblock' : 'tj_membership_admin_paymentmethod_block',
+                            {
+                                slug: '{{ profile.slug }}',
+                                _locale: locale,
+                                payment_id: PAYMENT_ID
+                            }
+                        );
+
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                    e.currentTarget.checked = !check;
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            $('#blockAccountDeletion').on('click', function (e) {
+                e.preventDefault();
+
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var check = e.currentTarget.checked;
+
+                        var url = Routing.generate(
+                            (check) ? 'tj_user_unblock_account_delete' : 'tj_user_block_account_delete',
+                            {
+                                slug: '{{ profile.slug }}', _locale: locale
+                            }
+                        );
+
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                    e.currentTarget.checked = !check;
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            $('#blockEmail').on('click', function (e) {
+                e.preventDefault();
+
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var check = e.currentTarget.checked;
+
+                        var url = Routing.generate(
+                            'tj_admin_block_email',
+                            {
+                                slug: '{{ profile.slug }}',
+                                _locale: locale,
+                                action: (check) ? 0 : 1
+                            }
+                        );
+
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                    e.currentTarget.checked = !check;
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            $('#invoiceSelect').on('change', function (e) {
+                var self = this;
+                bootbox.confirm("Are you sure?", function (ans) {
+                    if (ans) {
+                        var value = self.value;
+                        var id = $('#invoiceId').val();
+
+                        var url = Routing.generate(
+                            'tj_admin_membership_invoice_status',
+                            {
+                                id: id,
+                                _locale: locale,
+                                action: value
+                            }
+                        );
+
+                        $.ajax({
+                            url: url,
+                            success: function (data) {
+                                if (data.error == false) {
+                                    customAlert('#accountSettingsBlock', 'success', data.message);
+                                } else {
+                                    customAlert('#accountSettingsBlock', 'error', data.message);
+                                }
+                            },
+                            error: function (e) {
+                                console.log(e);
+                            },
+                            dataType: 'json'
+                        });
+                    }
+                });
+            });
+
+            {% if options.hasMembership != false %}
+                $('#tj_user_account_settings_admin_modal').datetimepicker({
+                    format: 'DD.MM.YYYY',
+                    showClear: true,
+                    showTodayButton: true,
+                    toolbarPlacement: 'top',
+                    useCurrent: false,
+                    locale: locale
+                });
+                //Prevents loop events
+                var mtx = 0;
+                $('#tj_user_account_settings_admin_modal').on('dp.change', function (e) {
+                    var val = Math.abs(e.oldDate.diff(e.date, 'days'));
+                    if (mtx) {
+                        mtx = 0;
+                        return;
+                    }
+                    if (val >= 100) {
+                        var self = this;
+                        bootbox.confirm("Are you sure?", function (ans) {
+                            if (ans) {
+                                changePaidUntil(e);
+                            } else {
+                                if (!mtx) {
+                                    mtx = 1;
+                                    //Triggers new event => loop
+                                    $('#tj_user_account_settings_admin_modal').data('DateTimePicker').date(e.oldDate);
+                                }
+                            }
+                        });
+                    } else {
+                        changePaidUntil(e);
+                    }
+                });
+
+                function changePaidUntil(e) {
+                    const date = e.date.format('YYYY.MM.DD');
+                    const slug = '{{ profile.slug }}';
+                    const url = Routing.generate('tj_admin_membership_change_paid_until', { slug, _locale: locale});
+
+                    $.ajax({
+                        type: 'POST',
+                        url,
+                        data: {date},
+                        success: function (data) {
+                            if (data.error === false) {
+                                customAlert('#accountSettingsBlock', 'success', data.message);
+                                $('.account-membership').html(data.membershipBlock);
+                                $('#activity-logs').html(data.activityBlock);
+                            } else {
+                                customAlert('#accountSettingsBlock', 'error', data.message);
+                            }
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        },
+                        dataType: 'json'
+                    });
+                }
+
+            {% endif %}
+
+        {% endif %}
+
+        // update comments after submit
+        var adminComments = $('#user-comment form:eq(0)');
+        adminComments.submit(function (e) {
+            e.preventDefault();
+            if ($(this).valid()) {
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    success: function (data) {
+                        $(".block-comments").html(data);
+                        $('#theaterjobs_userbundle_admin_user_comments_description').val('');
+                    }
+                });
+            }
+        });
+
+        $('#deleteAccount').click(function () {
+            bootbox.alert("{{ 'bootbox.deleteaccount.Please'|trans }} <a href='{{ path('tj_main_default_contact_site') }}'>{{ 'bootbox.deleteaccount.Contact'|trans }}</a> {{ 'bootbox.deleteaccount.description'|trans }}.");
+        });
+
+    </script>
+{% endblock %}

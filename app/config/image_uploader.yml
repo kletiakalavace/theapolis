@@ -1,0 +1,59 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        news:
+                    uri_prefix:         /uploads/news
+                    upload_destination: %kernel.root_dir%/../web/uploads/news
+                    directory_namer: app.directory_namer.user_id
+                    namer:              vich_uploader.namer_uniqid
+
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true
+        organization:
+                    uri_prefix:         /uploads/organization
+                    upload_destination: %kernel.root_dir%/../web/uploads/organization
+                    directory_namer: app.directory_namer.user_id
+                    namer:              vich_uploader.namer_uniqid
+
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true
+        profile:
+                    uri_prefix:         /uploads/profile
+                    upload_destination: %kernel.root_dir%/../web/uploads/profile
+                    directory_namer: app.directory_namer.user_id
+                    namer:              vich_uploader.namer_uniqid
+
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true
+
+        socialMedia:
+                    uri_prefix:         /uploads/socilaMedia
+                    upload_destination: %kernel.root_dir%/../web/uploads/socilaMedia
+                    directory_namer: app.directory_namer.user_id
+                    namer:              vich_uploader.namer_uniqid
+
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true
+        inserate:
+                    uri_prefix:         /uploads/inserate
+                    upload_destination: %kernel.root_dir%/../web/uploads/inserate
+                    directory_namer: app.directory_namer.user_id
+                    namer:              vich_uploader.namer_uniqid
+
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true
+        logo:
+                    uri_prefix:         /uploads/logos
+                    upload_destination: %kernel.root_dir%/../web/uploads/logos
+                    directory_namer: app.directory_namer.user_id
+                    namer:              vich_uploader.namer_uniqid
+
+                    inject_on_load:     false
+                    delete_on_update:   true
+                    delete_on_remove:   true

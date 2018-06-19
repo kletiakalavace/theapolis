@@ -1,0 +1,104 @@
+{% macro newsFilterBar(filters, form) %}
+    {% set restFiter=0 %}
+    <div class="row-with-margin col-md-12">
+        <div class="col-md-12 no-padding">
+            {% if is_empty(form.getIterator, filters) == false %}
+                <div class="content-filters">
+                    <h3>{{ 'work.search.title.yourFilters' | trans }}</h3>
+                    <ul class="content-tags-search">
+                        {% if filters.searchPhrase %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.keyword' | trans }}
+                                    {{ filters.searchPhrase }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterSearchPhrase()"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% set tags = filters.tags|split(',') %}
+                        {% for tag in tags %}
+                            {% if tag %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>
+                                        {% if loop.index == 1 %}
+                                            {{ 'filter.search.label.tags' | trans }}
+                                        {% endif %}
+                                        {{ tag }}
+                                    </div>
+                                    <a href="javascript:;" onclick="removeFilterTags('{{ tag }}')"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if filters.years %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.years' | trans }}
+                                    {{ filters.years }}
+                                </div>
+                                <a href="javascript:;" onclick="removeFilterSearchYears()"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                            {% if filters.favorite %}
+                                {% set restFiter = 1 %}
+                                <li class="tags-search">
+                                    <div>{{ 'work.search.label.favorite' | trans }}</div>
+                                    <a href="javascript:;" onclick="removeFavourite()"
+                                       class="select2-search-choice-close"
+                                       tabindex="-1">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                        {% if filters.organization %}
+                            {% set restFiter = 1 %}
+                            <li class="tags-search">
+                                <div>
+                                    {{ 'filter.search.label.organization' | trans }}
+                                    {{ filters.organization | name }}
+                                </div>
+                                <a href="javascript:;" onclick="removeOrganization();"
+                                   class="select2-search-choice-close"
+                                   tabindex="-1">
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% if restFiter == 1 %}
+                            <li class="reset">
+                                <a href="javascript:;" onclick="newsResetFilters()" tabindex="-1">
+                                    <div>{{ 'work.search.link.resetFilters' | trans }}</div>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    {% if restFiter == 1 %}
+                        <div class="reset pull-right">
+                            <a href="javascript:;" tabindex="-1">
+                                <div id="save-search"
+                                     data-entity="news"
+                                     data-routename="{{ app.request.get('_route') }}"
+                                     class="{{ is_granted('ROLE_USER') ? '' : 'registerFirst' }}">
+                                    {{ 'work.search.link.saveSearch' | trans }}
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+

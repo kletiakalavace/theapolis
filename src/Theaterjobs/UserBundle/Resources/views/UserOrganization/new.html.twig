@@ -1,0 +1,80 @@
+{% extends '::base.html.twig' %}
+{#{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+                '@select2_css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}#}
+{% block breadcrumb %}
+    <li class="active">
+        <a href="{{path('tj_main_organization_home')}}">{{ 'tj.breadcrumbs.organization' | trans }}</a> 
+    </li>
+    <li class="active">
+        <a href="{{path('tj_organization_show', {'slug' : organization.slug })}}">{{ organization.name }}</a>  
+     </li>
+    <li class="active">
+        {{ 'tj.breadcrumbs.organizationuser.add' | trans }}  
+     </li>
+ {% endblock %}
+{% block content %}
+    <h1>{{ 'tj.user.userorganization.creation' | trans }}</h1>
+    {{ form_start(form)}}
+    <div class="row">
+        <div class="col-sm-12 content-box" >
+            {{ form_errors(form) }}
+             {{ form_row(form._token) }}
+               {{ form_row(form.organization , { 'attr': {'class': 'hidden'} }) }}
+               <input name="organization" id="organization" class="typeahead " type="text" disabled placeholder="{{ 'tj.user.userorganization.placeholder.pickorganization' | trans }}" required>
+               {{form_row(form.user, { 'attr': {'class': 'hidden'} }) }}
+               <input name="user" id="user" type="text" class="form-control" placeholder="{{ 'tj.user.userorganization.placeholder.pickuser' | trans }}" required>
+               {{ form_row(form.submit) }}
+               {{ form_end(form, {'render_rest': true}) }}
+            </div>
+        </div>
+                 
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent()}}
+    {% javascripts filter="?uglifyjs2"
+ 
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+         $(document).ready(function(){
+             $('#organization').val($("#theaterjobs_userbundle_userorganization_organization option:selected").text());
+        $('#user').select2({
+            minimumInputLength: 3,
+            formatInputTooShort: function () {
+                $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+            },
+            createSearchChoice: function (term, page) {
+                $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+            },
+            ajax: {
+                url: Routing.generate('tj_main_user_suggest'),
+                dataType: 'json',
+                data: function(term, page) {
+                    return {
+                        q: term
+                    };
+                },
+                results: function(data, page) {
+                    return {
+                        results: data
+                    };
+                }
+            }
+
+        }).on("change", function(e) {
+          // mostly used event, fired to the original element when the value changes
+          $('#theaterjobs_userbundle_userorganization_user').val(e.val);
+          //alert("change val=" + e.val);
+        })
+        ;
+});
+        </script>
+{% endblock %}

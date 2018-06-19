@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:15:49Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="38a80af56f9d52becbeceb3245eb2078dc1898b0" resname="dashboard.notification.membership.ended">
+        <source>dashboard.notification.membership.ended</source>
+        <target state="new">Your membership has been expired. You have no access to our services any more and your profile has been unpublished. Please renew your membership...</target>
+        <jms:reference-file line="101">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/EndMembershipCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afe09dd6acb21002718d1bd3c93da16221820773" resname="dashboard.notification.membership.ended.description">
+        <source>dashboard.notification.membership.ended.description</source>
+        <target state="new"> </target>
+        <jms:reference-file line="107">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/EndMembershipCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="6211aeffbb2add81fc0355c61023e18b114bb7a6" resname="dashboard.notification.membership.expiration %date%">
+        <source>dashboard.notification.membership.expiration %date%</source>
+        <target state="new">Your membership will run out on %date% - please renew it now to make sure, that your profile is published without a pause.</target>
+        <jms:reference-file line="97">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/MembershipExpirationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9e23bfc5f54989f24acf534f05f24444756a025f" resname="dashboard.notification.membership.expiration.description %date%">
+        <source> </source>
+        <target state="new"> </target>
+        <jms:reference-file line="106">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/MembershipExpirationCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1d2eceb1e267350e3e48f7cfdc29cd043fa322a2" resname="tj.notification.bank.data.changed">
+        <source>tj.notification.bank.data.changed</source>
+        <target state="new">tj.notification.bank.data.changed</target>
+        <jms:reference-file line="246">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/DebitAccountController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d35c3899acb7b8e8bb2609b019a7055ae66d65fd" resname="tj.notification.billing.cancelled.by.admin">
+        <source>tj.notification.billing.cancelled.by.admin</source>
+        <target state="new">tj.notification.billing.cancelled.by.admin</target>
+        <jms:reference-file line="517">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8245d58cce9c46e4f0965beeaa8010104fc22d3d" resname="tj.notification.billing.cancelled.by.admin.description">
+        <source>tj.notification.billing.cancelled.by.admin.description</source>
+        <target state="new">tj.notification.billing.cancelled.by.admin.description</target>
+        <jms:reference-file line="518">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a89070c2e38d4982c208465d950716c8a35321ec" resname="tj.notification.enjoy.membership">
+        <source>tj.notification.enjoy.membership</source>
+        <target state="new">tj.notification.enjoy.membership</target>
+        <jms:reference-file line="169">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+        <jms:reference-file line="159">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/SofortController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="023888325e4ea925ceea0a18fa2e3b0a5d7aa365" resname="tj.notification.expiration.info %days% %day% %amount%">
+        <source>tj.notification.expiration.info %days% %day% %amount%</source>
+        <target state="new">tj.notification.expiration.info %days% %day% %amount%</target>
+        <jms:reference-file line="198">/../src/Theaterjobs/MembershipBundle/EventListener/MembershipOrderListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ed71f0b7552ca1f19122b74d07d74a7df027d216" resname="tj.notification.fourteen.days.without.payment.cancel.after.sixteen">
+        <source>tj.notification.fourteen.days.without.payment.cancel.after.sixteen</source>
+        <target state="new">tj.notification.fourteen.days.without.payment.cancel.after.sixteen</target>
+        <jms:reference-file line="56">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/PrepaidCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0b1190ce878939ed7207709858763480ebb1fef4" resname="tj.notification.hello.user %title%">
+        <source>tj.notification.hello.user %title%</source>
+        <target state="new">tj.notification.hello.user %title%</target>
+        <jms:reference-file line="197">/../src/Theaterjobs/MembershipBundle/EventListener/MembershipOrderListener.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e6577626574321f7b4315e61c9739c992fd292f9" resname="tj.notification.membership">
+        <source>tj.notification.membership</source>
+        <target state="new">tj.notification.membership</target>
+        <jms:reference-file line="270">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="023f9812686cfae316f1344338e5871a99a5b092" resname="tj.notification.membership.expired">
+        <source>tj.notification.membership.expired</source>
+        <target state="new">tj.notification.membership.expired</target>
+        <jms:reference-file line="74">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/EndMembershipCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16ba381383a10fc461039c56f45437dcbdde9a8a" resname="tj.notification.membership.extended">
+        <source>tj.notification.membership.extended</source>
+        <target state="new">tj.notification.membership.extended</target>
+        <jms:reference-file line="103">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/DirectDebitRecurringCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d6cdb56066ef9adc8aa82666cab14ad241200e5" resname="tj.notification.order.received.waiting.money">
+        <source>tj.notification.order.received.waiting.money</source>
+        <target state="new">tj.notification.order.received.waiting.money</target>
+        <jms:reference-file line="270">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ccd6e41514c1db7976fd22bb45853e4ddf3626ed" resname="tj.notification.payment.by.admin.enjoy">
+        <source>tj.notification.payment.by.admin.enjoy</source>
+        <target state="new">tj.notification.payment.by.admin.enjoy</target>
+        <jms:reference-file line="323">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BookingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7e29f6ba61af9ae82b891ee7ca4c72342ef1fb7f" resname="tj.notification.payment.for.member">
+        <source>tj.notification.payment.for.member</source>
+        <target state="new">tj.notification.payment.for.member</target>
+        <jms:reference-file line="55">/home/laura/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/PrepaidCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f75f8ea2868c57f733badf03699fbd12a9a5010e" resname="tj.notification.problem.pulling.money.order.withdrawn">
+        <source>tj.notification.problem.pulling.money.order.withdrawn</source>
+        <target state="new">tj.notification.problem.pulling.money.order.withdrawn</target>
+        <jms:reference-file line="434">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Controller/BillingController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1053dc77ada763607bd218090a0f704ca4aaea25" resname="tj.notification.recurring.credit.in.next.days">
+        <source>tj.notification.recurring.credit.in.next.days</source>
+        <target state="new">tj.notification.recurring.credit.in.next.days</target>
+        <jms:reference-file line="56">/home/manoolia/html/theaterjobs21/src/Theaterjobs/MembershipBundle/Command/NotifyDirectDebitCommand.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="dd96fb95c43851ecbb067dbbe9519ff4dcef1687" resname="tj.notification.renew.membership">
+        <source>tj.notification.renew.membership</source>
+        <target state="new">tj.notification.renew.membership</target>
+        <jms:reference-file line="269">/../src/Theaterjobs/MembershipBundle/Controller/PayPalController.php</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

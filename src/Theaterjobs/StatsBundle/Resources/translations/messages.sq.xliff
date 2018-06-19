@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-02-14T12:48:48Z" source-language="en" target-language="sq" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0becd12211214a3a172cb9fe1b057e559042b2f3" resname="tj.stats.button.seven.days">
+        <source>tj.stats.button.seven.days</source>
+        <target state="new">tj.stats.button.seven.days</target>
+        <jms:reference-file line="43">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="413e57fae5d5f46e05e8f7479fe7c870aecc4397" resname="tj.stats.button.thirty.todays">
+        <source>tj.stats.button.thirty.todays</source>
+        <target state="new">tj.stats.button.thirty.todays</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3c8877703fe8ebc176ad771bb9fd71f3b0d1ef17" resname="tj.stats.button.today">
+        <source>tj.stats.button.today</source>
+        <target state="new">tj.stats.button.today</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="16b106f3f85fcc087c1a2c4e2e2102c3c6fee524" resname="tj.stats.educations.in.last.thirty.days">
+        <source>tj.stats.educations.in.last.thirty.days</source>
+        <target state="new">tj.stats.educations.in.last.thirty.days</target>
+        <jms:reference-file line="79">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c29e610b1db1fb9522016640cf27170f9f529150" resname="tj.stats.entity.counts">
+        <source>tj.stats.entity.counts</source>
+        <target state="new">tj.stats.entity.counts</target>
+        <jms:reference-file line="49">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0a04c04ac6994916ef4cba7a52a939bd72bcd19e" resname="tj.stats.jobs.in.last.thirty.days">
+        <source>tj.stats.jobs.in.last.thirty.days</source>
+        <target state="new">tj.stats.jobs.in.last.thirty.days</target>
+        <jms:reference-file line="67">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3d4c195979b89d3604b7e16f90c122e0f11aed7a" resname="tj.stats.networks.in.last.thirty.days">
+        <source>tj.stats.networks.in.last.thirty.days</source>
+        <target state="new">tj.stats.networks.in.last.thirty.days</target>
+        <jms:reference-file line="71">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="161549d492fde49455fee648b750ba273a20cdb3" resname="tj.stats.pieces.in.last.thirty.days">
+        <source>tj.stats.pieces.in.last.thirty.days</source>
+        <target state="new">tj.stats.pieces.in.last.thirty.days</target>
+        <jms:reference-file line="75">/../src/Theaterjobs/StatsBundle/Resources/views/Stats/index.html.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

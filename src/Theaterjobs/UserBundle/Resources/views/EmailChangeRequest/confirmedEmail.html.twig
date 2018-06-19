@@ -1,0 +1,30 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% import '::macro.html.twig' as m %}
+{% block content %}
+    <div class="container">
+    <div class="block thanku-page">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0">
+                    <h1>{{ 'register.thankU.title' | trans }}!</h1>
+                    <p class="p-alt">{{ 'emailChangeRequest.confirmed.description' | trans }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p>
+                <svg class="icon-svg icon-svg-success" width="80" height="80">
+                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-final') }}"></use>
+                </svg>
+            </p>
+            <p class="p-alt">{{ 'emailchangerequest.continueTo' | trans }}
+                <a href="{{ path('theaterjobs_main_default_index') }}">{{ 'emailchangerequest.link.home' | trans }}</a>
+                {{ 'register.thankU.subtitle2' | trans }}
+                <a class="nav-link primary" data-toggle="modal" data-hash="login"
+                   data-target="#myModal"
+                   href="{{ path('tj_main_default_login_modal') }}">{{ 'emailchangerequest.thankU.link.login' | trans }}</a>
+            </p>
+        </div>
+    </div>
+    </div>
+{% endblock %}

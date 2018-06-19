@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="block">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <h1>{{ 'contact.title' | trans }}</h1>
+                        {#<p>{{ 'contact.paragraph' | trans }}</p>#}
+                        <div class="separator"></div>
+                    </div>
+                </div>
+                <div class="kontakt-inner">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            {#<div class="image"><img src="{{ asset('bundles/theaterjobsmain/img/team.jpg') }}" alt="">#}
+                            {#</div>#}
+                            <p>{{'contact.maintitle1' | trans  }}<br>{{ 'contact.maintitle' | trans }} <a
+                                        href="http://theapolis-support.de/" target="_blank">{{ 'contact.link.lookOurFaq' | trans }}</a></p>
+                            <p>{{ 'contact.description' | trans }}</p>
+
+                            {#<h3>{{ 'contact.copyright.title' | trans }}</h3>#}
+                            {#<p>{{ 'contact.copyright.description' | trans }}</p>#}
+                        </div>
+                        <div class="col-xs-12 col-md-12">
+                            <ul>
+                                <li>
+                                    <p><b>{{ 'contact.paragraf.description.theatermarket.forum' | trans }}</b>
+                                        {{ 'contact.paragraf.name.theatermarket.forum' | trans }} - <a href="mailto:info@theapolis.de">{{ 'contact.paragraf.email.theatermarket.forum' | trans }}</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><b>{{ 'contact.paragraf.description.jobmarket' | trans }}</b>
+                                        {{ 'contact.paragraf.name1.jobmarket' | trans }} - <a href="mailto:kay@theapolis.de">{{ 'contact.paragraf.email1.jobmarket' | trans }}</a>;
+                                        {{ 'contact.paragraf.name2.jobmarket' | trans }} - <a href="mailto:karen@theapolis.de">{{ 'contact.paragraf.email2.jobmarket' | trans }}</a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><b>{{ 'contact.paragraf.description.teammanagment' | trans }}</b>
+                                        {{ 'contact.paragraf.name.teammanagment' | trans }} - <a href="mailto:soeren@theapolis.de">{{ 'contact.paragraf.email.teammanagment' | trans }}</a>
+                                    </p>
+                                </li>
+                            </ul>
+
+                            <p>{{ 'contact.telephone1' | trans }}; {{ 'contact.fax' | trans }}<br>{{ 'contact.address' | trans }}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

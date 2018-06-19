@@ -1,0 +1,86 @@
+{% import 'macro.html.twig' as m %}
+
+<div class="modal-body movebottom" id="addNews">
+    <!-- Skills -->
+    <div class="container">
+        {{ form_start(form, {'attr': {'id': 'application_track_form'}}) }}
+        <div class="row">
+            <div class="col-md-10 col-md-push-1">
+                <h2>
+                    {{ 'application.jobCreate.title.applicationFor'|trans }}
+                    {{ job.title }}
+                    {% if job.organization %}
+                        {{ 'application.jobCreate.title.at'|trans }}
+                        {{ job.organization.name }}
+                    {% endif %}
+                </h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_row(form.email) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 editor-desc-news">
+                        {{ form_row(form.content,{'attr':{'class' : 'usefultextarea  ckeditor'} } ) }}
+                    </div>
+                </div>
+                {% if profile.isPublished %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{ "jobapplicationemail.for.more.info" | trans }}
+                            {% set profilePhoto =  profile_photo(profile,'uploadFile','profile_modal') %}
+                            {% set filter = '' %}
+
+                            {% if profile.mediaImage|first.filter is defined %}
+                                {% set filter = profile.mediaImage|first.filter %}
+                            {% endif %}
+
+                            <a href="{{ absolute_url(path('tj_profile_profile_show', { 'slug': profile.slug })) }}">
+                                {{ profile.subtitle }}
+                                <div class="profile-photo-xs profile-photo-inline">
+                                    <figure class="{{ filter }}">
+                                        <img src="{{ profilePhoto }}">
+                                    </figure>
+                                </div>
+                            </a>
+                        </div>
+                        <br/>
+                        <br/>
+                    </div>
+                {% endif %}
+                <div class="row">
+                    <div style="text-align: center;">
+                        <button type="button" class="close-footer" data-dismiss="modal" aria-label="Close">
+                            {{ 'footer.modal.closeModal'| trans }}
+                        </button>
+                        {{ form_widget(form.submit, {'attr': {'class': 'btn btn-inverse-primary'},'label': 'button.jobApplication.send'  }) }}
+                    </div>
+                    {{ form_widget(form._token) }}
+                </div>
+                <p class="p-alt text-danger-custom hidden text-center">
+                    <svg class="icon-svg icon-inline icon-svg-danger" width="30" height="30">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://127.0.0.1:8000/bundles/theaterjobsmain/img/icon-sprite.svg#icon-warning"></use>
+                    </svg>
+                    <span class="login-error-content" id="span-text-danger"> </span>
+                </p>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+
+{% block js %}
+    <script>
+        CKEDITOR.replace($('.ckeditor').attr('id'), {
+            customConfig: '{{ asset('bundles/theaterjobsmain/js/ckeditor/custom/applicationTrack.js') }}'
+        });
+
+        var closeIconSrc = '{{ asset('bundles/theaterjobsmain/images/icon-sprite.svg#icon-small-close')}}';
+    </script>
+    {% javascripts filter="?uglifyjs2" "@TheaterjobsInserateBundle/Resources/public/js/job/application/applicationForm.js" %}
+        <script>
+            $.getScript("{{ asset_url }}");
+        </script>
+    {% endjavascripts %}
+{% endblock %}

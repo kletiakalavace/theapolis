@@ -1,0 +1,2 @@
+{% import '::macro.html.twig' as m %}
+ {{ m.showComments(comments, path('tj_user_admin_user_comments_get_all',{'slug':entity.slug})) }}

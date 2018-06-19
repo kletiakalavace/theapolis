@@ -1,0 +1,177 @@
+{% block stylesheets %}
+    {% stylesheets filter='less,css_url_rewrite,?uglifycss'
+                "@TheaterjobsMainBundle/Resources/public/less/gratification_occupation.less"
+                "@TheaterjobsMainBundle/Resources/public/less/job.less"
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+<div class="row">
+
+    <div class="col-md-9 no-padding block-content-job-show" style="margin-top:5px;">
+        <div class="row">
+
+            <div class="header-job-show">
+
+                <div class="col-md-7 col-sm-12">
+                    <h3 class="job-title" style="margin-top: -6px;"><span id="preview-title"></span></h3    >
+
+                    {#   <h3 id="preview-place-h">{{'tj.job.place.of.action' | trans}}</h3>
+                       <span id="preview-place"></span>#}
+
+
+                    {% block datetype %}
+                        <div class="col-sm-12 no-padding">
+                            <div class="block-info-header">
+                                <span class="text-danger info-header-jobshow style-list">{{'tj.job.application.end' | trans}}</span>
+                                <span id="preview-application-end" class="text-danger info-header-jobshow"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 no-padding">
+                            <div class="block-info-header">
+                                <span class="text-danger info-header-jobshow style-list">{{'tj.job.engagment' | trans}}:</span>
+                                <span id="preview-engagement-start" class="text-danger info-header-jobshow"></span>
+                                <span id="preview-engagement-end" class="text-danger info-header-jobshow"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12 no-padding">
+                            <div class="block-info-header">
+                                <span class="text-danger info-header-jobshow style-list">{{'tj.job.publication.end' | trans}}</span>
+                                <span id="preview-publication-end" class="text-danger info-header-jobshow"></span>
+                            </div>
+                        </div>
+
+                    {% endblock datetype %}
+
+                    <div class="block-info-header">
+                        {% autoescape %}
+                            <span class="title-contact-job"><p id="job_contact"></p></span>
+                            {% endautoescape %}
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-md-5 col-sm-12">
+                    <div style="min-height:221px">
+                        <div style="padding-top:20px; float:left; width:100%;">
+                            <img style="min-height:191px;" id="preview-logo" width="200" class="thumbnail"/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-12 job-description no-padding">
+            <div class="row">
+                <div class="col-sm-4" id="playage">
+                    <br>
+                    <span class="text-danger">{{'tj.job.playAge'|trans }}</span>
+                    <div class="playage-numbers"></div>
+                    <br>
+                </div>
+            </div>
+            {#  preview-description  #}
+            <div id="description" style="font-size:16px;margin:10px;"></div>
+            <button class="message-compose-button btn btn-warning btn-lg custom-button"><i class="fa fa-envelope"></i> {{'tj.job.button.send.message.owner' | trans}}</button>
+            <button class="btn btn-danger btn-lg" > {{'tj.job.report' | trans}} </button>   
+        </div>
+    </div>
+
+
+    <div class="col-md-3 block-category">
+        <div class="panel panel-info">
+            <div class="panel-heading header-sidebar"><div class="panel-title">{{'tj.job.info' | trans}}</div></div>
+            <div class="panel-body sidebar-category">
+                <h4>{{'tj.job.categories' | trans}}:</h4>
+                <ul id="preview-categories" style="list-style: none;"> </ul>
+                <h4>{{'tj.job.organization' | trans}}</h4>
+                <span id="preview_organization" style="padding-left: 25px"> Empty </span>
+                {% if is_granted("ROLE_ADMIN") %}
+                    <h4>{{'tj.job.advertiser' | trans}}</h4>
+                    {{app.user.username}}
+                {% endif %}
+                <p>
+                <h4> {{'tj.job.gratification' | trans}} : </h4>
+                <span style="padding-left: 25px" id="preview-gratification"></span>
+                </p>
+
+                <h4 class="hidden" id="preview_education_kind_h" >{{'tj.job.education.kind' | trans}}</h4>
+                <span id="preview_education_kind" style="padding-left: 25px"></span>
+
+            </div>
+        </div>
+        {% if is_granted('ROLE_ADMIN') %}
+            <div class="panel" >
+                <div class="panel-heading">
+                    {{'tj.job.administrate' | trans}}
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>{{'tj.job.edit' | trans}}</li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+        <div class="panel inJob">
+            <div class="panel-heading">
+                {{'tj.job.about.institution' | trans}}
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>{{'tj.job.other.jobs' | trans}}</li>
+                    <li>{{'tj.job.forumj.posts' | trans}}</li>
+                    <li>{{'tj.job.news' | trans}}</li>
+                    <li>{{'tj.job.info' | trans}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel inJob">
+            <div class="panel-heading">
+                {{'tj.job.actions' | trans}}
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>{{'tj.job.aply' | trans}}</li>
+                    <li>{{'tj.job.add.favorite' | trans}}</li>
+                    <li>{{'tj.job.print' | trans}}</li>
+                    <li>{{'tj.job.report' | trans}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="panel hidden inEducation">
+            <div class="panel-heading">
+                {{'tj.job.about.institution' | trans}}
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>{{'tj.job.other.educations' | trans}}</li>
+                    <li>{{'tj.job.info' | trans}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel hidden inEducation">
+            <div class="panel-heading">
+                {{'tj.job.actions' | trans}}
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li>{{'tj.job.add.favorite' | trans}}</li>
+                    <li>{{'tj.job.print' | trans}}</li>
+                    <li>{{'tj.job.report' | trans}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+

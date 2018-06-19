@@ -1,0 +1,95 @@
+{% extends '::base.html.twig' %}
+
+{% block content -%}
+<div class="container job-hunt-table">
+
+    <div class="block">
+        <!-- Page header -->
+        <div class="page-header">
+            <h1><span>{{ 'admin.showproduction.title'| trans }}</span></h1>
+        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>{{ 'admin.showproduction.label.title'| trans }}<br/></th>
+                <th>{{ 'admin.showproduction.label.productionInformation'| trans }}</th>
+                <th>{{ 'admin.showproduction.label.options'| trans }}<br/></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    {{ entity.name }}</br>
+                    {% if( entity.checkedAt is not null) %}
+                        ({{ 'admin.showproduction.label.checkedAt'| trans }} {{ entity.checkedAt|date('Y-m-d H:i') }})
+                    {% endif %}
+                    {% if( entity.archivedAt is not null) %}
+                        ( {{ 'admin.showproduction.label.archivedAt'| trans }} {{ entity.archivedAt|date('Y-m-d H:i') }})
+                    {% endif %}
+                </td>
+                <td>
+                        {% if( entity.organizationRelated is not null) %}
+                            <b>{{ 'admin.showproduction.label.organization'| trans }}: </b></br>
+                            {{ entity.organizationRelated.name }}<br>
+                        {% endif %}
+                        {% if( entity.year is not null) %}
+                            <b>{{ 'admin.showproduction.label.premiereYear'| trans }}: </b></br>
+                            {{ entity.year }}<br>
+                        {% endif %}
+                        {% if entity.creators | length >0 %}
+                            <b>{{ 'admin.showproduction.label.creators'| trans }}: </b></br>
+                            {% for creator in entity.creators %}
+                                {{ creator.name }}{% if not loop.last %}, {% endif %}
+                            {% endfor %}<br>
+                        {% endif %}
+                        {% if entity.directors | length >0 %}
+                            <b>{{ 'admin.showproduction.label.directors'| trans }}: </b></br>
+                            {% for director in entity.directors %}
+                                {{ director.name }}{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        {% if entity.participations | length >0 %}
+                          <b>{{ 'admin.showproduction.label.participantProfile'| trans }}: </b></br>
+                            {% for participiant in entity.participations %}
+                                <a href="{{ path('tj_profile_profile_show',{'slug':participiant.profile.slug}) }}">{{ participiant.usedName }}</a>
+                                {% if not loop.last %}<br> {% endif %}
+                            {% endfor %}
+                        {% endif %}
+
+
+                </td>
+                <td>
+                    <a data-target="#myModal" data-hash="editAdminProduction" data-toggle="modal" data-color="{{ modal.colors['5items'][1] }}"
+                       href="{{ path('tj_admin_production_edit', { id: entity.id}) }}">
+                    <svg class="icon-svg icon-svg-inverse icon-inline red-fill" width="20" height="20">
+                        <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-edit') }}"></use>
+                        </svg> {{ 'link.edit'| trans }}
+                    </a>
+                    <a id="delete_production_admin" href="{{ path('tj_admin_production_delete', { id: entity.id}) }}">
+                        <svg class="icon-svg-inverse icon-inline red-fill" width="18" height="20">
+                            <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-delete') }}"></use>
+                        </svg>
+                        {{ 'link.delete'| trans }}
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    {{ parent() }}
+    <script>
+        $('#delete_production_admin').on('click', function (e) {
+            e.preventDefault();
+            var path = $(this).attr('href');
+            bootbox.confirm(trans('bootbox.wantToDelete',locale), function (result) {
+                if (result) {
+                    window.location.href = path;
+                }
+            });
+        });
+    </script>
+{% endblock %}

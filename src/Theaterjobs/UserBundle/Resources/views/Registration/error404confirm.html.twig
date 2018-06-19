@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ 'default.error404.titel'| trans }}{% endblock title %}
+
+{% block mainnav %}
+    <li><a href="{{ path('tj_main_default_home') }}">home</a></li>
+{% endblock mainnav %}
+
+{% block content %}
+<h1>{{ 'default.error404.content.header'| trans }}</h1>
+<p>{{ 'default.error404.content.text'| trans }}</p>
+{{exception.message}}
+{% endblock content %}

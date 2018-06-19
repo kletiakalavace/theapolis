@@ -1,0 +1,359 @@
+{% import '::macro.html.twig' as m %}
+{% form_theme edit_form.educationtype 'form_div_layout.html.twig' %}
+{% stylesheets filter='less, css_url_rewrite, ?uglifycss'
+"@TheaterjobsProfileBundle/Resources/public/css/prodEmpl.css" %}
+<link rel="stylesheet" href="{{ asset_url }}"/>
+{% endstylesheets %}
+<div class="modal-body movebottom" id="education">
+    <div class="container no-padding-mobile">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2> {{ 'people.edit.mainTitle.newEducation'| trans }}</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{ form_start(edit_form,{ attr: {novalidate: 'novalidate'} }) }}
+                        {{ form_row(edit_form._token) }}
+                        <div class="form-group">
+                            {{ form_row(edit_form.organizationRelated) }}
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-5">
+                                {{ form_row(edit_form.startDate) }}
+                            </div>
+                            <div class="form-group col-md-5">
+                                {{ form_row(edit_form.endDate) }}
+                            </div>
+
+                            <div class="col-md-2 pull-right checkbox-isfinished">
+                                <div class="checkbox">
+                                    <label>
+                                        {{ form_widget(edit_form.finished) }}
+                                        <span class="faux-checkbox"></span>
+                                        {{ "people.edit.label.isFinished" |trans }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group username-newProd">
+                            <div class="checkbox">
+                                <label>
+                                    {{ form_widget(edit_form.usedNameCheck) }}
+                                    <span class="faux-checkbox"></span>
+                                    {{ 'people.edit.username.checkbox'|trans }}
+                                </label>
+                            </div>
+                            <div class="used-name hidden">
+                                {{ form_row(edit_form.usedName) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(edit_form.profession) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(edit_form.educationtype,{'attr': {'class': 'form-control'} }) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_row(edit_form.categories) }}
+                        </div>
+                        {{ form_widget(edit_form.experience, {'attr': {'class': 'hidden'}}) }}
+                        {{ form_widget(edit_form.managmentResponsibility, {'attr': {'class': 'hidden'}}) }}
+                        {{ form_widget(edit_form.educationChoice,{'attr':{'class':'hidden'} }) }}
+                        {{ form_widget(edit_form.qualificationChoice,{'attr':{'class':'hidden'} }) }}
+                        <div class="form-group" style="text-align: center;position:relative;">
+                            <div class="form-inline">
+                                <div class="form-group">
+                                    <button type="button" class="close-footer" data-dismiss="modal"
+                                            aria-label="Close">{{ 'footer.modal.closeModal'| trans }}</button>
+                                    {{ form_widget(edit_form.submit, {'attr': {'class': 'btn btn-inverse-primary'} }) }}
+                                </div>
+                            </div>
+                            {#{{ m.error }}#}
+                        </div>
+                        {{ form_end(edit_form) }}
+                    </div>
+                    {{ m.error }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% javascripts
+"@TheaterjobsProfileBundle/Resources/public/js/profile/profile_js_messages_translation.js"
+"@TheaterjobsProfileBundle/Resources/public/js/profile/customValidators.js" %}
+<script>
+    $.getScript("{{ asset_url }}");
+</script>
+{% endjavascripts %}
+<script>
+    $('#tj_profile_qualifications_educationtype').select2();
+
+    $('.tag-orga-input').select2({
+        minimumInputLength: 3,
+        formatInputTooShort: function () {
+            $("#select2-drop").addClass('hidden'); //We hide the message "please enter 3 characters" by hiding the suggestion list.
+        },
+        maximumSelectionSize: 1,
+        tags: true,
+        cache: true,
+        quietMillis: 250,
+        tokenSeparators: [';'],
+        createSearchChoice: function (term, page) {
+            $("#select2-drop").removeClass('hidden'); //We show the suggestion list because user has now entered more than 3 characters.
+            if (page.some(function (item) {
+                    return item.text.toLowerCase() === term.toLowerCase();
+                })) {
+                return;
+            }
+            return {
+                id: $.trim(term),
+                text: $.trim(term) + '  ({{ "profile.new.education.newOrganization"|trans }})'
+            };
+        },
+        ajax: {
+            url: Routing.generate('tj_experience_organization'),
+            dataType: 'json',
+            data: function (term, page) {
+                return {
+                    q: term,
+                    page: page // page number
+                };
+            },
+            results: function (data, page) {
+                var more = false;
+                data.forEach(function (element) {
+                    more = (page * autosuggestion_pagination) < element.total_count;
+                    if (element.desc !== '') {
+                        element.text = element.text + "  (" + element.desc + ")";
+                    }
+                });
+                return {
+                    results: data,
+                    more: more
+                };
+            }
+        },
+        // Take default tags from the input value
+        initSelection: function (element, callback) {
+            var data = [];
+
+            function splitVal(string, separator) {
+                var val, i, l;
+                if (string === null || string.length < 1)
+                    return [];
+                val = string.split(separator);
+                for (i = 0, l = val.length; i < l; i = i + 1)
+                    val[i] = $.trim(val[i]);
+                return val;
+            }
+
+            $(splitVal(element.val(), ";")).each(function () {
+                data.push({
+                    id: this,
+                    text: this
+                });
+            });
+            callback(data);
+        },
+        formatSelectionTooBig: function (limit) {
+            return trans("max.organization.limit", locale);
+        }
+    });
+
+    const educationForm = $('#education form');
+    addLoadingSvg(educationForm);
+    const loading = educationForm.find('.submit-rolling-svg');
+
+    educationForm.submit(function (e) {
+        e.preventDefault();
+        if (loading.is(':visible')) {return;}
+        if ($(this).valid()) {
+            loading.show();
+            $.ajax({
+                type: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                success: function (data) {
+                    if (data.errors) {
+                        var form = $('form[name="tj_profile_qualifications"]');
+                        for (var key in data.errors) {
+                            var err = data.errors[key];
+                            var el = form.find('input[name="' + err.field + '"]');
+
+                            el.parent().addClass('has-error');
+                            toolTipError(err.message, el);
+                        }
+                    } else {
+                        $(".education-block").html(data.education);
+                        $("#profileBoxes").html(data.boxes);
+                        // Set up masonry grids
+                        var grids = $("[data-masonry]");
+                        grids.each(function () {
+                            $(this).masonry({
+                                itemSelector: "[data-masonry-item]"
+                            });
+
+                            $(this).masonry("on", "layoutComplete", function () {
+                                $("[data-masonry-item] .panel").each(function () {
+                                    $(this).bleedPanel();
+                                });
+                            });
+
+                            $(this).masonry();
+                        });
+                        $('#myModal').modal('hide');
+                    }
+                    loading.hide();
+                },
+                error: function () {
+                    loading.hide();
+                    serverError();
+                }
+            })
+        }
+    });
+i = 0;
+    $("form[name=tj_profile_qualifications]").validate({
+        errorPlacement: function (error, element) {
+            toolTipError(error.text(), element);
+            $('.text-danger').removeClass('hidden');
+
+            $('#myModal').animate(
+                { scrollTop: $('.login-error-content').offset().top +2000 },
+                100);
+        },
+        ignore: [],
+        rules: {
+        }
+    });
+    validFormInputs();
+
+    $('form[name="tj_profile_qualifications"] input, form[name="tj_profile_qualifications"] select').on('keyup change', function () {
+
+        if ($(this).valid()) {
+            $(this).tooltip('destroy');
+            $(this).parent().tooltip('destroy');
+            $(this).closest('.has-error').removeClass('has-error');
+
+        }
+    });
+
+    $(".startDate,.endDate").on("dp.show", function (e) {
+        $(this).data("DateTimePicker").viewMode('years');
+        $(this).data("DateTimePicker").format('YYYY');
+
+    });
+
+    //Remove isFinished tick
+    $('.endDate').on('dp.change', function (e) {
+        var yNow = moment().format("Y");
+        var now = moment(yNow, "Y");
+        var diffYears = e.date.diff(now, 'years');
+
+        if (parseInt(diffYears) > 0) {
+            $('#tj_profile_qualifications_finished').prop('checked', false);
+            $('#tj_profile_qualifications_finished').attr('disabled', true)
+        } else {
+            $('#tj_profile_qualifications_finished').removeAttr('disabled')
+        }
+    });
+
+    $('.endDate, .startDate').datetimepicker({
+        viewMode: 'years',
+        format: 'YYYY',
+        useCurrent: false,
+        showClear: true,
+        showTodayButton: true,
+        toolbarPlacement: 'top',
+        locale: locale
+    });
+
+    $('#tj_profile_qualifications_startDate, #tj_profile_qualifications_endDate').attr("autocomplete", "off");
+
+    $(".startDate").on("dp.change", function (e) {
+        $('.endDate').data("DateTimePicker").minDate(e.date);
+
+        if ($('.endDate').val() !== '' && e.date) {
+            if (e.date >= $('.endDate').data("DateTimePicker").date()) {
+                $('.endDate').data("DateTimePicker").date(e.date);
+            }
+        }
+    });
+
+    $(".endDate").on("dp.change", function (e) {
+        $('.startDate').data("DateTimePicker").maxDate(e.date);
+        if ($('.startDate').val() !== '' && e.date) {
+            if (e.date <= $('.startDate').data("DateTimePicker").date()) {
+                $('.startDate').data("DateTimePicker").date(e.date);
+            }
+        }
+    });
+
+    $(".endDate, .startDate").on("dp.change", function (e) {
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+            $(this).tooltip('destroy');
+        }
+    });
+
+
+    $("#tj_profile_qualifications_educationtype").select2();
+    $("#tj_profile_qualifications_educationtype").on("change", function (e) {
+        if ($(this).valid()) {
+            $(this).closest('.has-error').removeClass('has-error');
+        }
+    });
+
+    $('.qualificationChoice').each(function () {
+        var select = $(this).is(":visible");
+        $(this).rules("add", {
+            required: function () {
+                return select;
+            }
+        });
+    });
+
+    $("#tj_profile_qualifications_categories").select2({
+        placeholder: "Keine Kategorie ausgewählt",
+        maximumSelectionSize: 1
+    }).on("change", function (e) {
+        var id = "#" + $(this).attr("id") + "-error";
+        if ((e.val !== '') && ($(this).hasClass("error"))) {
+            $(this).removeClass("error");
+            $(id).hide();
+        }
+    }).on("select2-removed", function (e) {
+        var data = $(this).val();
+        var idx = $.inArray(e.val, data);
+        var id = "#" + $(this).attr("id") + "-error";
+        if (idx !== -1) {
+            data.splice(idx, 1);
+        }
+        if (data === null) {
+            $(this).addClass("error");
+            $(id).show();
+        }
+    });
+
+    $(document).ready(function () {
+        var usedName = $('.used-name input').val();
+
+        $('.username-newProd .checkbox input').change(function () {
+            if ($(this).is(":checked")) {
+                $('.used-name').removeClass('hidden');
+            } else {
+                $('.used-name').addClass('hidden');
+                $('.used-name input').val(usedName);
+            }
+        });
+    });
+    $.validator.addMethod(
+        "regex",
+        function(value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        trans("usedName.invalid.format", locale)
+    );
+
+</script>

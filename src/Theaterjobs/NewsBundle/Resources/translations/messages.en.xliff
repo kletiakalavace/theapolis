@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2018-06-07T17:45:05Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="d528943a3ce27e74552843ba632fb56508f7a91d" resname="button.comment">
+        <source>button.comment</source>
+        <target>button.comment</target>
+        <jms:reference-file line="728">/var/www/theaterjobs21/src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4dc6be1676f5dcb61a942d0c9f49cd7cb5c8e80b" resname="button.loadMore">
+        <source>button.loadMore</source>
+        <target>button.loadMore</target>
+        <jms:reference-file line="187">/../src/Theaterjobs/NewsBundle/Resources/views/News/newsElasticaList.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="01618716f2eb16f78d41e16cd5379434ecfcd3a3" resname="button.news.comment">
+        <source>button.news.comment</source>
+        <target state="new">button.news.comment</target>
+        <jms:reference-file line="649">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+        <jms:reference-file line="271">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="8658503705c8ab1c3459c4aebc761fa1240eda08" resname="dashboard.title.newsTheapolis">
+        <source>dashboard.title.newsTheapolis</source>
+        <target state="new">dashboard.title.newsTheapolis</target>
+        <jms:reference-file line="69">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="ae8b14ca62ede133f4ca6adc560f1e686be0aca6" resname="default.newsIndex.description">
+        <source>default.newsIndex.description</source>
+        <target state="new">default.newsIndex.description</target>
+        <jms:reference-file line="66">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="afc8befe65cfd569514477b19c8c79da3b46b6f0" resname="default.newsIndex.keywords">
+        <source>default.newsIndex.keywords</source>
+        <target state="new">default.newsIndex.keywords</target>
+        <jms:reference-file line="68">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="362ecd27b7be89c66995ec9f2f6d604555b25347" resname="default.newsIndex.title">
+        <source>default.newsIndex.title</source>
+        <target state="new">default.newsIndex.title</target>
+        <jms:reference-file line="65">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2347aafddec4eafdf1e0ca47ffe5dcb26abe3604" resname="favorite.list.news.remove.from.favorites">
+        <source>favorite.list.news.remove.from.favorites</source>
+        <target state="new">favorite.list.news.remove.from.favorites</target>
+        <jms:reference-file line="61">/../src/Theaterjobs/NewsBundle/Resources/views/Partial/news.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="3765308014b001f460d2cb25e83f3c4656cc72f0" resname="filter.search.label.keyword">
+        <source>filter.search.label.keyword</source>
+        <target state="new">filter.search.label.keyword</target>
+        <jms:reference-file line="13">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0163f81555e1f57ec6eb0be3ed83c4d34ccb68d6" resname="filter.search.label.organization">
+        <source>filter.search.label.organization</source>
+        <target state="new">filter.search.label.organization</target>
+        <jms:reference-file line="69">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2f5e68b103ecacccc654efaeb9d9627014fe4b38" resname="filter.search.label.tags">
+        <source>filter.search.label.tags</source>
+        <target state="new">filter.search.label.tags</target>
+        <jms:reference-file line="29">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1eb983a154c2ba2fd8912f676aee87d1c46bc071" resname="filter.search.label.years">
+        <source>filter.search.label.years</source>
+        <target state="new">filter.search.label.years</target>
+        <jms:reference-file line="44">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d928b36840589476bf2829a7b7acd312cb7d60c4" resname="footer.modal.closeModal">
+        <source>footer.modal.closeModal</source>
+        <target state="new">footer.modal.closeModal</target>
+        <jms:reference-file line="93">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="78">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="316cfc65de9fbc7c0091c3f2aac52c806c9e2695" resname="form.placeholder.location">
+        <source>form.placeholder.location</source>
+        <target>form.placeholder.location</target>
+        <jms:reference-file line="76">/../src/Theaterjobs/NewsBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="59">/../src/Theaterjobs/NewsBundle/Resources/views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bc635472e92311abcba7662730aea74773b14b74" resname="link.edit">
+        <source>link.edit</source>
+        <target>link.edit</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/NewsBundle/Resources/views/News/newsElasticaList.html.twig</jms:reference-file>
+        <jms:reference-file line="184">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f1b97751d7808745ad7eb7c9edcae87482aa9852" resname="link.remove">
+        <source>link.remove</source>
+        <target>link.remove</target>
+        <jms:reference-file line="195">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="075a768261f3f164e0fe8e2d2ec87045fb8a2f0d" resname="messages.required.fieldsAreMarked">
+        <source>messages.required.fieldsAreMarked</source>
+        <target state="new">messages.required.fieldsAreMarked</target>
+        <jms:reference-file line="11">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Resources/views/Modal/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="815b36a43d04529138cbf080a10265984e1895ec" resname="news.comment.title.allComments">
+        <source>news.comment.title.allComments</source>
+        <target>news.comment.title.allComments</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/showAll.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f5249d2c96f1bbef462346cf5c0a3dd49bc82367" resname="news.create.heading">
+        <source>news.create.heading</source>
+        <target>news.create.heading</target>
+        <jms:reference-file line="30">/../src/Theaterjobs/NewsBundle/Resources/views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cf88b1e1b149592d99083c811fd49849cc9ba78c" resname="news.edit.enterLocation">
+        <source>news.edit.enterLocation</source>
+        <target state="new">news.edit.enterLocation</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="921c57f15db74f4c3a42d78e7403f5ea857ec975" resname="news.edit.heading">
+        <source>news.edit.heading</source>
+        <target>news.edit.heading</target>
+        <jms:reference-file line="27">/../src/Theaterjobs/NewsBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9cd5bf8efd6b298426eb0b3cf952e902d4d2a717" resname="news.edit.mainTitle.news">
+        <source>news.edit.mainTitle.news</source>
+        <target>news.edit.mainTitle.news</target>
+        <jms:reference-file line="9">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f263b2de55b66e5d497c6d285011a881d956bd3f" resname="news.label.unpublished">
+        <source>news.label.unpublished</source>
+        <target state="new">news.label.unpublished</target>
+        <jms:reference-file line="60">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Resources/views/Partial/news.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="abc2e9fd1a056b9ceaf9dd2824d6cf0a662f12d6" resname="news.link.goTo.newsList">
+        <source>news.link.goTo.newsList</source>
+        <target>news.link.goTo.newsList</target>
+        <jms:reference-file line="283">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e880e526e6b31dad95b4fc6dc99fecb224c1269b" resname="news.mainTitle.news">
+        <source>news.mainTitle.news</source>
+        <target>news.mainTitle.news</target>
+        <jms:reference-file line="12">/../src/Theaterjobs/NewsBundle/Resources/views/News/index.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="84c73df845b5c920b454376c33d1998884553404" resname="news.new.enterLocation">
+        <source>news.new.enterLocation</source>
+        <target state="new">news.new.enterLocation</target>
+        <jms:reference-file line="42">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="31fa6710feff5d9cefccc75c7bca0d8d9c6ffb99" resname="news.new.mainTitle.news">
+        <source>news.new.mainTitle.news</source>
+        <target>news.new.mainTitle.news</target>
+        <jms:reference-file line="10">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="f7db3811b86e85e367e652bc3693cecc060e96bb" resname="news.show.keywords">
+        <source>news.show.keywords</source>
+        <target>news.show.keywords</target>
+        <jms:reference-file line="338">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b2027101cf28462def2ba7aabdae7afa6751313f" resname="news.show.label.allStatistics">
+        <source>news.show.label.allStatistics</source>
+        <target>news.show.label.allStatistics</target>
+        <jms:reference-file line="351">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="d630ffdd2aed49b8cb1f707587ead60679a8beb0" resname="news.show.label.lastMonth">
+        <source>news.show.label.lastMonth</source>
+        <target>news.show.label.lastMonth</target>
+        <jms:reference-file line="357">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c7081c725f67b24979b737f485aa2ff11dda7562" resname="news.show.label.lastWeek">
+        <source>news.show.label.lastWeek</source>
+        <target>news.show.label.lastWeek</target>
+        <jms:reference-file line="363">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="579951efaa70ac9da2d8a91d47b8755f7a9e37b9" resname="news.show.relatedOrganisation">
+        <source>news.show.relatedOrganisation</source>
+        <target state="new">news.show.relatedOrganisation</target>
+        <jms:reference-file line="288">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="daed257098bda2c53f2dd0f960258935d024e9e2" resname="news.show.relatedUsers">
+        <source>news.show.relatedUsers</source>
+        <target>news.show.relatedUsers</target>
+        <jms:reference-file line="306">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="36a519f0001378f0bc724dc0cfd78299072a56bc" resname="news.show.statistics">
+        <source>news.show.statistics</source>
+        <target>news.show.statistics</target>
+        <jms:reference-file line="348">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1844eff4c11ebce28686bf904a9fcbf55979228a" resname="news.title.comments">
+        <source>news.title.comments</source>
+        <target>news.title.comments</target>
+        <jms:reference-file line="242">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1f9d33b9a4ce6c69cc44578cce57073ace203118" resname="people.add.label.addImage">
+        <source>people.add.label.addImage</source>
+        <target>people.add.label.addImage</target>
+        <jms:reference-file line="78">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="65">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a9477f2d300330ce77098b9da2f041a8939d231" resname="people.edit.label.editImage">
+        <source>people.edit.label.editImage</source>
+        <target>people.edit.label.editImage</target>
+        <jms:reference-file line="72">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="2a32b5d834e85c1cc0294eec3db7a016b41152c9" resname="people.edit.placeholder.enter_location">
+        <source>people.edit.placeholder.enter_location</source>
+        <target>people.edit.placeholder.enter_location</target>
+        <jms:reference-file line="45">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="46">/../src/Theaterjobs/NewsBundle/Resources/views/Modal/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="4aec4e3e79bb2d32736ec9f3610149e2611d1489" resname="people.show.label.publish">
+        <source>people.show.label.publish</source>
+        <target>people.show.label.publish</target>
+        <jms:reference-file line="131">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+        <jms:reference-file line="49">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7281de424773389c9d8a7bc5e252a7b1d674a5b1" resname="people.show.label.unpublish">
+        <source>people.show.label.unpublish</source>
+        <target>people.show.label.unpublish</target>
+        <jms:reference-file line="134">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+        <jms:reference-file line="52">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="94f801f5b5c3ba3ed4880d5702dec8a62a24530c" resname="people.show.tooltip.addToFavourites">
+        <source>people.show.tooltip.addToFavourites</source>
+        <target state="new">people.show.tooltip.addToFavourites</target>
+        <jms:reference-file line="108">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+        <jms:reference-file line="27">/../src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="a564a57c03513b0a375e451be660c96d877eb288" resname="people.show.tooltip.removeFromFavourites">
+        <source>people.show.tooltip.removeFromFavourites</source>
+        <target state="new">people.show.tooltip.removeFromFavourites</target>
+        <jms:reference-file line="17">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+        <jms:reference-file line="90">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="91915f242d95dbb3144796579bbe7817cac998b0" resname="people.show.tooltip.sendMail">
+        <source>people.show.tooltip.sendMail</source>
+        <target>people.show.tooltip.sendMail</target>
+        <jms:reference-file line="264">/home/laura/theaterjobs21/src/Theaterjobs/NewsBundle/Resources/views/News/show.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5a45dd11926ee536f3f19ceaad2fb39b92005f9e" resname="tj.breadcrumbs.mynews">
+        <source>tj.breadcrumbs.mynews</source>
+        <target>tj.breadcrumbs.mynews</target>
+        <jms:reference-file line="20">/../src/Theaterjobs/NewsBundle/Resources/views/News/myNews.html.twig</jms:reference-file>
+        <jms:reference-file line="32">/../src/Theaterjobs/NewsBundle/Resources/views/News/myNews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="983a4081ecba0c891708684eee90fdac2fd06415" resname="tj.breadcrumbs.new">
+        <source>tj.breadcrumbs.new</source>
+        <target>tj.breadcrumbs.new</target>
+        <jms:reference-file line="24">/../src/Theaterjobs/NewsBundle/Resources/views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="1db7d94f85ca4560a168ecd56816e8600f5d0708" resname="tj.breadcrumbs.news">
+        <source>tj.breadcrumbs.news</source>
+        <target>tj.breadcrumbs.news</target>
+        <jms:reference-file line="15">/../src/Theaterjobs/NewsBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="21">/../src/Theaterjobs/NewsBundle/Resources/views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7d496d6e1fe21f3d0542cb340ea38894506a4757" resname="tj.breadcrumbs.news.edit">
+        <source>tj.breadcrumbs.news.edit</source>
+        <target>tj.breadcrumbs.news.edit</target>
+        <jms:reference-file line="21">/../src/Theaterjobs/NewsBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="c2d3036f1084be7787e1b4a4875d9b8b8a126152" resname="tj.heading.category.title">
+        <source>tj.heading.category.title</source>
+        <target>tj.heading.category.title</target>
+        <jms:reference-file line="48">/../src/Theaterjobs/NewsBundle/Resources/views/News/myNews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b066aeec20028b75f1b48a5b29f89f464d56a3d7" resname="tj.heading.my_news.title">
+        <source>tj.heading.my_news.title</source>
+        <target>tj.heading.my_news.title</target>
+        <jms:reference-file line="71">/../src/Theaterjobs/NewsBundle/Resources/views/News/myNews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="cb9c4c0ca864a86c6378a6a0e3582f9d3088ae7f" resname="tj.link.create.news.text">
+        <source>tj.link.create.news.text</source>
+        <target>tj.link.create.news.text</target>
+        <jms:reference-file line="41">/../src/Theaterjobs/NewsBundle/Resources/views/News/myNews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="5347303d2547b28af726ab76d4ed75e75a3454f7" resname="tj.network.locate.me">
+        <source>tj.network.locate.me</source>
+        <target>tj.network.locate.me</target>
+        <jms:reference-file line="78">/../src/Theaterjobs/NewsBundle/Resources/views/News/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="60">/../src/Theaterjobs/NewsBundle/Resources/views/News/new.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="b4136f0eb34e8e16046de1ea64bff84ed83192a2" resname="tj.news.comment.notAllowed">
+        <source>tj.news.comment.notAllowed</source>
+        <target state="new">tj.news.comment.notAllowed</target>
+        <jms:reference-file line="870">/../src/Theaterjobs/NewsBundle/Controller/NewsController.php</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="bb601cd63d1d125751f29f0d3f906edcfef95383" resname="tj.news.read">
+        <source>tj.news.read</source>
+        <target>tj.news.read</target>
+        <jms:reference-file line="97">/../src/Theaterjobs/NewsBundle/Resources/views/News/myNews.html.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="e41747672c365a16c4696630d92f8b6f1ec67b0f" resname="work.search.label.favorite">
+        <source>work.search.label.favorite</source>
+        <target state="new">work.search.label.favorite</target>
+        <jms:reference-file line="57">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="9b14ddec9a1d93f27ebe339c1ccf5abebffc8f70" resname="work.search.link.resetFilters">
+        <source>work.search.link.resetFilters</source>
+        <target state="new">work.search.link.resetFilters</target>
+        <jms:reference-file line="82">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="0afdde825059a07b3062c6d596c3180683e197c1" resname="work.search.link.saveSearch">
+        <source>work.search.link.saveSearch</source>
+        <target state="new">work.search.link.saveSearch</target>
+        <jms:reference-file line="94">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+      <trans-unit id="7405e633626c91c2134bd22a4707dbbbc8cc5735" resname="work.search.title.yourFilters">
+        <source>work.search.title.yourFilters</source>
+        <target state="new">work.search.title.yourFilters</target>
+        <jms:reference-file line="7">/../src/Theaterjobs/NewsBundle/Resources/views/newsMacro.twig</jms:reference-file>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

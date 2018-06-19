@@ -1,0 +1,509 @@
+{# For some reasons wkhtmltopdf doesn't like localhost:8000 #}
+{# and this raises an issue with images, they wont be loaded because wkhtmltopdf will not ping #}
+{# to this address. Here is a link that explains that https://github.com/barryvdh/laravel-snappy/issues/9 #}
+{# eventhough is for laravel framework #}
+{% extends "::pdf.base.html.twig" %}
+{% block title %}{{ entity.firstName ~ " " ~ entity.lastName }} PDF{% endblock %}
+
+{% if profilePicture %}
+    {% set profilePhoto =  vich_uploader_asset(profilePicture, "uploadFile") | imagine_filter("preview") %}
+{% else %}
+    {% set profilePhoto = asset('bundles/theaterjobsprofile/images/profile_placeholder.gif') %}
+{% endif %}
+
+{% block content %}
+    <div class="container" style="padding: 0 100px;">
+        <div class="row">
+            <div class="col-xs-12" style="padding: 30px 0;position: relative;">
+                <img src="{{ asset('bundles/theaterjobsmain/img/logopdf.png') }}" alt="Theapolis logo"
+                     width="120">
+                {#<span style="font-size: 17px;position:absolute;left:28px;bottom:7px;">Theater bist Du</span>#}
+            </div>
+            <div class="col-xs-4">
+                <img src="{{ profilePhoto }}" width="160" height="160" class="img-responsive"
+                     style="object-fit: cover;float:left">
+            </div>
+            <div class="col-xs-8">
+                <h1 style="font-family: 'kepler-std';">{{ entity.firstName ~ " " ~ entity.lastName }}</h1>
+                <p style="color: #87162d !important;font-size: 14px;font-family: 'aktiv-grotesk';font-weight: bold;">{{ entity.subtitle2 }}</p>
+            </div>
+        </div>
+        <div class="row">
+            {% if entity.biographySection is not null and entity.biographySection.biography is not empty %}
+                <div class="col-xs-12" style="padding-bottom: 30px;">
+                    <h2 style="font-weight: bold;">Bio</h2>
+                    <p style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;font-size:
+                    14px;">
+                        {{ entity.biographySection.biography|raw }}
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+
+        {% if entity.personalData is not null or entity.skillSection is not null %}
+            {% if entity.personalData.birthDate is not empty or entity.personalData.birthPlace is not empty
+            or entity.personalData.nationality is not empty or entity.availableLocations is not empty
+            or entity.personalData.ageRoleFrom is not null or entity.personalData.ageRoleTo is not null
+            or entity.personalData.height is not null or entity.personalData.shoeSize is not null
+            or entity.personalData.clothesSize is not null  or entity.personalData.hairColor is not null
+            or entity.personalData.eyeColor is not null or entity.personalData.voiceCategories|length>0
+            or entity.skillSection.driveLicense|length>0 or entity.skillSection.languageSkill|length >0
+            or entity.skillSection.profileSkill|length !=0 %}
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #CD2036;padding-left:30px;">
+                            <h2 style="color:#CD2036 !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.profile'| trans }}</h2>
+                            <div class="col-xs-12">
+                                <dl>
+                                    {% if entity.personalData is not null and entity.personalData.birthDate is not empty %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.birthdate'| trans }}</dt>
+                                        <dd id="birthDay" style="width:50%;display:inline-block;float:left;">
+
+                                            {{ entity.personalData.birthDate ? entity.personalData.birthDate | date("d.m.Y") : '' }}
+
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.birthPlace is not empty %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.birthplace'| trans }}</dt>
+                                        <dd id="birthPlace" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.birthPlace }}
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.nationality is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.nationality'| trans }}</dt>
+                                        {#{% for nationality in entity.personalData.nationality %}#}
+                                        <dd id="nationality" style="width:50%;display:inline-block;float:left;">
+
+                                            {% if entity.personalData.nationality == 1 %}
+                                                EU
+                                            {% elseif entity.personalData.nationality == 0 %}
+                                                NOT EU
+                                            {% endif %}
+
+                                        </dd>
+                                    {% endif %}
+                                    {#{% endfor %}#}
+                                    {% if entity.availableLocations is not empty %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.livingWay'| trans }}</dt>
+
+                                        <dd style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.availableLocations }}
+                                        </dd>
+                                    {% endif %}
+                                </dl>
+                            </div>
+                            <div class="col-xs-12">
+                                <dl>
+                                    {% if entity.personalData is not null and entity.personalData.ageRoleFrom is not null and entity.personalData.ageRoleTo is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.roleage'| trans }}</dt>
+                                        <dd id="ageRole" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.ageRoleFrom ~ ' - ' ~ entity.personalData.ageRoleTo }}
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.height is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.height'| trans }}</dt>
+                                        <dd id="height" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.height }}
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.shoeSize is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.shoeSize'| trans }}</dt>
+                                        <dd id="shoeSize" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.shoeSize }}
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.clothesSize is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.confection'| trans }}</dt>
+                                        <dd id="clothesSize" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.clothesSize }}
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.hairColor is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.hairColor'| trans }}</dt>
+                                        <dd id="hairColor" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.hairColor }}
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.eyeColor is not null %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.eyeColor'| trans }}</dt>
+                                        <dd id="eyeColor" style="width:50%;display:inline-block;float:left;">
+                                            {{ entity.personalData.eyeColor }}
+
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.personalData is not null and entity.personalData.voiceCategories|length>0 %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.voiceRange'| trans }}</dt>
+                                        <dd id="voiceCategories" style="width:50%;display:inline-block;float:left;">
+
+                                            {% for voice in  entity.personalData.voiceCategories %}
+                                                {% if voice is not null %}
+                                                    {{ voice.title -}} {% if not loop.last %}, {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        </dd>
+                                    {% endif %}
+                                </dl>
+                            </div>
+                            <div class="col-xs-12">
+                                <dl>
+                                    {% if entity.skillSection is not null and entity.skillSection.driveLicense|length>0 %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.drivingLicence'| trans }}</dt>
+                                        <dd id="driveLicense" style="width:50%;display:inline-block;float:left;">
+
+                                            {% for dl in entity.skillSection.driveLicense %}
+                                                {% if entity.skillSection.driveLicense | length == loop.index %}
+                                                    {{ dl.title }}
+                                                {% else %}
+                                                    {{ dl.title ~ ", " }}
+                                                {% endif %}
+                                            {% endfor %}
+
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.skillSection is not null and entity.skillSection.languageSkill|length >0 %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.languages'| trans }}</dt>
+                                        <dd id="languages" style="width:50%;display:inline-block;float:left;">
+
+                                            {% if entity.skillSection %}
+                                                {% for lng in entity.skillSection.languageSkill %}
+                                                    {% if lng is not null %}
+                                                        {{ lng.skill.title -}} {% if not loop.last %}, {% endif %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endif %}
+
+                                        </dd>
+                                    {% endif %}
+                                    {% if entity.skillSection and entity.skillSection.profileSkill|length >0 %}
+                                        <dt style="width:50%;display:inline-block;float:left;font-weight:normal;">{{ 'people.show.detailBlock.label.otherSkills'| trans }}</dt>
+                                        <dd id="other" style="width:50%;display:inline-block;float:left;">
+                                            {% for pSkill in entity.skillSection.profileSkill %}
+                                                {% if pSkill is not null %}
+                                                    {{ pSkill.title -}} {% if not loop.last %}, {% endif %}
+                                                {% endif %}
+                                            {% endfor %}
+
+                                        </dd>
+                                    {% endif %}
+                                </dl>
+                            </div>
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {% if participations is not null and participations|length > 0 %}
+            <div style="margin: 30px 0;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #87162D;padding-left:30px;">
+                            <h2 style="color:#87162D !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.productions'| trans }}</h2>
+                            <div class="col-xs-12">
+                                {% if entity.productionParticipations is not null %}
+                                    {% for year, participations in participations %}
+                                        <div class="timeline-group" style="padding: 1px 0 0 0;">
+                                            <div class="timeline-time"
+                                                 style="padding-right: 30px;font-size: 16px;color: #87162D !important;font-weight: bold;">
+                                                {% if  year == 10000 %}
+                                                    {{ 'people.show.detailBlocklabel.now' | trans }}
+                                                {% else %}
+                                                    {{ year }}
+                                                {% endif %}
+                                            </div>
+                                            {% for participation in participations if participation is not null %}
+                                                <div class="timeline-item" style="float: left;">
+                                                    <h4 style="font-weight: bold;float:left;display: inline-block;margin-bottom:0;">{{ participation.production.name }} </h4>
+                                                    {% if participation.production.creators | length >0 %}
+                                                        <span style="display: inline-block;float:left;margin-top:12px;">&nbsp;&nbsp;{{ 'people.show.detailBlocklabel.by' | trans }}
+                                                            {% for creator in participation.production.creators %}
+                                                                {{ creator.name -}} {% if not loop.last %},{% endif %}
+                                                            {% endfor %}
+                                                        </span>
+                                                    {% endif %}
+                                                    <p class="p-alt"
+                                                       style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">
+                                                        {% if participation.production.organizationRelated is not null %}
+                                                            {{ participation.production.organizationRelated.name }}
+                                                            ({{ participation.production.year }})
+                                                        {% endif %}
+
+                                                        {% if participation.production.directors | length >0 %}
+                                                            ,&nbsp;{{ 'people.show.detailBlock.label.directedBy' | trans }}:
+                                                            {% for director in participation.production.directors %}
+                                                                {{ director.name -}} {% if not loop.last %},{% endif %}
+                                                            {% endfor %}
+                                                        {% endif %}
+                                                    </p>
+                                                    <p class="p-alt"
+                                                       style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">
+                                                        {% if participation.occupationDescription is not null %}
+                                                            {% if participation.occupationDescription.roleName is not null %}
+                                                                {{ 'people.show.detailBlocklabel.occupationRole' | trans }}: {{ participation.occupationDescription.roleName }}
+                                                            {% else %}
+                                                                {% if participation.occupationDescription.assistant == 1 %}
+                                                                    {{ 'people.show.detailBlocklabel.occupationAssistant' | trans }}  {{ participation.occupation.title }}
+
+                                                                {% else %}
+                                                                    {{ participation.occupation.title }}
+                                                                {% endif %}
+                                                            {% endif %}
+                                                            {% if participation.occupationDescription.description is not null %}
+                                                                - {{ participation.occupationDescription.description }}
+                                                            {% endif %}
+                                                            <br>
+                                                        {% endif %}
+                                                    </p>
+                                                    <p class="p-alt"
+                                                       style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">
+                                                        {% if participation.ongoing == 1 %}
+                                                            {{ 'people.show.detailBlocklabel.since' | trans }} {{ participation.start|date('m/Y') }}
+                                                        {% else %}
+                                                            {{ participation.start|date('m/Y') }} {{ 'people.show.detailBlocklabel.tillDate' | trans }} {{ participation.end|date('m/Y') }}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
+                                            {% endfor %}
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+
+        {% if experiences is not null  and experiences|length>0 %}
+            <div style="margin: 30px 0;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #1F1F1F;padding-left:30px;">
+                            <h2 style="color:#1F1F1F !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.experience'| trans }}</h2>
+                            <div class="col-xs-12">
+                                {% if experiences is not null %}
+                                    {% for year, experiencesArr in experiences %}
+                                        <div class="timeline-group" style="padding: 1px 0;">
+                                            <div class="timeline-time"
+                                                 style="padding-right: 30px;font-size: 16px;color: #1F1F1F !important;font-weight: bold;">
+                                                {% if  year == 10000 %}
+                                                    {{ 'people.show.detailBlocklabel.now' | trans }}
+                                                {% else %}
+                                                    {{ year }}
+                                                {% endif %}
+                                            </div>
+                                            {% for experience in experiencesArr if experiencesArr is not null %}
+                                                <div class="timeline-item" style="float: left;">
+                                                    <h4 style="margin-top: 3px;font-weight: bold">
+                                                        {% if experience.organization is not null %}
+                                                            {{ experience.organization.name }}
+                                                        {% endif %}
+                                                    </h4>
+                                                    <p class="p-alt"
+                                                       style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">
+                                                        {% if experience.assistant == 1 %}
+                                                            {{ 'people.show.detailBlocklabel.occupationAssistant' | trans }}
+                                                            {{ experience.occupation.title }}<br>
+                                                        {% elseif experience.management == 1 %}
+                                                            {{ 'people.show.detailBlocklabel.occupationManagement' | trans }}
+                                                            {{ experience.occupation.title }}<br>
+                                                        {% else %}
+                                                            {{ experience.occupation.title }}<br>
+                                                        {% endif %}
+                                                    </p>
+                                                    <p class="p-alt"
+                                                       style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">
+                                                        {% if experience.description is not null %}
+                                                            {{ experience.description }}
+                                                        {% endif %}
+                                                    </p>
+                                                    <p class="p-alt"
+                                                       style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">
+                                                        {% if experience.ongoing == 1 %}
+                                                            {{ 'people.show.detailBlocklabel.since' | trans }}  {{ experience.start|date('m/Y') }}
+                                                        {% else %}
+                                                            {{ experience.start|date('m/Y') }} {{ 'people.show.detailBlocklabel.tillDate' | trans }} {{ experience.end|date('m/Y') }}
+                                                        {% endif %}
+                                                    </p>
+                                                </div>
+                                            {% endfor %}
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if entity.qualificationSection is not null and entity.qualificationSection.qualifications|length > 0 %}
+            <div style="margin: 30px 0">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #244372;padding-left:30px;">
+                            <h2 style="color: #244372 !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.education'| trans }}</h2>
+                            {% if entity.qualificationSection is not null and entity.qualificationSection.qualifications|length > 0 %}
+                                {% for education in entity.qualificationSection.qualifications %}
+                                    <div class="timeline-group" style="padding: 1px 0;">
+                                        <div class="timeline-time"
+                                             style="padding-right: 30px;font-size: 16px;color: #244372 !important;font-weight: bold;">
+                                            {% if education.finished %}
+                                                Graduated {{ education.endDate }}
+                                            {% else %}
+                                                {{ education.startDate ? education.startDate ~ ' - ' ~ education.endDate : education.startDate }}
+                                            {% endif %}
+                                        </div>
+                                        <div class="timeline-item" style="float: left;">
+                                            {% set organizationRelated = education.organizationRelated ? education.organizationRelated.name ~ ' - '  :'' %}
+                                            <h4 style="margin-top: 3px;font-weight: bold">{{ organizationRelated }}</h4>
+                                            <p class="p-alt"
+                                               style="display: block;float:left;width:100%;min-height:0px;line-height: 20px;margin:0;">{{ education.profession ~ ' ( ' ~ education.educationtype  ~ ' )' }}</p>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if entity.contactSection is not null %}
+            {% if entity.contactSection.contact is not empty or entity.contactSection.social | length > 0 %}
+                <div style="margin: 30px 0">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="border-left:4px solid #631953;padding-left:30px;">
+                                <h2 style="color: #631953 !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                    {{ 'people.show.detailBlock.mainTitle.contact'| trans }}</h2>
+                                <ul style="list-style: none;padding: 1px 0;margin: 2px;">
+                                    {% if entity.contactSection.contact is not empty %}
+                                        <li style="font-size: 14px;">{{ entity.contactSection.contact|raw }}</li>
+                                    {% endif %}
+                                    <li style="margin-top: 10px;">
+                                        <span style="color: #631953 !important; font-size: 14px;">http://theapolis.de/{{ app.request.locale }}/profile/show/{{ entity.slug }}</span>
+                                    </li>
+                                    <li>
+                                        {% if entity.contactSection.social | length > 0 %}
+                                            <ul style="list-style: none; margin: 10px 2px 2px 2px;">
+                                                {% for social in entity.contactSection.social %}
+                                                    <li style="display: inline-block;margin: 0 5px;font-size: 14px;">
+                                                        <a href="{{ social.link }}">
+                                                            <svg class="icon-svg icon-svg-inverse" width="40"
+                                                                 height="40">
+                                                                <use xlink:href="{{ vich_uploader_asset(social.socialMedia.mediaFile, 'uploadFile') }}#icon-{{ social.socialMedia.name|lower }}"></use>
+                                                            </svg>
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {% if entity.oldExperience is not null and entity.oldExperience.experience is not null %}
+            <div style="margin: 30px 0;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #1F1F1F;padding-left:30px;">
+                            <h2 style="color:#1F1F1F !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.oldExperience'| trans }}</h2>
+                            <div class="col-xs-12">
+                                <div class="timeline-group" style="padding: 1px 0;">
+                                    <div class="timeline-item" style="float: left;">
+                                        <p class="p-alt">
+                                            {% if entity.oldExperience.experience is not null %}
+                                                {{ entity.oldExperience.experience |nl2br }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if entity.oldEducation is not null and entity.oldEducation.education is not null %}
+            <div style="margin: 30px 0;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #244372;padding-left:30px;">
+                            <h2 style="color: #244372 !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.oldEducation'| trans }}</h2>
+                            <div class="col-xs-12">
+                                <div class="timeline-group" style="padding: 1px 0;">
+                                    <div class="timeline-item" style="float: left;">
+                                        <p class="p-alt">
+                                            {% if entity.oldEducation.education is not null %}
+                                                {{ entity.oldEducation.education |nl2br }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% if entity.oldExtras is not null and entity.oldExtras.extras is not null %}
+            <div style="margin: 30px 0;">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div style="border-left:4px solid #631953;padding-left:30px;">
+                            <h2 style="color: #631953 !important;font-weight:bold;display:inline-block;margin-top:3px;">
+                                {{ 'people.show.detailBlock.mainTitle.oldExtras'| trans }}</h2>
+                            <div class="col-xs-12">
+                                <div class="timeline-group" style="padding: 1px 0;">
+                                    <div class="timeline-item" style="float: left;">
+                                        <p class="p-alt">
+                                            {% if entity.oldExtras.extras is not null %}
+                                                {{ entity.oldExtras.extras |nl2br }}
+                                            {% endif %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {# <footer style="border-top: 4px solid #F0F0F0; padding: 20px 0;">
+             <p class="text-center">
+                 <img src="{{ asset('bundles/theaterjobsmain/img/theapolis-logo-inverse.svg') }}" alt="Theapolis logo"
+                      width="130" height="50">
+                 <span style="color: #CD2036 !important;font-size: 18px;">http://theapolis.de/{{ entity.slug }}</span>
+             </p>
+         </footer>#}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts filter='?uglifyjs2'
+        '@TheaterjobsUserBundle/Resources/public/js/registration/pass_strength.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        $(document).ready(function () {
+            $.fn.pwstrength = function (options) {
+                var options = $.extend({
+                    label: '.label',
+                    classes: ['pw-very-weak', 'pw-weak', 'pw-mediocre', 'pw-strong', 'pw-very-strong'],
+                    texts: ['{{  'registration.password.very_weak' | trans({}, "messages") }}',
+                        '{{  'registration.password.weak' | trans({}, "messages") }}',
+                        '{{  'registration.password.mediocre' | trans({}, "messages") }}',
+                        '{{  'registration.password.strong' | trans({}, "messages") }}',
+                        '{{  'registration.password.very_strong' | trans({}, "messages") }}']
+                }, options || {});
+                options.indicator = $('#' + this.data('indicator'));
+
+                return this.keyup(options, updateIndicator);
+
+            };
+
+            function updateIndicator(event) {
+                if ($(this).val().length > 2) {
+                    var strength = $.pwstrength($(this).val()), options = event.data, klass;
+                    klass = options.classes[strength];
+
+                    options.indicator.removeClass(options.indicator.data('pwclass'));
+                    options.indicator.data('pwclass', klass);
+                    options.indicator.addClass(klass);
+                    options.indicator.find(options.label).html(options.texts[strength]);
+                }
+
+            }
+
+            $('input#fos_user_resetting_form_plainPassword_second').keyup(function () {
+                if ($(this).val() !== $('#fos_user_resetting_form_plainPassword_first').val()) {
+                    if ($("div#messageDifferent").length <= 0) {
+                        $(this).parent().append('<div id="messageDifferent" style="background-color: #abbac3;color: #d00; width: 21.2%;" class="text-danger"><h5 style="  padding: 3px;text-align: center;">{{  'registration.password.different' | trans({}, "messages") }}</h5></div>');
+                    }
+                } else {
+                    if ($("div#messageDifferent").length > 0) {
+                        $("div#messageDifferent").remove();
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}
+{% block breadcrumb %}
+    <li>{{ 'tj.breadcrumb.password.reset.confirmed' | trans }}</li>
+{% endblock %}
+{% block fos_user_content %}
+    {% include "FOSUserBundle:Resetting:reset_content.html.twig" %}
+{% endblock fos_user_content %}

@@ -1,0 +1,39 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom" id="mediaImageEdit">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'people.edit.mainTitle.image'| trans }}</h2>
+                {{ form_start(edit_form) }}
+                <div> {{ form_row(edit_form.title) }}</div>
+                <div>
+                    {{ form_row(edit_form._token) }}
+                    {{ form_widget(edit_form.path,{'attr':{'class' : 'hidden'} }) }}
+                    <div class="display-slider-item modal-custom-file active">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <figure>
+                                <img src="{{ profile_media_photo(entity) }}" alt="{{ entity.title }}">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-forms-add" style="width: 442px;margin: 0 auto;">
+                    <div class="images-add-buttons">
+                        {{ form_widget(edit_form.submit,{'attr':{'class' : 'btn-inverse-primary float-right update-upload mediaImage'}}) }}
+                        {{ form_end(edit_form) }}
+                        {{ form_start(delete_form) }}
+                        {{ form_widget(delete_form.submit,{'attr':{'class' : 'btn-inverse pull-left update-upload mediaImage'}}) }}
+                        {{ form_end(delete_form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% block js %}
+    {% javascripts filter='?uglifyjs2'
+        "@TheaterjobsProfileBundle/Resources/public/js/mediaImage/edit.js" %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

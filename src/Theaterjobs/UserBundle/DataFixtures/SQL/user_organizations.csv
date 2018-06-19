@@ -1,0 +1,6 @@
+tj_user_users_id,tj_main_organizations_id,requested_at,granted_at,confirmed,admin_comment
+userOrg,Die Badische Landesbühne,5/13/2014 9:29,5/13/2014 9:38,1, Need for tesing
+userOrg,Staatsoperette Dresden,5/13/2014 9:29,5/13/2014 9:38,1, Need for tesing
+memberOrg,Die Badische Landesbühne,5/13/2014 9:33,5/13/2014 9:38,1, Need for testing 
+userOrg2,Die Badische Landesbühne,5/13/2014 9:29,5/13/2014 9:38,1, Need for tesing
+userOrgOther,Theater Plauen-Zwickau,5/13/2014 9:29,5/13/2014 9:38,1, Need for tesing

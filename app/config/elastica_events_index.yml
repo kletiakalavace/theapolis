@@ -1,0 +1,78 @@
+fos_elastica:
+  clients:
+    default:
+      host: '%elastic_host%'
+      port: '%elastic_port%'
+  indexes:
+    events:
+      settings:
+        index:
+          max_result_window: 500000
+      client: default
+      types:
+      ### Mapping UserActivity ###
+      ### Start ###
+        activity:
+          mappings:
+            entityId:
+              type: integer
+            entityClass:
+              type: string
+              index: not_analyzed
+            createdAt:
+              type: date
+              format: date_optional_time
+          persistence:
+            driver: orm
+            model: Theaterjobs\UserBundle\Entity\UserActivity
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\UserBundle\Entity\UserActivityElasticaRepository
+      ### End ###
+
+      ### Mapping View ###
+      ### Start ###
+        view:
+          mappings:
+            objectClass:
+              type: string
+              index: not_analyzed
+            foreignKey:
+              type: integer
+            createdAt:
+              type: date
+              format: date_optional_time
+          persistence:
+            driver: orm
+            model: Theaterjobs\StatsBundle\Entity\View
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\StatsBundle\Entity\ViewElasticaRepository
+      ### End ###
+
+      ### Mapping Notification ###
+      ### Start ###
+        notification:
+          mappings:
+            createdAt:
+              type: date
+              format: date_optional_time
+            user:
+              type: object
+              properties:
+                id:
+                  type: integer
+            seen:
+              type: boolean
+            requireAction:
+              type: boolean
+          persistence:
+            driver: orm
+            model: Theaterjobs\UserBundle\Entity\Notification
+            finder: ~
+            provider: ~
+            listener: ~
+            repository: Theaterjobs\UserBundle\Entity\NotificationElasticaRepository
+      ### End ###

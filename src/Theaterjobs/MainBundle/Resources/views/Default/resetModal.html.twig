@@ -1,0 +1,90 @@
+{% import '::macro.html.twig' as m %}
+<div class="modal-body movebottom reset-password">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <h2>{{ 'ResetPassword.request.modal.mainTitle.resetPasswords'| trans }}</h2>
+                <div id="resetModal">
+                    {% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+                    {{ m.error }}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script type="application/javascript">
+    var button = $('#resetModal button[type="submit"]')[0];
+    var ResetForm = $('#resetModal .fos_user_resetting_request');
+    var input = ResetForm.find('#username_email');
+
+    ResetForm.validate({
+        errorPlacement: function (error, element) {
+            //Reset previews errors
+            resetModalErrors();
+            //Show errors as tooltip
+            input.tooltip('destroy');
+            toolTipError(error.text(), element);
+            //Show error as label
+            $('.login-error-content').text(error.text());
+            $('.text-danger').removeClass('hidden');
+        },
+        ignore: [],
+        rules: {
+            username: {
+                required: true,
+                email: true
+            }
+        },
+        success: function (e) {
+            //Remove errors as label
+            $('.text-danger').addClass('hidden');
+            input.parent().removeClass('has-error');
+            //Distroy tooltip
+            input.tooltip('destroy');
+        }
+    });
+
+    validFormInputs();
+
+    button.onclick = function (e) {
+        e.preventDefault();
+        if (ResetForm.valid()) {
+            $.ajax({
+                type: ResetForm.attr('method'),
+                url: ResetForm.attr('action'),
+                data: ResetForm.serialize(),
+                success: function (data) {
+                    if (data.success === false) {
+                        //clear errors
+                        resetModalErrors();
+                        input.tooltip('destroy');
+                        //Show errors
+                        $("#resetModal").find(".form-group").addClass('has-error');
+                        input.tooltip({'trigger':'click', 'title': (trans(data.message, locale))});
+                        //Display message as label
+                        $('.login-error-content').text(data.message);
+                        $('.text-danger').removeClass('hidden');
+                    } else {
+                        $('.text-danger').addClass('hidden');
+                        //Clear errors
+                        resetModalErrors();
+                        //Show errors
+                        $("#resetModal .form-group").removeClass('has-error');
+                        $("#myModal .modal-body").append(modalErorr(data.message));
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+    };
+    //Clear 2 types of errors
+    function resetModalErrors() {
+        $('.errorModal').hide();
+        $('.text-danger').addClass('hidden');
+    }
+</script>

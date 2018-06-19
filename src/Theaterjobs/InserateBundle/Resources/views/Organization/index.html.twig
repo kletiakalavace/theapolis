@@ -1,0 +1,99 @@
+{% extends "::base.html.twig" %}
+{% import 'macro.html.twig' as m %}
+
+{% block content %}
+    {{ m.flashbags(app.session.flashbag.get('organizationIndex')) }}
+    <div id="organizationSearch">
+        {{ form_start(form) }}
+        {% if forUser != null %}
+            <input type="hidden" name="forUser" value="{{ forUser }}"/>
+        {% endif %}
+        <div class="container">
+            <div class="block">
+                <div class="page-header">
+                    <h1>{{ 'organization.mainTitle.organization' | trans }}</h1>
+                </div>
+                <div class="panel-filter">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-3 col-xs-12">
+                            <div class="form-group no-margin">
+                                {{ form_label(form.searchPhrase) }}
+                                {{ form_widget(form.searchPhrase) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group form-group-with-aside no-margin">
+                                <label class="control-label required slabel"
+                                       for="area">{{ "organization.search.label.place" | trans }}</label>
+                                <div id="map_container" style="width: 900px;margin: auto;">
+                                    <div class="input-group input-find input-location-people">
+                                        <input id="pac-input" onchange="locationChange();"
+                                               class="pac-control form-control form-control-location"
+                                               type="text"
+                                               placeholder="{{ "people.edit.placeholder.enter_location" | trans }}">
+                                        {{ form_widget(form.location,{'attr':{'class' : 'hidden'}}) }}
+                                    </div>
+                                    <div id="map" class="hidden"></div>
+                                </div>
+                                <div class="form-group-aside">
+                                    {{ form_label(form.area) }}
+                                    {{ form_widget(form.area,{ 'attr': {'onchange': 'areaChange(this);'}}) }}
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-3 col-xs-12">
+                            <a href="#" id="btn-search-location">
+                                <svg class="icon-svg icon-svg-inverse" width="20" height="20">
+                                    <use xlink:href="{{ asset('bundles/theaterjobsmain/img/icon-sprite.svg#icon-search') }}"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="organizationPartial">
+                    {{ include('TheaterjobsInserateBundle:Partial:organization.html.twig', { 'organizations': organizations }) }}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+{% block js %}
+    {{ parent() }}
+    {% javascripts
+        '@TheaterjobsMainBundle/Resources/public/js/geohash.js'
+        '@TheaterjobsMainBundle/Resources/public/js/map/placeSuggest.js'
+        '@TheaterjobsInserateBundle/Resources/public/js/organization/index.js'
+        '@TheaterjobsMainBundle/Resources/public/components/jQuery.dotdotdot/src/js/jquery.dotdotdot.min.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    <script>
+        {% if app.request.get("location") %}
+        var latlng = decodeGeoHash("{{ app.request.get("location") }}");
+        filterLocation(latlng.latitude[0], latlng.longitude[0], organizationFormSearch.selector, "{{ app.request.get("area") }}");
+        {% endif %}
+
+        jQuery(document).ready(function ($) {
+            const ellipsis = '...';
+            $(".organization-list h4, .profile-content p").dotdotdot({
+                ellipsis: ellipsis,
+                height: 60,
+                wrap: "word"
+            });
+        });
+
+        $(document).ajaxComplete(function (event, xhr, settings) {
+            const ellipsis = '...';
+            $(".organization-list h4, .profile-content p").dotdotdot({
+                ellipsis: ellipsis,
+                height: 60,
+                wrap: "word"
+            });
+        });
+        {% if app.request.query.count == 0 %}
+            window.history.pushState({}, document.title, '?' + organizationFormSearch.serialize());
+        {% endif %}
+    </script>
+{% endblock %}
